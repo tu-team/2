@@ -1,0 +1,87 @@
+
+Directory structure overview:
+-----------------------------
+
+RelationExtractor.java:
+	This is the main class, wrapping together all of the various
+	functions.  It should be taken to be an "example" of how 
+	to use RelEx in other systems. Yet, it is fully functional, and 
+	implements main(), which accepts sentences and generates output
+	of various forms, depending on the command-line flags.
+
+algs: 
+	Code for applying the dependency relation detection patterns.
+   Dependency relations are discovered by applying a series of
+   pattern templates or 'rules' to a graph of the parsed text. The 
+   result of finding a pattern-match is that the resulting rule is
+   applied, which casues the graph to be modified in some way.
+
+anaphora:
+	Anaphora resolution algorithm. Implements the Hobbs algorithm.
+
+chunk:
+	Code to generate lexical chunks, aka lexicalized stems or units
+	or phrases. Mostly focused on phrasal verbs.
+
+concurrent:
+	Provide infrastructure for multi-threaded (parallel) execution.
+	Not normally used or needed; intended only for improving 
+	performance for production servers.
+
+corpus:
+	Code to handle multiple-sentence corpuses. Includes a class to 
+	split a document into multiple sentences, and another to perform
+	entity extraction. The current system uses OpenNLP for sentence
+	detection, so this directory contains code to wrap the OpenNLP
+	system.
+
+entity:
+	Mangle sentences to consolidate entities before passing a sentence
+	to the parser.  The idea was to ease the burden on the parser; 
+   however, its not clear that there are any entity detectors that are
+   actually better than the parser. The entity detection is supplied by 
+   systems outside of relex. The current implementation uses GATE.
+
+feature:
+	The core classes for representing the graph of linguistic 
+   relationships and features.  The graph of linguistics relationships
+   is the central data structure around which RelEx operates.
+
+frame:
+   Code to provide semantic frame output, inspired by FrameNet markup.
+   The actual implementation is a set of pattern-matching rules which
+   are applied to the RelEx output.
+
+morphy:
+	A simple, easy-to-use class for finding the base forms (lemmas)
+	of a word. The current system uses WordNet to determine the lemmas,
+	and so most of the code here is a wrapper around WordNet.
+
+output:
+	A collection of disparate classes that display the RelEx graph in
+	various formats. Notable are a set of classes that generate
+	OpenCog hypergraphs.
+
+parser:
+	Interfaces to the link grammar parser. Two choices: an in-process
+	JNI binding to the C-language liblink-grammar-java.so, and an 
+	out-of-process server, reachable via a socket interface.
+
+parser-old:
+	Old, deprecated interfaces to the link-grammar parser. DO NOT USE
+	THESE IN NEW CODE! These are here for backwards compatibility only!
+
+stats:
+	Some simple classes providing very basic statistical support,
+	including some TruthValue (a la OpenCog) classes.
+
+tree:
+	Routines to extract and manipulate the treebank style phrase tree
+	of a given parse. The phrase tree is central to the Hobbs algorithm,
+	and to lexical chunking. The PhraseLeader class provides head-word
+	identification.
+
+wsd:
+	Simple word-sense disambiguation code; compares word usage in pairs
+	of sentences. Crude experiment, deprecated.
+

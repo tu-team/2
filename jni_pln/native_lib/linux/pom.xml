@@ -1,0 +1,169 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<description>PLN JNI interface</description>
+	<inceptionYear>2010</inceptionYear>
+	<licenses>
+		<license>
+			<name>GNU GPL v3</name>
+			<url>http://....</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<maven.compiler.source>1.5</maven.compiler.source>
+		<maven.compiler.target>1.5</maven.compiler.target>
+		<encoding>UTF-8</encoding>
+		<scala.version>2.8.0</scala.version>
+		<os>linux</os> <!-- Can also be "win32", "hp-ux" -->
+		<lib.packaging>so</lib.packaging> <!-- Can also be "dll" for Windows -->
+	</properties>
+
+	<parent>
+		<groupId>fi.neter.jni_pln</groupId>
+		<artifactId>nativeParent</artifactId>
+		<version>0.1</version>
+	</parent>
+
+	<groupId>fi.neter.jni_pln</groupId>
+	<artifactId>libJniPlnNative</artifactId>
+	<version>0.1</version>
+	<name>JNI PLN native linux</name>
+	<url>http://maven.apache.org</url>
+
+	<packaging>${lib.packaging}</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>fi.neter.jni_pln</groupId>
+			<artifactId>jni_pln_java</artifactId>
+			<version>0.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+				<version>LATEST</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>native-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>LATEST</version>
+				<configuration>
+					<!-- trigger javah -->
+					<javahOS>${os}</javahOS>
+
+					<compilerProvider>generic-classic</compilerProvider>
+					<compilerExecutable>gcc</compilerExecutable>
+					<compilerStartOptions>
+            			<compilerStartOption>-I../../include -fPIC -g</compilerStartOption>
+         			</compilerStartOptions>
+         			
+					<linkerExecutable>gcc</linkerExecutable>
+					<sources>
+						<source>
+							<directory>../../src/main/C++</directory>
+							<fileNames>
+								<fileName>jni_pln.cc</fileName>
+							</fileNames>
+						</source>
+					</sources>
+
+					<linkerStartOptions>
+						<linkerStartOption>-shared -mno-cygwin -Wl -L../../lib -latomspace -lpln -lserver</linkerStartOption>
+					</linkerStartOptions>
+
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>javah</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<javahOS>${os}</javahOS>
+							<javahProvider>default</javahProvider>
+							<javahOutputDirectory>${project.build.directory}/jni_pln-javah</javahOutputDirectory>
+							<workingDirectory>${basedir}</workingDirectory>
+							<javahOutputFileName>jni_pln.h</javahOutputFileName>
+							<javahClassNames>
+								<javahClassName>fi.neter.JNIPLN</javahClassName>
+								<!-- FIXME -->
+								<!-- <javahClassName>Formula<javahClassName> -->
+								<javahClassName>fi.neter.opencog.reasoning.pln.rules.Rule</javahClassName>
+								<javahClassName>fi.neter.opencog.atomspace.Vertex</javahClassName>
+								<javahClassName>fi.neter.opencog.atomspace.Handle</javahClassName>
+								<!-- FIXME -->
+								<!-- <javahClassName>BITNodeRoot<javahClassName> -->
+								<javahClassName>fi.neter.opencog.reasoning.pln.VTree</javahClassName>
+								<!-- FIXME -->
+								<!-- <javahClassName>BackwardChainer<javahClassName> -->
+								<javahClassName>fi.neter.opencog.reasoning.pln.AtomSpaceWrapper</javahClassName>
+								<javahClassName>fi.neter.opencog.atomspace.AtomSpace</javahClassName>
+								<javahClassName>fi.neter.opencog.atomspace.TruthValue</javahClassName>
+								<javahClassName>fi.neter.opencog.atomspace.SimpleTruthValue</javahClassName>
+								<javahClassName>fi.neter.opencog.atomspace.Type</javahClassName>
+								<javahClassName>fi.neter.opencog.server.CogServer</javahClassName>
+								<javahClassName>fi.neter.opencog.server.BaseServer</javahClassName>
+							</javahClassNames>
+						</configuration>
+						<goals>
+							<goal>javah</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											native-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.0-alpha-7,)
+										</versionRange>
+										<goals>
+											<goal>initialize</goal>
+											<goal>javah</goal>
+											<goal>link</goal>
+											<goal>unzipinc</goal>
+											<goal>compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

@@ -1,0 +1,146 @@
+[2012-04-14 16:54:57:293] [INFO] Initializing ClassServer
+[2012-04-14 16:57:30:314] [INFO] Initializing ClassServer
+[2012-04-14 16:59:32:299] [INFO] Initializing ClassServer
+[2012-04-14 22:03:16:491] [INFO] Initializing ClassServer
+[2012-04-14 22:04:13:652] [INFO] Initializing ClassServer
+[2012-04-14 22:05:12:983] [INFO] Initializing ClassServer
+[2012-04-14 22:06:13:706] [INFO] Initializing ClassServer
+[2012-04-14 22:36:06:163] [INFO] Initializing ClassServer
+[2012-04-14 22:55:32:527] [INFO] Initializing ClassServer
+[2012-04-14 22:58:01:482] [INFO] Initializing ClassServer
+[2012-04-14 22:59:10:429] [INFO] Initializing ClassServer
+[2012-04-14 23:20:49:791] [INFO] Initializing ClassServer
+[2012-04-14 23:25:40:432] [INFO] Initializing ClassServer
+[2012-04-14 23:27:07:504] [INFO] Initializing ClassServer
+[2012-04-14 23:31:34:416] [INFO] Initializing ClassServer
+[2012-04-14 23:32:25:434] [INFO] Initializing ClassServer
+[2012-04-14 23:39:27:669] [INFO] Initializing ClassServer
+[2012-04-14 23:42:50:460] [INFO] Initializing ClassServer
+[2012-04-14 23:43:23:803] [INFO] Initializing ClassServer
+[2012-04-14 23:44:47:430] [INFO] Initializing ClassServer
+[2012-04-14 23:45:35:491] [INFO] Initializing ClassServer
+[2012-04-14 23:52:57:722] [INFO] Initializing ClassServer
+[2012-04-14 23:54:12:687] [INFO] Initializing ClassServer
+[2012-04-15 09:56:00:908] [INFO] Initializing ClassServer
+[2012-04-15 09:56:00:931] [INFO] Initializing ClassServer
+[2012-04-15 09:57:20:991] [INFO] Initializing ClassServer
+[2012-04-15 09:57:21:012] [INFO] Initializing ClassServer
+[2012-04-15 10:01:08:019] [INFO] Initializing ClassServer
+[2012-04-15 10:01:08:039] [INFO] Initializing ClassServer
+[2012-04-15 10:03:22:051] [INFO] Initializing ClassServer
+[2012-04-15 10:03:22:139] [INFO] Initializing ClassServer
+[2012-04-15 10:03:22:398] [ERROR] Atomspace pointer was NULL (/opt/opencog/opencog/reasoning/pln/AtomSpaceWrapper.h:608)
+	Stack Trace:
+	2: ../lib/libutil.so (opencog::Logger::logva(opencog::Logger::Level, char const*, char*) +0xda) [0xb6e4572c]
+	3: ../lib/libutil.so (opencog::Logger::Error::operator()(char const*, ...) +0x3d) [0xb6e45809]
+	4: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char*, bool) +0x91) [0xb6e3dc71]
+	5: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char const*, char*, bool) +0xa0) [0xb6e3dd44]
+	6: ../lib/libutil.so (opencog::RuntimeException::RuntimeException(char const*, char const*, ...) +0x5d) [0xb6e3e04f]
+	7: ../lib/libpln.so (opencog::pln::NormalizingATW::getInstance(opencog::AtomSpace*) +0x44) [0xb7347d54]
+	8: ../lib/libpln.so (opencog::pln::ASW(opencog::AtomSpace*) +0x82) [0xb733b72a]
+	9: /opt/ideawork/tu-0.3/jni_pln/native_lib/linux/target/libJniPlnNative.so (��g��g:pln::ASW(opencog::AtomSpace*) +0x1e) [0x678ec10d]
+	10: [0xb057c64a]
+	11: [0xb0575047]
+	12: [0xb05723e6]
+	13: /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server/libjvm.so (��g��g:pln::ASW(opencog::AtomSpace*) +0x39a966) [0xb39df966]
+	14: [0x860cc00]
+	15: [(nil)]
+
+[2012-04-15 10:10:16:442] [INFO] Initializing ClassServer
+[2012-04-15 10:10:16:480] [INFO] Initializing ClassServer
+[2012-04-15 10:10:16:873] [ERROR] Atomspace pointer was NULL (/opt/opencog/opencog/reasoning/pln/AtomSpaceWrapper.h:608)
+	Stack Trace:
+	2: ../lib/libutil.so (opencog::Logger::logva(opencog::Logger::Level, char const*, char*) +0xda) [0xb6e4672c]
+	3: ../lib/libutil.so (opencog::Logger::Error::operator()(char const*, ...) +0x3d) [0xb6e46809]
+	4: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char*, bool) +0x91) [0xb6e3ec71]
+	5: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char const*, char*, bool) +0xa0) [0xb6e3ed44]
+	6: ../lib/libutil.so (opencog::RuntimeException::RuntimeException(char const*, char const*, ...) +0x5d) [0xb6e3f04f]
+	7: ../lib/libpln.so (opencog::pln::NormalizingATW::getInstance(opencog::AtomSpace*) +0x44) [0xb7348d54]
+	8: ../lib/libpln.so (opencog::pln::ASW(opencog::AtomSpace*) +0x82) [0xb733c72a]
+	9: /opt/ideawork/tu-0.3/jni_pln/native_lib/linux/target/libJniPlnNative.so (p���p���:pln::ASW(opencog::AtomSpace*) +0x1e) [0x679fc10d]
+	10: [0xb057d64a]
+	11: [0xb0576047]
+	12: [0xb05733e6]
+	13: /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server/libjvm.so (p���p���:pln::ASW(opencog::AtomSpace*) +0x39a966) [0xb39e0966]
+	14: [0x9d1fc00]
+	15: [(nil)]
+
+[2012-04-15 10:32:07:410] [INFO] Initializing ClassServer
+[2012-04-15 10:32:07:439] [INFO] Initializing ClassServer
+[2012-04-15 10:33:59:844] [INFO] Initializing ClassServer
+[2012-04-15 10:33:59:874] [INFO] Initializing ClassServer
+[2012-04-15 10:34:00:110] [ERROR] Atomspace pointer was NULL (/opt/opencog/opencog/reasoning/pln/AtomSpaceWrapper.h:608)
+	Stack Trace:
+	2: ../lib/libutil.so (opencog::Logger::logva(opencog::Logger::Level, char const*, char*) +0xda) [0xb6e4072c]
+	3: ../lib/libutil.so (opencog::Logger::Error::operator()(char const*, ...) +0x3d) [0xb6e40809]
+	4: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char*, bool) +0x91) [0xb6e38c71]
+	5: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char const*, char*, bool) +0xa0) [0xb6e38d44]
+	6: ../lib/libutil.so (opencog::RuntimeException::RuntimeException(char const*, char const*, ...) +0x5d) [0xb6e3904f]
+	7: ../lib/libpln.so (opencog::pln::NormalizingATW::getInstance(opencog::AtomSpace*) +0x44) [0xb7342d54]
+	8: ../lib/libpln.so (opencog::pln::ASW(opencog::AtomSpace*) +0x82) [0xb733672a]
+	9: /opt/ideawork/tu-0.3/jni_pln/native_lib/linux/target/libJniPlnNative.so (04��04��:pln::ASW(opencog::AtomSpace*) +0x1e) [0x678ed5bd]
+	10: [0xb057764a]
+	11: [0xb0570047]
+	12: [0xb056d3e6]
+	13: /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server/libjvm.so (04��04��:pln::ASW(opencog::AtomSpace*) +0x39a966) [0xb39da966]
+	14: [0x8134c00]
+	15: [(nil)]
+
+[2012-04-28 19:10:44:840] [INFO] Initializing ClassServer
+[2012-04-28 19:10:44:990] [INFO] Initializing ClassServer
+[2012-04-28 19:10:45:313] [ERROR] Atomspace pointer was NULL (/opt/opencog/opencog/reasoning/pln/AtomSpaceWrapper.h:608)
+	Stack Trace:
+	2: ../lib/libutil.so (opencog::Logger::logva(opencog::Logger::Level, char const*, char*) +0xda) [0xb6dfd72c]
+	3: ../lib/libutil.so (opencog::Logger::Error::operator()(char const*, ...) +0x3d) [0xb6dfd809]
+	4: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char*, bool) +0x91) [0xb6df5c71]
+	5: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char const*, char*, bool) +0xa0) [0xb6df5d44]
+	6: ../lib/libutil.so (opencog::RuntimeException::RuntimeException(char const*, char const*, ...) +0x5d) [0xb6df604f]
+	7: ../lib/libpln.so (opencog::pln::NormalizingATW::getInstance(opencog::AtomSpace*) +0x44) [0xb7328d54]
+	8: ../lib/libpln.so (opencog::pln::ASW(opencog::AtomSpace*) +0x82) [0xb731c72a]
+	9: /opt/ideawork/tu-0.3/jni_pln/native_lib/linux/target/libJniPlnNative.so (X��X��:pln::ASW(opencog::AtomSpace*) +0x1e) [0xb3b085bd]
+	10: [0xafc0a64a]
+	11: [0xafc03047]
+	12: [0xafc003e6]
+	13: /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so (X��X��:pln::ASW(opencog::AtomSpace*) +0x39a7d6) [0xb310e7d6]
+	14: [0xb2c05000]
+
+[2012-04-28 19:41:41:303] [INFO] Initializing ClassServer
+[2012-04-28 19:41:41:350] [INFO] Initializing ClassServer
+[2012-04-28 20:05:42:870] [INFO] Initializing ClassServer
+[2012-04-28 20:05:42:905] [INFO] Initializing ClassServer
+[2012-04-28 20:19:22:593] [INFO] Initializing ClassServer
+[2012-04-28 20:19:22:627] [INFO] Initializing ClassServer
+[2012-04-28 20:23:20:159] [INFO] Initializing ClassServer
+[2012-04-28 20:23:20:193] [INFO] Initializing ClassServer
+[2012-04-28 20:25:02:115] [INFO] Initializing ClassServer
+[2012-04-28 20:25:02:150] [INFO] Initializing ClassServer
+[2012-04-28 20:58:07:436] [INFO] Initializing ClassServer
+[2012-04-28 20:58:07:469] [INFO] Initializing ClassServer
+[2012-04-28 20:58:07:770] [ERROR] Atomspace pointer was NULL (/opt/opencog/opencog/reasoning/pln/AtomSpaceWrapper.h:608)
+	Stack Trace:
+	2: ../lib/libutil.so (opencog::Logger::logva(opencog::Logger::Level, char const*, char*) +0xda) [0xb6e1472c]
+	3: ../lib/libutil.so (opencog::Logger::Error::operator()(char const*, ...) +0x3d) [0xb6e14809]
+	4: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char*, bool) +0x91) [0xb6e0cc71]
+	5: ../lib/libutil.so (opencog::StandardException::parseErrorMessage(char const*, char const*, char*, bool) +0xa0) [0xb6e0cd44]
+	6: ../lib/libutil.so (opencog::RuntimeException::RuntimeException(char const*, char const*, ...) +0x5d) [0xb6e0d04f]
+	7: ../lib/libpln.so (opencog::pln::NormalizingATW::getInstance(opencog::AtomSpace*) +0x44) [0xb733fd54]
+	8: ../lib/libpln.so (opencog::pln::ASW(opencog::AtomSpace*) +0x82) [0xb733372a]
+	9: /opt/ideawork/tu-0.3/jni_pln/native_lib/linux/target/libJniPlnNative.so (pвpв:pln::ASW(opencog::AtomSpace*) +0x1e) [0x66ef8093]
+	10: [0xafca064a]
+	11: [0xafc99047]
+	12: [0xafc963e6]
+	13: /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so (pвpв:pln::ASW(opencog::AtomSpace*) +0x39a7d6) [0xb320e7d6]
+	14: [0xb2d05000]
+	15: [(nil)]
+
+[2012-04-28 22:41:40:654] [INFO] Initializing ClassServer
+[2012-04-28 22:41:40:688] [INFO] Initializing ClassServer
+[2012-04-28 22:57:29:143] [INFO] Initializing ClassServer
+[2012-04-28 22:57:29:178] [INFO] Initializing ClassServer
+[2012-04-28 22:58:05:836] [INFO] Initializing ClassServer
+[2012-04-28 22:58:05:872] [INFO] Initializing ClassServer
+[2012-04-28 23:26:54:706] [INFO] Initializing ClassServer
+[2012-04-28 23:26:54:740] [INFO] Initializing ClassServer
+[2012-04-28 23:27:59:039] [INFO] Initializing ClassServer
+[2012-04-28 23:27:59:073] [INFO] Initializing ClassServer
+[2012-04-28 23:27:59:390] [INFO] [ASW] Watching AtomSpace.

@@ -1,0 +1,175 @@
+// applying same operation to one module twice produces the penalty
+// genotype:
+// <(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.
+// <(*, genotype, <(*, Customer, 2) --> addField>) --> contains>.
+// <(*, genotype, <(*, CreateCustomer, 3) --> addField>) --> contains>.
+// <(*, genotype, <(*, ListCustomersServlet, 4) --> removeField>) --> contains>.
+// <(*, genotype, <(*, CreateCustomerServlet, 5) --> addField >) --> contains>.
+
+// simplified version
+
+<(*, customer, 1) --> addField>.
+1
+<(*, customer, 2) --> addField>.
+12
+  OUT: (&&,<(*,customer,1) --> #1()>,<(*,customer,2) --> #1()>). %1.00;0.81% {14 : 1;2} 
+
+**
+(&&,<(*,customer,1) --> #1>,<(*,customer,2) --> #1>). %1.00;0.81%
+<(&&,<(*,#module,1) --> #action>, <(*,#module,2) --> #action>) ==> <Self --> [duplicating]>>.
+1024
+//Pei Wong's how-to still does not work.
+
+
+
+// procedural flow
+** 1.1 (1+2)
+<(*, Genotype, <(*, customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, Genotype, <(*, customer, 2) --> addField>) --> contains>.:|:
+12
+ OUT: (&/,<(*,Genotype,<(*,customer,1) --> addField>) --> #1()>,<(*,Genotype,<(*,customer,2) --> addField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 1.2
+(&/,<(*,Genotype,<(*,customer,1) --> addField>) --> #1()>,<(*,Genotype,<(*,customer,2) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <duplicate --> true>. %1.00;0.81% {40 : 2;1}
+
+** 2.1 (1+3)
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, CreateCustomer, 3) --> addField>) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 2.2
+(&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><System --> ok>>. %1.00;0.90% {14 : 2} // no positive answer (--, <duplicate --> true>).
+
+** 3.1 (1+4)
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, ListCustomersServlet, 4) --> removeField>) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+**3.2
+(&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2}  // (--, <duplicate --> true>).
+
+** 4.1 (1+5)
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, CreateCustomerServlet, 5) --> addField >) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 4.2
+(&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2}  // (--, <duplicate --> true>).
+
+** 5.1 (2+3)
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, CreateCustomer, 3) --> addField>) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 5.2
+(&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><System --> ok>>. %1.00;0.90% {14 : 2} // no positive answer (--, <duplicate --> true>).
+
+** 6.3 (2+4)
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, ListCustomersServlet, 4) --> removeField>) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 6.2
+(&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2}  // (--, <duplicate --> true>).
+
+** 7.1 (2+5)
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, CreateCustomerServlet, 5) --> addField >) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 7.2
+(&/,<(*,genotype,<(*,Customer,1) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2}  // (--, <duplicate --> true>).
+
+** 8.1 (3+4)
+<(*, genotype, <(*, CreateCustomer, 3) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, ListCustomersServlet, 4) --> removeField>) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+** 8.2
+(&/,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2}  // (--, <duplicate --> true>).
+
+** 9.1 (3+5)
+<(*, genotype, <(*, CreateCustomer, 3) --> addField>) --> contains>.:|:
+1
+<(*, genotype, <(*, CreateCustomerServlet, 5) --> addField >) --> contains>.
+12
+ OUT: (&&,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>). :\: %1.00;0.81% {7 : 0 : 2;1}
+
+** 9.2
+(&&,<(*,genotype,<(*,CreateCustomer,3) --> addField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,1) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,2) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2} // (--, <duplicate --> true>).
+
+**10.1 (4+5)
+<(*, genotype, <(*, ListCustomersServlet, 4) --> removeField>) --> contains>.:|:
+1
+<(*, genotype, <(*, CreateCustomerServlet, 5) --> addField >) --> contains>.:|:
+12
+ OUT: (&/,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>). :\: %1.00;0.43% {12 : 0 : 2;1}
+
+**10.2
+(&/,<(*,genotype,<(*,ListCustomersServlet,4) --> removeField>) --> #1()>,<(*,genotype,<(*,CreateCustomerServlet,5) --> addField>) --> #1()>).
+<(&/,<(*,Genotype,<(*,#module,#number) --> #action>) --> #1()>,<(*,Genotype,<(*,#module,#number) --> #action>) --> #1()>) ==> <duplicate --> true>>.
+40
+ OUT: <(&/,<(*,Genotype,<(*,#1,1) --> #2>) --> #3()>,<Genotype --> (/,#3(),_,<(*,#1,2) --> #2>)>)==><duplicate --> true>>. %1.00;0.90% {14 : 2} // (--, <duplicate --> true>).
+
+** combine results
+<duplicate --> true>.
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+(--, <duplicate --> true>).
+59
+ OUT: <duplicate --> true>. %0.10;0.99% {59 : 7;2;3;9;5;1;4;10}
+
+**
+<duplicate --> true>.%0.10%
+<(--, <duplicate --> true>) ==> <Self --> ok>>.
+<<duplicate --> true> ==> (--, <Self --> ok>)>.
+29
+ OUT: <Self --> ok>. %0.90;0.08% {29 : 3;1}

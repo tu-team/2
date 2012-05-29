@@ -1,0 +1,47 @@
+<project>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>fi.neter.jni_pln</groupId>
+    <artifactId>jni_pln</artifactId>
+    <version>0.1</version>
+  </parent>
+
+  <artifactId>nativeParent</artifactId>
+  
+  <name>PLN JNI interface native</name>
+  
+  <packaging>pom</packaging>
+
+  <profiles>
+  
+    <profile>
+      <id>win32</id>
+      <activation>
+        <property>
+          <name>platform</name>
+          <value>win32</value>
+        </property>
+      </activation>
+      <modules>
+        <module>win32</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>linux</id>
+      <activation>
+        <property>
+          <name>platform</name>
+          <value>linux</value>
+        </property>
+      </activation>
+      <modules>
+        <module>linux</module>
+      </modules>
+    </profile>
+
+  </profiles>
+
+</project>

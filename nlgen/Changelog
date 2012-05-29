@@ -1,0 +1,7 @@
+New in version 0.1
+ * changed the code to use the linkgrammar version 4.5.8 and relex version 1.1.1
+ * change the relex method invoked by ParseCorpus to printRelationsAlt, which returns a more adequate relex format.
+ * change RelFileReader (which reads relex input) and ParseCorpus (which generates relex output) to accept the unary.
+ entries of relex from the printRelatoinsAlt. Now, entries likd det(the) and adj(good) are accepted.
+ * create the Server class to use NLGen as a daemon.
+ * add entries to the unary list of relations in RelationExample.

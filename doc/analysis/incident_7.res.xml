@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<semantic comment="semantic relationships of each sentence from the corpus">
+  <sentence ID="0" senString="User had received wrong application .">
+    <SemanticRelations index="0">
+      <BinaryRelation leftWord="receive" rightWord="application" label="_obj" />
+      <BinaryRelation leftWord="receive" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past_perfect" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="application" rightWord="wrong" label="_amod" />
+      <UnaryRelation label="noun" word="application" type="" />
+      <UnaryRelation label=".a" word="wrong" type="" />
+      <UnaryRelation label="adj" word="wrong" type="" />
+      <UnaryRelation label="verb" word="had" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="1">
+      <BinaryRelation leftWord="receive" rightWord="application" label="_obj" />
+      <BinaryRelation leftWord="receive" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past_perfect" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="application" rightWord="wrong" label="_nn" />
+      <UnaryRelation label="noun" word="application" type="" />
+      <UnaryRelation label=".n" word="wrong" type="" />
+      <UnaryRelation label="noun" word="wrong" type="" />
+      <UnaryRelation label="verb" word="had" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="2">
+      <BinaryRelation leftWord="had" rightWord="application" label="_obj" />
+      <BinaryRelation leftWord="had" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="had" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="had" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="application" rightWord="wrong" label="_nn" />
+      <UnaryRelation label="noun" word="application" type="" />
+      <BinaryRelation leftWord="wrong" rightWord="received" label="_amod" />
+      <UnaryRelation label=".n" word="wrong" type="" />
+      <UnaryRelation label="noun" word="wrong" type="" />
+      <BinaryRelation leftWord="received" rightWord="" label="past" />
+      <UnaryRelation label="adj" word="received" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="3">
+      <BinaryRelation leftWord="had" rightWord="application" label="_obj" />
+      <BinaryRelation leftWord="had" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="had" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="had" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="application" rightWord="received" label="_amod" />
+      <BinaryRelation leftWord="application" rightWord="wrong" label="_nn" />
+      <UnaryRelation label="noun" word="application" type="" />
+      <UnaryRelation label=".n" word="wrong" type="" />
+      <UnaryRelation label="noun" word="wrong" type="" />
+      <BinaryRelation leftWord="received" rightWord="" label="past" />
+      <UnaryRelation label="adj" word="received" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="4">
+      <BinaryRelation leftWord="had" rightWord="application" label="_obj" />
+      <BinaryRelation leftWord="had" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="had" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="had" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="application" rightWord="wrong" label="_amod" />
+      <BinaryRelation leftWord="application" rightWord="received" label="_amod" />
+      <UnaryRelation label="noun" word="application" type="" />
+      <UnaryRelation label=".a" word="wrong" type="" />
+      <UnaryRelation label="adj" word="wrong" type="" />
+      <BinaryRelation leftWord="received" rightWord="" label="past" />
+      <UnaryRelation label="adj" word="received" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="5">
+      <BinaryRelation leftWord="receive" rightWord="application" label="_obj" />
+      <BinaryRelation leftWord="receive" rightWord="wrong" label="_advmod" />
+      <BinaryRelation leftWord="receive" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past_perfect" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <UnaryRelation label="noun" word="application" type="" />
+      <BinaryRelation leftWord="wrong" rightWord="" label=".e" />
+      <BinaryRelation leftWord="wrong" rightWord="" label="adv" />
+      <UnaryRelation label="verb" word="had" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+  </sentence>
+  <sentence ID="1" senString="User has ordered Wordfinder Business Economical .">
+    <SemanticRelations index="0">
+      <BinaryRelation leftWord="order" rightWord="Wordfinder_Business_Economical" label="_obj" />
+      <BinaryRelation leftWord="order" rightWord="User" label="_subj" />
+      <BinaryRelation leftWord="order" rightWord="" label="present_perfect" />
+      <UnaryRelation label=".v" word="order" type="" />
+      <UnaryRelation label="verb" word="order" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="Wordfinder_Business_Economical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Wordfinder_Business_Economical" type="" />
+      <UnaryRelation label="noun" word="Wordfinder_Business_Economical" type="" />
+      <UnaryRelation label="singular" word="Wordfinder_Business_Economical" type="" />
+      <UnaryRelation label=".v" word="has" type="" />
+      <UnaryRelation label="verb" word="has" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="1">
+      <BinaryRelation leftWord="has" rightWord="Wordfinder_Business_Economical" label="_obj" />
+      <BinaryRelation leftWord="has" rightWord="User" label="_subj" />
+      <UnaryRelation label="present" word="has" type="" />
+      <UnaryRelation label=".v" word="has" type="" />
+      <UnaryRelation label="verb" word="has" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="Wordfinder_Business_Economical" rightWord="ordered" label="_amod" />
+      <BinaryRelation leftWord="Wordfinder_Business_Economical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Wordfinder_Business_Economical" type="" />
+      <UnaryRelation label="noun" word="Wordfinder_Business_Economical" type="" />
+      <UnaryRelation label="singular" word="Wordfinder_Business_Economical" type="" />
+      <BinaryRelation leftWord="ordered" rightWord="" label="past" />
+      <UnaryRelation label=".v" word="ordered" type="" />
+      <UnaryRelation label="adj" word="ordered" type="" />
+      <UnaryRelation label="definite" word="User" type="" />
+      <UnaryRelation label="noun" word="User" type="" />
+      <UnaryRelation label="singular" word="User" type="" />
+    </SemanticRelations>
+  </sentence>
+  <sentence ID="2" senString="However she received wrong version, she received Wordfinder Tehcnical instead of Business Economical .">
+    <SemanticRelations index="0">
+      <BinaryRelation leftWord="receive" rightWord="Wordfinder_Tehcnical" label="_obj" />
+      <BinaryRelation leftWord="receive" rightWord="Business_Economical" label="instead_of" />
+      <BinaryRelation leftWord="receive" rightWord="she" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="idiom" word="instead_of" type="" />
+      <UnaryRelation label="prep" word="instead_of" type="" />
+      <BinaryRelation leftWord="Business_Economical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Business_Economical" type="" />
+      <UnaryRelation label="noun" word="Business_Economical" type="" />
+      <UnaryRelation label="singular" word="Business_Economical" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="Wordfinder_Tehcnical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="noun" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="singular" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="definite" word="she" type="" />
+      <UnaryRelation label="feminine" word="she" type="" />
+      <BinaryRelation leftWord="she" rightWord="" label="pronoun" />
+      <UnaryRelation label="noun" word="she" type="" />
+      <UnaryRelation label="singular" word="she" type="" />
+      <BinaryRelation leftWord="receive" rightWord="wrong" label="_advmod" />
+      <BinaryRelation leftWord="receive" rightWord="she" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <BinaryRelation leftWord="[version]" rightWord="" label="WORD" />
+      <UnaryRelation label="punctuation" word="" type="" />
+      <BinaryRelation leftWord="wrong" rightWord="" label=".e" />
+      <BinaryRelation leftWord="wrong" rightWord="" label="adv" />
+      <UnaryRelation label="definite" word="she" type="" />
+      <UnaryRelation label="feminine" word="she" type="" />
+      <BinaryRelation leftWord="she" rightWord="" label="pronoun" />
+      <UnaryRelation label="noun" word="she" type="" />
+      <UnaryRelation label="singular" word="she" type="" />
+      <BinaryRelation leftWord="however" rightWord="" label=".c" />
+      <UnaryRelation label="conjunction" word="however" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="1">
+      <BinaryRelation leftWord="receive" rightWord="wrong" label="_advmod" />
+      <BinaryRelation leftWord="receive" rightWord="however" label="_advmod" />
+      <BinaryRelation leftWord="receive" rightWord="she" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <BinaryRelation leftWord="[version]" rightWord="" label="WORD" />
+      <BinaryRelation leftWord="receive" rightWord="Wordfinder_Tehcnical" label="_obj" />
+      <BinaryRelation leftWord="receive" rightWord="Business_Economical" label="instead_of" />
+      <BinaryRelation leftWord="receive" rightWord="she" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="idiom" word="instead_of" type="" />
+      <UnaryRelation label="prep" word="instead_of" type="" />
+      <BinaryRelation leftWord="Business_Economical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Business_Economical" type="" />
+      <UnaryRelation label="noun" word="Business_Economical" type="" />
+      <UnaryRelation label="singular" word="Business_Economical" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="Wordfinder_Tehcnical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="noun" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="singular" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="definite" word="she" type="" />
+      <UnaryRelation label="feminine" word="she" type="" />
+      <BinaryRelation leftWord="she" rightWord="" label="pronoun" />
+      <UnaryRelation label="noun" word="she" type="" />
+      <UnaryRelation label="singular" word="she" type="" />
+      <UnaryRelation label="conjunction" word="" type="" />
+      <BinaryRelation leftWord="wrong" rightWord="" label=".e" />
+      <BinaryRelation leftWord="wrong" rightWord="" label="adv" />
+      <BinaryRelation leftWord="however" rightWord="" label=".e" />
+      <BinaryRelation leftWord="however" rightWord="" label="adv" />
+      <UnaryRelation label="definite" word="she" type="" />
+      <UnaryRelation label="feminine" word="she" type="" />
+      <BinaryRelation leftWord="she" rightWord="" label="pronoun" />
+      <UnaryRelation label="noun" word="she" type="" />
+      <UnaryRelation label="singular" word="she" type="" />
+    </SemanticRelations>
+    <SemanticRelations index="2">
+      <BinaryRelation leftWord="receive" rightWord="Wordfinder_Tehcnical" label="_obj" />
+      <BinaryRelation leftWord="receive" rightWord="wrong" label="_advmod" />
+      <BinaryRelation leftWord="receive" rightWord="Business_Economical" label="instead_of" />
+      <BinaryRelation leftWord="receive" rightWord="she" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="idiom" word="instead_of" type="" />
+      <UnaryRelation label="prep" word="instead_of" type="" />
+      <BinaryRelation leftWord="Business_Economical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Business_Economical" type="" />
+      <UnaryRelation label="noun" word="Business_Economical" type="" />
+      <UnaryRelation label="singular" word="Business_Economical" type="" />
+      <UnaryRelation label="punctuation" word="." type="" />
+      <BinaryRelation leftWord="Wordfinder_Tehcnical" rightWord="" label="entity" />
+      <UnaryRelation label="definite" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="noun" word="Wordfinder_Tehcnical" type="" />
+      <UnaryRelation label="singular" word="Wordfinder_Tehcnical" type="" />
+      <BinaryRelation leftWord="[version]" rightWord="" label="WORD" />
+      <UnaryRelation label="punctuation" word="" type="" />
+      <UnaryRelation label=".a" word="wrong" type="" />
+      <BinaryRelation leftWord="wrong" rightWord="" label="adv" />
+      <UnaryRelation label="definite" word="she" type="" />
+      <UnaryRelation label="feminine" word="she" type="" />
+      <BinaryRelation leftWord="she" rightWord="" label="pronoun" />
+      <UnaryRelation label="noun" word="she" type="" />
+      <UnaryRelation label="singular" word="she" type="" />
+      <BinaryRelation leftWord="receive" rightWord="she" label="_subj" />
+      <BinaryRelation leftWord="receive" rightWord="" label="past" />
+      <UnaryRelation label="verb" word="receive" type="" />
+      <UnaryRelation label="definite" word="she" type="" />
+      <UnaryRelation label="feminine" word="she" type="" />
+      <BinaryRelation leftWord="she" rightWord="" label="pronoun" />
+      <UnaryRelation label="noun" word="she" type="" />
+      <UnaryRelation label="singular" word="she" type="" />
+      <BinaryRelation leftWord="however" rightWord="" label=".c" />
+      <UnaryRelation label="conjunction" word="however" type="" />
+    </SemanticRelations>
+  </sentence>
+  <sentence ID="3" senString="Please assist .">
+    <SemanticRelations index="0">
+      <BinaryRelation leftWord="assist" rightWord="please" label="_advmod" />
+      <UnaryRelation label="imperative" word="assist" type="" />
+      <UnaryRelation label=".v" word="assist" type="" />
+      <UnaryRelation label="verb" word="assist" type="" />
+      <BinaryRelation leftWord="please" rightWord="" label=".e" />
+      <BinaryRelation leftWord="please" rightWord="" label="adv" />
+      <UnaryRelation label="punctuation" word="." type="" />
+    </SemanticRelations>
+    <SemanticRelations index="1">
+      <BinaryRelation leftWord="assist" rightWord="please" label="_advmod" />
+      <UnaryRelation label="imperative" word="assist" type="" />
+      <UnaryRelation label=".v" word="assist" type="" />
+      <UnaryRelation label="verb" word="assist" type="" />
+      <BinaryRelation leftWord="please" rightWord="" label=".e" />
+      <BinaryRelation leftWord="please" rightWord="" label="adv" />
+      <UnaryRelation label="punctuation" word="." type="" />
+    </SemanticRelations>
+  </sentence>
+</semantic>
+

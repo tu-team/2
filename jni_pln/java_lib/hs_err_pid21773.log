@@ -1,0 +1,411 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0006a401, pid=21773, tid=3061119856
+#
+# JRE version: 6.0_23-b23
+# Java VM: OpenJDK Server VM (20.0-b11 mixed mode linux-x86 )
+# Derivative: IcedTea6 1.11pre
+# Distribution: Ubuntu 11.10, package 6b23~pre11-0ubuntu1.11.10.2
+# Problematic frame:
+# C  0x0006a401
+[error occurred during error reporting (printing problematic frame), id 0xb]
+
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-6/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x08ddf000):  JavaThread "main" [_thread_in_native, id=21774, stack(0xb66ff000,0xb6750000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x0006a401
+
+Registers:
+EAX=0xbfd21104, EBX=0xb7711ff4, ECX=0x0000000b, EDX=0x00000005
+ESP=0xb674d3fc, EBP=0x6a7b0000, ESI=0x00000000, EDI=0x0000000b
+EIP=0x0006a401, EFLAGS=0x00210246, CR2=0x0006a401
+
+Top of Stack: (sp=0xb674d3fc)
+0xb674d3fc:   b77017fb 00000005 bfd21104 bfd2111c
+0xb674d40c:   00000005 00000000 b76b0000 b76b2404
+0xb674d41c:   6ad8c908 00000005 bfd21104 bfd2111c
+0xb674d42c:   6a7b0000 00000034 b7706c10 6a569eac
+0xb674d43c:   b7711ff4 6ada2010 00000000 00000002
+0xb674d44c:   b77018e4 bfd21104 bfd2111c 00000034
+0xb674d45c:   00000003 00000003 00000005 bfd21104
+0xb674d46c:   b76ca180 00000000 00000000 b770187b 
+
+Instructions: (pc=0x0006a401)
+0x0006a3e1:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xb]
+
+Register to memory mapping:
+
+EAX=0xbfd21104 is an unknown value
+EBX=0xb7711ff4: <offset 0x1eff4> in /lib/ld-linux.so.2 at 0xb76f3000
+ECX=0x0000000b is an unknown value
+EDX=0x00000005 is an unknown value
+ESP=0xb674d3fc is pointing into the stack for thread: 0x08ddf000
+EBP=0x6a7b0000: <offset 0xbd000> in /opt/opencog/bin/opencog/util/libutil.so at 0x6a6f3000
+ESI=0x00000000 is an unknown value
+EDI=0x0000000b is an unknown value
+
+
+Stack: [0xb66ff000,0xb6750000],  sp=0xb674d3fc,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x0006a401
+[error occurred during error reporting (printing native stack), id 0xb]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.ClassLoader$NativeLibrary.load(Ljava/lang/String;)V+0
+j  java.lang.ClassLoader.loadLibrary0(Ljava/lang/Class;Ljava/io/File;)Z+300
+j  java.lang.ClassLoader.loadLibrary(Ljava/lang/Class;Ljava/lang/String;Z)V+268
+j  java.lang.Runtime.loadLibrary0(Ljava/lang/Class;Ljava/lang/String;)V+54
+j  java.lang.System.loadLibrary(Ljava/lang/String;)V+7
+j  fi.neter.PLNTest.<init>()V+11
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+72
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+92
+j  org.junit.runners.BlockJUnit4ClassRunner.createTest()Ljava/lang/Object;+11
+j  org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall()Ljava/lang/Object;+4
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.BlockJUnit4ClassRunner.methodBlock(Lorg/junit/runners/model/FrameworkMethod;)Lorg/junit/runners/model/Statement;+8
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+28
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$3.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+40
+j  org.junit.runners.ParentRunner.access$000(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+20
+j  org.apache.maven.surefire.junit4.JUnit4TestSet.execute(Lorg/apache/maven/surefire/report/ReporterManager;Ljava/lang/ClassLoader;)V+41
+j  org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(Lorg/apache/maven/surefire/testset/SurefireTestSet;Lorg/apache/maven/surefire/report/ReporterManagerFactory;Ljava/lang/ClassLoader;)V+51
+j  org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(Lorg/apache/maven/surefire/report/ReporterManagerFactory;Ljava/lang/ClassLoader;)V+57
+j  org.apache.maven.surefire.Surefire.run(Ljava/util/List;Ljava/util/List;Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;Ljava/lang/Boolean;)I+163
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+161
+j  org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess()I+303
+j  org.apache.maven.surefire.booter.SurefireBooter.main([Ljava/lang/String;)V+739
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x08e7f800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=21783, stack(0x6a90b000,0x6a95c000)]
+  0x08e7c800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=21782, stack(0x6a95c000,0x6a9dd000)]
+  0x08e7a400 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=21781, stack(0x6a9dd000,0x6aa5e000)]
+  0x08e78c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=21780, stack(0x6aa5e000,0x6aaaf000)]
+  0x08e69400 JavaThread "Finalizer" daemon [_thread_blocked, id=21779, stack(0x6acaf000,0x6ad00000)]
+  0x08e67800 JavaThread "Reference Handler" daemon [_thread_blocked, id=21778, stack(0x6ae42000,0x6ae93000)]
+=>0x08ddf000 JavaThread "main" [_thread_in_native, id=21774, stack(0xb66ff000,0xb6750000)]
+
+Other Threads:
+  0x08e63c00 VMThread [stack: 0x6ae93000,0x6af14000] [id=21777]
+  0x08e81400 WatcherThread [stack: 0x6a88a000,0x6a90b000] [id=21784]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 19136K, used 3631K [0x9e060000, 0x9f5b0000, 0xb35b0000)
+  eden space 16448K, 22% used [0x9e060000,0x9e3ebe98,0x9f070000)
+  from space 2688K, 0% used [0x9f310000,0x9f310000,0x9f5b0000)
+  to   space 2688K, 0% used [0x9f070000,0x9f070000,0x9f310000)
+ PSOldGen        total 43712K, used 0K [0x735b0000, 0x76060000, 0x9e060000)
+  object space 43712K, 0% used [0x735b0000,0x735b0000,0x76060000)
+ PSPermGen       total 16384K, used 3625K [0x6b5b0000, 0x6c5b0000, 0x735b0000)
+  object space 16384K, 22% used [0x6b5b0000,0x6b93a7d8,0x6c5b0000)
+
+Code Cache  [0xb3678000, 0xb38b8000, 0xb6678000)
+ total_blobs=129 nmethods=15 adapters=69 free_code_cache=50001344 largest_free_block=14848
+
+Dynamic libraries:
+08048000-08051000 r-xp 00000000 08:11 2108205    /usr/lib/jvm/java-6-openjdk/jre/bin/java
+08051000-08052000 r--p 00008000 08:11 2108205    /usr/lib/jvm/java-6-openjdk/jre/bin/java
+08052000-08053000 rw-p 00009000 08:11 2108205    /usr/lib/jvm/java-6-openjdk/jre/bin/java
+08dd8000-09090000 rw-p 00000000 00:00 0          [heap]
+68e91000-68e98000 r--s 00000000 08:11 393647     /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+68e98000-68eaa000 r-xp 00000000 08:11 282205     /usr/lib/libboost_signals.so.1.46.1
+68eaa000-68eab000 r--p 00011000 08:11 282205     /usr/lib/libboost_signals.so.1.46.1
+68eab000-68eac000 rw-p 00012000 08:11 282205     /usr/lib/libboost_signals.so.1.46.1
+68eac000-68ee8000 r-xp 00000000 08:11 269117     /usr/lib/libgslcblas.so.0.0.0
+68ee8000-68ee9000 r--p 0003b000 08:11 269117     /usr/lib/libgslcblas.so.0.0.0
+68ee9000-68eea000 rw-p 0003c000 08:11 269117     /usr/lib/libgslcblas.so.0.0.0
+68eea000-69100000 r-xp 00000000 08:11 265249     /usr/lib/libgsl.so.0.16.0
+69100000-69102000 r--p 00215000 08:11 265249     /usr/lib/libgsl.so.0.16.0
+69102000-6910f000 rw-p 00217000 08:11 265249     /usr/lib/libgsl.so.0.16.0
+6910f000-6921c000 r-xp 00000000 08:11 25839737   /opt/opencog/bin/opencog/spatial/libSpaceMap.so
+6921c000-6921e000 r--p 0010c000 08:11 25839737   /opt/opencog/bin/opencog/spatial/libSpaceMap.so
+6921e000-69221000 rw-p 0010e000 08:11 25839737   /opt/opencog/bin/opencog/spatial/libSpaceMap.so
+69221000-693e1000 r-xp 00000000 08:11 24527019   /opt/ideawork/tu-0.3/jni_pln/lib/libatomspace.so
+693e1000-693e4000 r--p 001bf000 08:11 24527019   /opt/ideawork/tu-0.3/jni_pln/lib/libatomspace.so
+693e4000-693ea000 rw-p 001c2000 08:11 24527019   /opt/ideawork/tu-0.3/jni_pln/lib/libatomspace.so
+693ea000-6a22a000 r--p 00000000 08:11 265153     /usr/lib/libicudata.so.44.2
+6a22a000-6a22b000 rw-p 00e3f000 08:11 265153     /usr/lib/libicudata.so.44.2
+6a22b000-6a3e7000 r-xp 00000000 08:11 262998     /usr/lib/libicui18n.so.44.2
+6a3e7000-6a3ed000 r--p 001bb000 08:11 262998     /usr/lib/libicui18n.so.44.2
+6a3ed000-6a3ee000 rw-p 001c1000 08:11 262998     /usr/lib/libicui18n.so.44.2
+6a3ee000-6a3ef000 rw-p 00000000 00:00 0 
+6a3ef000-6a523000 r-xp 00000000 08:11 265251     /usr/lib/libicuuc.so.44.2
+6a523000-6a52c000 r--p 00133000 08:11 265251     /usr/lib/libicuuc.so.44.2
+6a52c000-6a52d000 rw-p 0013c000 08:11 265251     /usr/lib/libicuuc.so.44.2
+6a52d000-6a531000 rw-p 00000000 00:00 0 
+6a531000-6a557000 r-xp 00000000 08:11 11406796   /lib/i386-linux-gnu/libexpat.so.1.5.2
+6a557000-6a558000 ---p 00026000 08:11 11406796   /lib/i386-linux-gnu/libexpat.so.1.5.2
+6a558000-6a55a000 r--p 00026000 08:11 11406796   /lib/i386-linux-gnu/libexpat.so.1.5.2
+6a55a000-6a55b000 rw-p 00028000 08:11 11406796   /lib/i386-linux-gnu/libexpat.so.1.5.2
+6a55b000-6a569000 r-xp 00000000 08:11 393241     /usr/lib/i386-linux-gnu/libgomp.so.1.0.0
+6a569000-6a56a000 r--p 0000d000 08:11 393241     /usr/lib/i386-linux-gnu/libgomp.so.1.0.0
+6a56a000-6a56b000 rw-p 0000e000 08:11 393241     /usr/lib/i386-linux-gnu/libgomp.so.1.0.0
+6a56b000-6a658000 r-xp 00000000 08:11 286733     /usr/lib/libboost_regex.so.1.46.1
+6a658000-6a659000 ---p 000ed000 08:11 286733     /usr/lib/libboost_regex.so.1.46.1
+6a659000-6a65c000 r--p 000ed000 08:11 286733     /usr/lib/libboost_regex.so.1.46.1
+6a65c000-6a65d000 rw-p 000f0000 08:11 286733     /usr/lib/libboost_regex.so.1.46.1
+6a65d000-6a65e000 rw-p 00000000 00:00 0 
+6a65e000-6a67a000 r-xp 00000000 08:11 285649     /usr/lib/libboost_filesystem.so.1.46.1
+6a67a000-6a67b000 r--p 0001b000 08:11 285649     /usr/lib/libboost_filesystem.so.1.46.1
+6a67b000-6a67c000 rw-p 0001c000 08:11 285649     /usr/lib/libboost_filesystem.so.1.46.1
+6a67c000-6a691000 r-xp 00000000 08:11 282118     /usr/lib/libboost_thread.so.1.46.1
+6a691000-6a692000 ---p 00015000 08:11 282118     /usr/lib/libboost_thread.so.1.46.1
+6a692000-6a693000 r--p 00015000 08:11 282118     /usr/lib/libboost_thread.so.1.46.1
+6a693000-6a694000 rw-p 00016000 08:11 282118     /usr/lib/libboost_thread.so.1.46.1
+6a694000-6a696000 r-xp 00000000 08:11 285648     /usr/lib/libboost_system.so.1.46.1
+6a696000-6a697000 r--p 00002000 08:11 285648     /usr/lib/libboost_system.so.1.46.1
+6a697000-6a698000 rw-p 00003000 08:11 285648     /usr/lib/libboost_system.so.1.46.1
+6a698000-6a6bd000 r--p 00000000 08:11 3803372    /etc/ld.so.cache
+6a6bd000-6a6f1000 r-xp 00000000 08:11 25839744   /opt/opencog/bin/opencog/persist/xml/libxml.so
+6a6f1000-6a6f3000 rw-p 00034000 08:11 25839744   /opt/opencog/bin/opencog/persist/xml/libxml.so
+6a6f3000-6a7af000 r-xp 00000000 08:11 24649758   /opt/opencog/bin/opencog/util/libutil.so
+6a7af000-6a7b0000 ---p 000bc000 08:11 24649758   /opt/opencog/bin/opencog/util/libutil.so
+6a7b0000-6a7b4000 rw-p 000bc000 08:11 24649758   /opt/opencog/bin/opencog/util/libutil.so
+6a7b4000-6a808000 r-xp 00000000 08:11 24527012   /opt/ideawork/tu-0.3/jni_pln/lib/libbuiltinreqs.so
+6a808000-6a80b000 rw-p 00053000 08:11 24527012   /opt/ideawork/tu-0.3/jni_pln/lib/libbuiltinreqs.so
+6a80b000-6a80c000 rw-p 00000000 00:00 0 
+6a80c000-6a80d000 r--s 00002000 00:14 13374785   /home/tero/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.6/surefire-junit4-2.6.jar
+6a80d000-6a82b000 r--s 00196000 00:14 13897759   /home/tero/.m2/repository/org/scalatest/scalatest/1.2/scalatest-1.2.jar
+6a82b000-6a88a000 r--s 00582000 00:14 20190465   /home/tero/.m2/repository/org/scala-lang/scala-library/2.8.0/scala-library-2.8.0.jar
+6a88a000-6a88b000 ---p 00000000 00:00 0 
+6a88b000-6a90b000 rw-p 00000000 00:00 0 
+6a90b000-6a90e000 ---p 00000000 00:00 0 
+6a90e000-6a95c000 rw-p 00000000 00:00 0 
+6a95c000-6a95f000 ---p 00000000 00:00 0 
+6a95f000-6a9dd000 rw-p 00000000 00:00 0 
+6a9dd000-6a9e0000 ---p 00000000 00:00 0 
+6a9e0000-6aa5e000 rw-p 00000000 00:00 0 
+6aa5e000-6aa61000 ---p 00000000 00:00 0 
+6aa61000-6aaaf000 rw-p 00000000 00:00 0 
+6aaaf000-6acaf000 r--p 00000000 08:11 262286     /usr/lib/locale/locale-archive
+6acaf000-6acb2000 ---p 00000000 00:00 0 
+6acb2000-6ad00000 rw-p 00000000 00:00 0 
+6ad00000-6ada9000 rw-p 00000000 00:00 0 
+6ada9000-6ae00000 ---p 00000000 00:00 0 
+6ae05000-6ae42000 r--s 0027c000 00:14 20190479   /home/tero/.m2/repository/org/scala-tools/testing/specs_2.8.0/1.6.5/specs_2.8.0-1.6.5.jar
+6ae42000-6ae45000 ---p 00000000 00:00 0 
+6ae45000-6ae93000 rw-p 00000000 00:00 0 
+6ae93000-6ae94000 ---p 00000000 00:00 0 
+6ae94000-6af47000 rw-p 00000000 00:00 0 
+6af47000-6b0d7000 r--s 037ba000 08:11 266023     /usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar
+6b0d7000-6b0d8000 ---p 00000000 00:00 0 
+6b0d8000-6b158000 rw-p 00000000 00:00 0 
+6b158000-6b159000 ---p 00000000 00:00 0 
+6b159000-6b1e1000 rw-p 00000000 00:00 0 
+6b1e1000-6b219000 rw-p 00000000 00:00 0 
+6b219000-6b22f000 rw-p 00000000 00:00 0 
+6b22f000-6b36f000 rw-p 00000000 00:00 0 
+6b36f000-6b377000 rw-p 00000000 00:00 0 
+6b377000-6b3af000 rw-p 00000000 00:00 0 
+6b3af000-6b3c5000 rw-p 00000000 00:00 0 
+6b3c5000-6b504000 rw-p 00000000 00:00 0 
+6b504000-6b50f000 rw-p 00000000 00:00 0 
+6b50f000-6b5af000 rw-p 00000000 00:00 0 
+6b5af000-6c5b0000 rw-p 00000000 00:00 0 
+6c5b0000-735b0000 rw-p 00000000 00:00 0 
+735b0000-76060000 rw-p 00000000 00:00 0 
+76060000-9e060000 rw-p 00000000 00:00 0 
+9e060000-9f5b0000 rw-p 00000000 00:00 0 
+9f5b0000-b35b0000 rw-p 00000000 00:00 0 
+b35b2000-b35b8000 r--s 00034000 00:14 13897757   /home/tero/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar
+b35b8000-b35c1000 rw-p 00000000 00:00 0 
+b35c1000-b3678000 rw-p 00000000 00:00 0 
+b3678000-b38b8000 rwxp 00000000 00:00 0 
+b38b8000-b6678000 rw-p 00000000 00:00 0 
+b6678000-b6683000 r-xp 00000000 08:11 11403277   /lib/i386-linux-gnu/libnss_files-2.13.so
+b6683000-b6684000 r--p 0000a000 08:11 11403277   /lib/i386-linux-gnu/libnss_files-2.13.so
+b6684000-b6685000 rw-p 0000b000 08:11 11403277   /lib/i386-linux-gnu/libnss_files-2.13.so
+b6685000-b669a000 r-xp 00000000 08:11 11403274   /lib/i386-linux-gnu/libnsl-2.13.so
+b669a000-b669b000 r--p 00015000 08:11 11403274   /lib/i386-linux-gnu/libnsl-2.13.so
+b669b000-b669c000 rw-p 00016000 08:11 11403274   /lib/i386-linux-gnu/libnsl-2.13.so
+b669c000-b669e000 rw-p 00000000 00:00 0 
+b669e000-b66a6000 r-xp 00000000 08:11 11403275   /lib/i386-linux-gnu/libnss_compat-2.13.so
+b66a6000-b66a7000 r--p 00007000 08:11 11403275   /lib/i386-linux-gnu/libnss_compat-2.13.so
+b66a7000-b66a8000 rw-p 00008000 08:11 11403275   /lib/i386-linux-gnu/libnss_compat-2.13.so
+b66a8000-b66b1000 r--s 00079000 00:14 13374771   /home/tero/.m2/repository/org/apache/maven/surefire/surefire-api/2.6/surefire-api-2.6.jar
+b66b1000-b66b4000 r--s 0007d000 08:11 272575     /usr/lib/jvm/java-6-openjdk/jre/lib/jsse.jar
+b66b4000-b66b9000 r--s 0003f000 00:14 13374768   /home/tero/.m2/repository/org/apache/maven/surefire/surefire-booter/2.6/surefire-booter-2.6.jar
+b66b9000-b66c1000 r--s 00066000 08:11 656045     /usr/share/java/gnome-java-bridge.jar
+b66c1000-b66c3000 r--s 0000f000 08:11 272571     /usr/lib/jvm/java-6-openjdk/jre/lib/ext/pulse-java.jar
+b66c3000-b66c4000 r--s 00000000 08:11 8393707    /tmp/surefirebooter2222282755866044367.jar
+b66c4000-b66cb000 r-xp 00000000 08:11 1966948    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libzip.so
+b66cb000-b66cc000 r--p 00006000 08:11 1966948    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libzip.so
+b66cc000-b66cd000 rw-p 00007000 08:11 1966948    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libzip.so
+b66cd000-b66f3000 r-xp 00000000 08:11 1966819    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libjava.so
+b66f3000-b66f4000 r--p 00025000 08:11 1966819    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libjava.so
+b66f4000-b66f6000 rw-p 00026000 08:11 1966819    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libjava.so
+b66f6000-b66fd000 r-xp 00000000 08:11 11403284   /lib/i386-linux-gnu/librt-2.13.so
+b66fd000-b66fe000 r--p 00006000 08:11 11403284   /lib/i386-linux-gnu/librt-2.13.so
+b66fe000-b66ff000 rw-p 00007000 08:11 11403284   /lib/i386-linux-gnu/librt-2.13.so
+b66ff000-b6702000 ---p 00000000 00:00 0 
+b6702000-b6750000 rw-p 00000000 00:00 0 
+b6750000-b676c000 r-xp 00000000 08:11 11405246   /lib/i386-linux-gnu/libgcc_s.so.1
+b676c000-b676d000 r--p 0001b000 08:11 11405246   /lib/i386-linux-gnu/libgcc_s.so.1
+b676d000-b676e000 rw-p 0001c000 08:11 11405246   /lib/i386-linux-gnu/libgcc_s.so.1
+b676e000-b6796000 r-xp 00000000 08:11 11403272   /lib/i386-linux-gnu/libm-2.13.so
+b6796000-b6797000 r--p 00028000 08:11 11403272   /lib/i386-linux-gnu/libm-2.13.so
+b6797000-b6798000 rw-p 00029000 08:11 11403272   /lib/i386-linux-gnu/libm-2.13.so
+b6798000-b6876000 r-xp 00000000 08:11 393242     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6876000-b6877000 ---p 000de000 08:11 393242     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6877000-b687b000 r--p 000de000 08:11 393242     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b687b000-b687c000 rw-p 000e2000 08:11 393242     /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b687c000-b6883000 rw-p 00000000 00:00 0 
+b6883000-b70a1000 r-xp 00000000 08:11 1966956    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server/libjvm.so
+b70a1000-b70e6000 r--p 0081e000 08:11 1966956    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server/libjvm.so
+b70e6000-b70f5000 rw-p 00863000 08:11 1966956    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server/libjvm.so
+b70f5000-b7511000 rw-p 00000000 00:00 0 
+b7511000-b7524000 r-xp 00000000 08:11 11406786   /lib/i386-linux-gnu/libz.so.1.2.3.4
+b7524000-b7525000 r--p 00012000 08:11 11406786   /lib/i386-linux-gnu/libz.so.1.2.3.4
+b7525000-b7526000 rw-p 00013000 08:11 11406786   /lib/i386-linux-gnu/libz.so.1.2.3.4
+b7526000-b769e000 r-xp 00000000 08:11 11403268   /lib/i386-linux-gnu/libc-2.13.so
+b769e000-b76a0000 r--p 00178000 08:11 11403268   /lib/i386-linux-gnu/libc-2.13.so
+b76a0000-b76a1000 rw-p 0017a000 08:11 11403268   /lib/i386-linux-gnu/libc-2.13.so
+b76a1000-b76a4000 rw-p 00000000 00:00 0 
+b76a4000-b76a7000 r-xp 00000000 08:11 11403271   /lib/i386-linux-gnu/libdl-2.13.so
+b76a7000-b76a8000 r--p 00002000 08:11 11403271   /lib/i386-linux-gnu/libdl-2.13.so
+b76a8000-b76a9000 rw-p 00003000 08:11 11403271   /lib/i386-linux-gnu/libdl-2.13.so
+b76a9000-b76ad000 r-xp 00000000 08:11 1966575    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/jli/libjli.so
+b76ad000-b76ae000 r--p 00003000 08:11 1966575    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/jli/libjli.so
+b76ae000-b76af000 rw-p 00004000 08:11 1966575    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/jli/libjli.so
+b76af000-b76b0000 rw-p 00000000 00:00 0 
+b76b0000-b76c7000 r-xp 00000000 08:11 11403282   /lib/i386-linux-gnu/libpthread-2.13.so
+b76c7000-b76c8000 r--p 00016000 08:11 11403282   /lib/i386-linux-gnu/libpthread-2.13.so
+b76c8000-b76c9000 rw-p 00017000 08:11 11403282   /lib/i386-linux-gnu/libpthread-2.13.so
+b76c9000-b76cb000 rw-p 00000000 00:00 0 
+b76cb000-b76cc000 r--p 002a1000 08:11 262286     /usr/lib/locale/locale-archive
+b76cc000-b76d4000 rw-s 00000000 08:11 14690279   /tmp/hsperfdata_tero/21773
+b76d4000-b76de000 r-xp 00000000 08:11 11403279   /lib/i386-linux-gnu/libnss_nis-2.13.so
+b76de000-b76df000 r--p 00009000 08:11 11403279   /lib/i386-linux-gnu/libnss_nis-2.13.so
+b76df000-b76e0000 rw-p 0000a000 08:11 11403279   /lib/i386-linux-gnu/libnss_nis-2.13.so
+b76e0000-b76e1000 rw-p 00000000 00:00 0 
+b76e1000-b76e2000 r--p 00000000 00:00 0 
+b76e2000-b76ed000 r-xp 00000000 08:11 1966943    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+b76ed000-b76ee000 ---p 0000b000 08:11 1966943    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+b76ee000-b76ef000 r--p 0000b000 08:11 1966943    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+b76ef000-b76f0000 rw-p 0000c000 08:11 1966943    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/libverify.so
+b76f0000-b76f2000 rw-p 00000000 00:00 0 
+b76f2000-b76f3000 r-xp 00000000 00:00 0          [vdso]
+b76f3000-b7711000 r-xp 00000000 08:11 11403265   /lib/i386-linux-gnu/ld-2.13.so
+b7711000-b7712000 r--p 0001d000 08:11 11403265   /lib/i386-linux-gnu/ld-2.13.so
+b7712000-b7713000 rw-p 0001e000 08:11 11403265   /lib/i386-linux-gnu/ld-2.13.so
+bfced000-bfd22000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+java_command: /tmp/surefirebooter2222282755866044367.jar /tmp/surefire2170072721718850488tmp /tmp/surefire8551102094781846872tmp
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+USERNAME=tero
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk/jre/lib/i386:/usr/lib/jvm/java-6-openjdk/jre/../lib/i386::../lib/:../native_lib/linux/target/
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x66a530], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x66a530], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x52e2c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x52e2c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x52e2c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x52e2c0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x52e150], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5311f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5311f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5311f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5311f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 11.10 (oneiric)
+uname:Linux 3.0.0-17-generic-pae #30-Ubuntu SMP Thu Mar 8 17:53:35 UTC 2012 i686
+libc:glibc 2.13 NPTL 2.13 
+rlimit: STACK 8192k, CORE 0k, NPROC 63378, NOFILE 4096, AS infinity
+load average:1.33 0.94 0.96
+
+/proc/meminfo:
+MemTotal:        8133200 kB
+MemFree:          559768 kB
+Buffers:          271392 kB
+Cached:          4728296 kB
+SwapCached:          184 kB
+Active:          4691552 kB
+Inactive:        2593836 kB
+Active(anon):    2036016 kB
+Inactive(anon):   559396 kB
+Active(file):    2655536 kB
+Inactive(file):  2034440 kB
+Unevictable:          92 kB
+Mlocked:              92 kB
+HighTotal:       7340228 kB
+HighFree:         300800 kB
+LowTotal:         792972 kB
+LowFree:          258968 kB
+SwapTotal:       6141948 kB
+SwapFree:        6138564 kB
+Dirty:              7080 kB
+Writeback:             0 kB
+AnonPages:       2285904 kB
+Mapped:           162988 kB
+Shmem:            309600 kB
+Slab:             227044 kB
+SReclaimable:     185328 kB
+SUnreclaim:        41716 kB
+KernelStack:        4384 kB
+PageTables:        19804 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    10208548 kB
+Committed_AS:    6316928 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       35484 kB
+VmallocChunk:      38588 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       12280 kB
+DirectMap2M:      901120 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 8133200k(559768k free), swap 6141948k(6138564k free)
+
+vm_info: OpenJDK Server VM (20.0-b11) for linux-x86 JRE (1.6.0_23-b23), built on Feb 23 2012 06:26:43 by "buildd" with gcc 4.6.1
+
+time: Sun Apr 15 00:35:15 2012
+elapsed time: 0 seconds
+

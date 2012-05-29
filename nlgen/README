@@ -1,0 +1,107 @@
+Brief Introduction of NLGen
+
+The initial version of NLGen code can be divided into two parts:
+
+1. Building the Corpus
+
+This part is used to build the parsed corpuses which contain the semantic relations of several sentences parsed by RelEx, and the syntax relations (links) parsed by Link Parser.
+
+The corpuses are stored in two XML files, one of which is for RelEx semantic relations, and the other is for syntactic relations (links).
+
+In order to run this part, the libs which "Link Parser" and "RelEx" need should be included:
+
+--linkgrammar-4.5.8.jar
+--relex-1.1.1.jar
+--jdom.jar
+--jwnl.jar
+--commons-logging.jar
+
+The main class of this part is "com.novamente.nlgen.parse.CorpusParsers". Here gives the usage of the command line:
+
+java -cp <libs> com.novamente.nlgen.parse.CorpusParsers -fileIn (inputFileName) -fileOut (inputFileName) -func Semantic/Syntax [-enCoding UTF-8]
+
+Options:
+-func                         Functions which are used to parse ParserCorpus (Required: 'Semantic' or 'Syntax') [required]
+-fileOut                      The path and name of the file which will be generated with relations [required]
+-enCoding                     The encoding of the XML file which will be generated (Default: UTF-8)
+-fileIn                       The path and name of the file which contains several sentences [required]
+-h                            Print help message
+
+Note: The "link-grammar-4.5.8.jar" file which is loaded in this project should define the correct path of "liblink-grammar-java.so". The default path is "/usr/local/lib/liblink-grammar-java.so".
+
+1.1. WordNet
+- RelEx can use WordNet to improve the overall performance of the system while parsing sentences.
+  Although it is not required, it is recommended the usage of WordNet. (** the following content was copied from the relex README file):
+  Download, unpack and install WordNet 3.0.  The install directory then needs to be specified in config/file_properties.xml,
+  with the name="dictionary_path" property in this file. 
+- if you have installed WordNet from the debian package repository, don't forget to install wordnet-sense-index
+
+2. Generating the sentence
+
+This part is used to search the most similar sentences from the corpus by matching the sentences which have the similar RelEx relationships with the RelEx relationships of input. 
+
+The main class of this part is "com.novamente.nlgen.gen.NLGenerator". Here gives a example to show the usage of the command line:
+
+java -cp <libs> com.novamente.nlgen.gen.NLGenerator -fileIn ./data/testData/1~ -relExRelationsFilePath ./dist/semantic-rel-corpus.xml -linksFilePath ./dist/syntactic-rel-corpus.xml 
+
+example:
+java -cp ./lib/jdom.jar:./bin com.novamente.nlgen.gen.NLGenerator -relExRelationsFilePath ./dist/embodiment.corpus.semantic.xml -linksFilePath ./dist/embodiment.corpus.syntax.xml -fileIn ./data/TestData/embodiment/brown.txt
+
+Options:
+
+-linksFilePath                The filename and path of the XML file which contains the links of the corpus... [required]
+-enCoding                     The encoding of the input file which contails the relEx relations of a sentence...(Default: GBK)
+-fileIn                       Input File for ParserCorpus (Required) [required]
+-useMySql                     true or false (not ready at the moment)
+-relExRelationsFilePath       The filename and path of the XML file which contains the relEx relations of the corpus... [required]
+-h                            Print help message
+
+The input file "./data/TestData/1~ " contains the relations:
+
+"
+pos(., punctuation)
+noun_number(Xiamen_University, singular)
+pos(Xiamen_University, noun)
+DEFINITE-FLAG(Xiamen_University, T)
+pos(at, prep)
+_subj(study, I)
+at(study, Xiamen_University)
+tense(study, present)
+pos(study, verb)
+gender(I, person)
+noun_number(I, singular)
+pos(I, noun)
+PRONOUN-FLAG(I, T)
+DEFINITE-FLAG(I, T)
+"
+
+Then the result is:
+
+"
+found 2 similar sentences...
+ I study at Xiamen University .  
+ I study at Xiamen University .  
+"
+
+It generates two same sentences because this sentence has two parses parsed by Link Parser. 
+
+Note: The corpus we use at the moment is very small, so there are many sentences which cannot match the similar sentence from the corpus.
+
+
+BUILDING AND RUNNING
+
+In order to complile NLGen just run "ant". It will start the execution of the target "dist", defined into build.xml. At the end of this process, a .jar file will be generated at dist/nlgen.jar. Now you can use nlgen as a library at your project.
+
+If you wish to run NLGen as a server you must to run "ant server". It will make NLgen to bind at a default port (5555). So, you can send requests (in Relex format) to receive a complete sentence. Please, notice that NLGen must use two parsed files(Semantic & Syntax) extracted from a given corpus file. By default, the server will generate these input files from the data/embodiment.corpus file.
+
+There are some variables that you can override to execute the NLGen server in a customized way:
+server.port = The port in which the NLGen server will listen to
+corpus.file = The corpus file used by the server to run the service
+data.dir = The path where ant will look for the given corpus file (corpus.file)
+
+.i.e.
+The default corpus file is data/embodiment.corpus. If you wish to run the NLgen server with the data/trivial.corpus, but using the port 6655, do:
+$ ant server -Dcorpus.file=trivial.corpus -Dserver.port=6655
+
+
+

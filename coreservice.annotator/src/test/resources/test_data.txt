@@ -1,0 +1,18 @@
+121         User has started using Lotus Notes on his his Vista PC this week and now he can't use Lotus Notes on his XP PC any moreHe wants to restore Lotus Notes directory to status of 13/2 so he can use it on his XP PC. Please assist user
+221         Mapping of shared drive W:\ fails, user is using \\lalala9061105.lalaburg.com\NetLogon\secl.bat and has restarted PC, but the problem persists
+321         C33NG - User's Catia V5 does not work after C33NG update.
+421         User is also missing IE8.
+521         User is missing Internet Explorer 8!PLEASE NOTE!, the user reports that it's very important that this is solved BEFORE or AFTER 19th-20th January, since she's doing some imporant work business at the specified date!
+621         installed, teamcenter and cnext5, seems to work.Seems to CatiaV5 aren?t installed correcly.errormessenge: a program cannot display messge. the program need a promission or information to complete a task.It?s a Vista-PC.
+721         Flash Player - User reports problems with his current version of flash player.User reports that he has two computers, one with a working (and newer) flash player that he uses to work with and the other computer seems to have a older flash version which does not work properly.Could you take a look at this and see if there is any flash update that can (re)sent to his computer?
+821         User is uanble to start KDP web, please reinstall Java.
+921         Hi NNN Admin,Please connect following groups to the shared disk listed below and configure security permissions.
+1021      PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc.
+1121      User cannot access external sites.Using CCC proxy.
+1221      Outlook Web Access (CCC) - 403 - Forbidden: Access is denied'C:\WINDOWS\system32\LALA\Cache\A0000B72.1.System\install.vbs'
+1321      Add new alias Host name on host that alias is wanted to: hrportal.lalala.biz IP adress on host that alias is wanted to: 322.223.333.22 Wanted Alias:    webadviser.lalala.net
+1421      Failed LOT OrderReciever: lauser9
+1521      User needs document portal uppdate
+1621      user is not able to use the wirelsess function on his laptop.
+1721      User cannot access external sites, please change proxy settings.
+1821      User is unable to access external pages when connected via VPN, IE just stops responding.Confirmed proxy settings, which seemed correct and cleared cookies/temp internet files, but problem persists.Also tried to check "automatically detect settings", but it didn't solve the issue.Can you please assist?

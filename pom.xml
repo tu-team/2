@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>tu</groupId>
+    <artifactId>cognition</artifactId>
+    <version>${tu.version}</version>
+    <name>Thinking understanding main component.</name>
+    <packaging>pom</packaging>
+    <inceptionYear>2012</inceptionYear>
+
+    <properties>
+        <!-- dependency versions -->
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.version>2.9.1</scala.version>
+        <scala.plugin.version>2.9.1</scala.plugin.version>
+        <junit.version>4.8.1</junit.version>
+        <specs.version>1.6.9</specs.version>
+        <scalatest.version>1.7.2</scalatest.version>
+        <slf4j.version>1.6.4</slf4j.version>
+        <!-- version -->
+        <tu.version>1.0</tu.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-Tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+        <repository>
+            <id>opennlp</id>
+            <name>OpenNLP Maven Repository</name>
+            <url>http://opennlp.sourceforge.net/maven2/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>scala-tools.org</id>
+            <name>Scala-Tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <!-- modules>
+        <module>lib</module>
+  </modules -->
+    <dependencies><!--
+        <dependency>
+            <groupId>com.jteigen.scalatest</groupId>
+            <artifactId>test</artifactId>
+            <version>1.0</version>
+        </dependency> -->
+    </dependencies>
+
+    <modules>
+        <module>lib</module>
+        <module>clientagent</module>
+        <module>clientagent.interpreter</module>
+        <module>communication.webservice</module>
+        <module>coreservice.action.critic</module>
+        <module>coreservice.action.selector</module>
+        <module>coreservice.action.way2think</module>
+        <module>coreservice.annotator</module>
+        <module>coreservice.reasoner</module>
+        <module>coreservice.thinkinglifecycle</module>
+        <module>dataservice.knowledgebaseserver</module>
+        <module>messagebus</module>
+        <module>model.knowledge</module>
+        <module>model.webservice</module>
+        <!-- to examine only -->
+        <module>relex</module>
+        <module>utilities</module>
+        <module>spellcorrector</module>
+    </modules>
+</project>

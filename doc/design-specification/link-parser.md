@@ -1,0 +1,1 @@
+# Link parser design specification.

@@ -1,0 +1,55 @@
+// if not all the expected modules processed have to have penalty
+//
+** first rule
+<Customer --> module>.
+<(*, genotype, <(*, Customer, 1) --> addField>) --> contains>.
+1
+<(&&, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains_false>, <#module --> module>) ==> (--, <Self --> ok>)>.
+<(&&, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains>, <#module --> module>) ==> <Self --> ok>>.
+156
+ OUT: <Self --> ok>. %1.00;0.73% {156 : 4;2;1}
+
+** seckond rule
+<CreateCustomer --> module>.
+<(*, genotype, <(*, CreateCustomer, 2) --> addField>) --> contains>.
+1
+<(&&, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains_false>, <#module --> module>) ==> (--, <Self --> ok>)>.
+<(&&, <#module --> module>, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains>) ==> <Self --> ok>>.
+156
+ OUT: <Self --> ok>. %1.00;0.73% {156 : 4;2;1}
+
+** third rule
+<ListCustomersServlet --> module>.
+<(*, genotype, <(*, ListCustomersServlet, 3) --> removeField>) --> contains>.
+1
+<(&&, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains_false>, <#module --> module>) ==> (--, <Self --> ok>)>.
+<(&&, <#module --> module>, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains>) ==> <Self --> ok>>.
+156
+ OUT: <Self --> ok>. %1.00;0.73% {156 : 4;2;1}
+
+** fourth rule
+<CreateCustomerServlet --> module>.
+<(*, genotype, <(*, CreateCustomerServlet, 4) --> addField>) --> contains_false>.
+1
+<(&&, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains_false>, <#module --> module>) ==> (--, <Self --> ok>)>.
+<(&&, <#module --> module>, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains>) ==> <Self --> ok>>.
+296
+ OUT: (--,<Self --> ok>). %1.00;0.73% {296 : 3;1;2}
+
+** fifth rule
+<ListCustomers --> module>.
+<(*, genotype, <(*, ListCustomers, 5) --> addField>) --> contains>.
+1
+<(&&, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains_false>, <#module --> module>) ==> (--, <Self --> ok>)>.
+<(&&, <#module --> module>, <(*, genotype, <(*, #module, #number) --> #operation>) --> contains>) ==> <Self --> ok>>.
+156
+ OUT: <Self --> ok>. %1.00;0.73% {156 : 4;2;1}
+
+** combine results
+ <Self --> ok>.
+ <Self --> ok>.
+ <Self --> ok>.
+ (--,<Self --> ok>).
+ <Self --> ok>.
+20
+ OUT: <Self --> ok>. %0.80;0.98% {20 : 1;4;3;2;5}

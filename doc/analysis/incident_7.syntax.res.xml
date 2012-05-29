@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<syntax comment="syntactic relationships of each sentence from the corpus">
+  <sentence ID="0" senString="User had received wrong application .">
+    <SyntaxRelations index="0">
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="had" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="2" rightLoc="3" leftWord="had" rightWord="received" leftPOS="v-d" rightPOS="v-d" label="PP" leftLabel="PP" rightLabel="PP" />
+      <Links leftLoc="3" rightLoc="5" leftWord="received" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="Ou" leftLabel="O" rightLabel="Ou" />
+      <Links leftLoc="4" rightLoc="5" leftWord="wrong" rightWord="application" leftPOS="a" rightPOS="n-u" label="A" leftLabel="A" rightLabel="A" />
+      <Links leftLoc="6" rightLoc="7" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="1">
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="had" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="2" rightLoc="3" leftWord="had" rightWord="received" leftPOS="v-d" rightPOS="v-d" label="PP" leftLabel="PP" rightLabel="PP" />
+      <Links leftLoc="3" rightLoc="5" leftWord="received" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="Ou" leftLabel="O" rightLabel="Ou" />
+      <Links leftLoc="4" rightLoc="5" leftWord="wrong" rightWord="application" leftPOS="n" rightPOS="n-u" label="AN" leftLabel="AN" rightLabel="AN" />
+      <Links leftLoc="6" rightLoc="7" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="2">
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="had" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="2" rightLoc="5" leftWord="had" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="Ou" leftLabel="O" rightLabel="Ou" />
+      <Links leftLoc="4" rightLoc="5" leftWord="wrong" rightWord="application" leftPOS="n" rightPOS="n-u" label="AN" leftLabel="AN" rightLabel="AN" />
+      <Links leftLoc="3" rightLoc="4" leftWord="received" rightWord="wrong" leftPOS="v-d" rightPOS="n" label="A" leftLabel="A" rightLabel="A" />
+      <Links leftLoc="6" rightLoc="7" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="3">
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="had" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="2" rightLoc="5" leftWord="had" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="Ou" leftLabel="O" rightLabel="Ou" />
+      <Links leftLoc="3" rightLoc="5" leftWord="received" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="A" leftLabel="A" rightLabel="A" />
+      <Links leftLoc="4" rightLoc="5" leftWord="wrong" rightWord="application" leftPOS="n" rightPOS="n-u" label="AN" leftLabel="AN" rightLabel="AN" />
+      <Links leftLoc="6" rightLoc="7" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="4">
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="had" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="2" rightLoc="5" leftWord="had" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="Ou" leftLabel="O" rightLabel="Ou" />
+      <Links leftLoc="3" rightLoc="5" leftWord="received" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="A" leftLabel="A" rightLabel="A" />
+      <Links leftLoc="4" rightLoc="5" leftWord="wrong" rightWord="application" leftPOS="a" rightPOS="n-u" label="A" leftLabel="A" rightLabel="A" />
+      <Links leftLoc="6" rightLoc="7" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="5">
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="had" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="2" rightLoc="3" leftWord="had" rightWord="received" leftPOS="v-d" rightPOS="v-d" label="PP" leftLabel="PP" rightLabel="PP" />
+      <Links leftLoc="3" rightLoc="5" leftWord="received" rightWord="application" leftPOS="v-d" rightPOS="n-u" label="Oun" leftLabel="O*n" rightLabel="Ou" />
+      <Links leftLoc="3" rightLoc="4" leftWord="received" rightWord="wrong" leftPOS="v-d" rightPOS="e" label="MVa" leftLabel="MV" rightLabel="MVa" />
+      <Links leftLoc="6" rightLoc="7" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+  </sentence>
+  <sentence ID="1" senString="User has ordered Wordfinder Business Economical .">
+    <SyntaxRelations index="0">
+      <Links leftLoc="0" rightLoc="7" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="has" leftPOS="NO" rightPOS="v" label="Ss" leftLabel="Ss" rightLabel="Ss" />
+      <Links leftLoc="2" rightLoc="3" leftWord="has" rightWord="ordered" leftPOS="v" rightPOS="v" label="PP" leftLabel="PP" rightLabel="PP" />
+      <Links leftLoc="3" rightLoc="6" leftWord="ordered" rightWord="Economical" leftPOS="v" rightPOS="NO" label="Os" leftLabel="O" rightLabel="Os" />
+      <Links leftLoc="5" rightLoc="6" leftWord="Business" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="4" rightLoc="5" leftWord="Wordfinder" rightWord="Business" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="7" rightLoc="8" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="1">
+      <Links leftLoc="0" rightLoc="7" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="User" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="User" rightWord="has" leftPOS="NO" rightPOS="v" label="Ss" leftLabel="Ss" rightLabel="Ss" />
+      <Links leftLoc="2" rightLoc="6" leftWord="has" rightWord="Economical" leftPOS="v" rightPOS="NO" label="Os" leftLabel="O" rightLabel="Os" />
+      <Links leftLoc="3" rightLoc="6" leftWord="ordered" rightWord="Economical" leftPOS="v" rightPOS="NO" label="A" leftLabel="A" rightLabel="A" />
+      <Links leftLoc="5" rightLoc="6" leftWord="Business" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="4" rightLoc="5" leftWord="Wordfinder" rightWord="Business" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="7" rightLoc="8" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+  </sentence>
+  <sentence ID="2" senString="However she received wrong version, she received Wordfinder Tehcnical instead of Business Economical .">
+    <SyntaxRelations index="0">
+      <Links leftLoc="0" rightLoc="15" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="7" leftWord="LEFT-WALL" rightWord="she" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="7" leftWord="however" rightWord="she" leftPOS="c" rightPOS="NO" label="CO" leftLabel="CO" rightLabel="CO" />
+      <Links leftLoc="1" rightLoc="6" leftWord="however" rightWord="," leftPOS="c" rightPOS="NO" label="Xc" leftLabel="Xc" rightLabel="Xc" />
+      <Links leftLoc="1" rightLoc="2" leftWord="however" rightWord="she" leftPOS="c" rightPOS="NO" label="Cs" leftLabel="Cs" rightLabel="C" />
+      <Links leftLoc="2" rightLoc="3" leftWord="she" rightWord="received" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="3" rightLoc="4" leftWord="received" rightWord="wrong" leftPOS="v-d" rightPOS="e" label="MVa" leftLabel="MV" rightLabel="MVa" />
+      <Links leftLoc="7" rightLoc="8" leftWord="she" rightWord="received" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="8" rightLoc="12" leftWord="received" rightWord="of" leftPOS="v-d" rightPOS="NO" label="MVp" leftLabel="MV" rightLabel="MVp" />
+      <Links leftLoc="8" rightLoc="10" leftWord="received" rightWord="Tehcnical" leftPOS="v-d" rightPOS="NO" label="Os" leftLabel="O" rightLabel="Os" />
+      <Links leftLoc="9" rightLoc="10" leftWord="Wordfinder" rightWord="Tehcnical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="11" rightLoc="12" leftWord="instead" rightWord="of" leftPOS="NO" rightPOS="NO" label="IDBCA" leftLabel="IDBCA" rightLabel="IDBCA" />
+      <Links leftLoc="12" rightLoc="14" leftWord="of" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="Js" leftLabel="J" rightLabel="Js" />
+      <Links leftLoc="13" rightLoc="14" leftWord="Business" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="15" rightLoc="16" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="1">
+      <Links leftLoc="0" rightLoc="15" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="6" leftWord="LEFT-WALL" rightWord="," leftPOS="NO" rightPOS="NO" label="Xx" leftLabel="Xx" rightLabel="Xx" />
+      <Links leftLoc="0" rightLoc="2" leftWord="LEFT-WALL" rightWord="she" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="2" leftWord="however" rightWord="she" leftPOS="e" rightPOS="NO" label="CO" leftLabel="CO" rightLabel="CO" />
+      <Links leftLoc="2" rightLoc="3" leftWord="she" rightWord="received" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="3" rightLoc="4" leftWord="received" rightWord="wrong" leftPOS="v-d" rightPOS="e" label="MVa" leftLabel="MV" rightLabel="MVa" />
+      <Links leftLoc="6" rightLoc="7" leftWord="," rightWord="she" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="W" rightLabel="Wd" />
+      <Links leftLoc="7" rightLoc="8" leftWord="she" rightWord="received" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="8" rightLoc="12" leftWord="received" rightWord="of" leftPOS="v-d" rightPOS="NO" label="MVp" leftLabel="MV" rightLabel="MVp" />
+      <Links leftLoc="8" rightLoc="10" leftWord="received" rightWord="Tehcnical" leftPOS="v-d" rightPOS="NO" label="Os" leftLabel="O" rightLabel="Os" />
+      <Links leftLoc="9" rightLoc="10" leftWord="Wordfinder" rightWord="Tehcnical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="11" rightLoc="12" leftWord="instead" rightWord="of" leftPOS="NO" rightPOS="NO" label="IDBCA" leftLabel="IDBCA" rightLabel="IDBCA" />
+      <Links leftLoc="12" rightLoc="14" leftWord="of" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="Js" leftLabel="J" rightLabel="Js" />
+      <Links leftLoc="13" rightLoc="14" leftWord="Business" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="15" rightLoc="16" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="2">
+      <Links leftLoc="0" rightLoc="15" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="7" leftWord="LEFT-WALL" rightWord="she" leftPOS="NO" rightPOS="NO" label="Wd" leftLabel="Wd" rightLabel="Wd" />
+      <Links leftLoc="1" rightLoc="7" leftWord="however" rightWord="she" leftPOS="c" rightPOS="NO" label="CO" leftLabel="CO" rightLabel="CO" />
+      <Links leftLoc="1" rightLoc="2" leftWord="however" rightWord="she" leftPOS="c" rightPOS="NO" label="Cs" leftLabel="Cs" rightLabel="C" />
+      <Links leftLoc="2" rightLoc="3" leftWord="she" rightWord="received" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="4" rightLoc="7" leftWord="wrong" rightWord="she" leftPOS="a" rightPOS="NO" label="COp" leftLabel="COp" rightLabel="CO" />
+      <Links leftLoc="4" rightLoc="6" leftWord="wrong" rightWord="," leftPOS="a" rightPOS="NO" label="Xc" leftLabel="Xc" rightLabel="Xc" />
+      <Links leftLoc="7" rightLoc="8" leftWord="she" rightWord="received" leftPOS="NO" rightPOS="v-d" label="Ss" leftLabel="Ss" rightLabel="S" />
+      <Links leftLoc="8" rightLoc="12" leftWord="received" rightWord="of" leftPOS="v-d" rightPOS="NO" label="MVp" leftLabel="MV" rightLabel="MVp" />
+      <Links leftLoc="8" rightLoc="10" leftWord="received" rightWord="Tehcnical" leftPOS="v-d" rightPOS="NO" label="Os" leftLabel="O" rightLabel="Os" />
+      <Links leftLoc="9" rightLoc="10" leftWord="Wordfinder" rightWord="Tehcnical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="11" rightLoc="12" leftWord="instead" rightWord="of" leftPOS="NO" rightPOS="NO" label="IDBCA" leftLabel="IDBCA" rightLabel="IDBCA" />
+      <Links leftLoc="12" rightLoc="14" leftWord="of" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="Js" leftLabel="J" rightLabel="Js" />
+      <Links leftLoc="13" rightLoc="14" leftWord="Business" rightWord="Economical" leftPOS="NO" rightPOS="NO" label="G" leftLabel="G" rightLabel="G" />
+      <Links leftLoc="15" rightLoc="16" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+  </sentence>
+  <sentence ID="3" senString="Please assist .">
+    <SyntaxRelations index="0">
+      <Links leftLoc="0" rightLoc="3" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="2" leftWord="LEFT-WALL" rightWord="assist" leftPOS="NO" rightPOS="v" label="Wi" leftLabel="Wi" rightLabel="Wi" />
+      <Links leftLoc="1" rightLoc="2" leftWord="please" rightWord="assist" leftPOS="e" rightPOS="v" label="Em" leftLabel="Em" rightLabel="E" />
+      <Links leftLoc="3" rightLoc="4" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+    <SyntaxRelations index="1">
+      <Links leftLoc="0" rightLoc="3" leftWord="LEFT-WALL" rightWord="." leftPOS="NO" rightPOS="NO" label="Xp" leftLabel="Xp" rightLabel="Xp" />
+      <Links leftLoc="0" rightLoc="2" leftWord="LEFT-WALL" rightWord="assist" leftPOS="NO" rightPOS="v" label="Wi" leftLabel="Wi" rightLabel="Wi" />
+      <Links leftLoc="1" rightLoc="2" leftWord="please" rightWord="assist" leftPOS="e" rightPOS="v" label="CO" leftLabel="CO" rightLabel="CO" />
+      <Links leftLoc="3" rightLoc="4" leftWord="." rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+    </SyntaxRelations>
+  </sentence>
+  <sentence ID="4" senString="END">
+    <SyntaxRelations index="0">
+      <Links leftLoc="0" rightLoc="2" leftWord="LEFT-WALL" rightWord="RIGHT-WALL" leftPOS="NO" rightPOS="NO" label="RW" leftLabel="RW" rightLabel="RW" />
+      <Links leftLoc="0" rightLoc="1" leftWord="LEFT-WALL" rightWord="END[?]" leftPOS="NO" rightPOS="v" label="Wi" leftLabel="Wi" rightLabel="Wi" />
+    </SyntaxRelations>
+  </sentence>
+</syntax>
+
