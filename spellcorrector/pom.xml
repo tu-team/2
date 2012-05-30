@@ -7,7 +7,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spellcorrector</artifactId>
+    <artifactId>coreservice.spellcorrector</artifactId>
 
     <repositories>
         <repository>

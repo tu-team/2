@@ -1,4 +1,6 @@
-package tu
+package tu.coreservice.spellcorrector
+
+import tu.coreservice.utilities.Configurator
 
 /**
  * User: toschev alex

@@ -1,4 +1,4 @@
-package tu
+package tu.coreservice.utilities
 
 /**
  * @author toscheva

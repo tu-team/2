@@ -1,4 +1,4 @@
-package tu
+package tu.coreservice.utilities
 
 /**
  * @author toschev alex
@@ -18,7 +18,7 @@ object Configurator {
   = {
     var res = new ProxyDescription
     res.proxyHost="localhost"
-    res.proxyPort=3128
+    res.proxyPort=8888
     res.useProxy = true
     return res
   }

@@ -1,6 +1,7 @@
 import org.junit._
 import Assert._
-import tu.SpellCorrectorFactory
+import tu.coreservice.spellcorrector.SpellCorrectorAfterTheDeadline
+
 
 @Test
 class AppTest {
@@ -8,11 +9,8 @@ class AppTest {
   @Test
   def testCorrector()={
     //Hello world test
-    var testString="Hllo wrold"
-    var inst = SpellCorrectorFactory.construct();
-    var corrected=inst.correctSentence(testString);
-
-    assertTrue(corrected=="Hello world")
+    var corrector = new SpellCorrectorAfterTheDeadline
+    corrector.sendRequest("Hllo wrold")
 
 
   }

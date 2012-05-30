@@ -1,6 +1,7 @@
-package tu
+package tu.coreservice.spellcorrector
 
 import org.xeustechnologies.googleapi.spelling.{SpellRequest, Language, SpellChecker, Configuration}
+import tu.coreservice.utilities.Configurator
 
 
 /**
