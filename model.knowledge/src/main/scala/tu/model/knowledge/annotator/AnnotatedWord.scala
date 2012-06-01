@@ -10,7 +10,13 @@ import tu.model.knowledge.domain.Concept
  *         time: 11:32 PM
  */
 
-case class AnnotatedWord(_concepts: List[Concept],_value: String, _uri: KnowledgeURI, _probability: Probability)
-  extends KnowledgeString(_value, _uri, _probability){
+case class AnnotatedWord(_concepts: List[Concept], _value: String, _uri: KnowledgeURI, _probability: Probability)
+  extends KnowledgeString(_value, _uri, _probability) {
+
+  def this(_concepts: List[Concept], _value: String, _uri: KnowledgeURI) {
+    this(_concepts, _value, _uri, new Probability)
+  }
+
+  def concepts = _concepts
 
 }
