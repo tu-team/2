@@ -9,8 +9,7 @@
     </parent>
     <groupId>tu</groupId>
     <artifactId>coreservice.action.way2think</artifactId>
-    <version>${scala.version}</version>
-    <name>${project.artifactId}</name>
+
     <description>Way2Think component of Cognition component.</description>
     <inceptionYear>2010</inceptionYear>
     <licenses>

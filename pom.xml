@@ -74,7 +74,8 @@
         <module>model.webservice</module>
         <!-- to examine only -->
         <module>relex</module>
-        <module>utilities</module>
-        <module>spellcorrector</module>
+        <module>common.utilities</module>
+        <module>coreservice.autocorrector</module>
+        <module>coreservice.splitter</module>
     </modules>
 </project>
