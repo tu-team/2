@@ -1,7 +1,7 @@
 package tu.model.knowledge.howto
 
 import tu.model.knowledge.{Probability, KnowledgeURI}
-import tu.model.knowledge.narrative.{Rule, Narrative}
+import tu.model.knowledge.narrative.{Rule, RulesNarrative}
 
 /**
  * @author max
@@ -10,7 +10,7 @@ import tu.model.knowledge.narrative.{Rule, Narrative}
  */
 
 class Solution(_rules: List[Rule[HowTo]], _uri: KnowledgeURI, _probability: Probability)
-  extends Narrative[HowTo](_rules, _uri, _probability){
+  extends RulesNarrative[HowTo](_rules, _uri, _probability){
 
   def this(_rules: List[Rule[HowTo]], _uri: KnowledgeURI) {
     this(_rules: List[Rule[HowTo]], _uri: KnowledgeURI, new Probability)

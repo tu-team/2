@@ -12,7 +12,7 @@ import org.scalatest.FunSuite
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkNode, SemanticNetworkLink}
 import tu.model.knowledge.primitive.{KnowledgeString, KnowledgeBoolean}
 import tu.model.knowledge.{Probability, KnowledgeURI, Expression}
-import tu.model.knowledge.narrative.{Narrative, Rule}
+import tu.model.knowledge.narrative.{RulesNarrative, Rule}
 
 @RunWith(classOf[JUnitRunner])
 class NarrativeTest extends FunSuite {
@@ -35,8 +35,8 @@ class NarrativeTest extends FunSuite {
     assert(true)
   }
 
-  test("Narrative sohuld store rules"){
-    val n = new Narrative(List(r), uri)
+  test("RulesNarrative sohuld store rules"){
+    val n = new RulesNarrative(List(r), uri)
     expect(n.rules)(List(r))
   }
 
