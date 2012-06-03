@@ -9,14 +9,14 @@ import java.net.URI
 
 class KnowledgeURI(_namespace: String, _name: String, _revision: String) {
 
-  private val DELIMITER = "."
-  private val REVISION_DELIMITER = "/"
-  private val UID_DELIMITER = "#"
+
   private var _uRI: Option[URI] = None
   private var _uID: String = ""
 
   def namespace(): String = _namespace
+
   def name(): String = _name
+
   def revision(): String = _revision
 
   def uid(): String = _uID
@@ -30,7 +30,7 @@ class KnowledgeURI(_namespace: String, _name: String, _revision: String) {
     _uRI match {
       case None => {
         if (namespace.size > 0 && name.size > 0 && revision.size > 0 && _uID.size > 0) {
-          this._uRI = Some(new URI(namespace + DELIMITER + name + REVISION_DELIMITER + revision + UID_DELIMITER + _uID))
+          this._uRI = Some(new URI(namespace + Constant.DELIMITER + name + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
           this._uRI
         } else {
           None
@@ -45,6 +45,14 @@ class KnowledgeURI(_namespace: String, _name: String, _revision: String) {
   def uri_=(in: URI): KnowledgeURI = {
     this._uRI = Some(in)
     this
+  }
+
+}
+
+object KnowledgeURI {
+
+  def apply(name: String): KnowledgeURI = {
+    new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
   }
 
 }

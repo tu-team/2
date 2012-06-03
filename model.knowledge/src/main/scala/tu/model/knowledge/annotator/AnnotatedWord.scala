@@ -20,3 +20,11 @@ case class AnnotatedWord(_concepts: List[Concept], _value: String, _uri: Knowled
   def concepts = _concepts
 
 }
+
+object AnnotatedWord {
+
+  def apply(name: String):AnnotatedWord = {
+    val uri: KnowledgeURI = KnowledgeURI(name)
+    new AnnotatedWord(List[Concept](), name, uri)
+  }
+}

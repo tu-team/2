@@ -2,6 +2,7 @@ package tu.model.knowledge.domain
 
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
 import tu.model.knowledge.{KLine, KnowledgeURI, Probability, Resource}
+import tu.model.knowledge.primitive.KnowledgeString
 
 /**
  * @author max
@@ -19,4 +20,11 @@ case class Concept(_generalisations: KLine, _specialisations: KLine, _words: KLi
       _links: List[SemanticNetworkLink], _uri: KnowledgeURI, new Probability())
   }
 
+}
+
+object Concept {
+
+  def apply(words: KLine, content: String): Concept = {
+    new Concept(KLine("generalisation"), KLine("specialisation"), words, KnowledgeString(content, content), List[SemanticNetworkLink](), KnowledgeURI(content + "Concept"))
+  }
 }

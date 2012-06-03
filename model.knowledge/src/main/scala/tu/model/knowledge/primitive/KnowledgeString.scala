@@ -20,3 +20,11 @@ class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Probabil
   override def toString = _value
 
 }
+
+object KnowledgeString {
+
+  def apply(content: String, name: String): KnowledgeString = {
+    new KnowledgeString(content, KnowledgeURI(name))
+  }
+
+}
