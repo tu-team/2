@@ -13,6 +13,8 @@ Domain model of Incident description, partly or completely is created.
 
 [SemanticNetwork](knowledge.md) with [KLine-s](knowledge.md) of Incident description.
 
+![Simulation model Class](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/SimulationClass.png)
+
 ## Output
 
 Domain SemanticNetwork that models current situation from Incident description.
