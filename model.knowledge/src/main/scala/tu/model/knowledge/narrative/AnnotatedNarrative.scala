@@ -1,6 +1,7 @@
 package tu.model.knowledge.narrative
 
-import tu.model.knowledge.Resource
+import tu.model.knowledge.annotator.AnnotatedWord
+import tu.model.knowledge.{KnowledgeURI, Resource}
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,6 +11,7 @@ import tu.model.knowledge.Resource
  *
  */
 
-case class AnnotatedNarrative(var _words:List[Word]) extends Narrative() {
+
+case class AnnotatedNarrative(var _words:List[AnnotatedWord],__uri:KnowledgeURI) extends Narrative(_words,__uri) {
 
 }

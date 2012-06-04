@@ -27,15 +27,14 @@ class SemanticNetworkTest extends FunSuite {
   val destination: SemanticNetworkNode[Resource] = new SemanticNetworkNode(new KnowledgeString(destinationContent, uri), List[SemanticNetworkLink](), uri)
 
   test("test Ok") {
-    assert(true)
+    assert(condition = true)
   }
 
   test("SemanticNetwork should store several root nodes") {
-    val sn = new SemanticNetwork(List[SemanticNetworkNode[Resource]](), uri)
-    sn.rootNodes = List[SemanticNetworkNode[Resource]](source)
-    expect(sn.rootNodes(0).content.toString)(sourceContent)
-    sn.rootNodes = List[SemanticNetworkNode[Resource]](source, destination)
-    expect(sn.rootNodes(1).content.toString)(destinationContent)
+    val sn0 = new SemanticNetwork(List[SemanticNetworkNode[Resource]](source), uri)
+    expect(sn0.rootNodes(0).content.toString)(sourceContent)
+    val sn1 = new SemanticNetwork(List[SemanticNetworkNode[Resource]](source, destination), uri)
+    expect(sn1.rootNodes(1).content.toString)(destinationContent)
   }
 
 }

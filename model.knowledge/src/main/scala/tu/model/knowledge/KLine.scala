@@ -16,3 +16,14 @@ class KLine(_frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probabili
   def frames: Map[KnowledgeURI, Resource] = _frames
 
 }
+
+object KLine {
+
+  def apply(uri: KnowledgeURI): KLine = {
+    new KLine(Map[KnowledgeURI, Resource](), uri)
+  }
+
+  def apply(name: String): KLine = {
+    new KLine(Map[KnowledgeURI, Resource](), KnowledgeURI(name))
+  }
+}

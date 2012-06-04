@@ -1,7 +1,7 @@
 package tu.knowledge.semanticnetwork
 
 /**
- * @author max
+ * @author talanov max
  *         date 2012-05-03
  *         time: 11:23 PM
  */
@@ -25,7 +25,7 @@ class SemanticNetworkNodeTest extends FunSuite {
   val destinationContent = "Dest"
 
   test("test Ok") {
-    assert(true)
+    assert(condition = true)
   }
 
   test("SemanticNetworkNode should store KnowledgeString") {

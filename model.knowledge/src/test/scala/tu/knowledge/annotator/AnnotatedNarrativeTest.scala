@@ -1,23 +1,27 @@
-package tu.knowledge.howto
+package tu.knowledge.annotator
 
 /**
  * @author max
- *         date 2012-05-09
- *         time: 7:00 PM
+ *         date 2012-06-02
+ *         time: 4:04 PM
  */
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
+import tu.model.knowledge.domain.Concept
+import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkNode, SemanticNetworkLink}
-import tu.model.knowledge._
-import howto.{Solution, HowTo}
-import narrative.{Rule, RulesNarrative}
-import primitive.{KnowledgeBoolean, KnowledgeString}
+import tu.model.knowledge.{Probability, KLine, KnowledgeURI, Resource}
+import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedWord}
 
 @RunWith(classOf[JUnitRunner])
-class SolutionTest extends FunSuite {
+class AnnotatedNarrativeTest extends FunSuite {
+
+  test("test Ok") {
+    assert(true)
+  }
 
   val namespace = "testNamespace"
   val name = "name"
@@ -33,21 +37,13 @@ class SolutionTest extends FunSuite {
   val f2 = new Frame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), new KnowledgeURI(namespace, "f2", revision))
   val klName = new KnowledgeString("name", uri)
   val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
-  val t = new Tag(kl, List[SemanticNetworkLink](), uri)
-  val f = new Frame(Map[KnowledgeURI, Resource](), uri)
-  val h = new HowTo(List(f), List(t), uri)
-  val ex: Expression = new Expression(uri) {
-    def apply = new KnowledgeBoolean(false, uri)
-  }
-  val r = new Rule(ex, List(h), uri)
 
-  test("test Ok") {
-    assert(true)
+  test("Annotated narrative should contain list of words") {
+    val word = "word"
+    val content = List[AnnotatedWord](new AnnotatedWord(List[Concept](), word, uri))
+    val a = new AnnotatedNarrative(content, uri)
+    expect(a.words)(content)
   }
 
-  test("Solution should contain HowTo-s") {
-    val s = new Solution(List(r), uri)
-    expect(s.rules)(List(r))
-  }
 
 }

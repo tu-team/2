@@ -9,7 +9,7 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
  *         time: 10:59 PM
  */
 
-class SemanticNetwork(var _rootNodes: List[SemanticNetworkNode[Resource]], _uri: KnowledgeURI, _probability: Probability)
+class SemanticNetwork(_rootNodes: List[SemanticNetworkNode[Resource]], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_rootNodes: List[SemanticNetworkNode[Resource]], _uri: KnowledgeURI) = {
@@ -17,10 +17,5 @@ class SemanticNetwork(var _rootNodes: List[SemanticNetworkNode[Resource]], _uri:
   }
 
   def rootNodes: List[SemanticNetworkNode[Resource]] = _rootNodes
-
-  def rootNodes_=(in: List[SemanticNetworkNode[Resource]]): SemanticNetwork = {
-    _rootNodes = in
-    this
-  }
 
 }

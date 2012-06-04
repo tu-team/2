@@ -26,7 +26,7 @@ class PreliminarySplitter extends Way2Think {
    * @return
    */
   def apply(inputContext: Context, outputContext: Context): TransFrame[Resource] = {
-    inputContext.
+    // inputContext.
        return null
   }
 }
