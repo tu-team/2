@@ -10,6 +10,6 @@ import tu.model.knowledge.Resource
  *
  */
 
-/*case class AnnotatedNarrative[Type <: Resource](var _words) extends Narrative() {
+case class AnnotatedNarrative(var _words:List[Word]) extends Narrative() {
 
-} */
+}
