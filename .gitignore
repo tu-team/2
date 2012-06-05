@@ -22,3 +22,5 @@ library.zip
 t
 atlassian-ide-plugin.xml
 local/
+tu.util.log
+lib/target/
