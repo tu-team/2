@@ -74,8 +74,9 @@
         <module>model.webservice</module>
         <!-- to examine only -->
         <module>relex</module>
-        <module>common.utilities</module>
+<!--        <module>common.utilities</module>
         <module>coreservice.autocorrector</module>
         <module>coreservice.splitter</module>
+-->
     </modules>
 </project>
