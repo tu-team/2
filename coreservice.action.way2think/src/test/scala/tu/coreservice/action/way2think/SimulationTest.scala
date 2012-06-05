@@ -11,8 +11,8 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.{KnowledgeURI, Resource, KLine}
-import tu.model.knowledge.annotator.AnnotatedWord
 import tu.model.knowledge.semanticnetwork.SemanticNetworkLink
+import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedWord}
 
 @RunWith(classOf[JUnitRunner])
 class SimulationTest extends FunSuite {
@@ -31,10 +31,20 @@ class SimulationTest extends FunSuite {
   val generalisations = KLine(generalisationURI)
   val specialisationURI = KnowledgeURI("specialisation")
   val specialisations = KLine(specialisationURI)
-  val userWord = AnnotatedWord("user")
-  val customerWord = AnnotatedWord("customer")
+  val userPhrase = AnnotatedPhrase("user")
+  val customerPhrase = AnnotatedPhrase("customer")
+  val notebookPhrase = AnnotatedPhrase("notebook")
+  val laptopPhrase = AnnotatedPhrase("laptop")
+  val desktopPhrase = AnnotatedPhrase("desktop")
+  val computerPhrase = AnnotatedPhrase("computer")
 
-  val wordsURI = KnowledgeURI("words")
-  val words = new KLine(Map[KnowledgeURI, Resource](userWord.uri -> userWord, customerWord.uri -> customerWord), wordsURI)
-  val userConcept = Concept(words,"user")
+  val wordsURI = KnowledgeURI("UserPhrases")
+  val phrases = new KLine(Map[KnowledgeURI, Resource](userPhrase.uri -> userPhrase, customerPhrase.uri -> customerPhrase), wordsURI)
+  val userConcept = Concept(phrases,"user")
+
+  val computerURI = KnowledgeURI("ComputerPhrases")
+  val computerPhrases = new KLine(Map[KnowledgeURI, Resource](notebookPhrase.uri -> userPhrase, laptopPhrase.uri -> laptopPhrase, desktopPhrase.uri -> desktopPhrase, computerPhrase.uri -> computerPhrase)
+    , computerURI)
+  val computerConcept = Concept(computerPhrases,"computer")
+
 }

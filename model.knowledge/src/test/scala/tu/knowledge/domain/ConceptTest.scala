@@ -13,6 +13,7 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge._
+import annotator.AnnotatedPhrase
 import domain.Concept
 
 @RunWith(classOf[JUnitRunner])
@@ -32,10 +33,11 @@ class ConceptTest extends FunSuite {
   val f2 = new Frame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), new KnowledgeURI(namespace, "f2", revision))
   val klName = new KnowledgeString("name", uri)
   val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
+  val userPhrase = new KLine(Map(KnowledgeURI("user" + "Phrase") -> AnnotatedPhrase("user")), KnowledgeURI("userKLine"))
 
   test("Concept should contain content") {
     val content = new KnowledgeString("content", uri)
-    val c = new Concept(kl, kl, kl, content, List[SemanticNetworkLink](), uri)
+    val c = new Concept(kl, kl, userPhrase, content, List[SemanticNetworkLink](), uri)
     expect(c.content)(content)
   }
 
