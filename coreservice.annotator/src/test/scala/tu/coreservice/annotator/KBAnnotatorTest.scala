@@ -70,6 +70,8 @@ class KBAnnotatorTest extends FunSuite with MustMatchers {
   }
 
   def parse(sentence: String, re: RelationExtractor): Sentence = {
+   
+
     log.info("; SENTENCE: [" + sentence + "]")
     var em: EntityMaintainer = new EntityMaintainer
     //TODO add sentence split

@@ -7,7 +7,7 @@ import java.net.URI
  *         Time: 11:20 PM
  */
 
-class KnowledgeURI(_namespace: String, _name: String, _revision: String) {
+class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
 
 
   private var _uRI: Option[URI] = None
@@ -15,7 +15,9 @@ class KnowledgeURI(_namespace: String, _name: String, _revision: String) {
 
   def namespace(): String = _namespace
 
-  def name(): String = _name
+  def name = _name
+
+  def name_=(value:String)=_name=value
 
   def revision(): String = _revision
 

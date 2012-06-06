@@ -6,7 +6,7 @@ package tu.model.knowledge
  *         time: 12:16 AM
  */
 
-class KLine(_frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probability: Probability)
+class KLine(var _frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI) = {
@@ -14,6 +14,8 @@ class KLine(_frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probabili
   }
 
   def frames: Map[KnowledgeURI, Resource] = _frames
+
+  def frames_=(value:Map[KnowledgeURI, Resource])=_frames=value
 
 }
 

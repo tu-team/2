@@ -70,6 +70,13 @@
             <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>common.utilities</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
