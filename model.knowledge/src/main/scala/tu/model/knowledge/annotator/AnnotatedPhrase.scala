@@ -34,4 +34,9 @@ object AnnotatedPhrase {
     val wordsList: List[AnnotatedWord] = (wordsArray.map(x => { AnnotatedWord(x.trim) })).toList
     new AnnotatedPhrase(wordsList, KnowledgeURI(name))
   }
+
+  def apply(words: List[AnnotatedWord], concepts: List[Concept]): AnnotatedPhrase = {
+    //TODO correct this.
+    new AnnotatedPhrase(words, KnowledgeURI(words.toString() + "Phrase"))
+  }
 }
