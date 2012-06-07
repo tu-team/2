@@ -18,6 +18,19 @@ case class AnnotatedPhrase(var _concepts: List[Concept], _words: List[AnnotatedW
     this(List[Concept](), _words, _uri, new Probability())
   }
 
+  def this(_concepts: List[Concept], _words: List[AnnotatedWord], _uri: KnowledgeURI) = {
+    this(_concepts, _words, _uri, new Probability())
+  }
+
+  def concepts = _concepts
+
+  def concepts_=(in: List[Concept]): AnnotatedPhrase = {
+    _concepts = in
+    this
+  }
+
+  def words = _words
+
 }
 
 object AnnotatedPhrase {
@@ -35,8 +48,7 @@ object AnnotatedPhrase {
     new AnnotatedPhrase(wordsList, KnowledgeURI(name))
   }
 
-  def apply(words: List[AnnotatedWord], concepts: List[Concept]): AnnotatedPhrase = {
-    //TODO correct this.
-    new AnnotatedPhrase(words, KnowledgeURI(words.toString() + "Phrase"))
+  def apply(concepts: List[Concept], words: List[AnnotatedWord]): AnnotatedPhrase = {
+    new AnnotatedPhrase(concepts, words, KnowledgeURI(words.toString() + "Phrase"))
   }
 }

@@ -40,11 +40,11 @@ class SimulationTest extends FunSuite {
 
   val wordsURI = KnowledgeURI("UserPhrases")
   val phrases = new KLine(Map[KnowledgeURI, Resource](userPhrase.uri -> userPhrase, customerPhrase.uri -> customerPhrase), wordsURI)
-  val userConcept = Concept(phrases,"user")
+  val userConcept = Concept("user")
 
   val computerURI = KnowledgeURI("ComputerPhrases")
   val computerPhrases = new KLine(Map[KnowledgeURI, Resource](notebookPhrase.uri -> userPhrase, laptopPhrase.uri -> laptopPhrase, desktopPhrase.uri -> desktopPhrase, computerPhrase.uri -> computerPhrase)
     , computerURI)
-  val computerConcept = Concept(computerPhrases,"computer")
+  val computerConcept = Concept("computer")
 
 }

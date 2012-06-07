@@ -35,9 +35,9 @@ class ConceptTest extends FunSuite {
   val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
   val userPhrase = new KLine(Map(KnowledgeURI("user" + "Phrase") -> AnnotatedPhrase("user")), KnowledgeURI("userKLine"))
 
-  test("Concept should contain content") {
-    val content = new KnowledgeString("content", uri)
-    val c = new Concept(kl, kl, userPhrase, content, List[SemanticNetworkLink](), uri)
+  test("Concept should contain name") {
+    val content = new KnowledgeString("name", uri)
+    val c = new Concept(kl, kl, List(AnnotatedPhrase("user")), content, List[SemanticNetworkLink](), uri)
     expect(c.content)(content)
   }
 
