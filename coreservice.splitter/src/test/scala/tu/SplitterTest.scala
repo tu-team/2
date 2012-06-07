@@ -28,11 +28,14 @@ class SplitterTest extends TestCase("splitter") {
       var output=ContextHelper.initializeContext(null )
 
       //place text to input
-      input.frames+=(new KnowledgeURI("tu.com","inputtext","0.3")-> new KnowledgeString("This is a simple text. Test contains sentence. And this is a third sentence.",null))
+      input.frames+=(new KnowledgeURI("tu.com","inputtext","0.3")-> new KnowledgeString("This are a simple text. Test contain sentence. And this is a third sentence.",null))
 
       splitter(input,output)
 
       assertTrue(output.frames.count(p=>true) == 3)
+
+      //check grammar
+
 
     }
 

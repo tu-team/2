@@ -6,6 +6,7 @@ import tu.model.knowledge.frame.TransFrame
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{KnowledgeURI, Resource}
+import tu.coreservice.spellcorrector.SpellCorrectorFactory
 
 /**
  * Created by IntelliJ IDEA.
@@ -49,9 +50,10 @@ class PreliminarySplitter extends Way2Think {
 
     var sentence = ds.getNextSentence
     while (sentence != null) {
+      //check sentence using autocorrector
+      var corrector=SpellCorrectorFactory.construct()
       //append extracted sentence to context and increase counter for sentence
-      //sentenceURI.name=sentenceURI.name+"-"+sntOrder;
-      outputContext.frames += (new KnowledgeURI("tu-project.com",sentenceURI.name+"-"+sntOrder,"0.3")-> new KnowledgeString(sentence, sentenceURI))
+      outputContext.frames += (new KnowledgeURI("tu-project.com",sentenceURI.name+"-"+sntOrder,"0.3")-> new KnowledgeString(corrector.correctSentence(sentence), sentenceURI))
       sntOrder=sntOrder+1
       sentence = ds.getNextSentence
     }
