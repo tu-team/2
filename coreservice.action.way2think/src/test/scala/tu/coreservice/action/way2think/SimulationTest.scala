@@ -31,6 +31,13 @@ class SimulationTest extends FunSuite {
   val generalisations = KLine(generalisationURI)
   val specialisationURI = KnowledgeURI("specialisation")
   val specialisations = KLine(specialisationURI)
+
+  val userConcept = Concept("user")
+  val computerConcept = Concept("computer")
+  val softwareConcept = Concept("sofware")
+  val photoShopConcept = Concept("Adobe Photoshop")
+  val firefoxConcept = Concept("FireFox")
+
   val userPhrase = AnnotatedPhrase("user")
   val customerPhrase = AnnotatedPhrase("customer")
   val notebookPhrase = AnnotatedPhrase("notebook")
@@ -38,13 +45,5 @@ class SimulationTest extends FunSuite {
   val desktopPhrase = AnnotatedPhrase("desktop")
   val computerPhrase = AnnotatedPhrase("computer")
 
-  val wordsURI = KnowledgeURI("UserPhrases")
-  val phrases = new KLine(Map[KnowledgeURI, Resource](userPhrase.uri -> userPhrase, customerPhrase.uri -> customerPhrase), wordsURI)
-  val userConcept = Concept("user")
-
-  val computerURI = KnowledgeURI("ComputerPhrases")
-  val computerPhrases = new KLine(Map[KnowledgeURI, Resource](notebookPhrase.uri -> userPhrase, laptopPhrase.uri -> laptopPhrase, desktopPhrase.uri -> desktopPhrase, computerPhrase.uri -> computerPhrase)
-    , computerURI)
-  val computerConcept = Concept("computer")
 
 }

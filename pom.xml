@@ -73,9 +73,9 @@
         <module>model.knowledge</module>
         <module>model.webservice</module>
         <module>relex</module>
-        <module>common.utilities</module>
+        <!-- module>common.utilities</module>
         <module>coreservice.autocorrector</module>
-        <module>coreservice.splitter</module>
+        <module>coreservice.splitter</module -->
 
     </modules>
 </project>

@@ -9,8 +9,7 @@ import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.coreservice.spellcorrector.SpellCorrectorFactory
 
 /**
- * Created by IntelliJ IDEA.
- * User: toscheva
+ * @author toschev alex
  * Date: 01.06.12
  * Time: 18:59
  *

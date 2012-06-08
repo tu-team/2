@@ -9,7 +9,7 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         time: 10:53 PM
  */
 
-class SemanticNetworkNode[Type<:Resource](_content: Type, _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability)
+case class SemanticNetworkNode[Type<:Resource](_content: Type, _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_content: Type, _links: List[SemanticNetworkLink], _uri: KnowledgeURI) = {
