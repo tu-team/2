@@ -6,7 +6,7 @@ import tu.model.knowledge.frame.TransFrame
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{KnowledgeURI, Resource}
-import tu.coreservice.spellcorrector.SpellCorrectorFactory
+import tu.coreservice.spellcorrector.SpellCorrector
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,7 +28,7 @@ class PreliminarySplitter extends Way2Think {
    * @param outputContext
    * @return split in sentence text
    */
-  def apply(inputContext: Context, outputContext: Context): TransFrame[Resource] = {
+  def apply(inputContext: Context, outputContext: Context) = {
     //extract text from input context
     var textFrame = inputContext.frames.filter(p =>
 
@@ -44,21 +44,25 @@ class PreliminarySplitter extends Way2Think {
 
     // split text using relex
     var ds: DocSplitter = DocSplitterFactory.create()
-    ds.addText(textFrame._2.asInstanceOf[KnowledgeString].value)
+
+    //correct all text before splitting to sentence
+    var text =   textFrame._2.asInstanceOf[KnowledgeString].value
+
+    var corrector=SpellCorrector()
+    text=corrector.correctSentence(text);
+
+    ds.addText(text)
 
     var sntOrder=1
 
     var sentence = ds.getNextSentence
     while (sentence != null) {
       //check sentence using autocorrector
-      var corrector=SpellCorrectorFactory.construct()
       //append extracted sentence to context and increase counter for sentence
-      outputContext.frames += (new KnowledgeURI("tu-project.com",sentenceURI.name+"-"+sntOrder,"0.3")-> new KnowledgeString(corrector.correctSentence(sentence), sentenceURI))
+      outputContext.frames += (new KnowledgeURI("tu-project.com",sentenceURI.name+"-"+sntOrder,"0.3")-> new KnowledgeString(sentence, sentenceURI))
       sntOrder=sntOrder+1
       sentence = ds.getNextSentence
     }
 
-
-    return null
   }
 }
