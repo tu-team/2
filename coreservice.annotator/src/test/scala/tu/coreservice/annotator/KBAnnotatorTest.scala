@@ -17,6 +17,7 @@ import java.util.Properties
 import java.io.InputStream
 import relex.output.{SimpleView, OpenCogScheme}
 import org.scalatest.matchers.MustMatchers
+import tu.coreservice.spellcorrector.SpellCorrector
 
 @RunWith(classOf[JUnitRunner])
 class KBAnnotatorTest extends FunSuite with MustMatchers {
@@ -575,9 +576,14 @@ noun_number(Lotus_Notes, singular)
   test("line 6 processing is ok") {
     //TODO Auto-correction: aren?t -> aren't
     val testString = "installed, teamcenter and cnext5, seems to work.Seems to CatiaV5 aren?t installed correcly.errormessenge: a program cannot display messge. the program need a promission or information to complete a task.It?s a Vista-PC."
+    //process with correction
+    val corrector = SpellCorrector();
+
+    val corrected=corrector.correctSentence(testString)
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line6Relations)(SimpleView.printRelations(parse))
