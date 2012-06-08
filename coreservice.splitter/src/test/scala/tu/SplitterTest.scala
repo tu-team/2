@@ -35,7 +35,7 @@ class SplitterTest extends TestCase("splitter") {
       assertTrue(output.frames.count(p=>true) == 3)
 
       //check grammar
-
+      assertTrue (output.frames.count(p=>p._2.asInstanceOf[KnowledgeString].value=="This is a simple text.")>0)
 
     }
 

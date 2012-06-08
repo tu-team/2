@@ -12,6 +12,6 @@ import tu.model.knowledge.Resource
 
 trait Way2Think {
 
-  def apply(inputContext: Context, outputContext: Context): TransFrame[Resource]
+  def apply(inputContext: Context, outputContext: Context)
 
 }
