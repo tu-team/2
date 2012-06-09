@@ -14,5 +14,6 @@ object Constant {
   val defaultNamespace = "2/"
   val defaultConceptsNamespace = "concepts/"
   val defaultRevision =  "0.0"
+  val INSTANCE_ID_LENGTH = 64
 
 }

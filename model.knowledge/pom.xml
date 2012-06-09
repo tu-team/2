@@ -71,12 +71,11 @@
             <scope>test</scope>
         </dependency>
 
-
-        <dependency>
+        <!-- dependency>
             <groupId>tu</groupId>
             <artifactId>common.utilities</artifactId>
             <version>${tu.version}</version>
-        </dependency>
+        </dependency-->
     </dependencies>
 
     <build>

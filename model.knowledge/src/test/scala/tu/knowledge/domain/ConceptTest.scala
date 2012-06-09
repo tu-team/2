@@ -37,7 +37,8 @@ class ConceptTest extends FunSuite {
 
   test("Concept should contain name") {
     val content = new KnowledgeString("name", uri)
-    val c = new Concept(kl, kl, List(AnnotatedPhrase("user")), content, List[SemanticNetworkLink](), uri)
+    val c = new Concept(TypedKLine("generalisations"), TypedKLine("specialisations"),
+      TypedKLine("user", AnnotatedPhrase("user")), content, List[SemanticNetworkLink](), uri)
     expect(c.content)(content)
   }
 

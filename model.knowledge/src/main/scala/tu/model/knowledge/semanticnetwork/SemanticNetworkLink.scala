@@ -4,6 +4,7 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI, Link}
 
 
 /**
+ * Stores SemanticNetwork parameters
  * @author max talanov
  *         date 2012-05-02
  *         time: 10:40 PM

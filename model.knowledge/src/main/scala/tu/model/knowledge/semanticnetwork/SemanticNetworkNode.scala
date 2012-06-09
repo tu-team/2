@@ -4,7 +4,7 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
 
 
 /**
- * @author max
+ * @author talanov max
  *         date 2012-05-02
  *         time: 10:53 PM
  */
