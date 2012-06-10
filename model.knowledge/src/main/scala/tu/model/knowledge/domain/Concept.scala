@@ -16,17 +16,21 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    var _specialisations: TypedKLine[Concept],
                    var _phrases: TypedKLine[AnnotatedPhrase],
                    override val _content: Resource,
-                   override val _links: List[SemanticNetworkLink],
+                   var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
                    override val _probability: Probability)
-  extends SemanticNetworkNode[Resource](_content, _links, _uri, _probability) {
+  extends SemanticNetworkNode[Resource](_content, _conceptLinks, _uri, _probability) {
 
-  def this(_generalisations: TypedKLine[Concept], _specialisations: TypedKLine[Concept], _phrases: TypedKLine[AnnotatedPhrase], _content: Resource,
-           _links: List[SemanticNetworkLink], _uri: KnowledgeURI) {
+  def this(_generalisations: TypedKLine[Concept],
+           _specialisations: TypedKLine[Concept],
+           _phrases: TypedKLine[AnnotatedPhrase],
+           _content: Resource,
+           _links: List[ConceptLink],
+           _uri: KnowledgeURI) {
     this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
   }
 
-  def phrases = _phrases
+  def phrases:TypedKLine[AnnotatedPhrase] = _phrases
 
   def phrases_=(in: TypedKLine[AnnotatedPhrase]): Concept = {
     _phrases = in
@@ -47,13 +51,19 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
+  override def links: List[ConceptLink] = _conceptLinks
+  def links_=(in: List[ConceptLink]): Concept = {
+    _conceptLinks = in
+    this
+  }
+
 }
 
 object Concept {
 
   def apply(phrases: TypedKLine[AnnotatedPhrase], name: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"), TypedKLine[Concept]("specialisation"),
-      phrases, KnowledgeString(name, name), List[SemanticNetworkLink](), KnowledgeURI(name + "Concept"))
+      phrases, KnowledgeString(name, name), List[ConceptLink](), KnowledgeURI(name + "Concept"))
   }
 
   def apply(word: String, name: String): Concept = {
@@ -61,7 +71,7 @@ object Concept {
       TypedKLine[Concept]("specialisation"),
       TypedKLine[AnnotatedPhrase]("phrases", AnnotatedPhrase(word)),
       KnowledgeString(name, name),
-      List[SemanticNetworkLink](),
+      List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
   }
 
@@ -70,14 +80,14 @@ object Concept {
       TypedKLine[Concept]("specialisation"),
       TypedKLine[AnnotatedPhrase]("phrases"),
       KnowledgeString(name, name),
-      List[SemanticNetworkLink](),
+      List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
   }
 
   def createSubConcept(parent: Concept, name: String): Concept = {
     val it = new Concept(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("phrases"),
       KnowledgeString(name, name),
-      List[SemanticNetworkLink](),
+      List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
@@ -87,7 +97,7 @@ object Concept {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("phrases"),
       KnowledgeString(name, name),
-      List[SemanticNetworkLink](),
+      List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it

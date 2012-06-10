@@ -1,8 +1,8 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge.domain.Concept
-import tu.model.knowledge.{Resource, KnowledgeURI, Probability}
 import scala.collection.JavaConversions._
+import tu.model.knowledge.{TypedKLine, Resource, KnowledgeURI, Probability}
 
 
 /**
@@ -51,4 +51,14 @@ object AnnotatedPhrase {
   def apply(concepts: List[Concept], words: List[AnnotatedWord]): AnnotatedPhrase = {
     new AnnotatedPhrase(concepts, words, KnowledgeURI(words.toString() + "Phrase"))
   }
+
+  def apply(concepts: List[Concept], word: String): AnnotatedPhrase = {
+    val it = new AnnotatedPhrase(concepts, List(AnnotatedWord(word)), KnowledgeURI(word + "Phrase"))
+    concepts.map((in: Concept) => {
+      in.phrases = in.phrases + (it.uri -> it)
+      in
+    })
+    it
+  }
+
 }

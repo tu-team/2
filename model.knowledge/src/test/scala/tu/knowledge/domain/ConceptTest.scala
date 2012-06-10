@@ -14,7 +14,7 @@ import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkN
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge._
 import annotator.AnnotatedPhrase
-import domain.Concept
+import domain.{ConceptLink, Concept}
 
 @RunWith(classOf[JUnitRunner])
 class ConceptTest extends FunSuite {
@@ -38,7 +38,7 @@ class ConceptTest extends FunSuite {
   test("Concept should contain name") {
     val content = new KnowledgeString("name", uri)
     val c = new Concept(TypedKLine("generalisations"), TypedKLine("specialisations"),
-      TypedKLine("user", AnnotatedPhrase("user")), content, List[SemanticNetworkLink](), uri)
+      TypedKLine("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
     expect(c.content)(content)
   }
 

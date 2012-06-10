@@ -68,4 +68,12 @@ object ConceptLink {
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
+
+  def likConcepts(link: ConceptLink, source: Concept, destination: Concept): Pair[Concept, Concept] = {
+    val sl: List[ConceptLink] = source.links ++ List(link)
+    source.links = sl
+    val dl: List[ConceptLink] = destination.links ++ List(link)
+    destination.links = dl
+    (source, destination)
+  }
 }
