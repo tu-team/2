@@ -11,12 +11,8 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
  *
  */
 
-case class AnnotatedNarrative(_words: List[AnnotatedWord], _uri: KnowledgeURI, _probability: Probability)
+case class AnnotatedNarrative(_words: List[AnnotatedWord], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
-
-  def this(_words: List[AnnotatedWord], _uri: KnowledgeURI) {
-    this(_words, _uri, new Probability())
-  }
 
   def words = _words
 

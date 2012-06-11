@@ -12,6 +12,11 @@ import tu.model.knowledge.Resource
 
 trait Way2Think {
 
-  def apply(inputContext: Context, outputContext: Context)
+  /**
+   * Way2Think interface.
+   * @param inputContext
+   * @return outputContext
+   */
+  def apply(inputContext: Context): Context
 
 }

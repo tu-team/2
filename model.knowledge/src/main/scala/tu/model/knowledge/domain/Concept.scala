@@ -1,6 +1,6 @@
 package tu.model.knowledge.domain
 
-import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
+import tu.model.knowledge.semanticnetwork.SemanticNetworkNode
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import util.Random
@@ -30,7 +30,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
   }
 
-  def phrases:TypedKLine[AnnotatedPhrase] = _phrases
+  def phrases: TypedKLine[AnnotatedPhrase] = _phrases
 
   def phrases_=(in: TypedKLine[AnnotatedPhrase]): Concept = {
     _phrases = in
@@ -52,6 +52,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   override def links: List[ConceptLink] = _conceptLinks
+
   def links_=(in: List[ConceptLink]): Concept = {
     _conceptLinks = in
     this
@@ -82,6 +83,16 @@ object Concept {
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
+  }
+
+  def apply(name: String, probability: Probability): Concept = {
+    new Concept(TypedKLine[Concept]("generalisation"),
+      TypedKLine[Concept]("specialisation"),
+      TypedKLine[AnnotatedPhrase]("phrases"),
+      KnowledgeString(name, name),
+      List[ConceptLink](),
+      KnowledgeURI(name + "Concept"),
+      probability)
   }
 
   def createSubConcept(parent: Concept, name: String): Concept = {

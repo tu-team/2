@@ -1,8 +1,7 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge.domain.Concept
-import scala.collection.JavaConversions._
-import tu.model.knowledge.{TypedKLine, Resource, KnowledgeURI, Probability}
+import tu.model.knowledge.{Resource, KnowledgeURI, Probability}
 
 
 /**
@@ -11,15 +10,11 @@ import tu.model.knowledge.{TypedKLine, Resource, KnowledgeURI, Probability}
  *         time: 10:32 PM
  */
 
-case class AnnotatedPhrase(var _concepts: List[Concept], _words: List[AnnotatedWord], _uri: KnowledgeURI, _probability: Probability)
+case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Concept], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
   def this(_words: List[AnnotatedWord], _uri: KnowledgeURI) = {
-    this(List[Concept](), _words, _uri, new Probability())
-  }
-
-  def this(_concepts: List[Concept], _words: List[AnnotatedWord], _uri: KnowledgeURI) = {
-    this(_concepts, _words, _uri, new Probability())
+    this(_words, List[Concept](), _uri, new Probability())
   }
 
   def concepts = _concepts
@@ -42,22 +37,30 @@ object AnnotatedPhrase {
     new AnnotatedPhrase(words, KnowledgeURI(words.toString() + "Phrase"))
   }
 
-  def split(words:String, name: String): AnnotatedPhrase = {
+  def split(words: String, name: String): AnnotatedPhrase = {
     val wordsArray: Array[String] = words.split(" ")
-    val wordsList: List[AnnotatedWord] = (wordsArray.map(x => { AnnotatedWord(x.trim) })).toList
+    val wordsList: List[AnnotatedWord] = (wordsArray.map(x => {
+      AnnotatedWord(x.trim)
+    })).toList
     new AnnotatedPhrase(wordsList, KnowledgeURI(name))
   }
 
-  def apply(concepts: List[Concept], words: List[AnnotatedWord]): AnnotatedPhrase = {
-    new AnnotatedPhrase(concepts, words, KnowledgeURI(words.toString() + "Phrase"))
+  def apply(words: List[AnnotatedWord], concepts: List[Concept]): AnnotatedPhrase = {
+    new AnnotatedPhrase(words, concepts, KnowledgeURI(words.toString() + "Phrase"))
   }
 
-  def apply(concepts: List[Concept], word: String): AnnotatedPhrase = {
-    val it = new AnnotatedPhrase(concepts, List(AnnotatedWord(word)), KnowledgeURI(word + "Phrase"))
+  def apply(word: String, concepts: List[Concept]): AnnotatedPhrase = {
+    val it = new AnnotatedPhrase(List(AnnotatedWord(word)), concepts, KnowledgeURI(word + "Phrase"))
     concepts.map((in: Concept) => {
       in.phrases = in.phrases + (it.uri -> it)
       in
     })
+    it
+  }
+
+  def apply(word: String, concept: Concept): AnnotatedPhrase = {
+    val it = new AnnotatedPhrase(List(AnnotatedWord(word)), List(concept), KnowledgeURI(word + "Phrase"))
+    concept.phrases = concept.phrases + (it.uri -> it)
     it
   }
 
