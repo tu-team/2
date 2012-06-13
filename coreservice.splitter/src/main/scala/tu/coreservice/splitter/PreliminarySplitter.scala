@@ -64,4 +64,14 @@ class PreliminarySplitter extends Way2Think {
     }
 
   }
+
+  /**
+   * Way2Think interface.
+   * @param inputContext
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = {
+    //TODO implement this
+    null
+  }
 }

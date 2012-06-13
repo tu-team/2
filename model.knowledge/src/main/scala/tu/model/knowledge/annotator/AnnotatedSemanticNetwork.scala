@@ -9,7 +9,7 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
  *         time: 12:15 PM
  */
 
-class AnnotatedSemanticNetwork(_words: List[SemanticNetworkNode[AnnotatedWord]], _uri: KnowledgeURI, _probability: Probability)
+case class AnnotatedSemanticNetwork(_words: List[SemanticNetworkNode[AnnotatedWord]], override val _uri: KnowledgeURI, override val _probability: Probability)
   extends SemanticNetwork(List[SemanticNetworkNode[Resource]](), _uri, _probability) {
 
   def this(_words: List[SemanticNetworkNode[AnnotatedWord]], _uri: KnowledgeURI) {

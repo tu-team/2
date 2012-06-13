@@ -15,9 +15,10 @@ import tu.model.knowledge.{Constant, Probability, KnowledgeURI, TypedKLine}
 case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
                        var _specialisations: TypedKLine[ConceptLink],
                        var _phrases: TypedKLine[AnnotatedPhrase],
-                       _source: Concept,
-                       _destination: Concept,
-                       _uri: KnowledgeURI, _probability: Probability)
+                       override val _source: Concept,
+                       override val _destination: Concept,
+                       override val _uri: KnowledgeURI,
+                       override val _probability: Probability)
   extends SemanticNetworkLink(_source, _destination, _uri, _probability) {
 
   def this(_generalisations: TypedKLine[ConceptLink],

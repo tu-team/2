@@ -5,7 +5,7 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource, Expression}
 
 /**
  * Critic's rule
- * @author toscheva
+ * @author toschev alex
  *         Date: 03.05.12
  *         Time: 11:21
  */

@@ -4,13 +4,14 @@ import tu.model.knowledge.{Probability, Resource, KnowledgeURI, KLine}
 
 
 /**
+ * Stores contexts parameters.
  * @author max talanov
  *         date 2012-05-28
  *         time: 11:27 PM
  */
 
-class Context(_frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probability: Probability)
-  extends KLine(_frames, _uri, _probability) {
+case class Context(var __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI, override val _probability: Probability)
+  extends KLine(__frames, _uri, _probability) {
 
 }
 

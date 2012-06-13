@@ -2,9 +2,11 @@ package tu.model.knowledge
 
 
 /**
+ * Stores typed KLine
  * @author talanov max
  *         date 2012-06-08
  *         time: 10:51 PM
+ * @see KLine
  */
 
 case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _uri: KnowledgeURI, _probability: Probability)

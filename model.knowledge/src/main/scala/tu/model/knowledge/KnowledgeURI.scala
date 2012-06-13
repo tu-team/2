@@ -3,6 +3,7 @@ package tu.model.knowledge
 import java.net.URI
 
 /**
+ * Universal Identifier of the model.
  * @author max talanov
  *         Time: 11:20 PM
  */

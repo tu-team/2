@@ -3,12 +3,14 @@ package tu.model.knowledge
 import frame.Frame
 
 /**
- * @author talanovm
+ * Stores Microneme (domain) of model.
+ * @author talanov max
  *         date 2012-05-07
  *         time: 11:48 PM
+ * @see http://web.media.mit.edu/~minsky/E8/eb8.html#_Toc518305130
  */
 
-class MicroNeme(var _kLines: Map[KnowledgeURI, KLine], var _frames: Map[KnowledgeURI, Frame[Resource]], _uri: KnowledgeURI, _probability: Probability)
+case class MicroNeme(var _kLines: Map[KnowledgeURI, KLine], var _frames: Map[KnowledgeURI, Frame[Resource]], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_kLines: Map[KnowledgeURI, KLine], _frames: Map[KnowledgeURI, Frame[Resource]], _uri: KnowledgeURI) {

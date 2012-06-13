@@ -4,12 +4,13 @@ import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI, Tag}
 
 /**
- * @author max
+ * Stores HowTo and it's parameters.
+ * @author max talanov
  *         date 2012-05-08
  *         time: 10:55 PM
  */
 
-class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability)
+case class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_parameters: List[Frame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {

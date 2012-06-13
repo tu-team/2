@@ -12,14 +12,14 @@ package tu.coreservice.utilities
 object Configurator {
 
   /*
-    proxy desciption
+    proxy description
    */
   def proxyAddress(): ProxyDescription
   = {
     var res = new ProxyDescription
     res.proxyHost = "localhost"
     res.proxyPort = 3128
-    res.useProxy = true
+    res.useProxy = false
     return res
   }
 

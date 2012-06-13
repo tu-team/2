@@ -9,10 +9,12 @@ import semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
  *         time: 10:27 PM
  */
 
-class Tag(_content: KLine, _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability)
-  extends SemanticNetworkNode[KLine](_content, _links, _uri, _probability) {
+case class Tag(override val _content: KLine, var __links: List[SemanticNetworkLink], override val _uri: KnowledgeURI, override val _probability: Probability)
+  extends SemanticNetworkNode[KLine](_content, __links, _uri, _probability) {
 
   def this(_content: KLine, _links: List[SemanticNetworkLink], _uri: KnowledgeURI) {
     this(_content, _links, _uri, new Probability)
   }
+
+  override def links = __links
 }

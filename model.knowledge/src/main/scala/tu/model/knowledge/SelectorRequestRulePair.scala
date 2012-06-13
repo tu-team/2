@@ -5,6 +5,6 @@ package tu.model.knowledge
  * Date: 03.05.12
  * Time: 11:08 */
 
-class SelectorRequestRulePair {
+case class SelectorRequestRulePair {
 
 }
