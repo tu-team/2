@@ -6,6 +6,7 @@ package tu.coreservice.annotator
  *         time: 10:05 PM
  */
 
+
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
@@ -71,7 +72,7 @@ class KBAnnotatorTest extends FunSuite with MustMatchers {
   }
 
   def parse(sentence: String, re: RelationExtractor): Sentence = {
-   
+
 
     log.info("; SENTENCE: [" + sentence + "]")
     var em: EntityMaintainer = new EntityMaintainer
@@ -89,9 +90,14 @@ class KBAnnotatorTest extends FunSuite with MustMatchers {
 
   test("line 1 processing is ok") {
     val testString = "User has started using Lotus Notes on his his Vista PC this week and now he can't use Lotus Notes on his XP PC any more. He wants to restore Lotus Notes directory to status of 13/2 so he can use it on his XP PC. Please assist user"
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line1Relations)(SimpleView.printRelations(parse))
@@ -274,9 +280,14 @@ noun_number(Lotus_Notes, singular)
 
   test("line 2 processing is ok") {
     val testString = "Mapping of shared drive W:\\ fails, user is using \\\\lalala9061105.lalaburg.com\\NetLogon\\secl.bat and has restarted PC, but the problem persists"
+
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line2Relations)(SimpleView.printRelations(parse))
@@ -349,9 +360,15 @@ noun_number(Lotus_Notes, singular)
    */
   test("line 3 processing is ok") {
     val testString = "C33NG - User's Catia V5 does not work, after C33NG update."
+
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line3Relations)(SimpleView.printRelations(parse))
@@ -401,9 +418,14 @@ noun_number(Lotus_Notes, singular)
 
   test("line 4 processing is ok") {
     val testString = "User is also missing IE8."
+
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line4Relations)(SimpleView.printRelations(parse))
@@ -435,9 +457,14 @@ noun_number(Lotus_Notes, singular)
    */
   test("line 5 processing is ok") {
     val testString = "User is missing Internet Explorer 8!PLEASE NOTE!, the user reports that it's very important that this is solved BEFORE or AFTER 19th-20th January, since she's doing some imporant work business at the specified date!"
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line5Relations)(SimpleView.printRelations(parse))
@@ -579,7 +606,7 @@ noun_number(Lotus_Notes, singular)
     //process with correction
     val corrector = SpellCorrector();
 
-    val corrected=corrector.correctSentence(testString)
+    val corrected = corrector.correctSentence(testString)
 
     loadProperties
     val re = setup
@@ -676,9 +703,14 @@ noun_number(Lotus_Notes, singular)
    * Link parser was unable to process.   */
   test("line 7 processing is ok") {
     val testString = "User reports problems with his current version of flash player. User reports that he has two computers, one with a working (and newer) flash player that he uses to work with and the other computer seems to have a older flash version which does not work properly. Could you take a look at this and see if there is any flash update that can (re)sent to his computer?"
+
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line7Relations)(SimpleView.printRelations(parse))
@@ -725,9 +757,13 @@ noun_number(Lotus_Notes, singular)
   test("line 8 processing is ok") {
     //TODO Auto-correction uanble -> unable
     val testString = "User is unable to start KDP web, please reinstall Java."
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line8Relations)(SimpleView.printRelations(parse))
@@ -776,9 +812,14 @@ noun_number(Lotus_Notes, singular)
    */
   test("line 9 processing is ok") {
     val testString = "Hi NNN Admin. Please connect following groups to the shared disk listed below and configure security permissions."
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line9Relations)(SimpleView.printRelations(parse))
@@ -791,9 +832,14 @@ noun_number(Lotus_Notes, singular)
 
   test("line 10 processing is ok") {
     val testString = "PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc."
+    val corrector = SpellCorrector();
+
+    val corrected = corrector.correctSentence(testString)
+
+
     loadProperties
     val re = setup
-    val res = parse(testString, re)
+    val res = parse(corrected, re)
     logRes(res)
     for (val parse: ParsedSentence <- res.getParses) {
       expect(this.line10Relations)(SimpleView.printRelations(parse))
