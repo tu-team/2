@@ -74,7 +74,7 @@
         <module>model.webservice</module>
         <module>relex</module>
         <module>common.utilities</module>
-        <module>coreservice.autocorrector</module>
+        <module>coreservice.spellcorrector</module>
         <module>coreservice.splitter</module>
 
     </modules>

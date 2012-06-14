@@ -15,7 +15,7 @@ class CorrectorTest {
 
   }
 
-  @Test
+  /*@Test
   def testWorkingSentence() = {
     //Seems to CatiaV5 aren?t installed correcly
 
@@ -35,7 +35,7 @@ class CorrectorTest {
     var test = corrector.correctSentence("It?s a Vista-PC")
     assertTrue(test == "It?s a Vista-PC")
 
-  }
+  }     */
 
   //    @Test
   //    def testKO() = assertTrue(false)
