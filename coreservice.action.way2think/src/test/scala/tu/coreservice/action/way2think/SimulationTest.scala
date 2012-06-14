@@ -10,9 +10,9 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import tu.model.knowledge.domain.{ConceptLink, Concept}
-import tu.model.knowledge.Probability
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.semanticnetwork.SemanticNetwork
+import tu.model.knowledge.{KnowledgeURI, Probability}
 
 @RunWith(classOf[JUnitRunner])
 class SimulationTest extends FunSuite {
@@ -41,7 +41,7 @@ class SimulationTest extends FunSuite {
 
   // actions
   val action = Concept("action")
-  val install = Concept.createSubConcept(action, "install")
+  val installConcept = Concept.createSubConcept(action, "install")
   val remove = Concept.createSubConcept(action, "remove")
   val clean = Concept.createSubConcept(action, "clean")
 
@@ -66,6 +66,16 @@ class SimulationTest extends FunSuite {
   val laptopPhrase = AnnotatedPhrase("laptop", computerConcept)
   val desktopPhrase = AnnotatedPhrase("desktop", computerConcept)
   val computerPhrase = AnnotatedPhrase("computer", computerConcept)
+
+
+  /**
+   * Test phrases
+   */
+  // Please install Firefox
+  val please = AnnotatedPhrase("Please")
+  val install = AnnotatedPhrase("install")
+  val fireFox = AnnotatedPhrase("FireFox")
+  val pleaseInstallFF = AnnotatedNarrative(List(please, install, fireFox), KnowledgeURI("pleaseInstallFF"))
 
   test("test Ok") {
     assert(condition = true)

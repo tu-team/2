@@ -17,7 +17,7 @@ import tu.coreservice.spellcorrector.SpellCorrector
 
 /**
  * split text in sentence
- * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-words.md
+ * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-phrases.md
  */
 class PreliminarySplitter extends Way2Think {
 
