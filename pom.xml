@@ -76,6 +76,7 @@
         <module>common.utilities</module>
         <module>coreservice.spellcorrector</module>
         <module>coreservice.splitter</module>
+        <module>host.console</module>
 
     </modules>
 </project>
