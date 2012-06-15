@@ -1,11 +1,12 @@
-package tu;
+package tu.host.console;
 
+
+import tu.coreservice.annotator;
 /**
  * Hello world!
  *
  */
 object App extends Application {
-  println( "Hello World!" );
-  Console.readLine();
-  Console.println("test");
+  var annotator = new KBAnnotator()
+
 }
