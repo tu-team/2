@@ -52,6 +52,13 @@
             <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>model.knowledge</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
