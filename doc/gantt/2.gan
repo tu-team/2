@@ -3,8 +3,8 @@
     <description/>
     <view zooming-state="default:2" id="gantt-chart"/>
     <view id="resource-table">
-        <field id="0" name="Name" width="52" order="0"/>
-        <field id="1" name="Default role" width="47" order="1"/>
+        <field id="0" name="Name" width="50" order="0"/>
+        <field id="1" name="Default role" width="50" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -65,7 +65,14 @@
             <depend id="14" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="13" name="Reformulation" color="#8cb6ce" meeting="false" start="2012-06-29" duration="2" complete="0" expand="true"/>
-        <task id="14" name="Search solution" color="#8cb6ce" meeting="false" start="2012-06-26" duration="5" complete="0" expand="true"/>
+        <task id="14" name="Search solution" color="#8cb6ce" meeting="false" start="2012-06-26" duration="5" complete="0" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" name="ThinkingLifecycle minimal" color="#8cb6ce" meeting="false" start="2012-07-03" duration="3" complete="0" expand="true">
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="16" name="Test Lexical parsing" color="#8cb6ce" meeting="false" start="2012-06-18" duration="5" complete="0" expand="true"/>
+        <task id="17" name="Test Complete life cycle" color="#8cb6ce" meeting="false" start="2012-07-06" duration="5" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="A" function="Default:0" contacts="" phone=""/>
@@ -76,9 +83,12 @@
         <allocation task-id="0" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="12" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="14" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="15" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="2" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="17" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <taskdisplaycolumns>
