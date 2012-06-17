@@ -71,4 +71,15 @@ object TestDataGenerator {
   val install = AnnotatedPhrase("install")
   val fireFox = AnnotatedPhrase("FireFox")
   val pleaseInstallFF = AnnotatedNarrative(List(please, install, fireFox), KnowledgeURI("pleaseInstallFF"))
+
+  // User is missing Internet Explorer 8
+  val user = AnnotatedPhrase("User")
+  val is = AnnotatedPhrase("is")
+  val missing = AnnotatedPhrase("missing")
+  val internetExplorer8 = AnnotatedPhrase("Internet Explorer 8")
+  val iHaveProblemWithPDF =  AnnotatedNarrative(List(user, is , missing, internetExplorer8), KnowledgeURI("iHaveProblemWithPDF"))
+
+  def generateDirectInstructionNarrative = pleaseInstallFF
+
+  def generateProblemDescriptionNarrative = iHaveProblemWithPDF
 }
