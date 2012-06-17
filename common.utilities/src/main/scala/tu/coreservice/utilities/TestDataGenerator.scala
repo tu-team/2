@@ -27,7 +27,9 @@ object TestDataGenerator {
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
   val photoShop = Concept.createSubConcept(softwareConcept, "Adobe Photoshop")
-  val firefox = Concept.createSubConcept(softwareConcept, "Mozilla Firefox")
+  val browser = Concept.createSubConcept(softwareConcept, "Browser")
+  val firefox = Concept.createSubConcept(browser, "Mozilla Firefox")
+  val internetExplorer = Concept.createSubConcept(browser, "Microsoft Internet Explorer")
   val network = Concept("network")
   val internet = Concept.createSubConcept(network, "internet")
   val sharedResources = Concept("sharedResources")
@@ -40,17 +42,34 @@ object TestDataGenerator {
   val remove = Concept.createSubConcept(action, "remove")
   val clean = Concept.createSubConcept(action, "clean")
 
+  var concepts = List[Concept](subject, objectConcept, userConcept, computerConcept, softwareConcept, photoShop, browser,
+    firefox, internetExplorer, network, internet, sharedResources, sharedDisk, account, action, installConcept, remove, clean)
+
   /**
    * links
    */
+  /**
+   * has
+   */
   val has = ConceptLink(subject, objectConcept, "has")
-  val userCompLinkedPair = ConceptLink.likConcepts(has, userConcept, computerConcept)
   val hasComputer = ConceptLink.createSubConceptLink(has, userConcept, computerConcept, "hasComputer", new Probability(1.0, 1.0))
   val userComputerLinkedPair = ConceptLink.likConcepts(hasComputer, userConcept, computerConcept)
   val hasSoftware = ConceptLink.createSubConceptLink(has, computerConcept, softwareConcept, "hasSoftware", new Probability(1.0, 0.9))
   val computerSoftwareLinkedPair = ConceptLink.likConcepts(hasSoftware, computerConcept, softwareConcept)
   val hasAccount = ConceptLink.createSubConceptLink(has, userConcept, account, "hasAccount", new Probability(1.0, 0.9))
   val userAccountLinkedPair = ConceptLink.likConcepts(has, userConcept, account)
+  /**
+   * uses
+   */
+  val isUsedFor = ConceptLink(subject, objectConcept, "isUsedFor")
+  val browserIsUsedForInternet = ConceptLink.createSubConceptLink(isUsedFor, browser, internet, "BrowserIsUsedForInternet")
+
+  var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount)
+
+  /**
+   * Domain model concept network
+   */
+  val domainModel = (concepts, conceptLinks, KnowledgeURI("domainModel"))
 
   /**
    * phrases
@@ -61,7 +80,6 @@ object TestDataGenerator {
   val laptopPhrase = AnnotatedPhrase("laptop", computerConcept)
   val desktopPhrase = AnnotatedPhrase("desktop", computerConcept)
   val computerPhrase = AnnotatedPhrase("computer", computerConcept)
-
 
   /**
    * Test phrases
@@ -82,4 +100,6 @@ object TestDataGenerator {
   def generateDirectInstructionNarrative = pleaseInstallFF
 
   def generateProblemDescriptionNarrative = iHaveProblemWithPDF
+
+  def generateDomainModelConceptNetwork = domainModel
 }

@@ -15,11 +15,11 @@ import tu.model.knowledge._
 case class Concept(var _generalisations: TypedKLine[Concept],
                    var _specialisations: TypedKLine[Concept],
                    var _phrases: TypedKLine[AnnotatedPhrase],
-                   override val _content: Resource,
+                   val __content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
-                   override val _probability: Probability)
-  extends SemanticNetworkNode[Resource](_content, _conceptLinks, _uri, _probability) {
+                   override val _probability: Probability = new Probability())
+  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
 
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
@@ -96,7 +96,8 @@ object Concept {
   }
 
   def createSubConcept(parent: Concept, name: String): Concept = {
-    val it = new Concept(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("phrases"),
+    val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("phrases"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
@@ -106,7 +107,8 @@ object Concept {
 
   def createInstanceConcept(parent: Concept): Concept = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
-    val it = new Concept(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("phrases"),
+    val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("phrases"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
