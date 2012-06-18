@@ -41,6 +41,7 @@ object TestDataGenerator {
   val installConcept = Concept.createSubConcept(actionConcept, "install")
   val removeConcept = Concept.createSubConcept(actionConcept, "remove")
   val cleanConcept = Concept.createSubConcept(actionConcept, "clean")
+  val lackConcept = Concept.createSubConcept(actionConcept, "lack")
 
   var concepts = List[Concept](subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
     firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept, installConcept, removeConcept, cleanConcept)
@@ -63,6 +64,11 @@ object TestDataGenerator {
    */
   val isUsedFor = ConceptLink(subjectConcept, objectConcept, "isUsedFor")
   val browserIsUsedForInternet = ConceptLink.createSubConceptLink(isUsedFor, browserConcept, internetConcept, "browserIsUsedForInternet")
+
+  /**
+   * is
+   */
+  val isLink = ConceptLink(subjectConcept, objectConcept, "is")
 
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount)
 
@@ -97,22 +103,33 @@ object TestDataGenerator {
   val pleaseInstallFFAnnotated = AnnotatedNarrative(List(pleaseAnnotatedPhrase, installAnnotatedPhrase, fireFoxAnnotatedPhrase),
     KnowledgeURI("pleaseInstallFF"))
 
-  // User is missing Internet Explorer 8
+  // User miss Internet Explorer 8
   val user = AnnotatedPhrase("User")
-  val is = AnnotatedPhrase("is")
-  val missing = AnnotatedPhrase("missing")
+  val missing = AnnotatedPhrase("miss")
   val internetExplorer8 = AnnotatedPhrase("Internet Explorer 8")
-  val iHaveProblemWithPDF =  AnnotatedNarrative(List(user, is , missing, internetExplorer8), KnowledgeURI("iHaveProblemWithPDF"))
+  val iHaveProblemWithIE8 =  AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
+
+  // User is missing Internet Explorer 8 annotated
+  val userAnnotatedPhrase = AnnotatedPhrase("User", userConcept)
+  val missingAnnotatedPhrase = AnnotatedPhrase("miss", lackConcept)
+  val internetExplorer8AnnotatedPhrase = AnnotatedPhrase("Internet Explorer 8", internetExplorerConcept)
+  val iHaveProblemWithIE8Annotated =  AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
 
   def generateDirectInstructionNarrative = pleaseInstallFF
 
-  def generateProblemDescriptionNarrative = iHaveProblemWithPDF
+  def generateProblemDescriptionNarrative = iHaveProblemWithIE8
 
   def generateDomainModelConceptNetwork = domainModel
 
   /**
    * Generates AnnotatedNarrative the result of KBAnnotator.
-   * @return
+   * @return AnnotatedNarrative
    */
   def generateDirectInstructionAnnotatedNarrative = pleaseInstallFFAnnotated
+
+  /**
+   * Generates AnnotatedNarrative the result of KBAnnotator.
+   * @return AnnotatedNarrative
+   */
+  def generateProblemDescriptionAnnotatedNarrative = iHaveProblemWithIE8Annotated
 }
