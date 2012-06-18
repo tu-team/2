@@ -1,6 +1,6 @@
 package tu.coreservice.utilities
 
-import tu.model.knowledge.domain.{ConceptLink, Concept}
+import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.{KnowledgeURI, Probability}
 
@@ -23,6 +23,7 @@ object TestDataGenerator {
    */
   val subjectConcept = Concept("subject")
   val objectConcept = Concept("object")
+  val systemConcept = Concept("system")
   val userConcept = Concept("user")
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
@@ -43,7 +44,7 @@ object TestDataGenerator {
   val cleanConcept = Concept.createSubConcept(actionConcept, "clean")
   val lackConcept = Concept.createSubConcept(actionConcept, "lack")
 
-  var concepts = List[Concept](subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
+  var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
     firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept, installConcept, removeConcept, cleanConcept)
 
   /**
@@ -65,10 +66,8 @@ object TestDataGenerator {
   val isUsedFor = ConceptLink(subjectConcept, objectConcept, "isUsedFor")
   val browserIsUsedForInternet = ConceptLink.createSubConceptLink(isUsedFor, browserConcept, internetConcept, "browserIsUsedForInternet")
 
-  /**
-   * is
-   */
   val isLink = ConceptLink(subjectConcept, objectConcept, "is")
+  val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
 
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount)
 
@@ -103,17 +102,24 @@ object TestDataGenerator {
   val pleaseInstallFFAnnotated = AnnotatedNarrative(List(pleaseAnnotatedPhrase, installAnnotatedPhrase, fireFoxAnnotatedPhrase),
     KnowledgeURI("pleaseInstallFF"))
 
+  // Please install Firefox simulation
+  val installActionInst = Concept.createInstanceConcept(installConcept)
+  val firefoxConceptInst = Concept.createInstanceConcept(firefoxConcept)
+  val systemInstallFirefox = ConceptLink.createSubConceptLink(appliedLink, systemConcept, firefoxConceptInst, "systemInstallFirefox")
+  val pleaseInstallFFSimulation = ConceptNetwork(List[Concept](installActionInst, firefoxConceptInst), List[ConceptLink](systemInstallFirefox),
+    KnowledgeURI("pleaseInstallFFSimulation"))
+
   // User miss Internet Explorer 8
   val user = AnnotatedPhrase("User")
   val missing = AnnotatedPhrase("miss")
   val internetExplorer8 = AnnotatedPhrase("Internet Explorer 8")
-  val iHaveProblemWithIE8 =  AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
+  val iHaveProblemWithIE8 = AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
 
-  // User is missing Internet Explorer 8 annotated
+  // User miss Internet Explorer 8 annotated
   val userAnnotatedPhrase = AnnotatedPhrase("User", userConcept)
   val missingAnnotatedPhrase = AnnotatedPhrase("miss", lackConcept)
   val internetExplorer8AnnotatedPhrase = AnnotatedPhrase("Internet Explorer 8", internetExplorerConcept)
-  val iHaveProblemWithIE8Annotated =  AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
+  val iHaveProblemWithIE8Annotated = AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
 
   def generateDirectInstructionNarrative = pleaseInstallFF
 
@@ -132,4 +138,10 @@ object TestDataGenerator {
    * @return AnnotatedNarrative
    */
   def generateProblemDescriptionAnnotatedNarrative = iHaveProblemWithIE8Annotated
+
+  /**
+   * Generates ConceptNetwork the result of Simulation.
+   * @return ConceptNetwork
+   */
+  def generateDirectInstructionSimulation = pleaseInstallFFSimulation
 }

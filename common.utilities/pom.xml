@@ -1,16 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>cognition</artifactId>
         <groupId>tu</groupId>
         <version>${tu.version}</version>
     </parent>
-
-    <modelVersion>4.0.0</modelVersion>
+    <groupId>tu</groupId>
     <artifactId>common.utilities</artifactId>
+    <version>${tu.version}</version>
+    <name>${project.artifactId}</name>
+    <description>Common utils project.</description>
+    <inceptionYear>2012</inceptionYear>
 
+    <licenses>
+        <license>
+            <name>GPL v.3</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>https://bitbucket.org/cosmicdustman/2/src</distribution>
+        </license>
+    </licenses>
 
-    <repositories>
+    <!--repositories>
         <repository>
             <id>scala-tools.org</id>
             <name>Scala-Tools Maven2 Repository</name>
@@ -24,12 +36,24 @@
             <name>Scala-Tools Maven2 Repository</name>
             <url>http://scala-tools.org/repo-releases</url>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories-->
 
     <dependencies>
+
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>model.knowledge</artifactId>
+            <version>1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
             <version>${scala.version}</version>
         </dependency>
 
@@ -37,7 +61,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.1</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -53,12 +77,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>tu</groupId>
-            <artifactId>model.knowledge</artifactId>
-            <version>${tu.version}</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -68,33 +86,36 @@
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.0</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>compile</goal>
                             <goal>testCompile</goal>
                         </goals>
+                        <configuration>
+                            <args>
+                                <arg>-make:transitive</arg>
+                                <arg>-dependencyfile</arg>
+                                <arg>${project.build.directory}/.scala_dependencies</arg>
+                            </args>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <scalaVersion>${scala.version}</scalaVersion>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
                 <configuration>
-                    <downloadSources>true</downloadSources>
-                    <buildcommands>
-                        <buildcommand>ch.epfl.lamp.sdt.core.scalabuilder</buildcommand>
-                    </buildcommands>
-                    <additionalProjectnatures>
-                        <projectnature>ch.epfl.lamp.sdt.core.scalanature</projectnature>
-                    </additionalProjectnatures>
-                    <classpathContainers>
-                        <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-                        <classpathContainer>ch.epfl.lamp.sdt.launching.SCALA_CONTAINER</classpathContainer>
-                    </classpathContainers>
+                    <useFile>false</useFile>
+                    <disableXmlReport>true</disableXmlReport>
+                    <!-- If you have classpath issue like NoDefClassError,... -->
+                    <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
+                    <includes>
+                        <include>**/*Test.*</include>
+                        <include>**/*Suite.*</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
