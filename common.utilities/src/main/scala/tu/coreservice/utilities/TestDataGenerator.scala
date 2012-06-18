@@ -21,29 +21,29 @@ object TestDataGenerator {
   /**
    * concepts
    */
-  val subject = Concept("subject")
+  val subjectConcept = Concept("subject")
   val objectConcept = Concept("object")
   val userConcept = Concept("user")
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
-  val photoShop = Concept.createSubConcept(softwareConcept, "Adobe Photoshop")
-  val browser = Concept.createSubConcept(softwareConcept, "Browser")
-  val firefox = Concept.createSubConcept(browser, "Mozilla Firefox")
-  val internetExplorer = Concept.createSubConcept(browser, "Microsoft Internet Explorer")
-  val network = Concept("network")
-  val internet = Concept.createSubConcept(network, "internet")
-  val sharedResources = Concept("sharedResources")
-  val sharedDisk = Concept.createSubConcept(sharedResources, "sharedDisk")
-  val account = Concept("account")
+  val photoShopConcept = Concept.createSubConcept(softwareConcept, "Adobe Photoshop")
+  val browserConcept = Concept.createSubConcept(softwareConcept, "Browser")
+  val firefoxConcept = Concept.createSubConcept(browserConcept, "Mozilla Firefox")
+  val internetExplorerConcept = Concept.createSubConcept(browserConcept, "Microsoft Internet Explorer")
+  val networkConcept = Concept("network")
+  val internetConcept = Concept.createSubConcept(networkConcept, "internet")
+  val sharedResourcesConcept = Concept("sharedResources")
+  val sharedDiskConcept = Concept.createSubConcept(sharedResourcesConcept, "sharedDisk")
+  val accountConcept = Concept("account")
 
   // actions
-  val action = Concept("action")
-  val installConcept = Concept.createSubConcept(action, "install")
-  val remove = Concept.createSubConcept(action, "remove")
-  val clean = Concept.createSubConcept(action, "clean")
+  val actionConcept = Concept("action")
+  val installConcept = Concept.createSubConcept(actionConcept, "install")
+  val removeConcept = Concept.createSubConcept(actionConcept, "remove")
+  val cleanConcept = Concept.createSubConcept(actionConcept, "clean")
 
-  var concepts = List[Concept](subject, objectConcept, userConcept, computerConcept, softwareConcept, photoShop, browser,
-    firefox, internetExplorer, network, internet, sharedResources, sharedDisk, account, action, installConcept, remove, clean)
+  var concepts = List[Concept](subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
+    firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept, installConcept, removeConcept, cleanConcept)
 
   /**
    * links
@@ -51,18 +51,18 @@ object TestDataGenerator {
   /**
    * has
    */
-  val has = ConceptLink(subject, objectConcept, "has")
+  val has = ConceptLink(subjectConcept, objectConcept, "has")
   val hasComputer = ConceptLink.createSubConceptLink(has, userConcept, computerConcept, "hasComputer", new Probability(1.0, 1.0))
   val userComputerLinkedPair = ConceptLink.likConcepts(hasComputer, userConcept, computerConcept)
   val hasSoftware = ConceptLink.createSubConceptLink(has, computerConcept, softwareConcept, "hasSoftware", new Probability(1.0, 0.9))
   val computerSoftwareLinkedPair = ConceptLink.likConcepts(hasSoftware, computerConcept, softwareConcept)
-  val hasAccount = ConceptLink.createSubConceptLink(has, userConcept, account, "hasAccount", new Probability(1.0, 0.9))
-  val userAccountLinkedPair = ConceptLink.likConcepts(has, userConcept, account)
+  val hasAccount = ConceptLink.createSubConceptLink(has, userConcept, accountConcept, "hasAccount", new Probability(1.0, 0.9))
+  val userAccountLinkedPair = ConceptLink.likConcepts(has, userConcept, accountConcept)
   /**
    * uses
    */
-  val isUsedFor = ConceptLink(subject, objectConcept, "isUsedFor")
-  val browserIsUsedForInternet = ConceptLink.createSubConceptLink(isUsedFor, browser, internet, "BrowserIsUsedForInternet")
+  val isUsedFor = ConceptLink(subjectConcept, objectConcept, "isUsedFor")
+  val browserIsUsedForInternet = ConceptLink.createSubConceptLink(isUsedFor, browserConcept, internetConcept, "browserIsUsedForInternet")
 
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount)
 
@@ -90,6 +90,13 @@ object TestDataGenerator {
   val fireFox = AnnotatedPhrase("FireFox")
   val pleaseInstallFF = AnnotatedNarrative(List(please, install, fireFox), KnowledgeURI("pleaseInstallFF"))
 
+  // Please install Firefox annotated
+  val pleaseAnnotatedPhrase = AnnotatedPhrase("Please", Concept("please"))
+  val installAnnotatedPhrase = AnnotatedPhrase("install", installConcept)
+  val fireFoxAnnotatedPhrase = AnnotatedPhrase("FireFox", firefoxConcept)
+  val pleaseInstallFFAnnotated = AnnotatedNarrative(List(pleaseAnnotatedPhrase, installAnnotatedPhrase, fireFoxAnnotatedPhrase),
+    KnowledgeURI("pleaseInstallFF"))
+
   // User is missing Internet Explorer 8
   val user = AnnotatedPhrase("User")
   val is = AnnotatedPhrase("is")
@@ -102,4 +109,10 @@ object TestDataGenerator {
   def generateProblemDescriptionNarrative = iHaveProblemWithPDF
 
   def generateDomainModelConceptNetwork = domainModel
+
+  /**
+   * Generates AnnotatedNarrative the result of KBAnnotator.
+   * @return
+   */
+  def generateDirectInstructionAnnotatedNarrative = pleaseInstallFFAnnotated
 }
