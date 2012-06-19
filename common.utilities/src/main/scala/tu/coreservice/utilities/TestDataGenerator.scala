@@ -27,6 +27,7 @@ object TestDataGenerator {
   val userConcept = Concept("user")
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
+  val versionConcept = Concept("version")
   val photoShopConcept = Concept.createSubConcept(softwareConcept, "Adobe Photoshop")
   val browserConcept = Concept.createSubConcept(softwareConcept, "Browser")
   val firefoxConcept = Concept.createSubConcept(browserConcept, "Mozilla Firefox")
@@ -45,7 +46,8 @@ object TestDataGenerator {
   val lackConcept = Concept.createSubConcept(actionConcept, "lack")
 
   var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
-    firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept, installConcept, removeConcept, cleanConcept)
+    firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept,
+    installConcept, removeConcept, cleanConcept, versionConcept)
 
   /**
    * links
@@ -60,6 +62,8 @@ object TestDataGenerator {
   val computerSoftwareLinkedPair = ConceptLink.likConcepts(hasSoftware, computerConcept, softwareConcept)
   val hasAccount = ConceptLink.createSubConceptLink(has, userConcept, accountConcept, "hasAccount", new Probability(1.0, 0.9))
   val userAccountLinkedPair = ConceptLink.likConcepts(has, userConcept, accountConcept)
+  val hasVersion = ConceptLink.createSubConceptLink(has, softwareConcept, versionConcept, "hasVersion", new Probability(1.0, 0.9))
+  val userAccountLinkedPair = ConceptLink.likConcepts(has, softwareConcept, versionConcept)
   /**
    * uses
    */
@@ -68,8 +72,9 @@ object TestDataGenerator {
 
   val isLink = ConceptLink(subjectConcept, objectConcept, "is")
   val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
+  val missLink = ConceptLink(userConcept, objectConcept, "miss")
 
-  var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount)
+  var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink)
 
   /**
    * Domain model concept network
@@ -121,6 +126,16 @@ object TestDataGenerator {
   val internetExplorer8AnnotatedPhrase = AnnotatedPhrase("Internet Explorer 8", internetExplorerConcept)
   val iHaveProblemWithIE8Annotated = AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
 
+  // User miss Internet Explorer 8 annotated
+  val userInst = Concept.createInstanceConcept(userConcept)
+  val internetExplorerInst = Concept.createInstanceConcept(internetExplorerConcept)
+  val versionInst = Concept.createInstanceConcept(versionConcept, "8")
+  val userMissInternetExplorer = ConceptLink.createInstanceConceptLink(missLink, userInst, internetExplorerInst)
+  val internetExplorerHasVersion = ConceptLink.createInstanceConceptLink(has, internetExplorerInst, versionInst)
+  val iHaveProblemWithIE8Simulation = ConceptNetwork(List[Concept](userInst, internetExplorerInst, versionInst),
+  List[ConceptLink](userMissInternetExplorer, internetExplorerHasVersion), KnowledgeURI("iHaveProblemWithIE8Simulation"))
+
+
   def generateDirectInstructionNarrative = pleaseInstallFF
 
   def generateProblemDescriptionNarrative = iHaveProblemWithIE8
@@ -144,4 +159,10 @@ object TestDataGenerator {
    * @return ConceptNetwork
    */
   def generateDirectInstructionSimulation = pleaseInstallFFSimulation
+
+  /**
+   * Generates ConceptNetwork the result of Simulation.
+   * @return ConceptNetwork
+   */
+  def generateProblemDescriptionSimulation = iHaveProblemWithIE8Simulation
 }
