@@ -63,7 +63,7 @@ object TestDataGenerator {
   val hasAccount = ConceptLink.createSubConceptLink(has, userConcept, accountConcept, "hasAccount", new Probability(1.0, 0.9))
   val userAccountLinkedPair = ConceptLink.likConcepts(has, userConcept, accountConcept)
   val hasVersion = ConceptLink.createSubConceptLink(has, softwareConcept, versionConcept, "hasVersion", new Probability(1.0, 0.9))
-  val userAccountLinkedPair = ConceptLink.likConcepts(has, softwareConcept, versionConcept)
+  val hasVersionLinkedPair = ConceptLink.likConcepts(has, softwareConcept, versionConcept)
   /**
    * uses
    */
