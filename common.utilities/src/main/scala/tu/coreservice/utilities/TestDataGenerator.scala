@@ -33,6 +33,7 @@ object TestDataGenerator {
   val firefoxConcept = Concept.createSubConcept(browserConcept, "Mozilla Firefox")
   val internetExplorerConcept = Concept.createSubConcept(browserConcept, "Microsoft Internet Explorer")
   val networkConcept = Concept("network")
+  val addressConcept = Concept("address")
   val internetConcept = Concept.createSubConcept(networkConcept, "internet")
   val sharedResourcesConcept = Concept("sharedResources")
   val sharedDiskConcept = Concept.createSubConcept(sharedResourcesConcept, "sharedDisk")
@@ -73,6 +74,7 @@ object TestDataGenerator {
   val isLink = ConceptLink(subjectConcept, objectConcept, "is")
   val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
   val missLink = ConceptLink(userConcept, objectConcept, "miss")
+  val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
 
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink)
 
@@ -111,7 +113,7 @@ object TestDataGenerator {
   val installActionInst = Concept.createInstanceConcept(installConcept)
   val firefoxConceptInst = Concept.createInstanceConcept(firefoxConcept)
   val systemInstallFirefox = ConceptLink.createSubConceptLink(appliedLink, systemConcept, firefoxConceptInst, "systemInstallFirefox")
-  val pleaseInstallFFSimulation = ConceptNetwork(List[Concept](installActionInst, firefoxConceptInst), List[ConceptLink](systemInstallFirefox),
+  val pleaseInstallFFSimulation = new ConceptNetwork(List[Concept](installActionInst, firefoxConceptInst), List[ConceptLink](systemInstallFirefox),
     KnowledgeURI("pleaseInstallFFSimulation"))
 
   // User miss Internet Explorer 8
@@ -126,15 +128,26 @@ object TestDataGenerator {
   val internetExplorer8AnnotatedPhrase = AnnotatedPhrase("Internet Explorer 8", internetExplorerConcept)
   val iHaveProblemWithIE8Annotated = AnnotatedNarrative(List(user, missing, internetExplorer8), KnowledgeURI("iHaveProblemWithIE8"))
 
-  // User miss Internet Explorer 8 annotated
+  // User miss Internet Explorer 8 simulated
   val userInst = Concept.createInstanceConcept(userConcept)
   val internetExplorerInst = Concept.createInstanceConcept(internetExplorerConcept)
   val versionInst = Concept.createInstanceConcept(versionConcept, "8")
   val userMissInternetExplorer = ConceptLink.createInstanceConceptLink(missLink, userInst, internetExplorerInst)
   val internetExplorerHasVersion = ConceptLink.createInstanceConceptLink(has, internetExplorerInst, versionInst)
-  val iHaveProblemWithIE8Simulation = ConceptNetwork(List[Concept](userInst, internetExplorerInst, versionInst),
+  val iHaveProblemWithIE8Simulation = new ConceptNetwork(List[Concept](userInst, internetExplorerInst, versionInst),
   List[ConceptLink](userMissInternetExplorer, internetExplorerHasVersion), KnowledgeURI("iHaveProblemWithIE8Simulation"))
 
+  // User miss Internet Explorer 8 reformulated
+  val userInstRef = Concept.createInstanceConcept(userConcept)
+  val computerInstRef = Concept.createInstanceConcept(computerConcept)
+  val userHasComputerInst = ConceptLink.createInstanceConceptLink(has, userInstRef, computerInstRef)
+  val addressInstRef = Concept.createInstanceConcept(addressConcept, "someAddress")
+  val computerHasAddressRef = ConceptLink.createInstanceConceptLink(has, computerInstRef, addressInstRef)
+  val internetExplorerInstRef = Concept.createInstanceConcept(internetExplorerConcept)
+  val computerHasNoInternetExplorerInstRef = ConceptLink.createInstanceConceptLink(hasNo, computerInstRef, internetExplorerInstRef)
+  val internetExplorerHasVersionInstRef = ConceptLink.createInstanceConceptLink(has, internetExplorerInstRef, versionInst)
+  val iHaveProblemWithIE8Reformulation = new ConceptNetwork(List[Concept](userInstRef, computerInstRef, addressInstRef, internetExplorerInstRef),
+  List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
   def generateDirectInstructionNarrative = pleaseInstallFF
 
@@ -165,4 +178,10 @@ object TestDataGenerator {
    * @return ConceptNetwork
    */
   def generateProblemDescriptionSimulation = iHaveProblemWithIE8Simulation
+
+  /**
+   * Generates ConceptNetwork the result of Reformulation.
+   * @return ConceptNetwork
+   */
+  def generateProblemDescriptionReformulation = iHaveProblemWithIE8Reformulation
 }
