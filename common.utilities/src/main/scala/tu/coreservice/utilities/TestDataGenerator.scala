@@ -2,7 +2,9 @@ package tu.coreservice.utilities
 
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
-import tu.model.knowledge.{KnowledgeURI, Probability}
+import tu.model.knowledge.{Resource, Tag, KnowledgeURI, Probability}
+import tu.model.knowledge.howto.HowTo
+import tu.model.knowledge.frame.Frame
 
 /**
  * Test data generator object.
@@ -94,6 +96,12 @@ object TestDataGenerator {
   val computerPhrase = AnnotatedPhrase("computer", computerConcept)
 
   /**
+   * HowTo-s
+   */
+  val installHowTo = new HowTo(List[Frame[Concept]](Frame(objectConcept)), List[Tag](), KnowledgeURI("installHowTo"))
+  val reinstallHowTo = new HowTo(List[Frame[Concept]](Frame(objectConcept)), List[Tag](), KnowledgeURI("reinstallHowTo"))
+
+  /**
    * Test phrases
    */
   // Please install Firefox
@@ -149,6 +157,9 @@ object TestDataGenerator {
   val iHaveProblemWithIE8Reformulation = new ConceptNetwork(List[Concept](userInstRef, computerInstRef, addressInstRef, internetExplorerInstRef),
   List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
+  val installFirefoxHowTo = HowTo.createInstance(installHowTo, List(Frame(firefoxConcept)))
+  val reinstallIEHowTo = HowTo.createInstance(installHowTo, List(Frame(internetExplorerConcept)))
+
   def generateDirectInstructionNarrative = pleaseInstallFF
 
   def generateProblemDescriptionNarrative = iHaveProblemWithIE8
@@ -184,4 +195,16 @@ object TestDataGenerator {
    * @return ConceptNetwork
    */
   def generateProblemDescriptionReformulation = iHaveProblemWithIE8Reformulation
+
+  /**
+   * Generates install Firefox HowTo
+   * @return  HowTo
+   */
+  def generateInstallFirefoxHowTo = installFirefoxHowTo
+
+  /**
+   * Generates reinstall IE8 HowTo
+   * @return HowTo
+   */
+  def generateReinstallIE8HowTo = reinstallIEHowTo
 }
