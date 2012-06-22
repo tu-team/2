@@ -42,6 +42,10 @@ object Frame {
     new Frame(Map[KnowledgeURI, Concept](concept.uri -> concept), KnowledgeURI(concept.uri.name + framePostfix))
   }
 
+  def apply(concept:Resource): Frame[Resource] = {
+      new Frame(Map[KnowledgeURI, Resource](concept.uri -> concept), KnowledgeURI(concept.uri.name + framePostfix))
+    }
+
   def apply(conceptList: List[Concept], uri: KnowledgeURI): Frame[Concept] = {
     val conceptMap: Map[KnowledgeURI, Concept] = conceptList map { t => (t.uri, t) } toMap;
     new Frame(conceptMap, uri)

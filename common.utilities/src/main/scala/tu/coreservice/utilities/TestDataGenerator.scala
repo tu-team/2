@@ -24,8 +24,10 @@ object TestDataGenerator {
    * concepts
    */
   val subjectConcept = Concept("subject")
-  val objectConcept = Concept("object")
-  val systemConcept = Concept("system")
+
+  //TODO Correct to concept
+  val objectConcept =Concept("object")
+  val systemConcept =Concept("system")
   val userConcept = Concept("user")
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
@@ -98,8 +100,8 @@ object TestDataGenerator {
   /**
    * HowTo-s
    */
-  val installHowTo = new HowTo(List[Frame[Concept]](Frame(objectConcept)), List[Tag](), KnowledgeURI("installHowTo"))
-  val reinstallHowTo = new HowTo(List[Frame[Concept]](Frame(objectConcept)), List[Tag](), KnowledgeURI("reinstallHowTo"))
+  val installHowTo = new HowTo(List[Frame[Resource]](Frame(objectConcept)), List[Tag](), KnowledgeURI("installHowTo"))
+  val reinstallHowTo = new HowTo(List[Frame[Resource]](Frame(objectConcept)), List[Tag](), KnowledgeURI("reinstallHowTo"))
 
   /**
    * Test phrases
