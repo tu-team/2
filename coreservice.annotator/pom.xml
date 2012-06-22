@@ -110,7 +110,7 @@
                 </dependency>
         <dependency>
                             <groupId>tu</groupId>
-                            <artifactId>coreservice.autocorrector</artifactId>
+                            <artifactId>coreservice.spellcorrector</artifactId>
                             <version>${tu.version}</version>
                         </dependency>
 

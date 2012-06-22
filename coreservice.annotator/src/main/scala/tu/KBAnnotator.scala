@@ -1,8 +1,6 @@
 package tu.coreservice.annotator
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
-import org.scalatest.FunSuite
+
 import org.slf4j.LoggerFactory
 import relex.entity.{EntityMaintainer, EntityTaggerFactory, EntityTagger}
 import relex.{ParsedSentence, Sentence, RelationExtractor}
@@ -10,7 +8,6 @@ import collection.JavaConversions._
 import java.util.Properties
 import java.io.InputStream
 import relex.output.{SimpleView, OpenCogScheme}
-import org.scalatest.matchers.MustMatchers
 import tu.coreservice.spellcorrector.SpellCorrector
 
 /**
@@ -96,6 +93,9 @@ class KBAnnotator {
   def parseString(input: String): String = {
         val corrector = SpellCorrector();
         val corrected = corrector.correctSentence(input);
+
+        Console.println("Source Sentence: "+input);
+        Console.println("Corrected Sentence: "+corrected);
         var resString=""
         loadProperties
         val re = setup

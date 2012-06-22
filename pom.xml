@@ -72,7 +72,7 @@
         <module>messagebus</module>
         <module>model.knowledge</module>
         <module>model.webservice</module>
-        <module>relex</module>
+    <!--    <module>relex</module>             -->
         <module>common.utilities</module>
         <module>coreservice.spellcorrector</module>
         <module>coreservice.splitter</module>

@@ -1,8 +1,8 @@
 package tu.coreservice.utilities
 
 import tu.model.knowledge.domain.{ConceptLink, Concept}
-import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.{KnowledgeURI, Probability}
+import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedNarrative, AnnotatedPhrase}
 
 /**
  * Test data generator object.

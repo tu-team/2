@@ -5,6 +5,9 @@
         <groupId>tu</groupId>
         <version>${tu.version}</version>
     </parent>
+
+    <packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
     <groupId>tu</groupId>
     <artifactId>host.console</artifactId>
     <version>${tu.version}</version>
@@ -63,7 +66,35 @@
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
+
         <plugins>
+            <plugin>
+                  <artifactId>maven-assembly-plugin</artifactId>
+                  <configuration>
+                    <descriptorRefs>
+                      <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                      <manifest>
+                        <mainClass>tu.host.console.AppMain</mainClass>
+                      </manifest>
+                    </archive>
+                  </configuration>
+                </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
