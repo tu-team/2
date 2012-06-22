@@ -18,7 +18,7 @@ import tu.model.knowledge.Tag
 case class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_parameters: List[Frame[Concept]], _tags: List[Tag], _uri: KnowledgeURI) {
+  def this(_parameters: List[Frame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
     this(_parameters, _tags, _uri, new Probability())
   }
 
@@ -48,7 +48,7 @@ object HowTo {
    * @param parameters
    * @return HowTo instance
    */
-  def createInstance(parent: HowTo, parameters: List[Frame[Concept]]): HowTo = {
+  def createInstance(parent: HowTo, parameters: List[Frame[Resource]]): HowTo = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
     val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
     it

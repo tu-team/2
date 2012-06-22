@@ -17,7 +17,7 @@ object Configurator {
   def proxyAddress(): ProxyDescription
   = {
     var res = new ProxyDescription
-    res.proxyHost = "localhost"
+    res.proxyHost = "ru100279159"
     res.proxyPort = 3128
     res.useProxy = true
     return res
