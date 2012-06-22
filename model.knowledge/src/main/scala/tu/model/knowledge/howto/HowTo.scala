@@ -1,7 +1,12 @@
 package tu.model.knowledge.howto
 
 import tu.model.knowledge.frame.Frame
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI, Tag}
+import tu.model.knowledge._
+import tu.model.knowledge.annotator.AnnotatedPhrase
+import domain.{Concept, ConceptLink}
+import tu.model.knowledge.primitive.KnowledgeString
+import util.Random
+import tu.model.knowledge.Tag
 
 /**
  * Stores HowTo and it's parameters.
@@ -10,10 +15,10 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI, Tag}
  *         time: 10:55 PM
  */
 
-case class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability)
+case class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_parameters: List[Frame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
+  def this(_parameters: List[Frame[Concept]], _tags: List[Tag], _uri: KnowledgeURI) {
     this(_parameters, _tags, _uri, new Probability())
   }
 
@@ -31,4 +36,21 @@ case class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _
     this
   }
 
+}
+
+object HowTo {
+
+  val howToPostfix = "HowTo"
+
+  /**
+   * Creates instance of HowTo based on parent HowTo and parameters
+   * @param parent
+   * @param parameters
+   * @return HowTo instance
+   */
+  def createInstance(parent: HowTo, parameters: List[Frame[Concept]]): HowTo = {
+    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
+    it
+  }
 }

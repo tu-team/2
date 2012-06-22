@@ -115,4 +115,15 @@ object Concept {
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
+
+  def createInstanceConcept(parent: Concept, content: String): Concept = {
+    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("phrases"),
+      KnowledgeString(content, content),
+      List[ConceptLink](),
+      KnowledgeURI(name + "Concept"))
+    parent.specialisations = parent.specialisations + (it.uri -> it)
+    it
+  }
 }
