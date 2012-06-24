@@ -15,6 +15,4 @@ abstract class Link[T <: Resource](_source: T, _destination: T, _uri: KnowledgeU
 
   def destination: T = _destination
 
-  val created: Calendar = new java.util.GregorianCalendar()
-
 }
