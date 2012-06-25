@@ -32,10 +32,10 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="KBAnnotator" color="#8cb6ce" meeting="false" start="2012-06-18" duration="5" complete="0" expand="true">
-            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        <task id="0" name="KBAnnotator" color="#8cb6ce" meeting="false" start="2012-06-18" duration="7" complete="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="2" name="Test data" color="#8cb6ce" meeting="false" start="2012-06-18" duration="4" complete="0" expand="true">
+        <task id="2" name="Test data" color="#8cb6ce" meeting="false" start="2012-06-18" duration="5" complete="0" expand="true">
             <depend id="1" type="2" difference="0" hardness="Strong"/>
             <task id="10" name="Simulation Test data" color="#8cb6ce" meeting="false" start="2012-06-18" duration="1" complete="0" expand="true">
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
@@ -46,42 +46,40 @@
             <task id="5" name="Classification and Find most probalable solution test data" color="#8cb6ce" meeting="false" start="2012-06-20" duration="1" complete="0" expand="true">
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="4" name="Solution search test data" color="#8cb6ce" meeting="false" start="2012-06-21" duration="1" complete="0" expand="true"/>
+            <task id="4" name="Solution search test data" color="#8cb6ce" meeting="false" start="2012-06-21" duration="2" complete="0" expand="true"/>
         </task>
-        <task id="1" name="Simulation" color="#8cb6ce" meeting="false" start="2012-06-22" duration="2" complete="0" expand="true">
+        <task id="1" name="Simulation" color="#8cb6ce" meeting="false" start="2012-06-25" duration="2" complete="0" expand="true">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="6" name="Classification" color="#8cb6ce" meeting="false" start="2012-06-26" duration="3" complete="0" expand="false">
+        <task id="6" name="Classification" color="#8cb6ce" meeting="false" start="2012-06-27" duration="3" complete="0" expand="true">
             <depend id="13" type="2" difference="0" hardness="Strong"/>
-            <task id="7" name="Direct instruction" color="#8cb6ce" meeting="false" start="2012-06-26" duration="1" complete="0" expand="true">
+            <task id="7" name="Direct instruction" color="#8cb6ce" meeting="false" start="2012-06-27" duration="1" complete="0" expand="true">
                 <depend id="8" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="8" name="Problem description" color="#8cb6ce" meeting="false" start="2012-06-27" duration="1" complete="0" expand="true">
+            <task id="8" name="Problem description" color="#8cb6ce" meeting="false" start="2012-06-28" duration="1" complete="0" expand="true">
                 <depend id="9" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="9" name="Problem description with desired stater" color="#8cb6ce" meeting="false" start="2012-06-28" duration="1" complete="0" expand="true"/>
+            <task id="9" name="Problem description with desired stater" color="#8cb6ce" meeting="false" start="2012-06-29" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="12" name="Find most probable solution" color="#8cb6ce" meeting="false" start="2012-06-25" duration="1" complete="0" expand="true">
-            <depend id="14" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="13" name="Reformulation" color="#8cb6ce" meeting="false" start="2012-06-29" duration="2" complete="0" expand="true"/>
-        <task id="14" name="Search solution" color="#8cb6ce" meeting="false" start="2012-06-26" duration="5" complete="0" expand="true">
+        <task id="12" name="Find most probable solution" color="#8cb6ce" meeting="false" start="2012-06-25" duration="4" complete="0" expand="true"/>
+        <task id="13" name="Reformulation" color="#8cb6ce" meeting="false" start="2012-07-02" duration="2" complete="0" expand="true"/>
+        <task id="14" name="Search solution" color="#8cb6ce" meeting="false" start="2012-06-27" duration="5" complete="0" expand="true">
             <depend id="15" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="15" name="ThinkingLifecycle minimal" color="#8cb6ce" meeting="false" start="2012-07-03" duration="3" complete="0" expand="true">
+        <task id="15" name="ThinkingLifecycle minimal" color="#8cb6ce" meeting="false" start="2012-07-04" duration="3" complete="0" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="16" name="Test Lexical parsing" color="#8cb6ce" meeting="false" start="2012-06-18" duration="5" complete="0" expand="true"/>
-        <task id="17" name="Test Complete life cycle" color="#8cb6ce" meeting="false" start="2012-07-06" duration="5" complete="0" expand="true"/>
+        <task id="17" name="Test Complete life cycle" color="#8cb6ce" meeting="false" start="2012-07-09" duration="5" complete="0" expand="true"/>
     </tasks>
     <resources>
-        <resource id="0" name="A" function="Default:0" contacts="" phone=""/>
-        <resource id="1" name="M" function="Default:0" contacts="" phone=""/>
-        <resource id="2" name="V" function="Default:0" contacts="" phone=""/>
+        <resource id="0" name="A" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="1" name="M" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="2" name="V" function="SoftwareDevelopment:4" contacts="" phone=""/>
+        <resource id="3" name="Ad" function="SoftwareDevelopment:2" contacts="" phone=""/>
     </resources>
     <allocations>
         <allocation task-id="0" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
-        <allocation task-id="12" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="14" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="15" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="2" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
@@ -89,6 +87,7 @@
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="16" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="17" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <taskdisplaycolumns>

@@ -2,9 +2,7 @@ package tu.model.knowledge.howto
 
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge._
-import tu.model.knowledge.annotator.AnnotatedPhrase
-import domain.{Concept, ConceptLink}
-import tu.model.knowledge.primitive.KnowledgeString
+import domain.Concept
 import util.Random
 import tu.model.knowledge.Tag
 
@@ -44,13 +42,23 @@ object HowTo {
 
   /**
    * Creates instance of HowTo based on parent HowTo and parameters
-   * @param parent
-   * @param parameters
+   * @param parent super HowTo
+   * @param parameters Resources List
    * @return HowTo instance
    */
   def createInstance(parent: HowTo, parameters: List[Frame[Resource]]): HowTo = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
     val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
+    it
+  }
+
+  def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
+    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+
+    val frames: List[Frame[Resource]] = parameters.map(c => {
+      Frame(c)
+    })
+    val it = new HowTo(frames, List[Tag](), KnowledgeURI(name + howToPostfix))
     it
   }
 }

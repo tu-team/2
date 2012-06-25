@@ -34,20 +34,33 @@ object Frame {
   val framePostfix = "Frame"
 
   /**
-   * Creates Frame[Concept] based on concept
-   * @param concept
-   * @return Frame[Concept]
+   * Creates Frame[Concept] based on concept.
+   * @param concept concept to store
+   * @return Frame[Resource]
    */
-  def apply(concept: Concept): Frame[Concept] = {
-    new Frame(Map[KnowledgeURI, Concept](concept.uri -> concept), KnowledgeURI(concept.uri.name + framePostfix))
+  def apply(concept: Concept): Frame[Resource] = {
+    new Frame[Resource](Map[KnowledgeURI, Concept](concept.uri -> concept), KnowledgeURI(concept.uri.name + framePostfix))
   }
 
-  def apply(concept:Resource): Frame[Resource] = {
-      new Frame(Map[KnowledgeURI, Resource](concept.uri -> concept), KnowledgeURI(concept.uri.name + framePostfix))
-    }
+  /**
+   * Creates Frame based on Resource list.
+   * @param resource to store
+   * @return Frame[Resource]
+   */
+  def apply(resource: Resource): Frame[Resource] = {
+    new Frame(Map[KnowledgeURI, Resource](resource.uri -> resource), KnowledgeURI(resource.uri.name + framePostfix))
+  }
 
-  def apply(conceptList: List[Concept], uri: KnowledgeURI): Frame[Concept] = {
-    val conceptMap: Map[KnowledgeURI, Concept] = conceptList map { t => (t.uri, t) } toMap;
+  /**
+   * Creates Frame of Concept List with specified URI.
+   * @param conceptList to store
+   * @param uri to assign
+   * @return Frame[Resource]
+   */
+  def apply(conceptList: List[Concept], uri: KnowledgeURI): Frame[Resource] = {
+    val conceptMap: Map[KnowledgeURI, Concept] = conceptList.map {
+      t => (t.uri, t)
+    }.toMap
     new Frame(conceptMap, uri)
   }
 }
