@@ -50,6 +50,9 @@ case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
     _specialisations = in
     this
   }
+
+  override def source: Concept = _source
+  override def destination: Concept = _destination
 }
 
 object ConceptLink {

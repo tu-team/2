@@ -92,15 +92,50 @@ class Simulation {
     val concepts = in.map {
       phrase: AnnotatedPhrase => phrase.concepts(0)
     }
-
-    concepts.map{
+    var processedConcepts: List[Concept] = List[Concept]()
+    val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map {
       concept: Concept => {
-         var processedConcepts: Map[Concept, Concept] = Map[Concept, Concept]()
-        // TODO extend this
+        val currentInstance = Concept.createInstanceConcept(concept)
+        val notProcessedLinks: List[ConceptLink] = concept.links.filter {
+          link: ConceptLink => {
+            if (link.source == concept) {
+              !processedConcepts.contains(link.destination)
+            } else if (link.destination == concept) {
+              !processedConcepts.contains(link.source)
+            } else {
+              false
+            }
+          }
+        }
+
+        val linkInstances = notProcessedLinks.map {
+          link: ConceptLink => {
+            if (link.source == concept) {
+              val currentDestination = Concept.createInstanceConcept(link.destination)
+              ConceptLink.createInstanceConceptLink(link, currentInstance, currentDestination)
+            } else {
+              val currentSource = Concept.createInstanceConcept(link.source)
+              ConceptLink.createInstanceConceptLink(link, currentSource, currentInstance)
+            }
+          }
+        }
+        currentInstance.links = linkInstances
+        processedConcepts = processedConcepts ++ List(concept)
+        (currentInstance, linkInstances)
       }
     }
-    // TODO fix this
-    // new ConceptNetwork(instances, links, name)
-    null
+    val instances: List[Concept] = instancesLinks.map {
+      i: Pair[Concept, List[ConceptLink]] => {
+        i._1
+      }
+    }
+
+    val links: List[List[ConceptLink]] = instancesLinks.map {
+      i: Pair[Concept, List[ConceptLink]] => {
+        i._2
+      }
+    }
+    val flatLinks: List[ConceptLink] = links.flatten
+    ConceptNetwork(instances, flatLinks, name)
   }
 }

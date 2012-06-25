@@ -26,3 +26,10 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
   override def rootNodes = _nodes
 
 }
+object ConceptNetwork {
+
+  def apply (nodes: List[Concept], links: List[ConceptLink], name: String) = {
+    val uri = KnowledgeURI(name)
+    new ConceptNetwork(nodes, links, uri)
+  }
+}
