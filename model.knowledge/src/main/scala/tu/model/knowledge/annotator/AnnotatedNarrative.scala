@@ -1,7 +1,7 @@
 package tu.model.knowledge.annotator
 
-import tu.model.knowledge.narrative.Narrative
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
+import tu.model.knowledge.domain.Concept
 
 
 /**
@@ -15,5 +15,14 @@ case class AnnotatedNarrative(_phrases: List[AnnotatedPhrase], _uri: KnowledgeUR
   extends Resource(_uri, _probability) {
 
   def phrases = _phrases
+
+  def concepts: List[Concept] = {
+    val phrasesWithConcepts = phrases.filter(
+      (p: AnnotatedPhrase) => {
+        p.concepts.size > 0
+      })
+    val concepts: List[Concept] = phrasesWithConcepts.map {p: AnnotatedPhrase => p.concepts}.flatten
+    concepts
+  }
 
 }

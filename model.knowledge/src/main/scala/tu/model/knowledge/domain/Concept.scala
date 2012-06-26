@@ -15,7 +15,7 @@ import tu.model.knowledge._
 case class Concept(var _generalisations: TypedKLine[Concept],
                    var _specialisations: TypedKLine[Concept],
                    var _phrases: TypedKLine[AnnotatedPhrase],
-                   val __content: Resource,
+                   __content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability())
@@ -56,6 +56,27 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   def links_=(in: List[ConceptLink]): Concept = {
     _conceptLinks = in
     this
+  }
+
+  /**
+   * Returns true if current Concept has at least one same parent(generalisation) with specified.
+   * @param that Concept to compare
+   * @return Boolean true if that has at least one common parent(generalisation).
+   */
+  def hasSameGeneralisation(that: Concept): Boolean = {
+    val commonGeneralisations = that.generalisations.frames.filter {
+      uriConcept: Pair[KnowledgeURI, Concept] => this.generalisations.frames.contains(uriConcept._1)
+    }
+    commonGeneralisations.size > 0
+  }
+
+  /**
+   * Returns true if current Concept has at least one same parent with specified.
+   * @param parent Concept to compare with
+   * @return Boolean true if that has same parent.
+   */
+  def hasGeneralisation(parent: Concept): Boolean = {
+    this.generalisations.frames.contains(parent.uri)
   }
 
 }

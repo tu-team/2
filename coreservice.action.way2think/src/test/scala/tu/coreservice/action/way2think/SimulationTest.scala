@@ -12,6 +12,8 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import simulation.Simulation
 import tu.coreservice.utilities.TestDataGenerator
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
+import tu.model.knowledge.KnowledgeURI
 
 @RunWith(classOf[JUnitRunner])
 class SimulationTest extends FunSuite {
@@ -22,9 +24,26 @@ class SimulationTest extends FunSuite {
 
   test("Simulation exact match should work") {
     val sim = new Simulation()
-    val res = sim(TestDataGenerator.generateProblemDescriptionAnnotatedNarrative,
+    val res: Option[ConceptNetwork] = sim(TestDataGenerator.generateProblemDescriptionAnnotatedNarrative,
       TestDataGenerator.generateDomainModelConceptNetwork)
-    // expect()()
+
+    // check concepts
+    val concepts: List[Concept] = TestDataGenerator.generateProblemDescriptionAnnotatedNarrative.concepts
+    res match {
+      case Some(instanceNetwork: ConceptNetwork) => {
+        val checkedNodes = instanceNetwork.nodes.filter(
+          (c: Concept) => {
+            c.generalisations.frames.exists{
+              uriConceptPair: Pair[KnowledgeURI, Concept] => {
+                concepts.contains(uriConceptPair._2)
+              }
+            }
+          }
+        )
+        assert(checkedNodes.size > 0)
+      }
+      case None => assert(false)
+    }
 
   }
 
