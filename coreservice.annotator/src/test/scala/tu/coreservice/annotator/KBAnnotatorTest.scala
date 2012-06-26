@@ -19,6 +19,7 @@ import java.io.InputStream
 import relex.output.{SimpleView, OpenCogScheme}
 import org.scalatest.matchers.MustMatchers
 import tu.coreservice.spellcorrector.SpellCorrector
+import tu.providers.WordnetAnnotatorProvider
 
 @RunWith(classOf[JUnitRunner])
 class KBAnnotatorTest extends FunSuite with MustMatchers {
@@ -86,6 +87,13 @@ class KBAnnotatorTest extends FunSuite with MustMatchers {
     }
     val sntc: Sentence = re.processSentence(sentence, em)
     sntc
+  }
+
+
+  test("wordnet test is ok"){
+    val wordnet=new WordnetAnnotatorProvider
+    val result=wordnet.annotate("software")
+    assert(result.contains("package"))
   }
 
   test("line 1 processing is ok") {
