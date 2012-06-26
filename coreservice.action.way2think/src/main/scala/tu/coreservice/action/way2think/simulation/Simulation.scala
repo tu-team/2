@@ -54,7 +54,7 @@ class Simulation {
     }
 
     if (exactMatch.size > 0) {
-      Some(this.processExactMatch(exactMatch))
+      return Some(this.processExactMatch(exactMatch))
     }
     None
   }
