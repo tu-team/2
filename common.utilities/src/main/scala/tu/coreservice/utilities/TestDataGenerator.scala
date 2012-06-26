@@ -85,7 +85,7 @@ object TestDataGenerator {
   /**
    * Domain model concept network
    */
-  val domainModel = (concepts, conceptLinks, KnowledgeURI("domainModel"))
+  val domainModel = ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel"))
 
   /**
    * phrases

@@ -2,7 +2,6 @@ package tu.model.knowledge.communication
 
 import tu.model.knowledge.{Probability, Resource, KnowledgeURI, KLine}
 
-
 /**
  * Stores contexts parameters.
  * @author max talanov
@@ -10,13 +9,14 @@ import tu.model.knowledge.{Probability, Resource, KnowledgeURI, KLine}
  *         time: 11:27 PM
  */
 
-case class Context(var __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI, override val _probability: Probability)
+case class Context(var __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
+                   override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
 }
 
 /**
- * @author toscheva
+ * @author toschev alex
  *         date 2012-06-06
  *         time: 11:27 PM
  */
@@ -24,15 +24,23 @@ object ContextHelper {
 
   /**
    * return initialized context to the user
-   * @param ctx
+   * @param ctx Context to initialize
    * @return
    */
   def initializeContext(ctx: Context): Context = {
-    var returnContext = ctx;
-    if (returnContext == null) returnContext = new Context(Map.empty[KnowledgeURI, Resource], new KnowledgeURI("empty", "empty", "1.0"), new Probability());
+    var returnContext = ctx
+    if (returnContext == null) returnContext = new Context(Map.empty[KnowledgeURI, Resource], new KnowledgeURI("empty", "empty", "1.0"), new Probability())
     //if (returnContext.frames == null) returnContext.frames = Map.empty[KnowledgeURI, Resource];
 
-    return returnContext;
+    returnContext
+  }
+
+  def apply(resources: List[Resource], name: String): Context = {
+    val uri = KnowledgeURI(name)
+    val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
+      t => (t.uri, t)
+    }.toMap
+    new Context(resourcesMap, uri)
   }
 
 }

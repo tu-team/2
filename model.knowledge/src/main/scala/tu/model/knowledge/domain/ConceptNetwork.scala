@@ -9,9 +9,15 @@ import tu.model.knowledge.{Probability, KnowledgeURI}
  *         time: 10:41 PM
  */
 
-case class ConceptNetwork(val _nodes: List[Concept], _links: List[ConceptLink], override val _uri: KnowledgeURI,
+case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
+                          _links: List[ConceptLink] = List[ConceptLink](),
+                          override val _uri: KnowledgeURI,
                           override val _probability: Probability = new Probability())
   extends SemanticNetwork(_nodes, _uri, _probability) {
+
+  def this(uri: KnowledgeURI) = {
+    this(List[Concept](), List[ConceptLink](), uri)
+  }
 
   def nodes = _nodes
 
@@ -19,4 +25,11 @@ case class ConceptNetwork(val _nodes: List[Concept], _links: List[ConceptLink], 
 
   override def rootNodes = _nodes
 
+}
+object ConceptNetwork {
+
+  def apply (nodes: List[Concept], links: List[ConceptLink], name: String) = {
+    val uri = KnowledgeURI(name)
+    new ConceptNetwork(nodes, links, uri)
+  }
 }
