@@ -23,7 +23,7 @@ class Simulation {
    * @param simulationModel ConceptNetwork base model.
    * @return ConceptNetwork simulation result.
    */
-  def apply(in: AnnotatedNarrative, simulationModel: ConceptNetwork): ConceptNetwork = {
+  def apply(in: AnnotatedNarrative, simulationModel: ConceptNetwork): Option[ConceptNetwork] = {
 
     // val instancesList: List[Concept] =
     // check concept of a phrase and if it is in simulationModel crate it's instance.
@@ -54,9 +54,9 @@ class Simulation {
     }
 
     if (exactMatch.size > 0) {
-      this.processExactMatch(exactMatch)
+      Some(this.processExactMatch(exactMatch))
     }
-    null
+    None
   }
 
   private def filterPhrase(phrase: AnnotatedPhrase, simulationModel: ConceptNetwork): List[Concept] = {
