@@ -6,9 +6,10 @@ import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.Resource
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
+import java.rmi.UnexpectedException
 
 /**
- * Simulation Way2Think implementation.
+ * Simple direct concept to concept Simulation Way2Think implementation.
  * @author max talanov
  *         date 2012-06-25
  *         time: 12:45 PM
@@ -33,6 +34,12 @@ class Simulation {
       }
     }
 
+    val hasMatches: List[AnnotatedPhrase] = in.phrases.filter {
+      phrase: AnnotatedPhrase => {
+        this.filterPhrase(phrase, simulationModel).size > 0
+      }
+    }
+
     val ambiguous: List[AnnotatedPhrase] = in.phrases.filter {
       phrase: AnnotatedPhrase => {
         this.filterPhrase(phrase, simulationModel).size > 1
@@ -45,16 +52,14 @@ class Simulation {
       }
     }
 
-    if (ambiguous.size > 0) {
-      this.processAmbiguous(ambiguous)
-    }
+    val unAmbiguous = processAmbiguousBackReferences(ambiguous, in)
 
     if (notKnown.size > 0) {
       this.processNotKnown(notKnown)
     }
 
     if (exactMatch.size > 0) {
-      return Some(this.processExactMatch(exactMatch))
+      return Some(this.processMatches(hasMatches, exactMatch, unAmbiguous))
     }
     None
   }
@@ -70,8 +75,9 @@ class Simulation {
    * Really stupid method to process ambiguity.
    * @param in List[Concept]
    * @return Context of Cry4HelpWay2Think
+   * @deprecated
    */
-  private def processAmbiguous(in: List[AnnotatedPhrase]): Context = {
+  def processAmbiguous(in: List[AnnotatedPhrase]): Context = {
     // ambiguity
     var res: List[Resource] = in
     res = res ++ List[Resource](KnowledgeString("Please clarify ambiquity", "Please.clarify.ambiquity"))
@@ -80,17 +86,22 @@ class Simulation {
     cry4helpWay2Think.apply(context)
   }
 
-  def processAmbiguousBackReferences(in: List[AnnotatedPhrase], text: AnnotatedNarrative): List[Concept] = {
-
-    val mostProbableConcept: List[Concept] = in.map {
+  /**
+   * Returns map of AnnotatedPhrase to most referenced concept of the AnnotatedPhrase
+   * @param in List[AnnotatedPhrase] phrases to be processed.
+   * @param text AnnotatedNarrative to find references.
+   * @return Map[AnnotatedPhrase, Concept]
+   */
+  def processAmbiguousBackReferences(in: List[AnnotatedPhrase], text: AnnotatedNarrative): Map[AnnotatedPhrase, Concept] = {
+    val mostReferencedConcept: List[Pair[AnnotatedPhrase, Concept]] = in.map {
       phrase: AnnotatedPhrase => {
-        phrase.concepts.reduceLeft((c1, c2) => {
+        Pair(phrase, phrase.concepts.reduceLeft((c1, c2) => {
           if (countLinks(c1, text) > countLinks(c2, text)) c1
           else c2
-        })
+        }))
       }
     }
-    mostProbableConcept
+    mostReferencedConcept.toMap
   }
 
   private def countLinks(concept: Concept, text: AnnotatedNarrative): Int = {
@@ -121,10 +132,32 @@ class Simulation {
     cry4helpWay2Think.apply(context)
   }
 
-  private def processExactMatch(in: List[AnnotatedPhrase]): ConceptNetwork = {
-    val concepts = in.map {
-      phrase: AnnotatedPhrase => phrase.concepts(0)
+  private def processMatches(matches: List[AnnotatedPhrase],
+                             exactMatches: List[AnnotatedPhrase],
+                             unAmbiguous: Map[AnnotatedPhrase, Concept]): ConceptNetwork = {
+    // merge exact match and unAmbiguous
+    val concepts: List[Concept] = matches.map{
+      phrase: AnnotatedPhrase => {
+        if (exactMatches.contains(phrase)) {
+          phrase.concepts(0)
+        } else if(unAmbiguous.contains(phrase)) {
+          unAmbiguous.get(phrase) match {
+            case Some(res: Concept) => {
+              res
+            }
+            case None => {
+              throw new UnexpectedException("$Filtered_phrases_must_contains_concepts")
+            }
+          }
+        } else {
+          throw new UnexpectedException("$Filtered_phrases_must_be_either_in_exact_matches_or_in_unambigous")
+        }
+      }
     }
+    simulateMatches(concepts)
+  }
+
+  private def simulateMatches(concepts: List[Concept]): ConceptNetwork = {
     var processedConcepts: List[Concept] = List[Concept]()
     val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map {
       concept: Concept => {
