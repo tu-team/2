@@ -16,12 +16,18 @@ case class AnnotatedNarrative(_phrases: List[AnnotatedPhrase], _uri: KnowledgeUR
 
   def phrases = _phrases
 
+  /**
+   * Returns List[Concepts in current AnnotatedNarrative.
+   * @return List[Concepts in current AnnotatedNarrative
+   */
   def concepts: List[Concept] = {
     val phrasesWithConcepts = phrases.filter(
       (p: AnnotatedPhrase) => {
         p.concepts.size > 0
       })
-    val concepts: List[Concept] = phrasesWithConcepts.map {p: AnnotatedPhrase => p.concepts}.flatten
+    val concepts: List[Concept] = phrasesWithConcepts.map {
+      p: AnnotatedPhrase => p.concepts
+    }.flatten
     concepts
   }
 

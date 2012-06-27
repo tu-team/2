@@ -80,6 +80,39 @@ class Simulation {
     cry4helpWay2Think.apply(context)
   }
 
+  def processAmbiguousBackReferences(in: List[AnnotatedPhrase], text: AnnotatedNarrative): List[Concept] = {
+
+    val mostProbableConcept: List[Concept] = in.map {
+      phrase: AnnotatedPhrase => {
+        phrase.concepts.reduceLeft((c1, c2) => {
+          if (countLinks(c1, text) > countLinks(c2, text)) c1
+          else c2
+        })
+      }
+    }
+    mostProbableConcept
+  }
+
+  private def countLinks(concept: Concept, text: AnnotatedNarrative): Int = {
+    concept.links.filter {
+      link: ConceptLink => {
+        if (link.source == concept) {
+          val destination = link.destination
+          val references: List[Concept] = text.concepts.filter {
+            c: Concept => c equals destination
+          }
+          references.size > 0
+        } else {
+          val source = link.source
+          val references: List[Concept] = text.concepts.filter {
+            c: Concept => c equals source
+          }
+          references.size > 0
+        }
+      }
+    }.size
+  }
+
   private def processNotKnown(in: List[AnnotatedPhrase]): Context = {
     var res: List[Resource] = in
     res = res ++ List[Resource](KnowledgeString("Please clarify phreses", "Please.clarify.phrases"))
