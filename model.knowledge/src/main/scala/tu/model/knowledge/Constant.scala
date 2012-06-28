@@ -16,4 +16,9 @@ object Constant {
   val defaultRevision =  "0.0"
   val INSTANCE_ID_LENGTH = 16
 
+  val SELECTOR_REQUEST_URI_NAME = "DirectInstruction"
+  val ACTION_NAME = "action"
+  val SYSTEM_NAME = "system"
+  val SUBJECT_NAME = "subject"
+
 }
