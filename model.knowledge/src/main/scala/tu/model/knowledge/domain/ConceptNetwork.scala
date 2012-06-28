@@ -25,10 +25,42 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
 
   override def rootNodes = _nodes
 
+  /**
+   * Returns nodes with specified name.
+   * @param name String parameter of filter
+   * @return List[Concepts] that has uri-s with specified name.
+   */
+  def getNodeByName(name: String): List[Concept] = {
+    _nodes.filter {
+      concept: Concept => {
+        concept.uri.name == name
+      }
+    }
+  }
+
+  /**
+   * Returns nodes that has generalisations with specified name.
+   * @param name String parameter of filter
+   * @return List[Concepts] that has generalisations uri-s with specified name.
+   */
+  def getNodeByGeneralisationName(name: String): List[Concept] = {
+    _nodes.filter {
+      concept: Concept => {
+        val gens: Map[KnowledgeURI, Concept] = concept.generalisations.frames.filter {
+          uriConcept: Pair[KnowledgeURI, Concept] => {
+            uriConcept._1 == name
+          }
+        }
+        gens.size > 0
+      }
+    }
+  }
+
 }
+
 object ConceptNetwork {
 
-  def apply (nodes: List[Concept], links: List[ConceptLink], name: String) = {
+  def apply(nodes: List[Concept], links: List[ConceptLink], name: String) = {
     val uri = KnowledgeURI(name)
     new ConceptNetwork(nodes, links, uri)
   }
