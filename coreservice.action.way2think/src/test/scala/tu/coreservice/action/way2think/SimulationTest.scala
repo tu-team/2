@@ -33,7 +33,7 @@ class SimulationTest extends FunSuite {
       case Some(instanceNetwork: ConceptNetwork) => {
         val checkedNodes = instanceNetwork.nodes.filter(
           (c: Concept) => {
-            c.generalisations.frames.exists{
+            c.generalisations.frames.exists {
               uriConceptPair: Pair[KnowledgeURI, Concept] => {
                 concepts.contains(uriConceptPair._2)
               }
@@ -45,6 +45,30 @@ class SimulationTest extends FunSuite {
       case None => assert(false)
     }
 
+  }
+
+  test("Simulation ambiguious references should work") {
+    val sim = new Simulation()
+    val res: Option[ConceptNetwork] = sim(TestDataGenerator.generateProblemDescriptionAnnotatedNarrativeAmbiguous,
+      TestDataGenerator.generateDomainModelConceptNetwork)
+
+    // check concepts
+    val concepts: List[Concept] = TestDataGenerator.generateProblemDescriptionAnnotatedNarrative.concepts
+    res match {
+      case Some(instanceNetwork: ConceptNetwork) => {
+        val checkedNodes = instanceNetwork.nodes.filter(
+          (c: Concept) => {
+            c.generalisations.frames.exists {
+              uriConceptPair: Pair[KnowledgeURI, Concept] => {
+                concepts.contains(uriConceptPair._2)
+              }
+            }
+          }
+        )
+        assert(checkedNodes.size > 0)
+      }
+      case None => assert(false)
+    }
   }
 
 }

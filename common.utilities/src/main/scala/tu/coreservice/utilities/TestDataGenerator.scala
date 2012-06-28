@@ -1,6 +1,6 @@
 package tu.coreservice.utilities
 
-import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
+import tu.model.knowledge.domain.{ConceptLink, ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.{Resource, Tag, KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
@@ -26,8 +26,8 @@ object TestDataGenerator {
   val subjectConcept = Concept("subject")
 
   //TODO Correct to concept
-  val objectConcept =Concept("object")
-  val systemConcept =Concept("system")
+  val objectConcept = Concept("object")
+  val systemConcept = Concept("system")
   val userConcept = Concept("user")
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
@@ -139,6 +139,13 @@ object TestDataGenerator {
   val iHaveProblemWithIE8Annotated = AnnotatedNarrative(List(userAnnotatedPhrase,
     missingAnnotatedPhrase, internetExplorer8AnnotatedPhrase), KnowledgeURI("iHaveProblemWithIE8"))
 
+  // User miss Internet Explorer 8 annotated
+  val lackLink = ConceptLink(lackConcept, internetExplorerConcept, "lackLink")
+  val internetExplorer8AnnotatedPhraseAmbiguous = AnnotatedPhrase("Internet Explorer 8", List(objectConcept, internetExplorerConcept))
+  val iHaveProblemWithIE8AnnotatedAmbiguous = AnnotatedNarrative(List(userAnnotatedPhrase,
+    missingAnnotatedPhrase, internetExplorer8AnnotatedPhraseAmbiguous), KnowledgeURI("iHaveProblemWithIE8"))
+
+
   // User miss Internet Explorer 8 simulated
   val userInst = Concept.createInstanceConcept(userConcept)
   val internetExplorerInst = Concept.createInstanceConcept(internetExplorerConcept)
@@ -146,7 +153,7 @@ object TestDataGenerator {
   val userMissInternetExplorer = ConceptLink.createInstanceConceptLink(missLink, userInst, internetExplorerInst)
   val internetExplorerHasVersion = ConceptLink.createInstanceConceptLink(has, internetExplorerInst, versionInst)
   val iHaveProblemWithIE8Simulation = new ConceptNetwork(List[Concept](userInst, internetExplorerInst, versionInst),
-  List[ConceptLink](userMissInternetExplorer, internetExplorerHasVersion), KnowledgeURI("iHaveProblemWithIE8Simulation"))
+    List[ConceptLink](userMissInternetExplorer, internetExplorerHasVersion), KnowledgeURI("iHaveProblemWithIE8Simulation"))
 
   // User miss Internet Explorer 8 reformulated
   val userInstRef = Concept.createInstanceConcept(userConcept)
@@ -158,7 +165,7 @@ object TestDataGenerator {
   val computerHasNoInternetExplorerInstRef = ConceptLink.createInstanceConceptLink(hasNo, computerInstRef, internetExplorerInstRef)
   val internetExplorerHasVersionInstRef = ConceptLink.createInstanceConceptLink(has, internetExplorerInstRef, versionInst)
   val iHaveProblemWithIE8Reformulation = new ConceptNetwork(List[Concept](userInstRef, computerInstRef, addressInstRef, internetExplorerInstRef),
-  List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
+    List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
   val installFirefoxHowTo = HowTo.createInstance(installHowTo, List(Frame(firefoxConcept)))
   val reinstallIEHowTo = HowTo.createInstance(installHowTo, List(Frame(internetExplorerConcept)))
@@ -180,6 +187,12 @@ object TestDataGenerator {
    * @return AnnotatedNarrative
    */
   def generateProblemDescriptionAnnotatedNarrative = iHaveProblemWithIE8Annotated
+
+  /**
+   * Generates AnnotatedNarrative with ambiguous phrases(that references several concepts)
+   * @return
+   */
+  def generateProblemDescriptionAnnotatedNarrativeAmbiguous = iHaveProblemWithIE8AnnotatedAmbiguous
 
   /**
    * Generates ConceptNetwork the result of Simulation.
@@ -210,4 +223,5 @@ object TestDataGenerator {
    * @return HowTo
    */
   def generateReinstallIE8HowTo = reinstallIEHowTo
+
 }
