@@ -11,13 +11,13 @@ Critic is used to: choose way2Think, classify inbound information, reflection, s
 
 Critic generates [Selector](selector.md) request: SelectorRequest.
 
-## Input
+## Input (members of inbound [Context](context.md))
 
  1. [Critic Rules](knowledge.md#Rule).
- 1. Incident description: [DomainModel](knowledge.md#domain) with KLine-s.
- 1. Simulation Way2Think result: [DomainModel](knowledge.md#domain).
+ 1. [DomainModel](knowledge.md#domain): [SemanticNetwork](knowledge.md#semanticnetwork).
+ 1. Incident description ([KBAnnotator](annotator.md) Way2Think result): as [SemanticNetwork](knowledge.md#semanticnetwork).
 
-## <a name="Critic_output">Output: Pair</a>
+## <a name="Critic_output">Output: Pair</a> (members of inbound [Context](context.md))
  1. List of :
    2. [SelectorRequest](selector.md#action).
    2. [Critic Rule](knowledge.md#Rule) = the logical predicate triggered(see below).

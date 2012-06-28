@@ -1,5 +1,7 @@
 package tu
 
+import org.specs.specification.Context
+
 /**
  * Critic trait.
  * @author toscheva
@@ -9,10 +11,14 @@ package tu
 
 trait Critic {
 
-  def excludesLinks();
+  def excludesLinks()
 
-  def includesLinks();
+  def includesLinks()
 
-  //TODO: add classes to knowledge project
-  //def apply(context:Context)
+  /**
+   * Gets
+   * @param context
+   * @return
+   */
+  def apply(context:Context): Context
 }
