@@ -64,4 +64,23 @@ object ConceptNetwork {
     val uri = KnowledgeURI(name)
     new ConceptNetwork(nodes, links, uri)
   }
+
+  /**
+   * Returns nodes that has generalisations with specified name.
+   * @param nodes List[Concept] to filter.
+   * @param name String parameter of filter.
+   * @return List[Concepts] that has generalisations uri-s with specified name.
+   */
+  def getNodeByGeneralisationName(nodes: List[Concept], name: String): List[Concept] = {
+    nodes.filter {
+      concept: Concept => {
+        val gens: Map[KnowledgeURI, Concept] = concept.generalisations.frames.filter {
+          uriConcept: Pair[KnowledgeURI, Concept] => {
+            uriConcept._1.name == name
+          }
+        }
+        gens.size > 0
+      }
+    }
+  }
 }

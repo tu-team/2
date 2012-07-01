@@ -8,10 +8,10 @@
         <version>1.0</version>
     </parent>
     <groupId>tu</groupId>
-    <artifactId>coreservice.action.critic</artifactId>
+    <artifactId>coreservice.action</artifactId>
     <version>${tu.version}</version>
     <name>${project.artifactId}</name>
-    <description>Critic component of Perceiving.</description>
+    <description>Action generic component of TU.</description>
     <inceptionYear>2012</inceptionYear>
     <licenses>
         <license>
@@ -69,16 +69,6 @@
         <dependency>
             <groupId>tu</groupId>
             <artifactId>model.knowledge</artifactId>
-            <version>${tu.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>tu</groupId>
-            <artifactId>coreservice.action</artifactId>
-            <version>${tu.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>tu</groupId>
-            <artifactId>common.utilities</artifactId>
             <version>${tu.version}</version>
         </dependency>
     </dependencies>

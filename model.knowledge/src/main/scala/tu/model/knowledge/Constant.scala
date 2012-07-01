@@ -17,8 +17,8 @@ object Constant {
   val INSTANCE_ID_LENGTH = 16
 
   val SELECTOR_REQUEST_URI_NAME = "DirectInstruction"
-  val ACTION_NAME = "action"
-  val SYSTEM_NAME = "system"
-  val SUBJECT_NAME = "subject"
+  val ACTION_NAME = "actionConcept"
+  val SYSTEM_NAME = "systemConcept"
+  val SUBJECT_NAME = "subjectConcept"
 
 }

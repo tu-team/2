@@ -7,7 +7,7 @@ package tu.model.knowledge
  *         time: 10:41 PM
  */
 
-abstract class Link[T <: Resource](_source: T, _destination: T, _uri: KnowledgeURI, _probability: Probability)
+abstract class Link[T <: Resource](_source: T, _destination: T, _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
   def source: T = _source

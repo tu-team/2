@@ -79,6 +79,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this.generalisations.frames.contains(parent.uri)
   }
 
+  override def toString: String = this.uri.name
 }
 
 object Concept {

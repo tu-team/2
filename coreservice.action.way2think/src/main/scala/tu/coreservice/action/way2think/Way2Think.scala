@@ -1,6 +1,8 @@
 package tu.coreservice.action.way2think
 
 import tu.model.knowledge.communication.Context
+import tu.model.knowledge.{Probability, KnowledgeURI}
+
 
 /**
  * Way2Think interface.
@@ -9,7 +11,8 @@ import tu.model.knowledge.communication.Context
  *         time: 11:09 PM
  */
 
-trait Way2Think {
+abstract class Way2Think(_uri: KnowledgeURI, _probability: Probability = new Probability())
+  extends Action(_uri, _probability) {
 
   /**
    * Way2Think interface.

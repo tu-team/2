@@ -25,7 +25,6 @@ object TestDataGenerator {
    */
   val subjectConcept = Concept("subject")
 
-  //TODO Correct to concept
   val objectConcept = Concept("object")
   val systemConcept = Concept("system")
   val userConcept = Concept("user")
@@ -48,7 +47,10 @@ object TestDataGenerator {
   val installConcept = Concept.createSubConcept(actionConcept, "install")
   val removeConcept = Concept.createSubConcept(actionConcept, "remove")
   val cleanConcept = Concept.createSubConcept(actionConcept, "clean")
-  val lackConcept = Concept.createSubConcept(actionConcept, "lack")
+
+  // problems
+  val problemConcept = Concept("problem")
+  val lackConcept = Concept.createSubConcept(problemConcept, "lack")
 
   var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
     firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept,
