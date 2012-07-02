@@ -22,5 +22,6 @@ object Constant {
   val SYSTEM_NAME = "systemConcept"
   val SUBJECT_NAME = "subjectConcept"
   val PROBLEM_NAME = "problemConcept"
+  val DESIRE_NAME = "desireConcept"
 
 }

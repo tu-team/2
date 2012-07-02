@@ -61,7 +61,7 @@
             </task>
             <task id="9" name="Problem description with desired stater" color="#8cb6ce" meeting="false" start="2012-07-03" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="12" name="Find most probable solution" color="#8cb6ce" meeting="false" start="2012-06-25" duration="4" complete="0" expand="true"/>
+        <task id="12" name="Find most probable solution" color="#8cb6ce" meeting="false" start="2012-06-25" duration="6" complete="0" expand="true"/>
         <task id="13" name="Reformulation" color="#8cb6ce" meeting="false" start="2012-07-04" duration="2" complete="0" expand="true"/>
         <task id="14" name="Search solution" color="#8cb6ce" meeting="false" start="2012-07-09" duration="5" complete="0" expand="true">
             <depend id="15" type="2" difference="0" hardness="Strong"/>

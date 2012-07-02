@@ -52,6 +52,13 @@ object TestDataGenerator {
   val problemConcept = Concept("problem")
   val lackConcept = Concept.createSubConcept(problemConcept, "lack")
 
+  /**
+   * Desired states
+   */
+  val desireConcept = Concept("desire")
+  val shouldConcept = Concept.createSubConcept(desireConcept, "should")
+  val shouldHaveConcept = Concept.createSubConcept(shouldConcept, "shouldHave")
+
   var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
     firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept,
     installConcept, removeConcept, cleanConcept, versionConcept)
@@ -142,6 +149,12 @@ object TestDataGenerator {
     missingAnnotatedPhrase, internetExplorer8AnnotatedPhrase), KnowledgeURI("iHaveProblemWithIE8"))
 
   // User miss Internet Explorer 8 annotated
+  val shouldHaveAnnotatedPhrase = AnnotatedPhrase("should have", shouldHaveConcept)
+  val iHaveProblemWithIE8IShouldHaveIE8 = AnnotatedNarrative(List(userAnnotatedPhrase,
+    missingAnnotatedPhrase, internetExplorer8AnnotatedPhrase,
+    shouldHaveAnnotatedPhrase, internetExplorer8AnnotatedPhrase), KnowledgeURI("iHaveProblemWithIE8IShouldHaveIE8"))
+
+  // User miss Internet Explorer 8 annotated
   val lackLink = ConceptLink(lackConcept, internetExplorerConcept, "lackLink")
   val internetExplorer8AnnotatedPhraseAmbiguous = AnnotatedPhrase("Internet Explorer 8", List(objectConcept, internetExplorerConcept))
   val iHaveProblemWithIE8AnnotatedAmbiguous = AnnotatedNarrative(List(userAnnotatedPhrase,
@@ -189,6 +202,12 @@ object TestDataGenerator {
    * @return AnnotatedNarrative
    */
   def generateProblemDescriptionAnnotatedNarrative = iHaveProblemWithIE8Annotated
+
+  /**
+   * Generates AnnotatedNarrative with desired state the result of KBAnnotator.
+   * @return AnnotatedNarrative
+   */
+  def generateProblemDescriptionWithDesiredStateAnnotatedNarrative = iHaveProblemWithIE8Annotated
 
   /**
    * Generates AnnotatedNarrative with ambiguous phrases(that references several concepts)
