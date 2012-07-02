@@ -20,4 +20,8 @@ class SimulationWay2Think extends Way2Think {
     //TODO implement this stub.
     null
   }
+
+  def start() = false
+
+  def stop() = false
 }

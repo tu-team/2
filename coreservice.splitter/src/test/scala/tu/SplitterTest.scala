@@ -23,19 +23,7 @@ class SplitterTest extends TestCase("splitter") {
 
       var splitter= new PreliminarySplitter()
 
-      //initialize input context and output context
-      var input=ContextHelper.initializeContext(null)
-      var output=ContextHelper.initializeContext(null )
-
-      //place text to input
-      input.frames+=(new KnowledgeURI("tu.com","inputtext","0.3")-> new KnowledgeString("This are a simple text. Test contain sentence. And this is a third sentence.",null))
-
-      splitter(input,output)
-
-      assertTrue(output.frames.count(p=>true) == 3)
-
-      //check grammar
-      assertTrue (output.frames.count(p=>p._2.asInstanceOf[KnowledgeString].value=="This is a simple text.")>0)
+      splitter.processSentences("I have a problem with Firefox. Please reinstall.")
 
     }
 

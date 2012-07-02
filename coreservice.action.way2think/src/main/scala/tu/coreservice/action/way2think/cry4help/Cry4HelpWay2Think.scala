@@ -16,4 +16,8 @@ class Cry4HelpWay2Think extends Way2Think{
    * @return outputContext
    */
   def apply(inputContext: Context): Context = null
+
+  def start() = false
+
+  def stop() = false
 }

@@ -1,6 +1,6 @@
 package tu.host.console
 
-import tu.coreservice.annotator.KBAnnotator
+import tu.coreservice.annotator.KBAnnotatorImpl
 ;
 
 
@@ -10,7 +10,7 @@ import tu.coreservice.annotator.KBAnnotator
  */
 object AppMain {
 
-  val annotator = new KBAnnotator()
+  val annotator = new KBAnnotatorImpl()
 
   def main(args: Array[String]): Unit= {
 

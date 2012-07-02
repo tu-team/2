@@ -16,4 +16,7 @@ object FindMostProbableSolution extends Way2Think{
           inputContext
   }
 
+  def start() = false
+
+  def stop() = false
 }

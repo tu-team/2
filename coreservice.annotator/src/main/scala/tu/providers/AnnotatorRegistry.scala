@@ -19,6 +19,6 @@ object AnnotatorRegistry {
    */
   def listAnnotators(): List[AnnotatorProvider] = {
     //Append annotator classes here
-    return List()
+    return List(new LocalKBAnnotatorProvider,new WordnetAnnotatorProvider)
   }
 }

@@ -22,7 +22,7 @@ import tu.coreservice.spellcorrector.SpellCorrector
 import tu.providers.WordnetAnnotatorProvider
 
 @RunWith(classOf[JUnitRunner])
-class KBAnnotatorTest extends FunSuite with MustMatchers {
+class KBAnnotatorImplTest extends FunSuite with MustMatchers {
 
   val log = LoggerFactory.getLogger(this.getClass)
   val systemProperties = "system.properties"
@@ -88,6 +88,7 @@ class KBAnnotatorTest extends FunSuite with MustMatchers {
     val sntc: Sentence = re.processSentence(sentence, em)
     sntc
   }
+
 
 
   test("wordnet test is ok"){
