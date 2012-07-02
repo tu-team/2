@@ -27,7 +27,7 @@ object TestDataGenerator {
 
   val objectConcept = Concept("object")
   val systemConcept = Concept("system")
-  val userConcept = Concept("user")
+  val userConcept = Concept.createSubConcept(subjectConcept, "user")
   val computerConcept = Concept("computer")
   val softwareConcept = Concept("sofware")
   val versionConcept = Concept("version")

@@ -1,7 +1,7 @@
 package tu.model.knowledge.domain
 
 import tu.model.knowledge.semanticnetwork.SemanticNetwork
-import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.model.knowledge.{TypedKLine, Probability, KnowledgeURI}
 
 /**
  * @author max
@@ -82,5 +82,33 @@ object ConceptNetwork {
         gens.size > 0
       }
     }
+  }
+
+  /**
+   * Runs recursively, returns nodes that has generalisations with specified name.
+   * @param nodes List[Concept] to filter.
+   * @param name String parameter of filter.
+   * @return List[Concepts] that has generalisations uri-s with specified name.
+   */
+  def getNodeByGeneralisationNameRec(nodes: List[Concept], name: String): List[Concept] = {
+    nodes.filter {
+      concept: Concept => {
+        val gens: Map[KnowledgeURI, Concept] = filterGeneralisations(concept.generalisations, name)
+        gens.size > 0
+      }
+    }
+  }
+
+  private def filterGeneralisations(generalisations: TypedKLine[Concept], name: String): Map[KnowledgeURI, Concept] = {
+    generalisations.frames.filter {
+      uriConcept: Pair[KnowledgeURI, Concept] => {
+        if (uriConcept._1.name == name) {
+          true
+        } else {
+          filterGeneralisations(uriConcept._2.generalisations, name).size > 0
+        }
+      }
+    }
+
   }
 }

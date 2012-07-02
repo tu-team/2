@@ -15,7 +15,7 @@ import tu.model.knowledge.annotator.AnnotatedNarrative
 class DirectInstructionAnalyser {
 
   /**
-   * Detects direct instruction and return Selector request with proper Probability.
+   * Detects direct instruction and return SelectorRequest with proper Probability.
    * @param currentSituation AnnotatedNarrative to analyse.
    * @return SelectorRequest with calculated probability.
    */
@@ -24,7 +24,7 @@ class DirectInstructionAnalyser {
   }
 
   /**
-   * Detects direct instruction and return Selector request with proper Probability.
+   * Detects direct instruction and return SelectorRequest with proper Probability.
    * @param currentSituation ConceptNetwork to analyse.
    * @return SelectorRequest with calculated probability.
    */
@@ -33,7 +33,7 @@ class DirectInstructionAnalyser {
   }
 
   /**
-   * Detects direct instruction and return Selector request with proper Probability.
+   * Detects direct instruction and return SelectorRequest with proper Probability.
    * @param currentSituation List[Concept] to analyse.
    * @return SelectorRequest with calculated probability.
    */
@@ -86,7 +86,7 @@ class DirectInstructionAnalyser {
       frequencyConfidence = (0.0, frequencyConfidence._2)
     }
 
-    new SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_URI_NAME), KnowledgeURI(Constant.SELECTOR_REQUEST_URI_NAME + "Request"),
+    new SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME), KnowledgeURI(Constant.SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME),
       new Probability(frequencyConfidence._1, frequencyConfidence._2))
   }
 
