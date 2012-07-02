@@ -25,6 +25,7 @@ http://www.scalatest.org/
 One way to use ScalaTest is to help make JUnit or TestNG tests more
 clear and concise. Here's an example:
 */
+
 import scala.collection.mutable.Stack
 import org.scalatest.Assertions
 import org.junit.Test
@@ -50,6 +51,7 @@ class StackSuite extends Assertions {
 /*
 Here's an example of a FunSuite with ShouldMatchers mixed in:
 */
+
 import org.scalatest.FunSuite
 import org.scalatest.matchers.ShouldMatchers
 
@@ -66,6 +68,7 @@ A Map
 - should only contain keys and values that were added to it
 - should report its size as the number of key/value pairs it contains
 */
+
 import org.scalatest.Spec
 import org.scalatest.matchers.MustMatchers
 
@@ -74,7 +77,7 @@ class MapSpec extends Spec with MustMatchers {
   describe("A Map") {
 
     it("should only contain keys and values that were added to it") {
-      Map("ho" -> 12) must (not contain key ("hi") and not contain value (13))
+      Map("ho" -> 12) must (not contain key("hi") and not contain value(13))
       Map("hi" -> 13) must (contain key ("hi") and contain value (13))
     }
 

@@ -10,10 +10,10 @@ import tu.model.knowledge.communication.Context
  * To change this template use File | Settings | File Templates.
  */
 
-object FindMostProbableSolution extends Way2Think{
+object FindMostProbableSolution extends Way2Think {
 
   def apply(inputContext: Context): Context = {
-          inputContext
+    inputContext
   }
 
   def start() = false

@@ -3,7 +3,7 @@
     <parent>
         <artifactId>cognition</artifactId>
         <groupId>tu</groupId>
-        <version>${tu.version}</version>
+        <version>1.0</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -69,18 +69,18 @@
 
         <plugins>
             <plugin>
-                  <artifactId>maven-assembly-plugin</artifactId>
-                  <configuration>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
                     <descriptorRefs>
-                      <descriptorRef>jar-with-dependencies</descriptorRef>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
-                      <manifest>
-                        <mainClass>tu.host.console.AppMain</mainClass>
-                      </manifest>
+                        <manifest>
+                            <mainClass>tu.host.console.AppMain</mainClass>
+                        </manifest>
                     </archive>
-                  </configuration>
-                </plugin>
+                </configuration>
+            </plugin>
 
 
             <plugin>

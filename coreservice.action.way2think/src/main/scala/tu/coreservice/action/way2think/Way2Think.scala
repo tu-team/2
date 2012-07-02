@@ -22,6 +22,6 @@ abstract class Way2Think(_uri: KnowledgeURI, _probability: Probability = new Pro
    */
   def apply(inputContext: Context): Context
 
-  def this()=this(null)
+  def this() = this(null)
 
 }

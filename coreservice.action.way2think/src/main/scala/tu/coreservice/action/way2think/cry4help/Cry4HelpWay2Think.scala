@@ -9,7 +9,7 @@ import tu.model.knowledge.communication.Context
  *         time: 4:25 PM
  */
 
-class Cry4HelpWay2Think extends Way2Think{
+class Cry4HelpWay2Think extends Way2Think {
   /**
    * Way2Think interface.
    * @param inputContext Context of all inbound parameters.

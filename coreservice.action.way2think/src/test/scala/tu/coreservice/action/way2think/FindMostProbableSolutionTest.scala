@@ -21,10 +21,10 @@ class FindMostProbableSolutionTest extends FunSuite {
 
     org.scalatest.Assertions.expect(1 > 0)(true) //expected, actual
 
-    val resources : List[Resource] = List(
+    val resources: List[Resource] = List(
       new KnowledgeString("test1", KnowledgeURI("test1"), new Probability(0.9))
 
-      )
+    )
     var context = ContextHelper(resources, "test context")
     org.scalatest.Assertions.expect(context)(FindMostProbableSolution(context)) //expected, actual
     FindMostProbableSolution
@@ -35,11 +35,11 @@ class FindMostProbableSolutionTest extends FunSuite {
 
     org.scalatest.Assertions.expect(1 > 0)(true) //expected, actual
 
-    val resources : List[Resource] = List(
+    val resources: List[Resource] = List(
       new KnowledgeString("test1", KnowledgeURI("test1"), new Probability(0.9)),
       new KnowledgeString("test2", KnowledgeURI("test2"), new Probability(0.8))
 
-      )
+    )
     var context = ContextHelper(resources, "test context")
     var res_context = ContextHelper(List(
       new KnowledgeString("test1", KnowledgeURI("test1"), new Probability(0.9))), "test context")

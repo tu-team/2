@@ -136,11 +136,11 @@ class Simulation {
                              exactMatches: List[AnnotatedPhrase],
                              unAmbiguous: Map[AnnotatedPhrase, Concept]): ConceptNetwork = {
     // merge exact match and unAmbiguous
-    val concepts: List[Concept] = matches.map{
+    val concepts: List[Concept] = matches.map {
       phrase: AnnotatedPhrase => {
         if (exactMatches.contains(phrase)) {
           phrase.concepts(0)
-        } else if(unAmbiguous.contains(phrase)) {
+        } else if (unAmbiguous.contains(phrase)) {
           unAmbiguous.get(phrase) match {
             case Some(res: Concept) => {
               res
