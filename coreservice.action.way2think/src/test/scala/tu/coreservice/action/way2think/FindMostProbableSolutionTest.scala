@@ -2,10 +2,11 @@ package tu.coreservice.action.way2think
 
 import org.scalatest.FunSuite
 import org.scalatest.Assertions._
-import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.model.knowledge.selector.SelectorRequest
+import tu.model.knowledge.communication.{Context, ContextHelper}
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,13 +21,15 @@ class FindMostProbableSolutionTest extends FunSuite {
   test("One entry should work") {
 
     org.scalatest.Assertions.expect(1 > 0)(true) //expected, actual
+    val w2t0 = new SelectorRequest(KnowledgeURI("test1k"), KnowledgeURI("test1"), new Probability(0.9))
 
-    val resources: List[Resource] = List(
-      new KnowledgeString("test1", KnowledgeURI("test1"), new Probability(0.9))
+    var context0: Context = ContextHelper(Nil, "test context")
+    context0.ClassificationResultsAdd(w2t0)
+    val context1 = FindMostProbableSolution(context0)
 
-    )
-    var context = ContextHelper(resources, "test context")
-    org.scalatest.Assertions.expect(context)(FindMostProbableSolution(context)) //expected, actual
+    org.scalatest.Assertions.expect(w2t0)(context1.LastResult) //expected, actual
+    org.scalatest.Assertions.expect(Nil)(context1.ClassificationResults) //expected, actual
+    //org.scalatest.Assertions.expect(resources.head.resourceURI)(context1.LastResult.resourceURI) //expected, actual
     FindMostProbableSolution
   }
 
@@ -34,17 +37,35 @@ class FindMostProbableSolutionTest extends FunSuite {
   test("Multi entry should work") {
 
     org.scalatest.Assertions.expect(1 > 0)(true) //expected, actual
+    val w2t0 = new SelectorRequest(KnowledgeURI("test1k"), KnowledgeURI("test1"), new Probability(0.9))
+    val w2t1 = new SelectorRequest(KnowledgeURI("test2k"), KnowledgeURI("test2"), new Probability(0.8))
 
-    val resources: List[Resource] = List(
-      new KnowledgeString("test1", KnowledgeURI("test1"), new Probability(0.9)),
-      new KnowledgeString("test2", KnowledgeURI("test2"), new Probability(0.8))
+    val context0: Context = ContextHelper(Nil, "test context")
+    context0.ClassificationResultsAdd(w2t0)
+    context0.ClassificationResultsAdd(w2t1)
+    val context1 = FindMostProbableSolution(context0)
 
+    org.scalatest.Assertions.expect(w2t0)(context1.LastResult) //expected, actual
+    org.scalatest.Assertions.expect(w2t1)(context1.ClassificationResults.Head) //expected, actual
+
+    val context2 = FindMostProbableSolution(context1)
+
+    org.scalatest.Assertions.expect(w2t1)(context2.LastResult) //expected, actual
+
+    context0.ClassificationResultsAdd(w2t1)
+    context1.ClassificationResultsAdd(w2t0)
+
+    val context3 = FindMostProbableSolution(context0)
+
+    org.scalatest.Assertions.expect(w2t0)(context3.LastResult) //expected, actual
+    org.scalatest.Assertions.expect(w2t1)(context3.ClassificationResults.Head) //expected, actual
     )
-    var context = ContextHelper(resources, "test context")
-    var res_context = ContextHelper(List(
-      new KnowledgeString("test1", KnowledgeURI("test1"), new Probability(0.9))), "test context")
 
-    org.scalatest.Assertions.expect(res_context)(FindMostProbableSolution(context)) //expected, actual
+    val context0 = ContextHelper(resources, "test context")
+    val context1 = FindMostProbableSolution(context0)
+
+    org.scalatest.Assertions.expect(resources.head)(context1.LastResult) //expected, actual
+
     FindMostProbableSolution
 
   }
