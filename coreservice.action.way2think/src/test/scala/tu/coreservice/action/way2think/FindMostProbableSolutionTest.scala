@@ -7,15 +7,17 @@ import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 
-/**
- * Created by IntelliJ IDEA.
- * User: adel
- * Date: 30.06.12
- * Time: 12:05
- * To change this template use File | Settings | File Templates.
+/**.
+ * @author adel chepkunov
+ *         Date: 30.06.12
+ *         Time: 12:05
  */
 
 class FindMostProbableSolutionTest extends FunSuite {
+
+  test("test Ok") {
+    assert(condition = true)
+  }
 
   test("One entry should work") {
 

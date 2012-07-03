@@ -7,6 +7,7 @@ import tu.model.knowledge.Resource
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import java.rmi.UnexpectedException
+import tu.coreservice.action.way2think.SimulationReformulationAbstract
 
 /**
  * Simple direct concept to concept Simulation Way2Think implementation.
@@ -15,7 +16,7 @@ import java.rmi.UnexpectedException
  *         time: 12:45 PM
  */
 
-class Simulation {
+class Simulation extends SimulationReformulationAbstract {
   val name: String = "Simulation"
 
   /**
@@ -65,9 +66,7 @@ class Simulation {
   }
 
   private def filterPhrase(phrase: AnnotatedPhrase, simulationModel: ConceptNetwork): List[Concept] = {
-    val modelConcepts: List[Concept] = phrase.concepts.filter {
-      c => simulationModel.nodes.contains(c)
-    }
+    val modelConcepts: List[Concept] = this.filterConceptList(phrase.concepts, simulationModel)
     modelConcepts
   }
 
@@ -157,6 +156,11 @@ class Simulation {
     simulateMatches(concepts)
   }
 
+  /**
+   * Creates ConceptNetwork using Concept instances crated from concepts parameter and their links.
+   * @param concepts List[Concept] to process.
+   * @return ConceptNetwork.
+   */
   private def simulateMatches(concepts: List[Concept]): ConceptNetwork = {
     var processedConcepts: List[Concept] = List[Concept]()
     val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map {
