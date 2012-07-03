@@ -29,8 +29,9 @@ class FindMostProbableSolutionTest extends FunSuite {
 
     org.scalatest.Assertions.expect(w2t0)(context1.LastResult) //expected, actual
     org.scalatest.Assertions.expect(Nil)(context1.ClassificationResults) //expected, actual
-    //org.scalatest.Assertions.expect(resources.head.resourceURI)(context1.LastResult.resourceURI) //expected, actual
-    FindMostProbableSolution
+
+    val context2 = FindMostProbableSolution(context1)
+    org.scalatest.Assertions.expect(null)(context1.LastResult) //expected, actual
   }
 
 
@@ -41,32 +42,27 @@ class FindMostProbableSolutionTest extends FunSuite {
     val w2t1 = new SelectorRequest(KnowledgeURI("test2k"), KnowledgeURI("test2"), new Probability(0.8))
 
     val context0: Context = ContextHelper(Nil, "test context")
+
     context0.ClassificationResultsAdd(w2t0)
     context0.ClassificationResultsAdd(w2t1)
+
     val context1 = FindMostProbableSolution(context0)
 
     org.scalatest.Assertions.expect(w2t0)(context1.LastResult) //expected, actual
-    org.scalatest.Assertions.expect(w2t1)(context1.ClassificationResults.Head) //expected, actual
+    org.scalatest.Assertions.expect(w2t1)(context1.ClassificationResults.head) //expected, actual
 
     val context2 = FindMostProbableSolution(context1)
 
     org.scalatest.Assertions.expect(w2t1)(context2.LastResult) //expected, actual
 
     context0.ClassificationResultsAdd(w2t1)
-    context1.ClassificationResultsAdd(w2t0)
+    context0.ClassificationResultsAdd(w2t0)
 
     val context3 = FindMostProbableSolution(context0)
 
     org.scalatest.Assertions.expect(w2t0)(context3.LastResult) //expected, actual
-    org.scalatest.Assertions.expect(w2t1)(context3.ClassificationResults.Head) //expected, actual
-    )
+    org.scalatest.Assertions.expect(w2t1)(context3.ClassificationResults.head) //expected, actual
 
-    val context0 = ContextHelper(resources, "test context")
-    val context1 = FindMostProbableSolution(context0)
-
-    org.scalatest.Assertions.expect(resources.head)(context1.LastResult) //expected, actual
-
-    FindMostProbableSolution
 
   }
 
