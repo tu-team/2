@@ -1,8 +1,8 @@
 package tu.coreservice.action.way2think.reformulation
 
-import tu.model.knowledge.annotator.AnnotatedNarrative
-import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
+import tu.model.knowledge.KnowledgeURI
 
 /**
  * @author max talanov
@@ -10,7 +10,7 @@ import tu.coreservice.action.way2think.SimulationReformulationAbstract
  *         time: 11:33 AM
  */
 
-class Reformulation extends SimulationReformulationAbstract{
+class Reformulation extends SimulationReformulationAbstract {
 
   val name: String = "Reformulation"
 
@@ -21,7 +21,26 @@ class Reformulation extends SimulationReformulationAbstract{
    * @return ConceptNetwork reformulation result.
    */
   def apply(in: ConceptNetwork, model: ConceptNetwork): Option[ConceptNetwork] = {
+
+    val known: List[Concept] = this.filterConceptList(in.nodes, model)
+
+    val notKnown: List[Concept] = in.nodes.filter {
+      c: Concept => !model.nodes.contains(c)
+    }
+
+    val foundGeneralisations = findGeneralisations(notKnown, model)
+
     None
+  }
+
+  private def findGeneralisations(in: List[Concept], model: ConceptNetwork): List[Concept] = {
+    in.filter {
+      c: Concept => {
+        c.generalisations.frames.filter {
+          uriConcept: Pair[KnowledgeURI, Concept] => model.nodes.contains(uriConcept._2)
+        }.size > 0
+      }
+    }
   }
 
 }

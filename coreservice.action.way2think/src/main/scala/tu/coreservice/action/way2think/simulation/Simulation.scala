@@ -27,8 +27,6 @@ class Simulation extends SimulationReformulationAbstract {
    */
   def apply(in: AnnotatedNarrative, simulationModel: ConceptNetwork): Option[ConceptNetwork] = {
 
-    // val instancesList: List[Concept] =
-    // check concept of a phrase and if it is in simulationModel crate it's instance.
     val exactMatch: List[AnnotatedPhrase] = in.phrases.filter {
       phrase: AnnotatedPhrase => {
         this.filterPhrase(phrase, simulationModel).size == 1
