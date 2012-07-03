@@ -13,7 +13,20 @@ import tu.model.knowledge.communication.Context
 object FindMostProbableSolution extends Way2Think {
 
   def apply(inputContext: Context): Context = {
-    inputContext
+    var outputContext = inputContext
+    if ( outputContext.ClassificationResults.isEmpty)
+    {
+      outputContext.LastResult = null
+    }
+    else
+    {
+      outputContext.ClassificationResults
+        = outputContext.ClassificationResults.sortWith((s, t) => s.probability.frequency > t.probability.frequency)
+      outputContext.LastResult = outputContext.ClassificationResults.head
+      outputContext.ClassificationResults = outputContext.ClassificationResults.tail
+    }
+
+    outputContext
   }
 
   def start() = false

@@ -1,6 +1,7 @@
 package tu.model.knowledge.communication
 
 import tu.model.knowledge.{Probability, Resource, KnowledgeURI, KLine}
+import tu.model.knowledge.selector.SelectorRequest
 
 /**
  * Stores contexts parameters.
@@ -12,6 +13,13 @@ import tu.model.knowledge.{Probability, Resource, KnowledgeURI, KLine}
 case class Context(var __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
+
+  var LastResult:SelectorRequest = null
+  var ClassificationResults : List[SelectorRequest] = Nil
+
+
+  def ClassificationResultsAdd(w2t:SelectorRequest)
+                              { ClassificationResults = w2t :: ClassificationResults }
 
 }
 
