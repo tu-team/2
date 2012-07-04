@@ -5,11 +5,10 @@ import java.net.{URLConnection, InetSocketAddress, URL, URLEncoder}
 import java.io.{InputStreamReader, BufferedReader}
 
 /**
- *
- * @author: alex
+ * Provider for WordNetAnnotator.
+ * @author alex toschev
  *          Date: 6/25/12
  *          Time: 7:00 PM
- *          To change this template use File | Settings | File Templates.
  */
 
 /**

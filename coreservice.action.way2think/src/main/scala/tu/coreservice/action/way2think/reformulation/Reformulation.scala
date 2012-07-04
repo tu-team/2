@@ -16,24 +16,38 @@ class Reformulation extends SimulationReformulationAbstract {
 
   /**
    * Runs through Concepts from inbound ConceptNetwork and creates ConceptNetwork of instances of the model.
-   * @param in ConceptNetwork to Reformulate.
+   * @param toReformulate ConceptNetwork to Reformulate.
    * @param model ConceptNetwork base model.
    * @return ConceptNetwork reformulation result.
    */
-  def apply(in: ConceptNetwork, model: ConceptNetwork): Option[ConceptNetwork] = {
+  def apply(toReformulate: ConceptNetwork, model: ConceptNetwork): Option[ConceptNetwork] = {
 
-    val known: List[Concept] = this.filterConceptList(in.nodes, model)
+    val known: List[Concept] = this.filterConceptList(toReformulate.nodes, model)
 
-    val notKnown: List[Concept] = in.nodes.filter {
+    val notKnown: List[Concept] = toReformulate.nodes.filter {
       c: Concept => !model.nodes.contains(c)
     }
 
-    val foundGeneralisations = findGeneralisations(notKnown, model)
+    val foundGeneralisations = filterGeneralisations(notKnown, model)
+    val generalisationsMap: List[Map[KnowledgeURI, Concept]] = getGeneralisations(foundGeneralisations, model)
+    val unAmbiguous: List[Concept] = processAmbiguous(generalisationsMap, toReformulate)
 
-    None
+    val combined = known ::: unAmbiguous
+
+    if (combined.size > 0) {
+      Some(instantiateConcepts(combined, name))
+    } else {
+      None
+    }
   }
 
-  private def findGeneralisations(in: List[Concept], model: ConceptNetwork): List[Concept] = {
+  /**
+   * Filters generalisations of concepts in specified list.
+   * @param in List[Concept] to filter.
+   * @param model to find Generalisations
+   * @return List[Concept] filtered concepts.
+   */
+  private def filterGeneralisations(in: List[Concept], model: ConceptNetwork): List[Concept] = {
     in.filter {
       c: Concept => {
         c.generalisations.frames.filter {
@@ -41,6 +55,42 @@ class Reformulation extends SimulationReformulationAbstract {
         }.size > 0
       }
     }
+  }
+
+  /**
+   * Get generalisations of concepts and stores them in List of Pair-s Concept and it's generalisations Map.
+   * @param in List[Concept] to get generalisations.
+   * @param model to filter specified List[Concept].
+   * @return List of Pair-s Concept and it's generalisations Map.
+   */
+  private def getGeneralisations(in: List[Concept], model: ConceptNetwork): List[Map[KnowledgeURI, Concept]] = {
+    in.map {
+      c: Concept => {
+        val gens: Map[KnowledgeURI, Concept] = c.generalisations.frames.filter {
+          uriConcept: Pair[KnowledgeURI, Concept] => model.nodes.contains(uriConcept._2)
+        }
+        gens
+      }
+    }
+  }
+
+  def processAmbiguous(in: List[Map[KnowledgeURI, Concept]], currentModel: ConceptNetwork): List[Concept] = {
+    val mostReferencedConcept: List[Concept] = in.map {
+      uriConceptMap: Map[KnowledgeURI, Concept] => {
+        val concepts = uriConceptMap.values
+        concepts.reduceLeft(
+          (c1, c2) => {
+            if (countLinks(c1, currentModel) > countLinks(c2, currentModel)) c1
+            else c2
+          }
+        )
+      }
+    }
+    mostReferencedConcept
+  }
+
+  def countLinks(concept: Concept, in: ConceptNetwork): Int = {
+    this.countLinks(concept, in.nodes)
   }
 
 }

@@ -69,21 +69,6 @@ class Simulation extends SimulationReformulationAbstract {
   }
 
   /**
-   * Really stupid method to process ambiguity.
-   * @param in List[Concept]
-   * @return Context of Cry4HelpWay2Think
-   * @deprecated
-   */
-  def processAmbiguous(in: List[AnnotatedPhrase]): Context = {
-    // ambiguity
-    var res: List[Resource] = in
-    res = res ++ List[Resource](KnowledgeString("Please clarify ambiquity", "Please.clarify.ambiquity"))
-    val context = ContextHelper.apply(res, "ambiguity")
-    val cry4helpWay2Think = new Cry4HelpWay2Think()
-    cry4helpWay2Think.apply(context)
-  }
-
-  /**
    * Returns map of AnnotatedPhrase to most referenced concept of the AnnotatedPhrase
    * @param in List[AnnotatedPhrase] phrases to be processed.
    * @param text AnnotatedNarrative to find references.
@@ -102,23 +87,7 @@ class Simulation extends SimulationReformulationAbstract {
   }
 
   private def countLinks(concept: Concept, text: AnnotatedNarrative): Int = {
-    concept.links.filter {
-      link: ConceptLink => {
-        if (link.source == concept) {
-          val destination = link.destination
-          val references: List[Concept] = text.concepts.filter {
-            c: Concept => c equals destination
-          }
-          references.size > 0
-        } else {
-          val source = link.source
-          val references: List[Concept] = text.concepts.filter {
-            c: Concept => c equals source
-          }
-          references.size > 0
-        }
-      }
-    }.size
+   this.countLinks(concept, text.concepts)
   }
 
   private def processNotKnown(in: List[AnnotatedPhrase]): Context = {
@@ -151,59 +120,6 @@ class Simulation extends SimulationReformulationAbstract {
         }
       }
     }
-    simulateMatches(concepts)
-  }
-
-  /**
-   * Creates ConceptNetwork using Concept instances crated from concepts parameter and their links.
-   * @param concepts List[Concept] to process.
-   * @return ConceptNetwork.
-   */
-  private def simulateMatches(concepts: List[Concept]): ConceptNetwork = {
-    var processedConcepts: List[Concept] = List[Concept]()
-    val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map {
-      concept: Concept => {
-        val currentInstance = Concept.createInstanceConcept(concept)
-        val notProcessedLinks: List[ConceptLink] = concept.links.filter {
-          link: ConceptLink => {
-            if (link.source == concept) {
-              !processedConcepts.contains(link.destination)
-            } else if (link.destination == concept) {
-              !processedConcepts.contains(link.source)
-            } else {
-              false
-            }
-          }
-        }
-
-        val linkInstances = notProcessedLinks.map {
-          link: ConceptLink => {
-            if (link.source == concept) {
-              val currentDestination = Concept.createInstanceConcept(link.destination)
-              ConceptLink.createInstanceConceptLink(link, currentInstance, currentDestination)
-            } else {
-              val currentSource = Concept.createInstanceConcept(link.source)
-              ConceptLink.createInstanceConceptLink(link, currentSource, currentInstance)
-            }
-          }
-        }
-        currentInstance.links = linkInstances
-        processedConcepts = processedConcepts ++ List(concept)
-        (currentInstance, linkInstances)
-      }
-    }
-    val instances: List[Concept] = instancesLinks.map {
-      i: Pair[Concept, List[ConceptLink]] => {
-        i._1
-      }
-    }
-
-    val links: List[List[ConceptLink]] = instancesLinks.map {
-      i: Pair[Concept, List[ConceptLink]] => {
-        i._2
-      }
-    }
-    val flatLinks: List[ConceptLink] = links.flatten
-    ConceptNetwork(instances, flatLinks, name)
+    instantiateConcepts(concepts, name)
   }
 }

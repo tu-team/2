@@ -7,6 +7,8 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.selector.SelectorRequest
 import tu.model.knowledge.communication.{Context, ContextHelper}
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
 
 /**.
  * @author adel chepkunov
@@ -14,6 +16,7 @@ import tu.model.knowledge.communication.{Context, ContextHelper}
  *         Time: 12:05
  */
 
+@RunWith(classOf[JUnitRunner])
 class FindMostProbableSolutionTest extends FunSuite {
 
   test("test Ok") {

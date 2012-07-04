@@ -106,7 +106,8 @@ class PreliminarySplitter extends Way2Think {
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {
-    implicit def javaIteratorToScalaIterator[A](it : java.util.Iterator[A]) = new Wrapper(it)
+    //TODO this line broke the build
+    //implicit def javaIteratorToScalaIterator[A](it : java.util.Iterator[A]) = new Wrapper(it)
 
 
     //TODO implement this
@@ -167,4 +168,8 @@ class PreliminarySplitter extends Way2Think {
 
     return inputContext
   }
+
+  def start() = false
+
+  def stop() = false
 }
