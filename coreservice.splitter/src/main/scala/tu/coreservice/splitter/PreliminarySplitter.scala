@@ -106,11 +106,6 @@ class PreliminarySplitter extends Way2Think {
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {
-    //TODO this line broke the build
-    //implicit def javaIteratorToScalaIterator[A](it : java.util.Iterator[A]) = new Wrapper(it)
-
-
-    //TODO implement this
     var textFrame = inputContext.frames.filter(p =>
 
       p._1.name == "inputtext"
