@@ -8,8 +8,9 @@ import java.net.URI
  *         Time: 11:20 PM
  */
 
-class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
+class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
+  private val delimiter = "#"
 
   private var _uRI: Option[URI] = None
   private var _uID: String = ""
@@ -18,7 +19,7 @@ class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
 
   def name = _name
 
-  def name_=(value:String)=_name=value
+  def name_=(value: String) = _name = value
 
   def revision(): String = _revision
 
@@ -48,6 +49,10 @@ class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
   def uri_=(in: URI): KnowledgeURI = {
     this._uRI = Some(in)
     this
+  }
+
+  override def toString: String = {
+    namespace() + delimiter + name + "@" + revision()
   }
 
 }
