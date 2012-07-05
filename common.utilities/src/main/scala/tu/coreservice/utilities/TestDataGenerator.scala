@@ -182,6 +182,9 @@ object TestDataGenerator {
   val iHaveProblemWithIE8Reformulation = new ConceptNetwork(List[Concept](userInstRef, computerInstRef, addressInstRef, internetExplorerInstRef),
     List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
+  val iHaveProblemWithIE8ReformulationTest = new ConceptNetwork(List[Concept](userConcept, computerConcept, addressConcept, internetExplorerConcept),
+    List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
+
   val installFirefoxHowTo = HowTo.createInstance(installHowTo, List(Frame(firefoxConcept)))
   val reinstallIEHowTo = HowTo.createInstance(installHowTo, List(Frame(internetExplorerConcept)))
 
@@ -232,6 +235,12 @@ object TestDataGenerator {
    * @return ConceptNetwork
    */
   def generateProblemDescriptionReformulation = iHaveProblemWithIE8Reformulation
+
+  /**
+   * Generates Test ConceptNetwork for Reformulation.
+   * @return ConceptNetwork.
+   */
+  def generateProblemDescriptionReformulationTest = iHaveProblemWithIE8ReformulationTest
 
   /**
    * Generates install Firefox HowTo
