@@ -8,7 +8,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>coreservice.splitter</artifactId>
-    <inceptionYear>2010</inceptionYear>
+    <inceptionYear>2012</inceptionYear>
 
     <repositories>
         <repository>

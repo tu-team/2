@@ -156,4 +156,8 @@ class KBAnnotatorImpl extends Way2Think {
       null
 
   }
+
+  def start() = false
+
+  def stop() = false
 }

@@ -1,11 +1,10 @@
 package tu.host.console
 
 import tu.coreservice.annotator.KBAnnotatorImpl
-;
 
 
 /**
- * Hello world!
+ * Console application of the KBAnnotator.
  *
  */
 object AppMain {
@@ -24,8 +23,10 @@ object AppMain {
        {
          Console.println("Testing "+ args(0))
          //extract sentence
-         var sentence = args(0);
-         var res=annotator.parseString(sentence);
+         val sentence = args(0);
+         //TODO fix this:
+         // val res=annotator.parseString(sentence);
+         val res = ""
          Console.println(res);
        }
 
