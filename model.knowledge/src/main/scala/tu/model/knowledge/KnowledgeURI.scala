@@ -33,7 +33,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        if (namespace.size > 0 && name.size > 0 && revision.size > 0 && _uID.size > 0) {
+        if (namespace().size > 0 && name.size > 0 && revision.size > 0 && _uID.size > 0) {
           this._uRI = Some(new URI(namespace + Constant.DELIMITER + name + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
           this._uRI
         } else {
