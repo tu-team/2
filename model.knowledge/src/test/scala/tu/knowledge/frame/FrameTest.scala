@@ -11,7 +11,7 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
-import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 
 @RunWith(classOf[JUnitRunner])
@@ -31,8 +31,8 @@ class FrameTest extends FunSuite {
     assert(true)
   }
 
-  test("Frame should contain several resources") {
-    val f = new Frame(Map[KnowledgeURI, Resource](), uri)
+  test("TypedFrame should contain several resources") {
+    val f = new TypedFrame(Map[KnowledgeURI, Resource](), uri)
     f.resources = Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination)
     expect(f.resources.get(destination.uri).get)(destination)
   }

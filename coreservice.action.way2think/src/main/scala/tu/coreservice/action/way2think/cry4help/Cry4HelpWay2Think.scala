@@ -1,7 +1,9 @@
 package tu.coreservice.action.way2think.cry4help
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.Resource
+import tu.model.knowledge.primitive.KnowledgeString
 
 /**
  * @author max talanov
@@ -20,4 +22,14 @@ class Cry4HelpWay2Think extends Way2Think {
   def start() = false
 
   def stop() = false
+}
+
+object Cry4HelpWay2Think {
+  def apply(message: String): Cry4HelpWay2Think = {
+    val res = List[Resource](KnowledgeString(message, "Cry4HelpMessage"))
+    val context = ContextHelper.apply(res, message)
+    val cry4helpWay2Think = new Cry4HelpWay2Think()
+    cry4helpWay2Think.apply(context)
+    cry4helpWay2Think
+  }
 }

@@ -9,10 +9,10 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         time: 7:14 PM
  */
 
-case class TransFrame[Type<:Resource](_initialState: Frame[Type], _finalState: Frame[Type], _uri: KnowledgeURI, _probability: Probability)
+case class TransFrame[Type<:Resource](_initialState: TypedFrame[Type], _finalState: TypedFrame[Type], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
-  def this(_initialState: Frame[Type], _finalState: Frame[Type], _uri: KnowledgeURI) {
+  def this(_initialState: TypedFrame[Type], _finalState: TypedFrame[Type], _uri: KnowledgeURI) {
     this(_initialState, _finalState, _uri, new Probability())
   }
 

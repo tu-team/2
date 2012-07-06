@@ -1,6 +1,6 @@
 package tu.model.knowledge.panalogy
 
-import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge.{Probability, KnowledgeURI, MicroNeme, Resource}
 
 /**
@@ -11,16 +11,16 @@ import tu.model.knowledge.{Probability, KnowledgeURI, MicroNeme, Resource}
  * @see http://web.media.mit.edu/~minsky/E8/eb8.html#_Toc465796529
  */
 
-case class Panalogy(var _resources: Map[MicroNeme, Frame[Resource]], _uri: KnowledgeURI, _probability: Probability)
+case class Panalogy(var _resources: Map[MicroNeme, TypedFrame[Resource]], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
-  def this(_resources: Map[MicroNeme, Frame[Resource]], _uri: KnowledgeURI) {
+  def this(_resources: Map[MicroNeme, TypedFrame[Resource]], _uri: KnowledgeURI) {
     this(_resources, _uri, new Probability)
   }
 
   def resources = _resources
 
-  def resources_=(in:  Map[MicroNeme, Frame[Resource]]): Panalogy = {
+  def resources_=(in:  Map[MicroNeme, TypedFrame[Resource]]): Panalogy = {
     _resources = in
     this
   }

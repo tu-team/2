@@ -1,6 +1,6 @@
 package tu.model.knowledge.howto
 
-import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
 import domain.Concept
 import util.Random
@@ -13,16 +13,16 @@ import tu.model.knowledge.Tag
  *         time: 10:55 PM
  */
 
-case class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class HowTo(var _parameters: List[TypedFrame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_parameters: List[Frame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
+  def this(_parameters: List[TypedFrame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
     this(_parameters, _tags, _uri, new Probability())
   }
 
   def parameters = _parameters
 
-  def parameters_=(in: List[Frame[Resource]]): HowTo = {
+  def parameters_=(in: List[TypedFrame[Resource]]): HowTo = {
     _parameters = in
     this
   }
@@ -46,7 +46,7 @@ object HowTo {
    * @param parameters Resources List
    * @return HowTo instance
    */
-  def createInstance(parent: HowTo, parameters: List[Frame[Resource]]): HowTo = {
+  def createInstance(parent: HowTo, parameters: List[TypedFrame[Resource]]): HowTo = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
     val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
     it
@@ -55,8 +55,8 @@ object HowTo {
   def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
 
-    val frames: List[Frame[Resource]] = parameters.map(c => {
-      Frame(c)
+    val frames: List[TypedFrame[Resource]] = parameters.map(c => {
+      TypedFrame(c)
     })
     val it = new HowTo(frames, List[Tag](), KnowledgeURI(name + howToPostfix))
     it
