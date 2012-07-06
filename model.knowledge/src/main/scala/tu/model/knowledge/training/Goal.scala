@@ -9,6 +9,10 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  */
 
 class Goal(_uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Resource(_uri, _probability) {
+  extends Resource(_uri, _probability)
 
+object Goal {
+  def apply(name: String) {
+    new Goal(KnowledgeURI(name))
+  }
 }

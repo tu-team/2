@@ -13,8 +13,8 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.Context
 
 /**
- *
- * @author toscheva
+ * Simple KBAnnotator implementation.
+ * @author toschev alex
  * Date: 15.06.12
  * Time: 18:26
  *

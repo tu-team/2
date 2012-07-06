@@ -59,9 +59,7 @@ object N4JKB {
  *
  * Registered shutdown hooks are executed when the virtual machine
  * terminates normally. For more information read the documentation
- * of [[Runtime]].
- *
- * @constructor creates an unregistered instance
+ * of Runtime. Constructor creates an unregistered instance
  * @param name the shutdown hook's name (for e.g. logging purposes)
  * @param body code to execute when the shutdown hook is executed
  */
@@ -85,7 +83,7 @@ final class ShutdownHook(
   override def toString = "ShutdownHook("+name+")"
 }
 
-/** Factory for [[ShutdownHook]] instances. */
+/** Factory for ShutdownHook instances. */
 final object ShutdownHook {
   /** Creates a registered instance. */
   def apply(name: String, body: => Unit) = new ShutdownHook(name, body).register()

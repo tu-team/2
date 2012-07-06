@@ -11,7 +11,7 @@ object AppMain {
 
   val annotator = new KBAnnotatorImpl()
 
-  def main(args: Array[String]): Unit= {
+  def main(args: Array[String]) = {
 
     Console.println("Starting test... ")
 
