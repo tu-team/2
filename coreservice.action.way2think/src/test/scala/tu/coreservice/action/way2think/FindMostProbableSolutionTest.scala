@@ -29,14 +29,14 @@ class FindMostProbableSolutionTest extends FunSuite {
     val w2t0 = new SelectorRequest(KnowledgeURI("test1k"), KnowledgeURI("test1"), new Probability(0.9))
 
     var context0: Context = ContextHelper(Nil, "test context")
-    context0.ClassificationResultsAdd(w2t0)
+    context0.classificationResultsAdd(w2t0)
     val context1 = FindMostProbableSolution(context0)
 
-    org.scalatest.Assertions.expect(w2t0)(context1.LastResult) //expected, actual
-    org.scalatest.Assertions.expect(Nil)(context1.ClassificationResults) //expected, actual
+    org.scalatest.Assertions.expect(w2t0)(context1.lastResult) //expected, actual
+    org.scalatest.Assertions.expect(Nil)(context1.classificationResults) //expected, actual
 
     val context2 = FindMostProbableSolution(context1)
-    org.scalatest.Assertions.expect(null)(context1.LastResult) //expected, actual
+    org.scalatest.Assertions.expect(null)(context1.lastResult) //expected, actual
   }
 
 
@@ -48,25 +48,25 @@ class FindMostProbableSolutionTest extends FunSuite {
 
     val context0: Context = ContextHelper(Nil, "test context")
 
-    context0.ClassificationResultsAdd(w2t0)
-    context0.ClassificationResultsAdd(w2t1)
+    context0.classificationResultsAdd(w2t0)
+    context0.classificationResultsAdd(w2t1)
 
     val context1 = FindMostProbableSolution(context0)
 
-    org.scalatest.Assertions.expect(w2t0)(context1.LastResult) //expected, actual
-    org.scalatest.Assertions.expect(w2t1)(context1.ClassificationResults.head) //expected, actual
+    org.scalatest.Assertions.expect(w2t0)(context1.lastResult) //expected, actual
+    org.scalatest.Assertions.expect(w2t1)(context1.classificationResults.head) //expected, actual
 
     val context2 = FindMostProbableSolution(context1)
 
-    org.scalatest.Assertions.expect(w2t1)(context2.LastResult) //expected, actual
+    org.scalatest.Assertions.expect(w2t1)(context2.lastResult) //expected, actual
 
-    context0.ClassificationResultsAdd(w2t1)
-    context0.ClassificationResultsAdd(w2t0)
+    context0.classificationResultsAdd(w2t1)
+    context0.classificationResultsAdd(w2t0)
 
     val context3 = FindMostProbableSolution(context0)
 
-    org.scalatest.Assertions.expect(w2t0)(context3.LastResult) //expected, actual
-    org.scalatest.Assertions.expect(w2t1)(context3.ClassificationResults.head) //expected, actual
+    org.scalatest.Assertions.expect(w2t0)(context3.lastResult) //expected, actual
+    org.scalatest.Assertions.expect(w2t1)(context3.classificationResults.head) //expected, actual
 
 
   }

@@ -14,12 +14,12 @@ case class Context(var __frames: Map[KnowledgeURI, Resource], override val _uri:
                    override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
-  var LastResult:SelectorRequest = null
-  var ClassificationResults : List[SelectorRequest] = Nil
+  var lastResult:SelectorRequest = null
+  var classificationResults : List[SelectorRequest] = Nil
 
 
-  def ClassificationResultsAdd(w2t:SelectorRequest)
-                              { ClassificationResults = w2t :: ClassificationResults }
+  def classificationResultsAdd(w2t:SelectorRequest)
+                              { classificationResults = w2t :: classificationResults }
 
 }
 

@@ -12,16 +12,16 @@ object FindMostProbableSolution extends Way2Think {
 
   def apply(inputContext: Context): Context = {
     var outputContext = inputContext
-    if ( outputContext.ClassificationResults.isEmpty)
+    if ( outputContext.classificationResults.isEmpty)
     {
-      outputContext.LastResult = null
+      outputContext.lastResult = null
     }
     else
     {
-      outputContext.ClassificationResults
-        = outputContext.ClassificationResults.sortWith((s, t) => s.probability.frequency > t.probability.frequency)
-      outputContext.LastResult = outputContext.ClassificationResults.head
-      outputContext.ClassificationResults = outputContext.ClassificationResults.tail
+      outputContext.classificationResults
+        = outputContext.classificationResults.sortWith((s, t) => s.probability.frequency > t.probability.frequency)
+      outputContext.lastResult = outputContext.classificationResults.head
+      outputContext.classificationResults = outputContext.classificationResults.tail
     }
 
     outputContext
