@@ -17,7 +17,7 @@ class Selector {
 
   def apply(goal: Goal): List[Resource] = {
     //TODO get rid of KBPrototype
-    KBPrototype.goalResourceMap.get(goal) match {
+    KBPrototype.getByGoalName(goal.uri.name) match {
       case Some(resources) => {
         resources
       }

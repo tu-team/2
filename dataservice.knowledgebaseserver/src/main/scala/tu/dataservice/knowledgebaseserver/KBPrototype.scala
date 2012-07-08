@@ -35,4 +35,18 @@ object KBPrototype {
         )
     )
 
+  def getByGoalName(name: String): Option[List[Way2ThinkModel]] = {
+    val resources = this.goalResourceMap
+    val keys: Iterable[Goal] = resources.keys.filter {
+      g: Goal => {
+        g.uri.name.equals(name)
+      }
+    }
+    if (keys.size > 0) {
+      resources.get(keys.head)
+    } else {
+      None
+    }
+  }
+
 }

@@ -9,10 +9,19 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  */
 
 class Goal(_uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Resource(_uri, _probability)
+  extends Resource(_uri, _probability) {
+
+  def eq(other: Goal): Boolean = {
+    other.uri.name.equals(this.uri.name)
+  }
+
+  def equals(other: Goal): Boolean = {
+    other.uri.name.equals(this.uri.name)
+  }
+}
 
 object Goal {
-  def apply(name: String) {
+  def apply(name: String): Goal = {
     new Goal(KnowledgeURI(name))
   }
 }
