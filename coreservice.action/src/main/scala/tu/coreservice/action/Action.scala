@@ -2,6 +2,7 @@ package tu.coreservice.action
 
 import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
 import tu.model.knowledge.communication.Context
+import actors.Actor
 
 /**
  * Abstract class of an actions.
@@ -11,7 +12,7 @@ import tu.model.knowledge.communication.Context
  */
 
 abstract class Action(_uri: KnowledgeURI, _probability: Probability)
-  extends Resource (_uri, _probability) {
+  extends Resource(_uri, _probability) {
 
   def start(): Boolean
 
