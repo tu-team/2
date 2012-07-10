@@ -1,18 +1,18 @@
 package tu.coreservice.action.critic.analyser
 
-import tu.coreservice.action.critic.{CriticLink, Critic}
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.coreservice.action.critic.{CriticLink, Critic}
+import tu.model.knowledge.domain.ConceptNetwork
 
 /**
- * Critic adapter DirectInstructionAnalyser.
+ * ProblemDescriptionAnalyserCritic Action adapter to ProblemDescriptionAnalyser
  * @author max talanov
- *         date 2012-07-01
- *         time: 6:45 PM
+ *         date 2012-07-10
+ *         time: 12:17 PM
  */
 
-case class DirectInstructionAnalyserCritic (_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI, _probability: Probability = new Probability())
+class ProblemDescriptionAnalyserCritic(_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Critic(_exclude, _include, _uri, _probability) {
   def start() = false
 

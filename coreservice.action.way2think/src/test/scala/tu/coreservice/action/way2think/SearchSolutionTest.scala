@@ -15,11 +15,9 @@ import tu.model.knowledge.{TypedKLine, Probability, KnowledgeURI}
 
 
 /**
- * Created by IntelliJ IDEA.
- * User: adel
+ * @author adel
  * Date: 10.07.12
  * Time: 7:11
- * To change this template use File | Settings | File Templates.
  */
 
 @RunWith(classOf[JUnitRunner])
