@@ -15,6 +15,8 @@ import semanticnetwork.SemanticNetwork
 
 class Solutions(_uri: KnowledgeURI, _probability: Probability) extends Resource(_uri, _probability) {
 
+  def this() = { this(new KnowledgeURI("defultNamespace", "Solutions", "rev"), new Probability() ) }
+
   def add(item:SolvedIssue)
   {//TODO
   }
