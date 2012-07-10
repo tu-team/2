@@ -69,6 +69,19 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
+        <!-- 2 -->
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>model.knowledge</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.action</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
