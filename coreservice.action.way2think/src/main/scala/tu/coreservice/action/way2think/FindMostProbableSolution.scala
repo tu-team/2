@@ -14,13 +14,21 @@ object FindMostProbableSolution extends Way2Think {
     var outputContext = inputContext
     if ( outputContext.classificationResults.isEmpty)
     {
+<<<<<<< HEAD
       outputContext.bestClassificationResult = None
+=======
+      outputContext.lastResult = null
+>>>>>>> 5688b10a5c4d8ab9af827831844be2f94159ec29
     }
     else
     {
       outputContext.classificationResults
         = outputContext.classificationResults.sortWith((s, t) => s.probability.frequency > t.probability.frequency)
+<<<<<<< HEAD
       outputContext.bestClassificationResult = outputContext.classificationResults.head
+=======
+      outputContext.lastResult = outputContext.classificationResults.head
+>>>>>>> 5688b10a5c4d8ab9af827831844be2f94159ec29
       outputContext.classificationResults = outputContext.classificationResults.tail
     }
 
