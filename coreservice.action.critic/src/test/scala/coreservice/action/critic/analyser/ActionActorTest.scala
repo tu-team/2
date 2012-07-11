@@ -59,6 +59,10 @@ class ActionActorTest extends FunSuite {
       new ActionActor
     }
 
+    for (a <- actionActors) {
+      a.start()
+    }
+
     var i = 0
     for (aA <- actionActors) {
       aA ! Start(actions(i), ContextHelper(List[Resource](), "name"))

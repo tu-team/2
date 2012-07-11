@@ -21,6 +21,7 @@ object JoinProcessor {
     // initialisation and asynchronous call
     val actionActors: List[ActionActor] = for (a <- actions) yield {
       val aA: ActionActor = new ActionActor
+      aA.start()
       aA ! Start(a, ContextHelper(List[Resource](), "name"))
       aA
     }

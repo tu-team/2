@@ -24,12 +24,13 @@ class JoinProcessorTest extends FunSuite {
   }
 
   test("Joining three critics should work") {
+    val expectedName = "tu.coreservice.action.critic.analyser.DirectInstructionAnalyserCritic result&tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyserCritic result&tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyserCritic result"
     val actions: List[Action] = List(new DirectInstructionAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("DIA")),
       new ProblemDescriptionAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("PDA")),
       new ProblemDescriptionWithDesiredStateAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("PDWDS")))
 
     val res = JoinProcessor(actions, ContextHelper(List[Resource](), "testContext"))
-    expect(3)(res.frames.size)
+    expect(expectedName)(res.uri.name)
   }
 
 }
