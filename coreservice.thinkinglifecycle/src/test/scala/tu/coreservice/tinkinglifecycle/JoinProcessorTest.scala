@@ -28,7 +28,8 @@ class JoinProcessorTest extends FunSuite {
       new ProblemDescriptionAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("PDA")),
       new ProblemDescriptionWithDesiredStateAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("PDWDS")))
 
-    JoinProcessor(actions, ContextHelper(List[Resource](), "testContext"))
+    val res = JoinProcessor(actions, ContextHelper(List[Resource](), "testContext"))
+    expect(3)(res.frames.size)
   }
 
 }

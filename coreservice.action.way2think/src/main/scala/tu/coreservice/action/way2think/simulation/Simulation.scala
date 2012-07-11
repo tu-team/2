@@ -1,6 +1,6 @@
 package tu.coreservice.action.way2think.simulation
 
-import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative}
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.Resource
@@ -87,7 +87,7 @@ class Simulation extends SimulationReformulationAbstract {
   }
 
   private def countLinks(concept: Concept, text: AnnotatedNarrative): Int = {
-   this.countLinks(concept, text.concepts)
+    this.countLinks(concept, text.concepts)
   }
 
   private def processNotKnown(in: List[AnnotatedPhrase]): Context = {

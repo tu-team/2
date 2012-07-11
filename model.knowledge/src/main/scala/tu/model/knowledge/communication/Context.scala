@@ -10,16 +10,14 @@ import tu.model.knowledge.selector.SelectorRequest
  *         time: 11:27 PM
  */
 
-case class Context(private val __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
+case class Context(val __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
   //TODO should be something like this: _frames.get(KnowledgeURI(Constant.LAST_RESULT_NAME))
-<<<<<<< HEAD
+
   var bestClassificationResult: Option[SelectorRequest] = None
-=======
   var lastResult: SelectorRequest = null
->>>>>>> 5688b10a5c4d8ab9af827831844be2f94159ec29
   var classificationResults: List[SelectorRequest] = Nil
 
   def classificationResultsAdd(w2t: SelectorRequest) {
@@ -61,6 +59,11 @@ object ContextHelper {
 
   def merge(first: Context, second: Context): Context = {
     val res = new Context(first.frames ++ second.frames, KnowledgeURI(first.uri.name + "&" + second.uri.name))
+    res
+  }
+
+  def merge(contexts: List[Context]): Context = {
+    val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
     res
   }
 }
