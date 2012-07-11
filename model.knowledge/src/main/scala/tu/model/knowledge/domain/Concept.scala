@@ -15,11 +15,11 @@ import tu.model.knowledge._
 case class Concept(var _generalisations: TypedKLine[Concept],
                    var _specialisations: TypedKLine[Concept],
                    var _phrases: TypedKLine[AnnotatedPhrase],
-                   __content: Resource,
+                   override val _content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
-                   override val _probability: Probability = new Probability())
-  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
+                   override val _probability: Probability)
+  extends SemanticNetworkNode[Resource](_content, _conceptLinks, _uri, _probability) {
 
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
@@ -58,33 +58,11 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
-  /**
-   * Returns true if current Concept has at least one same parent(generalisation) with specified.
-   * @param that Concept to compare
-   * @return Boolean true if that has at least one common parent(generalisation).
-   */
-  def hasSameGeneralisation(that: Concept): Boolean = {
-    val commonGeneralisations = that.generalisations.frames.filter {
-      uriConcept: Pair[KnowledgeURI, Concept] => this.generalisations.frames.contains(uriConcept._1)
-    }
-    commonGeneralisations.size > 0
-  }
-
-  /**
-   * Returns true if current Concept has at least one same parent with specified.
-   * @param parent Concept to compare with
-   * @return Boolean true if that has same parent.
-   */
-  def hasGeneralisation(parent: Concept): Boolean = {
-    this.generalisations.frames.contains(parent.uri)
-  }
-
-  override def toString: String = this.uri.name
 }
 
 object Concept {
 
-  def apply(phrases: TypedKLine[AnnotatedPhrase], name: String, title: String): Concept = {
+  def apply(phrases: TypedKLine[AnnotatedPhrase], name: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"), TypedKLine[Concept]("specialisation"),
       phrases, KnowledgeString(name, name), List[ConceptLink](), KnowledgeURI(name + "Concept"))
   }
@@ -118,8 +96,7 @@ object Concept {
   }
 
   def createSubConcept(parent: Concept, name: String): Concept = {
-    val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+    val it = new Concept(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("phrases"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
@@ -129,20 +106,8 @@ object Concept {
 
   def createInstanceConcept(parent: Concept): Concept = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
-    val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+    val it = new Concept(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("phrases"),
       KnowledgeString(name, name),
-      List[ConceptLink](),
-      KnowledgeURI(name + "Concept"))
-    parent.specialisations = parent.specialisations + (it.uri -> it)
-    it
-  }
-
-  def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
-    val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
-      KnowledgeString(content, content),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
     parent.specialisations = parent.specialisations + (it.uri -> it)
