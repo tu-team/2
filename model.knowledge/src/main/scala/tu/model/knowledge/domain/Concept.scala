@@ -62,7 +62,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
 object Concept {
 
-  def apply(phrases: TypedKLine[AnnotatedPhrase], name: String): Concept = {
+  def apply(phrases: TypedKLine[AnnotatedPhrase], name: String, title: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"), TypedKLine[Concept]("specialisation"),
       phrases, KnowledgeString(name, name), List[ConceptLink](), KnowledgeURI(name + "Concept"))
   }
