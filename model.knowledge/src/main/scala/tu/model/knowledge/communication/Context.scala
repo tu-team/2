@@ -15,7 +15,7 @@ case class Context(private val __frames: Map[KnowledgeURI, Resource], override v
   extends KLine(__frames, _uri, _probability) {
 
   //TODO should be something like this: _frames.get(KnowledgeURI(Constant.LAST_RESULT_NAME))
-  var lastResult: SelectorRequest = null
+  var bestClassificationResult: Option[SelectorRequest] = None
   var classificationResults: List[SelectorRequest] = Nil
 
   def classificationResultsAdd(w2t: SelectorRequest) {
