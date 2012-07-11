@@ -35,6 +35,8 @@ object KBPrototype {
         )
     )
 
+  def goals = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
+
   def getByGoalName(name: String): Option[List[Way2ThinkModel]] = {
     val resources = this.goalResourceMap
     val keys: Iterable[Goal] = resources.keys.filter {
