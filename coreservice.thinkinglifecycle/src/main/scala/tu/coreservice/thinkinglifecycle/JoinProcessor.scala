@@ -1,8 +1,7 @@
 package tu.coreservice.thinkinglifecycle
 
-import org.specs.specification.Context
 import tu.model.knowledge.Resource
-import tu.model.knowledge.communication.ContextHelper
+import tu.model.knowledge.communication.{Context, ContextHelper}
 import tu.coreservice.action.{Action, ActionActor}
 import tu.coreservice.action.event.{Stop, Start}
 import org.slf4j.LoggerFactory
@@ -27,10 +26,14 @@ object JoinProcessor {
       aA
     }
     // join
-    for (a <- actionActors) {
+    val contexts: List[Context] = for (a <- actionActors) yield {
       a !? Stop match {
-        case res: Context => log info res.toString
+        case res: Context => {
+          log info res.toString
+          res
+        }
       }
     }
+
   }
 }
