@@ -7,7 +7,7 @@ KnowledgeBaseServer (KBServer) used neo4j database. In general KBServer utilize 
 
 There are 2 type of objects:
 
- 1. Object - standart knowledge object
+ 1. Object - standard knowledge object
  1. BusinessObject - object for [Web Services](tu-web-service.md). (User,Request)
 
 Methods:
@@ -23,4 +23,4 @@ Methods:
  1. selectBusinessObject(obj:[RefObject](tu-web-service.md#RefObject)):[RefObject](tu-web-service.md#RefObject) - load business object from database
 
 ## ID of objects
-Each object unique represents by GUID and stored in database
+Each object unique represents by URI and stored in database

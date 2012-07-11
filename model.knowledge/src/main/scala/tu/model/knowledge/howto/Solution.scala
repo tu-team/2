@@ -4,7 +4,8 @@ import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.model.knowledge.narrative.{Rule, RulesNarrative}
 
 /**
- * @author max
+ * Stores Solution that is container for List of HowTo-s.
+ * @author max talanov
  *         date 2012-05-09
  *         time: 7:08 PM
  */

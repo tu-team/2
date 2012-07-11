@@ -4,10 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>tu</groupId>
     <artifactId>cognition</artifactId>
-    <version>${tu.version}</version>
+    <version>1.0</version>
     <name>Thinking understanding main component.</name>
     <packaging>pom</packaging>
     <inceptionYear>2012</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>GPL v.3</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>https://bitbucket.org/cosmicdustman/2/src</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <!-- dependency versions -->
@@ -45,10 +53,6 @@
         </pluginRepository>
     </pluginRepositories>
 
-
-    <!-- modules>
-        <module>lib</module>
-  </modules -->
     <dependencies><!--
         <dependency>
             <groupId>com.jteigen.scalatest</groupId>
@@ -62,6 +66,7 @@
         <module>clientagent</module>
         <module>clientagent.interpreter</module>
         <module>communication.webservice</module>
+        <module>coreservice.action</module>
         <module>coreservice.action.critic</module>
         <module>coreservice.action.selector</module>
         <module>coreservice.action.way2think</module>
@@ -72,10 +77,10 @@
         <module>messagebus</module>
         <module>model.knowledge</module>
         <module>model.webservice</module>
-        <module>relex</module>
-        <!-- module>common.utilities</module>
-        <module>coreservice.autocorrector</module>
-        <module>coreservice.splitter</module -->
-
+        <!--    <module>relex</module>             -->
+        <module>common.utilities</module>
+        <module>coreservice.spellcorrector</module>
+        <module>coreservice.splitter</module>
+        <module>host.console</module>
     </modules>
 </project>

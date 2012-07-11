@@ -1,24 +1,28 @@
 package tu.model.knowledge.howto
 
-import tu.model.knowledge.frame.Frame
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI, Tag}
+import tu.model.knowledge.frame.TypedFrame
+import tu.model.knowledge._
+import domain.Concept
+import util.Random
+import tu.model.knowledge.Tag
 
 /**
- * @author max
+ * Stores HowTo and it's parameters.
+ * @author max talanov
  *         date 2012-05-08
  *         time: 10:55 PM
  */
 
-class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability)
+case class HowTo(var _parameters: List[TypedFrame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_parameters: List[Frame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
+  def this(_parameters: List[TypedFrame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
     this(_parameters, _tags, _uri, new Probability())
   }
 
   def parameters = _parameters
 
-  def parameters_=(in: List[Frame[Resource]]): HowTo = {
+  def parameters_=(in: List[TypedFrame[Resource]]): HowTo = {
     _parameters = in
     this
   }
@@ -30,4 +34,31 @@ class HowTo(var _parameters: List[Frame[Resource]], var _tags: List[Tag], _uri: 
     this
   }
 
+}
+
+object HowTo {
+
+  val howToPostfix = "HowTo"
+
+  /**
+   * Creates instance of HowTo based on parent HowTo and parameters
+   * @param parent super HowTo
+   * @param parameters Resources List
+   * @return HowTo instance
+   */
+  def createInstance(parent: HowTo, parameters: List[TypedFrame[Resource]]): HowTo = {
+    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
+    it
+  }
+
+  def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
+    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+
+    val frames: List[TypedFrame[Resource]] = parameters.map(c => {
+      TypedFrame(c)
+    })
+    val it = new HowTo(frames, List[Tag](), KnowledgeURI(name + howToPostfix))
+    it
+  }
 }

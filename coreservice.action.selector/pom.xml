@@ -5,7 +5,7 @@
     <parent>
         <artifactId>cognition</artifactId>
         <groupId>tu</groupId>
-        <version>${tu.version}</version>
+        <version>1.0</version>
     </parent>
     <groupId>tu</groupId>
     <artifactId>coreservice.action.selector</artifactId>
@@ -64,6 +64,29 @@
             <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- 2 -->
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.action</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>model.knowledge</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>dataservice.knowledgebaseserver</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.action.way2think</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

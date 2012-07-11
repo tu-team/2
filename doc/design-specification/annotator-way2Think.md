@@ -29,18 +29,18 @@ LIMIT - empirical value, External KBs search cycles upper limit
 
 ## Workflow
 
-  1. Term Recieved
+  1. Term Received
   1. Search in local KB
   1. If Match not found request external KB, otherwise go to last step
   1. External KB returns synonymous list, connected concepts list. 
-  1. Search memebers of list from previous step in local KB
+  1. Search members of list from previous step in local KB
   1. If cycles count less than LIMIT Get back to step 3
   1. When the search succeeded store found synonymous and connected concepts in local KB  
   1. Return reference to internal term
   
 ## Example
 
-Inboud request contains term 'program'. Knowledge Base contains term 'computer software'. 
+Inbound request contains term 'program'. Knowledge Base contains term 'computer software'.
 
 First cycle:
 

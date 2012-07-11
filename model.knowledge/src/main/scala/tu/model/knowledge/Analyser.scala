@@ -6,6 +6,7 @@ package tu.model.knowledge
  *         Time: 11:14
  */
 
+//TODO should be moved to it's project
 trait Analyser {
 
   def apply(expression: Expression): Probability

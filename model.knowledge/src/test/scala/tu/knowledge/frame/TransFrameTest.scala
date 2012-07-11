@@ -12,7 +12,7 @@ import org.scalatest.FunSuite
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.frame.{TransFrame, Frame}
+import tu.model.knowledge.frame.{Frame, TransFrame, TypedFrame}
 
 @RunWith(classOf[JUnitRunner])
 class TransFrameTest extends FunSuite {
@@ -27,14 +27,14 @@ class TransFrameTest extends FunSuite {
   val source: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString(sourceContent, uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "source", revision))
   val destination: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString(destinationContent, uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "dest", revision))
   val test: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString("TestContent", uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "test", revision))
-  val f1 = new Frame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination), uri)
-  val f2 = new Frame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), uri)
+  val f1 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination), uri)
+  val f2 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), uri)
 
   test("test Ok") {
     assert(true)
   }
 
-  test("Frame should contain several resources") {
+  test("TypedFrame should contain several resources") {
     val f = new TransFrame(f1, f2, uri)
     expect(f.initialState)(f1)
     expect(f.finalState)(f2)

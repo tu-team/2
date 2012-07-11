@@ -5,12 +5,13 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.domain.Concept
 
 /**
+ * Stores word and it's concepts.
  * @author max
  *         date 2012-05-31
  *         time: 11:32 PM
  */
 
-case class AnnotatedWord(var _concepts: List[Concept], _value: String, _uri: KnowledgeURI, _probability: Probability)
+case class AnnotatedWord(var _concepts: List[Concept], override val _value: String, override val _uri: KnowledgeURI, override val _probability: Probability)
   extends KnowledgeString(_value, _uri, _probability) {
 
   def this(_concepts: List[Concept], _value: String, _uri: KnowledgeURI) {

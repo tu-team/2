@@ -3,12 +3,14 @@ package tu.model.knowledge
 import java.net.URI
 
 /**
+ * Universal Identifier of the model.
  * @author max talanov
  *         Time: 11:20 PM
  */
 
-class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
+class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
+  private val delimiter = "#"
 
   private var _uRI: Option[URI] = None
   private var _uID: String = ""
@@ -17,7 +19,7 @@ class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
 
   def name = _name
 
-  def name_=(value:String)=_name=value
+  def name_=(value: String) = _name = value
 
   def revision(): String = _revision
 
@@ -31,7 +33,7 @@ class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        if (namespace.size > 0 && name.size > 0 && revision.size > 0 && _uID.size > 0) {
+        if (namespace().size > 0 && name.size > 0 && revision.size > 0 && _uID.size > 0) {
           this._uRI = Some(new URI(namespace + Constant.DELIMITER + name + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
           this._uRI
         } else {
@@ -47,6 +49,10 @@ class KnowledgeURI(_namespace: String,var _name: String, _revision: String) {
   def uri_=(in: URI): KnowledgeURI = {
     this._uRI = Some(in)
     this
+  }
+
+  override def toString: String = {
+    namespace() + delimiter + name + "@" + revision()
   }
 
 }
