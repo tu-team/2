@@ -1,6 +1,6 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.communication.Request
+import tu.model.knowledge.communication.{Context, Request}
 import tu.coreservice.action.selector.Selector
 import tu.model.knowledge.Resource
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
@@ -25,18 +25,28 @@ class ThinkingLifeCycleMinimal
 
     // process resources
     for (r <- resources) {
-      r match {
-        case w2t: Way2ThinkModel => {
-          // translate way2think
-        }
-        case critic: Critic => {
-          // translate Critic
-        }
-        case joinWay2Think: JoinWay2ThinkModel => {
-          // run JoinProcessor
-        }
-      }
+
     }
 
+    // get next goal
+    // process next goal
+
+  }
+
+  def translate(resource: Resource, globalContext: Context): Context = {
+    resource match {
+      case w2t: Way2ThinkModel => {
+        null
+      }
+      case critic: Critic => {
+        // translate Critic
+        null
+      }
+      case joinWay2Think: JoinWay2ThinkModel => {
+        // run JoinProcessor
+
+      }
+    }
+    null
   }
 }

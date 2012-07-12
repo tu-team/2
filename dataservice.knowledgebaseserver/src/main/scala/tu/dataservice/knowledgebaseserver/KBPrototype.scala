@@ -3,6 +3,8 @@ package tu.dataservice.knowledgebaseserver
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.Way2ThinkModel
+import tu.model.knowledge.action.ActionModel
+import tu.model.knowledge.critic.CriticModel
 
 /**
  * KBSever stub only for prototype purposes.
@@ -16,16 +18,16 @@ object KBPrototype {
   def model = TestDataGenerator.generateDomainModelConceptNetwork
 
   def goalResourceMap =
-    Map(
+    Map[Goal, List[ActionModel]](
       Goal("ProcessIncident") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.spellcorrector.SpellCorrector"),
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImplKBAnnotatorImpl")
         ),
       Goal("ClassifyIncident") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.critic.analyser.DirectInstructionAnalyser"),
-          Way2ThinkModel("tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyser"),
-          Way2ThinkModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyser")
+        List[CriticModel](CriticModel("tu.coreservice.action.critic.analyser.DirectInstructionAnalyser"),
+          CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyser"),
+          CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyser")
         ),
       Goal("GetMostProbableAction") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableSolution")
@@ -37,7 +39,7 @@ object KBPrototype {
 
   def goals = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
-  def getByGoalName(name: String): Option[List[Way2ThinkModel]] = {
+  def getByGoalName(name: String): Option[List[ActionModel]] = {
     val resources = this.goalResourceMap
     val keys: Iterable[Goal] = resources.keys.filter {
       g: Goal => {

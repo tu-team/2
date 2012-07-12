@@ -7,9 +7,10 @@ package tu.model.knowledge.critic
  */
 
 import tu.model.knowledge.{Probability, Resource, KnowledgeURI}
+import tu.model.knowledge.action.ActionModel
 
 class CriticModel(_uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Resource(_uri, _probability) {
+  extends ActionModel(_uri, _probability) {
 
 }
 

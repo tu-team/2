@@ -17,7 +17,7 @@ case class Context(val __frames: Map[KnowledgeURI, Resource], override val _uri:
   //TODO should be something like this: _frames.get(KnowledgeURI(Constant.LAST_RESULT_NAME))
 
   var bestClassificationResult: Option[SelectorRequest] = None
-  var lastResult: SelectorRequest = null
+  var lastResult: Option[SelectorRequest] = None
   var classificationResults: List[SelectorRequest] = Nil
 
   def classificationResultsAdd(w2t: SelectorRequest) {
