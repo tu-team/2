@@ -11,6 +11,9 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import scala.actors.Actor
+import tu.model.knowledge.communication.Request
+import tu.model.knowledge.KnowledgeURI
+import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -22,7 +25,11 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   test("run comelete lifecycle with dummy way2think") {
+    val r = new Request(KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
 
+    log info res.toString
   }
 
   test("start 5 paralel actors and join") {

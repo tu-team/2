@@ -8,7 +8,7 @@ package tu.model.knowledge.communication
 
 import tu.model.knowledge.{Probability, Resource, KnowledgeURI}
 
-class Request(_uri: KnowledgeURI, _probability: Probability)
+class Request(_uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
 }
