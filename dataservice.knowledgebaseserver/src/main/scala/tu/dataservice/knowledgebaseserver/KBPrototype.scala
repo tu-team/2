@@ -2,7 +2,7 @@ package tu.dataservice.knowledgebaseserver
 
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.training.Goal
-import tu.model.knowledge.way2think.Way2ThinkModel
+import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 
@@ -25,9 +25,11 @@ object KBPrototype {
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImplKBAnnotatorImpl")
         ),
       Goal("ClassifyIncident") ->
-        List[CriticModel](CriticModel("tu.coreservice.action.critic.analyser.DirectInstructionAnalyser"),
-          CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyser"),
-          CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyser")
+        List[JoinWay2ThinkModel](JoinWay2ThinkModel(
+          List[CriticModel](CriticModel("tu.coreservice.action.critic.analyser.DirectInstructionAnalyser"),
+            CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyser"),
+            CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyser")
+          ), "tu.model.knowledge.way2think.JoinWay2ThinkModel")
         ),
       Goal("GetMostProbableAction") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableSolution")

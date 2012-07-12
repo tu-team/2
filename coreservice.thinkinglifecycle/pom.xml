@@ -91,7 +91,11 @@
             <artifactId>coreservice.action.selector</artifactId>
             <version>${tu.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.action.way2think</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
