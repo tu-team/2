@@ -19,7 +19,7 @@ object Configurator {
     var res = new ProxyDescription
     res.proxyHost = "ru100279159"
     res.proxyPort = 3128
-    res.useProxy = true
+    res.useProxy = false
     return res
   }
 
