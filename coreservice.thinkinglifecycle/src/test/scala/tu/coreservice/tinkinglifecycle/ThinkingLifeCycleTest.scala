@@ -21,6 +21,10 @@ class ThinkingLifeCycleTest extends FunSuite {
     assert(condition = true)
   }
 
+  test("run comelete lifecycle with dummy way2think") {
+
+  }
+
   test("start 5 paralel actors and join") {
 
     log.info("test started")
@@ -42,9 +46,9 @@ class ThinkingLifeCycleTest extends FunSuite {
     val a1 = new A1()
     val a2 = new A2()
     val a3 = new A3()
-    a1.start
-    a2.start
-    a3.start
+    a1.start()
+    a2.start()
+    a3.start()
 
     a1 ! Accumulate(1)
     a2 ! Accumulate(2)
@@ -68,7 +72,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
     val name = "A"
 
-    def act {
+    def act() {
       log info("{} started", name)
       var sum = 0
       loop {
@@ -79,7 +83,7 @@ class ThinkingLifeCycleTest extends FunSuite {
               sum = i
             }
           }
-          case Total => reply(name + "done = " + sum); exit
+          case Total => reply(name + "done = " + sum); exit()
         }
       }
     }

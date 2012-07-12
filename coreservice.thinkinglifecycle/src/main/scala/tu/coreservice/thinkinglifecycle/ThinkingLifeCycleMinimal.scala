@@ -32,8 +32,6 @@ class ThinkingLifeCycleMinimal
     //TODO currently all goals are in goals list in KBPrimitive
 
     // process resources
-
-
     for (goal <- selector.goals){
       // get next goal
       // process next goal
