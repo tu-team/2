@@ -1,6 +1,7 @@
 package tu.coreservice.spellcorrector
 
 import tu.coreservice.utilities.Configurator
+import tu.model.knowledge.way2think.Way2ThinkModel
 
 /**
  * @author toschev alex
@@ -11,7 +12,7 @@ import tu.coreservice.utilities.Configurator
 /**
  * interface that provide spell corrector functionality
  */
-trait SpellCorrector {
+trait SpellCorrector extends Way2Think{
 
   /**
    * correct sentence

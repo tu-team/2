@@ -1,23 +1,22 @@
 package tu.coreservice.splitter
 
 import _root_.relex.corpus.{DocSplitterFactory, DocSplitter}
-import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.frame.TransFrame
+import tu.coreservice.action.way2think.{UnexpectedException, Way2Think}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.{KnowledgeURI, Resource}
+import tu.model.knowledge.{Resource, KnowledgeURI}
 import tu.coreservice.spellcorrector.SpellCorrector
-import tu.model.knowledge.annotator.{Phrase, Sentence}
 import relex.entity.EntityMaintainer
-import relex.{ParsedSentence, RelationExtractor}
+import relex.RelationExtractor
 import relex.output.OpenCogScheme
 import scala.collection.JavaConversions._
+import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 
 
 /**
  * @author toschev alex
- * Date: 01.06.12
- * Time: 18:59
+ *         Date: 01.06.12
+ *         Time: 18:59
  *
  */
 
@@ -26,7 +25,6 @@ import scala.collection.JavaConversions._
  * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-phrases.md
  */
 class PreliminarySplitter extends Way2Think {
-
 
   def setup: RelationExtractor = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
@@ -71,32 +69,32 @@ class PreliminarySplitter extends Way2Think {
     var ds: DocSplitter = DocSplitterFactory.create()
 
     //correct all text before splitting to sentence
-    var text =   textFrame._2.asInstanceOf[KnowledgeString].value
+    var text = textFrame._2.asInstanceOf[KnowledgeString].value
 
-    var corrector=SpellCorrector()
-    text=corrector.correctSentence(text);
+    var corrector = SpellCorrector()
+    text = corrector.correctSentence(text);
 
     ds.addText(text)
 
-    var sntOrder=1
+    var sntOrder = 1
 
     var sentence = ds.getNextSentence
     while (sentence != null) {
       //check sentence using autocorrector
       //append extracted sentence to context and increase counter for sentence
-      outputContext.frames += (new KnowledgeURI("tu-project.com",sentenceURI.name+"-"+sntOrder,"0.3")-> new KnowledgeString(sentence, sentenceURI))
-      sntOrder=sntOrder+1
+      outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3") -> new KnowledgeString(sentence, sentenceURI))
+      sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
     }
 
   }
 
 
-  def processSentences(sentence:String){
+  def processSentences(sentence: String) {
 
     var em: EntityMaintainer = new EntityMaintainer()
 
-    var relExt=setup;
+    var relExt = setup;
 
   }
 
@@ -106,62 +104,67 @@ class PreliminarySplitter extends Way2Think {
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {
-    var textFrame = inputContext.frames.filter(p =>
-
+    val textFrames = inputContext.frames.filter(p =>
       p._1.name == "inputtext"
+    )
 
-    ).head
+    val textFrame = if (textFrames.size > 0) {
+      textFrames.head
+    } else {
+      val cry4Help = Cry4HelpWay2Think("$Could_not_find " + "inputtext")
+      val outputContext = ContextHelper(List(cry4Help), this.getClass.getName + " result")
+      return outputContext
+    }
 
-
-
-    var sentenceURI = new KnowledgeURI("tu-project.com", "sentence", "0.3")
-
+    val sentenceURI = new KnowledgeURI("tu-project.com", "sentence", "0.3")
 
     // split text using relex
-    var ds: DocSplitter = DocSplitterFactory.create()
+    val ds: DocSplitter = DocSplitterFactory.create()
 
     //correct all text before splitting to sentence
-    var text =   textFrame._2.asInstanceOf[KnowledgeString].value
+    var text = textFrame._2.asInstanceOf[KnowledgeString].value
 
-    var corrector=SpellCorrector()
-    text=corrector.correctSentence(text);
+    val corrector = SpellCorrector()
+    text = corrector.correctSentence(text);
 
     ds.addText(text)
 
-    var sntOrder=1
+    var sntOrder = 1
 
-    var sentence:String = ds.getNextSentence
+    var sentence: String = ds.getNextSentence
+    var outputContext = ContextHelper(List[Resource](), this.getClass.getName())
     while (sentence != null) {
       //check sentence using autocorrector
       //append extracted sentence to context and increase counter for sentence
 
       //run relex and extract phrases
-      var em: EntityMaintainer = new EntityMaintainer()
+      val em: EntityMaintainer = new EntityMaintainer()
 
-      var relExt=setup;
+      val relExt = setup;
 
-      val relexSentence=relExt.processSentence(sentence,em);
+      val relexSentence = relExt.processSentence(sentence, em);
 
-      var tree=relexSentence.getParses().get(0).getPhraseTree()
+      val tree = relexSentence.getParses().get(0).getPhraseTree()
       //extract all phrases
-      tree.iterator().foreach(u=>{
-         //append phrase
-        var tempString=u.getNode.toString
+      tree.iterator().foreach(u => {
+        //append phrase
+        var tempString = u.getNode.toString
       });
 
       //relexSentence.getParses.toList.map(b=>new Phrase(b.getPhraseTree.))
 
       //var convertedPhrases = relexSentence.getParses.toArray.map(b=> new Phrase(b.))
-
-      inputContext.frames += (new KnowledgeURI("tu-project.com",sentenceURI.name+"-"+sntOrder,"0.3")-> new KnowledgeString(sentence, sentenceURI))
+      outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
+        -> new KnowledgeString(sentence, sentenceURI))
 
       //also add phrases to sentence
 
-      sntOrder=sntOrder+1
+      sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
     }
 
-    return inputContext
+    //TODO get rid of this, there should be outputContext only
+    outputContext
   }
 
   def start() = false

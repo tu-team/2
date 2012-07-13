@@ -1,11 +1,9 @@
 package tu.providers
 
 /**
- * Created with IntelliJ IDEA.
- * User: alex
+ * @author alex toschev
  * Date: 6/24/12
  * Time: 10:25 AM
- * To change this template use File | Settings | File Templates.
  */
 
 /**

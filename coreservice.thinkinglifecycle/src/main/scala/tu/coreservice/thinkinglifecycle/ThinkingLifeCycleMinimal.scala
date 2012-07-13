@@ -32,7 +32,7 @@ class ThinkingLifeCycleMinimal
     //TODO currently all goals are in goals list in KBPrimitive
 
     // process resources
-    for (goal <- selector.goals){
+    for (goal <- selector.goals) {
       // get next goal
       // process next goal
       val resources: List[Resource] = selector.apply(goal)
@@ -66,12 +66,14 @@ class ThinkingLifeCycleMinimal
 
   def instantiate(className: String): Action = {
     val clazz = Class.forName(className)
-    if (clazz.isInstanceOf[Action]) {
+    try {
       val instance = clazz.newInstance().asInstanceOf[Action]
       instance
-    } else {
-      Cry4HelpWay2Think("$Not_alloved_class")
-      throw new UnexpectedException("$Not_alloved_class")
+    } catch {
+      case e: ClassCastException => {
+        Cry4HelpWay2Think("$Not_alloved_class " + clazz.getName)
+        throw new UnexpectedException("$Not_alloved_class " + clazz.getName)
+      }
     }
   }
 }
