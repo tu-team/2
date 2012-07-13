@@ -74,11 +74,17 @@
             <artifactId>jaxb-impl</artifactId>
             <version>2.1.5</version>
         </dependency>
-
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.14</version>
+        </dependency>
+
+        <!-- 2 -->
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.action.way2think</artifactId>
+            <version>${tu.version}</version>
         </dependency>
 
     </dependencies>

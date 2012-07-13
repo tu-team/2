@@ -2,9 +2,10 @@ package tu.coreservice.spellcorrector
 
 import tu.coreservice.utilities.Configurator
 import tu.model.knowledge.way2think.Way2ThinkModel
+import tu.coreservice.action.way2think.Way2Think
 
 /**
- * @author toschev alex
+ * @author toschev alex, talanov max
  *         Date: 28.05.12
  *         Time: 20:49
  */
