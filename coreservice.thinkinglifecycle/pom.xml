@@ -101,6 +101,11 @@
             <artifactId>coreservice.splitter</artifactId>
             <version>${tu.version}</version>
         </dependency>
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.spellcorrector</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

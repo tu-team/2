@@ -1,5 +1,8 @@
 package tu.coreservice.spellcorrector
 
+import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.Resource
+
 /**
  * Created by IntelliJ IDEA.
  * User: toscheva
@@ -15,8 +18,8 @@ class SpellCorrectorCompound extends SpellCorrector {
   def correctSentence(inputSentence: String): String = {
 
     //instantiate Google corrector
-    var googleCorrector = new SpellCorrectorGoogle
-    var atdCorrector = new SpellCorrectorAfterTheDeadline
+    val googleCorrector = new SpellCorrectorGoogle
+    val atdCorrector = new SpellCorrectorAfterTheDeadline
 
     //preliminary corrector
 
@@ -26,10 +29,23 @@ class SpellCorrectorCompound extends SpellCorrector {
     // correct dots in sentence
     precorrectedSentence=precorrectedSentence.replaceAll("""(\.|\?|\!(?=\w))""",". ")
 
-    var spellingCorrected = googleCorrector.correctSentence(precorrectedSentence)
+    val spellingCorrected = googleCorrector.correctSentence(precorrectedSentence)
 
     //correct grammar
-    return atdCorrector.sendRequest(spellingCorrected,true)
+    atdCorrector.sendRequest(spellingCorrected,true)
 
+  }
+
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = {
+    ContextHelper(List[Resource](), this.getClass.getName + " result")
   }
 }
