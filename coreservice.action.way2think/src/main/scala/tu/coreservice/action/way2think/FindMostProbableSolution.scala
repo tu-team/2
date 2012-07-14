@@ -2,6 +2,7 @@ package tu.coreservice.action.way2think
 
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.Resource
+import tu.model.knowledge.selector.SelectorRequest
 
 /**
  * @author adel
@@ -12,8 +13,7 @@ import tu.model.knowledge.Resource
 object FindMostProbableSolution extends Way2Think {
 
   def apply(inputContext: Context): Context = {
-    //TODO plese get rid of it!!!
-    val outputContext = new tu.model.knowledge.communication.ContextHelper(List[Resource](), "OutputContex")
+    val outputContext = ContextHelper(List[Resource](), "OutputContex")
     if (outputContext.classificationResults.isEmpty) {
       outputContext.bestClassificationResult = None
     }
@@ -24,7 +24,12 @@ object FindMostProbableSolution extends Way2Think {
              .sortWith((s, t) => s.probability.frequency > t.probability.frequency)
       outputContext.bestClassificationResult = outputContext.classificationResults.headOption
       outputContext.lastResult = outputContext.classificationResults.headOption
-      outputContext.checkedClassificationResults = outputContext.bestClassificationResult :: outputContext.checkedClassificationResults
+      outputContext.bestClassificationResult match {
+        case Some(sR: SelectorRequest) => {
+          outputContext.checkedClassificationResults = List(sR) ::: outputContext.checkedClassificationResults
+        }
+
+      }
       outputContext.classificationResults = outputContext.classificationResults.tail
     }
 

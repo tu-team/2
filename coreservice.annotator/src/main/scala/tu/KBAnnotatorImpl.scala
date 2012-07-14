@@ -2,21 +2,15 @@ package tu.coreservice.annotator
 
 
 import org.slf4j.LoggerFactory
-import relex.entity.{EntityMaintainer, EntityTaggerFactory, EntityTagger}
-import relex.{ParsedSentence, Sentence, RelationExtractor}
-import collection.JavaConversions._
-import java.util.Properties
-import java.io.InputStream
-import relex.output.{SimpleView, OpenCogScheme}
-import tu.coreservice.spellcorrector.SpellCorrector
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.Resource
 
 /**
  * Simple KBAnnotator implementation.
  * @author toschev alex
- * Date: 15.06.12
- * Time: 18:26
+ *         Date: 15.06.12
+ *         Time: 18:26
  *
  */
 
@@ -149,12 +143,12 @@ class KBAnnotatorImpl extends Way2Think {
    * @param inputContext Context of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context):Context = {
+  def apply(inputContext: Context): Context = {
     //we have output context from splitter
 
     //trying to annotate phrases
-      null
-
+    val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
+    outputContext
   }
 
   def start() = false

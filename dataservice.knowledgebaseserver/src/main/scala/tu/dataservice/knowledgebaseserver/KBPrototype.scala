@@ -22,7 +22,7 @@ object KBPrototype {
       Goal("ProcessIncident") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.spellcorrector.SpellCorrectorCompound"),
-          Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImplKBAnnotatorImpl")
+          Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl")
         ),
       Goal("ClassifyIncident") ->
         List[JoinWay2ThinkModel](JoinWay2ThinkModel(
