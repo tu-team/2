@@ -68,7 +68,6 @@ class FindMostProbableSolutionTest extends FunSuite {
     org.scalatest.Assertions.expect(w2t0)(context3.bestClassificationResult) //expected, actual
     org.scalatest.Assertions.expect(w2t1)(context3.classificationResults.head) //expected, actual
 
-
   }
 
 }

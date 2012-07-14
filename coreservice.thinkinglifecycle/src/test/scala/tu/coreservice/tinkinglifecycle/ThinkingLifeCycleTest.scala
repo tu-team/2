@@ -11,6 +11,9 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import scala.actors.Actor
+import tu.model.knowledge.communication.Request
+import tu.model.knowledge.KnowledgeURI
+import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -19,6 +22,14 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("test Ok") {
     assert(condition = true)
+  }
+
+  test("run comelete lifecycle with dummy way2think") {
+    val r = new Request(KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+
+    log info res.toString
   }
 
   test("start 5 paralel actors and join") {
@@ -42,9 +53,9 @@ class ThinkingLifeCycleTest extends FunSuite {
     val a1 = new A1()
     val a2 = new A2()
     val a3 = new A3()
-    a1.start
-    a2.start
-    a3.start
+    a1.start()
+    a2.start()
+    a3.start()
 
     a1 ! Accumulate(1)
     a2 ! Accumulate(2)
@@ -68,7 +79,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
     val name = "A"
 
-    def act {
+    def act() {
       log info("{} started", name)
       var sum = 0
       loop {
@@ -79,7 +90,7 @@ class ThinkingLifeCycleTest extends FunSuite {
               sum = i
             }
           }
-          case Total => reply(name + "done = " + sum); exit
+          case Total => reply(name + "done = " + sum); exit()
         }
       }
     }

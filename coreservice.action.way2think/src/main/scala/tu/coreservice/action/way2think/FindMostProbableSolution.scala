@@ -4,31 +4,24 @@ import tu.model.knowledge.communication.Context
 
 /**
  * @author adel
- * Date: 30.06.12
- * Time: 9:12
+ *         Date: 30.06.12
+ *         Time: 9:12
  */
 
 object FindMostProbableSolution extends Way2Think {
 
   def apply(inputContext: Context): Context = {
+    //TODO plese get rid of it!!!
     var outputContext = inputContext
-    if ( outputContext.classificationResults.isEmpty)
-    {
-<<<<<<< HEAD
+    if (outputContext.classificationResults.isEmpty) {
       outputContext.bestClassificationResult = None
-=======
-      outputContext.lastResult = null
->>>>>>> 5688b10a5c4d8ab9af827831844be2f94159ec29
+      outputContext.lastResult = None
     }
-    else
-    {
+    else {
       outputContext.classificationResults
         = outputContext.classificationResults.sortWith((s, t) => s.probability.frequency > t.probability.frequency)
-<<<<<<< HEAD
-      outputContext.bestClassificationResult = outputContext.classificationResults.head
-=======
-      outputContext.lastResult = outputContext.classificationResults.head
->>>>>>> 5688b10a5c4d8ab9af827831844be2f94159ec29
+      outputContext.bestClassificationResult = outputContext.classificationResults.headOption
+      outputContext.lastResult = outputContext.classificationResults.headOption
       outputContext.classificationResults = outputContext.classificationResults.tail
     }
 

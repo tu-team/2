@@ -38,4 +38,6 @@ class Selector {
     }
   }
 
+  def goals = KBPrototype.goals
+
 }

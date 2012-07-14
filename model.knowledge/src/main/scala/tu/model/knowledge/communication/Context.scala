@@ -10,17 +10,21 @@ import tu.model.knowledge.selector.SelectorRequest
  *         time: 11:27 PM
  */
 
-case class Context(private val __frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
+case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
-  //TODO should be something like this: _frames.get(KnowledgeURI(Constant.LAST_RESULT_NAME))
-<<<<<<< HEAD
+
   var bestClassificationResult: Option[SelectorRequest] = None
-=======
-  var lastResult: SelectorRequest = null
->>>>>>> 5688b10a5c4d8ab9af827831844be2f94159ec29
+  var _lastResult: Option[Resource] = None
   var classificationResults: List[SelectorRequest] = Nil
+
+  def lastResult = _lastResult
+
+  def lastResult_=(res: Option[Resource]): Context = {
+    _lastResult = res
+    this
+  }
 
   def classificationResultsAdd(w2t: SelectorRequest) {
     classificationResults = w2t :: classificationResults
@@ -59,8 +63,54 @@ object ContextHelper {
     new Context(resourcesMap, uri)
   }
 
-  def merge(first: Context, second: Context): Context = {
-    val res = new Context(first.frames ++ second.frames, KnowledgeURI(first.uri.name + "&" + second.uri.name))
+  /**
+   * Creates Context based on List of Resource and name specified. Name is used as base for URI.
+   * @param resources List of Resource used to create Context.
+   * @param classificationResults List of classification results
+   * @param name URI.name
+   * @return Context
+   */
+  def apply(resources: List[Resource], classificationResults: List[SelectorRequest], name: String): Context = {
+    val uri = KnowledgeURI(name)
+    val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
+      t => (t.uri, t)
+    }.toMap
+    val res = new Context(resourcesMap, uri)
+    res.classificationResults = classificationResults
     res
+  }
+
+  def crateContext(resourcesMap: Map[KnowledgeURI, Resource], classificationResults: List[SelectorRequest], name: String): Context = {
+    val uri = KnowledgeURI(name)
+    val res = new Context(resourcesMap, uri)
+    res.classificationResults = classificationResults
+    res
+  }
+
+  /**
+   * Merges fist and second contexts: their frames, classificationResults and names.
+   * @param first context to merge
+   * @param second context to merge.
+   * @return merged Context
+   */
+  def merge(first: Context, second: Context): Context = {
+    val res = ContextHelper.crateContext(first.frames ++ second.frames, first.classificationResults ::: second.classificationResults,
+      first.uri.name + "&" + second.uri.name)
+    res
+  }
+
+  /**
+   * Merges context folding them to left.
+   * @param contexts List[Context] to merge.
+   * @return merged Context
+   */
+  def merge(contexts: List[Context]): Context = {
+    val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
+    res
+  }
+
+  def mergeLast(contexts: List[Context]): Context = {
+    val res = merge(contexts)
+    res.lastResult = contexts.last.lastResult
   }
 }

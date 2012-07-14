@@ -7,11 +7,9 @@ import tu.model.knowledge.KnowledgeURI
 import tu.model.knowledge.primitive.KnowledgeString
 ;
 /**
- * Created by IntelliJ IDEA.
- * User: toscheva
+ * @author toscheva
  * Date: 06.06.12
  * Time: 13:34
- *
  */
 
 /**

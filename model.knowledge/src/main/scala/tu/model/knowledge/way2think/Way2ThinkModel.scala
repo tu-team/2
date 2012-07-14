@@ -1,6 +1,7 @@
 package tu.model.knowledge.way2think
 
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
+import tu.model.knowledge.action.ActionModel
 
 /**
  * @author max talanov
@@ -9,7 +10,7 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
  */
 
 class Way2ThinkModel(_uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Resource(_uri, _probability)
+  extends ActionModel(_uri, _probability)
 
 object Way2ThinkModel {
   def apply(name: String): Way2ThinkModel = {
