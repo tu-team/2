@@ -24,9 +24,8 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def lastResult_=(res: Option[Resource]): Context = {
     _lastResult = res
-    if (res.isInstanceOf[SelectorRequest])
-    {
-      if (! classificationResults.exists (p => p == res.asInstanceOf[SelectorRequest]) )
+    if (res.isInstanceOf[SelectorRequest]) {
+      if (!classificationResults.exists(p => p == res.asInstanceOf[SelectorRequest]))
         classificationResultsAdd(res.asInstanceOf[SelectorRequest])
     }
     this
@@ -102,7 +101,7 @@ object ContextHelper {
   def merge(first: Context, second: Context): Context = {
     val res = ContextHelper.createContext(first.frames ++ second.frames, mergeList(first.classificationResults, second.classificationResults),
       first.uri.name + "&" + second.uri.name)
-    res.checkedClassificationResults = mergeList(first.checkedClassificationResults , second.checkedClassificationResults)
+    res.checkedClassificationResults = mergeList(first.checkedClassificationResults, second.checkedClassificationResults)
     res
   }
 
@@ -116,8 +115,8 @@ object ContextHelper {
     res
   }
 
-  def mergeList(x:List[SelectorRequest], y:List[SelectorRequest]):List[SelectorRequest] = {
-    x.filter( p => ! y.exists ( q => p==q) ) ::: y
+  def mergeList(x: List[SelectorRequest], y: List[SelectorRequest]): List[SelectorRequest] = {
+    x.filter(p => !y.exists(q => p == q)) ::: y
   }
 
   def mergeLast(contexts: List[Context]): Context = {

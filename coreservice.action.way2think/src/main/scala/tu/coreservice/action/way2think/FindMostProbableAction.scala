@@ -5,12 +5,28 @@ import tu.model.knowledge.Resource
 import tu.model.knowledge.selector.SelectorRequest
 
 /**
- * @author adel
+ * @author adel chepkunov, max talanov
  *         Date: 30.06.12
  *         Time: 9:12
  */
 
-object FindMostProbableSolution extends Way2Think {
+
+class FindMostProbableAction extends  Way2Think {
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = {
+    FindMostProbableAction(inputContext)
+  }
+}
+
+object FindMostProbableAction {
 
   def apply(inputContext: Context): Context = {
     val outputContext = ContextHelper(List[Resource](), "OutputContex")
@@ -35,8 +51,4 @@ object FindMostProbableSolution extends Way2Think {
 
     outputContext
   }
-
-  def start() = false
-
-  def stop() = false
 }

@@ -6,10 +6,23 @@ import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.{Resource, SolvedIssue, Solutions}
 
 /**
- * @author adel
+ * @author adel chepkunov
  * Date: 10.07.12
  * Time: 7:00
  */
+
+class SearchSolution extends Way2Think {
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = SearchSolution(inputContext)
+}
 
 object SearchSolution {
 

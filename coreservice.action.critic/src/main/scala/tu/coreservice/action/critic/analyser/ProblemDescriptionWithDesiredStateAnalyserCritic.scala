@@ -15,6 +15,9 @@ import tu.model.knowledge.domain.ConceptNetwork
 
 class ProblemDescriptionWithDesiredStateAnalyserCritic(_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Critic(_exclude, _include, _uri, _probability) {
+
+  def this() = this(List[CriticLink](), List[CriticLink](), KnowledgeURI("DirectInstructionAnalyserCritic"))
+
   def start() = false
 
   def stop() = false

@@ -67,7 +67,8 @@ class ThinkingLifeCycleMinimal
   def instantiate(className: String): Action = {
     val clazz = Class.forName(className)
     try {
-      val instance = clazz.newInstance().asInstanceOf[Action]
+      val temp = clazz.newInstance()
+      val instance = temp.asInstanceOf[Action]
       instance
     } catch {
       case e: ClassCastException => {

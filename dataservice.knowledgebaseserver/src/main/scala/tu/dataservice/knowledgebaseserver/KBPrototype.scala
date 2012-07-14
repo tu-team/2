@@ -26,13 +26,13 @@ object KBPrototype {
         ),
       Goal("ClassifyIncident") ->
         List[JoinWay2ThinkModel](JoinWay2ThinkModel(
-          List[CriticModel](CriticModel("tu.coreservice.action.critic.analyser.DirectInstructionAnalyser"),
-            CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyser"),
-            CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyser")
+          List[CriticModel](CriticModel("tu.coreservice.action.critic.analyser.DirectInstructionAnalyserCritic"),
+            CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionAnalyserCritic"),
+            CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyserCritic")
           ), "tu.model.knowledge.way2think.JoinWay2ThinkModel")
         ),
       Goal("GetMostProbableAction") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableSolution")
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableAction")
         ),
       Goal("SearchSolution") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.SearchSolution")
