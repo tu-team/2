@@ -3,7 +3,7 @@ package tu.coreservice.action.way2think
 import tu.model.knowledge.communication.Context
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.howto.Solution
-import tu.model.knowledge.{SolvedIssue, Solutions}
+import tu.model.knowledge.{Resource, SolvedIssue, Solutions}
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,8 +16,11 @@ import tu.model.knowledge.{SolvedIssue, Solutions}
 object SearchSolution {
 
   def apply(inputContext: Context): Context = {
-    var outputContext = inputContext
 
+    val res = search
+
+    val outputContext = new tu.model.knowledge.communication.ContextHelper(res match{ case Some(x) => List[Resource](x) case None => List[Resource]() }, "OutputContex")
+    outputContext.lastResult = res
     outputContext
   }
 

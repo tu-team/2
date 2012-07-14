@@ -21,9 +21,9 @@ class Solutions(_uri: KnowledgeURI, _probability: Probability) extends Resource(
   {//TODO
   }
 
-  def search(issue:ConceptNetwork, badSolutions: List[SemanticNetwork]):SolvedIssue =
+  def search(issue:ConceptNetwork, badSolutions: List[SemanticNetwork]):Option[SolvedIssue] =
   {//TODO
-    val solve = null
+    val solve:Option[SolvedIssue] = None
 
     solve
   }

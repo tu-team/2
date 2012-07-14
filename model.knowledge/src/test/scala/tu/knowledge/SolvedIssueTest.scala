@@ -24,7 +24,7 @@ class SolvedIssueTest extends FunSuite {
 
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
-  val s = new SolvedIssue(getTestSN(), getTestSolution(),   uri, probability)
+  val s = new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, getTestSolution(),   uri, probability)
 
   test("SolvedIssue should contain issue and solution") {
     //TODO do it
