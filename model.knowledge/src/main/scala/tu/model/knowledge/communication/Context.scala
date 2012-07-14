@@ -1,7 +1,7 @@
 package tu.model.knowledge.communication
 
 import tu.model.knowledge._
-import tu.model.knowledge.selector.SelectorRequest
+import selector.SelectorRequest
 
 /**
  * Stores contexts parameters.
@@ -18,11 +18,17 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var bestClassificationResult: Option[SelectorRequest] = None
   var _lastResult: Option[Resource] = None
   var classificationResults: List[SelectorRequest] = Nil
+  var checkedClassificationResults: List[SelectorRequest] = Nil
 
   def lastResult = _lastResult
 
   def lastResult_=(res: Option[Resource]): Context = {
     _lastResult = res
+    if (res.isInstanceOf[SelectorRequest])
+    {
+      if (! classificationResults.exists (p => p == res.asInstanceOf[SelectorRequest]) )
+        classificationResultsAdd(res.asInstanceOf[SelectorRequest])
+    }
     this
   }
 
@@ -80,7 +86,7 @@ object ContextHelper {
     res
   }
 
-  def crateContext(resourcesMap: Map[KnowledgeURI, Resource], classificationResults: List[SelectorRequest], name: String): Context = {
+  def createContext(resourcesMap: Map[KnowledgeURI, Resource], classificationResults: List[SelectorRequest], name: String): Context = {
     val uri = KnowledgeURI(name)
     val res = new Context(resourcesMap, uri)
     res.classificationResults = classificationResults
@@ -94,8 +100,9 @@ object ContextHelper {
    * @return merged Context
    */
   def merge(first: Context, second: Context): Context = {
-    val res = ContextHelper.crateContext(first.frames ++ second.frames, first.classificationResults ::: second.classificationResults,
+    val res = ContextHelper.createContext(first.frames ++ second.frames, mergeList(first.classificationResults, second.classificationResults),
       first.uri.name + "&" + second.uri.name)
+    res.checkedClassificationResults = mergeList(first.checkedClassificationResults , second.checkedClassificationResults)
     res
   }
 
@@ -107,6 +114,10 @@ object ContextHelper {
   def merge(contexts: List[Context]): Context = {
     val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
     res
+  }
+
+  def mergeList(x:List[SelectorRequest], y:List[SelectorRequest]):List[SelectorRequest] = {
+    x.filter( p => ! y.exists ( q => p==q) ) ::: y
   }
 
   def mergeLast(contexts: List[Context]): Context = {
