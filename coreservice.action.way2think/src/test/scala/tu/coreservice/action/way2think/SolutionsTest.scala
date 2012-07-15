@@ -6,9 +6,15 @@ import org.scalatest.FunSuite
 import tu.model.knowledge.domain.Concept._
 import tu.model.knowledge.domain.ConceptLink._
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.semanticnetwork.{SemanticNetwork, SemanticNetworkLink, SemanticNetworkNode}
+import tu.coreservice.utilities.TestDataGenerator
+import tu.model.knowledge.frame.TypedFrame
+import howto.{HowTo, Solution}
+import primitive.{KnowledgeBoolean, KnowledgeString}
+import tu.model.knowledge._
+import howto.{Solution, HowTo}
+import narrative.Rule
+import primitive.KnowledgeBoolean
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,7 +27,40 @@ import tu.model.knowledge.semanticnetwork.{SemanticNetwork, SemanticNetworkLink,
 @RunWith(classOf[JUnitRunner])
 class SolutionsTest extends FunSuite{
 
-  var db = new Solutions()
+  var db = Solutions
+
+  val uri = new KnowledgeURI("namespace", "name", "revision")
+  val probability = new Probability
+
+  test("SolvedIssue should contain issue and solution") {
+    expect(s.issue.uri.toString)(TestDataGenerator.pleaseInstallFFSimulation.uri.toString)
+    expect(s.solution.uri.toString)(getTestSolution().uri.toString)
+  }
+
+
+
+  def getTestSolvedIssue1(howTo:HowTo): SolvedIssue = {
+    val ex: Expression = new Expression(uri) {
+      def apply = new KnowledgeBoolean(false, uri)
+    }
+
+    val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
+
+    val s = new Solution(List(r), uri)
+    new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, probability)
+  }
+
+  def getTestSolvedIssue1(howTo:HowTo): SolvedIssue = {
+
+    val ex: Expression = new Expression(uri) {
+      def apply = new KnowledgeBoolean(false, uri)
+    }
+
+    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
+
+    val s = new Solution(List(r), uri)
+    new SolvedIssue(TestDataGenerator., s, uri, probability)
+  }
 
 /*
 
