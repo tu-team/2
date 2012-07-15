@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.Resource
+import tu.providers.AnnotatorRegistry
 
 /**
  * Simple KBAnnotator implementation.
@@ -146,8 +147,59 @@ class KBAnnotatorImpl extends Way2Think {
   def apply(inputContext: Context): Context = {
     //we have output context from splitter
 
+    //
+    //TODO: extract splitter result by phrases
+
+    var extractedPhrases= List("rid off","this software")
+
     //trying to annotate phrases
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
+
+    val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
+
+    def checkLocalKB(phrase:String):Boolean={
+
+      var annotationFound=false
+      var localAnnotated=localAnnotator.annotate(phrase)
+
+      if (localAnnotated.length>0)
+      {
+        //TODO: convert to RelEx phrase and append to output context
+        return true
+
+      }
+
+      return false
+
+    }
+
+    extractedPhrases.foreach(ph=> {
+
+      var annotationFound= checkLocalKB(ph)
+
+      if (!annotationFound)
+      {
+
+        AnnotatorRegistry.listAnnotators().filter(p=> p.isLocal()!=true).foreach(a=> {
+           val synonymous =a.annotate(ph)
+
+           synonymous.foreach(syn=>{
+             //check against local KB
+             if (checkLocalKB(syn))
+              {
+                annotationFound=true
+
+                scala.util.control.Breaks.break()
+              }
+           })
+
+        })
+      }
+    })
+
+
+
+
     outputContext
   }
 
