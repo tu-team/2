@@ -20,4 +20,10 @@ class LocalKBAnnotatorProvider extends AnnotatorProvider {
    * @return
    */
   def priority() = 0
+
+  /**
+   * indicates that this is a local KB Annotator
+   * @return  true if local annotator
+   */
+  def isLocal() = true
 }

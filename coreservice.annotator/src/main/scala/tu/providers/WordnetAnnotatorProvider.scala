@@ -20,7 +20,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
 
     var url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8") + "&sub=Search+WordNet&o2=&o0=&o8=1&o1=&o7=&o5=&o9=&o6=&o3=&o4=&h=00000000000000000000");
 
-    var res:List[String] = null
+    var res:List[String] = List[String]()
 
     //Sends request to wordnet
     var proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
@@ -82,4 +82,10 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
    * @return
    */
   def priority() = 2
+
+  /**
+   * indicates that this is a local KB Annotator
+   * @return  true if local annotator
+   */
+  def isLocal() = false
 }

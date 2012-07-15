@@ -19,4 +19,10 @@ class WolframAnnotatorProvider extends AnnotatorProvider{
    * @return
    */
   def priority() = 2
+
+  /**
+   * indicates that this is a local KB Annotator
+   * @return  true if local annotator
+   */
+  def isLocal() = false
 }

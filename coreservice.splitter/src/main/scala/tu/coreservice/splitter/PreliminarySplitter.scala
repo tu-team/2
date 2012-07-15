@@ -78,8 +78,12 @@ class PreliminarySplitter extends Way2Think {
 
     var sntOrder = 1
 
+
     var sentence = ds.getNextSentence
     while (sentence != null) {
+      //TODO: USING RelEx split by phrases
+      //and place this to context
+
       //check sentence using autocorrector
       //append extracted sentence to context and increase counter for sentence
       outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3") -> new KnowledgeString(sentence, sentenceURI))
