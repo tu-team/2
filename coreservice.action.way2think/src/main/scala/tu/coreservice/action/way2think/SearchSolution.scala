@@ -36,7 +36,7 @@ object SearchSolution {
     ContextHelper(List[Resource](), this.getClass.getName + " result")
   }
 
-  def search(target: ConceptNetwork, solutions: Solutions): Option[SolvedIssue] = {
-    solutions.search(target, Nil)
+  def search(target: ConceptNetwork): Option[SolvedIssue] = {
+    Solutions.search(target, Nil)
   }
 }

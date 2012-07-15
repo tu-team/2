@@ -3,18 +3,15 @@ package tu.coreservice.action.way2think
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
-import tu.model.knowledge.domain.Concept._
-import tu.model.knowledge.domain.ConceptLink._
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.model.knowledge.semanticnetwork.{SemanticNetwork, SemanticNetworkLink, SemanticNetworkNode}
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.frame.TypedFrame
-import howto.{HowTo, Solution}
-import primitive.{KnowledgeBoolean, KnowledgeString}
+import tu.model.knowledge.howto.{HowTo, Solution}
+import tu.model.knowledge.primitive.{KnowledgeBoolean, KnowledgeString}
 import tu.model.knowledge._
-import howto.{Solution, HowTo}
 import narrative.Rule
-import primitive.KnowledgeBoolean
+import selector.SelectorRequest
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,14 +29,47 @@ class SolutionsTest extends FunSuite{
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
 
-  test("SolvedIssue should contain issue and solution") {
-    expect(s.issue.uri.toString)(TestDataGenerator.pleaseInstallFFSimulation.uri.toString)
-    expect(s.solution.uri.toString)(getTestSolution().uri.toString)
+  val si1 = getTestSolvedIssue1
+  val si2 = getTestSolvedIssue2
+
+  Solutions.add(si1)
+  Solutions.add(si2)
+
+
+  test("Solutions can search one-node network") {
+
+    //may be it is firefox
+    val net1 = new ConceptNetwork(List[Concept](getTestSolvedIssue1.issue.rootNodes(1)), Nil, KnowledgeURI("pleaseInstallFFTest1"))
+    //may be it is IE8
+    val net2 = new ConceptNetwork(List[Concept](getTestSolvedIssue2.issue.rootNodes(1)), Nil, KnowledgeURI("pleaseInstallFFTest1"))
+
+    val ssi1 = Solutions.search ( net1, Nil)
+    val ssi2 = Solutions.search ( net2, Nil)
+
+    ssi1 match {
+      case Some(si: SolvedIssue) => {
+        expect(si.uri)(si1.uri)
+      }
+      case _ => {
+        //Unexpected type or None insted Some
+        expect(0)(1)
+      }
+    }
+
+    ssi2 match {
+      case Some(si: SolvedIssue) => {
+        expect(si.uri)(si2.uri)
+      }
+      case _ => {
+        //Unexpected type or None insted Some
+        expect(0)(1)
+      }
+    }
   }
 
 
 
-  def getTestSolvedIssue1(howTo:HowTo): SolvedIssue = {
+  def getTestSolvedIssue1(): SolvedIssue = {
     val ex: Expression = new Expression(uri) {
       def apply = new KnowledgeBoolean(false, uri)
     }
@@ -50,7 +80,7 @@ class SolutionsTest extends FunSuite{
     new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, probability)
   }
 
-  def getTestSolvedIssue1(howTo:HowTo): SolvedIssue = {
+  def getTestSolvedIssue2(): SolvedIssue = {
 
     val ex: Expression = new Expression(uri) {
       def apply = new KnowledgeBoolean(false, uri)
@@ -59,7 +89,7 @@ class SolutionsTest extends FunSuite{
     val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
 
     val s = new Solution(List(r), uri)
-    new SolvedIssue(TestDataGenerator., s, uri, probability)
+    new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, uri, probability)
   }
 
 /*
