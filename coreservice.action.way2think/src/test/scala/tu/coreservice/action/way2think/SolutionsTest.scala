@@ -1,4 +1,4 @@
-package tu.knowledge
+package tu.coreservice.action.way2think
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
@@ -6,7 +6,7 @@ import org.scalatest.FunSuite
 import tu.model.knowledge.domain.Concept._
 import tu.model.knowledge.domain.ConceptLink._
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI, Solutions}
+import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.semanticnetwork.{SemanticNetwork, SemanticNetworkLink, SemanticNetworkNode}
 

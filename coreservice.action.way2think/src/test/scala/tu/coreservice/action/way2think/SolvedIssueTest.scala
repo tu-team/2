@@ -26,9 +26,8 @@ class SolvedIssueTest extends FunSuite {
   val s = new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, getTestSolution(), uri, probability)
 
   test("SolvedIssue should contain issue and solution") {
-    //TODO do it
-    //expect(s.issue.toString())(getTestSN().toString())
-    //expect(s.solution.toString())(getTestSolution().toString())
+    expect(s.issue.uri.toString)(TestDataGenerator.pleaseInstallFFSimulation.uri.toString)
+    expect(s.solution.uri.toString)(getTestSolution().uri.toString)
   }
 
 

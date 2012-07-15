@@ -1,8 +1,7 @@
-package tu.model.knowledge
+package tu.coreservice.action.way2think
 
-import domain.ConceptNetwork
-import howto.HowTo
-import semanticnetwork.SemanticNetwork
+import tu.model.knowledge.{SolvedIssue, Resource, Probability, KnowledgeURI}
+import tu.model.knowledge.domain.ConceptNetwork
 
 
 /**
@@ -21,7 +20,7 @@ class Solutions(_uri: KnowledgeURI, _probability: Probability) extends Resource(
   {//TODO
   }
 
-  def search(issue:ConceptNetwork, badSolutions: List[SemanticNetwork]):Option[SolvedIssue] =
+  def search(issue:ConceptNetwork, badSolutions: List[ConceptNetwork]):Option[SolvedIssue] =
   {//TODO
     val solve:Option[SolvedIssue] = None
 

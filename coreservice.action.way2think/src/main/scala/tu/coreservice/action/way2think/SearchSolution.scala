@@ -2,7 +2,7 @@ package tu.coreservice.action.way2think
 
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.domain.ConceptNetwork
-import tu.model.knowledge.{Resource, SolvedIssue, Solutions}
+import tu.model.knowledge.{Resource, SolvedIssue}
 
 /**
  * @author adel chepkunov
