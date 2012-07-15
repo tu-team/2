@@ -22,4 +22,11 @@ trait AnnotatorProvider {
    */
   def priority():Int
 
+
+  /**
+   * indicates that this is a local KB Annotator
+   * @return  true if local annotator
+   */
+  def isLocal():Boolean
+
 }
