@@ -6,7 +6,7 @@ import tu.coreservice.action.Action
 import tu.model.knowledge.Resource
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
-import tu.coreservice.action.way2think.UnexpectedException
+import tu.coreservice.action.UnexpectedException
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.action.ActionModel
 
@@ -29,7 +29,7 @@ class ThinkingLifeCycleMinimal
 
     // get selector resources for request this is first goal = Goal("ProcessIncident")
     // val resources: List[Resource] = selector.apply(request)
-    //TODO currently all goals are in goals list in KBPrimitive
+    // currently all goals are in goals list in KBPrimitive
 
     // process resources
     for (goal <- selector.goals) {

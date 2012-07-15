@@ -1,7 +1,8 @@
 package tu.coreservice.splitter
 
 import _root_.relex.corpus.{DocSplitterFactory, DocSplitter}
-import tu.coreservice.action.way2think.{UnexpectedException, Way2Think}
+import tu.coreservice.action.UnexpectedException
+import tu.coreservice.action.way2think.{Way2Think}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{Resource, KnowledgeURI}

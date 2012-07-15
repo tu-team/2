@@ -1,6 +1,7 @@
 package tu.model.knowledge.communication
 
 import tu.model.knowledge._
+import domain.ConceptNetwork
 import selector.SelectorRequest
 
 /**
@@ -19,15 +20,29 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _lastResult: Option[Resource] = None
   var classificationResults: List[SelectorRequest] = Nil
   var checkedClassificationResults: List[SelectorRequest] = Nil
+  var _domainModel: Option[ConceptNetwork] = None
 
   def lastResult = _lastResult
 
-  def lastResult_=(res: Option[Resource]): Context = {
-    _lastResult = res
-    if (res.isInstanceOf[SelectorRequest]) {
-      if (!classificationResults.exists(p => p == res.asInstanceOf[SelectorRequest]))
-        classificationResultsAdd(res.asInstanceOf[SelectorRequest])
+  def lastResult_=(in: Option[Resource]): Context = {
+    _lastResult = in
+    in match {
+      case Some(sr: SelectorRequest) => {
+        if (!classificationResults.exists(p => p == sr)) {
+          classificationResultsAdd(sr)
+        }
+      }
+      case _ => {
+        // Do nothing
+      }
     }
+    this
+  }
+
+  def domainModel = _domainModel
+
+  def domainModel_=(aDomainModel: ConceptNetwork): Context = {
+    this._domainModel = Some(aDomainModel)
     this
   }
 
@@ -82,6 +97,23 @@ object ContextHelper {
     }.toMap
     val res = new Context(resourcesMap, uri)
     res.classificationResults = classificationResults
+    res
+  }
+
+  /**
+   * Creates Context based on List of Resource and name specified and lastResult resource. Name is used as base for URI.
+   * @param resources List of Resource used to create Context.
+   * @param lastResult Resource is last result.
+   * @param name URI.name
+   * @return Context
+   */
+  def apply(resources: List[Resource], lastResult: Resource, name: String): Context = {
+    val uri = KnowledgeURI(name)
+    val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
+      t => (t.uri, t)
+    }.toMap
+    val res = new Context(resourcesMap, uri)
+    res.lastResult = Some(lastResult)
     res
   }
 
