@@ -89,8 +89,8 @@ object Solutions{
     if( p.uri == q.uri)
        return true
 
-    for (pgkey <- p._generalisations.frames.keys)
-      for (qgkey <- q._generalisations.frames.keys)
+    for (pgkey <- p.uri :: p._generalisations.frames.keys.toList)
+      for (qgkey <- q.uri :: q._generalisations.frames.keys.toList)
         if( pgkey.toString == qgkey.toString)
           return true
 
