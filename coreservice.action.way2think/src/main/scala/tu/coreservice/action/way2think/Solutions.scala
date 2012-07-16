@@ -1,7 +1,7 @@
 package tu.coreservice.action.way2think
 
 import tu.model.knowledge.{SolvedIssue, Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 
 
 /**
@@ -17,7 +17,7 @@ import tu.model.knowledge.domain.ConceptNetwork
 //}
 
 object Solutions{
-  private var solutions:List[SolvedIssue] = Nil
+  var solutions:List[SolvedIssue] = Nil
 
   def add(item:SolvedIssue) =
   {
@@ -49,11 +49,51 @@ object Solutions{
     //
 
     //find first node
-    val listWithFirstNode = master.rootNodes.filter(p => p == issue.rootNodes(0))
+    val listWithFirstNode = master.rootNodes.filter(p => compareWithGeneralisation(p, issue.rootNodes(0)))
     if (listWithFirstNode.isEmpty )
+      return 1
+
+    val depth = issue.rootNodes.size
+
+    if (! masterHasAllLinks(issue.rootNodes(0), issue, listWithFirstNode(0), master, depth))
       return 1
 
     0
   }
 
+  def masterHasAllLinks(issueConcept:Concept, issue:ConceptNetwork, masterConcept:Concept, master:ConceptNetwork, depth:Int):Boolean =
+  {
+    if (depth == 0) return true
+
+    val links = getConceptChildren(issueConcept, issue.links)
+    if (links.isEmpty) return true
+
+    for (issueNext <- links)
+    {
+      // forall for empty list always return true, so we use not (!masterHasAllLinks)
+      val bad = getConceptChildren(masterConcept, master.links).filter(p => compareWithGeneralisation(p,issueNext))
+                  .forall(p => ! masterHasAllLinks(issueNext, issue, p, master, depth-1)   )
+      if (bad) return false
+    }
+
+    true
+  }
+
+  def getConceptChildren(concept:Concept, links:List[ConceptLink]):List[Concept] ={
+    links.filter(p=> compareWithGeneralisation(concept, p.source)).map(p => p.destination ) :::
+      links.filter(p=> compareWithGeneralisation(concept, p.destination)).map(p => p.source )
+  }
+
+  def compareWithGeneralisation(p:Concept, q:Concept):Boolean =
+  {
+    if( p.uri == q.uri)
+       return true
+
+    for (pgkey <- p._generalisations.frames.keys)
+      for (qgkey <- q._generalisations.frames.keys)
+        if( pgkey.toString == qgkey.toString)
+          return true
+
+    return false
+  }
 }

@@ -11,7 +11,6 @@ import tu.model.knowledge.howto.{HowTo, Solution}
 import tu.model.knowledge.primitive.{KnowledgeBoolean, KnowledgeString}
 import tu.model.knowledge._
 import narrative.Rule
-import selector.SelectorRequest
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,9 +30,11 @@ class SolutionsTest extends FunSuite{
 
   val si1 = getTestSolvedIssue1
   val si2 = getTestSolvedIssue2
+  val si3 = getTestSolvedIssue3
 
   Solutions.add(si1)
   Solutions.add(si2)
+  Solutions.add(si3)
 
 
   test("Solutions can search one-node network") {
@@ -48,20 +49,49 @@ class SolutionsTest extends FunSuite{
 
     ssi1 match {
       case Some(si: SolvedIssue) => {
-        expect(si.uri)(si1.uri)
+        expect(si.issue.uri)(si1.issue.uri)
       }
       case _ => {
-        //Unexpected type or None insted Some
+        //Unexpected type or None instead Some
         expect(0)(1)
       }
     }
 
     ssi2 match {
       case Some(si: SolvedIssue) => {
-        expect(si.uri)(si2.uri)
+        expect(si.issue.uri)(si2.issue.uri)
       }
       case _ => {
-        //Unexpected type or None insted Some
+        //Unexpected type or None instead Some
+        expect(0)(1)
+      }
+    }
+  }
+
+  test("Solutions can search exact network") {
+
+    val net1 = getTestSolvedIssue1.issue
+    val net3 = getTestSolvedIssue3.issue
+
+    val ssi1 = Solutions.search ( net1, Nil)
+    val ssi3 = Solutions.search ( net3, Nil)
+
+    ssi1 match {
+      case Some(si: SolvedIssue) => {
+        expect(si.issue.uri)(si1.issue.uri)
+      }
+      case _ => {
+        //Unexpected type or None instead Some
+        expect(0)(1)
+      }
+    }
+
+    ssi3 match {
+      case Some(si: SolvedIssue) => {
+        expect(si.issue.uri)(si3.issue.uri)
+      }
+      case _ => {
+        //Unexpected type or None instead Some
         expect(0)(1)
       }
     }
@@ -92,64 +122,16 @@ class SolutionsTest extends FunSuite{
     new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, uri, probability)
   }
 
-/*
+  def getTestSolvedIssue3(): SolvedIssue = {
 
-  test("ConceptNetwork should contain concepts and their contents") {
-    val subject = Concept("subject")
-    val objectConcept = Concept("object")
-    val has = ConceptLink(subject, objectConcept, "has")
+    val ex: Expression = new Expression(uri) {
+      def apply = new KnowledgeBoolean(false, uri)
+    }
 
+    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
 
-    val sn0 = new ConceptNetwork(List[Concept](concept), List(has),uri)
-    expect(sn0.nodes(0).content.toString)(content.toString)
+    val s = new Solution(List(r), uri)
+    new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, uri, probability)
   }
 
-  val uri = new KnowledgeURI("namespace", "name", "revision")
-  val probability = new Probability
-  val computer = new KnowledgeString("computer", uri)
-  val software = new KnowledgeString("software", uri)
-  val firefox = new KnowledgeString("firefox", uri)
-  val access = new KnowledgeString("firefox", uri)
-  val login = new KnowledgeString("login", uri)
-  val password = new KnowledgeString("password", uri)
-
-  val source: SemanticNetworkNode[Resource] = new SemanticNetworkNode(computer, List[SemanticNetworkLink](), uri)
-  val source: SemanticNetworkNode[Resource] = new SemanticNetworkNode(new KnowledgeString(sourceContent, uri), List[SemanticNetworkLink](), uri)
-  val destination: SemanticNetworkNode[Resource] = new SemanticNetworkNode(new KnowledgeString(destinationContent, uri), List[SemanticNetworkLink](), uri)
-
-  test("test Ok") {
-    assert(condition = true)
-  }
-
-  test("SemanticNetwork should store several root nodes") {
-    val sn0 = new SemanticNetwork(List[SemanticNetworkNode[Resource]](source), uri)
-    expect(sn0.rootNodes(0).content.toString)(sourceContent)
-    val sn1 = new SemanticNetwork(List[SemanticNetworkNode[Resource]](source, destination), uri)
-    expect(sn1.rootNodes(1).content.toString)(destinationContent)
-  }
-  */
-
-
-  /*
-  test("Empty list should be return null") {
-    expect(s.issue)(getTestSN())
-  }
-
-  db.add(getSolvedIssue1())
-
-  test("Dummy list should be return this element") {
-    expect(s.issue)(getTestSN())
-  }
-
-  db.add(getSolvedIssue2())
-
-  test("list should be return same element") {
-    expect(s.issue)(getTestSN())
-    expect(s.issue)(getTestSN())
-  }
-
-  test("list should be return nearest element") {
-
-  def getSolvedIssue1() = {1}
-  */
 }

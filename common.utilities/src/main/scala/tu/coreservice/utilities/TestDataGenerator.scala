@@ -180,7 +180,7 @@ object TestDataGenerator {
   val computerHasNoInternetExplorerInstRef = ConceptLink.createInstanceConceptLink(hasNo, computerInstRef, internetExplorerInstRef)
   val internetExplorerHasVersionInstRef = ConceptLink.createInstanceConceptLink(has, internetExplorerInstRef, versionInst)
   val iHaveProblemWithIE8Reformulation = new ConceptNetwork(List[Concept](userInstRef, computerInstRef, addressInstRef, internetExplorerInstRef),
-    List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
+    List[ConceptLink](userHasComputerInst, computerHasAddressRef, computerHasNoInternetExplorerInstRef, internetExplorerHasVersionInstRef), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
   val iHaveProblemWithIE8ReformulationTest = new ConceptNetwork(List[Concept](userConcept, computerConcept, addressConcept, internetExplorerConcept),
     List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
