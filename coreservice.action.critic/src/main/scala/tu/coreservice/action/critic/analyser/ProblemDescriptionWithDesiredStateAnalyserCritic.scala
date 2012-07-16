@@ -1,10 +1,9 @@
 package tu.coreservice.action.critic.analyser
 
-import tu.coreservice.action.Action
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.coreservice.action.critic.{CriticLink, Critic}
 import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.selector.SelectorRequest
 
 /**
  * ProblemDescriptionWithDesiredStateAnalyserCritic Action interface to ProblemDescriptionWithDesiredStateAnalyser
@@ -23,17 +22,14 @@ class ProblemDescriptionWithDesiredStateAnalyserCritic(_exclude: List[CriticLink
   def stop() = false
 
   /**
-   * Generic method of the action to be applied over input Context and put all results in output Context.
-   * @param inputContext Context of all inbound parameters
-   * @return output Context.
-   */
-  def apply(inputContext: Context) = ContextHelper(List[Resource](), this.getClass.getName + " result")
-
-  /**
    * Estimates confidence and probability of output SelectorRequest
    * @param currentSituation description of current situation as ConceptNetwork
    * @param domainModel overall domain model to be used to analyse current situation as ConceptNetwork.
    * @return SelectorRequest with set probability
    */
-  def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork) = null
+  def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): SelectorRequest = {
+    val a = new DirectInstructionAnalyser()
+    val selectorRequest: SelectorRequest = a.apply(currentSituation)
+    selectorRequest
+  }
 }

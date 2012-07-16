@@ -12,7 +12,7 @@ package tu.providers
 class LocalKBAnnotatorProvider extends AnnotatorProvider {
 
   def annotate(word: String):List[String] = {
-    return null
+    List[String]()
   }
 
   /**

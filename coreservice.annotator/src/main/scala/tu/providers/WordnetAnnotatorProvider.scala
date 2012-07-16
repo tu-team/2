@@ -7,8 +7,8 @@ import java.io.{InputStreamReader, BufferedReader}
 /**
  * Provider for WordNetAnnotator.
  * @author alex toschev
- *          Date: 6/25/12
- *          Time: 7:00 PM
+ *         Date: 6/25/12
+ *         Time: 7:00 PM
  */
 
 /**
@@ -18,19 +18,17 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
 
   def annotate(word: String): List[String] = {
 
-    var url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8") + "&sub=Search+WordNet&o2=&o0=&o8=1&o1=&o7=&o5=&o9=&o6=&o3=&o4=&h=00000000000000000000");
+    val url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8") + "&sub=Search+WordNet&o2=&o0=&o8=1&o1=&o7=&o5=&o9=&o6=&o3=&o4=&h=00000000000000000000");
 
-    var res:List[String] = List[String]()
+    var res: List[String] = List[String]()
 
     //Sends request to wordnet
-    var proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
+    val proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
 
-    var connection: URLConnection = null;
-    if (Configurator.proxyAddress().useProxy) {
-      connection = url.openConnection(proxy)
-    }
-    else {
-      connection = url.openConnection()
+    val connection: URLConnection = if (Configurator.proxyAddress().useProxy) {
+      url.openConnection(proxy)
+    } else {
+      url.openConnection()
     }
 
     //setup connection
@@ -41,10 +39,9 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
 
     //open stream
 
-    val in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+    val in = new BufferedReader(new InputStreamReader(connection.getInputStream))
 
-
-    var xHtml = new StringBuilder;
+    val xHtml = new StringBuilder
 
     //convert to string (scala xml trying to use DTD while load)
     var str = ""
@@ -55,19 +52,23 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
     }
 
     in.close()
-    var rawString = xHtml.toString()
+    val rawString = xHtml.toString()
 
     //get only li segment
-    var targetString = rawString.substring(rawString.indexOf("<li>"), rawString.indexOf("</li>") + 5)
+
+    val targetString = if (rawString.indexOf("<li>") > 0 && rawString.indexOf("</li>") > 0) {
+      rawString.substring(rawString.indexOf("<li>"), rawString.indexOf("</li>") + 5)
+    } else {
+      ""
+    }
 
 
     var data = scala.xml.XML.loadString(targetString)
 
     (data \ "a").foreach(a => {
       //skip system symbols
-      if (!a.text.contains("(n)") && !a.text.contains("S:"))
-      {
-        if (res==null) res= List(a.text)
+      if (!a.text.contains("(n)") && !a.text.contains("S:")) {
+        if (res == null) res = List(a.text)
         else res ::= a.text
       }
     })
