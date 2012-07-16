@@ -27,13 +27,16 @@ object SearchSolution {
 
   def apply(inputContext: Context): Context = {
 
-    // TODO fix this !
-    // val res = search
+    val res = inputContext.lastResult match {
+      case Some(cn : ConceptNetwork) =>
+          Solutions.search(cn, Nil)
+      case _ => None
+    }
 
-    // val outputContext = ContextHelper(res match{ case Some(x) => List[Resource](x) case None => List[Resource]() }, "OutputContex")
-    // outputContext.lastResult = res
-    // outputContext
-    ContextHelper(List[Resource](), this.getClass.getName + " result")
+    val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
+    outputContext.lastResult = res
+    outputContext
+
   }
 
   def search(target: ConceptNetwork): Option[SolvedIssue] = {
