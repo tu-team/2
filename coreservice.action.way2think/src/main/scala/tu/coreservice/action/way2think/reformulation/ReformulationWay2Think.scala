@@ -2,11 +2,9 @@ package tu.coreservice.action.way2think.reformulation
 
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.Resource
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
-import tu.coreservice.action.way2think.simulation.Simulation
 
 /**
  * @author max
