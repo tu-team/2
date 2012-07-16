@@ -18,7 +18,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
 
   def annotate(word: String): List[String] = {
 
-    val url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8") + "&sub=Search+WordNet&o2=&o0=&o8=1&o1=&o7=&o5=&o9=&o6=&o3=&o4=&h=00000000000000000000");
+    val url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8") + "&sub=Search+WordNet&o2=&o0=&o8=1&o1=&o7=&o5=&o9=&o6=&o3=&o4=&h=00000000000000000000")
 
     var res: List[String] = List[String]()
 
@@ -35,7 +35,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
     // we need only input
     connection.setDoInput(true)
     connection.setDoOutput(false)
-    connection.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; .NET CLR 1.2.30703)");
+    connection.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; .NET CLR 1.2.30703)")
 
     //open stream
 
@@ -62,8 +62,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
       ""
     }
 
-
-    var data = scala.xml.XML.loadString(targetString)
+    val data = scala.xml.XML.loadString(targetString)
 
     (data \ "a").foreach(a => {
       //skip system symbols
@@ -73,8 +72,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
       }
     })
 
-
-    return res
+    res
 
   }
 
