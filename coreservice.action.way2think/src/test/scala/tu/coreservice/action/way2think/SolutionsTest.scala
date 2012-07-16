@@ -23,8 +23,6 @@ import narrative.Rule
 @RunWith(classOf[JUnitRunner])
 class SolutionsTest extends FunSuite{
 
-  var db = Solutions
-
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
 
