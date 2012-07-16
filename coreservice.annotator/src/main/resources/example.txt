@@ -1,0 +1,11 @@
+Example 1:
+
+User[UserConcept] miss[LackLink] Internet Explorer[InternetExplorerConcept[Software]] 8[Version]
+UserConcept --LackLink--> SoftwareConcept(InternetExplorerConcept) --VersionLink--> 8
+
+Please see further object representation in TestDataGenerator.iHaveProblemWithIE8Simulation
+
+Example 2:
+Please[Politeness] install[InstallLink[ActionLink]] Firefox[FireFoxConcept[Software]]
+(System(Default))--ActionLink--> Software(FireFoxConcept)
+
