@@ -30,19 +30,22 @@ object FindMostProbableAction {
 
   def apply(inputContext: Context): Context = {
     val outputContext = ContextHelper(List[Resource](), "OutputContex")
-    if (outputContext.classificationResults.isEmpty) {
+    if (inputContext.classificationResults.isEmpty) {
       outputContext.bestClassificationResult = None
     }
     else {
       outputContext.classificationResults
-        = outputContext.classificationResults
-             .filter( p => ! outputContext.checkedClassificationResults.exists ( q => p==q))
+        =inputContext.classificationResults
+             .filter( p => ! inputContext.checkedClassificationResults.exists ( q => p==q))
              .sortWith((s, t) => s.probability.frequency > t.probability.frequency)
       outputContext.bestClassificationResult = outputContext.classificationResults.headOption
       outputContext.lastResult = outputContext.classificationResults.headOption
       outputContext.bestClassificationResult match {
         case Some(sR: SelectorRequest) => {
           outputContext.checkedClassificationResults = List(sR) ::: outputContext.checkedClassificationResults
+        }
+        case _ => {
+          //none
         }
 
       }

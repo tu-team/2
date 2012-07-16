@@ -32,11 +32,11 @@ class FindMostProbableActionTest extends FunSuite {
     context0.classificationResultsAdd(w2t0)
     val context1 = FindMostProbableAction(context0)
 
-    org.scalatest.Assertions.expect(w2t0)(context1.bestClassificationResult) //expected, actual
+    org.scalatest.Assertions.expect(Some(w2t0))(context1.bestClassificationResult) //expected, actual
     org.scalatest.Assertions.expect(Nil)(context1.classificationResults) //expected, actual
 
     val context2 = FindMostProbableAction(context1)
-    org.scalatest.Assertions.expect(None)(context1.bestClassificationResult) //expected, actual
+    org.scalatest.Assertions.expect(None)(context2.bestClassificationResult) //expected, actual
   }
 
 
@@ -53,20 +53,20 @@ class FindMostProbableActionTest extends FunSuite {
 
     val context1 = FindMostProbableAction(context0)
 
-    org.scalatest.Assertions.expect(w2t0)(context1.bestClassificationResult) //expected, actual
-    org.scalatest.Assertions.expect(w2t1)(context1.classificationResults.head) //expected, actual
+    org.scalatest.Assertions.expect(Some(w2t0))(context1.bestClassificationResult) //expected, actual
+    org.scalatest.Assertions.expect(Some(w2t1))(context1.classificationResults.headOption) //expected, actual
 
     val context2 = FindMostProbableAction(context1)
 
-    org.scalatest.Assertions.expect(w2t1)(context2.bestClassificationResult) //expected, actual
+    org.scalatest.Assertions.expect(Some(w2t1))(context2.bestClassificationResult) //expected, actual
 
-    context0.classificationResultsAdd(w2t1)
-    context0.classificationResultsAdd(w2t0)
+    //context0.classificationResultsAdd(w2t1)
+    //context0.classificationResultsAdd(w2t0)
 
     val context3 = FindMostProbableAction(context0)
 
-    org.scalatest.Assertions.expect(w2t0)(context3.bestClassificationResult) //expected, actual
-    org.scalatest.Assertions.expect(w2t1)(context3.classificationResults.head) //expected, actual
+    org.scalatest.Assertions.expect(Some(w2t0))(context3.bestClassificationResult) //expected, actual
+    org.scalatest.Assertions.expect(Some(w2t1))(context3.classificationResults.headOption) //expected, actual
 
   }
 
