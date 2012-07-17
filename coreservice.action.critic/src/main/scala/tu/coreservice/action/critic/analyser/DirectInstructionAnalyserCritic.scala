@@ -16,7 +16,8 @@ import tu.coreservice.action.UnexpectedException
  *         time: 6:45 PM
  */
 
-class DirectInstructionAnalyserCritic (_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI, _probability: Probability = new Probability())
+class DirectInstructionAnalyserCritic (_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI,
+                                       _probability: Probability = new Probability())
   extends Critic(_exclude, _include, _uri, _probability) {
 
   def this() = this(List[CriticLink](), List[CriticLink](), KnowledgeURI("DirectInstructionAnalyserCritic"))
