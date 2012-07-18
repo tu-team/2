@@ -5,7 +5,6 @@ import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
-import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedWord}
 
 /**
  * KBSever stub only for prototype purposes.
@@ -40,11 +39,6 @@ object KBPrototype {
         )
     )
 
-  def annotations=Map[String, AnnotatedPhrase](
-  "Please" ->
-  AnnotatedPhrase.apply("Please")
-  )
-
   def goals = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
   def getByGoalName(name: String): Option[List[ActionModel]] = {
@@ -52,26 +46,6 @@ object KBPrototype {
     val keys: Iterable[Goal] = resources.keys.filter {
       g: Goal => {
         g.uri.name.equals(name)
-      }
-    }
-    if (keys.size > 0) {
-      resources.get(keys.head)
-    } else {
-      None
-    }
-  }
-
-  /***
-   *
-   * @param word
-   * @return annotated phrase by word (for example get rid off)
-   */
-  def getAnnotationByWord(word:String):Option[AnnotatedPhrase] ={
-
-    val resources = this.annotations
-    val keys: Iterable[String] = resources.keys.filter {
-      g: String => {
-        g.equals(word)
       }
     }
     if (keys.size > 0) {

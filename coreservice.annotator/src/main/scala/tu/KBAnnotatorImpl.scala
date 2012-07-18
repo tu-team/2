@@ -4,10 +4,8 @@ package tu.coreservice.annotator
 import org.slf4j.LoggerFactory
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.{KnowledgeURI, Resource}
+import tu.model.knowledge.Resource
 import tu.providers.AnnotatorRegistry
-import tu.model.knowledge.annotator.AnnotatedPhrase
-import tu.model.knowledge.primitive.KnowledgeString
 
 /**
  * Simple KBAnnotator implementation.
@@ -154,8 +152,6 @@ class KBAnnotatorImpl extends Way2Think {
 
     var extractedPhrases= List("rid off","this software")
 
-    var wordsDetected=0
-
     //trying to annotate phrases
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
 
@@ -163,25 +159,17 @@ class KBAnnotatorImpl extends Way2Think {
 
     def checkLocalKB(phrase:String):Boolean={
 
-      var localAnnotated=localAnnotator.apply(phrase)
+      var annotationFound=false
+      var localAnnotated=localAnnotator.annotate(phrase)
 
-      if (!localAnnotated.isEmpty)
+      if (localAnnotated.length>0)
       {
-        addAnnotatedPhraseToOutputContext(localAnnotated.get)
-
+        //TODO: convert to RelEx phrase and append to output context
         return true
 
       }
 
       return false
-
-    }
-
-
-    def addAnnotatedPhraseToOutputContext(phrase:AnnotatedPhrase)={
-      wordsDetected+=1
-      outputContext.frames += (new KnowledgeURI("","AnnotatedWord/"+wordsDetected,"0.3")
-        -> phrase)
 
     }
 
@@ -192,7 +180,7 @@ class KBAnnotatorImpl extends Way2Think {
       if (!annotationFound)
       {
 
-           AnnotatorRegistry.listAnnotators().filter(p=> p.isLocal()!=true).foreach(a=> {
+        AnnotatorRegistry.listAnnotators().filter(p=> p.isLocal()!=true).foreach(a=> {
            val synonymous =a.annotate(ph)
 
            synonymous.foreach(syn=>{
@@ -206,12 +194,6 @@ class KBAnnotatorImpl extends Way2Think {
            })
 
         })
-
-        //if annotation still not found, just append as a empty phrase
-        if (!annotationFound)
-        {
-          addAnnotatedPhraseToOutputContext(AnnotatedPhrase.apply(ph))
-        }
       }
     })
 

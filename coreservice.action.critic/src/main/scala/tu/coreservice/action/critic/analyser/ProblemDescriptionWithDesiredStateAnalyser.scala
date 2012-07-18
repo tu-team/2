@@ -70,7 +70,8 @@ class ProblemDescriptionWithDesiredStateAnalyser {
       }
     }
 
-    new SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME), KnowledgeURI(Constant.SELECTOR_REQUEST_PROBLEM_DESCRIPTION_URI_NAME),
+    new SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME),
+      KnowledgeURI(Constant.SELECTOR_REQUEST_PROBLEM_DESCRIPTION_URI_NAME),
       new Probability(frequencyConfidence._1, frequencyConfidence._2))
   }
 
