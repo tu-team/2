@@ -34,7 +34,7 @@ class GoalManager {
 
   def nextGoal: Option[Goal] = {
     this.currentIndex += 1
-    if (this.currentIndex > goals.size) {
+    if (this.currentIndex >= goals.size) {
       this.currentIndex = 0
       None
     } else {

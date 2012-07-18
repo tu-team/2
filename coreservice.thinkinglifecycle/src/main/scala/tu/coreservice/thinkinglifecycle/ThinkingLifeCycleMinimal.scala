@@ -10,6 +10,7 @@ import tu.coreservice.action.UnexpectedException
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.training.Goal
+import tu.model.knowledge.selector.SelectorRequest
 
 
 /**
@@ -41,14 +42,33 @@ class ThinkingLifeCycleMinimal
       goalOption match {
         case Some(goal: Goal) => {
           val resources: List[Resource] = selector.apply(goal)
-          val contexts: List[Context] = for (r <- resources) yield {
-            translate(r, globalContext)
+          val contexts = processResources(resources, globalContext)
+          if (contexts.size > 0) {
+            globalContext = ContextHelper.mergeLast(contexts)
           }
-          globalContext = ContextHelper.mergeLast(contexts)
         }
         case None => //End
       }
     }
+  }
+
+  def processSelectorRequest(request: SelectorRequest, globalContext: Context): List[Context] = {
+    val resources: List[Resource] = selector.apply(request)
+    val contexts = processResources(resources, globalContext)
+    contexts
+  }
+
+  def processResources(resources: List[Resource], globalContext: Context): List[Context] = {
+    val contexts: List[List[Context]] = for (r <- resources) yield {
+      val resContext = translate(r, globalContext)
+      resContext.lastResult match {
+        case sR: SelectorRequest => {
+          this.processSelectorRequest(sR, globalContext)
+        }
+        case _ => List[Context]()
+      }
+    }
+    contexts.flatten
   }
 
   def translate(resource: Resource, globalContext: Context): Context = {

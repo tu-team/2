@@ -5,6 +5,7 @@ import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
+import tu.model.knowledge.{Resource, KnowledgeURI}
 
 /**
  * KBSever stub only for prototype purposes.
@@ -35,7 +36,7 @@ object KBPrototype {
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.Simulation")),
       Goal("FormalizeProblemDescription") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.Simulation"),
-        Way2ThinkModel("tu.coreservice.action.way2think.reformulation.Reformulation")),
+          Way2ThinkModel("tu.coreservice.action.way2think.reformulation.Reformulation")),
       Goal("GetMostProbableAction") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableAction")
         ),
@@ -45,6 +46,32 @@ object KBPrototype {
     )
 
   def resources = goalResourceMap.values
+
+  /**
+   * Gets Map of URI -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
+   * @return Map[KnowledgeURI, Resource]
+   */
+  def uriResourcesMap: Map[KnowledgeURI, Resource] = {
+    val res: Map[KnowledgeURI, Resource] = goalResourceMap.values.flatten.map {
+      r: Resource => {
+        Pair(r.uri, r)
+      }
+    }.toMap
+    res
+  }
+
+  /**
+   * Gets Map of String -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
+   * @return Map[String, Resource]
+   */
+  def stringResourcesMap: Map[String, Resource] = {
+    val res: Map[String, Resource] = goalResourceMap.values.flatten.map {
+      r: Resource => {
+        Pair(r.uri.name, r)
+      }
+    }.toMap
+    res
+  }
 
   def goals = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
