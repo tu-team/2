@@ -114,6 +114,12 @@
             <version>${tu.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>dataservice.knowledgebaseserver</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>junit</groupId>

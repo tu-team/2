@@ -25,4 +25,11 @@ class WolframAnnotatorProvider extends AnnotatorProvider{
    * @return  true if local annotator
    */
   def isLocal() = false
+
+  /***
+   *
+   * @param word
+   * @return  returns annotated phrase directly from local storage for non local storage exception should be raised
+   */
+  def apply(word: String) = throw  new Exception("Method is not supported by WolframAnnotatorProvider")
 }

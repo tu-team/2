@@ -87,4 +87,6 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
    * @return  true if local annotator
    */
   def isLocal() = false
+
+  def apply(word: String) = throw  new Exception("Method is not supported by WordnetAnnotatorProvider")
 }

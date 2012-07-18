@@ -1,5 +1,7 @@
 package tu.providers
 
+import tu.model.knowledge.annotator.AnnotatedPhrase
+
 /**
  * Created with IntelliJ IDEA.
  * User: alex
@@ -28,5 +30,13 @@ trait AnnotatorProvider {
    * @return  true if local annotator
    */
   def isLocal():Boolean
+
+
+  /***
+   *
+   * @param word
+   * @return  returns annotated phrase directly from local storage for non local storage exception should be raised
+   */
+  def apply(word:String):Option[AnnotatedPhrase]
 
 }

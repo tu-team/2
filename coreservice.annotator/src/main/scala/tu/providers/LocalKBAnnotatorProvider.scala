@@ -1,5 +1,8 @@
 package tu.providers
 
+import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedWord}
+import tu.dataservice.knowledgebaseserver.KBPrototype
+
 /**
  * @author alex
  * Date: 6/24/12
@@ -12,7 +15,7 @@ package tu.providers
 class LocalKBAnnotatorProvider extends AnnotatorProvider {
 
   def annotate(word: String):List[String] = {
-    List[String]()
+    throw new Exception("Method is not supported for local provider")
   }
 
   /**
@@ -26,4 +29,12 @@ class LocalKBAnnotatorProvider extends AnnotatorProvider {
    * @return  true if local annotator
    */
   def isLocal() = true
+
+
+  /**
+    *  @return annotated word from local knowledge base
+    */
+  def apply(word:String ):Option[AnnotatedPhrase] ={
+      return KBPrototype.getAnnotationByWord(word)
+  }
 }
