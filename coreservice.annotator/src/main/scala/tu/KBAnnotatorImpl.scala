@@ -150,49 +150,42 @@ class KBAnnotatorImpl extends Way2Think {
     //
     //TODO: extract splitter result by phrases
 
-    var extractedPhrases= List("rid off","this software")
+    var extractedPhrases = List("rid off", "this software")
 
     //trying to annotate phrases
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
 
     val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
-    def checkLocalKB(phrase:String):Boolean={
+    def checkLocalKB(phrase: String): Boolean = {
 
-      var annotationFound=false
-      var localAnnotated=localAnnotator.annotate(phrase)
+      var annotationFound = false
+      var localAnnotated = localAnnotator.annotate(phrase)
 
-      if (localAnnotated.length>0)
-      {
+      if (localAnnotated.length > 0) {
         //TODO: convert to RelEx phrase and append to output context
         return true
 
       }
-
-      return false
-
+      false
     }
 
-    extractedPhrases.foreach(ph=> {
+    extractedPhrases.foreach(ph => {
 
-      var annotationFound= checkLocalKB(ph)
+      var annotationFound = checkLocalKB(ph)
 
-      if (!annotationFound)
-      {
+      if (!annotationFound) {
 
-        AnnotatorRegistry.listAnnotators().filter(p=> p.isLocal()!=true).foreach(a=> {
-           val synonymous =a.annotate(ph)
+        AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {
+          val synonymous = a.annotate(ph)
 
-           synonymous.foreach(syn=>{
-             //check against local KB
-             if (checkLocalKB(syn))
-              {
-                annotationFound=true
-
-                scala.util.control.Breaks.break()
-              }
-           })
-
+          synonymous.foreach(syn => {
+            //check against local KB
+            if (checkLocalKB(syn)) {
+              annotationFound = true
+              scala.util.control.Breaks.break()
+            }
+          })
         })
       }
     })
