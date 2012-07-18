@@ -211,6 +211,8 @@ class KBAnnotatorImpl extends Way2Think {
         if (!annotationFound)
         {
           addAnnotatedPhraseToOutputContext(AnnotatedPhrase.apply(ph))
+          //comment
+
         }
       }
     })
