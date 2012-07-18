@@ -31,6 +31,11 @@ object KBPrototype {
             CriticModel("tu.coreservice.action.critic.analyser.ProblemDescriptionWithDesiredStateAnalyserCritic")
           ), "tu.model.knowledge.way2think.JoinWay2ThinkModel")
         ),
+      Goal("FormalizeDirectInstruction") ->
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.Simulation")),
+      Goal("FormalizeProblemDescription") ->
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.Simulation"),
+        Way2ThinkModel("tu.coreservice.action.way2think.reformulation.Reformulation")),
       Goal("GetMostProbableAction") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableAction")
         ),
@@ -38,6 +43,8 @@ object KBPrototype {
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.SearchSolution")
         )
     )
+
+  def resources = goalResourceMap.values
 
   def goals = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 

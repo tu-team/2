@@ -9,6 +9,7 @@ import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.coreservice.action.UnexpectedException
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.action.ActionModel
+import tu.model.knowledge.training.Goal
 
 
 /**
@@ -26,20 +27,27 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request) {
 
     var globalContext = ContextHelper(List[Resource](), request.toString)
+    val goalManager = new GoalManager
 
     // get selector resources for request this is first goal = Goal("ProcessIncident")
     // val resources: List[Resource] = selector.apply(request)
     // currently all goals are in goals list in KBPrimitive
 
     // process resources
-    for (goal <- selector.goals) {
+    while (goalManager.nextGoal != None) {
       // get next goal
       // process next goal
-      val resources: List[Resource] = selector.apply(goal)
-      val contexts: List[Context] = for (r <- resources) yield {
-        translate(r, globalContext)
+      val goalOption = goalManager.currentGoal
+      goalOption match {
+        case Some(goal: Goal) => {
+          val resources: List[Resource] = selector.apply(goal)
+          val contexts: List[Context] = for (r <- resources) yield {
+            translate(r, globalContext)
+          }
+          globalContext = ContextHelper.mergeLast(contexts)
+        }
+        case None => //End
       }
-      globalContext = ContextHelper.mergeLast(contexts)
     }
   }
 
