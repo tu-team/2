@@ -2,10 +2,11 @@ package tu.coreservice.spellcorrector
 
 import org.xeustechnologies.googleapi.spelling.{SpellRequest, Language, SpellChecker, Configuration}
 import tu.coreservice.utilities.Configurator
+import tu.model.knowledge.communication.Context
 
 
 /**
- * @author toscheva
+ * @author toschev alex
  *         Date: 28.05.12
  *         Time: 20:52
  */
@@ -58,4 +59,15 @@ class SpellCorrectorGoogle extends SpellCorrector {
     }
     return corrected.toString
   }
+
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = null
 }

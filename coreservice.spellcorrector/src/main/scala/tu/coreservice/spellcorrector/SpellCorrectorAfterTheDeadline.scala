@@ -4,6 +4,7 @@ import javax.xml.parsers.{DocumentBuilder, DocumentBuilderFactory}
 import java.io.{OutputStreamWriter, BufferedReader, InputStreamReader}
 import tu.coreservice.utilities.Configurator
 import java.net._
+import tu.model.knowledge.communication.Context
 
 
 /**
@@ -78,4 +79,15 @@ class SpellCorrectorAfterTheDeadline extends SpellCorrector {
   }
 
   def correctSentence(inputSentence: String): String = return sendRequest(inputSentence, false)
+
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = null
 }

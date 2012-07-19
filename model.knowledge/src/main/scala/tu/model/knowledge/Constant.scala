@@ -18,6 +18,8 @@ object Constant {
 
   val SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME = "DirectInstructionRequest"
   val SELECTOR_REQUEST_PROBLEM_DESCRIPTION_URI_NAME = "ProblemDesriptionRequest"
+  val SELECTOR_REQUEST_SIMULATION_URI_NAME = "Simulation"
+  val SELECTOR_REQUEST_REFORMULATION_URI_NAME = "Reformulation"
   val ACTION_NAME = "actionConcept"
   val SYSTEM_NAME = "systemConcept"
   val SUBJECT_NAME = "subjectConcept"

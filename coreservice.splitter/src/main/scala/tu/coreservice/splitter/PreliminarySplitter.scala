@@ -1,8 +1,7 @@
 package tu.coreservice.splitter
 
 import _root_.relex.corpus.{DocSplitterFactory, DocSplitter}
-import tu.coreservice.action.UnexpectedException
-import tu.coreservice.action.way2think.{Way2Think}
+import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{Resource, KnowledgeURI}
@@ -99,13 +98,13 @@ class PreliminarySplitter extends Way2Think {
 
     var em: EntityMaintainer = new EntityMaintainer()
 
-    var relExt = setup;
+    var relExt = setup
 
   }
 
   /**
    * Way2Think interface.
-   * @param inputContext
+   * @param inputContext the Context to process.
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {

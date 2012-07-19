@@ -1,10 +1,12 @@
 package tu.coreservice.action.selector
 
 import tu.model.knowledge.training.Goal
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.dataservice.knowledgebaseserver.KBPrototype
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.communication.Request
+import tu.model.knowledge.selector.SelectorRequest
+import tu.model.knowledge.domain.Concept
 
 
 /**
@@ -36,6 +38,20 @@ class Selector {
         List(Cry4HelpWay2Think("$Can_not_find_resources_for_goal"))
       }
     }
+  }
+
+  def apply(request: SelectorRequest): List[Resource] = {
+    val resourcesOption: List[Option[Resource]] = request.resourceURIList.map {
+      uri: KnowledgeURI => Some(Concept("test"))//TODO: KBPrototype.stringResourcesMap.get(uri.name)
+    }
+    val filteredResources: List[Option[Resource]] = resourcesOption.filter{
+      case Some(_) => true
+      case None => false
+    }
+    val res: List[Resource] = filteredResources.map {
+      case Some(r: Resource) => r
+    }
+    res
   }
 
   def goals = KBPrototype.goals
