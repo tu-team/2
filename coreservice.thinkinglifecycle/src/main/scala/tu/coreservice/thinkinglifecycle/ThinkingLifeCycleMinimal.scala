@@ -11,6 +11,7 @@ import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.selector.SelectorRequest
+import org.slf4j.LoggerFactory
 
 
 /**
@@ -23,11 +24,14 @@ import tu.model.knowledge.selector.SelectorRequest
 class ThinkingLifeCycleMinimal
   extends ThinkingLifeCycle {
 
+  val log = LoggerFactory.getLogger(this.getClass)
   val selector = new Selector
 
   def apply(request: Request) {
 
-    var globalContext = ContextHelper(List[Resource](), request.toString)
+    log info "apply(" + request + ": Request))"
+
+    var globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     val goalManager = new GoalManager
 
     // get selector resources for request this is first goal = Goal("ProcessIncident")
@@ -35,12 +39,13 @@ class ThinkingLifeCycleMinimal
     // currently all goals are in goals list in KBPrimitive
 
     // process resources
-    while (goalManager.nextGoal != None) {
+    while (goalManager.currentGoal != None) {
       // get next goal
       // process next goal
       val goalOption = goalManager.currentGoal
       goalOption match {
         case Some(goal: Goal) => {
+          log info "Goal:" + goal
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources, globalContext)
           if (contexts.size > 0) {
@@ -49,7 +54,10 @@ class ThinkingLifeCycleMinimal
         }
         case None => //End
       }
+      goalManager.currentGoal
     }
+
+    log info "apply()"
   }
 
   def processSelectorRequest(request: SelectorRequest, globalContext: Context): List[Context] = {

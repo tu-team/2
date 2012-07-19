@@ -11,6 +11,7 @@ import relex.RelationExtractor
 import relex.output.OpenCogScheme
 import scala.collection.JavaConversions._
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
+import org.slf4j.LoggerFactory
 
 
 /**
@@ -25,6 +26,8 @@ import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
  * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-phrases.md
  */
 class PreliminarySplitter extends Way2Think {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def setup: RelationExtractor = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
@@ -46,33 +49,32 @@ class PreliminarySplitter extends Way2Think {
 
 
   /**
-   * apply way 2 think
-   * @param inputContext
-   * @param outputContext
+   * Apply Way2Think.
+   * @param inputContext Context inbound.
+   * @param outputContext Context outbound.
    * @return split in sentence text
+   * @deprecated
    */
-  def apply(inputContext: Context, outputContext: Context) = {
+  def apply(inputContext: Context, outputContext: Context) {
     //extract text from input context
-    var textFrame = inputContext.frames.filter(p =>
-
+    val textFrame = inputContext.frames.filter(p =>
       p._1.name == "inputtext"
-
     ).head
 
     //initialize output context
-    ContextHelper.initializeContext(outputContext);
+    ContextHelper.initializeContext(outputContext)
 
-    var sentenceURI = new KnowledgeURI("tu-project.com", "sentence", "0.3")
+    val sentenceURI = new KnowledgeURI("tu-project.com", "sentence", "0.3")
 
 
     // split text using relex
-    var ds: DocSplitter = DocSplitterFactory.create()
+    val ds: DocSplitter = DocSplitterFactory.create()
 
     //correct all text before splitting to sentence
     var text = textFrame._2.asInstanceOf[KnowledgeString].value
 
-    var corrector = SpellCorrector()
-    text = corrector.correctSentence(text);
+    val corrector = SpellCorrector()
+    text = corrector.correctSentence(text)
 
     ds.addText(text)
 
@@ -108,6 +110,9 @@ class PreliminarySplitter extends Way2Think {
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {
+
+    log info "apply(" + inputContext + ": Context)"
+
     val textFrames = inputContext.frames.filter(p =>
       p._1.name == "inputtext"
     )
@@ -129,34 +134,30 @@ class PreliminarySplitter extends Way2Think {
     var text = textFrame._2.asInstanceOf[KnowledgeString].value
 
     val corrector = SpellCorrector()
-    text = corrector.correctSentence(text);
+    text = corrector.correctSentence(text)
 
     ds.addText(text)
 
     var sntOrder = 1
 
     var sentence: String = ds.getNextSentence
-    var outputContext = ContextHelper(List[Resource](), this.getClass.getName())
+    val outputContext = ContextHelper(List[Resource](), this.getClass.getName)
     while (sentence != null) {
       //check sentence using autocorrector
       //append extracted sentence to context and increase counter for sentence
 
       //run relex and extract phrases
       val em: EntityMaintainer = new EntityMaintainer()
-
-      val relExt = setup;
-
-      val relexSentence = relExt.processSentence(sentence, em);
-
-      val tree = relexSentence.getParses().get(0).getPhraseTree()
+      val relExt = setup
+      val relexSentence = relExt.processSentence(sentence, em)
+      val tree = relexSentence.getParses.get(0).getPhraseTree
       //extract all phrases
       tree.iterator().foreach(u => {
         //append phrase
         var tempString = u.getNode.toString
-      });
+      })
 
       //relexSentence.getParses.toList.map(b=>new Phrase(b.getPhraseTree.))
-
       //var convertedPhrases = relexSentence.getParses.toArray.map(b=> new Phrase(b.))
       outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
         -> new KnowledgeString(sentence, sentenceURI))
@@ -166,8 +167,7 @@ class PreliminarySplitter extends Way2Think {
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
     }
-
-    //TODO get rid of this, there should be outputContext only
+    log info "apply():" + outputContext
     outputContext
   }
 

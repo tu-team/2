@@ -14,6 +14,7 @@ import scala.actors.Actor
 import tu.model.knowledge.communication.Request
 import tu.model.knowledge.KnowledgeURI
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
+import tu.model.knowledge.primitive.KnowledgeString
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -25,7 +26,8 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   test("run comelete lifecycle with dummy way2think") {
-    val r = new Request(KnowledgeURI("testRequest"))
+    val requestText = "Please install Firefox"
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
 
