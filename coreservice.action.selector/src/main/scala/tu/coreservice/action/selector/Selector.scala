@@ -6,6 +6,7 @@ import tu.dataservice.knowledgebaseserver.KBPrototype
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.communication.Request
 import tu.model.knowledge.selector.SelectorRequest
+import tu.model.knowledge.domain.Concept
 
 
 /**
@@ -41,7 +42,7 @@ class Selector {
 
   def apply(request: SelectorRequest): List[Resource] = {
     val resourcesOption: List[Option[Resource]] = request.resourceURIList.map {
-      uri: KnowledgeURI => KBPrototype.stringResourcesMap.get(uri.name)
+      uri: KnowledgeURI => Some(Concept("test"))//TODO: KBPrototype.stringResourcesMap.get(uri.name)
     }
     val filteredResources: List[Option[Resource]] = resourcesOption.filter{
       case Some(_) => true
