@@ -30,4 +30,33 @@ object URIHelper {
    * @return  empty uri
    */
   def emptyURI() = "http://tu-project.com/knowledge/empty"
+
+  def generateURIForFrame(frameUniqueName:String):String={
+    return "http://tu-project.com/"+frameUniqueName
+  }
+
+  /**
+   *
+   * @return  namespace for annotator
+   */
+  def annotatorNamespace():String={
+    return "tu.coreservice.annotator"
+  }
+
+  /**
+   * return project version
+   * @return  project version
+   */
+  def version():String={
+    return "0.3.0"
+  }
+
+
+  /**
+   * text mark for splitter results
+   * @return
+   */
+  def splitterMark():String={
+    return "splitted"
+  }
 }

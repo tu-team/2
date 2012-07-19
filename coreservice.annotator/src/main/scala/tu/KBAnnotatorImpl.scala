@@ -8,6 +8,7 @@ import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.coreservice.utilities.URIHelper
 
 /**
  * Simple KBAnnotator implementation.
@@ -150,14 +151,15 @@ class KBAnnotatorImpl extends Way2Think {
     //we have output context from splitter
 
     //
-    //TODO: extract splitter result by phrases
+    //splitter return annotated phrases array
 
-    var extractedPhrases= List("rid off","this software")
+    var annotatedPhrasesCollection=inputContext.frames.filter(p=> p._1.name.contains(URIHelper.splitterMark()))
+
+    var extractedPhrases= annotatedPhrasesCollection.map(b=> b._2.asInstanceOf[AnnotatedPhrase].phrase)
 
     var wordsDetected=0
 
     //trying to annotate phrases
-    val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
 
     val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
@@ -180,8 +182,9 @@ class KBAnnotatorImpl extends Way2Think {
 
     def addAnnotatedPhraseToOutputContext(phrase:AnnotatedPhrase)={
       wordsDetected+=1
-      outputContext.frames += (new KnowledgeURI("","AnnotatedWord/"+wordsDetected,"0.3")
-        -> phrase)
+
+      //find this phrase and context and appent concepts to it
+      inputContext.frames.find(p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase).head.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
 
     }
 
@@ -220,7 +223,7 @@ class KBAnnotatorImpl extends Way2Think {
 
 
 
-    outputContext
+    inputContext
   }
 
   def start() = false
