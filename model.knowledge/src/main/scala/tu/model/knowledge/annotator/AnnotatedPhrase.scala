@@ -24,6 +24,18 @@ case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Conc
     this
   }
 
+  /**
+   * concatenated phrase
+   * @return concateneted phrase
+   */
+  def phrase:String={
+    var ph=""
+    words.foreach(b=>
+      ph+= b.value+" "
+    )
+    return ph
+  }
+
   def words = _words
 
 }
