@@ -56,7 +56,6 @@ class ThinkingLifeCycleMinimal
       }
       goalManager.currentGoal
     }
-
     log info "apply()"
   }
 
