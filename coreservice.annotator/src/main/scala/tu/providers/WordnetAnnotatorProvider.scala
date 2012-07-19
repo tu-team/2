@@ -59,7 +59,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
     val targetString = if (rawString.indexOf("<li>") > 0 && rawString.indexOf("</li>") > 0) {
       rawString.substring(rawString.indexOf("<li>"), rawString.indexOf("</li>") + 5)
     } else {
-      ""
+      return List[String]()
     }
 
     val data = scala.xml.XML.loadString(targetString)
@@ -71,9 +71,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
         else res ::= a.text
       }
     })
-
     res
-
   }
 
   /**
@@ -83,7 +81,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
   def priority() = 2
 
   /**
-   * indicates that this is a local KB Annotator
+   * Indicates that this is a local KB Annotator
    * @return  true if local annotator
    */
   def isLocal() = false
