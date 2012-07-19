@@ -96,7 +96,7 @@ object KBPrototype {
   )
 
   /***
-   * Gets annotations by specified word
+   * Gets annotations according to specified word
    * @param word to find annotations
    * @return annotated phrase by word (for example get rid off)
    */
