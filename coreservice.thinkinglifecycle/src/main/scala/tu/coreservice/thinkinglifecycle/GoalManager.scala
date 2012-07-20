@@ -35,15 +35,19 @@ class GoalManager {
   def nextGoal: Option[Goal] = {
     this.currentIndex += 1
     if (this.currentIndex >= goals.size) {
-      this.currentIndex = 0
       None
     } else {
       Some(goals(currentIndex))
     }
   }
 
+  def resetIndex: Int = {
+    this.currentIndex = 0
+    this.currentIndex
+  }
+
   def currentGoal: Option[Goal] = {
-    if (currentIndex > goals.size && currentIndex < 0) {
+    if (currentIndex >= goals.size || currentIndex < 0) {
       None
     } else {
       Some(goals(this.currentIndex))

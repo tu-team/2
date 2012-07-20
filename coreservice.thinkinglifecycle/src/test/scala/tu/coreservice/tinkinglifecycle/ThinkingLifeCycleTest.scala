@@ -30,7 +30,16 @@ class ThinkingLifeCycleTest extends FunSuite {
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
+    assert(res != null)
+    log info res.toString
+  }
 
+  test("Please install Firefox case.") {
+    val requestText = "Please install Firefox"
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+    assert(res != null)
     log info res.toString
   }
 
