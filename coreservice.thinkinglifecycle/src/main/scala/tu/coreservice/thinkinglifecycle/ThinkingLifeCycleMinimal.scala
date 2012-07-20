@@ -75,6 +75,7 @@ class ThinkingLifeCycleMinimal
         case _ => List[Context]()
       }
     }
+    log info contexts.flatten.toString()
     contexts.flatten
   }
 

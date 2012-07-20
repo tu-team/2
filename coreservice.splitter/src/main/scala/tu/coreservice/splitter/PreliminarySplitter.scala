@@ -154,7 +154,7 @@ class PreliminarySplitter extends Way2Think {
       //extract all phrases
       tree.iterator().foreach(u => {
         //append phrase
-        var tempString = u.getNode.toString
+        val tempString = u.getNode.toString
       })
 
       //relexSentence.getParses.toList.map(b=>new Phrase(b.getPhraseTree.))
