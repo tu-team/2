@@ -2,7 +2,7 @@ package tu.coreservice.action.way2think.cry4help
 
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 
 /**
@@ -11,13 +11,23 @@ import tu.model.knowledge.primitive.KnowledgeString
  *         time: 4:25 PM
  */
 
-class Cry4HelpWay2Think extends Way2Think {
+class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
+  extends Way2Think(_uri) {
+
+  def this() = {
+    this(ContextHelper.apply(List[Resource](KnowledgeString("", "Cry4HelpMessage")), ""))
+  }
+
   /**
    * Way2Think interface.
    * @param inputContext Context of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context): Context = null
+  def apply(inputContext: Context): Context = {
+    this._inputContext = inputContext
+    //TODO do some communication here
+    inputContext
+  }
 
   def start() = false
 
