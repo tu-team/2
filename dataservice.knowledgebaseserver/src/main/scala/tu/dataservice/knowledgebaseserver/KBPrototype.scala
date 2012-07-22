@@ -105,7 +105,7 @@ object KBPrototype {
     val resources = this.annotations
     val keys: Iterable[String] = resources.keys.filter {
       g: String => {
-        g.equals(word)
+        g.toLowerCase.equals(word.toLowerCase)
       }
     }
     if (keys.size > 0) {
