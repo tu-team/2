@@ -26,7 +26,7 @@ case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Conc
 
   /**
    * concatenated phrase
-   * @return concateneted phrase
+   * @return concatenated phrase
    */
   def phrase:String={
     var ph=""

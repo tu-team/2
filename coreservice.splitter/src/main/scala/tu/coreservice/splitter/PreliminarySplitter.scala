@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory
 
 /**
  * split text in sentence
- * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-phrases.md
+ * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-sentences.md
  */
 class PreliminarySplitter extends Way2Think {
 
@@ -83,7 +83,7 @@ class PreliminarySplitter extends Way2Think {
 
     var sentence = ds.getNextSentence
     while (sentence != null) {
-      //TODO: USING RelEx split by phrases
+      //TODO: USING RelEx split by sentences
       //and place this to context
 
       //check sentence using autocorrector
@@ -146,12 +146,12 @@ class PreliminarySplitter extends Way2Think {
       //check sentence using autocorrector
       //append extracted sentence to context and increase counter for sentence
 
-      //run relex and extract phrases
+      //run relex and extract sentences
       val em: EntityMaintainer = new EntityMaintainer()
       val relExt = setup
       val relexSentence = relExt.processSentence(sentence, em)
       val tree = relexSentence.getParses.get(0).getPhraseTree
-      //extract all phrases
+      //extract all sentences
       tree.iterator().foreach(u => {
         //append phrase
         val tempString = u.getNode.toString
@@ -162,7 +162,7 @@ class PreliminarySplitter extends Way2Think {
       outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
         -> new KnowledgeString(sentence, sentenceURI))
 
-      //also add phrases to sentence
+      //also add sentences to sentence
 
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence

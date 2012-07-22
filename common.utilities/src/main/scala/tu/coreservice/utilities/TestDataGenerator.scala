@@ -106,7 +106,7 @@ object TestDataGenerator {
   val domainModel = ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel"))
 
   /**
-   * phrases
+   * sentences
    */
   val userPhrase = AnnotatedPhrase("user", userConcept)
   val customerPhrase = AnnotatedPhrase("customer", userConcept)
@@ -122,7 +122,7 @@ object TestDataGenerator {
   val reinstallHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[Tag](), KnowledgeURI("reinstallHowTo"))
 
   /**
-   * Test phrases
+   * Test sentences
    */
   // Please install Firefox
   val please = AnnotatedPhrase("Please")
@@ -222,7 +222,7 @@ object TestDataGenerator {
   def generateProblemDescriptionWithDesiredStateAnnotatedNarrative = iHaveProblemWithIE8Annotated
 
   /**
-   * Generates AnnotatedNarrative with ambiguous phrases(that references several concepts)
+   * Generates AnnotatedNarrative with ambiguous sentences(that references several concepts)
    * @return
    */
   def generateProblemDescriptionAnnotatedNarrativeAmbiguous = iHaveProblemWithIE8AnnotatedAmbiguous

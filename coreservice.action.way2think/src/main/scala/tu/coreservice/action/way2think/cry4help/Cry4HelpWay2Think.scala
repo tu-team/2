@@ -15,7 +15,7 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
   extends Way2Think(_uri) {
 
   def this() = {
-    this(ContextHelper.apply(List[Resource](KnowledgeString("", "Cry4HelpMessage")), ""))
+    this(ContextHelper.apply(List[Resource](KnowledgeString("", "Cry4HelpMessage")), ""), KnowledgeURI("Cry4HelpMessage"))
   }
 
   /**

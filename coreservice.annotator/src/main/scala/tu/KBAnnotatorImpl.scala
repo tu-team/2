@@ -151,7 +151,7 @@ class KBAnnotatorImpl extends Way2Think {
     //we have output context from splitter
 
     //
-    //splitter return annotated phrases array
+    //splitter return annotated sentences array
 
     var annotatedPhrasesCollection=inputContext.frames.filter(p=> p._1.name.contains(URIHelper.splitterMark()))
 
@@ -159,7 +159,7 @@ class KBAnnotatorImpl extends Way2Think {
 
     var wordsDetected=0
 
-    //trying to annotate phrases
+    //trying to annotate sentences
 
     val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 

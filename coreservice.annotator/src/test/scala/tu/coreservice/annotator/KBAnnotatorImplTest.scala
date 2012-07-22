@@ -365,7 +365,7 @@ noun_number(Lotus_Notes, singular)
       |""".stripMargin
 
   /**
-   * Sentence is not formed correctly.
+   * AnnotatedSentence is not formed correctly.
    */
   test("line 3 processing is ok") {
     val testString = "C33NG - User's Catia V5 does not work, after C33NG update."
