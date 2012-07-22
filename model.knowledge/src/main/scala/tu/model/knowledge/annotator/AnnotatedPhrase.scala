@@ -33,7 +33,7 @@ case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Conc
     words.foreach(b=>
       ph+= b.value+" "
     )
-    return ph
+    ph
   }
 
   def words = _words

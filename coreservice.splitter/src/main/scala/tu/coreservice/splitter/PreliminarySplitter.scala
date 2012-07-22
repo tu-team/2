@@ -12,6 +12,8 @@ import relex.output.OpenCogScheme
 import scala.collection.JavaConversions._
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import org.slf4j.LoggerFactory
+import relex.feature.FeatureNode
+import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
 
 
 /**
@@ -142,8 +144,9 @@ class PreliminarySplitter extends Way2Think {
 
     var sentence: String = ds.getNextSentence
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName)
+    var annotatedSentences: List[AnnotatedSentence] = List[AnnotatedSentence]()
     while (sentence != null) {
-      //check sentence using autocorrector
+      //check sentence using auto-corrector
       //append extracted sentence to context and increase counter for sentence
 
       //run relex and extract sentences
@@ -152,10 +155,19 @@ class PreliminarySplitter extends Way2Think {
       val relexSentence = relExt.processSentence(sentence, em)
       val tree = relexSentence.getParses.get(0).getPhraseTree
       //extract all sentences
-      tree.iterator().foreach(u => {
-        //append phrase
-        val tempString = u.getNode.toString
-      })
+      val phrases: List[AnnotatedPhrase] = tree.iterator().map(
+        u => {
+          val wordList = u.getWordList
+          val phrs: List[AnnotatedPhrase] = wordList.map {
+            w: FeatureNode => {
+              //append word
+              val phrase: AnnotatedPhrase = AnnotatedPhrase(w.get("orig_str").getValue)
+              phrase
+            }
+          }.toList
+          phrs
+        }
+      ).toList.flatten
 
       //relexSentence.getParses.toList.map(b=>new Phrase(b.getPhraseTree.))
       //var convertedPhrases = relexSentence.getParses.toArray.map(b=> new Phrase(b.))
@@ -163,10 +175,13 @@ class PreliminarySplitter extends Way2Think {
         -> new KnowledgeString(sentence, sentenceURI))
 
       //also add sentences to sentence
-
+      val annotatedSentence = new AnnotatedSentence(phrases, new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3"))
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
+      annotatedSentences ::= annotatedSentence
     }
+    val annotatedNarrative = AnnotatedNarrative(annotatedSentences, KnowledgeURI(this.getClass.getName + " result"))
+    outputContext.lastResult = Some(annotatedNarrative)
     log info "apply():" + outputContext
     outputContext
   }

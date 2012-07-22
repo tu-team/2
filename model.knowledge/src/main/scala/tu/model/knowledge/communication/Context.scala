@@ -30,12 +30,17 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
       case Some(sr: SelectorRequest) => {
         if (!classificationResults.exists(p => p == sr)) {
           classificationResultsAdd(sr)
+          _frames += (sr.uri -> sr)
         }
       }
-      case _ => {
+      case Some(r: Resource) => {
+         _frames += (r.uri -> r)
+      }
+      case None => {
         // Do nothing
       }
     }
+
     this
   }
 
