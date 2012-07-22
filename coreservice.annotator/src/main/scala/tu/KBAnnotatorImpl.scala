@@ -184,7 +184,9 @@ class KBAnnotatorImpl extends Way2Think {
       wordsDetected+=1
 
       //find this phrase and context and appent concepts to it
-      inputContext.frames.find(p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase).head.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
+      inputContext.frames.find(
+        p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase)
+        .head.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
 
     }
 

@@ -59,6 +59,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
     val targetString = if (rawString.indexOf("<li>") > 0 && rawString.indexOf("</li>") > 0) {
       rawString.substring(rawString.indexOf("<li>"), rawString.indexOf("</li>") + 5)
     } else {
+      return res
       ""
     }
 
