@@ -183,10 +183,10 @@ class KBAnnotatorImpl extends Way2Think {
     def addAnnotatedPhraseToOutputContext(phrase:AnnotatedPhrase)={
       wordsDetected+=1
 
-      //find this phrase and context and appent concepts to it
+      //find this phrase and context and append concepts to it
       inputContext.frames.find(
         p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase)
-        .head.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
+        .head._2.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
 
     }
 

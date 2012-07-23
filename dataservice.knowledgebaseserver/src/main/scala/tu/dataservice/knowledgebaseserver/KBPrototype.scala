@@ -7,6 +7,7 @@ import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.{Resource, KnowledgeURI}
 import tu.model.knowledge.annotator.AnnotatedPhrase
+import tu.model.knowledge.domain.Concept
 
 /**
  * KBSever stub only for prototype purposes.
@@ -92,7 +93,7 @@ object KBPrototype {
 
   def annotations = Map[String, AnnotatedPhrase](
     "Please" ->
-      AnnotatedPhrase.apply("Please")
+      AnnotatedPhrase.apply("Please", Concept.apply("PleasureWord") )
   )
 
   /***

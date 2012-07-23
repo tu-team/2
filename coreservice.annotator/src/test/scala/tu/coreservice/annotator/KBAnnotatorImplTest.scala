@@ -961,7 +961,7 @@ noun_number(Lotus_Notes, singular)
    test for KB Annotator Impl
 
    */
-  test("Annotator test OK") {
+  test("Annotator test") {
     //prepare inpout context
     var annotator = new KBAnnotatorImpl
 
@@ -992,7 +992,7 @@ noun_number(Lotus_Notes, singular)
     val output=annotator.apply(inputCtx)
 
     //check if please has annotation
-    expect(true)(output.frames.count(p=>p._1.name==URIHelper.splitterMark()+"2" && p._2.asInstanceOf[AnnotatedPhrase].concepts.length>0))
+    expect(true)(output.frames.count(p=>p._1.name==URIHelper.splitterMark()+"2" && p._2.asInstanceOf[AnnotatedPhrase].concepts.length>0)>0)
 
   }
 
