@@ -25,3 +25,4 @@ local/
 tu.util.log
 lib/target/
 common.utilities/target/
+*/target/

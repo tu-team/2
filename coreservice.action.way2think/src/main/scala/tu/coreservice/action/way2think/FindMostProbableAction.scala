@@ -32,6 +32,7 @@ object FindMostProbableAction {
     val outputContext = ContextHelper(List[Resource](), "OutputContex")
     if (inputContext.classificationResults.isEmpty) {
       outputContext.bestClassificationResult = None
+      outputContext.lastResult = None
     }
     else {
       outputContext.classificationResults

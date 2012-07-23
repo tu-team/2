@@ -39,6 +39,7 @@ object SearchSolution {
 
   }
 
+  //TODO: using second argument for skip previous bad choices
   def search(target: ConceptNetwork): Option[SolvedIssue] = {
     Solutions.search(target, Nil)
   }
