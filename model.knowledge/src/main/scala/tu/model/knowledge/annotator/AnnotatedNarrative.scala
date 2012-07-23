@@ -14,7 +14,7 @@ import tu.model.knowledge.domain.Concept
 case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def sentences: List[AnnotatedSentence] = null
+  def sentences: List[AnnotatedSentence] = _sentences // or Nil, but not null
 
   /**
    * Returns List[Concepts in current AnnotatedNarrative.

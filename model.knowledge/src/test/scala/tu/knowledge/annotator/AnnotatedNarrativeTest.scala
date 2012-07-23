@@ -43,7 +43,7 @@ class AnnotatedNarrativeTest extends FunSuite {
     val phrases = List[AnnotatedPhrase](AnnotatedPhrase(word))
     val content = List[AnnotatedSentence](AnnotatedSentence(phrases))
     val a = new AnnotatedNarrative(content, uri)
-    expect(a.sentences)(content)
+    expect(content)(a.sentences)
   }
 
 
