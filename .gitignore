@@ -24,3 +24,5 @@ atlassian-ide-plugin.xml
 local/
 tu.util.log
 lib/target/
+common.utilities/target/
+*/target/
