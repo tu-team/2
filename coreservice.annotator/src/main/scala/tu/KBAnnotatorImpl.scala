@@ -157,6 +157,10 @@ class KBAnnotatorImpl extends Way2Think {
 
     var extractedPhrases= annotatedPhrasesCollection.map(b=> b._2.asInstanceOf[AnnotatedPhrase].phrase)
 
+
+    //instatiate output context
+    var ctxOutput = ContextHelper.apply(annotatedPhrasesCollection.map(t=>t._2).toList,"AnnotatorResults")
+
     var wordsDetected=0
 
     //trying to annotate sentences
@@ -184,7 +188,7 @@ class KBAnnotatorImpl extends Way2Think {
       wordsDetected+=1
 
       //find this phrase and context and append concepts to it
-      inputContext.frames.find(
+      ctxOutput.frames.find(
         p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase)
         .head._2.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
 
@@ -225,7 +229,7 @@ class KBAnnotatorImpl extends Way2Think {
 
 
 
-    inputContext
+    ctxOutput
   }
 
   def start() = false

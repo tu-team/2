@@ -87,5 +87,6 @@
         <module>coreservice.spellcorrector</module>
         <module>coreservice.splitter</module>
         <module>host.console</module>
+        <module>coreservice.linkparser</module>
     </modules>
 </project>
