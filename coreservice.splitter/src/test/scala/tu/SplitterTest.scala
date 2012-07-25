@@ -1,17 +1,13 @@
 package tu.coreservice.splitter.test
+
 import junit.framework._;
-import Assert._
 import tu.coreservice.splitter.PreliminarySplitter
-import tu.model.knowledge.communication.ContextHelper
-import tu.model.knowledge.KnowledgeURI
-import tu.model.knowledge.primitive.KnowledgeString
 ;
+
 /**
- * Created by IntelliJ IDEA.
- * User: toscheva
- * Date: 06.06.12
- * Time: 13:34
- *
+ * @author toscheva
+ *         Date: 06.06.12
+ *         Time: 13:34
  */
 
 /**
@@ -19,14 +15,9 @@ import tu.model.knowledge.primitive.KnowledgeString
  */
 class SplitterTest extends TestCase("splitter") {
 
-    def testSplitter()={
-
-      var splitter= new PreliminarySplitter()
-
-      splitter.processSentences("I have a problem with Firefox. Please reinstall.")
-
-    }
-
-
+  def testSplitter() {
+    val splitter = new PreliminarySplitter()
+    splitter.processSentences("I have a problem with Firefox. Please reinstall.")
+  }
 }
 

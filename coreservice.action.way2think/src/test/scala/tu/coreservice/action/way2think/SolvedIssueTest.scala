@@ -1,4 +1,4 @@
-package tu.knowledge
+package tu.coreservice.action.way2think
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
@@ -10,13 +10,12 @@ import tu.model.knowledge.howto.{HowTo, Solution}
 import tu.model.knowledge._
 import tu.model.knowledge.primitive.{KnowledgeBoolean, KnowledgeString}
 import tu.model.knowledge.narrative.Rule
+import tu.coreservice.utilities.TestDataGenerator
 
 /**
- * Created by IntelliJ IDEA.
- * User: adel
- * Date: 11.07.12
- * Time: 2:06
- * To change this template use File | Settings | File Templates.
+ * @author adel
+ *         Date: 11.07.12
+ *         Time: 2:06
  */
 
 @RunWith(classOf[JUnitRunner])
@@ -24,12 +23,11 @@ class SolvedIssueTest extends FunSuite {
 
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
-  val s = new SolvedIssue(getTestSN(), getTestSolution(),   uri, probability)
+  val s = new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, getTestSolution(), uri, probability)
 
   test("SolvedIssue should contain issue and solution") {
-    //TODO do it
-    //expect(s.issue.toString())(getTestSN().toString())
-    //expect(s.solution.toString())(getTestSolution().toString())
+    expect(s.issue.uri.toString)(TestDataGenerator.pleaseInstallFFSimulation.uri.toString)
+    expect(s.solution.uri.toString)(getTestSolution().uri.toString)
   }
 
 
@@ -41,7 +39,7 @@ class SolvedIssueTest extends FunSuite {
     val sourceContent = "Source"
     val destinationContent = "Dest"
     val test: SemanticNetworkNode[Resource] = new SemanticNetworkNode(new KnowledgeString("TestContent", uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "test", revision))
-    val list:List[SemanticNetworkNode[Resource]] = List[SemanticNetworkNode[Resource]](test)
+    val list: List[SemanticNetworkNode[Resource]] = List[SemanticNetworkNode[Resource]](test)
     new SemanticNetwork(list, uri)
   }
 

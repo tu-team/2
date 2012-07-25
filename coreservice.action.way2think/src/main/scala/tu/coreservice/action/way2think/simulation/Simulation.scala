@@ -1,7 +1,7 @@
 package tu.coreservice.action.way2think.simulation
 
-import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
-import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative}
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
+import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase, AnnotatedNarrative}
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.Resource
 import tu.model.knowledge.primitive.KnowledgeString
@@ -27,29 +27,51 @@ class Simulation extends SimulationReformulationAbstract {
    */
   def apply(in: AnnotatedNarrative, simulationModel: ConceptNetwork): Option[ConceptNetwork] = {
 
-    val exactMatch: List[AnnotatedPhrase] = in.phrases.filter {
-      phrase: AnnotatedPhrase => {
-        this.filterPhrase(phrase, simulationModel).size == 1
+    //Assumption: as KBAnnotator already created the phrases concepts tree,
+    // the Sentence structure is not so important here
+    val exactMatch: List[AnnotatedPhrase] = in.sentences.map {
+      sentence: AnnotatedSentence => {
+        val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
+          phrase: AnnotatedPhrase => {
+            this.filterPhrase(phrase, simulationModel).size == 1
+          }
+        }
+        filteredPhrases
       }
-    }
+    }.flatten
 
-    val hasMatches: List[AnnotatedPhrase] = in.phrases.filter {
-      phrase: AnnotatedPhrase => {
-        this.filterPhrase(phrase, simulationModel).size > 0
+    val hasMatches: List[AnnotatedPhrase] = in.sentences.map {
+      sentence: AnnotatedSentence => {
+        val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
+          phrase: AnnotatedPhrase => {
+            this.filterPhrase(phrase, simulationModel).size == 0
+          }
+        }
+        filteredPhrases
       }
-    }
+    }.flatten
 
-    val ambiguous: List[AnnotatedPhrase] = in.phrases.filter {
-      phrase: AnnotatedPhrase => {
-        this.filterPhrase(phrase, simulationModel).size > 1
+    val ambiguous: List[AnnotatedPhrase] = in.sentences.map {
+      sentence: AnnotatedSentence => {
+        val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
+          phrase: AnnotatedPhrase => {
+            this.filterPhrase(phrase, simulationModel).size == 1
+          }
+        }
+        filteredPhrases
       }
-    }
+    }.flatten
 
-    val notKnown: List[AnnotatedPhrase] = in.phrases.filter {
-      phrase: AnnotatedPhrase => {
-        this.filterPhrase(phrase, simulationModel).size < 1
+    val notKnown: List[AnnotatedPhrase] = in.sentences.map {
+      sentence: AnnotatedSentence => {
+        val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
+          phrase: AnnotatedPhrase => {
+            this.filterPhrase(phrase, simulationModel).size == 1
+          }
+        }
+        filteredPhrases
       }
-    }
+    }.flatten
 
     val unAmbiguous = processAmbiguousBackReferences(ambiguous, in)
 
@@ -70,7 +92,7 @@ class Simulation extends SimulationReformulationAbstract {
 
   /**
    * Returns map of AnnotatedPhrase to most referenced concept of the AnnotatedPhrase
-   * @param in List[AnnotatedPhrase] phrases to be processed.
+   * @param in List[AnnotatedPhrase] sentences to be processed.
    * @param text AnnotatedNarrative to find references.
    * @return Map[AnnotatedPhrase, Concept]
    */
@@ -87,12 +109,12 @@ class Simulation extends SimulationReformulationAbstract {
   }
 
   private def countLinks(concept: Concept, text: AnnotatedNarrative): Int = {
-   this.countLinks(concept, text.concepts)
+    this.countLinks(concept, text.concepts)
   }
 
   private def processNotKnown(in: List[AnnotatedPhrase]): Context = {
     var res: List[Resource] = in
-    res = res ++ List[Resource](KnowledgeString("Please clarify phreses", "Please.clarify.phrases"))
+    res = res ++ List[Resource](KnowledgeString("Please clarify phreses", "Please.clarify.sentences"))
     val context = ContextHelper.apply(res, "notKnown")
     val cry4helpWay2Think = new Cry4HelpWay2Think()
     cry4helpWay2Think.apply(context)

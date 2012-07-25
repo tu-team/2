@@ -3,7 +3,9 @@ package tu.coreservice.action.critic
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.selector.SelectorRequest
 import tu.coreservice.action.Action
-import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
+import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 
 
 /**
@@ -36,4 +38,33 @@ abstract class Critic(_excluded: List[CriticLink], _included: List[CriticLink], 
    * @return SelectorRequest with set probability
    */
   def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): SelectorRequest
+
+  /**
+   * Generic method of the action to be applied over input Context and put all results in output Context.
+   * @param inputContext Context of all inbound parameters
+   * @return output Context.
+   */
+  def apply(inputContext: Context): Context = {
+    // get lastResult ConceptNetwork from inputContext
+    try {
+      val lastResult: ConceptNetwork = inputContext.lastResult.asInstanceOf[ConceptNetwork]
+      inputContext.domainModel match {
+        case Some(domainModel: ConceptNetwork) => {
+          val selectorRequest = this.apply(lastResult, domainModel)
+          ContextHelper(List[Resource](), selectorRequest, this.getClass.getName + " result")
+        }
+        case None => {
+          val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
+          // throw new UnexpectedException("$No_domain_model_specified")
+          ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+        }
+      }
+    } catch {
+      case e: ClassCastException => {
+        val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
+        // throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
+        ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+      }
+    }
+  }
 }

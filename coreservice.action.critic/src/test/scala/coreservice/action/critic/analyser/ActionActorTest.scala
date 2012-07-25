@@ -48,7 +48,36 @@ class ActionActorTest extends FunSuite {
         case res: Context => log info res.toString
       }
     }
+  }
 
+  test("Join action actors") {
+    val actions: List[Action] = List(new DirectInstructionAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("DIA")),
+      new ProblemDescriptionAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("PDA")),
+      new ProblemDescriptionWithDesiredStateAnalyserCritic(List[CriticLink](), List[CriticLink](), KnowledgeURI("PDWDS")))
+
+    val actionActors: List[ActionActor] = for (a <- actions) yield {
+      new ActionActor
+    }
+
+    for (a <- actionActors) {
+      a.start()
+    }
+
+    var i = 0
+    for (aA <- actionActors) {
+      aA ! Start(actions(i), ContextHelper(List[Resource](), "name"))
+      aA
+      i = i + 1
+    }
+    // join
+    val contexts: List[Context] = for (a <- actionActors) yield {
+      a !? Stop match {
+        case res: Context => {
+          log info res.toString
+          res
+        }
+      }
+    }
   }
 
 }

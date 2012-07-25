@@ -19,4 +19,9 @@ case class SemanticNetwork(_rootNodes: List[SemanticNetworkNode[Resource]], _uri
 
   def rootNodes: List[SemanticNetworkNode[Resource]] = _rootNodes
 
+  def addLink(_source:SemanticNetworkNode[Resource], _destination:SemanticNetworkNode[Resource])
+  {
+    _source.links = new SemanticNetworkLink(_source, _destination, this.uri) :: _source.links
+    _destination.links = new SemanticNetworkLink(_source, _destination, this.uri) :: _destination.links
+  }
 }

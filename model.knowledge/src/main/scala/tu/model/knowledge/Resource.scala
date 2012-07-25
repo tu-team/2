@@ -1,6 +1,5 @@
 package tu.model.knowledge
 
-import java.sql.Timestamp
 import java.util.Calendar
 
 /**
@@ -8,7 +7,7 @@ import java.util.Calendar
  *         Time: 11:19 PM
  */
 
-abstract class Resource(_uri: KnowledgeURI, _probability: Probability) {
+abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Probability()) {
 
   def this(uri: KnowledgeURI) = {
     this(uri, new Probability())
@@ -20,4 +19,11 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability) {
 
   val created: Calendar = new java.util.GregorianCalendar()
 
+  override def toString = {
+    if (uri != null) {
+      uri.toString + ":" + probability.toString
+    } else {
+      this.getClass.getName
+    }
+  }
 }

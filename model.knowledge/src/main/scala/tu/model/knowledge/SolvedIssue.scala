@@ -1,5 +1,6 @@
 package tu.model.knowledge
 
+import domain.ConceptNetwork
 import howto.{Solution, HowTo}
 import semanticnetwork.SemanticNetwork
 
@@ -11,7 +12,7 @@ import semanticnetwork.SemanticNetwork
  * To change this template use File | Settings | File Templates.
  */
 
-class SolvedIssue (val issue:SemanticNetwork, val solution: Solution,   _uri: KnowledgeURI, _probability: Probability)
+class SolvedIssue (val issue:ConceptNetwork, val solution: Solution,   _uri: KnowledgeURI, _probability: Probability)
                                                                               extends Resource(_uri, _probability) {
 
 

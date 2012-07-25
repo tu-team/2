@@ -1,5 +1,7 @@
 package tu.coreservice.thinkinglifecycle
 
+import tu.model.knowledge.communication.Request
+
 /**
  * Main component to manage Action-s (Selector, Way2Think,Critic).
  * ThinkingLifeCycle starts any Action as parallel process, except for the Way2Think grouped in Sequence.
@@ -11,6 +13,6 @@ package tu.coreservice.thinkinglifecycle
  */
 
 
-class ThinkingLifeCycle {
-
+trait ThinkingLifeCycle {
+  def apply(request: Request)
 }

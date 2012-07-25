@@ -2,21 +2,19 @@ package tu.coreservice.annotator
 
 
 import org.slf4j.LoggerFactory
-import relex.entity.{EntityMaintainer, EntityTaggerFactory, EntityTagger}
-import relex.{ParsedSentence, Sentence, RelationExtractor}
-import collection.JavaConversions._
-import java.util.Properties
-import java.io.InputStream
-import relex.output.{SimpleView, OpenCogScheme}
-import tu.coreservice.spellcorrector.SpellCorrector
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.{KnowledgeURI, Resource}
+import tu.providers.AnnotatorRegistry
+import tu.model.knowledge.annotator.AnnotatedPhrase
+import tu.model.knowledge.primitive.KnowledgeString
+import tu.coreservice.utilities.URIHelper
 
 /**
  * Simple KBAnnotator implementation.
  * @author toschev alex
- * Date: 15.06.12
- * Time: 18:26
+ *         Date: 15.06.12
+ *         Time: 18:26
  *
  */
 
@@ -149,12 +147,85 @@ class KBAnnotatorImpl extends Way2Think {
    * @param inputContext Context of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context):Context = {
+  def apply(inputContext: Context): Context = {
     //we have output context from splitter
 
-    //trying to annotate phrases
-      null
+    //
+    //splitter return annotated sentences array
 
+    var annotatedPhrasesCollection=inputContext.frames.filter(p=> p._1.name.contains(URIHelper.splitterMark()))
+
+    var extractedPhrases= annotatedPhrasesCollection.map(b=> b._2.asInstanceOf[AnnotatedPhrase].phrase)
+
+    var wordsDetected=0
+
+    //trying to annotate sentences
+
+    val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
+
+    def checkLocalKB(phrase:String):Boolean={
+
+      var localAnnotated=localAnnotator.apply(phrase)
+
+      if (!localAnnotated.isEmpty)
+      {
+        addAnnotatedPhraseToOutputContext(localAnnotated.get)
+
+        return true
+
+      }
+
+      return false
+
+    }
+
+
+    def addAnnotatedPhraseToOutputContext(phrase:AnnotatedPhrase)={
+      wordsDetected+=1
+
+      //find this phrase and context and append concepts to it
+      inputContext.frames.find(
+        p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase)
+        .head._2.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
+
+    }
+
+    extractedPhrases.foreach(ph=> {
+
+      var annotationFound= checkLocalKB(ph)
+
+      if (!annotationFound)
+      {
+
+           AnnotatorRegistry.listAnnotators().filter(p=> p.isLocal()!=true).foreach(a=> {
+           val synonymous =a.annotate(ph)
+
+           synonymous.foreach(syn=>{
+             //check against local KB
+             if (checkLocalKB(syn))
+              {
+                annotationFound=true
+
+                scala.util.control.Breaks.break()
+              }
+           })
+
+        })
+
+        //if annotation still not found, just append as a empty phrase
+        if (!annotationFound)
+        {
+          addAnnotatedPhraseToOutputContext(AnnotatedPhrase.apply(ph))
+          //comment
+
+        }
+      }
+    })
+
+
+
+
+    inputContext
   }
 
   def start() = false

@@ -29,6 +29,7 @@ object TestDataGenerator {
   val systemConcept = Concept("system")
   val userConcept = Concept.createSubConcept(subjectConcept, "user")
   val computerConcept = Concept("computer")
+  val deviceConcept = Concept("device")
   val softwareConcept = Concept("sofware")
   val versionConcept = Concept("version")
   val photoShopConcept = Concept.createSubConcept(softwareConcept, "Adobe Photoshop")
@@ -59,9 +60,10 @@ object TestDataGenerator {
   val shouldConcept = Concept.createSubConcept(desireConcept, "should")
   val shouldHaveConcept = Concept.createSubConcept(shouldConcept, "shouldHave")
 
-  var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept, photoShopConcept, browserConcept,
-    firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept, sharedDiskConcept, accountConcept, actionConcept,
-    installConcept, removeConcept, cleanConcept, versionConcept)
+  var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept,
+    photoShopConcept, browserConcept,
+    firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept,
+    sharedDiskConcept, accountConcept, actionConcept, versionConcept)
 
   /**
    * links
@@ -89,7 +91,14 @@ object TestDataGenerator {
   val missLink = ConceptLink(userConcept, objectConcept, "miss")
   val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
 
-  var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink)
+  // actions
+  val actionLink = ConceptLink(subjectConcept, objectConcept, "actionLink")
+  val installLink = ConceptLink.createSubConceptLink(actionLink, subjectConcept, softwareConcept, "install")
+  val removeConceptLink = ConceptLink.createSubConceptLink(actionLink, subjectConcept, softwareConcept, "remove")
+  val cleanConceptLink = ConceptLink.createSubConceptLink(actionLink, subjectConcept, deviceConcept, "clean")
+
+  var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
+    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink)
 
   /**
    * Domain model concept network
@@ -97,7 +106,7 @@ object TestDataGenerator {
   val domainModel = ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel"))
 
   /**
-   * phrases
+   * sentences
    */
   val userPhrase = AnnotatedPhrase("user", userConcept)
   val customerPhrase = AnnotatedPhrase("customer", userConcept)
@@ -113,7 +122,7 @@ object TestDataGenerator {
   val reinstallHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[Tag](), KnowledgeURI("reinstallHowTo"))
 
   /**
-   * Test phrases
+   * Test sentences
    */
   // Please install Firefox
   val please = AnnotatedPhrase("Please")
@@ -180,7 +189,7 @@ object TestDataGenerator {
   val computerHasNoInternetExplorerInstRef = ConceptLink.createInstanceConceptLink(hasNo, computerInstRef, internetExplorerInstRef)
   val internetExplorerHasVersionInstRef = ConceptLink.createInstanceConceptLink(has, internetExplorerInstRef, versionInst)
   val iHaveProblemWithIE8Reformulation = new ConceptNetwork(List[Concept](userInstRef, computerInstRef, addressInstRef, internetExplorerInstRef),
-    List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
+    List[ConceptLink](userHasComputerInst, computerHasAddressRef, computerHasNoInternetExplorerInstRef, internetExplorerHasVersionInstRef), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
   val iHaveProblemWithIE8ReformulationTest = new ConceptNetwork(List[Concept](userConcept, computerConcept, addressConcept, internetExplorerConcept),
     List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
@@ -213,7 +222,7 @@ object TestDataGenerator {
   def generateProblemDescriptionWithDesiredStateAnnotatedNarrative = iHaveProblemWithIE8Annotated
 
   /**
-   * Generates AnnotatedNarrative with ambiguous phrases(that references several concepts)
+   * Generates AnnotatedNarrative with ambiguous sentences(that references several concepts)
    * @return
    */
   def generateProblemDescriptionAnnotatedNarrativeAmbiguous = iHaveProblemWithIE8AnnotatedAmbiguous

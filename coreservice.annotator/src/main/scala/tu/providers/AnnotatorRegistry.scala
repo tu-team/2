@@ -1,11 +1,9 @@
 package tu.providers
 
 /**
- * Created with IntelliJ IDEA.
- * User: alex
+ * @author alex toschev
  * Date: 6/24/12
  * Time: 10:25 AM
- * To change this template use File | Settings | File Templates.
  */
 
 /**
@@ -19,6 +17,14 @@ object AnnotatorRegistry {
    */
   def listAnnotators(): List[AnnotatorProvider] = {
     //Append annotator classes here
-    return List(new LocalKBAnnotatorProvider,new WordnetAnnotatorProvider)
+    return List(new LocalKBAnnotatorProvider,new WordnetAnnotatorProvider).sortWith((it1,it2)=> it1.priority() < it2.priority() )
+  }
+
+  /**
+   * local KBAnnotator provider
+   * @return local KBAnnotator provider
+   */
+  def getLocalAnnotator():AnnotatorProvider ={
+    return new LocalKBAnnotatorProvider
   }
 }

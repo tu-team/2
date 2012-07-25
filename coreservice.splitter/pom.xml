@@ -7,7 +7,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
+    <groupId>tu</groupId>
     <artifactId>coreservice.splitter</artifactId>
+    <version>${tu.version}</version>
+    <name>${project.artifactId}</name>
+    <description>ThinkingLifeCycle component.</description>
     <inceptionYear>2012</inceptionYear>
 
     <repositories>

@@ -1,28 +1,46 @@
 package tu.coreservice.action.way2think
 
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.domain.ConceptNetwork
-import tu.model.knowledge.howto.Solution
-import tu.model.knowledge.{SolvedIssue, Solutions}
+import tu.model.knowledge.{Resource, SolvedIssue}
 
 /**
- * Created by IntelliJ IDEA.
- * User: adel
- * Date: 10.07.12
- * Time: 7:00
- * To change this template use File | Settings | File Templates.
+ * @author adel chepkunov
+ *         Date: 10.07.12
+ *         Time: 7:00
  */
+
+class SearchSolution extends Way2Think {
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = SearchSolution(inputContext)
+}
 
 object SearchSolution {
 
   def apply(inputContext: Context): Context = {
-    var outputContext = inputContext
 
+    val res = inputContext.lastResult match {
+      case Some(cn : ConceptNetwork) =>
+          Solutions.search(cn, Nil)
+      case _ => None
+    }
+
+    val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
+    outputContext.lastResult = res
     outputContext
+
   }
 
-  def search(target: ConceptNetwork, solutions:Solutions):SolvedIssue =
-  {
-    solutions.search(target, Nil)
+  //TODO: using second argument for skip previous bad choices
+  def search(target: ConceptNetwork): Option[SolvedIssue] = {
+    Solutions.search(target, Nil)
   }
 }

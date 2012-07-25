@@ -11,24 +11,31 @@ import tu.model.knowledge.domain.Concept
  *
  */
 
-case class AnnotatedNarrative(_phrases: List[AnnotatedPhrase], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def phrases = _phrases
+  def sentences: List[AnnotatedSentence] = _sentences // or Nil, but not null
 
   /**
    * Returns List[Concepts in current AnnotatedNarrative.
    * @return List[Concepts in current AnnotatedNarrative
    */
   def concepts: List[Concept] = {
-    val phrasesWithConcepts = phrases.filter(
-      (p: AnnotatedPhrase) => {
-        p.concepts.size > 0
+    val sentencesWithConcepts = sentences.filter(
+      (s: AnnotatedSentence) => {
+        s.concepts.size > 0
       })
-    val concepts: List[Concept] = phrasesWithConcepts.map {
-      p: AnnotatedPhrase => p.concepts
+    val concepts: List[Concept] = sentencesWithConcepts.map {
+      s: AnnotatedSentence => s.concepts
     }.flatten
     concepts
   }
 
+}
+
+object AnnotatedNarrative {
+  def apply(phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedNarrative = {
+    val sentence = AnnotatedSentence(phrases)
+    new AnnotatedNarrative(List(sentence), uri)
+  }
 }

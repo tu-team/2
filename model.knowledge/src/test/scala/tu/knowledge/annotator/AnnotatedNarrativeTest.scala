@@ -14,13 +14,13 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkNode, SemanticNetworkLink}
 import tu.model.knowledge.{Probability, KLine, KnowledgeURI, Resource}
-import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedWord}
+import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase, AnnotatedNarrative, AnnotatedWord}
 
 @RunWith(classOf[JUnitRunner])
 class AnnotatedNarrativeTest extends FunSuite {
 
   test("test Ok") {
-    assert(true)
+    assert(condition = true)
   }
 
   val namespace = "testNamespace"
@@ -38,11 +38,12 @@ class AnnotatedNarrativeTest extends FunSuite {
   val klName = new KnowledgeString("name", uri)
   val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
 
-  test("Annotated narrative should contain list of phrases") {
+  test("Annotated narrative should contain list of sentences") {
     val word = "word"
-    val content = List[AnnotatedPhrase](AnnotatedPhrase(word))
+    val phrases = List[AnnotatedPhrase](AnnotatedPhrase(word))
+    val content = List[AnnotatedSentence](AnnotatedSentence(phrases))
     val a = new AnnotatedNarrative(content, uri)
-    expect(a.phrases)(content)
+    expect(content)(a.sentences)
   }
 
 

@@ -92,7 +92,7 @@ object Concept {
   def apply(word: String, name: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("phrases", AnnotatedPhrase(word)),
+      TypedKLine[AnnotatedPhrase]("sentences", AnnotatedPhrase(word)),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
@@ -101,7 +101,7 @@ object Concept {
   def apply(name: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
@@ -110,7 +110,7 @@ object Concept {
   def apply(name: String, probability: Probability): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"),
@@ -119,7 +119,7 @@ object Concept {
 
   def createSubConcept(parent: Concept, name: String): Concept = {
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
@@ -130,7 +130,7 @@ object Concept {
   def createInstanceConcept(parent: Concept): Concept = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))
@@ -141,7 +141,7 @@ object Concept {
   def createInstanceConcept(parent: Concept, content: String): Concept = {
     val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
       List[ConceptLink](),
       KnowledgeURI(name + "Concept"))

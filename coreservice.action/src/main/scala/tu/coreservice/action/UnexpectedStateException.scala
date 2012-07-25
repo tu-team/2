@@ -1,4 +1,4 @@
-package tu.coreservice.action.way2think
+package tu.coreservice.action
 
 /**
  * @author max talanov

@@ -24,6 +24,24 @@ case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Conc
     this
   }
 
+  /**
+   * concatenated phrase
+   * @return concatenated phrase
+   */
+  def phrase:String={
+    var ph=""
+    words.foreach(b=>
+
+      ph+= b.value.toLowerCase+" "
+
+    )
+
+    //remove last whitespace
+    ph=ph.substring(0,ph.length-1)
+
+    ph
+  }
+
   def words = _words
 
 }

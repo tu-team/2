@@ -2,15 +2,20 @@ package tu.coreservice.spellcorrector
 
 import org.xeustechnologies.googleapi.spelling.{SpellRequest, Language, SpellChecker, Configuration}
 import tu.coreservice.utilities.Configurator
+import tu.model.knowledge.communication.Context
+import org.slf4j.LoggerFactory
 
 
 /**
- * @author toscheva
+ * @author toschev alex
  *         Date: 28.05.12
  *         Time: 20:52
  */
 
 class SpellCorrectorGoogle extends SpellCorrector {
+
+  val log = LoggerFactory.getLogger(this.getClass)
+
   /**
    * correct sentence
    * @param inputSentence sentence that should be corrected
@@ -32,30 +37,48 @@ class SpellCorrectorGoogle extends SpellCorrector {
     request.setText(inputSentence);
     request.setIgnoreDuplicates(true); // Ignore duplicates
 
-    var spellResponse = checker.check(request);
+    try {
 
-    var offsetDelta = 0;
+      var spellResponse = checker.check(request);
 
-    if (spellResponse.getCorrections != null) {
+      var offsetDelta = 0;
 
-      spellResponse.getCorrections.foreach(c => {
-        //perform correction only of confidence 1
-        if (c.getConfidence == 1) {
+      if (spellResponse.getCorrections != null) {
 
-          //extract source word
-          var word = corrected.substring(c.getOffset() + offsetDelta, c.getOffset + offsetDelta + c.getLength)
+        spellResponse.getCorrections.foreach(c => {
+          //perform correction only of confidence 1
+          if (c.getConfidence == 1) {
 
-          if (!ifWordIsReserved(word)) {
-            // get words seems to be do not working correctly, replace functionality with \t separating
-            var toReplace = c.getValue.split("\t").head;
+            //extract source word
+            val word = corrected.substring(c.getOffset() + offsetDelta, c.getOffset + offsetDelta + c.getLength)
 
-            //clean up wrong word and replace by proper
-            corrected.replace(c.getOffset() + offsetDelta, c.getOffset + offsetDelta + c.getLength, toReplace)
-            offsetDelta = offsetDelta + toReplace.length() - c.getLength
+            if (!ifWordIsReserved(word)) {
+              // get words seems to be do not working correctly, replace functionality with \t separating
+              val toReplace = c.getValue.split("\t").head;
+
+              //clean up wrong word and replace by proper
+              corrected.replace(c.getOffset() + offsetDelta, c.getOffset + offsetDelta + c.getLength, toReplace)
+              offsetDelta = offsetDelta + toReplace.length() - c.getLength
+            }
           }
-        }
-      })
+        })
+      }
+    } catch {
+      case e: Exception => {
+        log error e.getMessage
+      }
     }
     return corrected.toString
   }
+
+  def start() = false
+
+  def stop() = false
+
+  /**
+   * Way2Think interface.
+   * @param inputContext Context of all inbound parameters.
+   * @return outputContext
+   */
+  def apply(inputContext: Context) = null
 }

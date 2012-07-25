@@ -1,20 +1,19 @@
-package tu.coreservice.action.way2think.simulation
+package tu.coreservice.action.way2think.reformulation
 
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.Resource
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 
 /**
- * Wrapper class for Simulation to provide Way2Think interface.
  * @author max
- *         date 2012-06-25
- *         time: 12:41 PM
+ *         date 2012-07-16
+ *         time: 5:52 PM
  */
 
-class SimulationWay2Think extends Way2Think {
+class ReformulationWay2Think extends Way2Think {
+
   /**
    * Way2Think interface.
    * @param inputContext Context of all inbound parameters.
@@ -23,7 +22,7 @@ class SimulationWay2Think extends Way2Think {
   def apply(inputContext: Context) = {
 
     try {
-      val lastResult: AnnotatedNarrative = inputContext.lastResult.asInstanceOf[AnnotatedNarrative]
+      val lastResult: ConceptNetwork = inputContext.lastResult.asInstanceOf[ConceptNetwork]
       inputContext.domainModel match {
         case Some(domainModel: ConceptNetwork) => {
           val conceptNetworkOption = this.apply(lastResult, domainModel)
@@ -50,7 +49,6 @@ class SimulationWay2Think extends Way2Think {
         ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
       }
     }
-
   }
 
   /**
@@ -59,12 +57,13 @@ class SimulationWay2Think extends Way2Think {
    * @param domainModel overall domain model to be used to analyse current situation as ConceptNetwork.
    * @return SelectorRequest with set probability
    */
-  def apply(currentSituation: AnnotatedNarrative, domainModel: ConceptNetwork): Option[ConceptNetwork] = {
-    val s = new Simulation()
+  def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): Option[ConceptNetwork] = {
+    val s = new Reformulation()
     s.apply(currentSituation, domainModel)
   }
 
   def start() = false
 
   def stop() = false
+
 }

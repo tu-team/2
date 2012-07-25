@@ -20,6 +20,10 @@ import relex.output.{SimpleView, OpenCogScheme}
 import org.scalatest.matchers.MustMatchers
 import tu.coreservice.spellcorrector.SpellCorrector
 import tu.providers.WordnetAnnotatorProvider
+import tu.model.knowledge.communication.ContextHelper
+import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.coreservice.utilities.URIHelper
+import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedPhrase}
 
 @RunWith(classOf[JUnitRunner])
 class KBAnnotatorImplTest extends FunSuite with MustMatchers {
@@ -365,7 +369,7 @@ noun_number(Lotus_Notes, singular)
       |""".stripMargin
 
   /**
-   * Sentence is not formed correctly.
+   * AnnotatedSentence is not formed correctly.
    */
   test("line 3 processing is ok") {
     val testString = "C33NG - User's Catia V5 does not work, after C33NG update."
@@ -952,4 +956,45 @@ noun_number(Lotus_Notes, singular)
       |definite-FLAG(it, T)
       |pos(it, noun)
       |""".stripMargin
+
+  /*
+   test for KB Annotator Impl
+
+   */
+  test("Annotator test") {
+    //prepare inpout context
+    var annotator = new KBAnnotatorImpl
+
+    val inputCtx = ContextHelper.createContext( Map(
+    new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"1",URIHelper.version()) ->
+      new AnnotatedPhrase(
+        List(
+          new AnnotatedWord
+          (null,"get",null,new Probability() ),
+          new AnnotatedWord
+          (null,"rid",null,new Probability() ),
+          new AnnotatedWord
+          (null,"off",null,new Probability() )
+        ),null
+      ),
+      new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"2",URIHelper.version()) ->
+        new AnnotatedPhrase(
+          List(
+            new AnnotatedWord
+            (null,"please",null,new Probability() )
+
+          ),null
+        )
+
+    ),null,null
+    )
+
+    val output=annotator.apply(inputCtx)
+
+    //check if please has annotation
+    expect(true)(output.frames.count(p=>p._1.name==URIHelper.splitterMark()+"2" && p._2.asInstanceOf[AnnotatedPhrase].concepts.length>0)>0)
+
+  }
+
+
 }
