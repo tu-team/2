@@ -19,6 +19,9 @@ class SpellCorrectorCompound extends SpellCorrector {
 
     var spellingCorrected = googleCorrector.correctSentence(inputSentence)
 
+    //apply additional correction
+    spellingCorrected.replaceAll("",". ")
+
     //correct grammar
     return atdCorrector.sendRequest(spellingCorrected,true)
 
