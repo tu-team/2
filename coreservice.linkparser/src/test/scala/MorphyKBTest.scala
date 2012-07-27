@@ -9,8 +9,9 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import tu.coreservice.linkparser.MorphyKB
 import tu.model.knowledge.communication.ContextHelper
+import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{KnowledgeURI, Resource}
 
 @RunWith(classOf[JUnitRunner])
 class MorphyKBTest extends FunSuite {
@@ -19,7 +20,9 @@ class MorphyKBTest extends FunSuite {
   }
 
   test("Run MorphyKB") {
-    val context = ContextHelper(List[Resource](), KnowledgeString("Test", "Test"), "TestURI")
+    val testString = KnowledgeString("Please", "Please")
+    val frame = Frame(Map[KnowledgeURI, Resource](testString.uri -> testString), KnowledgeURI("TestFrame"))
+    val context = ContextHelper(List[Resource](), frame, "TestContext")
     val morphy = new MorphyKB(context)
     val res = morphy.morph("Hello")
   }

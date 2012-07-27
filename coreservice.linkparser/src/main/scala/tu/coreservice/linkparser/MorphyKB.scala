@@ -68,6 +68,8 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
       } else if (!getConceptByName(mostGenericConcepts, formOfPoliteness).isEmpty) {
         res.putRoot(ADJ_F, word)
       }
+    } else {
+      throw new UnexpectedException("$Ambiguous_case")
     }
     res
   }
@@ -140,7 +142,7 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
   def processLastResult(context: Context): List[AnnotatedSentence] = {
     val lastResult = context.lastResult
     lastResult match {
-      case frame: Frame => {
+      case Some(frame: Frame) => {
         val resourcesSentences: List[AnnotatedSentence] = frame.resources.filter {
           uriResource: Pair[KnowledgeURI, Resource] => {
             uriResource._2 match {
