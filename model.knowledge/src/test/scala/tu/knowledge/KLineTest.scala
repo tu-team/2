@@ -1,21 +1,21 @@
 package tu.knowledge
 
-/**
- * @author max
- *         date 2012-05-06
- *         time: 11:55 PM
- */
+  /**
+   * @author max
+   *         date 2012-05-06
+   *         time: 11:55 PM
+   */
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
-import org.scalatest.FunSuite
-import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
-import tu.model.knowledge.frame.TypedFrame
-import tu.model.knowledge.{KLine, Resource, Probability, KnowledgeURI}
+  import org.junit.runner.RunWith
+  import org.scalatest.junit.JUnitRunner
+  import org.scalatest.FunSuite
+  import tu.model.knowledge.primitive.KnowledgeString
+  import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
+  import tu.model.knowledge.frame.TypedFrame
+  import tu.model.knowledge.{KLine, Resource, Probability, KnowledgeURI}
 
-@RunWith(classOf[JUnitRunner])
-class KLineTest extends FunSuite {
+  @RunWith(classOf[JUnitRunner])
+  class KLineTest extends FunSuite {
 
   val namespace = "testNamespace"
   val name = "name"
@@ -32,7 +32,7 @@ class KLineTest extends FunSuite {
   val klName = new KnowledgeString("name", uri)
 
   test("test Ok") {
-    assert(true)
+    assert(condition = true)
   }
 
   test("KLine should contain several resources") {
