@@ -93,7 +93,7 @@ object KBPrototype {
 
   def annotations = Map[String, AnnotatedPhrase](
     "Please" ->
-      AnnotatedPhrase.apply("Please", Concept.apply("PleasureWord") )
+      AnnotatedPhrase.apply("Please", Concept.apply("formOfPoliteness") )
   )
 
   /***
