@@ -123,7 +123,7 @@ class PreliminarySplitter extends Way2Think {
       textFrames.head
     } else {
       val cry4Help = Cry4HelpWay2Think("$Could_not_find " + "inputtext")
-      val outputContext = ContextHelper(List(cry4Help), this.getClass.getName + " result")
+      val outputContext = ContextHelper(List[Resource](cry4Help), this.getClass.getName + " result")
       return outputContext
     }
 
