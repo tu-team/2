@@ -24,6 +24,6 @@ class MorphyKBTest extends FunSuite {
     val frame = Frame(Map[KnowledgeURI, Resource](testString.uri -> testString), KnowledgeURI("TestFrame"))
     val context = ContextHelper(List[Resource](), frame, "TestContext")
     val morphy = new MorphyKB(context)
-    val res = morphy.morph("Hello")
+    val res = morphy.morph("Please")
   }
 }

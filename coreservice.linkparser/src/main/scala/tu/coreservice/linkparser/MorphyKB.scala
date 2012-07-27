@@ -33,7 +33,9 @@ class MorphyKB(val context: Context) extends MorphyJWNL {
     val res: Morphed = super.morph(word)
     val sentences: List[AnnotatedSentence] = processLastResult(context)
     val foundPhrases: List[AnnotatedPhrase] = searchWord(word, sentences)
-    if (foundPhrases.size == 1) {
+    if (foundPhrases.size < 1) {
+      res
+    } else if (foundPhrases.size == 1) {
       //unambiguous case
       // get concepts and correct annotation
       val mostGenericConcepts: List[Concept] = foundPhrases(0).concepts.map {
@@ -56,7 +58,6 @@ m.putRoot(ADV_F, root);
 else
 throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root [" + root + "]"); */
 
-      //subject
       if (!getConceptByName(mostGenericConcepts, subjectConceptName).isEmpty) {
         res.putRoot(this.NOUN_F, word)
       } else if (!getConceptByName(mostGenericConcepts, objectConceptName).isEmpty) {
@@ -68,10 +69,10 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
       } else if (!getConceptByName(mostGenericConcepts, formOfPoliteness).isEmpty) {
         res.putRoot(ADJ_F, word)
       }
+      res
     } else {
       throw new UnexpectedException("$Ambiguous_case")
     }
-    res
   }
 
   /**
