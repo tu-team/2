@@ -43,6 +43,10 @@ object TestDataGenerator {
   val sharedDiskConcept = Concept.createSubConcept(sharedResourcesConcept, "sharedDisk")
   val accountConcept = Concept.createSubConcept(objectConcept, "account")
 
+
+  // axillary
+  val formOfPoliteness = Concept("formOfPoliteness")
+
   // actions
   val actionConcept = Concept("action")
   val installConcept = Concept.createSubConcept(actionConcept, "install")

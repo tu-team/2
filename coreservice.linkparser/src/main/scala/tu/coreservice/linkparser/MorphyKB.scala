@@ -7,6 +7,8 @@ import java.rmi.UnexpectedException
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.{Resource, KnowledgeURI}
 import tu.model.knowledge.domain.Concept
+import relex.feature.FeatureNode
+import java.util
 
 /**
  * @author alex toschev, max talanov
@@ -59,15 +61,20 @@ else
 throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root [" + root + "]"); */
 
       if (!getConceptByName(mostGenericConcepts, subjectConceptName).isEmpty) {
+        res.getFeatures.clear()
         res.putRoot(this.NOUN_F, word)
       } else if (!getConceptByName(mostGenericConcepts, objectConceptName).isEmpty) {
+        res.getFeatures.clear()
         res.putRoot(this.NOUN_F, word)
       } else if (!getConceptByName(mostGenericConcepts, actionConceptName).isEmpty) {
+        res.getFeatures.clear()
         res.putRoot(VERB_F, word)
       } else if (!getConceptByName(mostGenericConcepts, desireConceptName).isEmpty) {
+        res.getFeatures.clear()
         res.putRoot(VERB_F, word)
       } else if (!getConceptByName(mostGenericConcepts, formOfPoliteness).isEmpty) {
-        res.putRoot(ADJ_F, word)
+        res.getFeatures.clear()
+        res.putRoot(ADV_F, word)
       }
       res
     } else {
@@ -84,7 +91,7 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
   def getConceptByName(concepts: List[Concept], name: String): Option[Concept] = {
     concepts.find {
       concept: Concept => {
-        concept.uri.name == name
+        concept.uri.name == name + "Concept"
       }
     }
   }
@@ -95,7 +102,7 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
    * @return most generic concept.
    */
   def mostGenericGeneralisation(concept: Concept): List[Concept] = {
-    if (concept.generalisations.frames.size > 0) {
+    if (concept.generalisations.frames.size < 1) {
       List(concept)
     } else {
       mostGenericGeneralisation(concept.generalisations.frames.values.toList)
