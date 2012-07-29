@@ -91,7 +91,7 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
   def getConceptByName(concepts: List[Concept], name: String): Option[Concept] = {
     concepts.find {
       concept: Concept => {
-        concept.uri.name == name + "Concept"
+        concept.uri.name == (name + "Concept")
       }
     }
   }
