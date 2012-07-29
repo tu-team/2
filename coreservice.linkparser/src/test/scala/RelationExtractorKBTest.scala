@@ -41,11 +41,19 @@ class RelationExtractorKBTest extends FunSuite {
     //extract all sentences
     log info ("\n====\n")
     log info ("Dependency graph:\n")
-    log info (RawView.printZHeads(parse.getLeft()))
+    log info ("\n" + RawView.printZHeads(parse.getLeft()))
     log info ("\n======\n")
+    log info ("Link string:\n")
     log info ("\n" + parse.getLinkString())
     log info ("\n======\n")
+    log info ("Relations :\n")
     log info StanfordView.printRelations(parse, relExt.do_penn_tagging)
+    log info ("\n======\n")
+    log info ("Phrase string:\n")
+    log info ("\n" + parse.getPhraseString())
+    expect("(S (VP (ADVP please) install (NP Firefox)))")(parse.getPhraseString())
+
+    val node = parse.getLeft
 
     val phrases: List[AnnotatedPhrase] = tree.iterator().map(
       u => {
