@@ -4,6 +4,8 @@
  *         time: 10:21 AM
  */
 
+import org.slf4j.LoggerFactory
+import relex.output.{StanfordView, RawView}
 import scala.collection.JavaConversions._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
@@ -11,10 +13,17 @@ import org.scalatest.FunSuite
 import relex.entity.EntityMaintainer
 import relex.feature.FeatureNode
 import tu.coreservice.linkparser.RelationExtractorKB
-import tu.model.knowledge.annotator.AnnotatedPhrase
+import tu.coreservice.utilities.TestDataGenerator
+import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase}
+import tu.model.knowledge.communication.{Context, ContextHelper}
+import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.{Resource, KnowledgeURI}
+import tu.model.knowledge.primitive.KnowledgeString
 
 @RunWith(classOf[JUnitRunner])
 class RelationExtractorKBTest extends FunSuite {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   val sentence = "Please install Firefox"
 
@@ -23,13 +32,21 @@ class RelationExtractorKBTest extends FunSuite {
   }
 
   test("RelationExtractorKB run must be ok") {
-
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
     val relExt = setup
     val relexSentence = relExt.processSentence(sentence, em)
     val tree = relexSentence.getParses.get(0).getPhraseTree
+    val parse = relexSentence.getParses.get(0)
     //extract all sentences
+    log info ("\n====\n")
+    log info ("Dependency graph:\n")
+    log info (RawView.printZHeads(parse.getLeft()))
+    log info ("\n======\n")
+    log info ("\n" + parse.getLinkString())
+    log info ("\n======\n")
+    log info StanfordView.printRelations(parse, relExt.do_penn_tagging)
+
     val phrases: List[AnnotatedPhrase] = tree.iterator().map(
       u => {
         val wordList = u.getWordList
@@ -43,10 +60,11 @@ class RelationExtractorKBTest extends FunSuite {
         phrs
       }
     ).toList.flatten
+    log info phrases.toString()
   }
 
   private def setup: RelationExtractorKB = {
-    val re = new RelationExtractorKB(false)
+    val re = new RelationExtractorKB(false, createContext)
     // -n 4
     re.setMaxParses(1)
     re.do_anaphora_resolution = true
@@ -55,5 +73,14 @@ class RelationExtractorKBTest extends FunSuite {
     re.do_pre_entity_tagging = true
     re.do_post_entity_tagging = true
     re
+  }
+
+  private def createContext: Context = {
+    val testString = KnowledgeString("Please", "Please")
+    val phrase: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
+    val sentence: AnnotatedSentence = AnnotatedSentence(List(phrase))
+    val frame = Frame(Map[KnowledgeURI, Resource](sentence.uri -> sentence), KnowledgeURI("TestFrame"))
+    val context = ContextHelper(List[Resource](), frame, "TestContext")
+    context
   }
 }

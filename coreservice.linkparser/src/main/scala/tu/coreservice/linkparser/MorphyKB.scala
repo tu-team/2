@@ -1,7 +1,7 @@
 package tu.coreservice.linkparser
 
 import relex.morphy.{MorphyJWNL, Morphed}
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedPhrase, AnnotatedSentence}
 import java.rmi.UnexpectedException
 import tu.model.knowledge.frame.Frame
@@ -15,7 +15,14 @@ import java.util
  *         Time stamp: 7/25/12 5:40 PM
  */
 
-class MorphyKB(val context: Context) extends MorphyJWNL {
+class MorphyKB(var _context: Context) extends MorphyJWNL {
+
+  def this() {
+    this(ContextHelper(List[Resource](), "MorphyKBContext"))
+  }
+
+  def context = _context
+  def context_=(in: Context) = _context = in
 
   final val NOUN_F: String = "noun"
   final val VERB_F: String = "verb"
@@ -33,7 +40,7 @@ class MorphyKB(val context: Context) extends MorphyJWNL {
 
   override def morph(word: String): Morphed = {
     val res: Morphed = super.morph(word)
-    val sentences: List[AnnotatedSentence] = processLastResult(context)
+    val sentences: List[AnnotatedSentence] = processLastResult(_context)
     val foundPhrases: List[AnnotatedPhrase] = searchWord(word, sentences)
     if (foundPhrases.size < 1) {
       res

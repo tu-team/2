@@ -23,6 +23,9 @@ import relex.{Sentence, Document, ParseStats, Version}
 import org.slf4j.LoggerFactory
 import relex.feature.FeatureNode
 import java.util
+import org.specs.specification.Context
+import tu.model.knowledge.communication.ContextHelper
+import tu.model.knowledge.Resource
 
 /**
  * Based on RelationExtractor
@@ -31,7 +34,9 @@ import java.util
  *         time: 5:21 PM
  */
 
-class RelationExtractorKB(useSocket: Boolean) {
+
+
+class RelationExtractorKB(useSocket: Boolean, aContext: tu.model.knowledge.communication.Context) {
 
   val log = LoggerFactory.getLogger(this.getClass)
   /**Syntax processing */
@@ -43,7 +48,8 @@ class RelationExtractorKB(useSocket: Boolean) {
   parser.getConfig.setStoreConstituentString(true)
   parser.getConfig.setLoadSense(true)
   /**The LinkParserClient to be used - this class isn't thread safe! */
-  val morphy: Morphy = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB")
+  val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+  morphy.context = aContext
   private var context: RelexContext = new RelexContext(parser, morphy)
   /**Dependency processing */
   private var sentenceAlgorithmApplier: SentenceAlgorithmApplier = new SentenceAlgorithmApplier()
@@ -78,7 +84,7 @@ class RelationExtractorKB(useSocket: Boolean) {
   init(useSocket)
 
   def this() {
-    this(false)
+    this(false, ContextHelper(List[Resource](), "RelationExtractorKBContext"))
   }
 
   private def prt_chunks(chunks: List[Nothing]) {
@@ -219,7 +225,7 @@ class RelationExtractorKB(useSocket: Boolean) {
           parse.setPhraseString(pt.toString)
         }
       }
-      sntc.simpleParseRank
+      sntc.simpleParseRank()
       if (do_anaphora_resolution) {
         hobbs.addParse(sntc)
         hobbs.resolve(sntc)
