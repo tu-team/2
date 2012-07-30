@@ -1,5 +1,5 @@
 /**
- * @author max
+ * @author max talanov
  *         date 2012-07-29
  *         time: 10:21 AM
  */
@@ -51,9 +51,19 @@ class RelationExtractorKBTest extends FunSuite {
     log info ("\n======\n")
     log info ("Phrase string:\n")
     log info ("\n" + parse.getPhraseString())
-    expect("(S (VP (ADVP please) install (NP Firefox)))")(parse.getPhraseString())
+
+    val testString = "[head $0[name <<install>>\n         tense <<imperative>>\n         links [_obj [name <<Firefox>>\n                      definite-FLAG <<T>>\n                      noun_number <<singular>>\n                      pos <<noun>>]\n                _advmod [name <<please>>\n                         inflection-TAG <<.e>>\n                         pos <<adv>>]]\n         inflection-TAG <<.v>>\n         pos <<verb>>]\n background $0]"
+    expect(testString)(RawView.printZHeads(parse.getLeft()))
 
     val node = parse.getLeft
+    val featureNames: java.util.Set[String] = node.getFeatureNames
+    featureNames.map{
+      fN: String => {
+        val feature:FeatureNode = node.get(fN)
+        log info fN
+        log info feature.toString
+      }
+    }
 
     val phrases: List[AnnotatedPhrase] = tree.iterator().map(
       u => {
