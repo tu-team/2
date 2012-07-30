@@ -59,4 +59,8 @@ object URIHelper {
   def splitterMark():String={
     return "splitted"
   }
+
+  def sentenceMark():String={
+    return "sentense"
+  }
 }

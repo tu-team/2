@@ -23,7 +23,9 @@ import tu.providers.WordnetAnnotatorProvider
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.coreservice.utilities.URIHelper
-import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedPhrase}
+import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedWord, AnnotatedPhrase}
+import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.narrative.Narrative
 
 @RunWith(classOf[JUnitRunner])
 class KBAnnotatorImplTest extends FunSuite with MustMatchers {
@@ -965,8 +967,9 @@ noun_number(Lotus_Notes, singular)
     //prepare inpout context
     var annotator = new KBAnnotatorImpl
 
-    val inputCtx = ContextHelper.createContext( Map(
-    new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"1",URIHelper.version()) ->
+    //create proper container -> List[Sentence]-> Phrases - > Words
+
+    val sentence  = new AnnotatedSentence(List(
       new AnnotatedPhrase(
         List(
           new AnnotatedWord
@@ -977,15 +980,19 @@ noun_number(Lotus_Notes, singular)
           (null,"off",null,new Probability() )
         ),null
       ),
-      new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"2",URIHelper.version()) ->
-        new AnnotatedPhrase(
-          List(
-            new AnnotatedWord
-            (null,"please",null,new Probability() )
+      new AnnotatedPhrase(
+        List(
+          new AnnotatedWord
+          (null,"please",null,new Probability() )
 
-          ),null
-        )
+        ),null
+      )
+    ),new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.sentenceMark()+"1",URIHelper.version()))
 
+
+    val inputCtx = ContextHelper.createContext( Map(
+    new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"1",URIHelper.version()) ->
+     Narrative.apply[AnnotatedSentence](List(sentence), new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"1",URIHelper.version()),new Probability(1,1))
     ),null,null
     )
 
