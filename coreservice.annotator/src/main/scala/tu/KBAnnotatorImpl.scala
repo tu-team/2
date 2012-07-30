@@ -33,81 +33,64 @@ class KBAnnotatorImpl extends Way2Think {
     //
     //splitter return annotated sentences array
 
-    var sentences=inputContext.frames.filter(p=> p._1.name.contains(URIHelper.splitterMark()))
+    val sentences = inputContext.frames.filter(p => p._1.name.contains(URIHelper.splitterMark()))
 
-    var extractedPhrases= sentences.map(b=> b._2.asInstanceOf[Narrative[AnnotatedSentence]].phrase)
+    val extractedNarratives = sentences.map(b => b._2.asInstanceOf[Narrative[AnnotatedSentence]])
 
 
-    //instatiate output context
-    var ctxOutput = ContextHelper.apply(annotatedPhrasesCollection.map(t=>t._2).toList,"AnnotatorResults")
 
-    var wordsDetected=0
+
+    var wordsDetected = 0
 
     //trying to annotate sentences
 
     val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
-    def checkLocalKB(phrase:String):Boolean={
+    def checkLocalKB(phrase: String): Option[AnnotatedPhrase] = {
 
-      var localAnnotated=localAnnotator.apply(phrase)
+      var localAnnotated = localAnnotator.apply(phrase)
 
-      if (!localAnnotated.isEmpty)
-      {
-        addAnnotatedPhraseToOutputContext(localAnnotated.get)
-
-        return true
-
-      }
-
-      return false
+      return localAnnotated
 
     }
 
+    extractedNarratives.foreach(n => {
+      val extractedSentences = n._resources
+      extractedSentences.foreach(s => {
 
-    def addAnnotatedPhraseToOutputContext(phrase:AnnotatedPhrase)={
-      wordsDetected+=1
+        val extractedPhrases = s.phrases
 
-      //find this phrase and context and append concepts to it
-      ctxOutput.frames.find(
-        p=>p._2.asInstanceOf[AnnotatedPhrase].phrase==phrase.phrase)
-        .head._2.asInstanceOf[AnnotatedPhrase].concepts=phrase.concepts
+        extractedPhrases.foreach(ph => {
 
-    }
 
-    extractedPhrases.foreach(ph=> {
+          var annotationFound = checkLocalKB(ph.phrase)
 
-      var annotationFound= checkLocalKB(ph)
+          if (annotationFound.isEmpty) {
 
-      if (!annotationFound)
-      {
+            AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {
+              val synonymous = a.annotate(ph.phrase)
 
-           AnnotatorRegistry.listAnnotators().filter(p=> p.isLocal()!=true).foreach(a=> {
-           val synonymous =a.annotate(ph)
+              synonymous.foreach(syn => {
+                //check against local KB
+                annotationFound = checkLocalKB(syn)
 
-           synonymous.foreach(syn=>{
-             //check against local KB
-             if (checkLocalKB(syn))
-              {
-                annotationFound=true
+                if (!annotationFound.isEmpty) {
+                  ph.concepts = annotationFound.get.concepts
+                  ph.words = annotationFound.get.words
+                  scala.util.control.Breaks.break()
+                }
+              })
 
-                scala.util.control.Breaks.break()
-              }
-           })
+            })
 
+          }
         })
-
-        //if annotation still not found, just append as a empty phrase
-        if (!annotationFound)
-        {
-          addAnnotatedPhraseToOutputContext(AnnotatedPhrase.apply(ph))
-          //comment
-
-        }
-      }
+      })
     })
 
 
 
+    var ctxOutput = ContextHelper(sentences.map(b => b._2).toList, sentences.head._2, "AnnotationResult")
 
     ctxOutput
   }

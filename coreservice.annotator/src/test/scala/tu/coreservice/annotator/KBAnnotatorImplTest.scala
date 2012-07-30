@@ -999,7 +999,7 @@ noun_number(Lotus_Notes, singular)
     val output=annotator.apply(inputCtx)
 
     //check if please has annotation
-    expect(true)(output.frames.count(p=>p._1.name==URIHelper.splitterMark()+"2" && p._2.asInstanceOf[AnnotatedPhrase].concepts.length>0)>0)
+    expect(true)(output.lastResult.get.asInstanceOf[Narrative[AnnotatedSentence]]._resources.head._phrases.count(p=> p.phrase=="please" && p.concepts.length>0)>0)
 
   }
 
