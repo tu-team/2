@@ -26,22 +26,26 @@ object TestDataGenerator {
   val subjectConcept = Concept("subject")
 
   val objectConcept = Concept("object")
-  val systemConcept = Concept("system")
+  val systemConcept = Concept.createSubConcept(objectConcept, "system")
   val userConcept = Concept.createSubConcept(subjectConcept, "user")
-  val computerConcept = Concept("computer")
-  val deviceConcept = Concept("device")
-  val softwareConcept = Concept("sofware")
-  val versionConcept = Concept("version")
+  val computerConcept = Concept.createSubConcept(objectConcept, "computer")
+  val deviceConcept = Concept.createSubConcept(objectConcept, "device")
+  val softwareConcept = Concept.createSubConcept(objectConcept, "sofware")
+  val versionConcept = Concept.createSubConcept(objectConcept, "version")
   val photoShopConcept = Concept.createSubConcept(softwareConcept, "Adobe Photoshop")
   val browserConcept = Concept.createSubConcept(softwareConcept, "Browser")
   val firefoxConcept = Concept.createSubConcept(browserConcept, "Mozilla Firefox")
   val internetExplorerConcept = Concept.createSubConcept(browserConcept, "Microsoft Internet Explorer")
-  val networkConcept = Concept("network")
-  val addressConcept = Concept("address")
+  val networkConcept = Concept.createSubConcept(objectConcept, "network")
+  val addressConcept = Concept.createSubConcept(objectConcept, "address")
   val internetConcept = Concept.createSubConcept(networkConcept, "internet")
-  val sharedResourcesConcept = Concept("sharedResources")
+  val sharedResourcesConcept = Concept.createSubConcept(objectConcept, "sharedResources")
   val sharedDiskConcept = Concept.createSubConcept(sharedResourcesConcept, "sharedDisk")
-  val accountConcept = Concept("account")
+  val accountConcept = Concept.createSubConcept(objectConcept, "account")
+
+
+  // axillary
+  val formOfPoliteness = Concept("formOfPoliteness")
 
   // actions
   val actionConcept = Concept("action")
@@ -50,7 +54,7 @@ object TestDataGenerator {
   val cleanConcept = Concept.createSubConcept(actionConcept, "clean")
 
   // problems
-  val problemConcept = Concept("problem")
+  val problemConcept = Concept.createSubConcept(objectConcept, "problem")
   val lackConcept = Concept.createSubConcept(problemConcept, "lack")
 
   /**
