@@ -1,7 +1,8 @@
 package tu.coreservice.linkparser
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.Resource
 
 /**
  * @author max talanov
@@ -19,5 +20,9 @@ class LinkParser extends Way2Think{
    * @param inputContext Context of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = null
+  def apply(inputContext: Context): Context = {
+    val outputContext = ContextHelper(List[Resource](), this.getClass.getName)
+
+    outputContext
+  }
 }

@@ -50,7 +50,6 @@ class SimulationWay2Think extends Way2Think {
         ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
       }
     }
-
   }
 
   /**
