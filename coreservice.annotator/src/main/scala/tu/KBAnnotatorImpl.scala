@@ -65,6 +65,11 @@ class KBAnnotatorImpl extends Way2Think {
 
           var annotationFound = checkLocalKB(ph.phrase)
 
+          def appendAnnotation(ref:AnnotatedPhrase, src:AnnotatedPhrase)={
+              ref.concepts=src.concepts
+              ref.words=src.words
+          }
+
           if (annotationFound.isEmpty) {
 
             AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {
@@ -75,14 +80,17 @@ class KBAnnotatorImpl extends Way2Think {
                 annotationFound = checkLocalKB(syn)
 
                 if (!annotationFound.isEmpty) {
-                  ph.concepts = annotationFound.get.concepts
-                  ph.words = annotationFound.get.words
+                  appendAnnotation(ph, annotationFound.get)
                   scala.util.control.Breaks.break()
                 }
               })
 
             })
 
+          }
+          else
+          {
+            appendAnnotation(ph, annotationFound.get)
           }
         })
       })
