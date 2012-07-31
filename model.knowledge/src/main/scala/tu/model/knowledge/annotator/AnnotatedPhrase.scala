@@ -10,7 +10,7 @@ import tu.model.knowledge.{Resource, KnowledgeURI, Probability}
  *         time: 10:32 PM
  */
 
-case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Concept], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[Concept], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
   def this(_words: List[AnnotatedWord], _uri: KnowledgeURI) = {
@@ -43,6 +43,8 @@ case class AnnotatedPhrase(_words: List[AnnotatedWord], var _concepts: List[Conc
   }
 
   def words = _words
+
+  def words_=(in: List[AnnotatedWord])=_words=in
 
 }
 
