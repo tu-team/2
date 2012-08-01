@@ -10,6 +10,9 @@ import relex.entity.EntityMaintainer
 import relex.output.OpenCogScheme
 import relex.{Sentence, RelationExtractor}
 import relex.tree.PhraseTree
+import relex.feature.FeatureNode
+import org.slf4j.LoggerFactory
+
 
 /**
  * @author max talanov
@@ -18,6 +21,9 @@ import relex.tree.PhraseTree
  */
 
 class LinkParser extends Way2Think{
+
+  val log = LoggerFactory.getLogger(this.getClass)
+
   def start() = false
 
   def stop() = false
@@ -55,7 +61,10 @@ class LinkParser extends Way2Think{
     sentences.map{
       sentence: AnnotatedSentence => {
         val phrasesTree: PhraseTree = processSentence(sentence, context)
-
+        val node: FeatureNode = new FeatureNode()
+        node.set("head", parse.getLeft.get("head"))
+        node.set("background", parse.getLeft.get("background"))
+        printRec(node.get("head"))
       }
     }
   }
@@ -85,5 +94,42 @@ class LinkParser extends Way2Think{
     re.do_pre_entity_tagging = true
     re.do_post_entity_tagging = true
     re
+  }
+
+  def printRec(feature: FeatureNode) {
+    val leftWall = "LEFT-WALL"
+    try {
+
+      if (feature.get("orig_str") != null) log info "orig_str" + feature.get("orig_str").getValue
+
+      if (feature.get("_subj") != null) log info "_subj" + printRec(feature.get("_subj"))
+      if (feature.get("_obj") != null) log info "_obj=" + printRec(feature.get("_obj"))
+      if (feature.get("_iobj") != null) log info "_iobj=" + printRec(feature.get("_iobj"))
+      if (feature.get("_advmod") != null) log info "_advmod=" + printRec(feature.get("_advmod"))
+
+      if (feature.get("name") != null) log info "name=" + feature.get("name").getValue
+      if (feature.get("tense") != null) log info "tense=" + feature.get("tense").getValue
+      if (feature.get("PREP-FLAG") != null) log info "PREP-FLAG=" + feature.get("PREP-FLAG").getValue
+      if (feature.get("pos") != null) log info "pos=" + feature.get("pos").getValue
+
+      if (feature.get("links") != null) {
+        // log info "links=" + feature.get("links").toString(getZHeadsFilter)
+        log info "==>"
+        printRec(feature.get("links"))
+      }
+      val next = feature.get("NEXT")
+      if (next != null) {
+        log info "=>"
+        printRec(next)
+      }
+
+      // if (feature.get("head") != null) log info "head=" + feature.get("head").getValue
+      // if (feature.get("background") != null) log info "background=" + feature.get("background").getValue
+      // if (feature.get("words") != null) log info "words=" + feature.get("words").getValue
+    } catch {
+      case e: RuntimeException => {
+        log error e.getMessage
+      }
+    }
   }
 }
