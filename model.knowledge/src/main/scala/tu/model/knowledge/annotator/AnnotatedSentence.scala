@@ -8,7 +8,7 @@ import tu.model.knowledge.domain.Concept
  *         Time stamp: 6/29/12 11:25 AM
  */
 
-case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: KnowledgeURI, _probability: Probability = new Probability(), text: String = "")
   extends Resource(_uri, _probability) {
 
   def this(_phrases: List[AnnotatedPhrase], _uri: KnowledgeURI) = {
@@ -38,6 +38,16 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
 object AnnotatedSentence {
   def apply(phrases: List[AnnotatedPhrase]): AnnotatedSentence = {
     new AnnotatedSentence(phrases, KnowledgeURI("AnnotatedSentence"))
+  }
+
+  /**
+   * Creates AnnotatedSentence based on specified text and AnnotatedPhrase
+   * @param text of AnnotatedSentence
+   * @param phrases list of AnnotatedPhrase
+   * @return AnnotatedSentence
+   */
+  def apply(text: String, phrases: List[AnnotatedPhrase]): AnnotatedSentence = {
+    new AnnotatedSentence(phrases, KnowledgeURI("AnnotatedSentence"), new Probability(), text)
   }
 }
 

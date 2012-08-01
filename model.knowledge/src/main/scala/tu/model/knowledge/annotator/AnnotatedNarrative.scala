@@ -11,7 +11,7 @@ import tu.model.knowledge.domain.Concept
  *
  */
 
-case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: KnowledgeURI, _probability: Probability = new Probability(), text: String = "")
   extends Resource(_uri, _probability) {
 
   def sentences: List[AnnotatedSentence] = _sentences // or Nil, but not null
@@ -37,5 +37,10 @@ object AnnotatedNarrative {
   def apply(phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedNarrative = {
     val sentence = AnnotatedSentence(phrases)
     new AnnotatedNarrative(List(sentence), uri)
+  }
+
+  def apply(text: String, phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedNarrative = {
+    val sentence = AnnotatedSentence(phrases)
+    new AnnotatedNarrative(List(sentence), uri, new Probability(), text)
   }
 }

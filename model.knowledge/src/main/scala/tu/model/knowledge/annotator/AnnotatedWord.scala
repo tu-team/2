@@ -11,7 +11,7 @@ import tu.model.knowledge.domain.Concept
  *         time: 11:32 PM
  */
 
-case class AnnotatedWord(var _concepts: List[Concept], override val _value: String, override val _uri: KnowledgeURI, override val _probability: Probability)
+case class AnnotatedWord(var _concepts: List[Concept], override val _value: String, override val _uri: KnowledgeURI, override val _probability: Probability = new Probability(), position: Int = 0)
   extends KnowledgeString(_value, _uri, _probability) {
 
   def this(_concepts: List[Concept], _value: String, _uri: KnowledgeURI) {
@@ -28,13 +28,25 @@ case class AnnotatedWord(var _concepts: List[Concept], override val _value: Stri
 
 object AnnotatedWord {
 
+  @deprecated
   def apply(name: String):AnnotatedWord = {
     val uri: KnowledgeURI = KnowledgeURI(name)
-    new AnnotatedWord(List[Concept](), name, uri)
+    new AnnotatedWord(List[Concept](), name, uri, new Probability(), 0)
   }
 
+  def apply(name: String, position: Int):AnnotatedWord = {
+    val uri: KnowledgeURI = KnowledgeURI(name)
+    new AnnotatedWord(List[Concept](), name, uri, new Probability(), position)
+  }
+
+  @deprecated
   def apply(concepts: List[Concept], name: String): AnnotatedWord = {
     val uri: KnowledgeURI = KnowledgeURI(name)
     new AnnotatedWord(concepts, name, uri)
+  }
+
+  def apply(concepts: List[Concept], name: String, position: Int): AnnotatedWord = {
+    val uri: KnowledgeURI = KnowledgeURI(name)
+    new AnnotatedWord(concepts, name, uri, new Probability())
   }
 }

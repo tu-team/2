@@ -10,7 +10,7 @@ import tu.model.knowledge.{Resource, KnowledgeURI, Probability}
  *         time: 10:32 PM
  */
 
-case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[Concept], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[Concept] = List[Concept](), _uri: KnowledgeURI, _probability: Probability = new Probability(), text: String = "")
   extends Resource(_uri, _probability) {
 
   def this(_words: List[AnnotatedWord], _uri: KnowledgeURI) = {
@@ -50,11 +50,18 @@ case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[
 
 object AnnotatedPhrase {
   def apply(word: String): AnnotatedPhrase = {
-    new AnnotatedPhrase(List(AnnotatedWord(word)), KnowledgeURI(word + "Phrase"))
+    new AnnotatedPhrase(List(AnnotatedWord(word)), List[Concept](), KnowledgeURI(word + "Phrase"), new Probability(), word)
   }
 
   def apply(words: List[AnnotatedWord]): AnnotatedPhrase = {
-    new AnnotatedPhrase(words, KnowledgeURI(words.toString() + "Phrase"))
+    val wordsValues: String = words.foldLeft[String]("")(
+      (a: String, i: AnnotatedWord) => {a + " " + i.value}
+    )
+    new AnnotatedPhrase(words, List[Concept](),KnowledgeURI(words.toString() + "Phrase"), new Probability(), wordsValues)
+  }
+
+  def apply(words: List[AnnotatedWord], text: String): AnnotatedPhrase = {
+    new AnnotatedPhrase(words, List[Concept](),KnowledgeURI(words.toString() + "Phrase"), new Probability(), text)
   }
 
   def split(words: String, name: String): AnnotatedPhrase = {
@@ -62,7 +69,7 @@ object AnnotatedPhrase {
     val wordsList: List[AnnotatedWord] = (wordsArray.map(x => {
       AnnotatedWord(x.trim)
     })).toList
-    new AnnotatedPhrase(wordsList, KnowledgeURI(name))
+    new AnnotatedPhrase(wordsList, List[Concept](), KnowledgeURI(name), new Probability(), words)
   }
 
   def apply(words: List[AnnotatedWord], concepts: List[Concept]): AnnotatedPhrase = {
@@ -70,7 +77,7 @@ object AnnotatedPhrase {
   }
 
   def apply(word: String, concepts: List[Concept]): AnnotatedPhrase = {
-    val it = new AnnotatedPhrase(List(AnnotatedWord(word)), concepts, KnowledgeURI(word + "Phrase"))
+    val it = new AnnotatedPhrase(List(AnnotatedWord(word)), concepts, KnowledgeURI(word + "Phrase"), new Probability(), word)
     concepts.map((in: Concept) => {
       in.phrases = in.phrases + (it.uri -> it)
       in
@@ -79,7 +86,7 @@ object AnnotatedPhrase {
   }
 
   def apply(word: String, concept: Concept): AnnotatedPhrase = {
-    val it = new AnnotatedPhrase(List(AnnotatedWord(word)), List(concept), KnowledgeURI(word + "Phrase"))
+    val it = new AnnotatedPhrase(List(AnnotatedWord(word)), List(concept), KnowledgeURI(word + "Phrase"), new Probability(), word)
     concept.phrases = concept.phrases + (it.uri -> it)
     it
   }
