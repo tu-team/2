@@ -8,7 +8,7 @@ import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.coreservice.action.UnexpectedException
 import relex.entity.EntityMaintainer
 import relex.output.OpenCogScheme
-import relex.RelationExtractor
+import relex.{Sentence, RelationExtractor}
 import relex.tree.PhraseTree
 
 /**
@@ -51,8 +51,13 @@ class LinkParser extends Way2Think{
     }
   }
 
-  def processSentences(sentence: AnnotatedSentence, context: Context) = {
+  def processSentences(sentences: List[AnnotatedSentence], context: Context) = {
+    sentences.map{
+      sentence: AnnotatedSentence => {
+        val phrasesTree: PhraseTree = processSentence(sentence, context)
 
+      }
+    }
   }
 
   def processSentence(sentence: AnnotatedSentence, context: Context): PhraseTree = {
