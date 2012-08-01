@@ -23,7 +23,6 @@ case class AnnotatedWord(var _concepts: List[Concept], override val _value: Stri
     _concepts = in
     this
   }
-
 }
 
 object AnnotatedWord {
