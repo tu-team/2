@@ -3,12 +3,12 @@ package tu.coreservice.linkparser
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.Resource
-import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedNarrative}
+import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence, AnnotatedNarrative}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.coreservice.action.UnexpectedException
 import relex.entity.EntityMaintainer
 import relex.output.OpenCogScheme
-import relex.{Sentence, RelationExtractor}
+import relex.{ParsedSentence, Sentence, RelationExtractor}
 import relex.tree.PhraseTree
 import relex.feature.FeatureNode
 import org.slf4j.LoggerFactory
@@ -60,22 +60,21 @@ class LinkParser extends Way2Think{
   def processSentences(sentences: List[AnnotatedSentence], context: Context) = {
     sentences.map{
       sentence: AnnotatedSentence => {
-        val phrasesTree: PhraseTree = processSentence(sentence, context)
+        val parse: ParsedSentence = processSentence(sentence, context)
         val node: FeatureNode = new FeatureNode()
-        // node.set("head", parse.getLeft.get("head"))
-        // node.set("background", parse.getLeft.get("background"))
-        // printRec(node.get("head"))
+        node.set("head", parse.getLeft.get("head"))
+        node.set("background", parse.getLeft.get("background"))
+        printRec(node.get("head"), sentence)
       }
     }
   }
 
-  def processSentence(sentence: AnnotatedSentence, context: Context): PhraseTree = {
+  def processSentence(sentence: AnnotatedSentence, context: Context): ParsedSentence = {
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
     val relExt = setup(context)
     val relexSentence = relExt.processSentence(sentence.text, em)
-    val tree = relexSentence.getParses.get(0).getPhraseTree
-    tree
+    relexSentence.getParses.get(0)
   }
 
   def setup(context: Context): RelationExtractorKB = {
@@ -96,18 +95,25 @@ class LinkParser extends Way2Think{
     re
   }
 
-  def printRec(feature: FeatureNode) {
+  def printRec(feature: FeatureNode, sentence: AnnotatedSentence) {
     val leftWall = "LEFT-WALL"
     try {
 
-      if (feature.get("orig_str") != null) log info "orig_str" + feature.get("orig_str").getValue
+      if (feature.get("orig_str") != null) {
+        val origStr = feature.get("orig_str").getValue
+        log info "orig_str" + feature.get("orig_str").getValue
+        val phrases = findPhrase(origStr, sentence)
 
-      if (feature.get("_subj") != null) log info "_subj" + printRec(feature.get("_subj"))
-      if (feature.get("_obj") != null) log info "_obj=" + printRec(feature.get("_obj"))
-      if (feature.get("_iobj") != null) log info "_iobj=" + printRec(feature.get("_iobj"))
-      if (feature.get("_advmod") != null) log info "_advmod=" + printRec(feature.get("_advmod"))
+      }
+      if (feature.get("name") != null) {
+        log info "name=" + feature.get("name").getValue
+      }
 
-      if (feature.get("name") != null) log info "name=" + feature.get("name").getValue
+      if (feature.get("_subj") != null) log info "_subj" + printRec(feature.get("_subj"), sentence)
+      if (feature.get("_obj") != null) log info "_obj=" + printRec(feature.get("_obj"), sentence)
+      if (feature.get("_iobj") != null) log info "_iobj=" + printRec(feature.get("_iobj"), sentence)
+      if (feature.get("_advmod") != null) log info "_advmod=" + printRec(feature.get("_advmod"), sentence)
+
       if (feature.get("tense") != null) log info "tense=" + feature.get("tense").getValue
       if (feature.get("PREP-FLAG") != null) log info "PREP-FLAG=" + feature.get("PREP-FLAG").getValue
       if (feature.get("pos") != null) log info "pos=" + feature.get("pos").getValue
@@ -115,12 +121,12 @@ class LinkParser extends Way2Think{
       if (feature.get("links") != null) {
         // log info "links=" + feature.get("links").toString(getZHeadsFilter)
         log info "==>"
-        printRec(feature.get("links"))
+        printRec(feature.get("links"), sentence)
       }
       val next = feature.get("NEXT")
       if (next != null) {
         log info "=>"
-        printRec(next)
+        printRec(next, sentence)
       }
 
       // if (feature.get("head") != null) log info "head=" + feature.get("head").getValue
@@ -131,5 +137,14 @@ class LinkParser extends Way2Think{
         log error e.getMessage
       }
     }
+  }
+
+  def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
+    val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter{
+      phrase: AnnotatedPhrase => {
+        phrase.text.trim == value.trim
+      }
+    }
+    filteredPhrase
   }
 }
