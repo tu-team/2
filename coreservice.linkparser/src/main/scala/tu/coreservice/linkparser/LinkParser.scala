@@ -62,9 +62,9 @@ class LinkParser extends Way2Think{
       sentence: AnnotatedSentence => {
         val phrasesTree: PhraseTree = processSentence(sentence, context)
         val node: FeatureNode = new FeatureNode()
-        node.set("head", parse.getLeft.get("head"))
-        node.set("background", parse.getLeft.get("background"))
-        printRec(node.get("head"))
+        // node.set("head", parse.getLeft.get("head"))
+        // node.set("background", parse.getLeft.get("background"))
+        // printRec(node.get("head"))
       }
     }
   }
