@@ -107,10 +107,26 @@ class RelationExtractorKBTest extends FunSuite {
 
       if (feature.get("orig_str") != null) log info "orig_str" + feature.get("orig_str").getValue
 
-      if (feature.get("_subj") != null) log info "_subj" + printRec(feature.get("_subj"))
-      if (feature.get("_obj") != null) log info "_obj=" + printRec(feature.get("_obj"))
-      if (feature.get("_iobj") != null) log info "_iobj=" + printRec(feature.get("_iobj"))
-      if (feature.get("_advmod") != null) log info "_advmod=" + printRec(feature.get("_advmod"))
+      if (feature.get("_subj") != null) {
+        log info "_subj ("
+        printRec(feature.get("_subj"))
+        log info ")"
+      }
+      if (feature.get("_obj") != null) {
+        log info "_obj=("
+        printRec(feature.get("_obj"))
+        log info ")"
+      }
+      if (feature.get("_iobj") != null) {
+        log info "_iobj=("
+        printRec(feature.get("_iobj"))
+        log info ")"
+      }
+      if (feature.get("_advmod") != null) {
+        log info "_advmod=("
+        printRec(feature.get("_advmod"))
+        log info ")"
+      }
 
       if (feature.get("name") != null) log info "name=" + feature.get("name").getValue
       if (feature.get("tense") != null) log info "tense=" + feature.get("tense").getValue
@@ -119,8 +135,9 @@ class RelationExtractorKBTest extends FunSuite {
 
       if (feature.get("links") != null) {
         // log info "links=" + feature.get("links").toString(getZHeadsFilter)
-        log info "==>"
+        log info "==> {"
         printRec(feature.get("links"))
+        log info "}"
       }
       val next = feature.get("NEXT")
       if (next != null) {
