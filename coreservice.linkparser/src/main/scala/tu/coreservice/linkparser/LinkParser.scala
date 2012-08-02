@@ -50,8 +50,10 @@ class LinkParser extends Way2Think {
 
   def getLastResult(inputContext: Context): AnnotatedNarrative = {
     try {
-      val narrative: AnnotatedNarrative = inputContext.lastResult.asInstanceOf[AnnotatedNarrative]
-      narrative
+      inputContext.lastResult match {
+        case Some(narrative: AnnotatedNarrative) => narrative
+        case _ => throw new UnexpectedException("$Last_result_contains_no_narrative")
+      }
     } catch {
       case e: ClassCastException => {
         val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
@@ -80,7 +82,12 @@ class LinkParser extends Way2Think {
     val em: EntityMaintainer = new EntityMaintainer()
     val relExt = setup(sentences)
     val relexSentence = relExt.processSentence(sentence.text, em)
-    relexSentence.getParses.get(0)
+    val parsesNum = relexSentence.getNumParses
+    if (parsesNum < 1) {
+      throw new UnexpectedException("$No_parses_produced")
+    } else {
+      relexSentence.getParses.get(0)
+    }
   }
 
   def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
@@ -124,7 +131,7 @@ class LinkParser extends Way2Think {
       if (feature.get("links") != null) {
         // log info "links=" + feature.get("links").toString(getZHeadsFilter)
         log info "==>"
-        processLink(feature.get("links"), concept, sentence)
+        concept.links = concept.links ::: processLink(feature.get("links"), concept, sentence)
       }
       val next = feature.get("NEXT")
       if (next != null) {
@@ -179,27 +186,28 @@ class LinkParser extends Way2Think {
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
     val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
-        phrase.text.trim == value.trim
+        phrase.text.trim.toLowerCase == value.trim.toLowerCase
       }
     }
     filteredPhrase
   }
 
-  def processLink(feature: FeatureNode, source: Concept, sentence: AnnotatedSentence): ConceptLink = {
+  def processLink(feature: FeatureNode, source: Concept, sentence: AnnotatedSentence): List[ConceptLink] = {
 
     try {
       val filteredFeatures = feature.getFeatureNames.filter {
         name: String => names.contains(name)
       }
-      if (filteredFeatures.size == 1) {
-        val name: String = filteredFeatures.head
-        log info name
-        val destination = processNode(feature.get("_subj"), sentence)
-        ConceptLink(source, destination, name.substring(1))
-      } else if (filteredFeatures.size < 1) {
-        throw new UnexpectedException("$No_links_found")
+      if (filteredFeatures.size > 0) {
+        val conceptLinks: List[ConceptLink] = filteredFeatures.toList.map(
+          (name: String) => {
+            val destination = processNode(feature.get("_subj"), sentence)
+            ConceptLink(source, destination, name.substring(1))
+          }
+        )
+        conceptLinks
       } else {
-        throw new UnexpectedException("$Ambiguous_links")
+        throw new UnexpectedException("$No_links_found")
       }
     } catch {
       case e: RuntimeException => {

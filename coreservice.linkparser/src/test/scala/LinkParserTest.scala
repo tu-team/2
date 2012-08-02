@@ -29,11 +29,12 @@ class LinkParserTest extends FunSuite {
 
   private def createContext: Context = {
     val testString = KnowledgeString("Please", "Please")
-    val phrase: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
-    val sentence: AnnotatedSentence = AnnotatedSentence(List(phrase))
+    val please: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
+    val install: AnnotatedPhrase = AnnotatedPhrase("install", TestDataGenerator.installActionInst)
+    val fireFox: AnnotatedPhrase = AnnotatedPhrase("FireFox", TestDataGenerator.firefoxConceptInst)
+    val sentence: AnnotatedSentence = AnnotatedSentence("Please install FireFox.", List(please, install, fireFox))
     val narrative: AnnotatedNarrative = new AnnotatedNarrative(List[AnnotatedSentence](sentence), KnowledgeURI("TestNarrative"))
-    val frame = Frame(Map[KnowledgeURI, Resource](narrative.uri -> narrative), KnowledgeURI("TestFrame"))
-    val context = ContextHelper(List[Resource](), frame, "TestContext")
+    val context = ContextHelper(List[Resource](), narrative, "TestContext")
     context
   }
 

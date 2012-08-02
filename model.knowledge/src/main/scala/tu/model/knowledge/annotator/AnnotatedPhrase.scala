@@ -67,7 +67,7 @@ object AnnotatedPhrase {
   def split(words: String, name: String): AnnotatedPhrase = {
     val wordsArray: Array[String] = words.split(" ")
     val wordsList: List[AnnotatedWord] = (wordsArray.map(x => {
-      AnnotatedWord(x.trim)
+      AnnotatedWord(x.trim, wordsArray.indexOf(x))
     })).toList
     new AnnotatedPhrase(wordsList, List[Concept](), KnowledgeURI(name), new Probability(), words)
   }
