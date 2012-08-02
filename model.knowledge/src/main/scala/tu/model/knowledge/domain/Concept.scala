@@ -58,6 +58,11 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
+  def setLinks(in: List[ConceptLink]): Concept = {
+    _conceptLinks = in
+    this
+  }
+
   /**
    * Returns true if current Concept has at least one same parent(generalisation) with specified.
    * @param that Concept to compare

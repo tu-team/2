@@ -23,8 +23,9 @@ object TestDataGenerator {
   /**
    * concepts
    */
+  val tenseConcept = Concept("tense")
+  val posConcept = Concept("pos")
   val subjectConcept = Concept("subject")
-
   val objectConcept = Concept("object")
   val systemConcept = Concept.createSubConcept(objectConcept, "system")
   val userConcept = Concept.createSubConcept(subjectConcept, "user")
@@ -94,6 +95,9 @@ object TestDataGenerator {
   val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
   val missLink = ConceptLink(userConcept, objectConcept, "miss")
   val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
+
+  val tenseLink = ConceptLink(subjectConcept, objectConcept, "tense")
+  val posLink = ConceptLink(subjectConcept, objectConcept, "pos")
 
   // actions
   val actionLink = ConceptLink(subjectConcept, objectConcept, "actionLink")

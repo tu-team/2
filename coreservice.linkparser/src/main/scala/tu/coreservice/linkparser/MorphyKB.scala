@@ -90,7 +90,7 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
   }
 
   /**
-   * Gets concept by name from List of Concept-s
+   * Gets source by name from List of Concept-s
    * @param concepts to find Concept.
    * @param name to filter concepts.
    * @return Option[Concept].
@@ -104,9 +104,9 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
   }
 
   /**
-   * Get most generic generalisation of specified concept, if no generalisations found in current concept, current concept is returned.
+   * Get most generic generalisation of specified source, if no generalisations found in current source, current source is returned.
    * @param concept to process.
-   * @return most generic concept.
+   * @return most generic source.
    */
   def mostGenericGeneralisation(concept: Concept): List[Concept] = {
     if (concept.generalisations.frames.size < 1) {
