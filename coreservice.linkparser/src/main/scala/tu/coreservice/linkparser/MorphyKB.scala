@@ -15,14 +15,14 @@ import java.util
  *         Time stamp: 7/25/12 5:40 PM
  */
 
-class MorphyKB(var _context: Context) extends MorphyJWNL {
+class MorphyKB(var _sentences: List[AnnotatedSentence]) extends MorphyJWNL {
 
   def this() {
-    this(ContextHelper(List[Resource](), "MorphyKBContext"))
+    this(List[AnnotatedSentence]())
   }
 
-  def context = _context
-  def context_=(in: Context) = _context = in
+  def sentences = _sentences
+  def sentences_=(in: List[AnnotatedSentence]) = _sentences = in
 
   final val NOUN_F: String = "noun"
   final val VERB_F: String = "verb"
@@ -40,8 +40,7 @@ class MorphyKB(var _context: Context) extends MorphyJWNL {
 
   override def morph(word: String): Morphed = {
     val res: Morphed = super.morph(word)
-    val sentences: List[AnnotatedSentence] = processLastResult(_context)
-    val foundPhrases: List[AnnotatedPhrase] = searchWord(word, sentences)
+    val foundPhrases: List[AnnotatedPhrase] = searchWord(word, _sentences)
     if (foundPhrases.size < 1) {
       res
     } else if (foundPhrases.size == 1) {

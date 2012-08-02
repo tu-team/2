@@ -31,7 +31,7 @@ class MorphyKBTest extends FunSuite {
     val sentence: AnnotatedSentence = AnnotatedSentence(List(phrase))
     val frame = Frame(Map[KnowledgeURI, Resource](sentence.uri -> sentence), KnowledgeURI("TestFrame"))
     val context = ContextHelper(List[Resource](), frame, "TestContext")
-    val morphy = new MorphyKB(context)
+    val morphy = new MorphyKB(List(sentence))
     val res = morphy.morph("Please")
     log info (res.getFeatures.toString)
     assert(res != null)

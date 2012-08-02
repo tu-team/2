@@ -15,7 +15,7 @@ import relex.entity.EntityMaintainer
 import relex.feature.{FeatureNameFilter, FeatureNode}
 import tu.coreservice.linkparser.RelationExtractorKB
 import tu.coreservice.utilities.TestDataGenerator
-import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase}
+import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
 import tu.model.knowledge.communication.{Context, ContextHelper}
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.{Resource, KnowledgeURI}
@@ -35,7 +35,7 @@ class RelationExtractorKBTest extends FunSuite {
   test("RelationExtractorKB run must be ok") {
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
-    val relExt = setup
+    val relExt = setup(createSentences)
     val relexSentence = relExt.processSentence(sentence, em)
     val tree = relexSentence.getParses.get(0).getPhraseTree
     val parse = relexSentence.getParses.get(0)
@@ -155,8 +155,8 @@ class RelationExtractorKBTest extends FunSuite {
     }
   }
 
-  private def setup: RelationExtractorKB = {
-    val re = new RelationExtractorKB(false, createContext)
+  private def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
+    val re = new RelationExtractorKB(false, sentences)
     // -n 4
     re.setMaxParses(1)
     re.do_anaphora_resolution = true
@@ -171,9 +171,17 @@ class RelationExtractorKBTest extends FunSuite {
     val testString = KnowledgeString("Please", "Please")
     val phrase: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
     val sentence: AnnotatedSentence = AnnotatedSentence(List(phrase))
+    val narrative: AnnotatedNarrative = new AnnotatedNarrative(List[AnnotatedSentence](sentence), KnowledgeURI("TestNarrative"))
     val frame = Frame(Map[KnowledgeURI, Resource](sentence.uri -> sentence), KnowledgeURI("TestFrame"))
     val context = ContextHelper(List[Resource](), frame, "TestContext")
     context
+  }
+
+  private def createSentences: List[AnnotatedSentence] = {
+    val testString = KnowledgeString("Please", "Please")
+    val phrase: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
+    val sentence: AnnotatedSentence = AnnotatedSentence(List(phrase))
+    List(sentence)
   }
 
   def getZHeadsFilter: FeatureNameFilter = {

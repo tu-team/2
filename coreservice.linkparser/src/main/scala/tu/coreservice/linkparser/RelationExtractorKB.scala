@@ -26,6 +26,7 @@ import java.util
 import org.specs.specification.Context
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.Resource
+import tu.model.knowledge.annotator.AnnotatedSentence
 
 /**
  * Based on RelationExtractor
@@ -36,7 +37,7 @@ import tu.model.knowledge.Resource
 
 
 
-class RelationExtractorKB(useSocket: Boolean, aContext: tu.model.knowledge.communication.Context) {
+class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]) {
 
   val log = LoggerFactory.getLogger(this.getClass)
   /**Syntax processing */
@@ -49,7 +50,7 @@ class RelationExtractorKB(useSocket: Boolean, aContext: tu.model.knowledge.commu
   parser.getConfig.setLoadSense(true)
   /**The LinkParserClient to be used - this class isn't thread safe! */
   val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
-  morphy.context = aContext
+  morphy.sentences = sentences
   private var context: RelexContext = new RelexContext(parser, morphy)
   /**Dependency processing */
   private var sentenceAlgorithmApplier: SentenceAlgorithmApplier = new SentenceAlgorithmApplier()
@@ -84,7 +85,7 @@ class RelationExtractorKB(useSocket: Boolean, aContext: tu.model.knowledge.commu
   init(useSocket)
 
   def this() {
-    this(false, ContextHelper(List[Resource](), "RelationExtractorKBContext"))
+    this(false, List[AnnotatedSentence]())
   }
 
   private def prt_chunks(chunks: List[Nothing]) {

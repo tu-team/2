@@ -4,7 +4,7 @@ package tu.coreservice.linkparser
 import collection.JavaConversions._
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence, AnnotatedNarrative}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.coreservice.action.UnexpectedException
@@ -42,9 +42,9 @@ class LinkParser extends Way2Think {
 
     val narrative = getLastResult(inputContext)
     val sentences: List[AnnotatedSentence] = narrative.sentences
-    val text = narrative.text
-
-    val outputContext = ContextHelper(List[Resource](), this.getClass.getName)
+    val updatedSentences = processSentences(sentences, inputContext)
+    val updatedNarrative = AnnotatedNarrative(updatedSentences, KnowledgeURI("LinkedNarrative"))
+    val outputContext = ContextHelper(List[Resource](), updatedNarrative, this.getClass.getName)
     outputContext
   }
 
@@ -62,29 +62,30 @@ class LinkParser extends Way2Think {
     }
   }
 
-  def processSentences(sentences: List[AnnotatedSentence], context: Context) = {
+  def processSentences(sentences: List[AnnotatedSentence], context: Context): List[AnnotatedSentence] = {
     sentences.map {
       sentence: AnnotatedSentence => {
-        val parse: ParsedSentence = processSentence(sentence, context)
+        val parse: ParsedSentence = processSentence(sentence, sentences)
         val node: FeatureNode = new FeatureNode()
         node.set("head", parse.getLeft.get("head"))
         node.set("background", parse.getLeft.get("background"))
         processNode(node.get("head"), sentence)
       }
     }
+    sentences
   }
 
-  def processSentence(sentence: AnnotatedSentence, context: Context): ParsedSentence = {
+  def processSentence(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
-    val relExt = setup(context)
+    val relExt = setup(sentences)
     val relexSentence = relExt.processSentence(sentence.text, em)
     relexSentence.getParses.get(0)
   }
 
-  def setup(context: Context): RelationExtractorKB = {
+  def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
-    val re = new RelationExtractorKB(false, context)
+    val re = new RelationExtractorKB(false, sentences)
     // -n 4
     re.setMaxParses(1)
     // -l -f -a
