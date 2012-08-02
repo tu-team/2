@@ -7,6 +7,7 @@
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
+import org.slf4j.LoggerFactory
 import tu.coreservice.linkparser.LinkParser
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
@@ -18,13 +19,17 @@ import tu.model.knowledge.{KnowledgeURI, Resource}
 @RunWith(classOf[JUnitRunner])
 class LinkParserTest extends FunSuite {
 
+  val log = LoggerFactory.getLogger(this.getClass)
+
   test("Ok") {
     assert(condition = true)
   }
 
   test("Lisk parser should be ok") {
     val lp = new LinkParser()
-    lp.apply(createContext)
+    val res = lp.apply(createContext)
+    log info res.toString
+    assert(res != null)
   }
 
   private def createContext: Context = {

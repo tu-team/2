@@ -117,13 +117,13 @@ class LinkParser extends Way2Think {
 
       if (feature.get("tense") != null) {
         log info "tense=" + feature.get("tense").getValue
-        val tense = Concept.createInstanceConcept(TestDataGenerator.tenseConcept)
+        val tense = Concept.createInstanceConcept(TestDataGenerator.tenseConcept, feature.get("tense").getValue)
         val tenseLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.tenseLink, concept, tense)
         concept.links = concept.links ::: List(tenseLink)
       }
       if (feature.get("pos") != null) {
         log info "pos=" + feature.get("pos").getValue
-        val pos = Concept.createInstanceConcept(TestDataGenerator.posConcept)
+        val pos = Concept.createInstanceConcept(TestDataGenerator.posConcept, feature.get("pos").getValue)
         val posLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.posLink, concept, pos)
         concept.links = concept.links ::: List(posLink)
       }
@@ -131,7 +131,8 @@ class LinkParser extends Way2Think {
       if (feature.get("links") != null) {
         // log info "links=" + feature.get("links").toString(getZHeadsFilter)
         log info "==>"
-        concept.links = concept.links ::: processLink(feature.get("links"), concept, sentence)
+        val processedLinks = processLink(feature.get("links"), concept, sentence)
+        concept.links = concept.links ::: processedLinks
       }
       val next = feature.get("NEXT")
       if (next != null) {
@@ -200,7 +201,8 @@ class LinkParser extends Way2Think {
       }
       if (filteredFeatures.size > 0) {
         val conceptLinks: List[ConceptLink] = filteredFeatures.toList.map(
-          (name: String) => { val destination = processNode(feature.get(name), sentence)
+          (name: String) => {
+            val destination = processNode(feature.get(name), sentence)
             ConceptLink(source, destination, name.substring(1))
           }
         )
