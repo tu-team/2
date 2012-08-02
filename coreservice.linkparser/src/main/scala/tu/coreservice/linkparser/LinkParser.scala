@@ -200,8 +200,7 @@ class LinkParser extends Way2Think {
       }
       if (filteredFeatures.size > 0) {
         val conceptLinks: List[ConceptLink] = filteredFeatures.toList.map(
-          (name: String) => {
-            val destination = processNode(feature.get("_subj"), sentence)
+          (name: String) => { val destination = processNode(feature.get(name), sentence)
             ConceptLink(source, destination, name.substring(1))
           }
         )
