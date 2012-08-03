@@ -24,8 +24,8 @@ object KBPrototype {
     Map[Goal, List[ActionModel]](
       Goal("ProcessIncident") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
-          Way2ThinkModel("tu.coreservice.spellcorrector.SpellCorrectorCompound"),
-          Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl")
+          Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
+          Way2ThinkModel("tu.coreservice.linkparser.LinkParser")
         ),
       Goal("ClassifyIncident") ->
         List[JoinWay2ThinkModel](JoinWay2ThinkModel(

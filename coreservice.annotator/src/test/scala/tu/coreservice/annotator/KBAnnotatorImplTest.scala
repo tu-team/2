@@ -24,7 +24,6 @@ import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.coreservice.utilities.URIHelper
 import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedWord, AnnotatedPhrase}
-import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.narrative.Narrative
 
 @RunWith(classOf[JUnitRunner])
@@ -79,8 +78,6 @@ class KBAnnotatorImplTest extends FunSuite with MustMatchers {
   }
 
   def parse(sentence: String, re: RelationExtractor): Sentence = {
-
-
     log.info("; SENTENCE: [" + sentence + "]")
     var em: EntityMaintainer = new EntityMaintainer
     //TODO add sentence split
@@ -96,20 +93,16 @@ class KBAnnotatorImplTest extends FunSuite with MustMatchers {
   }
 
 
-
-  test("wordnet test is ok"){
-    val wordnet=new WordnetAnnotatorProvider
-    val result=wordnet.annotate("software")
+  test("wordnet test is ok") {
+    val wordnet = new WordnetAnnotatorProvider
+    val result = wordnet.annotate("software")
     assert(result.contains("package"))
   }
 
   test("line 1 processing is ok") {
     val testString = "User has started using Lotus Notes on his his Vista PC this week and now he can't use Lotus Notes on his XP PC any more. He wants to restore Lotus Notes directory to status of 13/2 so he can use it on his XP PC. Please assist user"
-    val corrector = SpellCorrector();
-
+    val corrector = SpellCorrector()
     val corrected = corrector.correctSentence(testString)
-
-
     loadProperties
     val re = setup
     val res = parse(corrected, re)
@@ -291,7 +284,7 @@ entity-FLAG(Lotus_Notes, T)
 definite-FLAG(Lotus_Notes, T)
 pos(Lotus_Notes, noun)
 noun_number(Lotus_Notes, singular)
-"""
+                       """
 
   test("line 2 processing is ok") {
     val testString = "Mapping of shared drive W:\\ fails, user is using \\\\lalala9061105.lalaburg.com\\NetLogon\\secl.bat and has restarted PC, but the problem persists"
@@ -368,7 +361,7 @@ noun_number(Lotus_Notes, singular)
       |inflection-TAG(and, .j-v)
       |pos(and, conjunction)
       |pos([user], WORD)
-      |""".stripMargin
+      | """.stripMargin
 
   /**
    * AnnotatedSentence is not formed correctly.
@@ -428,7 +421,7 @@ noun_number(Lotus_Notes, singular)
       |pos(Catia_V5, noun)
       |noun_number(Catia_V5, singular)
       |pos(after, prep)
-      |""".stripMargin
+      | """.stripMargin
 
 
   test("line 4 processing is ok") {
@@ -465,7 +458,7 @@ noun_number(Lotus_Notes, singular)
       |definite-FLAG(User, T)
       |pos(User, noun)
       |noun_number(User, singular)
-      |""".stripMargin
+      | """.stripMargin
 
   /**
    * !PLEASE NOTE! makes link parser crash.
@@ -610,7 +603,7 @@ noun_number(Lotus_Notes, singular)
       |definite-FLAG(User, T)
       |pos(User, noun)
       |noun_number(User, singular)
-      |""".stripMargin
+      | """.stripMargin
 
   /**
    * Current test is not running, as there is too many errors: > 5.
@@ -820,7 +813,7 @@ noun_number(Lotus_Notes, singular)
       |pos(be, verb)
       |inflection-TAG(to, .r)
       |pos(to, prep)
-      |""".stripMargin
+      | """.stripMargin
 
   /**
    * Direct instruction is not processed correctly.
@@ -957,7 +950,7 @@ noun_number(Lotus_Notes, singular)
       |gender(it, neuter)
       |definite-FLAG(it, T)
       |pos(it, noun)
-      |""".stripMargin
+      | """.stripMargin
 
   /*
    test for KB Annotator Impl
@@ -969,38 +962,38 @@ noun_number(Lotus_Notes, singular)
 
     //create proper container -> List[Sentence]-> Phrases - > Words
 
-    val sentence  = new AnnotatedSentence(List(
+    val sentence = new AnnotatedSentence(List(
       new AnnotatedPhrase(
         List(
           new AnnotatedWord
-          (null,"get",null,new Probability() ),
+          (null, "get", null, new Probability()),
           new AnnotatedWord
-          (null,"rid",null,new Probability() ),
+          (null, "rid", null, new Probability()),
           new AnnotatedWord
-          (null,"off",null,new Probability() )
-        ),null
+          (null, "off", null, new Probability())
+        ), null
       ),
-    //
+      //
       new AnnotatedPhrase(
         List(
           new AnnotatedWord
-          (null,"please",null,new Probability() )
+          (null, "please", null, new Probability())
 
-        ),null
+        ), null
       )
-    ),new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.sentenceMark()+"1",URIHelper.version()))
+    ), new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.sentenceMark() + "1", URIHelper.version()))
 
 
-    val inputCtx = ContextHelper.createContext( Map(
-    new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"1",URIHelper.version()) ->
-     Narrative.apply[AnnotatedSentence](List(sentence), new KnowledgeURI(URIHelper.annotatorNamespace(),URIHelper.splitterMark()+"1",URIHelper.version()),new Probability(1,1))
-    ),null,null
+    val inputCtx = ContextHelper.createContext(Map(
+      new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.splitterMark() + "1", URIHelper.version()) ->
+        Narrative.apply[AnnotatedSentence](List(sentence), new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.splitterMark() + "1", URIHelper.version()), new Probability(1, 1))
+    ), null, null
     )
 
-    val output=annotator.apply(inputCtx)
+    val output = annotator.apply(inputCtx)
 
     //check if please has annotation
-    expect(true)(output.lastResult.get.asInstanceOf[Narrative[AnnotatedSentence]]._resources.head._phrases.count(p=> p.phrase=="please" && p.concepts.length>0)>0)
+    expect(true)(output.lastResult.get.asInstanceOf[Narrative[AnnotatedSentence]]._resources.head._phrases.count(p => p.phrase == "please" && p.concepts.length > 0) > 0)
 
   }
 

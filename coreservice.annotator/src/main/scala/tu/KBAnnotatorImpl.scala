@@ -96,8 +96,6 @@ class KBAnnotatorImpl extends Way2Think {
       })
     })
 
-
-
     var ctxOutput = ContextHelper(sentences.map(b => b._2).toList, sentences.head._2, "AnnotationResult")
 
     ctxOutput
