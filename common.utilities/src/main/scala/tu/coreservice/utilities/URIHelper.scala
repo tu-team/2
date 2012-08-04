@@ -57,7 +57,8 @@ object URIHelper {
    * @return
    */
   def splitterMark():String={
-    return "splitted"
+    // return "splitted"
+    "tu.coreservice.splitter.PreliminarySplitter"
   }
 
   def sentenceMark():String={

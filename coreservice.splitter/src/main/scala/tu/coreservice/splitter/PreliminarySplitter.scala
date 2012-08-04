@@ -175,7 +175,8 @@ class PreliminarySplitter extends Way2Think {
         -> new KnowledgeString(sentence, sentenceURI))
 
       //also add sentences to sentence
-      val annotatedSentence = new AnnotatedSentence(phrases, new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3"))
+      val annotatedSentence = AnnotatedSentence(sentence, phrases,
+        new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3"))
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
       annotatedSentences ::= annotatedSentence

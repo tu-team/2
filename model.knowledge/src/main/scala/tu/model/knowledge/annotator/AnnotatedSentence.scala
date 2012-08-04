@@ -49,5 +49,16 @@ object AnnotatedSentence {
   def apply(text: String, phrases: List[AnnotatedPhrase]): AnnotatedSentence = {
     new AnnotatedSentence(phrases, KnowledgeURI("AnnotatedSentence"), new Probability(), text)
   }
+
+  /**
+   * Creates AnnotatedSentence based on specified text and AnnotatedPhrase
+   * @param text of AnnotatedSentence
+   * @param phrases list of AnnotatedPhrase
+   * @param uri KnowledgeURI of sentence
+   * @return AnnotatedSentence
+   */
+  def apply(text: String, phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedSentence = {
+    new AnnotatedSentence(phrases, uri, new Probability(), text)
+  }
 }
 

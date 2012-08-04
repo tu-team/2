@@ -111,6 +111,11 @@
             <artifactId>coreservice.annotator</artifactId>
             <version>${tu.version}</version>
         </dependency>
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>coreservice.linkparser</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

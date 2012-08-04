@@ -31,7 +31,7 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request) {
 
     log info "apply(" + request + ": Request))"
-    var globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
+    globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
 
     val goalManager = new GoalManager
 

@@ -39,7 +39,6 @@ class LinkParser extends Way2Think {
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {
-
     val narrative = getLastResult(inputContext)
     val sentences: List[AnnotatedSentence] = narrative.sentences
     val updatedSentences = processSentences(sentences, inputContext)

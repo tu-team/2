@@ -56,7 +56,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   }
 
   override def toString(): String = {
-    this.getClass.getName + ":" + uri.toString + "" + "[" + frames.toString() + "] @" + probability.toString
+    this.getClass.getName + ":" + uri.toString + "" + "[" + frames.toString() + "][" + lastResult + "] @" + probability.toString
   }
 }
 
