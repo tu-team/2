@@ -182,7 +182,7 @@ class PreliminarySplitter extends Way2Think {
     }
     val annotatedNarrative = AnnotatedNarrative(annotatedSentences, KnowledgeURI(this.getClass.getName + " result"))
     outputContext.lastResult = Some(annotatedNarrative)
-    log info "apply():" + outputContext
+    log info "apply():" + outputContext.toString
     outputContext
   }
 

@@ -26,12 +26,13 @@ class ThinkingLifeCycleMinimal
 
   val log = LoggerFactory.getLogger(this.getClass)
   val selector = new Selector
+  var globalContext = ContextHelper(List[Resource](), "globalContext")
 
   def apply(request: Request) {
 
     log info "apply(" + request + ": Request))"
-
     var globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
+
     val goalManager = new GoalManager
 
     // get selector resources for request this is first goal = Goal("ProcessIncident")
@@ -47,10 +48,8 @@ class ThinkingLifeCycleMinimal
         case Some(goal: Goal) => {
           log info "Goal:" + goal
           val resources: List[Resource] = selector.apply(goal)
-          val contexts = processResources(resources, globalContext)
-          if (contexts.size > 0) {
-            globalContext = ContextHelper.mergeLast(contexts)
-          }
+          val contexts = processResources(resources)
+          log info contexts.toString()
         }
         case None => //End
       }
@@ -59,18 +58,23 @@ class ThinkingLifeCycleMinimal
     log info "apply()"
   }
 
-  def processSelectorRequest(request: SelectorRequest, globalContext: Context): List[Context] = {
+  def processSelectorRequest(request: SelectorRequest): List[Context] = {
     val resources: List[Resource] = selector.apply(request)
-    val contexts = processResources(resources, globalContext)
+    val contexts = processResources(resources)
     contexts
   }
 
-  def processResources(resources: List[Resource], globalContext: Context): List[Context] = {
+  def processResources(resources: List[Resource]): List[Context] = {
     val contexts: List[List[Context]] = for (r <- resources) yield {
-      val resContext = translate(r, globalContext)
+      val resContext = translate(r, this.globalContext)
+      log info "resContext " + resContext
+      if (resContext != null) {
+        this.globalContext = ContextHelper.mergeLast(List[Context](resContext))
+        log info "globalContext " + this.globalContext.toString
+      }
       resContext.lastResult match {
         case sR: SelectorRequest => {
-          this.processSelectorRequest(sR, globalContext)
+          this.processSelectorRequest(sR)
         }
         case _ => List[Context]()
       }

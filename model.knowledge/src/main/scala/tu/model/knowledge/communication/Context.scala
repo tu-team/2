@@ -6,7 +6,8 @@ import selector.SelectorRequest
 
 /**
  * Stores contexts parameters.
- * @author max talanov, adel chepkunov
+ * @author max talanov
+ * @author adel chepkunov
  *         date 2012-05-28
  *         time: 11:27 PM
  */
@@ -40,7 +41,6 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
         // Do nothing
       }
     }
-
     this
   }
 
@@ -53,6 +53,10 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def classificationResultsAdd(w2t: SelectorRequest) {
     classificationResults = w2t :: classificationResults
+  }
+
+  override def toString(): String = {
+    this.getClass.getName + ":" + uri.toString + "" + "[" + frames.toString() + "] @" + probability.toString
   }
 }
 

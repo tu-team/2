@@ -32,6 +32,10 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
   def start() = false
 
   def stop() = false
+
+  override def toString(): String = {
+    this.getClass.getName + ":" + _inputContext.toString()
+  }
 }
 
 object Cry4HelpWay2Think {
