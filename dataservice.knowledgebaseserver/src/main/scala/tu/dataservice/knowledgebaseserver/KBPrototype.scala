@@ -8,6 +8,7 @@ import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.{Resource, KnowledgeURI}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.domain.Concept
+import tu.coreservice.utilities
 
 /**
  * KBSever stub only for prototype purposes.
@@ -93,7 +94,11 @@ object KBPrototype {
 
   def annotations = Map[String, AnnotatedPhrase](
     "Please" ->
-      AnnotatedPhrase.apply("Please", Concept.apply("formOfPoliteness") )
+      AnnotatedPhrase.apply("Please", Concept.apply("formOfPoliteness")),
+    TestDataGenerator.fireFoxAnnotatedPhrase.text ->
+      TestDataGenerator.fireFoxAnnotatedPhrase,
+    TestDataGenerator.installAnnotatedPhrase.text ->
+      TestDataGenerator.installAnnotatedPhrase
   )
 
   /***

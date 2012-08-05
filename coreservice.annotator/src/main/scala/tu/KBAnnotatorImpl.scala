@@ -1,6 +1,5 @@
 package tu.coreservice.annotator
 
-
 import org.slf4j.LoggerFactory
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
@@ -26,8 +25,6 @@ class KBAnnotatorImpl extends Way2Think {
    */
   def apply(inputContext: Context): Context = {
     //we have output context from splitter
-
-    //
     //splitter return annotated sentences array
 
     val sentences = inputContext.frames.filter(p => p._1.name.contains(URIHelper.splitterMark()))
@@ -35,6 +32,7 @@ class KBAnnotatorImpl extends Way2Think {
     var wordsDetected = 0
     //trying to annotate sentences
     val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
+
     def checkLocalKB(phrase: String): Option[AnnotatedPhrase] = {
       val localAnnotated = localAnnotator.apply(phrase)
       localAnnotated
@@ -68,7 +66,6 @@ class KBAnnotatorImpl extends Way2Think {
         })
       })
     })
-
     val ctxOutput = ContextHelper(sentences.map(b => b._2).toList, sentences.head._2, "AnnotationResult")
     ctxOutput
   }
