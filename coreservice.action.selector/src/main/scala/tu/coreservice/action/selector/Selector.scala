@@ -42,7 +42,7 @@ class Selector {
 
   def apply(request: SelectorRequest): List[Resource] = {
     val resourcesOption: List[Option[Resource]] = request.resourceURIList.map {
-      uri: KnowledgeURI => Some(Concept("test"))//TODO: KBPrototype.stringResourcesMap.get(uri.name)
+      uri: KnowledgeURI => KBPrototype.stringResourcesMap.get(uri.name)
     }
     val filteredResources: List[Option[Resource]] = resourcesOption.filter{
       case Some(_) => true

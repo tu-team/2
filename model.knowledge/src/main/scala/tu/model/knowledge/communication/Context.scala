@@ -161,7 +161,7 @@ object ContextHelper {
       val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
       res
     } else {
-      ContextHelper.apply(List[Resource](), contexts.head.uri.name)
+      ContextHelper.apply(List[Resource](), "AnonymousContext")
     }
   }
 
@@ -170,8 +170,12 @@ object ContextHelper {
   }
 
   def mergeLast(contexts: List[Context]): Context = {
-    val res = merge(contexts)
-    res.lastResult = contexts.last.lastResult
-    res.domainModel = contexts.last.domainModel
+    if (contexts.size > 0) {
+      val res = merge(contexts)
+      res.lastResult = contexts.last.lastResult
+      res.domainModel = contexts.last.domainModel
+    } else {
+      ContextHelper.apply(List[Resource](), "AnonymousContext")
+    }
   }
 }

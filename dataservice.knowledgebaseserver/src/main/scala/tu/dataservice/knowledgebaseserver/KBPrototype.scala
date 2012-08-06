@@ -36,10 +36,10 @@ object KBPrototype {
           ), "tu.model.knowledge.way2think.JoinWay2ThinkModel")
         ),
       Goal("FormalizeDirectInstruction") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.Simulation")),
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think")),
       Goal("FormalizeProblemDescription") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.Simulation"),
-          Way2ThinkModel("tu.coreservice.action.way2think.reformulation.Reformulation")),
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think"),
+          Way2ThinkModel("tu.coreservice.action.way2think.reformulation.ReformulationWay2Think")),
       Goal("GetMostProbableAction") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableAction")
         ),
