@@ -16,7 +16,7 @@ class DirectInstructionAnalyser {
 
   /**
    * Detects direct instruction and return SelectorRequest with proper Probability.
-   * @param currentSituation AnnotatedNarrative to analyse.
+   * @param currentSituation AnnotatedNarrative to analyse.                                                                                                                                  \
    * @return SelectorRequest with calculated probability.
    */
   def apply(currentSituation: AnnotatedNarrative): SelectorRequest = {

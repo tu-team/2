@@ -34,7 +34,7 @@ class DirectInstructionAnalyserCritic (_exclude: List[CriticLink], _include: Lis
    */
   def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): SelectorRequest = {
     val dIA = new DirectInstructionAnalyser()
-    val selectorRequest: SelectorRequest = dIA.apply(currentSituation)
+    val selectorRequest: SelectorRequest = dIA(currentSituation)
     selectorRequest
   }
 }

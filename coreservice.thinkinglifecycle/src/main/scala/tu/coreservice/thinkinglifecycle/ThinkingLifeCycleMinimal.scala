@@ -49,6 +49,8 @@ class ThinkingLifeCycleMinimal
           log info "Goal:" + goal
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
+          val mergedContexts = ContextHelper.mergeLast(contexts)
+          ContextHelper.merge(globalContext, mergedContexts)
           log info contexts.toString()
         }
         case None => //End
@@ -76,7 +78,7 @@ class ThinkingLifeCycleMinimal
         case sR: SelectorRequest => {
           this.processSelectorRequest(sR)
         }
-        case _ => List[Context]()
+        case _ => List[Context](resContext)
       }
     }
     log info "contexts " + contexts.flatten.toString()

@@ -22,10 +22,6 @@ import relex.tree.{PhraseTree, PhraseMarkup}
 import relex.{Sentence, Document, ParseStats, Version}
 import org.slf4j.LoggerFactory
 import relex.feature.FeatureNode
-import java.util
-import org.specs.specification.Context
-import tu.model.knowledge.communication.ContextHelper
-import tu.model.knowledge.Resource
 import tu.model.knowledge.annotator.AnnotatedSentence
 
 /**
@@ -34,7 +30,6 @@ import tu.model.knowledge.annotator.AnnotatedSentence
  *         date 2012-07-28
  *         time: 5:21 PM
  */
-
 
 
 class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]) {
@@ -77,7 +72,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
   /**Statistics */
   private var stats: ParseStats = new ParseStats()
   var _starttime: Long = System.currentTimeMillis
-  private var sumtime: TreeMap[String, Long] = new TreeMap[String,Long]()
+  private var sumtime: TreeMap[String, Long] = new TreeMap[String, Long]()
   private var cnttime: TreeMap[String, Long] = new TreeMap[String, Long]()
 
   def startime = _starttime

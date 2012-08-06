@@ -22,7 +22,7 @@ object JoinProcessor {
     val actionActors: List[ActionActor] = for (a <- actions) yield {
       val aA: ActionActor = new ActionActor
       aA.start()
-      aA ! Start(a, ContextHelper(List[Resource](), "name"))
+      aA ! Start(a, context)
       aA
     }
     // join
