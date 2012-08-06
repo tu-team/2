@@ -1,7 +1,7 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.domain.Concept
+import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 
 
 /**
@@ -29,6 +29,12 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
       s: AnnotatedSentence => s.concepts
     }.flatten
     concepts
+  }
+
+  def conceptNetwork: ConceptNetwork = {
+    val conceptNetworkConcepts = concepts
+    val res = ConceptNetwork(conceptNetworkConcepts, uri.name + "ConceptNetwork")
+    res
   }
 
 }

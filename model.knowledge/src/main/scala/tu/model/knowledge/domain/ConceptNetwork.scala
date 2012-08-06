@@ -65,6 +65,16 @@ object ConceptNetwork {
     new ConceptNetwork(nodes, links, uri)
   }
 
+  def apply(nodes: List[Concept], name: String) = {
+    val uri = KnowledgeURI(name)
+    val links: List[ConceptLink] = nodes.map{
+      node: Concept => {
+        node.links
+      }
+    }.flatten
+    new ConceptNetwork(nodes, links, uri)
+  }
+
   /**
    * Returns nodes that has generalisations with specified name.
    * @param nodes List[Concept] to filter.

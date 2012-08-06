@@ -6,6 +6,7 @@ import tu.coreservice.action.Action
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
+import tu.model.knowledge.annotator.AnnotatedNarrative
 
 
 /**
@@ -48,10 +49,10 @@ abstract class Critic(_excluded: List[CriticLink], _included: List[CriticLink], 
     // get lastResult ConceptNetwork from inputContext
     try {
       inputContext.lastResult match {
-        case Some(cN: ConceptNetwork) => {
+        case Some(narrative: AnnotatedNarrative) => {
           inputContext.domainModel match {
             case Some(domainModel: ConceptNetwork) => {
-              val selectorRequest = this.apply(cN, domainModel)
+              val selectorRequest = this.apply(narrative.conceptNetwork, domainModel)
               ContextHelper(List[Resource](), selectorRequest, this.getClass.getName + " result")
             }
             case None => {
