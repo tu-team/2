@@ -23,23 +23,31 @@ class SimulationWay2Think extends Way2Think {
   def apply(inputContext: Context) = {
 
     try {
-      val lastResult: AnnotatedNarrative = inputContext.lastResult.asInstanceOf[AnnotatedNarrative]
-      inputContext.domainModel match {
-        case Some(domainModel: ConceptNetwork) => {
-          val conceptNetworkOption = this.apply(lastResult, domainModel)
-          conceptNetworkOption match {
-            case Some(cn: ConceptNetwork) => {
-              ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+      inputContext.lastResult match {
+        case Some(narrative: AnnotatedNarrative) => {
+          inputContext.domainModel match {
+            case Some(domainModel: ConceptNetwork) => {
+              val conceptNetworkOption = this.apply(narrative, domainModel)
+              conceptNetworkOption match {
+                case Some(cn: ConceptNetwork) => {
+                  ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+                }
+                case None => {
+                  val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
+                  ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+                }
+              }
             }
             case None => {
-              val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
+              val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
+              // throw new UnexpectedException("$No_domain_model_specified")
               ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
             }
           }
         }
         case None => {
-          val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
-          // throw new UnexpectedException("$No_domain_model_specified")
+          val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_None")
+          // throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
           ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
         }
       }
