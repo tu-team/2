@@ -51,11 +51,16 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
     this
   }
 
+  def domainModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
+    this._domainModel = aDomainModel
+    this
+  }
+
   def classificationResultsAdd(w2t: SelectorRequest) {
     classificationResults = w2t :: classificationResults
   }
 
-  override def toString(): String = {
+  override def toString: String = {
     this.getClass.getName + ":" + uri.toString + "" + "[" + frames.toString() + "][" + lastResult + "] @" + probability.toString
   }
 }
@@ -163,5 +168,6 @@ object ContextHelper {
   def mergeLast(contexts: List[Context]): Context = {
     val res = merge(contexts)
     res.lastResult = contexts.last.lastResult
+    res.domainModel = contexts.last.domainModel
   }
 }

@@ -12,6 +12,7 @@ import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
+import tu.coreservice.utilities.TestDataGenerator
 
 
 /**
@@ -32,6 +33,7 @@ class ThinkingLifeCycleMinimal
 
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
+    globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
 
     val goalManager = new GoalManager
 
@@ -50,7 +52,11 @@ class ThinkingLifeCycleMinimal
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
           val mergedContexts = ContextHelper.mergeLast(contexts)
-          ContextHelper.merge(globalContext, mergedContexts)
+          val lastResult = globalContext.lastResult
+          val domainModel = globalContext.domainModel
+          globalContext = ContextHelper.merge(globalContext, mergedContexts)
+          globalContext.lastResult = lastResult
+          globalContext.domainModel = domainModel
           log info contexts.toString()
         }
         case None => //End
@@ -71,7 +77,9 @@ class ThinkingLifeCycleMinimal
       val resContext = translate(r, this.globalContext)
       log info "resContext " + resContext
       if (resContext != null) {
-        this.globalContext = ContextHelper.mergeLast(List[Context](resContext))
+        val domainModel = globalContext.domainModel
+        this.globalContext = ContextHelper.mergeLast(List[Context](globalContext, resContext))
+        globalContext.domainModel = domainModel
         log info "globalContext " + this.globalContext.toString
       }
       resContext.lastResult match {
