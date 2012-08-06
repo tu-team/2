@@ -157,8 +157,12 @@ object ContextHelper {
    * @return merged Context
    */
   def merge(contexts: List[Context]): Context = {
-    val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
-    res
+    if (contexts.size > 0) {
+      val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
+      res
+    } else {
+      ContextHelper.apply(List[Resource](), contexts.head.uri.name)
+    }
   }
 
   def mergeList(x: List[SelectorRequest], y: List[SelectorRequest]): List[SelectorRequest] = {

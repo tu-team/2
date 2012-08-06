@@ -73,6 +73,7 @@ class ThinkingLifeCycleMinimal
   }
 
   def processResources(resources: List[Resource]): List[Context] = {
+    log info "Resources: " + resources
     val contexts: List[List[Context]] = for (r <- resources) yield {
       val resContext = translate(r, this.globalContext)
       log info "resContext " + resContext
@@ -82,11 +83,11 @@ class ThinkingLifeCycleMinimal
         globalContext.domainModel = domainModel
         log info "globalContext " + this.globalContext.toString
       }
+      log info "resContext " + resContext
       resContext.lastResult match {
         case Some(sR: SelectorRequest) => {
           this.processSelectorRequest(sR)
         }
-        case None => List[Context]()
         case _ => List[Context](resContext)
       }
     }
