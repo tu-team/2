@@ -21,8 +21,8 @@ class SimulationWay2Think extends Way2Think {
    * @return outputContext
    */
   def apply(inputContext: Context) = {
-
     try {
+      //TODO find LinkParser result to process
       inputContext.lastResult match {
         case Some(narrative: AnnotatedNarrative) => {
           inputContext.domainModel match {
