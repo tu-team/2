@@ -83,9 +83,10 @@ class ThinkingLifeCycleMinimal
         log info "globalContext " + this.globalContext.toString
       }
       resContext.lastResult match {
-        case sR: SelectorRequest => {
+        case Some(sR: SelectorRequest) => {
           this.processSelectorRequest(sR)
         }
+        case None => List[Context]()
         case _ => List[Context](resContext)
       }
     }
