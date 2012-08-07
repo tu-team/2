@@ -69,6 +69,10 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     }
   }
 
+  override  def toString = {
+    this.getClass.getName + " [" + nodes.toString + "][" + links + "]@" + uri.toString
+  }
+
 }
 
 object ConceptNetwork {

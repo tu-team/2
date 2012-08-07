@@ -82,7 +82,7 @@ trait SimulationReformulationAbstract {
     val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map(
       (concept: Concept) => {
         val currentInstance = Concept.createInstanceConcept(concept)
-        val notProcessedLinks: List[ConceptLink] = concept.links.filter {
+        val incidentLinksNotProcessed: List[ConceptLink] = concept.links.filter {
           link: ConceptLink => {
             if (simulationModel.getLinkByName(link.uri.name).size > 0) {
               if (link.source == concept) {
@@ -98,7 +98,29 @@ trait SimulationReformulationAbstract {
           }
         }
 
-        val linkInstances = notProcessedLinks.map {
+        val modelConcepts = simulationModel.getNodeByName(concept.uri.name)
+        val modelLinksNotProcessed: List[ConceptLink] = if (modelConcepts.size > 0) {
+          val mLinks: List[ConceptLink] = modelConcepts.head.links.filter(
+            (link: ConceptLink) => {
+              !incidentLinksNotProcessed.contains(link)
+            }
+          )
+          val gLinks: List[ConceptLink] = modelConcepts.head.generalisations.frames.values.map{
+            g: Concept => {
+              val filteredLiks = g.links.filter {
+                l: ConceptLink => {
+                  !incidentLinksNotProcessed.contains(l)
+                }
+              }
+              filteredLiks
+            }
+          }.toList.flatten
+          mLinks ::: gLinks
+        } else {
+          List[ConceptLink]()
+        }
+        val notProcessedLinks = incidentLinksNotProcessed ::: modelLinksNotProcessed
+        val linkInstances = incidentLinksNotProcessed.map {
           link: ConceptLink => {
             if (link.source == concept) {
               val currentDestination = Concept.createInstanceConcept(link.destination)

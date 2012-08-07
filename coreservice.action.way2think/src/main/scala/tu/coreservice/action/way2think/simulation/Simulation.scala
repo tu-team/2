@@ -8,6 +8,8 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import java.rmi.UnexpectedException
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
+import org.slf4j.LoggerFactory
+
 
 /**
  * Simple direct concept to concept Simulation Way2Think implementation.
@@ -17,6 +19,7 @@ import tu.coreservice.action.way2think.SimulationReformulationAbstract
  */
 
 class Simulation extends SimulationReformulationAbstract {
+  val log = LoggerFactory.getLogger(this.getClass)
   val name: String = "Simulation"
 
   /**
@@ -143,6 +146,8 @@ class Simulation extends SimulationReformulationAbstract {
         }
       }
     }
-    instantiateConcepts(concepts, name, simulationModel)
+    val res = instantiateConcepts(concepts, name, simulationModel)
+    log info "processMatches()=" + res.toString
+    res
   }
 }
