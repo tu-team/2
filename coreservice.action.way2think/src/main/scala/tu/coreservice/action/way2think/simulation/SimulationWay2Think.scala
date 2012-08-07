@@ -24,9 +24,30 @@ class SimulationWay2Think extends Way2Think {
     try {
       inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {
-          inputContext.domainModel match {
-            case Some(domainModel: ConceptNetwork) => {
-              val conceptNetworkOption = this.apply(narrative, domainModel)
+
+          inputContext.simulationModel match {
+            case Some(model: ConceptNetwork) => {
+              val conceptNetworkOption = this.apply(narrative, model)
+              conceptNetworkOption match {
+                case Some(cn: ConceptNetwork) => {
+                  ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+                }
+                case None => {
+                  val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
+                  ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+                }
+              }
+            }
+            case None => {
+              val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
+              // throw new UnexpectedException("$No_domain_model_specified")
+              ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+            }
+          }
+          // simulation model
+          inputContext.simulationModel match {
+            case Some(model: ConceptNetwork) => {
+              val conceptNetworkOption = this.apply(narrative, model)
               conceptNetworkOption match {
                 case Some(cn: ConceptNetwork) => {
                   ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
