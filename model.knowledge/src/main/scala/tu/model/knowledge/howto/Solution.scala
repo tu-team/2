@@ -2,6 +2,7 @@ package tu.model.knowledge.howto
 
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.model.knowledge.narrative.{Rule, RulesNarrative}
+import tu.model.knowledge.domain.ConceptNetwork
 
 /**
  * Stores Solution that is container for List of HowTo-s.
@@ -16,5 +17,14 @@ class Solution(_rules: List[Rule[HowTo]], _uri: KnowledgeURI, _probability: Prob
   def this(_rules: List[Rule[HowTo]], _uri: KnowledgeURI) {
     this(_rules: List[Rule[HowTo]], _uri: KnowledgeURI, new Probability)
   }
+
+}
+
+object Solution {
+  def apply(rules: List[Rule[HowTo]]): Solution = {
+    new Solution(rules,null,null)
+  }
+
+
 
 }

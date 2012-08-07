@@ -2,6 +2,7 @@ package tu.coreservice.action.way2think
 
 import tu.model.knowledge.{SolvedIssue, Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
+import tu.dataservice.knowledgebaseserver.KBPrototype
 
 
 /**
@@ -16,13 +17,13 @@ import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 //def this() = { this(new KnowledgeURI("defaultNamespace", "Solutions", "rev"), new Probability() ) }
 //}
 
-object Solutions{
-  var solutions:List[SolvedIssue] = Nil
+class Solutions{
+  var solutions:List[SolvedIssue] = KBPrototype.solutions()
 
   def add(item:SolvedIssue) =
   {
     solutions = item::solutions
-    Solutions
+
   }
 
   def search(issue:ConceptNetwork, badSolutions: List[ConceptNetwork]):Option[SolvedIssue] =

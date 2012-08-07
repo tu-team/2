@@ -5,10 +5,15 @@ import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
-import tu.model.knowledge.{Resource, KnowledgeURI}
+import tu.model.knowledge._
+import narrative.Rule
+import primitive.KnowledgeBoolean
 import tu.model.knowledge.annotator.AnnotatedPhrase
-import tu.model.knowledge.domain.Concept
+import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 import tu.coreservice.utilities
+import tu.model.knowledge.howto.Solution
+import tu.model.knowledge.primitive.KnowledgeBoolean
+import tu.model.knowledge.narrative.Rule
 
 /**
  * KBSever stub only for prototype purposes.
@@ -100,6 +105,46 @@ object KBPrototype {
     TestDataGenerator.installAnnotatedPhrase.text ->
       TestDataGenerator.installAnnotatedPhrase
   )
+
+  val uri = new KnowledgeURI("namespace", "name", "revision")
+  val probability = new Probability
+
+  def solutions():List[SolvedIssue]={
+    val uri = new KnowledgeURI("namespace", "name", "revision")
+
+    val ex: Expression = new Expression(uri) {
+      def apply = new KnowledgeBoolean(true, uri)
+    }
+
+    val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
+
+    val s = new Solution(List(r), uri)
+    List( new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability),getTestSolvedIssue2,getTestSolvedIssue3)
+  }
+
+  def getTestSolvedIssue2(): SolvedIssue = {
+
+    val ex: Expression = new Expression(uri) {
+      def apply = new KnowledgeBoolean(true, uri)
+    }
+
+    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
+
+    val s = new Solution(List(r), uri)
+    new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, uri, probability)
+  }
+
+  def getTestSolvedIssue3(): SolvedIssue = {
+
+    val ex: Expression = new Expression(uri) {
+      def apply = new KnowledgeBoolean(true, uri)
+    }
+
+    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
+
+    val s = new Solution(List(r), uri)
+    new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, uri, probability)
+  }
 
   /***
    * Gets annotations according to specified word

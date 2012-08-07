@@ -47,13 +47,13 @@ object HowTo {
    * @return HowTo instance
    */
   def createInstance(parent: HowTo, parameters: List[TypedFrame[Resource]]): HowTo = {
-    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID="+Random.nextInt(Constant.INSTANCE_ID_LENGTH)
     val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
     it
   }
 
   def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
-    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name +  "&ID="+Random.nextInt(Constant.INSTANCE_ID_LENGTH)
 
     val frames: List[TypedFrame[Resource]] = parameters.map(c => {
       TypedFrame(c)

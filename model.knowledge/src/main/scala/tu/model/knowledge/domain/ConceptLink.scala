@@ -72,7 +72,7 @@ object ConceptLink {
 
   def createInstanceConceptLink(parent: ConceptLink, source: Concept, destination: Concept, probability: Probability = new Probability()): ConceptLink = {
     val it = new ConceptLink(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("sentences"),
-      source, destination, KnowledgeURI(parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH) + "ConceptLink"), probability)
+      source, destination, KnowledgeURI(parent.uri.name +"&ID=" +Random.nextInt(Constant.INSTANCE_ID_LENGTH) + "ConceptLink"), probability)
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }

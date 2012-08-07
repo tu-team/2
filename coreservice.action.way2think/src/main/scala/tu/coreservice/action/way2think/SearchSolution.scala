@@ -24,12 +24,14 @@ class SearchSolution extends Way2Think {
 }
 
 object SearchSolution {
-
+  val searcher=new Solutions
   def apply(inputContext: Context): Context = {
+
+
 
     val res = inputContext.lastResult match {
       case Some(cn : ConceptNetwork) =>
-          Solutions.search(cn, Nil)
+        searcher.search(cn, Nil)
       case _ => None
     }
 
@@ -41,6 +43,6 @@ object SearchSolution {
 
   //TODO: using second argument for skip previous bad choices
   def search(target: ConceptNetwork): Option[SolvedIssue] = {
-    Solutions.search(target, Nil)
+    searcher.search(target, Nil)
   }
 }

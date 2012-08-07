@@ -133,7 +133,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept): Concept = {
-    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" +Random.nextInt(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
@@ -144,7 +144,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name + Random.nextString(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name  +"&ID=" +Random.nextInt(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),

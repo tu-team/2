@@ -30,10 +30,11 @@ class SolutionsTest extends FunSuite{
   val si2 = getTestSolvedIssue2
   val si3 = getTestSolvedIssue3
 
-  Solutions.add(si1)
-  Solutions.add(si2)
-  Solutions.add(si3)
+  //Solutions.add(si1)
+  //Solutions.add(si2)
+  //Solutions.add(si3)
 
+  val searcher = new Solutions
 
   test("Solutions can search one-node network") {
 
@@ -42,8 +43,8 @@ class SolutionsTest extends FunSuite{
     //may be it is IE8
     val net2 = new ConceptNetwork(List[Concept](getTestSolvedIssue2.issue.rootNodes(1)), Nil, KnowledgeURI("pleaseInstallFFTest1"))
 
-    val ssi1 = Solutions.search ( net1, Nil)
-    val ssi2 = Solutions.search ( net2, Nil)
+    val ssi1 = searcher.search ( net1, Nil)
+    val ssi2 = searcher.search ( net2, Nil)
 
     ssi1 match {
       case Some(si: SolvedIssue) => {
@@ -71,8 +72,8 @@ class SolutionsTest extends FunSuite{
     val net1 = getTestSolvedIssue1.issue
     val net3 = getTestSolvedIssue3.issue
 
-    val ssi1 = Solutions.search ( net1, Nil)
-    val ssi3 = Solutions.search ( net3, Nil)
+    val ssi1 = searcher.search ( net1, Nil)
+    val ssi3 = searcher.search ( net3, Nil)
 
     ssi1 match {
       case Some(si: SolvedIssue) => {

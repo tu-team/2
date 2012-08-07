@@ -17,6 +17,7 @@ import howto.Solution
 import narrative.Rule
 import primitive.{KnowledgeBoolean, KnowledgeString}
 import tu.coreservice.utilities.TestDataGenerator
+import tu.dataservice.knowledgebaseserver.KBPrototype
 
 
 /**
@@ -32,15 +33,15 @@ class SearchSolutionTest  extends FunSuite
   // all test cases should be placed in tests of Solutions object
   // in this unit we only testing input and output parameters we
 
-  val si1 = getTestSolvedIssue1
+  val si1 =KBPrototype.solutions().head
 
-  Solutions.add(si1)
+
 
 
 
   test("SearchSolution should work") {
 
-    val net1 = getTestSolvedIssue1.issue
+    val net1 =KBPrototype.solutions().head.issue
 
     val inputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
     inputContext.lastResult = Some(net1)
@@ -64,7 +65,7 @@ class SearchSolutionTest  extends FunSuite
 
 
 
-  def getTestSolvedIssue1(): SolvedIssue = {
+  /*def getTestSolvedIssue1(): SolvedIssue = {
     val uri = new KnowledgeURI("namespace", "name", "revision")
 
     val ex: Expression = new Expression(uri) {
@@ -75,6 +76,6 @@ class SearchSolutionTest  extends FunSuite
 
     val s = new Solution(List(r), uri)
     new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability)
-  }
+  } */
 
 }
