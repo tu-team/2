@@ -60,6 +60,17 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
     classificationResults = w2t :: classificationResults
   }
 
+  def findByName(name: String): Option[Resource] = {
+    val filteredFrames: List[KnowledgeURI] = _frames.keys.filter(
+    (uri : KnowledgeURI) => uri.name == name
+    ).toList
+    if (filteredFrames.size > 0) {
+      _frames.get(filteredFrames.head)
+    } else {
+      None
+    }
+  }
+
   override def toString: String = {
     this.getClass.getName + ":" + uri.toString + "" + "[" + frames.toString() + "][" + lastResult + "] @" + probability.toString
   }

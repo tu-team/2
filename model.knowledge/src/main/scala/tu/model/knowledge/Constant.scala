@@ -13,7 +13,7 @@ object Constant {
   val UID_DELIMITER = "#"
   val defaultNamespace = "2/"
   val defaultConceptsNamespace = "concepts/"
-  val defaultRevision =  "0.0"
+  val defaultRevision = "0.0"
   val INSTANCE_ID_LENGTH = 16
 
   val SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME = "DirectInstructionRequest"
@@ -29,4 +29,5 @@ object Constant {
   val DESIRE_NAME = "desireConcept"
   val LAST_RESULT_NAME = "LastResult"
   val CLASSIFICATION_RESULT_NAME = "ClassificationResult"
+  val LINK_PARSER_RESULT_NAME = "LinkedNarrative"
 }

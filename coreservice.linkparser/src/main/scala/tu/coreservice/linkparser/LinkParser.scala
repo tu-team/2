@@ -4,7 +4,7 @@ package tu.coreservice.linkparser
 import collection.JavaConversions._
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.{KnowledgeURI, Resource}
+import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence, AnnotatedNarrative}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.coreservice.action.UnexpectedException
@@ -42,7 +42,7 @@ class LinkParser extends Way2Think {
     val narrative = getLastResult(inputContext)
     val sentences: List[AnnotatedSentence] = narrative.sentences
     val updatedSentences = processSentences(sentences, inputContext)
-    val updatedNarrative = AnnotatedNarrative(updatedSentences, KnowledgeURI("LinkedNarrative"))
+    val updatedNarrative = AnnotatedNarrative(updatedSentences, KnowledgeURI(Constant.LINK_PARSER_RESULT_NAME))
     val outputContext = ContextHelper(List[Resource](), updatedNarrative, this.getClass.getName)
     outputContext
   }

@@ -4,7 +4,7 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.ConceptNetwork
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{Constant, Resource}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 
 /**
@@ -22,8 +22,7 @@ class SimulationWay2Think extends Way2Think {
    */
   def apply(inputContext: Context) = {
     try {
-      //TODO find LinkParser result to process
-      inputContext.lastResult match {
+      inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {
           inputContext.domainModel match {
             case Some(domainModel: ConceptNetwork) => {
