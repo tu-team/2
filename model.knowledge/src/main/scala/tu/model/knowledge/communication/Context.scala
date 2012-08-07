@@ -23,6 +23,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var checkedClassificationResults: List[SelectorRequest] = Nil
   var _domainModel: Option[ConceptNetwork] = None
   var _simulationModel: Option[ConceptNetwork] = None
+  var _reformulationModel: Option[ConceptNetwork] = None
 
   def lastResult = _lastResult
 
@@ -66,6 +67,18 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def simulationModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
     this._simulationModel = aDomainModel
+    this
+  }
+
+  def reformulationModel = _reformulationModel
+
+  def reformulationModel_=(aModel: ConceptNetwork): Context = {
+    this._reformulationModel = Some(aModel)
+    this
+  }
+
+  def reformulationModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
+    this._reformulationModel = aDomainModel
     this
   }
 
@@ -199,6 +212,7 @@ object ContextHelper {
       res.lastResult = contexts.last.lastResult
       res.domainModel = contexts.last.domainModel
       res.simulationModel = contexts.last.simulationModel
+      res.reformulationModel = contexts.last.simulationModel
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }
@@ -210,6 +224,7 @@ object ContextHelper {
       res.lastResult = contexts.last.lastResult
       res.domainModel = contexts.head.domainModel
       res.simulationModel = contexts.head.simulationModel
+      res.reformulationModel = contexts.head.simulationModel
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }

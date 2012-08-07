@@ -77,7 +77,7 @@ trait SimulationReformulationAbstract {
    * @param name String name of ConceptNetwork.
    * @return ConceptNetwork.
    */
-  def instantiateConcepts(concepts: List[Concept], name: String): ConceptNetwork = {
+  def instantiateConcepts(concepts: List[Concept], name: String, simulationModel: ConceptNetwork): ConceptNetwork = {
     var processedConcepts: List[Concept] = List[Concept]()
     val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map(
       (concept: Concept) => {

@@ -23,9 +23,9 @@ class ReformulationWay2Think extends Way2Think {
 
     try {
       val lastResult: ConceptNetwork = inputContext.lastResult.asInstanceOf[ConceptNetwork]
-      inputContext.domainModel match {
-        case Some(domainModel: ConceptNetwork) => {
-          val conceptNetworkOption = this.apply(lastResult, domainModel)
+      inputContext.reformulationModel match {
+        case Some(model: ConceptNetwork) => {
+          val conceptNetworkOption = this.apply(lastResult, model)
           conceptNetworkOption match {
             case Some(cn: ConceptNetwork) => {
               ContextHelper(List[Resource](), cn, this.getClass.getName + " result")

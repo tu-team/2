@@ -35,7 +35,7 @@ class Reformulation extends SimulationReformulationAbstract {
     val combined = known ::: unAmbiguous
 
     if (combined.size > 0) {
-      Some(instantiateConcepts(combined, name))
+      Some(instantiateConcepts(combined, name, model))
     } else {
       None
     }

@@ -80,7 +80,7 @@ class Simulation extends SimulationReformulationAbstract {
     }
 
     if (exactMatch.size > 0) {
-      return Some(this.processMatches(hasMatches, exactMatch, unAmbiguous))
+      return Some(this.processMatches(hasMatches, exactMatch, unAmbiguous, simulationModel))
     }
     None
   }
@@ -122,7 +122,8 @@ class Simulation extends SimulationReformulationAbstract {
 
   private def processMatches(matches: List[AnnotatedPhrase],
                              exactMatches: List[AnnotatedPhrase],
-                             unAmbiguous: Map[AnnotatedPhrase, Concept]): ConceptNetwork = {
+                             unAmbiguous: Map[AnnotatedPhrase, Concept],
+                             simulationModel: ConceptNetwork): ConceptNetwork = {
     // merge exact match and unAmbiguous
     val concepts: List[Concept] = matches.map {
       phrase: AnnotatedPhrase => {
@@ -142,6 +143,6 @@ class Simulation extends SimulationReformulationAbstract {
         }
       }
     }
-    instantiateConcepts(concepts, name)
+    instantiateConcepts(concepts, name, simulationModel)
   }
 }
