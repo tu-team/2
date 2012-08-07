@@ -53,11 +53,7 @@ class ThinkingLifeCycleMinimal
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
           val mergedContexts = ContextHelper.mergeLast(contexts)
-          val lastResult = globalContext.lastResult
-          val domainModel = globalContext.domainModel
-          globalContext = ContextHelper.merge(globalContext, mergedContexts)
-          globalContext.lastResult = lastResult
-          globalContext.domainModel = domainModel
+          this.globalContext = copyGlobalContext(mergedContexts)
           log info contexts.toString()
         }
         case None => //End
@@ -80,8 +76,7 @@ class ThinkingLifeCycleMinimal
       log info "resContext " + resContext
       if (resContext != null) {
         val domainModel = globalContext.domainModel
-        this.globalContext = ContextHelper.mergeLast(List[Context](globalContext, resContext))
-        globalContext.domainModel = domainModel
+        globalContext = copyGlobalContext(resContext)
         log info "globalContext " + this.globalContext.toString
       }
       log info "resContext " + resContext
@@ -129,5 +124,10 @@ class ThinkingLifeCycleMinimal
         throw new UnexpectedException("$Not_alloved_class " + clazz.getName)
       }
     }
+  }
+
+  def copyGlobalContext(resContext: Context): Context = {
+    this.globalContext = ContextHelper.mergeFirstAndLastResult(List(this.globalContext, resContext))
+    this.globalContext
   }
 }

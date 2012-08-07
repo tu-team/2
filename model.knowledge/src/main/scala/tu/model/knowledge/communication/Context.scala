@@ -198,6 +198,18 @@ object ContextHelper {
       val res = merge(contexts)
       res.lastResult = contexts.last.lastResult
       res.domainModel = contexts.last.domainModel
+      res.simulationModel = contexts.last.simulationModel
+    } else {
+      ContextHelper.apply(List[Resource](), "AnonymousContext")
+    }
+  }
+
+  def mergeFirstAndLastResult(contexts: List[Context]): Context = {
+    if (contexts.size > 0) {
+      val res = merge(contexts)
+      res.lastResult = contexts.last.lastResult
+      res.domainModel = contexts.head.domainModel
+      res.simulationModel = contexts.head.simulationModel
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }

@@ -39,7 +39,7 @@ class SimulationWay2Think extends Way2Think {
               }
             }
             case None => {
-              val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
+              val cry4Help = Cry4HelpWay2Think("$No_model_specified")
               // throw new UnexpectedException("$No_domain_model_specified")
               ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
             }
