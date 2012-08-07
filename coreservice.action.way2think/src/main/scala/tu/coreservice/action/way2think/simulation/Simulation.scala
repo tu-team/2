@@ -44,7 +44,7 @@ class Simulation extends SimulationReformulationAbstract {
       sentence: AnnotatedSentence => {
         val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
           phrase: AnnotatedPhrase => {
-            this.filterPhrase(phrase, simulationModel).size == 0
+            this.filterPhrase(phrase, simulationModel).size > 0
           }
         }
         filteredPhrases
@@ -55,7 +55,7 @@ class Simulation extends SimulationReformulationAbstract {
       sentence: AnnotatedSentence => {
         val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
           phrase: AnnotatedPhrase => {
-            this.filterPhrase(phrase, simulationModel).size == 1
+            this.filterPhrase(phrase, simulationModel).size > 1
           }
         }
         filteredPhrases
@@ -66,7 +66,7 @@ class Simulation extends SimulationReformulationAbstract {
       sentence: AnnotatedSentence => {
         val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
           phrase: AnnotatedPhrase => {
-            this.filterPhrase(phrase, simulationModel).size == 1
+            this.filterPhrase(phrase, simulationModel).size < 1
           }
         }
         filteredPhrases

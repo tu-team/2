@@ -23,7 +23,9 @@ trait SimulationReformulationAbstract {
    */
   def filterConceptList(currentConcepts: List[Concept], model: ConceptNetwork): List[Concept] = {
     val modelConcepts: List[Concept] = currentConcepts.filter {
-      c => model.nodes.contains(c)
+      c => {
+        model.getNodeByName(c.uri.name).size > 0
+      }
     }
     modelConcepts
   }

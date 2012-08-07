@@ -67,8 +67,11 @@ object TestDataGenerator {
 
   var concepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept,
     photoShopConcept, browserConcept,
-    firefoxConcept, internetExplorerConcept, networkConcept, internetConcept, sharedResourcesConcept,
-    sharedDiskConcept, accountConcept, actionConcept, versionConcept)
+    firefoxConcept, internetExplorerConcept,
+    networkConcept, internetConcept, sharedResourcesConcept,
+    sharedDiskConcept, accountConcept, actionConcept, versionConcept,
+    formOfPoliteness,
+    actionConcept, installConcept, removeConcept, cleanConcept)
 
   /**
    * links
@@ -106,7 +109,7 @@ object TestDataGenerator {
   val cleanConceptLink = ConceptLink.createSubConceptLink(actionLink, subjectConcept, deviceConcept, "clean")
 
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
-    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink)
+    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink)
 
   /**
    * Domain model concept network
