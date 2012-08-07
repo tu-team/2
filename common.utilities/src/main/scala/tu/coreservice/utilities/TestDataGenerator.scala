@@ -69,8 +69,15 @@ object TestDataGenerator {
     photoShopConcept, browserConcept,
     firefoxConcept, internetExplorerConcept,
     networkConcept, internetConcept, sharedResourcesConcept,
-    sharedDiskConcept, accountConcept, actionConcept, versionConcept,
     formOfPoliteness,
+    sharedDiskConcept, accountConcept, actionConcept, versionConcept,
+    actionConcept, installConcept, removeConcept, cleanConcept)
+
+  var simulationConcepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept,
+    photoShopConcept, browserConcept,
+    firefoxConcept, internetExplorerConcept,
+    networkConcept, internetConcept, sharedResourcesConcept,
+    sharedDiskConcept, accountConcept, actionConcept, versionConcept,
     actionConcept, installConcept, removeConcept, cleanConcept)
 
   /**
@@ -111,10 +118,18 @@ object TestDataGenerator {
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
     actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink)
 
+  var simulationConceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
+    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink)
+
   /**
    * Domain model concept network
    */
   val domainModel = ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel"))
+
+  /**
+   * Simulation model concept network
+   */
+  val simulationModel = ConceptNetwork(simulationConcepts, simulationConceptLinks, KnowledgeURI("simulationModel"))
 
   /**
    * sentences
@@ -213,6 +228,8 @@ object TestDataGenerator {
   def generateProblemDescriptionNarrative = iHaveProblemWithIE8
 
   def generateDomainModelConceptNetwork = domainModel
+
+  def generateSimulationModelConceptNetwork = simulationModel
 
   /**
    * Generates AnnotatedNarrative the result of KBAnnotator.

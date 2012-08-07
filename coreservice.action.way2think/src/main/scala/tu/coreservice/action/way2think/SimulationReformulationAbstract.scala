@@ -79,8 +79,8 @@ trait SimulationReformulationAbstract {
    */
   def instantiateConcepts(concepts: List[Concept], name: String): ConceptNetwork = {
     var processedConcepts: List[Concept] = List[Concept]()
-    val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map {
-      concept: Concept => {
+    val instancesLinks: List[Pair[Concept, List[ConceptLink]]] = concepts.map(
+      (concept: Concept) => {
         val currentInstance = Concept.createInstanceConcept(concept)
         val notProcessedLinks: List[ConceptLink] = concept.links.filter {
           link: ConceptLink => {
@@ -109,7 +109,8 @@ trait SimulationReformulationAbstract {
         processedConcepts = processedConcepts ++ List(concept)
         (currentInstance, linkInstances)
       }
-    }
+    )
+
     val instances: List[Concept] = instancesLinks.map {
       i: Pair[Concept, List[ConceptLink]] => {
         i._1

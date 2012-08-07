@@ -127,7 +127,7 @@ class Simulation extends SimulationReformulationAbstract {
     val concepts: List[Concept] = matches.map {
       phrase: AnnotatedPhrase => {
         if (exactMatches.contains(phrase)) {
-          phrase.concepts(0)
+          phrase.concepts.head
         } else if (unAmbiguous.contains(phrase)) {
           unAmbiguous.get(phrase) match {
             case Some(res: Concept) => {

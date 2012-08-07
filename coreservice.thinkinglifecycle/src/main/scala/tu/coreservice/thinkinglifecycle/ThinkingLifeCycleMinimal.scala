@@ -34,6 +34,7 @@ class ThinkingLifeCycleMinimal
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
+    globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
 
     val goalManager = new GoalManager
 

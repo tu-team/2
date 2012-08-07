@@ -22,6 +22,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var classificationResults: List[SelectorRequest] = Nil
   var checkedClassificationResults: List[SelectorRequest] = Nil
   var _domainModel: Option[ConceptNetwork] = None
+  var _simulationModel: Option[ConceptNetwork] = None
 
   def lastResult = _lastResult
 
@@ -53,6 +54,18 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def domainModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
     this._domainModel = aDomainModel
+    this
+  }
+
+  def simulationModel = _simulationModel
+
+  def simulationModel_=(aModel: ConceptNetwork): Context = {
+    this._simulationModel = Some(aModel)
+    this
+  }
+
+  def simulationModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
+    this._simulationModel = aDomainModel
     this
   }
 
