@@ -67,6 +67,8 @@ object ConceptLink {
   def createSubConceptLink(parent: ConceptLink, source: Concept, destination: Concept, name: String, probability: Probability = new Probability()): ConceptLink = {
     val it = new ConceptLink(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("sentences"), source, destination, KnowledgeURI(name), probability)
     parent.specialisations = parent.specialisations + (it.uri -> it)
+    source.linksAdd(it)
+    destination.linksAdd(it)
     it
   }
 

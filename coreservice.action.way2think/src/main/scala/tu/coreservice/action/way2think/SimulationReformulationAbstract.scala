@@ -105,17 +105,16 @@ trait SimulationReformulationAbstract {
               !incidentLinksNotProcessed.contains(link)
             }
           )
-          val gLinks: List[ConceptLink] = modelConcepts.head.generalisations.frames.values.map{
-            g: Concept => {
-              val filteredLiks = g.links.filter {
-                l: ConceptLink => {
-                  !incidentLinksNotProcessed.contains(l)
-                }
-              }
-              filteredLiks
+          val gLinks: List[ConceptLink] = getGeneralisedLinks(modelConcepts.head, concepts)
+
+          val gFLinks: List[ConceptLink] = if (gLinks.size > 0) {
+            gLinks.filter {
+              g: ConceptLink => !incidentLinksNotProcessed.contains(g)
             }
-          }.toList.flatten
-          mLinks ::: gLinks
+          } else {
+            List[ConceptLink]()
+          }
+          mLinks ::: gFLinks
         } else {
           List[ConceptLink]()
         }
@@ -152,4 +151,31 @@ trait SimulationReformulationAbstract {
     ConceptNetwork(instances, flatLinks, name)
   }
 
+  def getGeneralisedLinks(concept: Concept, incidentConcepts: List[Concept]): List[ConceptLink] = {
+    val gLinks: List[ConceptLink] = concept.generalisations.frames.values.map {
+      c: Concept =>
+        this.getGeneralisedLinks(c, incidentConcepts)
+    }.toList.flatten
+
+    val filteredConceptLinks = concept.links.filter {
+      l: ConceptLink => {
+        if (l.source == concept) {
+          selectWithGeneralisations(l.destination, incidentConcepts).size > 0
+        } else {
+          selectWithGeneralisations(l.source, incidentConcepts).size > 0
+        }
+      }
+    }
+    filteredConceptLinks ::: gLinks
+  }
+
+  def selectWithGeneralisations(concept: Concept, checkList: List[Concept]): List[Concept] = {
+    checkList.filter {
+      c: Concept => {
+        c.getGeneralisationsRec().filter {
+          cG: Concept => cG.uri.name == concept.uri.name
+        }.size > 0 || c.uri.name == concept.uri.name
+      }
+    }
+  }
 }

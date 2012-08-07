@@ -119,7 +119,7 @@ object TestDataGenerator {
     actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink)
 
   var simulationConceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
-    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink)
+    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink)
 
   /**
    * Domain model concept network

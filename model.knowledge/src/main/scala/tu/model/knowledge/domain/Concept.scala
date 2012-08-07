@@ -63,6 +63,11 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
+  def linksAdd(in: ConceptLink): Concept = {
+    _conceptLinks = _conceptLinks ::: List(in)
+    this
+  }
+
   /**
    * Returns true if current Concept has at least one same parent(generalisation) with specified.
    * @param that Concept to compare
@@ -85,6 +90,13 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   override def toString: String = this.uri.name
+
+  def getGeneralisationsRec(): List[Concept] = {
+    val res: List[Concept] = this.generalisations.frames.values.map {
+      g: Concept => g.getGeneralisationsRec
+    }.toList.flatten
+    res
+  }
 }
 
 object Concept {
@@ -133,7 +145,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept): Concept = {
-    val name = parent.uri.name + "&ID=" +Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
@@ -144,7 +156,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name  +"&ID=" +Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
