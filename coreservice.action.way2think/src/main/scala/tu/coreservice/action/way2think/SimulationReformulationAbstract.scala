@@ -84,10 +84,14 @@ trait SimulationReformulationAbstract {
         val currentInstance = Concept.createInstanceConcept(concept)
         val notProcessedLinks: List[ConceptLink] = concept.links.filter {
           link: ConceptLink => {
-            if (link.source == concept) {
-              !processedConcepts.contains(link.destination)
-            } else if (link.destination == concept) {
-              !processedConcepts.contains(link.source)
+            if (simulationModel.getLinkByName(link.uri.name).size > 0) {
+              if (link.source == concept) {
+                !processedConcepts.contains(link.destination)
+              } else if (link.destination == concept) {
+                !processedConcepts.contains(link.source)
+              } else {
+                false
+              }
             } else {
               false
             }

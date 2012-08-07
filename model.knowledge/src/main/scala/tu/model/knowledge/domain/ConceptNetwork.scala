@@ -28,12 +28,25 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
   /**
    * Returns nodes with specified name.
    * @param name String parameter of filter
-   * @return List[Concepts] that has uri-s with specified name.
+   * @return List[Concept] that has uri-s with specified name.
    */
   def getNodeByName(name: String): List[Concept] = {
     _nodes.filter {
       concept: Concept => {
         concept.uri.name == name
+      }
+    }
+  }
+
+  /**
+   * Returns links with specified name.
+   * @param name String parameter of filter
+   * @return List[ConceptLink] that has uri-s with specified name.
+   */
+  def getLinkByName(name: String): List[ConceptLink] = {
+    _links.filter {
+      link: ConceptLink => {
+        link.uri.name == name
       }
     }
   }
