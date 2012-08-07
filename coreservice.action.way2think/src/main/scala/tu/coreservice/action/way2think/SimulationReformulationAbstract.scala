@@ -120,7 +120,7 @@ trait SimulationReformulationAbstract {
           List[ConceptLink]()
         }
         val notProcessedLinks = incidentLinksNotProcessed ::: modelLinksNotProcessed
-        val linkInstances = incidentLinksNotProcessed.map {
+        val linkInstances = notProcessedLinks.map {
           link: ConceptLink => {
             if (link.source == concept) {
               val currentDestination = Concept.createInstanceConcept(link.destination)
