@@ -43,6 +43,15 @@ class ThinkingLifeCycleTest extends FunSuite {
     log info res.toString
   }
 
+  test("I have problem with IE 8.") {
+    val requestText = "I have problem with IE 8."
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+    assert(res != null)
+    log info res.toString
+  }
+
   test("start 5 paralel actors and join") {
 
     log.info("test started")
