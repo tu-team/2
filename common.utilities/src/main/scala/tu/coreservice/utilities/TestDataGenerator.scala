@@ -156,6 +156,7 @@ object TestDataGenerator {
   val fireFox = AnnotatedPhrase("FireFox")
   val pleaseInstallFF = AnnotatedNarrative(List(please, install, fireFox), KnowledgeURI("pleaseInstallFF"))
 
+
   // Please install Firefox annotated
   val pleaseAnnotatedPhrase = AnnotatedPhrase("Please", Concept("please"))
   val installAnnotatedPhrase = AnnotatedPhrase("install", installConcept)
