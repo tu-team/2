@@ -54,7 +54,7 @@ class ThinkingLifeCycleMinimal
           val contexts = processResources(resources)
           val mergedContexts = ContextHelper.mergeLast(contexts)
           this.globalContext = copyGlobalContext(mergedContexts)
-          log info contexts.toString()
+          log info "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
@@ -70,16 +70,13 @@ class ThinkingLifeCycleMinimal
   }
 
   def processResources(resources: List[Resource]): List[Context] = {
-    log info "Resources: " + resources
+    log info "processResources(" + resources + ": List[Resource]): List[Context]"
     val contexts: List[List[Context]] = for (r <- resources) yield {
       val resContext = translate(r, this.globalContext)
-      log info "resContext " + resContext
       if (resContext != null) {
         val domainModel = globalContext.domainModel
         globalContext = copyGlobalContext(resContext)
-        log info "globalContext " + this.globalContext.toString
       }
-      log info "resContext " + resContext
       resContext.lastResult match {
         case Some(sR: SelectorRequest) => {
           this.processSelectorRequest(sR)
@@ -87,11 +84,12 @@ class ThinkingLifeCycleMinimal
         case _ => List[Context](resContext)
       }
     }
-    log info "contexts " + contexts.flatten.toString()
+    log info "processResources(): List[Context] = " + contexts.flatten.toString()
     contexts.flatten
   }
 
   def translate(resource: Resource, globalContext: Context): Context = {
+    log info "translate(" + resource + ": Resource, " + globalContext + ": Context)"
     resource match {
       case joinWay2Think: JoinWay2ThinkModel => {
         // run JoinProcessor
@@ -99,24 +97,33 @@ class ThinkingLifeCycleMinimal
         val actions: List[Action] = parameters.map {
           a: ActionModel => this.instantiate(a.uri.name)
         }
-        JoinProcessor(actions, globalContext)
+        val res = JoinProcessor(actions, globalContext)
+        log info "translate(): Context " + res.toString
+        res
       }
       case w2t: Way2ThinkModel => {
         val action = this.instantiate(w2t.uri.name)
-        action.apply(globalContext)
+        val res = action.apply(globalContext)
+        log info "translate(): Context " + res.toString
+        res
       }
       case critic: CriticModel => {
         val action = this.instantiate(critic.uri.name)
-        action.apply(globalContext)
+        val res = action.apply(globalContext)
+        log info "translate(): Context " + res.toString
+        res
       }
     }
+
   }
 
   def instantiate(className: String): Action = {
+    log info "instantiate(" + className + ": String): Action"
     val clazz = Class.forName(className)
     try {
       val temp = clazz.newInstance()
       val instance = temp.asInstanceOf[Action]
+      log info "instantiate(): Action = " + instance.toString
       instance
     } catch {
       case e: ClassCastException => {
