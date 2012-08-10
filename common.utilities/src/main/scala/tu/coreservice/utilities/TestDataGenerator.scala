@@ -196,6 +196,7 @@ object TestDataGenerator {
   val iHaveProblemWithIE8AnnotatedAmbiguous = AnnotatedNarrative(List(userAnnotatedPhrase,
     missingAnnotatedPhrase, internetExplorer8AnnotatedPhraseAmbiguous), KnowledgeURI("iHaveProblemWithIE8"))
 
+  val phrases: List[AnnotatedPhrase] = pleaseInstallFFAnnotated.sentences.map(s => s.phrases).flatten ::: iHaveProblemWithIE8IShouldHaveIE8.sentences.map(s => s.phrases).flatten
 
   // User miss Internet Explorer 8 simulated
   val userInst = Concept.createInstanceConcept(userConcept)
@@ -223,6 +224,7 @@ object TestDataGenerator {
 
   val installFirefoxHowTo = HowTo.createInstance(installHowTo, List(TypedFrame(firefoxConcept)))
   val reinstallIEHowTo = HowTo.createInstance(installHowTo, List(TypedFrame(internetExplorerConcept)))
+
 
   def generateDirectInstructionNarrative = pleaseInstallFF
 

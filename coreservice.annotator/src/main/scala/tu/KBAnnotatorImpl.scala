@@ -43,7 +43,7 @@ class KBAnnotatorImpl extends Way2Think {
         val extractedPhrases = s.phrases
         extractedPhrases.foreach(ph => {
           var annotationFound = checkLocalKB(ph.phrase)
-          def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) = {
+          def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
             ref.concepts = src.concepts
             ref.words = src.words
           }

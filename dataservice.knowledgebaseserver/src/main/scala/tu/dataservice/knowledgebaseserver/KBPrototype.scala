@@ -6,11 +6,8 @@ import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge._
-import narrative.Rule
-import primitive.KnowledgeBoolean
 import tu.model.knowledge.annotator.AnnotatedPhrase
-import tu.model.knowledge.domain.{ConceptNetwork, Concept}
-import tu.coreservice.utilities
+import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.primitive.KnowledgeBoolean
 import tu.model.knowledge.narrative.Rule
@@ -97,7 +94,8 @@ object KBPrototype {
     }
   }
 
-  def annotations = Map[String, AnnotatedPhrase](
+  @deprecated
+  def annotationsDep = Map[String, AnnotatedPhrase](
     "Please" ->
       AnnotatedPhrase.apply("Please", Concept.apply("formOfPoliteness")),
     TestDataGenerator.fireFoxAnnotatedPhrase.text ->
@@ -106,10 +104,16 @@ object KBPrototype {
       TestDataGenerator.installAnnotatedPhrase
   )
 
+  def annotations: Map[String, AnnotatedPhrase] = TestDataGenerator.phrases.map(
+    (phrase: AnnotatedPhrase) => {
+      phrase.text -> phrase
+    }
+  ).toMap
+
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
 
-  def solutions():List[SolvedIssue]={
+  def solutions(): List[SolvedIssue] = {
     val uri = new KnowledgeURI("namespace", "name", "revision")
 
     val ex: Expression = new Expression(uri) {
@@ -119,7 +123,7 @@ object KBPrototype {
     val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
 
     val s = new Solution(List(r), uri)
-    List( new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability),getTestSolvedIssue2,getTestSolvedIssue3)
+    List(new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
   }
 
   def getTestSolvedIssue2(): SolvedIssue = {
