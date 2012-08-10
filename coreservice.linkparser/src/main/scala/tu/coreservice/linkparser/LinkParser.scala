@@ -147,7 +147,6 @@ class LinkParser extends Way2Think {
     }
   }
 
-
   def getConcept(name: String, sentence: AnnotatedSentence): Concept = {
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
@@ -162,9 +161,9 @@ class LinkParser extends Way2Think {
         throw new UnexpectedException("$Ambiguous_concepts")
       }
     } else if (phrases.size < 1) {
-      throw new UnexpectedException("$No_links_found")
+      throw new UnexpectedException("$No_phrases_found")
     } else {
-      throw new UnexpectedException("$Ambiguous_links")
+      throw new UnexpectedException("$Ambiguous_phrases")
     }
   }
 

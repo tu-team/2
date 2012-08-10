@@ -212,7 +212,7 @@ object ContextHelper {
       res.lastResult = contexts.last.lastResult
       res.domainModel = contexts.last.domainModel
       res.simulationModel = contexts.last.simulationModel
-      res.reformulationModel = contexts.last.simulationModel
+      res.reformulationModel = contexts.last.reformulationModel
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }
@@ -224,7 +224,7 @@ object ContextHelper {
       res.lastResult = contexts.last.lastResult
       res.domainModel = contexts.head.domainModel
       res.simulationModel = contexts.head.simulationModel
-      res.reformulationModel = contexts.head.simulationModel
+      res.reformulationModel = contexts.head.reformulationModel
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }

@@ -80,6 +80,14 @@ object TestDataGenerator {
     sharedDiskConcept, accountConcept, actionConcept, versionConcept,
     actionConcept, installConcept, removeConcept, cleanConcept)
 
+
+  var reformulationConcepts = List[Concept](systemConcept, subjectConcept, objectConcept, userConcept, computerConcept, softwareConcept,
+    photoShopConcept, browserConcept,
+    firefoxConcept, internetExplorerConcept,
+    networkConcept, internetConcept, sharedResourcesConcept,
+    sharedDiskConcept, accountConcept, actionConcept, versionConcept,
+    actionConcept, installConcept, removeConcept, cleanConcept)
+
   /**
    * links
    */
@@ -105,6 +113,7 @@ object TestDataGenerator {
   val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
   val missLink = ConceptLink(userConcept, objectConcept, "miss")
   val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
+  val hasProblemWith = ConceptLink(subjectConcept, objectConcept, "hasProblemWith")
 
   val tenseLink = ConceptLink(subjectConcept, objectConcept, "tense")
   val posLink = ConceptLink(subjectConcept, objectConcept, "pos")
@@ -121,6 +130,9 @@ object TestDataGenerator {
   var simulationConceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
     actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink)
 
+  var reformulationConceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
+    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink)
+
   /**
    * Domain model concept network
    */
@@ -130,6 +142,11 @@ object TestDataGenerator {
    * Simulation model concept network
    */
   val simulationModel = ConceptNetwork(simulationConcepts, simulationConceptLinks, KnowledgeURI("simulationModel"))
+
+  /**
+   * Reformulation model concept network
+   */
+  val reformulationModel = ConceptNetwork(reformulationConcepts, reformulationConceptLinks, KnowledgeURI("simulationModel"))
 
   /**
    * sentences
@@ -233,6 +250,8 @@ object TestDataGenerator {
   def generateDomainModelConceptNetwork = domainModel
 
   def generateSimulationModelConceptNetwork = simulationModel
+
+  def generateReformulationModelConceptNetwork = reformulationModel
 
   /**
    * Generates AnnotatedNarrative the result of KBAnnotator.

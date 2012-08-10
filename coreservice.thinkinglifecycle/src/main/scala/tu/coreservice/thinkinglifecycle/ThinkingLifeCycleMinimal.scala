@@ -35,6 +35,7 @@ class ThinkingLifeCycleMinimal
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
     globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
+    globalContext.reformulationModel = TestDataGenerator.generateReformulationModelConceptNetwork
 
     val goalManager = new GoalManager
 
