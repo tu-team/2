@@ -86,6 +86,7 @@ class LinkParser extends Way2Think {
       throw new UnexpectedException("$No_parses_produced")
     } else {
       relexSentence.getParses.get(0)
+
     }
   }
 

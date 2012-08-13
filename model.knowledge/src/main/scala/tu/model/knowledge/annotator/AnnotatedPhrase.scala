@@ -17,6 +17,10 @@ case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[
     this(_words, List[Concept](), _uri, new Probability())
   }
 
+  def this()={
+    this( List[AnnotatedWord](), KnowledgeURI( "Phrase"))
+  }
+
   def concepts = _concepts
 
   def concepts_=(in: List[Concept]): AnnotatedPhrase = {
@@ -40,6 +44,11 @@ case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[
     ph=ph.substring(0,ph.length-1)
 
     ph
+  }
+
+  override def toString():String =
+  {
+    return phrase
   }
 
   def words = _words

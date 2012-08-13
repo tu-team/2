@@ -17,7 +17,7 @@ class SplitterTest extends TestCase("splitter") {
 
   def testSplitter() {
     val splitter = new PreliminarySplitter()
-    splitter.processSentences("I have a problem with Firefox. Please reinstall.")
+
   }
 }
 
