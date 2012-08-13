@@ -161,9 +161,9 @@ class LinkParser extends Way2Think {
         throw new UnexpectedException("$Ambiguous_concepts")
       }
     } else if (phrases.size < 1) {
-      throw new UnexpectedException("$No_phrases_found")
+      throw new UnexpectedException("$No_phrases_found " + name)
     } else {
-      throw new UnexpectedException("$Ambiguous_phrases")
+      throw new UnexpectedException("$Ambiguous_phrases " + name)
     }
   }
 
@@ -183,9 +183,10 @@ class LinkParser extends Way2Think {
   }
 
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
+    val underscoreLess: String = value.replaceAll("_", " ")
     val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
-        phrase.text.trim.toLowerCase == value.trim.toLowerCase
+        phrase.text.trim.toLowerCase == underscoreLess.trim.toLowerCase
       }
     }
     filteredPhrase
