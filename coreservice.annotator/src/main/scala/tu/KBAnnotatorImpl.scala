@@ -45,7 +45,7 @@ class KBAnnotatorImpl extends Way2Think {
           var annotationFound = checkLocalKB(ph.phrase)
           def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
             ref.concepts = src.concepts
-            ref.words = src.words
+            ref.phrases = src.phrases
           }
           if (annotationFound.isEmpty) {
             AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {

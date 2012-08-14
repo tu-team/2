@@ -123,7 +123,7 @@ class PreliminarySplitter extends Way2Think {
       }
 
       def fillAnnotatedPhrase(vl:AnnotatedPhrase, word:FeatureNode)={
-        vl.words::= AnnotatedWord.apply(word.getValue)
+        vl.phrases::= AnnotatedPhrase(word.getValue)
       }
 
       def extractedPhrases(head:FeatureNode):Boolean={
@@ -150,11 +150,9 @@ class PreliminarySplitter extends Way2Think {
       }
 
       def _extractedPhrases( fn:FeatureNode,  str:String):Boolean={
-
-
           var fn_type: FeatureNode = fn.get("phr-type")
           val sepProc= separateProcessingPhraseType.contains( fn_type.getValue=="NP" )
-          var wordList = List[AnnotatedWord]()
+          var wordList = List[AnnotatedPhrase]()
           var fn1 = fn.get("phr-next")
           while (fn1 != null) {
 
@@ -168,7 +166,7 @@ class PreliminarySplitter extends Way2Think {
                 }
                 else
                 {
-                   wordList = wordList ::: List(AnnotatedWord(fn_word.getValue,0))  ;
+                   wordList = wordList ::: List(AnnotatedPhrase(fn_word.getValue))  ;
 
                 }
 

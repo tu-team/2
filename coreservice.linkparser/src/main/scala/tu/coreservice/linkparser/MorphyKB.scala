@@ -144,11 +144,11 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
     }.flatten
     phrases.filter {
       phrase: AnnotatedPhrase => {
-        phrase.words.count {
-          word: AnnotatedWord => {
-            word.value == aWord
+        phrase.phrases.count {
+          word: AnnotatedPhrase => {
+            word.text == aWord
           }
-        } > 0
+        } > 0 || phrase.text == aWord
       }
     }
   }

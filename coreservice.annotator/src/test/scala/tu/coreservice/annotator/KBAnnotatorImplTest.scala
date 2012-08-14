@@ -965,20 +965,15 @@ noun_number(Lotus_Notes, singular)
     val sentence = new AnnotatedSentence(List(
       new AnnotatedPhrase(
         List(
-          new AnnotatedWord
-          (null, "get", null, new Probability()),
-          new AnnotatedWord
-          (null, "rid", null, new Probability()),
-          new AnnotatedWord
-          (null, "off", null, new Probability())
+          AnnotatedPhrase("get"),
+          AnnotatedPhrase("rid"),
+          AnnotatedPhrase("off")
         ), null
       ),
       //
       new AnnotatedPhrase(
         List(
-          new AnnotatedWord
-          (null, "please", null, new Probability())
-
+          AnnotatedPhrase("please")
         ), null
       )
     ), new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.sentenceMark() + "1", URIHelper.version()))

@@ -187,7 +187,10 @@ class LinkParser extends Way2Think {
     val underscoreLess: String = value.replaceAll("_", " ")
     val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
-        phrase.text.trim.toLowerCase == underscoreLess.trim.toLowerCase
+        phrase.findPhrase(underscoreLess.trim.toLowerCase) match {
+          case Some(str: String) => true
+          case None => false
+        }
       }
     }
     filteredPhrase
