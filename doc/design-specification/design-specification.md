@@ -21,7 +21,7 @@
    2. [Critics](critics.md)
    2. [Way2Think](way2Think.md)
    2. [PreliminaryAnnotator](preliminary-annotator.md)
-   2. [KnowledgeBaseAnnotator](knowledge-base-annotator.md)
+   2. [KnowledgeBaseAnnotator](annotator-way2Think.md)
    2. [Link parser](link-parser.md)
  1. [DataService](data-services.md)
    2. [KnowledgeBase](knowledge-base.md)
@@ -64,5 +64,14 @@ Is actual work of the system to solve the incident according to a description.
 [Approximate workflow](https://github.com/development-team/2/blob/master/doc/informal/perceiving-modelling.md#Approximate_workflow)
 
 [Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
+
+### Third party components
+
+ 1. [PLN](http://wiki.opencog.org/w/PLN) – Probabilistic Logic Networks. An logic system for uncertain inference. [GNU Affero license.](http://www.gnu.org/licenses/agpl-3.0.html)
+ 1. [RelEx](http://wiki.opencog.org/w/RelEx) – Extract grammatical parses and semantic knowledge from natural language (in English).[Apache License](http://bazaar.launchpad.net/~relex-dev/relex/trunk/view/head:/LICENSE)
+ 1. [NLGen](https://launchpad.net/nlgen2) -  Do the inverse of RelEx. Convert semantic relationships to natural language. [Apache License](http://bazaar.launchpad.net/~relex-dev/relex/trunk/view/head:/LICENSE)
+ 1. [MessageBus](http://today.java.net/pub/a/today/2008/01/22/jms-messaging-using-glassfish.html#message-driven-beans) -
+ [Dual License consisting of the Common Development and Distribution License (CDDL) v1.0 and GNU General Public License (GPL) v2.](http://glassfish.java.net/public/CDDL+GPL_1_1.html)
+ 1. [NEO4J](http://neo4j.org/) - [Advanced and Enterprise editions available under both the AGPLv3 and commercial licenses, supported by Neo Technology.](http://neo4j.org/licensing-guide/)
 
 
