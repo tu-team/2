@@ -10,6 +10,7 @@ import tu.model.knowledge.{Resource, KnowledgeURI, Probability}
  *         time: 10:32 PM
  */
 
+//TODO add AnnotatedPhrases list.
 case class AnnotatedPhrase(var _words: List[AnnotatedWord], var _concepts: List[Concept] = List[Concept](), _uri: KnowledgeURI, _probability: Probability = new Probability(), text: String = "")
   extends Resource(_uri, _probability) {
 
