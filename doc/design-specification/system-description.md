@@ -73,7 +73,7 @@ Natural language processing components provides basis for machine understanding 
    1. CoreService
      2. ThinkingLifeCycle
      2. [Selector](selector.md)
-     2 . [Critics](critics.md)
+     2. [Critics](critics.md)
      2. [Way2Think](way2Think.md)
    1. [Reasoner](reasoner.md)
      2. PLN
@@ -142,6 +142,21 @@ System is capable of creation and maintenance of request context through clarifi
 #### Goal management
 
 TU uses goal oriented processes to implement machine understanding. Goal management is the process to find proper goal in current state of the system.
+
+#### Clarification request processing
+
+TU is capable of requesting clarification of unclear and not complete parts of problem description. Human specialist specifies clarification
+response and system processes clarification response within original request context.
+
+#### Making sense analyser
+
+Right after machine understanding processed a problem description, TU checks weather current understanding does make sense, according to trained domain information in
+Knowledge base.
+
+#### Emotional state control
+
+Time control and reinforcement learning uses emotional state of the system. Emotional state control switches entire state of the system according
+to: feedback from human specialist for solution during training, time left to process the incident.
 
 //TODO
 
