@@ -1,10 +1,22 @@
-# Thinking and understanding.
+# Thinking and understanding (TU).
+Problem solving automation system based on machine understanding and solution search.
 
-System description.
+## Preface
 
-## System purpose
+There are several industrial systems for support and maintenance in IT: RMS-es,  NMS-es, HP OpenView, etc.
+They are usually used as synchronisation, monitoring, classification and tracing human operating tool.
+This systems are capable of: network errors analysis, provides infrastructure for business coordination, etc.
+Humans are capable of decision making and operating over target system using information and analysis of RMS-es and NMS-es.
+TU in problem solution automation system dedicated for decision making and operating in target environment.
+TU is human aided system, within TU humans are capable of training, clarification of problem description, solution confirmation.
 
-### Automation approach
+
+This document describes the functional operation of the TU and provides a top level overview of information Also included
+is an overview of the TU operating environment to provide the user a holistic understanding to utilize the TU.
+
+
+## Introduction
+
 
 System is mainly dedicated for automation of Software engineering (SE), IT-Telecom systems.
 System is targeted to solve incidents, bug-fixes, and administration of servers and networks.
