@@ -47,32 +47,7 @@ action done by the system.
 TU is designed to operate with RMS and NMS systems via integration with standard systems interfaces, machine understanding of problem description,
 using trained data, solution search of trained solutions, application of solution taking an account feedback of target system.
 
-### Components
-
-![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
-
-TU system comprises of:
-
- 0.
-
- 1. [TU webservice](tu-web-service.md)
- 1. CoreService
-   2. [ThinkingLifeCycle](thinking-life-cycle.md)
-   2. [Selector](selector.md)
-   2. [Critics](critics.md)
-   2. [Way2Think](way2Think.md)
-   2. [PreliminaryAnnotator](preliminary-annotator.md)
-   2. [KnowledgeBaseAnnotator](annotator-way2Think.md)
-   2. [Link parser](link-parser.md)
- 1. [DataService](data-services.md)
-   2. [KnowledgeBase](knowledge-base.md)
- 1. [Reasoner](reasoner.md)
-   2. PLN
- 1. [ClientAgent](client-agent.md)
- 1. [MessageBus](message-bus.md)
-
-
-## Features
+### Features
 
  0. Machine understanding of problem description.
  0. Clarification and confirmation of unclear and ambiguous data.
@@ -82,6 +57,63 @@ TU system comprises of:
  0. Time control.
  0. Solution relevance control.
  0. Emotion state management and control.
+
+
+### Components
+
+![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
+
+TU system comprises of Interface components that provide web-service interface to TU system, Core components implements Training and Operating capabilities,
+Natural language processing components provides basis for machine understanding of problem description text.
+
+ 0. Interface components
+   1. [TU webservice](tu-web-service.md)
+   1. [ClientAgent](client-agent.md)
+ 0. Core components
+   1. [MessageBus](message-bus.md)
+   1. CoreService
+     2. [ThinkingLifeCycle](thinking-life-cycle.md)
+     2. [Selector](selector.md)
+     2 . [Critics](critics.md)
+     2. [Way2Think](way2Think.md)
+     2. [PreliminaryAnnotator](preliminary-annotator.md)
+     2. [KnowledgeBaseAnnotator](annotator-way2Think.md)
+     2. [Link parser](link-parser.md)
+   1. [Reasoner](reasoner.md)
+     2. PLN
+ 0. Natural language processing components
+   1. Lexical Parser
+   1. Preliminary Splitter
+   1. KnowledgeBase Annotator
+ 0. Data components
+   1. [DataService](data-services.md)
+     2. [KnowledgeBase](knowledge-base.md)
+
+
+#### TU webservice
+Is main entry point of the system to implement base functions:
+
+ 0. Create request
+ 0. Create clarification response
+ 0. Create confirmation response
+ 0. Train system
+ 0. Monitor solutions
+
+#### ClientAgent
+
+Software for service machines, that have access for different locations and hold some amounts of scripts. Contains Executor.
+Executor is intellectual agent responsible for the operating target system to implement found solution.
+Executor is capable of requesting help if it's stuck, or received unexpected response.
+
+#### Message bus
+
+Is main component for collaboration of rest components. It uses messaging capabilities to deliver notification of internal events.
+Adapter to 3rd party component, with messaging functionality: implemented as third party component Glassfish MessageBus.
+
+
+
+
+//TODO
 
 [Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
 
