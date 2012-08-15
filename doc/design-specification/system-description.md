@@ -58,7 +58,6 @@ using trained data, solution search of trained solutions, application of solutio
  0. Solution relevance control.
  0. Emotion state management and control.
 
-
 ### Components
 
 ![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
@@ -67,18 +66,15 @@ TU system comprises of Interface components that provide web-service interface t
 Natural language processing components provides basis for machine understanding of problem description text.
 
  0. Interface components
-   1. [TU webservice](tu-web-service.md)
-   1. [ClientAgent](client-agent.md)
+   1. TU webservice
+   1. ClientAgent
  0. Core components
-   1. [MessageBus](message-bus.md)
+   1. MessageBus
    1. CoreService
-     2. [ThinkingLifeCycle](thinking-life-cycle.md)
+     2. ThinkingLifeCycle
      2. [Selector](selector.md)
      2 . [Critics](critics.md)
      2. [Way2Think](way2Think.md)
-     2. [PreliminaryAnnotator](preliminary-annotator.md)
-     2. [KnowledgeBaseAnnotator](annotator-way2Think.md)
-     2. [Link parser](link-parser.md)
    1. [Reasoner](reasoner.md)
      2. PLN
  0. Natural language processing components
@@ -110,8 +106,42 @@ Executor is capable of requesting help if it's stuck, or received unexpected res
 Is main component for collaboration of rest components. It uses messaging capabilities to deliver notification of internal events.
 Adapter to 3rd party component, with messaging functionality: implemented as third party component Glassfish MessageBus.
 
+### ThinkingLifeCycle
 
+Main component that makes whole understanding and solution search work. It implements environment for thinking processes used by
+machine understanding and solution search, and several control processes.
 
+Main thinking processes implemented in TU:
+
+ 0. Problem description text pre-processing
+ 0. Problem classification
+ 0. Solution search/generation
+ 0. Context management
+ 0. Goal management
+ 0. Clarification requests processing
+ 0. Making sense analyser
+ 0. Emotional state control
+
+#### Problem description text pre-processing
+
+Via NLP tools a problem description text is been translated in to the semantic network form.
+
+#### Problem classification
+
+Problem is been classified according ot the description text: Direct instruction, Problem description with desired state, Problem description without desired state.
+
+#### Solution search/generation
+
+According to processed problem description as semantic network the solution is searched in trained Knowledge base, or been generated as compound solution based on
+trained Knowledge Base.
+
+#### Context management
+
+System is capable of creation and maintenance of request context through clarification and confirmation dialogs.
+
+#### Goal management
+
+TU uses goal oriented processes to implement machine understanding. Goal management is the process to find proper goal in current state of the system.
 
 //TODO
 
