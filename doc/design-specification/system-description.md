@@ -14,37 +14,65 @@ TU is human aided system, within TU humans are capable of training, clarificatio
 This document describes the functional operation of the TU and provides a top level overview of information Also included
 is an overview of the TU operating environment to provide the user a holistic understanding to utilize the TU.
 
-
 ## Introduction
 
+TU project will provide automation and reporting facility for SE, IT-Telecom problem processing in integration with RMS-es and NMS-es.
+TU comprises smart operating mechanism over target(customer).
 
-System is mainly dedicated for automation of Software engineering (SE), IT-Telecom systems.
-System is targeted to solve incidents, bug-fixes, and administration of servers and networks.
+### Purpose
 
-System uses following approach:
+The purpose of this document is to describe the functional operation and capabilities of the TU and identify top level information a prospective user would require in
+order to manage and operate the system. Identified below are several technology areas the TU was designed to support.
 
- 0. Production mode:
-   1. Machine understanding of problem description.
-     2. Clarification of unclear places of problem description.
-   1. Problem situation modelling.
-     2. Requests for incomplete information.
-   1. Solution search
-     2. Solution is searched in trained Knowledge base of solutions.
-     2. Solution could be generated.
+ 1. RIM
+ 1. SE maintenance
+   2. Telecom maintenance
+   2. FIS system maintenance
+   2. HIS systems maintenance
+ 1. Accounting systems
+ 1. ...
 
- 0. Training mode:
-   1. Training domain terms.
-   1. Training domain concepts.
-   1. Training solutions.
+### Scope
 
-### Automation objects.
+The scope of this document covers the TU and corresponding systems. It provides the information necessary for training and operating TU system.
 
-System was used to solve following types of tasks:
+## TU system overview
 
- 0. Automation of typical actions in retail application maintenance.
- 0. Incident processing automation.
+TU system is comprised of Training subsystem, Operating subsystem and Knowledge Base. TU Operating subsystem is integrated with target(customer) system
+via smart operating mechanism described below. Knowledge base is main storage of the TU system that stores all data and is capable of reporting of every
+action done by the system.
 
-### Features.
+![System overview](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/system-overview.png)
+
+TU is designed to operate with RMS and NMS systems via integration with standard systems interfaces, machine understanding of problem description,
+using trained data, solution search of trained solutions, application of solution taking an account feedback of target system.
+
+### Components
+
+![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
+
+TU system comprises of:
+
+ 0.
+
+ 1. [TU webservice](tu-web-service.md)
+ 1. CoreService
+   2. [ThinkingLifeCycle](thinking-life-cycle.md)
+   2. [Selector](selector.md)
+   2. [Critics](critics.md)
+   2. [Way2Think](way2Think.md)
+   2. [PreliminaryAnnotator](preliminary-annotator.md)
+   2. [KnowledgeBaseAnnotator](annotator-way2Think.md)
+   2. [Link parser](link-parser.md)
+ 1. [DataService](data-services.md)
+   2. [KnowledgeBase](knowledge-base.md)
+ 1. [Reasoner](reasoner.md)
+   2. PLN
+ 1. [ClientAgent](client-agent.md)
+ 1. [MessageBus](message-bus.md)
+
+
+## Features
 
  0. Machine understanding of problem description.
  0. Clarification and confirmation of unclear and ambiguous data.
