@@ -66,24 +66,22 @@ TU system comprises of Interface components that provide web-service interface t
 Natural language processing components provides basis for machine understanding of problem description text.
 
  0. Interface components
-   1. TU webservice
-   1. ClientAgent
+   1. [TU webservice](system-description.md#tu-webservice)
+   1. [ClientAgent](system-description.md#tu-webservice)
  0. Core components
-   1. MessageBus
+   1. [MessageBus](#message-bus)
    1. CoreService
-     2. ThinkingLifeCycle
-     2. Selector
-     2. Critics
-     2. Way2Think
-   1. Reasoner
-     2. PLN
- 0. Natural language processing components
+     2. [ThinkingLifeCycle](#thinkinglifecycle)
+     2. [Selector](#selector)
+     2. [Critic](#critic)
+     2. [Way2Think](#way2think)
+   1. [Reasoner](#reasoner)
+ 0. [Natural language processing components](#natural-language-processing-components)
    1. Lexical Parser
    1. Preliminary Splitter
    1. KnowledgeBase Annotator
  0. Data components
-   1. [DataService](data-services.md)
-     2. [KnowledgeBase](knowledge-base.md)
+   1. [KnowledgeBase](knowledge-base.md)
 
 
 #### TU webservice
@@ -117,14 +115,14 @@ ThinkingLifeCycle controls Critic - Selector collaboration and Way2Think start a
 
 Main thinking processes implemented in TU:
 
- 0. Problem description text pre-processing
- 0. Problem classification
- 0. Solution search/generation
- 0. Context management
- 0. Goal management
- 0. Clarification requests processing
- 0. Making sense analyser
- 0. Emotional state control
+ 0. [Problem description text pre-processing](#problem-description-text-pre-processing)
+ 0. [Problem classification](#problem-classification)
+ 0. [Solution search/generation](#solution-searchgeneration)
+ 0. [Context management](#context-management)
+ 0. [Goal management](#goal-management)
+ 0. [Clarification requests processing](#clarification-request-processing)
+ 0. [Making sense analyser](#making-sense-analyser)
+ 0. [Emotional state control](#emotional-state-control)
 
 #### Problem description text pre-processing
 
@@ -194,6 +192,18 @@ This is interface to third party component that implements Logical Reasoning, cu
 
 This group of components are dedicated to process problem description text with semantic network output. Preliminary splitter extracts sequence of words from inbound text.
 Lexical parser creates lexical pair of words. KnowledgeBase Annotator maps domain concepts from Knowledge Base to words from inbound text.
+
+### Data components
+
+It is Knowledge Base the main storage of all knowledge in the system. System stores all data as objects reusable in Knowledge Base and is implemented via No SQL database Neo4j.
+Main data types:
+
+ 0. Textual problem description
+ 0. Semantic network of machine understanding of problem
+ 0. Simulation semantic network
+ 0. Trained data
+   1. Problem symptoms
+   1. Problem solutions
 
 ## Environment requirements.
 
