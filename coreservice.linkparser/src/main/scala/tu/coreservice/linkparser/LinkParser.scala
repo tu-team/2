@@ -185,14 +185,29 @@ class LinkParser extends Way2Think {
 
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
     val underscoreLess: String = value.replaceAll("_", " ")
-    val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
+
+    var filteredPhrase:List[AnnotatedPhrase]=List[AnnotatedPhrase]()
+    sentence.phrases.foreach(f=>
+    f.findPhrase(underscoreLess.trim.toLowerCase)  match {
+      case Some(f1)=>{
+        filteredPhrase::=f1
+
+      }
+      case None=> {
+
+      }
+    }
+    )
+
+
+    /*val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
         phrase.findPhrase(underscoreLess.trim.toLowerCase) match {
           case Some(str: String) => true
           case None => false
         }
       }
-    }
+    } */
     filteredPhrase
   }
 

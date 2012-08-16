@@ -37,32 +37,57 @@ class KBAnnotatorImpl extends Way2Think {
       val localAnnotated = localAnnotator.apply(phrase)
       localAnnotated
     }
+
+
+    def annotatePhrase(ph:AnnotatedPhrase):Boolean={
+      var result=false
+      var annotationFound = checkLocalKB(ph.phrase)
+      def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
+        ref.concepts = src.concepts
+        ref.phrases = src.phrases
+      }
+      if (annotationFound.isEmpty) {
+        AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {
+          val synonymous = a.annotate(ph.phrase)
+          synonymous.foreach(syn => {
+            //check against local KB
+            annotationFound = checkLocalKB(syn)
+            if (!annotationFound.isEmpty) {
+              appendAnnotation(ph, annotationFound.get)
+              result=true
+              scala.util.control.Breaks.break()
+            }
+          })
+        })
+      }
+      else {
+        appendAnnotation(ph, annotationFound.get)
+        result=true
+      }
+      return result
+    }
+
+
+    def recurrentlyCheckPhrase(ph:AnnotatedPhrase):Boolean={
+      var annotateFound = annotatePhrase(ph)
+      if (!annotateFound)
+      {
+
+          ph.phrases.foreach(ph1=>{
+            recurrentlyCheckPhrase(ph1)
+          })
+
+      }
+      true
+    }
+
     extractedNarratives.foreach(n => {
       val extractedSentences = n.sentences
       extractedSentences.foreach(s => {
         val extractedPhrases = s.phrases
-        extractedPhrases.foreach(ph => {
-          var annotationFound = checkLocalKB(ph.phrase)
-          def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
-            ref.concepts = src.concepts
-            ref.phrases = src.phrases
-          }
-          if (annotationFound.isEmpty) {
-            AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {
-              val synonymous = a.annotate(ph.phrase)
-              synonymous.foreach(syn => {
-                //check against local KB
-                annotationFound = checkLocalKB(syn)
-                if (!annotationFound.isEmpty) {
-                  appendAnnotation(ph, annotationFound.get)
-                  scala.util.control.Breaks.break()
-                }
-              })
-            })
-          }
-          else {
-            appendAnnotation(ph, annotationFound.get)
-          }
+        extractedPhrases.foreach(curPhrase => {
+          recurrentlyCheckPhrase(curPhrase)
+
         })
       })
     })

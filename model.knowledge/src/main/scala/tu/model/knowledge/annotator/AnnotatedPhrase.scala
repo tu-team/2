@@ -35,18 +35,26 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase], var _concepts: L
    */
   def phrase: String = {
     var ph = ""
-    _phrases.foreach(b =>
 
-      ph += b.text.toLowerCase + " "
-
-    )
-
-    //remove last whitespace
-    if (ph.length > 0) {
-      ph = ph.substring(0, ph.length - 1)
+    if (_phrases.length <= 0) {
+      ph = text
     }
+    else
+    {
 
-    this.text + " " + ph
+      _phrases.foreach(b =>
+
+        ph += b.text.toLowerCase + " "
+
+      )
+
+      //remove last whitespace
+      if (ph.length > 0) {
+        ph = ph.substring(0, ph.length - 1)
+      }
+
+    }
+    ph
   }
 
   override def toString(): String = {
@@ -57,28 +65,28 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase], var _concepts: L
 
   def phrases_=(in: List[AnnotatedPhrase]) = _phrases = in
 
-  def findPhrase(word: String): Option[String] = {
+  def findPhrase(word: String): Option[AnnotatedPhrase] = {
     if (phrases.size > 0) {
       phrases.find {
         ph: AnnotatedPhrase => {
           ph.findPhrase(word) match {
-            case Some(str: String) => true
+            case Some(p: AnnotatedPhrase) => true
             case None => false
           }
         }
       } match {
-        case Some(ph: AnnotatedPhrase) => Some(ph.text)
+        case Some(ph: AnnotatedPhrase) => Some(ph)
         case None => {
-          if (this.text == word) {
-            Some(this.text)
+          if (this.text.toLowerCase() == word.toLowerCase) {
+            Some(this)
           } else {
             None
           }
         }
       }
     } else {
-      if (this.text == word) {
-        Some(this.text)
+      if (this.text.toLowerCase == word.toLowerCase) {
+        Some(this)
       } else {
         None
       }
