@@ -114,6 +114,7 @@ machine understanding and solution search, and several control processes.
 ThinkingLifeCycle controls Critic - Selector collaboration and Way2Think start and stop. This approach is based on [Marvin Minsky Thinking model](http://web.media.mit.edu/~minsky/E7/eb7.html#_Toc508708572)
 
 Current simplified machine understanding and solution search workflow see below:
+
 ![Simplified ThinkingLifeCycle activity](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/simplifiedactivity.png)
 
 Main thinking processes implemented in TU:
@@ -198,7 +199,7 @@ Lexical parser creates lexical pair of words. KnowledgeBase Annotator maps domai
 
 Simplified natural language processing workflow.
 
-![Simplified NLP workflow](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/simplifiednlp.png)
+![Simplified NLP](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/simplifiednlp.png)
 
 ### Data components
 
