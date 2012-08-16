@@ -25,6 +25,7 @@ The purpose of this document is to describe the functional operation and capabil
 order to manage and operate the system. Identified below are several technology areas the TU was designed to support.
 
  1. RIM
+ 1. NOC
  1. SE maintenance
    2. Telecom maintenance
    2. FIS system maintenance
@@ -72,10 +73,10 @@ Natural language processing components provides basis for machine understanding 
    1. MessageBus
    1. CoreService
      2. ThinkingLifeCycle
-     2. [Selector](selector.md)
-     2. [Critics](critics.md)
-     2. [Way2Think](way2Think.md)
-   1. [Reasoner](reasoner.md)
+     2. Selector
+     2. Critics
+     2. Way2Think
+   1. Reasoner
      2. PLN
  0. Natural language processing components
    1. Lexical Parser
@@ -110,6 +111,10 @@ Adapter to 3rd party component, with messaging functionality: implemented as thi
 
 Main component that makes whole understanding and solution search work. It implements environment for thinking processes used by
 machine understanding and solution search, and several control processes.
+
+![ThinkingLifeCycle Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/ThinkingLifeCycleComponent.png)
+
+ThinkingLifeCycle controls Critic - Selector collaboration and Way2Think start and stop. This approach is based on [Marvin Minsky Thinking model](http://web.media.mit.edu/~minsky/E7/eb7.html#_Toc508708572)
 
 Main thinking processes implemented in TU:
 
@@ -158,11 +163,35 @@ Knowledge base.
 Time control and reinforcement learning uses emotional state of the system. Emotional state control switches entire state of the system according
 to: feedback from human specialist for solution during training, time left to process the incident.
 
+### Selector
+
+Component that retrieves resources from Knowledge Base. Selector is capable of retrieving using Critics requests and [Goals](system-description.md#goal-management).
+Selector uses storage, currently it is No SQL database [Neo4j](http://neo4j.org/).
+
+### Critic
+
+Component is mainly used for analysis processed data in context of current problem solution. There are several types of Critics:
+
+ 0. Analyser - is used to parse current context and return probability and confidence of the positive result.
+ 0. Controller - is used to trace some parameter, for example time and alter for example emotional state of the TU system.
+ 0. Manager - is used to generate proper Selector request to retrieve proper resource.
+
+### Way2Think
+
+Group of components to actually implement some modifications over data in current problem context.
+Typical Ways to think:
+
+ 0. Simulation
+ 0. Reformulation
+ 0. Cry for help
+ 0. Logical Reasoning.
+
+### Reasoner
+
+This is interface to third party component that implements Logical Reasoning, currently it is third party component [PLN](http://wiki.opencog.org/w/PLN).
+
+
 //TODO
-
-[Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
-
-## System description.
 
 ### Environment requirements.
 
@@ -172,12 +201,6 @@ At least 6 GB of RAM, x64 architecture, according to user load number of servers
 
 Minimal Requirements: Core i3, 2 Gb Ram, x86 architecture.
 
-### Components description
-
-![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
-
-For complete components description see: [design specification document](https://github.com/development-team/2/blob/master/doc/design-specification/design-specification.md#component-diagram).
-
 ## Systems integrations.
 
 ### Integrations of third party systems list.
@@ -186,10 +209,6 @@ For complete components description see: [design specification document](https:/
    1. [Nagios](http://www.nagios.org/)
  0. Change requests processing:
    1. Development environment integrations.
-
-### System connections
-
-System could be used via web service interface provided by [TU web service component](https://github.com/development-team/2/blob/master/doc/design-specification/tu-web-service.md).
 
 
 
