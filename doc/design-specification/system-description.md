@@ -113,6 +113,9 @@ machine understanding and solution search, and several control processes.
 
 ThinkingLifeCycle controls Critic - Selector collaboration and Way2Think start and stop. This approach is based on [Marvin Minsky Thinking model](http://web.media.mit.edu/~minsky/E7/eb7.html#_Toc508708572)
 
+Current simplified machine understanding and solution search workflow see below:
+![Simplified ThinkingLifeCycle activity](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/simplifiedactivity.png)
+
 Main thinking processes implemented in TU:
 
  0. [Problem description text pre-processing](#problem-description-text-pre-processing)
@@ -192,6 +195,10 @@ This is interface to third party component that implements Logical Reasoning, cu
 
 This group of components are dedicated to process problem description text with semantic network output. Preliminary splitter extracts sequence of words from inbound text.
 Lexical parser creates lexical pair of words. KnowledgeBase Annotator maps domain concepts from Knowledge Base to words from inbound text.
+
+Simplified natural language processing workflow.
+
+![Simplified NLP workflow](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/simplifiednlp.png)
 
 ### Data components
 

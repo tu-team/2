@@ -26,7 +26,7 @@
       <fontname>SansSerif</fontname>
       <fontsize>10</fontsize>
       <defaultstereotypeview>0</defaultstereotypeview>
-      <activediagram>tu activity 4</activediagram>
+      <activediagram>simplified nlp</activediagram>
     </settings>
     <searchpath href="PROJECT_DIR" />
     <members>
@@ -243,13 +243,13 @@
               diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
               diagramname="ThinkingLifeCycle Component" />
       <member type="pgml"
-              name="tu-research_tuactivity3.pgml"
+              name="tu-research_simplifiedactivity.pgml"
               diagramclass="org.argouml.uml.diagram.activity.ui.UMLActivityDiagram"
               diagramname="simplified activity" />
       <member type="pgml"
               name="tu-research_tuactivity4.pgml"
               diagramclass="org.argouml.uml.diagram.activity.ui.UMLActivityDiagram"
-              diagramname="tu activity 4" />
+              diagramname="simplified nlp" />
       <member type="todo"
               name="tu-research.todo" />
     </members>
@@ -266,7 +266,7 @@
 			CodeGeneration
 		</plugin>
 </profile>
-<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Thu Aug 16 05:47:05 PDT 2012'>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Thu Aug 16 06:37:49 PDT 2012'>
   <XMI.header>    <XMI.documentation>
       <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
       <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
@@ -21123,7 +21123,7 @@ Way to think
       name="Use Case Production"
 >
   <group name="Fig0"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[200, 64, 108, 51]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[200, 64, 108, 54]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009A9"
        fill="1"
        fillcolor="white"
@@ -21135,9 +21135,9 @@ Way to think
     
     <ellipse name="Fig0.0"
       x="254"
-      y="89"
+      y="91"
       rx="54"
-      ry="25"
+      ry="27"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -21145,7 +21145,7 @@ Way to think
     />
     <text name="Fig0.1"
       x="211"
-      y="79"
+      y="80"
       width="85"
       height="21"
       fill="0"
@@ -21219,7 +21219,7 @@ Way to think
     </group>
   </group>
   <group name="Fig1"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[472, 0, 148, 59]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[472, 0, 148, 62]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009AD"
        fill="1"
        fillcolor="white"
@@ -21231,9 +21231,9 @@ Way to think
     
     <ellipse name="Fig1.0"
       x="546"
-      y="29"
+      y="31"
       rx="74"
-      ry="29"
+      ry="31"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -21241,7 +21241,7 @@ Way to think
     />
     <text name="Fig1.1"
       x="483"
-      y="19"
+      y="20"
       width="125"
       height="21"
       fill="0"
@@ -21315,7 +21315,7 @@ Way to think
     </group>
   </group>
   <group name="Fig2"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[472, 56, 162, 63]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[472, 56, 162, 66]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009B3"
        fill="1"
        fillcolor="white"
@@ -21327,9 +21327,9 @@ Way to think
     
     <ellipse name="Fig2.0"
       x="553"
-      y="87"
+      y="89"
       rx="81"
-      ry="31"
+      ry="33"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -21337,7 +21337,7 @@ Way to think
     />
     <text name="Fig2.1"
       x="483"
-      y="77"
+      y="78"
       width="140"
       height="21"
       fill="0"
@@ -21678,7 +21678,7 @@ Way to think
     </path>
   </group>
   <group name="Fig6"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[184, 120, 256, 81]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[184, 120, 256, 84]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009CE"
        fill="1"
        fillcolor="white"
@@ -21690,9 +21690,9 @@ Way to think
     
     <ellipse name="Fig6.0"
       x="312"
-      y="160"
+      y="162"
       rx="128"
-      ry="40"
+      ry="42"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -21700,7 +21700,7 @@ Way to think
     />
     <text name="Fig6.1"
       x="197"
-      y="150"
+      y="151"
       width="229"
       height="21"
       fill="0"
@@ -21715,7 +21715,7 @@ Way to think
       justification="Center"
     >communication::ProvideClarificationResponse</text>
     <group name="Fig6.2"
-         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[197, 149, 229, 0]"
+         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[197, 150, 229, 0]"
          href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009CE"
          fill="0"
          fillcolor="white"
@@ -21728,7 +21728,7 @@ Way to think
       
       <rectangle name="Fig6.2.0"
         x="197"
-        y="149"
+        y="150"
         width="229"
         height="0"
         fill="0"
@@ -21826,12 +21826,12 @@ Way to think
     >
       <moveto x="96"
               y="174" />
-      <lineto x="186"
-              y="168" />
+      <lineto x="185"
+              y="169" />
     </path>
   </group>
   <group name="Fig8"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[184, 200, 258, 83]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[184, 200, 258, 86]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009D3"
        fill="1"
        fillcolor="white"
@@ -21843,9 +21843,9 @@ Way to think
     
     <ellipse name="Fig8.0"
       x="313"
-      y="241"
+      y="243"
       rx="129"
-      ry="41"
+      ry="43"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -21853,7 +21853,7 @@ Way to think
     />
     <text name="Fig8.1"
       x="195"
-      y="231"
+      y="232"
       width="236"
       height="21"
       fill="0"
@@ -21868,7 +21868,7 @@ Way to think
       justification="Center"
     >communication::ProvideConfirmationResponse</text>
     <group name="Fig8.2"
-         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[195, 230, 236, 0]"
+         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[195, 231, 236, 0]"
          href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009D3"
          fill="0"
          fillcolor="white"
@@ -21881,7 +21881,7 @@ Way to think
       
       <rectangle name="Fig8.2.0"
         x="195"
-        y="230"
+        y="231"
         width="236"
         height="0"
         fill="0"
@@ -21980,7 +21980,7 @@ Way to think
       <moveto x="91"
               y="220" />
       <lineto x="189"
-              y="229" />
+              y="230" />
     </path>
   </group>
   <group name="Fig10"
@@ -22036,8 +22036,8 @@ Way to think
     >
       <moveto x="94"
               y="158" />
-      <lineto x="214"
-              y="106" />
+      <lineto x="212"
+              y="108" />
     </path>
   </group>
   <group name="Fig11"
@@ -22066,9 +22066,9 @@ Way to think
       strokecolor="black"
     >
       <moveto x="472"
-              y="87" />
+              y="89" />
       <lineto x="307"
-              y="87" />
+              y="89" />
     </path>
   </group>
   <group name="Fig12"
@@ -22096,10 +22096,10 @@ Way to think
       stroke="1"
       strokecolor="black"
     >
-      <moveto x="480"
-              y="42" />
+      <moveto x="479"
+              y="44" />
       <lineto x="303"
-              y="78" />
+              y="80" />
     </path>
   </group>
 </pgml>
@@ -22374,7 +22374,7 @@ Way to think
     </path>
   </group>
   <group name="Fig3"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[272, 184, 196, 74]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[272, 184, 196, 77]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009B7"
        fill="1"
        fillcolor="white"
@@ -22386,9 +22386,9 @@ Way to think
     
     <ellipse name="Fig3.0"
       x="370"
-      y="221"
+      y="222"
       rx="98"
-      ry="37"
+      ry="38"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -22396,7 +22396,7 @@ Way to think
     />
     <text name="Fig3.1"
       x="283"
-      y="210"
+      y="212"
       width="174"
       height="21"
       fill="0"
@@ -22411,7 +22411,7 @@ Way to think
       justification="Center"
     >communication::MonitorsSolutions</text>
     <group name="Fig3.2"
-         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[283, 209, 174, 0]"
+         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[283, 211, 174, 0]"
          href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009B7"
          fill="0"
          fillcolor="white"
@@ -22424,7 +22424,7 @@ Way to think
       
       <rectangle name="Fig3.2.0"
         x="283"
-        y="209"
+        y="211"
         width="174"
         height="0"
         fill="0"
@@ -22527,7 +22527,7 @@ Way to think
     </path>
   </group>
   <group name="Fig5"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[344, 5, 188, 72]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[344, 5, 188, 75]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009A9"
        fill="1"
        fillcolor="white"
@@ -22539,9 +22539,9 @@ Way to think
     
     <ellipse name="Fig5.0"
       x="438"
-      y="41"
+      y="42"
       rx="94"
-      ry="36"
+      ry="37"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -22549,7 +22549,7 @@ Way to think
     />
     <text name="Fig5.1"
       x="355"
-      y="30"
+      y="32"
       width="165"
       height="21"
       fill="0"
@@ -22564,7 +22564,7 @@ Way to think
       justification="Center"
     >communication::ProvideRequest</text>
     <group name="Fig5.2"
-         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[355, 29, 165, 0]"
+         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[355, 31, 165, 0]"
          href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009A9"
          fill="0"
          fillcolor="white"
@@ -22577,7 +22577,7 @@ Way to think
       
       <rectangle name="Fig5.2.0"
         x="355"
-        y="29"
+        y="31"
         width="165"
         height="0"
         fill="0"
@@ -22623,7 +22623,7 @@ Way to think
     </group>
   </group>
   <group name="Fig6"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[576, 112, 192, 72]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[576, 112, 192, 75]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009C4"
        fill="1"
        fillcolor="white"
@@ -22635,9 +22635,9 @@ Way to think
     
     <ellipse name="Fig6.0"
       x="672"
-      y="148"
+      y="149"
       rx="96"
-      ry="36"
+      ry="37"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -22645,7 +22645,7 @@ Way to think
     />
     <text name="Fig6.1"
       x="587"
-      y="137"
+      y="139"
       width="169"
       height="21"
       fill="0"
@@ -22660,7 +22660,7 @@ Way to think
       justification="Center"
     >communication::ProvidesSolution</text>
     <group name="Fig6.2"
-         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[587, 136, 169, 0]"
+         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[587, 138, 169, 0]"
          href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009C4"
          fill="0"
          fillcolor="white"
@@ -22673,7 +22673,7 @@ Way to think
       
       <rectangle name="Fig6.2.0"
         x="587"
-        y="136"
+        y="138"
         width="169"
         height="0"
         fill="0"
@@ -22719,7 +22719,7 @@ Way to think
     </group>
   </group>
   <group name="Fig7"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[288, 112, 144, 60]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[288, 112, 144, 63]pathVisible=true;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009C5"
        fill="1"
        fillcolor="white"
@@ -22731,9 +22731,9 @@ Way to think
     
     <ellipse name="Fig7.0"
       x="360"
-      y="142"
+      y="143"
       rx="72"
-      ry="30"
+      ry="31"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -22741,7 +22741,7 @@ Way to think
     />
     <text name="Fig7.1"
       x="304"
-      y="131"
+      y="133"
       width="111"
       height="21"
       fill="0"
@@ -22756,7 +22756,7 @@ Way to think
       justification="Center"
     >communication::Train</text>
     <group name="Fig7.2"
-         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[304, 130, 111, 0]"
+         description="org.argouml.uml.diagram.ui.FigStereotypesGroup[304, 132, 111, 0]"
          href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009C5"
          fill="0"
          fillcolor="white"
@@ -22769,7 +22769,7 @@ Way to think
       
       <rectangle name="Fig7.2.0"
         x="304"
-        y="130"
+        y="132"
         width="111"
         height="0"
         fill="0"
@@ -22867,8 +22867,8 @@ Way to think
     >
       <moveto x="77"
               y="163" />
-      <lineto x="289"
-              y="147" />
+      <lineto x="288"
+              y="148" />
     </path>
   </group>
   <group name="Fig9"
@@ -22898,8 +22898,8 @@ Way to think
     >
       <moveto x="381"
               y="113" />
-      <lineto x="410"
-              y="75" />
+      <lineto x="409"
+              y="77" />
     </path>
   </group>
   <group name="Fig10"
@@ -22928,13 +22928,13 @@ Way to think
       strokecolor="black"
     >
       <moveto x="431"
-              y="144" />
+              y="145" />
       <lineto x="576"
-              y="144" />
+              y="145" />
     </path>
   </group>
   <group name="Fig11"
-       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[592, 216, 146, 62]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
+       description="org.argouml.uml.diagram.use_case.ui.FigUseCase[592, 216, 146, 65]pathVisible=false;stereotypeView=0;extensionPointVisible=false"
        href="127-0-1-1-69c473c:13484677fd3:-8000:00000000000009CB"
        fill="1"
        fillcolor="white"
@@ -22946,9 +22946,9 @@ Way to think
     
     <ellipse name="Fig11.0"
       x="665"
-      y="247"
+      y="248"
       rx="73"
-      ry="31"
+      ry="32"
       fill="1"
       fillcolor="white"
       stroke="1"
@@ -22956,7 +22956,7 @@ Way to think
     />
     <text name="Fig11.1"
       x="601"
-      y="236"
+      y="238"
       width="127"
       height="21"
       fill="0"
@@ -23055,9 +23055,9 @@ Way to think
       strokecolor="black"
     >
       <moveto x="465"
-              y="229" />
+              y="230" />
       <lineto x="593"
-              y="240" />
+              y="241" />
     </path>
   </group>
 </pgml>
@@ -93107,7 +93107,7 @@ inference process.</text>
     <text name="Fig1.3"
       x="8"
       y="40"
-      width="152"
+      width="145"
       height="27"
       fill="0"
       fillcolor="white"
@@ -93140,15 +93140,15 @@ inference process.</text>
                         offset="10" />
     </private>
     <path name="Fig2.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
       strokecolor="black"
     >
-      <moveto x="76"
-              y="16" />
-      <lineto x="76"
+      <moveto x="80"
+              y="17" />
+      <lineto x="80"
               y="40" />
     </path>
   </group>
@@ -93243,7 +93243,7 @@ inference process.</text>
                         offset="10" />
     </private>
     <path name="Fig4.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -93346,7 +93346,7 @@ inference process.</text>
                         offset="10" />
     </private>
     <path name="Fig6.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -93449,7 +93449,7 @@ inference process.</text>
                         offset="10" />
     </private>
     <path name="Fig8.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -93522,13 +93522,13 @@ inference process.</text>
                         offset="10" />
     </private>
     <path name="Fig10.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
       strokecolor="51 51 153"
     >
-      <moveto x="81"
+      <moveto x="83"
               y="255" />
       <lineto x="83"
               y="288" />
@@ -93536,7 +93536,7 @@ inference process.</text>
   </group>
 </pgml>
 <pgml description="org.argouml.uml.diagram.activity.ui.UMLActivityDiagram|127-0-1-1-16b1a23f:1392f6d7b2a:-8000:00000000000013F8"
-      name="tu activity 4"
+      name="simplified nlp"
 >
   <group name="Fig0"
        description="org.argouml.uml.diagram.state.ui.FigInitialState[48, 0, 16, 16]pathVisible=false;stereotypeView=0;"
@@ -93628,7 +93628,7 @@ inference process.</text>
     <text name="Fig1.3"
       x="8"
       y="40"
-      width="99"
+      width="95"
       height="27"
       fill="0"
       fillcolor="white"
@@ -93661,15 +93661,15 @@ inference process.</text>
                         offset="10" />
     </private>
     <path name="Fig2.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
       strokecolor="black"
     >
-      <moveto x="52"
-              y="16" />
-      <lineto x="52"
+      <moveto x="56"
+              y="17" />
+      <lineto x="56"
               y="40" />
     </path>
   </group>
@@ -93731,7 +93731,7 @@ inference process.</text>
     <text name="Fig3.3"
       x="8"
       y="96"
-      width="100"
+      width="97"
       height="40"
       fill="0"
       fillcolor="white"
@@ -93765,7 +93765,7 @@ Annotator</text>
                         offset="10" />
     </private>
     <path name="Fig4.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -93868,7 +93868,7 @@ Annotator</text>
                         offset="10" />
     </private>
     <path name="Fig6.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
@@ -93941,13 +93941,13 @@ Annotator</text>
                         offset="10" />
     </private>
     <path name="Fig8.0"
-      description="org.tigris.gef.presentation.FigPoly"
+      description="org.argouml.gefext.ArgoFigPoly"
       fill="0"
       fillcolor="white"
       stroke="1"
       strokecolor="51 51 153"
     >
-      <moveto x="50"
+      <moveto x="51"
               y="199" />
       <lineto x="51"
               y="240" />
