@@ -24,14 +24,13 @@ TU comprises smart operating mechanism over target(customer).
 The purpose of this document is to describe the functional operation and capabilities of the TU and identify top level information a prospective user would require in
 order to manage and operate the system. Identified below are several technology areas the TU was designed to support.
 
- 1. RIM
- 1. NOC
+ 1. RIM(Remote Infrastructure Management)
+ 1. NOC(Network operations center)
  1. SE maintenance
    2. Telecom maintenance
    2. FIS system maintenance
    2. HIS systems maintenance
  1. Accounting systems
- 1. ...
 
 ### Scope
 
@@ -166,11 +165,11 @@ to: feedback from human specialist for solution during training, time left to pr
 ### Selector
 
 Component that retrieves resources from Knowledge Base. Selector is capable of retrieving using Critics requests and [Goals](system-description.md#goal-management).
-Selector uses storage, currently it is No SQL database [Neo4j](http://neo4j.org/).
+Selector uses storage, currently it is No SQL database [Neo4j](http://neo4j.org/). Selector is tightly coupled with Critic.
 
 ### Critic
 
-Component is mainly used for analysis processed data in context of current problem solution. There are several types of Critics:
+Component is mainly used for analysis processed data in context of current problem solution. There are several types of Critic:
 
  0. Analyser - is used to parse current context and return probability and confidence of the positive result.
  0. Controller - is used to trace some parameter, for example time and alter for example emotional state of the TU system.
@@ -191,9 +190,12 @@ Typical Ways to think:
 This is interface to third party component that implements Logical Reasoning, currently it is third party component [PLN](http://wiki.opencog.org/w/PLN).
 
 
-//TODO
+### Natural language processing components
 
-### Environment requirements.
+This group of components are dedicated to process problem description text with semantic network output. Preliminary splitter extracts sequence of words from inbound text.
+Lexical parser creates lexical pair of words. KnowledgeBase Annotator maps domain concepts from Knowledge Base to words from inbound text.
+
+## Environment requirements.
 
 Linux compatible OS (Ubuntu recommended).
 
