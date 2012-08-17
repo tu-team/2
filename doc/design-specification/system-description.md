@@ -13,7 +13,6 @@ TU is human aided system, within TU humans are capable of training, clarificatio
 ## Introduction
 
 TU project will provide automation and reporting facility for SE(Software engineering), IT-Telecom problem processing in integration with RMS-es and NMS-es.
-TU comprises smart operating mechanism over target(customer).
 
 ### Purpose
 
@@ -103,7 +102,7 @@ Natural language processing components provides basis for machine understanding 
 
 
 #### TU webservice
-Is main entry point of the system to implement base functions:
+Is a main entry point of the system to implement base functions:
 
  0. Create request
  0. Create clarification response
