@@ -197,7 +197,7 @@ object TestDataGenerator {
   // User miss Internet Explorer 8 annotated
   val userAnnotatedPhrase = AnnotatedPhrase("User", userConcept)
   val missingAnnotatedPhrase = AnnotatedPhrase("miss", lackConcept)
-  val internetExplorer8AnnotatedPhrase = AnnotatedPhrase("Internet Explorer 8", internetExplorerConcept)
+  val internetExplorer8AnnotatedPhrase = AnnotatedPhrase("Internet Explorer", internetExplorerConcept)
   val iHaveProblemWithIE8Annotated = AnnotatedNarrative(List(userAnnotatedPhrase,
     missingAnnotatedPhrase, internetExplorer8AnnotatedPhrase), KnowledgeURI("iHaveProblemWithIE8"))
 

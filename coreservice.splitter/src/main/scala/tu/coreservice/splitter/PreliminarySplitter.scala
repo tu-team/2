@@ -19,6 +19,7 @@ import tu.model.knowledge.domain.{ConceptLink, Concept}
 import tu.coreservice.utilities.TestDataGenerator
 
 
+
 /**
  * @author toschev alex
  *         Date: 01.06.12
@@ -33,6 +34,8 @@ import tu.coreservice.utilities.TestDataGenerator
 class PreliminarySplitter extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
+
+  val names: List[String] = List("_subj", "_obj", "_iobj", "_advmod")
 
   /**
    * list of phrase's types that should be processed as separate Annotated Phrases
@@ -110,11 +113,66 @@ class PreliminarySplitter extends Way2Think {
 
 
 
-      val tree = relexSentence.getParses.get(0).getPhraseTree
+      val parse = relexSentence.getParses.get(0)
+
+
+
 
       var  phrases  = List[AnnotatedPhrase]()
+      processNode(parse.getLeft.get("head"))
 
-      extractedPhrases(tree.getNode)
+
+      def processNode(feature: FeatureNode):Boolean = {
+
+        try {
+
+          val name: String = getName(feature)
+
+          //apply sentence index
+          val sentenceIndex = feature.get("nameSource").get("index_in_sentence").getValue().toDouble
+
+          if (name.contains("_"))
+          {
+            //split phrase by two
+            phrases ::= AnnotatedPhrase(name.split("_").map(b=> AnnotatedPhrase(b)).toList,sentenceIndex)
+
+          }
+          else
+          {
+            phrases ::= AnnotatedPhrase(name,sentenceIndex)
+          }
+            if (feature.get("links") != null) {
+            val filteredFeatures = feature.get("links").getFeatureNames.filter {
+              n: String => names.contains(n)
+            }
+            if (filteredFeatures.size > 0) {
+
+              filteredFeatures.foreach(f=>{
+                processNode(feature.get("links").get(f))
+              })
+
+
+            }
+          }
+
+          val next = feature.get("NEXT")
+          if (next != null) {
+            log info "=>"
+            processNode(next)
+          }
+          true
+        } catch {
+          case e: RuntimeException => {
+            log error e.getMessage
+            throw new UnexpectedException("$Wrong_feature_requested " + e.getMessage)
+          }
+        }
+      }
+
+      //rearrange phrases according to sentence occurence
+      phrases=phrases.sortBy(b=>b.sentenceIndex)
+
+      //extractedPhrases(tree.getNode)
 
       def addAnnotatedPhrase(vl:FeatureNode)={
 
@@ -189,33 +247,7 @@ class PreliminarySplitter extends Way2Think {
 
       }
 
-      //extract all sentences
 
-
-
-       /* .filter(n => {
-        val feature = n.getNode
-        feature.get("orig_str") != null
-      }
-      ).map(
-        u => {
-          val feature = u.getNode
-
-          val phraseValue = feature.get("orig_str").getValue;
-          val phrase: AnnotatedPhrase = AnnotatedPhrase(phraseValue)
-          /*val phrs: List[AnnotatedPhrase] = wordList.map {
-            w: FeatureNode => {
-              //append word
-              val phrase: AnnotatedPhrase = AnnotatedPhrase(w.get("orig_str").getValue)
-              phrase
-            }
-          }.toList*/
-          phrase
-        }
-      ).toList  */
-
-      //relexSentence.getParses.toList.map(b=>new Phrase(b.getPhraseTree.))
-      //var convertedPhrases = relexSentence.getParses.toArray.map(b=> new Phrase(b.))
       outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
         -> new KnowledgeString(sentence, sentenceURI))
 
@@ -232,25 +264,24 @@ class PreliminarySplitter extends Way2Think {
     outputContext
   }
 
-  /*def processNode(feature: FeatureNode, sentence: AnnotatedSentence): AnnotatedPhrase = {
-    val leftWall = "LEFT-WALL"
-    try {
 
 
-      val next = feature.get("NEXT")
-      if (next != null) {
-        log info "=>"
-        processNode(next, sentence)
-      }
 
+  def getName(feature: FeatureNode): String = {
 
-    } catch {
-      case e: RuntimeException => {
-        log error e.getMessage
-        throw new UnexpectedException("$Wrong_feature_requested " + e.getMessage)
-      }
+    if (feature.get("name") != null) {
+      val name = feature.get("name").getValue
+      log info "name=" + feature.get("name").getValue
+      name
+    } else if (feature.get("orig_str") != null) {
+      val origStr = feature.get("orig_str").getValue
+      log info "orig_str" + feature.get("orig_str").getValue
+      origStr
+    } else {
+      throw new UnexpectedException("$No_name_specified")
     }
-  } */
+  }
+
 
   def start() = false
 
