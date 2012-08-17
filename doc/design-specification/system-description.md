@@ -3,20 +3,16 @@ Problem solving automation system based on machine understanding and solution se
 
 ## Preface
 
-There are several industrial systems for support and maintenance in IT: RMS-es,  NMS-es, HP OpenView, etc.
-They are usually used as synchronisation, monitoring, classification and tracing human operating tool.
+There are several industrial systems for support and maintenance in IT: RMSs (Remote management system),  NMSs (Network management system), HP OpenView, etc.
+They are usually used as monitoring, classification and tracing human operating tool.
 This systems are capable of: network errors analysis, provides infrastructure for business coordination, etc.
 Humans are capable of decision making and operating over target system using information and analysis of RMS-es and NMS-es.
 TU in problem solution automation system dedicated for decision making and operating in target environment.
 TU is human aided system, within TU humans are capable of training, clarification of problem description, solution confirmation.
 
-
-This document describes the functional operation of the TU and provides a top level overview of information Also included
-is an overview of the TU operating environment to provide the user a holistic understanding to utilize the TU.
-
 ## Introduction
 
-TU project will provide automation and reporting facility for SE, IT-Telecom problem processing in integration with RMS-es and NMS-es.
+TU project will provide automation and reporting facility for SE(Software engineering), IT-Telecom problem processing in integration with RMS-es and NMS-es.
 TU comprises smart operating mechanism over target(customer).
 
 ### Purpose
@@ -39,7 +35,20 @@ The scope of this document covers the TU and corresponding systems. It provides 
 ## TU system overview
 
 TU system is comprised of Training subsystem, Operating subsystem and Knowledge Base. TU Operating subsystem is integrated with target(customer) system
-via smart operating mechanism described below. Knowledge base is main storage of the TU system that stores all data and is capable of reporting of every
+via smart operating mechanism described below.
+
+
+Training subsystem is capable of machine learning of the system of domain and common sense knowledge. Domain information is: problem symptoms, possible solutions,
+problem solution time limits (SLAs), main domain concepts like software, network, internet, browser, data base table etc.
+
+Operating subsystem is capable of understanding the problem description and retrieving proper solution, clarification of problem description and clarification processing,
+implementing found solution over target(customer) system via smart operating mechanism.
+
+Smart operating mechanism is the way TU system implement found solution over target system taking in account feedback of operating environment. For example, solution is
+Install FireFox on James Bond machine. System tries to use install software script with FireFox parameter over James Bond machine.
+If script fails with can not access James Bond machine error, TU tries to clarify the address with human specialist.
+
+Knowledge base is main storage of the TU system that stores all data and is capable of reporting of every
 action done by the system.
 
 ![System overview](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/system-overview.png)
@@ -59,6 +68,15 @@ using trained data, solution search of trained solutions, application of solutio
  0. Emotion state management and control.
 
 ### Components
+
+![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/components-highlevel.png)
+Interface components provide proper way to communicate with the system for client systems, currently it is [web-service](http://en.wikipedia.org/wiki/Web_service).
+Interface components checks and translates inbound information in TU internal representation currently it is [Semantic network](http://en.wikipedia.org/wiki/Semantic_network),
+and transfer data to Core components.
+Core components are main system part that implement features listed above. Core components uses several external systems:
+[NLP(Natural language processing)](#natural-language-processing-components) systems supplemental for machine understanding.
+KB(Knowledge base) is main storage of TU system currently it is [neo4j](http://neo4j.org/)
+Reasoner is server capable of logical inference based on trained data stored in KB.
 
 ![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
 
@@ -101,8 +119,8 @@ Executor is capable of requesting help if it's stuck, or received unexpected res
 
 #### Message bus
 
-Is main component for collaboration of rest components. It uses messaging capabilities to deliver notification of internal events.
-Adapter to 3rd party component, with messaging functionality: implemented as third party component Glassfish MessageBus.
+Is main component used for collaboration of components. It uses messaging capabilities to deliver notification of internal events between components.
+Adapter to 3rd party component, with messaging functionality: implemented as third party component [Glassfish message bus](http://en.wikipedia.org/wiki/GlassFish).
 
 ### ThinkingLifeCycle
 
@@ -110,6 +128,9 @@ Main component that makes whole understanding and solution search work. It imple
 machine understanding and solution search, and several control processes.
 
 ![ThinkingLifeCycle Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/ThinkingLifeCycleComponent.png)
+
+Critic analyses the context of a problem and invokes Selector to find proper resource from the KB, Selector could retrieve two types of resources: Critic or a Way2Think(way to think). \
+Way2Think actually changes data in the context of current problem.
 
 ThinkingLifeCycle controls Critic - Selector collaboration and Way2Think start and stop. This approach is based on [Marvin Minsky Thinking model](http://web.media.mit.edu/~minsky/E7/eb7.html#_Toc508708572)
 
@@ -130,11 +151,11 @@ Main thinking processes implemented in TU:
 
 #### Problem description text pre-processing
 
-Via NLP tools a problem description text is been translated in to the semantic network form.
+Via [NLP](#natural-language-processing-components) tools a problem description text is being translated in to the [semantic network](http://en.wikipedia.org/wiki/Semantic_network) form.
 
 #### Problem classification
 
-Problem is been classified according ot the description text: Direct instruction, Problem description with desired state, Problem description without desired state.
+Based on the text contained in the description a problem is classified as one of the following: Direct instruction, Problem description with desired state, Problem description without desired state.
 
 #### Solution search/generation
 
@@ -143,11 +164,17 @@ trained Knowledge Base.
 
 #### Context management
 
-System is capable of creation and maintenance of request context through clarification and confirmation dialogs.
+System is capable of creation and maintenance of problem context through clarification and confirmation dialogs with human expert.
 
 #### Goal management
 
 TU uses goal oriented processes to implement machine understanding. Goal management is the process to find proper goal in current state of the system.
+Goals examples used is the system:
+
+ 0. Help user to solve the problem
+   1. Understand the source of problem
+     2. Classify problem
+   1. Generate solution
 
 #### Clarification request processing
 
@@ -158,20 +185,30 @@ response and system processes clarification response within original request con
 
 Right after machine understanding processed a problem description, TU checks weather current understanding does make sense, according to trained domain information in
 Knowledge base.
+For example problem description: I can not send e-mails via Google. This should be detected as not making sense description and should be clarified is Gmail is the one.
 
 #### Emotional state control
 
 Time control and reinforcement learning uses emotional state of the system. Emotional state control switches entire state of the system according
 to: feedback from human specialist for solution during training, time left to process the incident.
+Emotions examples:
+
+ 0. Fear
+ 0. Alarm
+ 0. Anger
+ 0. Anxiety
+ 0. Affection
+ 0. Contentment
 
 ### Selector
 
-Component that retrieves resources from Knowledge Base. Selector is capable of retrieving using Critics requests and [Goals](system-description.md#goal-management).
-Selector uses storage, currently it is No SQL database [Neo4j](http://neo4j.org/). Selector is tightly coupled with Critic.
+Component that retrieves resources(Critics or Way2Think) from Knowledge Base. Selector uses Critics requests and [Goals](system-description.md#goal-management).
+Selector also uses storage, currently it is No SQL database [Neo4j](http://neo4j.org/). Selector is tightly coupled with Critic.
 
 ### Critic
 
-Component is mainly used for analysis processed data in context of current problem solution. There are several types of Critic:
+Component is mainly used for analysis processed data in context of current problem solution. Output is probability that checked condition is true.
+There are several types of Critic:
 
  0. Analyser - is used to parse current context and return probability and confidence of the positive result.
  0. Controller - is used to trace some parameter, for example time and alter for example emotional state of the TU system.
@@ -179,13 +216,13 @@ Component is mainly used for analysis processed data in context of current probl
 
 ### Way2Think
 
-Group of components to actually implement some modifications over data in current problem context.
+Group of components to actually implement modifications over data in current problem context.
 Typical Ways to think:
 
- 0. Simulation
- 0. Reformulation
- 0. Cry for help
- 0. Logical Reasoning.
+ 0. Simulation - crates model of a situation described in problem description
+ 0. Reformulation - translates simulated model in different representation
+ 0. Cry for help - applies to human operator
+ 0. Logical Reasoning. - infers some logical facts based on inbound data
 
 ### Reasoner
 
