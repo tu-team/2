@@ -1,7 +1,7 @@
 package tu.coreservice.thinkinglifecycle
 
 import tu.model.knowledge.training.Goal
-import tu.coreservice.action.selector.Selector
+import tu.dataservice.knowledgebaseserver.KBPrototype
 
 /**
  * @author max talanov
@@ -11,7 +11,7 @@ import tu.coreservice.action.selector.Selector
 
 class GoalManager {
 
-  val goals = (new Selector).goals
+  private val goals = KBPrototype.goals
   private var currentIndex = 0
 
   /**

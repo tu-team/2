@@ -23,7 +23,7 @@ object KBPrototype {
 
   def model = TestDataGenerator.generateDomainModelConceptNetwork
 
-  def goalResourceMap =
+  private def goalResourceMap =
     Map[Goal, List[ActionModel]](
       Goal("ProcessIncident") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
@@ -50,13 +50,13 @@ object KBPrototype {
         )
     )
 
-  def resources = goalResourceMap.values
+  private def resources = goalResourceMap.values
 
   /**
    * Gets Map of URI -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
    * @return Map[KnowledgeURI, Resource]
    */
-  def uriResourcesMap: Map[KnowledgeURI, Resource] = {
+  private def uriResourcesMap: Map[KnowledgeURI, Resource] = {
     val res: Map[KnowledgeURI, Resource] = goalResourceMap.values.flatten.map {
       r: Resource => {
         Pair(r.uri, r)

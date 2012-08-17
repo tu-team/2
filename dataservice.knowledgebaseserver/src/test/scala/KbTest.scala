@@ -15,7 +15,7 @@
  */
 
 import collection.Map
-import tu.N4JKB
+import tu.dataservice.knowledgebaseserver.N4JKB
 import org.neo4j.graphdb.{Node, GraphDatabaseService, Transaction, RelationshipType}
 import org.neo4j.kernel.EmbeddedGraphDatabase
 import org.scalatest._
