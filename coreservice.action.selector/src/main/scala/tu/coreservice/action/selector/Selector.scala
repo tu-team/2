@@ -29,6 +29,7 @@ class Selector {
     }
   }
 
+  /*
   def apply(request: Request): List[Resource] = {
     KBPrototype.goalResourceMap.get(Goal("ProcessIncident")) match {
       case Some(resources) => {
@@ -39,6 +40,7 @@ class Selector {
       }
     }
   }
+   */
 
   def apply(request: SelectorRequest): List[Resource] = {
     val resourcesOption: List[Option[Resource]] = request.resourceURIList.map {
@@ -54,6 +56,6 @@ class Selector {
     res
   }
 
-  def goals = KBPrototype.goals
+  //def goals = KBPrototype.goals
 
 }
