@@ -52,6 +52,39 @@ class ThinkingLifeCycleTest extends FunSuite {
     log info res.toString
   }
 
+
+  def testCycle(input:String){
+    val requestText = input
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+    assert(res != null)
+    log info res.toString
+
+
+  }
+
+  //TODO
+  test("User needs document portal uppdate")  {
+    testCycle("User needs document portal uppdate")
+  }
+
+  //TODO
+  test("Add new alias Host name on host that alias is wanted to: hrportal.lalala.biz IP adress on host that alias is wanted to: 322.223.333.22 Wanted Alias:    webadviser.lalala.net")  {
+    testCycle("Add new alias Host name on host that alias is wanted to: hrportal.lalala.biz IP adress on host that alias is wanted to: 322.223.333.22 Wanted Alias:    webadviser.lalala.net")
+  }
+  //TODO
+  test("Outlook Web Access (CCC) - 403 - Forbidden: Access is denied'C:\\WINDOWS\\system32\\LALA\\Cache\\A0000B72.1.System\\install.vbs'")  {
+    testCycle("Outlook Web Access (CCC) - 403 - Forbidden: Access is denied'C:\\WINDOWS\\system32\\LALA\\Cache\\A0000B72.1.System\\install.vbs'")
+  }
+  //TODO
+  test("PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc.")  {
+    testCycle("PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc.")
+  }
+
+
+
+
   test("start 5 paralel actors and join") {
 
     log.info("test started")
