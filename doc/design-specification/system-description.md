@@ -3,8 +3,9 @@ Problem solving automation system based on machine understanding and solution se
 
 ## Preface
 
-There are several industrial systems for support and maintenance in IT: RMSs (Remote management system),  NMSs (Network management system), HP OpenView, etc.
-They are usually used as monitoring, classification and tracing human operating tool.
+There are several industrial systems for support and maintenance in IT: RMSs (Remote management system),  NMSs (Network management system),
+HP OpenView, etc.
+They are human-operated tools usually used as monitoring, classification and tracing help desk requests.
 This systems are capable of: network errors analysis, provides infrastructure for business coordination, etc.
 Humans are capable of decision making and operating over target system using information and analysis of RMS-es and NMS-es.
 TU in problem solution automation system dedicated for decision making and operating in target environment.
