@@ -226,7 +226,9 @@ class LinkParser extends Way2Think {
         )
         conceptLinks
       } else {
-        throw new UnexpectedException("$No_links_found")
+        log.warn("$No_links_found")
+        //throw new UnexpectedException("$No_links_found")
+        List[ConceptLink]()
       }
     } catch {
       case e: RuntimeException => {

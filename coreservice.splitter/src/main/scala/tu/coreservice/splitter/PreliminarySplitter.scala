@@ -108,17 +108,9 @@ class PreliminarySplitter extends Way2Think {
       val em: EntityMaintainer = new EntityMaintainer()
       val relExt = setup
       val relexSentence = relExt.processSentence(sentence, em)
-
-
-
-
-
       val parse = relexSentence.getParses.get(0)
-
-
-
-
       var  phrases  = List[AnnotatedPhrase]()
+
       processNode(parse.getLeft.get("head"))
 
 
@@ -171,82 +163,6 @@ class PreliminarySplitter extends Way2Think {
 
       //rearrange phrases according to sentence occurence
       phrases=phrases.sortBy(b=>b.sentenceIndex)
-
-      //extractedPhrases(tree.getNode)
-
-      def addAnnotatedPhrase(vl:FeatureNode)={
-
-        phrases=phrases ::: List(AnnotatedPhrase(vl.getValue))
-        true
-      }
-
-      def fillAnnotatedPhrase(vl:AnnotatedPhrase, word:FeatureNode)={
-        vl.phrases::= AnnotatedPhrase(word.getValue)
-      }
-
-      def extractedPhrases(head:FeatureNode):Boolean={
-        /**
-         * Regenerate the phrase structure tree from the
-         * feature node graph.
-         */
-
-          if (head == null) return false
-          var fn:FeatureNode = head.get("phr-head")
-          if (fn == null) {
-            fn = head.get("phr-type")
-            if (fn != null) return false
-            fn = head.get("phr-word")
-            if (fn != null) {
-              fn = fn.get("orig_str")
-              if (fn != null) addAnnotatedPhrase(fn)
-            }
-            return false
-          }
-          val str: String = ""
-          _extractedPhrases(fn, str)
-
-      }
-
-      def _extractedPhrases( fn:FeatureNode,  str:String):Boolean={
-          var fn_type: FeatureNode = fn.get("phr-type")
-          val sepProc= separateProcessingPhraseType.contains( fn_type.getValue=="NP" )
-          var wordList = List[AnnotatedPhrase]()
-          var fn1 = fn.get("phr-next")
-          while (fn1 != null) {
-
-            var fn_word: FeatureNode = fn1.get("phr-word")
-            if (fn_word != null) {
-              fn_word = fn_word.get("orig_str")
-              if (fn_word != null && fn_type.getValue!="S") {
-                if (sepProc)
-                {
-                  addAnnotatedPhrase(fn_word)
-                }
-                else
-                {
-                   wordList = wordList ::: List(AnnotatedPhrase(fn_word.getValue))  ;
-
-                }
-
-              }
-            }
-            val head: FeatureNode = fn1.get("phr-head")
-            if (head != null) {
-
-               _extractedPhrases(head, str)
-            }
-            fn1 = fn1.get("phr-next")
-          }
-        //close phrase
-        if (wordList.length>0)
-        {
-          phrases =  List(AnnotatedPhrase(wordList)) :::phrases
-          //phrases = ph
-        }
-          true
-
-      }
-
 
       outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
         -> new KnowledgeString(sentence, sentenceURI))

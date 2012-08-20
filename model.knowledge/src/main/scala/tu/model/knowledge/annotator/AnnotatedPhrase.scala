@@ -73,7 +73,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase], var _concepts: L
 
   def findPhrase(word: String): Option[AnnotatedPhrase] = {
 
-    if (this.text.toLowerCase == word.toLowerCase) {
+    if (this.toString().toLowerCase() == word.toLowerCase) {
       Some(this)
     }
     else   {
