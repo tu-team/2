@@ -3,40 +3,46 @@ Problem solving automation system based on machine understanding and solution se
 
 ## Preface
 
-There are several industrial systems for support and maintenance in IT: RMSs (Remote management system),  NMSs (Network management system),
-HP OpenView, etc.
+There are several industrial systems for support and maintenance in IT: RMOSs (Remote management operating system),  NSMs (Network and system management),
+SMS (Server management  system), DM (database management), etc.
 They are human-operated tools usually used as monitoring, classification and tracing help desk requests.
-These systems are capable of: network errors analysis and they provides infrastructure for business coordination.
-Humans then use outputs produced by  RMS-es and NMS-es (information and analysis) for decision making and operating over target system.
-TU is problem solution automation system dedicated to decision making and operating in target environment.
-It is human-aided system, within which TU humans are capable of training, obtaining clarification of problem description and solution confirmation.
+These systems are capable of: server/storage/network operation and errors analysis and they provides with total system control and operational stability that includes storage and network as well as servers.
+IT infrastructure operations staff then use outputs produced by  RMS-es and NMS-es, DM and SMS by monitoring  the whole system and pin-point server, environment problems.
+Gathering information and analysis via management console for farther decision making and operating over target system.
+TU is end–to–end solution automation system not as classical system control and operational stability platform but dedicated to decision making, problem solving and operating in target environment.
+It is limited human-aided system, within which TU humans-operators are capable of training, obtaining clarification of problem description and solution confirmation.
+Not require many technical support specialist which deals with the nitty-gritty of troubleshooting and problem solving, using specialized technical knowledge to provide technical help.
 
 ## Introduction
 
-TU provides automation and reporting facility for problem processing in SE(Software engineering) and IT-Telecom in integration with RMS-es and NMS-es.
+TU provides automation(problem finding and resolution mechanism via integration with third party executable tools) and reporting facility for problem processing in SE(Software engineering)
+and IT-Telecom in integration with RMS-es and NMS-es.
+
+Primary function is to provide end–to–end problem’s resolution mechanism for businesses, its infrastructure, system and all the technology needed to run it.
+Common problems that TU address are: connectivity-the user cannot reach data or gain access to it; missing data-data cannot be found; slow performance-excessive amounts of users are slowing down the system;
+overload-lack of space on a machine for data; or program problems-the program is not running efficiently; and etc.
 
 ### Purpose
 
-The purpose of this document is to describe TU-functional operation and capabilities and identify top level information a prospective user would require in
-order to manage and operate the system. Identified below are several technology areas TU was designed to support.
+The purpose of this document is to describe TU-functional operation and capabilities and identify top level information a prospective
+Companies would require support for their hardware and equipment in order to manage and operate its IT business environment.
+
+Identified below are several technology areas TU was designed to support.
 
  1. RIM(Remote Infrastructure Management)
  1. NOC(Network operations center)
- 1. SE maintenance
+ 1. SE(Software engineering) maintenance
    2. Telecom maintenance
-   2. FIS system maintenance
-   2. HIS systems maintenance
- 1. Accounting systems
+   2. Data storage maintenance
 
 ### Scope
 
-The scope of this document covers TU and corresponding systems. It provides information necessary for training and operation of TU system.
+The scope of this document covers functional description and architectural model of the TU and corresponding systems. It provides information necessary for training and operation of TU system.
 
 ## TU system overview
 
-TU system is comprised of Training subsystem, Operating subsystem and Knowledge Base. TU Operating subsystem is integrated with target(customer) system
+TU system is comprised of operational units such Training subsystem, Operating subsystem and Knowledge Base. TU Operating subsystem is integrated with target(customer) system
 via smart operating mechanism described below.
-
 
 Training subsystem is capable of machine learning of a system of domain and common sense knowledge. Domain information is: problem symptoms, possible solutions,
 problem solution time limits (SLAs), main domain concepts like software, network, internet, browser, data base table etc.
@@ -49,7 +55,7 @@ action performed/executed by the system.
 
 ![System overview](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/system-overview.png)
 
-TU is designed to operate with RMS and NMS systems via integration with standard systems interfaces, machine understanding of problem description,
+TU is designed to operate with RMOS, SMS, DM, and NSM systems via integration with standard systems interfaces, machine understanding of problem description,
 using trained data, solution search of trained solutions, application of a solution taking into an account target system feedback.
 
 ### Smart operating mechanism
@@ -265,12 +271,9 @@ Minimal Requirements: Core i3, 2 Gb Ram, x86 architecture.
 
 ## Systems integrations.
 
-### Integrations of third party systems list.
-
- 0. Incident processing:
-   1. [Nagios](http://www.nagios.org/)
- 0. Change requests processing:
-   1. Development environment integrations.
+TU provide Integration with both 3rd party applications (actuating mechanism or problem executive tools) and end IT customer’s systems.
+Analyst specifies applications, protocols, communication channels and other constraints to be integrated by TU.
+TU according to constraints (protocols and application interfaces) generates optimal integration solution without human abstraction layers performance overhead.
 
 
 
