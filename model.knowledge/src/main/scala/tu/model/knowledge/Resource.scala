@@ -26,4 +26,27 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
       this.getClass.getName
     }
   }
+          /*
+  def export:Map[String, String] = {
+    Map(
+      "namespace" -> _uri.namespace(),
+      "name" -> _uri.name,
+      "revision" -> _uri.revision(),
+      "frequency" -> _probability.getFrequency().toSring,
+      "confidence" -> _probability.getConfidence().toSring
+    )
+  }
+
+            */
 }
+
+/*
+object Resource {
+  def importFrom(map:Map[String, String]):Resource =
+  {
+      //log warning("{} parsing", "Resource)
+
+    val x = new Resource(new KnowledgeURI(), new Probability(Double.parceDouble(map.get("frequency")),  Double.parceDouble(map.get("confidence"))))
+  }
+}
+  */

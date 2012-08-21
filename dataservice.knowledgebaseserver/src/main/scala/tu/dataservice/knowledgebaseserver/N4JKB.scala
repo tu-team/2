@@ -7,7 +7,7 @@ import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
 
 object N4JKB {
-  val defaultFilename = java.lang.System.getProperty("user.home") + "/mentakb"
+  val defaultFilename = java.lang.System.getProperty("user.home") + "/tu_kb"
   val keyField = "key"
   private var inited = false
   private var _GraphDb: EmbeddedGraphDatabase = _
