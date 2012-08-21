@@ -11,7 +11,7 @@ import tu.dataservice.knowledgebaseserver.KBPrototype
 
 class GoalManager {
 
-  private val goals = KBPrototype.goals
+  private val goals = KBPrototype.workflow
   private var currentIndex = 0
 
   /**

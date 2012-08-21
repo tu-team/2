@@ -24,7 +24,7 @@ object N4JKB {
     _GraphDb
   }
 
-  var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName );
+  private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
 
   def init(): Boolean =
   {
