@@ -78,7 +78,7 @@ object KBPrototype {
     res
   }
 
-  def goals = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
+  def workflow = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
   def getByGoalName(name: String): Option[List[ActionModel]] = {
     val resources = this.goalResourceMap
