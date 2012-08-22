@@ -1,6 +1,8 @@
 package tu.model.knowledge
 
 import java.net.URI
+import util.Random
+import org.slf4j.LoggerFactory
 
 /**
  * Universal Identifier of the model.
@@ -9,6 +11,20 @@ import java.net.URI
  */
 
 class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
+
+  def this(map:Map[String, String], scope:Class[_]) = {
+    this(
+      map.get("namespace") match { case Some(x) => x case None => Constant.defaultNamespace },
+      map.get("name") match {
+        case Some(x) => x
+        case None => { val randomName:String = Random.nextInt(Constant.INSTANCE_ID_LENGTH).toString
+          LoggerFactory.getLogger(scope).warn("empty name replaced to {} when Resource created", randomName)
+          randomName
+        }
+      },
+      map.get("revision") match { case Some(x) => x case None => Constant.defaultRevision }
+    )
+  }
 
   private val delimiter = "#"
 
