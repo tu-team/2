@@ -13,6 +13,7 @@ System should be capable of:
 ## Plan
 
  1. Neo4j storage
+   2. Save and restore objects
    2. Integrate with system
    2. Import KBPrototype data in to Neo4j
  1. Dialog
@@ -31,8 +32,9 @@ System should be capable of:
    2. Symptomes - solution pairs
  1. Whole set of Way2Think-s
    2. UpdateDomainModelConfidence
-   2. AssignGoal
-   2. CommunicateToUser
+   2. AssignGoal = 16 h
+     3. Refactor GoalManager to support assigned goals = 16 h
+   2. CommunicateToUser =
    2. CreateContext
    2. StartTimeControl
    2. SetEmotionalState
