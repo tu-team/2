@@ -56,6 +56,6 @@ class Selector {
     res
   }
 
-  //def goals = KBPrototype.goals
+  //def workflow = KBPrototype.workflow
 
 }

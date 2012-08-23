@@ -7,7 +7,7 @@ import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
 
 object N4JKB {
-  val defaultFilename = java.lang.System.getProperty("user.home") + "/mentakb"
+  val defaultFilename = java.lang.System.getProperty("user.home") + "/tu_kb"
   val keyField = "key"
   private var inited = false
   private var _GraphDb: EmbeddedGraphDatabase = _
@@ -24,7 +24,7 @@ object N4JKB {
     _GraphDb
   }
 
-  var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName );
+  private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
 
   def init(): Boolean =
   {

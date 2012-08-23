@@ -1,6 +1,8 @@
 package tu.model.knowledge
 
 import java.util.Calendar
+import util.Random
+import org.slf4j.LoggerFactory
 
 /**
  * @author max talanov
@@ -11,6 +13,11 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
 
   def this(uri: KnowledgeURI) = {
     this(uri, new Probability())
+  }
+
+  def this(map:Map[String, String]) = {
+    this(new KnowledgeURI(map), new Probability(map))
+
   }
 
   def uri: KnowledgeURI = _uri
@@ -26,4 +33,17 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
       this.getClass.getName
     }
   }
+
+  def export:Map[String, String] = {
+    //TODO: move it to KnowledgeURI and Probability call and intersect here
+    Map(
+      "namespace" -> _uri.namespace(),
+      "name" -> _uri.name,
+      "revision" -> _uri.revision(),
+      "frequency" -> _probability.frequency.toString,
+      "confidence" -> _probability.confidence.toString
+    )
+  }
+
+
 }
