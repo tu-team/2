@@ -32,7 +32,7 @@ System should be capable of:
           3. Add subConcept = 2h
           3. Add phrase = 2h
         2. Symptoms-solution pairs = 16h
-    0. Main features:
+0. Main features:
      1. ThinkingLifeCycle to support 6 layer approach
        2. Parallel different layers operations (Refactor ThinkingLifeCycle)
          3. Implement Sequence Way2Think = 6h
