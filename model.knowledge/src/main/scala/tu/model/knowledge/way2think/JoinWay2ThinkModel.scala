@@ -10,7 +10,11 @@ import tu.model.knowledge.action.ActionModel
  */
 
 class JoinWay2ThinkModel(val parameters: List[ActionModel], _uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends ActionModel(_uri, _probability){
+  extends ActionModel(_uri, _probability) {
+
+  def this(map: Map[String, String]) = {
+    this(new KnowledgeURI(map), new Probability(map))
+  }
 
 }
 
