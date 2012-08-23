@@ -12,12 +12,13 @@ import org.slf4j.LoggerFactory
 
 class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
-  def this(map:Map[String, String], scope:Class[_]) = {
+  def this(map:Map[String, String]) = {
     this(
       map.get("namespace") match { case Some(x) => x case None => Constant.defaultNamespace },
       map.get("name") match {
         case Some(x) => x
         case None => { val randomName:String = Random.nextInt(Constant.INSTANCE_ID_LENGTH).toString
+          val scope = map.get("class") match { case Some(x) => x case None => KnowledgeURI.getClass.getName  }
           LoggerFactory.getLogger(scope).warn("empty name replaced to {} when Resource created", randomName)
           randomName
         }

@@ -17,7 +17,7 @@ class Probability(val frequency: Double = 0.0, val confidence: Double = 1.0) {
     "" + frequency + ":" + confidence
   }
 
-  def this(map:Map[String, String], scope:Class[_]) = {
+  def this(map:Map[String, String]) = {
     this(  map.get("frequency") match { case Some(x) => x.toDouble  case _ => 0.0},
            map.get("confidence") match { case Some(x) => x.toDouble  case _ => 1.0}
     )

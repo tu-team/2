@@ -15,8 +15,8 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
     this(uri, new Probability())
   }
 
-  def this(map:Map[String, String], scope:Class[_]) = {
-    this(new KnowledgeURI(map, scope), new Probability(map, scope))
+  def this(map:Map[String, String]) = {
+    this(new KnowledgeURI(map), new Probability(map))
 
   }
 
