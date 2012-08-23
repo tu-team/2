@@ -1,11 +1,10 @@
 package tu.model.knowledge
 
-import java.text.DecimalFormat
 
 /**
  * @author max talanov
- * date 2012-04-29
- * Time: 11:34 PM
+ *         date 2012-04-29
+ *         Time: 11:34 PM
  */
 
 class Probability(val frequency: Double = 0.0, val confidence: Double = 1.0) {
@@ -17,9 +16,22 @@ class Probability(val frequency: Double = 0.0, val confidence: Double = 1.0) {
     "" + frequency + ":" + confidence
   }
 
-  def this(map:Map[String, String]) = {
-    this(  map.get("frequency") match { case Some(x) => x.toDouble  case _ => 0.0},
-           map.get("confidence") match { case Some(x) => x.toDouble  case _ => 1.0}
+  def this(map: Map[String, String]) = {
+    this(map.get("frequency") match {
+      case Some(x) => x.toDouble
+      case _ => 0.0
+    },
+      map.get("confidence") match {
+        case Some(x) => x.toDouble
+        case _ => 1.0
+      }
+    )
+  }
+
+  def export: Map[String, String] = {
+    Map(
+      "frequency" -> this.frequency.toString,
+      "confidence" -> this.confidence.toString
     )
   }
 }

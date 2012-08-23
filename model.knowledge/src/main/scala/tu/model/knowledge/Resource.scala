@@ -35,14 +35,7 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
   }
 
   def export:Map[String, String] = {
-    //TODO: move it to KnowledgeURI and Probability call and intersect here
-    Map(
-      "namespace" -> _uri.namespace(),
-      "name" -> _uri.name,
-      "revision" -> _uri.revision(),
-      "frequency" -> _probability.frequency.toString,
-      "confidence" -> _probability.confidence.toString
-    )
+    uri.export ++ probability.export
   }
 
 

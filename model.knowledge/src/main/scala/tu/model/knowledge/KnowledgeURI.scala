@@ -72,6 +72,12 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
     namespace() + delimiter + name + "@" + revision()
   }
 
+  def export:Map[String, String] = {
+    Map(
+      "namespace" -> this.namespace(),
+      "name" -> this.name,
+      "revision" -> this.revision())
+  }
 }
 
 object KnowledgeURI {

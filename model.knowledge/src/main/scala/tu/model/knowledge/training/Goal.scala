@@ -18,6 +18,11 @@ class Goal(_uri: KnowledgeURI, _probability: Probability = new Probability())
   def equals(other: Goal): Boolean = {
     other.uri.name.equals(this.uri.name)
   }
+
+  def this(map: Map[String, String]) = {
+    this(new KnowledgeURI(map), new Probability(map))
+  }
+
 }
 
 object Goal {
