@@ -13,9 +13,9 @@ System should be capable of:
 ## Plan
 
  1. Neo4j storage
-   2. Save and restore objects
-   2. Integrate with system
-   2. Import KBPrototype data in to Neo4j
+   2. Save and restore objects =16 (12 left)
+   2. Integrate with system =10 (8 left)
+   2. Import KBPrototype data in to Neo4j = 8 (7 left)
  1. Dialog
    2. Translate clarification Cry4Help to human readable form = 8h
    2. Transfer clarification Cry4Help-s to client (Simple stdout) = 8h
