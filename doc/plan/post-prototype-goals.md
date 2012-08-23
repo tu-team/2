@@ -58,5 +58,6 @@ System should be capable of:
 
 ## Overall:
 
-0. Critical features = 60h
-0. Main features = 192
+0. Critical features = 97h
+0. Main features = 192h
+0. Overall = 289h
