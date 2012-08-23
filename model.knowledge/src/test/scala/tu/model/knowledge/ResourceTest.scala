@@ -21,7 +21,15 @@ class ResourceTest extends FunSuite {
     def this(name:String) = this(KnowledgeURI(name))
     def this(name:String, _p: Probability) = this(KnowledgeURI(name), _p)
 
-    //def this(map:Map[String, String]) = this(new KnowledgeURI(map, this.getClass()), new Probability(map, this.getClass()))
+    def this(map:Map[String, String]) = this(new KnowledgeURI(map), new Probability(map))
+
+    override def export:Map[String, String] =
+    {
+      var x:Map[String, String] = super.export
+      //x("class") = this.getClass.className
+      x
+    }
+
   }
 
   test("test Ok") {
