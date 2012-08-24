@@ -12,6 +12,9 @@ import tu.model.knowledge.action.ActionModel
 class CriticModel(_uri: KnowledgeURI, _probability: Probability = new Probability())
   extends ActionModel(_uri, _probability) {
 
+  def this(map: Map[String, String]) = {
+    this(new KnowledgeURI(map), new Probability(map))
+  }
 }
 
 object CriticModel{
