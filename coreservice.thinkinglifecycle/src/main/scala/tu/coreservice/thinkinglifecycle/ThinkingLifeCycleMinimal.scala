@@ -6,13 +6,13 @@ import tu.coreservice.action.Action
 import tu.model.knowledge.Resource
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
-import tu.coreservice.action.UnexpectedException
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
 import tu.coreservice.utilities.TestDataGenerator
+import tu.exception.UnexpectedException
 
 
 /**

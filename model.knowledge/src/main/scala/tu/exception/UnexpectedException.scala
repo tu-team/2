@@ -1,4 +1,4 @@
-package tu.coreservice.action
+package tu.exception
 
 /**
  * @author max talanov

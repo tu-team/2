@@ -6,7 +6,6 @@ import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.selector.SelectorRequest
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
-import tu.coreservice.action.UnexpectedException
 
 
 /**

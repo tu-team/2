@@ -7,7 +7,6 @@ import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence, AnnotatedNarrative}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
-import tu.coreservice.action.UnexpectedException
 import relex.entity.EntityMaintainer
 import relex.output.OpenCogScheme
 import relex.ParsedSentence
@@ -15,6 +14,7 @@ import relex.feature.{FeatureNameFilter, FeatureNode}
 import org.slf4j.LoggerFactory
 import tu.model.knowledge.domain.{Concept, ConceptLink}
 import tu.coreservice.utilities.TestDataGenerator
+import tu.exception.UnexpectedException
 
 
 /**

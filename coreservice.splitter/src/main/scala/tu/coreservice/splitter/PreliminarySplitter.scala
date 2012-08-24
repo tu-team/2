@@ -14,10 +14,9 @@ import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import org.slf4j.LoggerFactory
 import relex.feature.{FeatureNodeCallback, FeatureNode}
 import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
-import tu.coreservice.action.UnexpectedException
 import tu.model.knowledge.domain.{ConceptLink, Concept}
 import tu.coreservice.utilities.TestDataGenerator
-
+import tu.exception.UnexpectedException
 
 
 /**
