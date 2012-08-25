@@ -13,7 +13,8 @@ class JoinWay2ThinkModel(val parameters: List[ActionModel], _uri: KnowledgeURI, 
   extends ActionModel(_uri, _probability) {
 
   def this(map: Map[String, String]) = {
-    this(new KnowledgeURI(map), new Probability(map))
+    this(Nil, new KnowledgeURI(map), new Probability(map))
+    //TODO - parameters
   }
 
 }

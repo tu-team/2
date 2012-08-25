@@ -5,11 +5,12 @@ import tu.model.knowledge.training.Goal
 import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
 import org.neo4j.graphdb.{RelationshipType, Transaction, Node, GraphDatabaseService}
+import collection.immutable.HashMap
 
 
-class DefaultRelationType extends RelationshipType
+class RelationType(_name:String) extends RelationshipType
 {
-  def name():String = {"link"}
+  def name():String = {_name}
 }
 
 
@@ -19,6 +20,8 @@ object N4JKB extends KB {
   private var inited = false
   private var _GraphDb: EmbeddedGraphDatabase = _
   private var _nodeIndex: IndexedSeq[Node] = _
+
+  private val defaultRelationType = new RelationType("defaultRelationType")
 
   def apply(): EmbeddedGraphDatabase = {
     if (!inited) {
@@ -31,28 +34,28 @@ object N4JKB extends KB {
     _GraphDb
   }
 
-  override def save(resource:Resource):Boolean = {save (resource, _GraphDb.getReferenceNode) }
+  override def saveResource(resource:Resource):Boolean = {saveResource (resource, _GraphDb.getReferenceNode) }
 
-  override def loadChild(key:String):Resource = loadChild(_GraphDb.getReferenceNode, key)
+  override def loadChild(key:String):Map[String,  String] = loadChild(_GraphDb.getReferenceNode, key)
 
-  override def loadChildrenList():List[Resource]
+  override def loadChildrenList():List[Map[String,  String]] = loadChildrenList(_GraphDb.getReferenceNode)
 
-  override def loadChildrenMap():Map[String,  Resource]
-
-
-  override def save(child:Resource, parent:Resource, key:String = ""):Boolean = {save (child, getNodeByResource(parent), key)}
-
-  override def loadChild(parent:Resource, key:String):Resource = loadChild(getNodeByResource(parent), key)
-
-  override def loadChildrenList(parent:Resource):List[Resource] = loadChildrenList(getNodeByResource(parent))
-
-  override def loadChildrenMap(parent:Resource):Map[String,  Resource] = loadChildrenMap(getNodeByResource(parent))
+  override def loadChildrenMap():Map[String,  Map[String,  String]] = loadChildrenMap(_GraphDb.getReferenceNode)
 
 
-  private def getNodeByResource( resource:Resource) : Node = {}
+  override def saveResource(child:Resource, parent:Resource, key:String):Boolean = {saveResource (child, getNodeByResource(parent), key)}
+
+  override def loadChild(parent:Resource, key:String):Map[String,  String] = loadChild(getNodeByResource(parent), key)
+
+  override def loadChildrenList(parent:Resource):List[Map[String,  String]] = loadChildrenList(getNodeByResource(parent))
+
+  override def loadChildrenMap(parent:Resource):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent))
 
 
-  private def save(child:Resource, parentNode:Node, key:String = ""):Boolean = {
+  private def getNodeByResource( resource:Resource) : Node = {_GraphDb.getReferenceNode} //TODO - get by uri
+
+
+  private def saveResource(child:Resource, parentNode:Node, key:String):Boolean = {
     var ok = false
     val tx:Transaction = N4JKB().beginTx();
     try
@@ -61,7 +64,7 @@ object N4JKB extends KB {
       val childNode = N4JKB().createNode();
       for ((x, y) <- child.export)
           childNode.setProperty( x, y );
-      val relationship = parentNode.createRelationshipTo( childNode , DefaultRelationType );
+      val relationship = parentNode.createRelationshipTo( childNode , defaultRelationType );
       relationship.setProperty( "key", key );
 
       tx.success();
@@ -74,11 +77,22 @@ object N4JKB extends KB {
     ok
   }
 
-  private def loadChild(parent:Node, key:String):Resource
+  private def loadChild(parent:Node, key:String):Map[String,  String] = Nil.toMap[String,  String]
 
-  private def loadChildrenList(parent:Node):List[Resource] = Nil
+  private def loadChildrenList(parent:Node):List[Map[String,  String]] = Nil
 
-  private def loadChildrenMap(parent:Node):Map[String,  Resource]
+  private def loadChildrenMap(parent:Node):Map[String,  Map[String,  String]] ={
+    var res = new HashMap[String,  Map[String,  String]]
+    //TODO use кошерный синтаксис
+    for (x <- parent.getRelationships.iterator())
+    {
+      var values = new HashMap[String,  String]
+      val node:Node = x.getEndNode
+      for (y <- node.getPropertyKeys.iterator())
+        values += y -> node.getProperty(y)
+      res += x.getProperty("key") -> x.getProperty("key")
+    }
+  }
 
 
 
