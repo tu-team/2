@@ -1,10 +1,17 @@
 package tu.dataservice.knowledgebaseserver
 
 import org.neo4j.kernel.EmbeddedGraphDatabase
-import org.neo4j.graphdb.{Transaction, Node, GraphDatabaseService}
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
+import org.neo4j.graphdb.{RelationshipType, Transaction, Node, GraphDatabaseService}
+
+
+class DefaultRelationType extends RelationshipType
+{
+  def name():String = {"link"}
+}
+
 
 object N4JKB extends KB {
   val defaultFilename = java.lang.System.getProperty("user.home") + "/tu_kb"
@@ -45,11 +52,31 @@ object N4JKB extends KB {
   private def getNodeByResource( resource:Resource) : Node = {}
 
 
-  private def save(child:Resource, parent:Node, key:String = ""):Boolean = {false}
+  private def save(child:Resource, parentNode:Node, key:String = ""):Boolean = {
+    var ok = false
+    val tx:Transaction = N4JKB().beginTx();
+    try
+    {
+
+      val childNode = N4JKB().createNode();
+      for ((x, y) <- child.export)
+          childNode.setProperty( x, y );
+      val relationship = parentNode.createRelationshipTo( childNode , DefaultRelationType );
+      relationship.setProperty( "key", key );
+
+      tx.success();
+      ok = true
+    }
+    finally
+    {
+      tx.finish();
+    }
+    ok
+  }
 
   private def loadChild(parent:Node, key:String):Resource
 
-  private def loadChildrenList(parent:Node):List[Resource]
+  private def loadChildrenList(parent:Node):List[Resource] = Nil
 
   private def loadChildrenMap(parent:Node):Map[String,  Resource]
 
