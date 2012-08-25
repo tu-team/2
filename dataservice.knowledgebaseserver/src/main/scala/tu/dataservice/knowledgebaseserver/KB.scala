@@ -1,15 +1,29 @@
 package tu.dataservice.knowledgebaseserver
 
+import tu.model.knowledge.Resource
+
 /**
  * @author ${user.name}
  */
-object KB {
 
-  def foo(x: Array[String]) = x.foldLeft("")((a, b) => a + b)
 
-  def main(args: Array[String]) {
-    println("Hello World!")
-    println("concat arguments = " + foo(args))
-  }
+trait KB {
+
+  def save(resource:Resource): Boolean
+
+  def save(child:Resource, parent:Resource, key:String = ""): Boolean
+
+  def loadChild(key:String):Resource
+
+  def loadChildrenList():List[Resource]
+
+  def loadChildrenMap():Map[String,  Resource]
+
+  def loadChild(parent:Resource, key:String):Resource
+
+  def loadChildrenList(parent:Resource):List[Resource]
+
+  def loadChildrenMap(parent:Resource):Map[String,  Resource]
+
 
 }

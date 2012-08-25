@@ -6,7 +6,7 @@ import tu.model.knowledge.training.Goal
 import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
 
-object N4JKB {
+object N4JKB extends KB {
   val defaultFilename = java.lang.System.getProperty("user.home") + "/tu_kb"
   val keyField = "key"
   private var inited = false
@@ -23,6 +23,37 @@ object N4JKB {
 
     _GraphDb
   }
+
+  override def save(resource:Resource):Boolean = {save (resource, _GraphDb.getReferenceNode) }
+
+  override def loadChild(key:String):Resource = loadChild(_GraphDb.getReferenceNode, key)
+
+  override def loadChildrenList():List[Resource]
+
+  override def loadChildrenMap():Map[String,  Resource]
+
+
+  override def save(child:Resource, parent:Resource, key:String = ""):Boolean = {save (child, getNodeByResource(parent), key)}
+
+  override def loadChild(parent:Resource, key:String):Resource = loadChild(getNodeByResource(parent), key)
+
+  override def loadChildrenList(parent:Resource):List[Resource] = loadChildrenList(getNodeByResource(parent))
+
+  override def loadChildrenMap(parent:Resource):Map[String,  Resource] = loadChildrenMap(getNodeByResource(parent))
+
+
+  private def getNodeByResource( resource:Resource) : Node = {}
+
+
+  private def save(child:Resource, parent:Node, key:String = ""):Boolean = {false}
+
+  private def loadChild(parent:Node, key:String):Resource
+
+  private def loadChildrenList(parent:Node):List[Resource]
+
+  private def loadChildrenMap(parent:Node):Map[String,  Resource]
+
+
 
   private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
 
