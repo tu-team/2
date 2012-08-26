@@ -1,6 +1,7 @@
 package tu.model.knowledge.primitive
 
 import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
+import org.slf4j.LoggerFactory
 
 
 /**
@@ -17,7 +18,9 @@ class Number(_value: Double, _uri: KnowledgeURI, _probability: Probability)
   def this(map: Map[String, String]) = {
     this(map.get("value") match {
       case Some(x) => x.toDouble
-      case None => new Double
+      case None => {
+        LoggerFactory.getLogger("Number").warn("Create number {} without value", map.toString())
+        0}
     },
       new KnowledgeURI(map), new Probability(map))
   }

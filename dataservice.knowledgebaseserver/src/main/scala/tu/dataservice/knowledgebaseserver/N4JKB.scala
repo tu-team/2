@@ -6,6 +6,7 @@ import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
 import collection.immutable.HashMap
 import org.neo4j.graphdb._
+import org.slf4j.{LoggerFactory, Logger}
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -34,13 +35,13 @@ object N4JKB extends KB {
     _GraphDb
   }
 
-  override def saveResource(resource:Resource, key:String):Boolean = {saveResource (resource, _GraphDb.getReferenceNode, key) }
+  override def saveResource(resource:Resource, key:String):Boolean = {saveResource (resource, N4JKB().getReferenceNode, key) }
 
-  override def loadChild(key:String):Map[String,  String] = loadChild(_GraphDb.getReferenceNode, key)
+  override def loadChild(key:String):Map[String,  String] = loadChild(N4JKB().getReferenceNode, key)
 
-  override def loadChildrenList():List[Map[String,  String]] = loadChildrenList(_GraphDb.getReferenceNode)
+  override def loadChildrenList():List[Map[String,  String]] = loadChildrenList(N4JKB().getReferenceNode)
 
-  override def loadChildrenMap():Map[String,  Map[String,  String]] = loadChildrenMap(_GraphDb.getReferenceNode)
+  override def loadChildrenMap():Map[String,  Map[String,  String]] = loadChildrenMap(N4JKB().getReferenceNode)
 
 
   override def saveResource(child:Resource, parent:Resource, key:String):Boolean = {saveResource (child, getNodeByResource(parent), key)}
@@ -52,7 +53,7 @@ object N4JKB extends KB {
   override def loadChildrenMap(parent:Resource):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent))
 
 
-  private def getNodeByResource( resource:Resource) : Node = {_GraphDb.getReferenceNode} //TODO - get by uri
+  private def getNodeByResource( resource:Resource) : Node = {N4JKB().getReferenceNode} //TODO - get by uri
 
 
   private def saveResource(child:Resource, parentNode:Node, key:String):Boolean = {
@@ -77,7 +78,27 @@ object N4JKB extends KB {
     ok
   }
 
-  private def loadChild(parent:Node, key:String):Map[String,  String] = Nil.toMap[String,  String]
+  private def loadChild(parent:Node, key:String):Map[String,  String] = {
+    //TODO use кошерный синтаксис
+    val i = parent.getRelationships.iterator()
+    while (i.hasNext) //(x:Relationship <- parent.getRelationships.iterator())
+    {
+      val relationship:Relationship = i.next()
+      if (relationship.getProperty("key") == key)
+      {
+        var values = new HashMap[String,  String]
+        val node:Node = relationship.getEndNode
+        val j = node.getPropertyKeys.iterator()
+        while(j.hasNext)
+        {
+          val key:String = j.next()
+          values += key -> node.getProperty(key).toString
+        }
+        return values
+      }
+    }
+    Nil.toMap[String,  String]
+  }
 
   private def loadChildrenList(parent:Node):List[Map[String,  String]] = Nil
 
@@ -103,21 +124,25 @@ object N4JKB extends KB {
 
 
 
-  private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
+//  private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
 
   def init(): Boolean =
   {
-    //_GraphDb.getReferenceNode.createRelationshipTo(usersReferenceNode, RelTypes.USERS_REFERENCE );
-
-    if (goalIndex.ensuring(true) != null)
+    try
     {
-      addIndexedNode(Goal("ProcessIncident"), goalIndex)
+      N4JKB.apply()
+      true
     }
-
-    true
+    catch
+    {
+      case e:Exception => {
+        LoggerFactory.getLogger(this.getClass).error("Cann't create database: {}", e.toString)
+      }
+      false
+    }
   }
 
-  def goals = {goalIndex.ensuring(true)}
+  //def goals = {goalIndex.ensuring(true)}
     //List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
   private def addIndexedNode(resource:Resource,  index:Index[Node]):Option[Node] = addIndexedNode(resource, resource.uri.name, index)
