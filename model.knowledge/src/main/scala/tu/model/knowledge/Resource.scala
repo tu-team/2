@@ -23,7 +23,7 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
 
   def probability: Probability = _probability
 
-  val created: Calendar = new java.util.GregorianCalendar()
+  val created = new java.util.Date
 
   override def toString = {
     if (uri != null) {
