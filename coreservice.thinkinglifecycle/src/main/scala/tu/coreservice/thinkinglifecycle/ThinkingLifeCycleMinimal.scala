@@ -13,6 +13,7 @@ import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
 import tu.coreservice.utilities.TestDataGenerator
 import tu.exception.UnexpectedException
+import tu.dataservice.knowledgebaseserver.KBPrototype
 
 
 /**
@@ -78,15 +79,22 @@ class ThinkingLifeCycleMinimal
         val domainModel = globalContext.domainModel
         globalContext = copyGlobalContext(resContext)
       }
-      resContext.lastResult match {
+      val contextToCheck = resContext.lastResult match {
         case Some(sR: SelectorRequest) => {
           this.processSelectorRequest(sR)
         }
         case _ => List[Context](resContext)
       }
+      contextToCheck
     }
     log info "processResources(): List[Context] = " + contexts.flatten.toString()
     contexts.flatten
+  }
+
+  //TODO start reflective critics and Cry4Help Way2Think here
+  def processReflectiveCritics(contextToCheck: Context): Context = {
+    KBPrototype.getReflectiveCritics()
+    contextToCheck
   }
 
   def translate(resource: Resource, globalContext: Context): Context = {

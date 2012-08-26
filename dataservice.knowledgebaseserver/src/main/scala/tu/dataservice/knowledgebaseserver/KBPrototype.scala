@@ -170,4 +170,9 @@ object KBPrototype {
     }
   }
 
+  def getReflectiveCritics(): List[CriticModel] = {
+    List[CriticModel](CriticModel("tu.coreservice.action.critic.analyser.DoNotUnderstandManager")
+    )
+  }
+
 }
