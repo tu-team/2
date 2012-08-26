@@ -2,11 +2,11 @@ package tu.dataservice.knowledgebaseserver
 
 import org.neo4j.kernel.EmbeddedGraphDatabase
 import tu.model.knowledge.training.Goal
-import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
 import collection.immutable.HashMap
 import org.neo4j.graphdb._
 import org.slf4j.{LoggerFactory, Logger}
+import tu.model.knowledge.{KB, Resource}
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -22,8 +22,6 @@ object N4JKB extends KB {
   private var _GraphDb: EmbeddedGraphDatabase = _
   private var _nodeIndex: IndexedSeq[Node] = _
 
-  private val defaultRelationType = new RelationType("defaultRelationType")
-
   def apply(): EmbeddedGraphDatabase = {
     if (!inited) {
       _GraphDb = new EmbeddedGraphDatabase(defaultFilename)
@@ -35,28 +33,30 @@ object N4JKB extends KB {
     _GraphDb
   }
 
-  override def saveResource(resource:Resource, key:String):Boolean = {saveResource (resource, N4JKB().getReferenceNode, key) }
+  override def saveResource(resource:Resource, key:String, linkType:String):Boolean = {saveResource (resource, N4JKB().getReferenceNode, key, linkType) }
 
-  override def loadChild(key:String):Map[String,  String] = loadChild(N4JKB().getReferenceNode, key)
+  override def loadChild(key:String, linkType:String):Map[String,  String] = loadChild(N4JKB().getReferenceNode, key, linkType)
 
-  override def loadChildrenList():List[Map[String,  String]] = loadChildrenList(N4JKB().getReferenceNode)
+  override def loadChildrenList(linkType:String):List[Map[String,  String]] = loadChildrenList(N4JKB().getReferenceNode, linkType)
 
-  override def loadChildrenMap():Map[String,  Map[String,  String]] = loadChildrenMap(N4JKB().getReferenceNode)
+  override def loadChildrenMap(linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(N4JKB().getReferenceNode, linkType)
 
 
-  override def saveResource(child:Resource, parent:Resource, key:String):Boolean = {saveResource (child, getNodeByResource(parent), key)}
+  override def saveResource(child:Resource, parent:Resource, key:String, linkType:String = "defaultLink"):Boolean = {saveResource (child, getNodeByResource(parent), key, linkType)}
 
-  override def loadChild(parent:Resource, key:String):Map[String,  String] = loadChild(getNodeByResource(parent), key)
+  override def loadChild(parent:Resource, key:String, linkType:String):Map[String,  String] = loadChild(getNodeByResource(parent), key, linkType)
 
-  override def loadChildrenList(parent:Resource):List[Map[String,  String]] = loadChildrenList(getNodeByResource(parent))
+  override def loadChildrenList(parent:Resource, linkType:String):List[Map[String,  String]] = loadChildrenList(getNodeByResource(parent), linkType)
 
-  override def loadChildrenMap(parent:Resource):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent))
+  override def loadChildrenMap(parent:Resource, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent), linkType)
 
 
   private def getNodeByResource( resource:Resource) : Node = {N4JKB().getReferenceNode} //TODO - get by uri
 
+  private def saveResource(child:Resource, parentNode:Node, key:String, linkType:String):Boolean = {
 
-  private def saveResource(child:Resource, parentNode:Node, key:String):Boolean = {
+    val relationType = new RelationType(linkType)
+
     var ok = false
     val tx:Transaction = N4JKB().beginTx();
     try
@@ -65,7 +65,7 @@ object N4JKB extends KB {
       val childNode = N4JKB().createNode();
       for ((x, y) <- child.export)
           childNode.setProperty( x, y );
-      val relationship = parentNode.createRelationshipTo( childNode , defaultRelationType );
+      val relationship = parentNode.createRelationshipTo( childNode , relationType );
       relationship.setProperty( "key", key );
 
       tx.success();
@@ -78,9 +78,12 @@ object N4JKB extends KB {
     ok
   }
 
-  private def loadChild(parent:Node, key:String):Map[String,  String] = {
+  private def loadChild(parent:Node, key:String, linkType:String):Map[String,  String] = {
+
+    val relationType = new RelationType(linkType)
+
     //TODO use кошерный синтаксис
-    val i = parent.getRelationships.iterator()
+    val i = parent.getRelationships(relationType).iterator()
     while (i.hasNext) //(x:Relationship <- parent.getRelationships.iterator())
     {
       val relationship:Relationship = i.next()
@@ -100,12 +103,20 @@ object N4JKB extends KB {
     Nil.toMap[String,  String]
   }
 
-  private def loadChildrenList(parent:Node):List[Map[String,  String]] = Nil
+  private def loadChildrenList(parent:Node, linkType:String):List[Map[String,  String]] = {
 
-  private def loadChildrenMap(parent:Node):Map[String,  Map[String,  String]] ={
+    val mapChild = loadChildrenMap(parent, linkType)
+
+    mapChild.values.toList
+  }
+
+  private def loadChildrenMap(parent:Node, linkType:String):Map[String,  Map[String,  String]] ={
+
+    val relationType = new RelationType(linkType)
+
     var res = new HashMap[String,  Map[String,  String]]
     //TODO use кошерный синтаксис
-    val i = parent.getRelationships.iterator()
+    val i = parent.getRelationships(relationType).iterator()
     while (i.hasNext) //(x:Relationship <- parent.getRelationships.iterator())
     {
       val relationship:Relationship = i.next()

@@ -37,4 +37,8 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
     uri.export ++ probability.export
   }
 
+  def exportLinks:Map[String, String] = {
+    uri.export ++ probability.export
+  }
+
 }
