@@ -21,10 +21,11 @@ case class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Pro
   override def toString = _value
 
   def this(map: Map[String, String]) = {
-    this(map.get("value") match {
-      case Some(x) => x
-      case None => ""
-    },
+    this(map.get("value")
+      match {
+        case Some(x) => x
+        case None => ""
+      },
       new KnowledgeURI(map), new Probability(map))
   }
 
