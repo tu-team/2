@@ -12,23 +12,32 @@ import org.slf4j.LoggerFactory
 
 class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
-  def this(map:Map[String, String]) = {
+  def this(map: Map[String, String]) = {
     this(
-      map.get("namespace") match { case Some(x) => x case None => Constant.defaultNamespace },
+      map.get("namespace") match {
+        case Some(x) => x
+        case None => Constant.defaultNamespace
+      },
       map.get("name") match {
         case Some(x) => x
-        case None => { val randomName:String = Random.nextInt(Constant.INSTANCE_ID_LENGTH).toString
-          val scope = map.get("class") match { case Some(x) => x case None => KnowledgeURI.getClass.getName  }
-          LoggerFactory.getLogger(scope).warn("empty name replaced to {} when Resource created", randomName)
+        case None => {
+          val randomName: String = Random.nextInt(Constant.INSTANCE_ID_LENGTH).toString
+          val scope = map.get("class") match {
+            case Some(x) => x
+            case None => KnowledgeURI.getClass.getName
+          }
+          LoggerFactory.getLogger(scope).warn("$Empty_name_replaced_with_{}", randomName)
           randomName
         }
       },
-      map.get("revision") match { case Some(x) => x case None => Constant.defaultRevision }
+      map.get("revision") match {
+        case Some(x) => x
+        case None => Constant.defaultRevision
+      }
     )
   }
 
   private val delimiter = "#"
-
   private var _uRI: Option[URI] = None
   private var _uID: String = ""
 
@@ -72,7 +81,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
     namespace() + delimiter + name + "@" + revision()
   }
 
-  def export:Map[String, String] = {
+  def export: Map[String, String] = {
     Map(
       "namespace" -> this.namespace(),
       "name" -> this.name,

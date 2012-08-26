@@ -14,4 +14,15 @@ class Number(_value: Double, _uri: KnowledgeURI, _probability: Probability)
 
   def value: Double = _value
 
+  def this(map: Map[String, String]) = {
+    this(map.get("value") match {
+      case Some(x) => x.toDouble
+      case None => new Double
+    },
+      new KnowledgeURI(map), new Probability(map))
+  }
+
+  override def export: Map[String, String] = {
+    Map("value" -> this.value.toString) ++ uri.export ++ probability.export
+  }
 }
