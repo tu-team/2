@@ -18,4 +18,18 @@ case class KnowledgeBoolean(_value: Boolean, _uri: KnowledgeURI, _probability: P
 
   def value = _value
 
+  def this(map: Map[String, String]) = {
+    this(map.get("value") match {
+      case Some(x) => {
+        if (x.trim.toLowerCase == "true") true
+        else false
+      }
+      case None => false
+    },
+      new KnowledgeURI(map), new Probability(map))
+  }
+
+  override def export: Map[String, String] = {
+    Map("value" -> this.value.toString) ++ uri.export ++ probability.export
+  }
 }
