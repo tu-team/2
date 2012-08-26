@@ -48,6 +48,7 @@ case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _u
 object TypedKLine {
 
   //TODO correct this
+  /*
   def translateStringMap[Type <: Resource](stringMap: String, typeString: String): Map[KnowledgeURI, Type] = {
     val res = Map.empty[KnowledgeURI, Type]
     val listPairsString: List[String] = stringMap.replaceFirst("Map\(", "").replace(")", "").split(",").toList
@@ -61,11 +62,12 @@ object TypedKLine {
         }
       }
     }
+
     /*listPairs.map {
 
     }*/
     null
-  }
+  } */
 
   def apply[Type <: Resource](uri: KnowledgeURI): TypedKLine[Type] = {
     new TypedKLine(Map[KnowledgeURI, Type](), uri)

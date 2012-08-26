@@ -4,8 +4,8 @@ import org.neo4j.kernel.EmbeddedGraphDatabase
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.Resource
 import org.neo4j.graphdb.index.Index
-import org.neo4j.graphdb.{RelationshipType, Transaction, Node, GraphDatabaseService}
 import collection.immutable.HashMap
+import org.neo4j.graphdb._
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -34,7 +34,7 @@ object N4JKB extends KB {
     _GraphDb
   }
 
-  override def saveResource(resource:Resource):Boolean = {saveResource (resource, _GraphDb.getReferenceNode) }
+  override def saveResource(resource:Resource, key:String):Boolean = {saveResource (resource, _GraphDb.getReferenceNode, key) }
 
   override def loadChild(key:String):Map[String,  String] = loadChild(_GraphDb.getReferenceNode, key)
 
@@ -84,14 +84,21 @@ object N4JKB extends KB {
   private def loadChildrenMap(parent:Node):Map[String,  Map[String,  String]] ={
     var res = new HashMap[String,  Map[String,  String]]
     //TODO use кошерный синтаксис
-    for (x <- parent.getRelationships.iterator())
+    val i = parent.getRelationships.iterator()
+    while (i.hasNext) //(x:Relationship <- parent.getRelationships.iterator())
     {
+      val relationship:Relationship = i.next()
       var values = new HashMap[String,  String]
-      val node:Node = x.getEndNode
-      for (y <- node.getPropertyKeys.iterator())
-        values += y -> node.getProperty(y)
-      res += x.getProperty("key") -> x.getProperty("key")
+      val node:Node = relationship.getEndNode
+      val j = node.getPropertyKeys.iterator()
+      while(j.hasNext)
+      {
+        val key:String = j.next()
+        values += key -> node.getProperty(key).toString
+      }
+      res += relationship.getProperty("key").toString -> values
     }
+    res
   }
 
 
