@@ -91,7 +91,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = this.uri.name
 
-  def getGeneralisationsRec(): List[Concept] = {
+  def getGeneralisationsRec: List[Concept] = {
     val res: List[Concept] = this.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
