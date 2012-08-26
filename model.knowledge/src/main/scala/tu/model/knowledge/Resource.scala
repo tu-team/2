@@ -17,7 +17,6 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
 
   def this(map:Map[String, String]) = {
     this(new KnowledgeURI(map), new Probability(map))
-
   }
 
   def uri: KnowledgeURI = _uri
@@ -37,6 +36,5 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
   def export:Map[String, String] = {
     uri.export ++ probability.export
   }
-
 
 }
