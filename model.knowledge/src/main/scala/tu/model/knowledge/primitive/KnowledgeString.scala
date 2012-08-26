@@ -9,8 +9,8 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         time: 11:37 PM
  */
 
-case class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Probability)
-  extends Resource(_uri, _probability) {
+case class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Probability, __id:Long = -1)
+  extends Resource(_uri, _probability, __id) {
 
   def this(_value: String, _uri: KnowledgeURI) = {
     this(_value, _uri, new Probability())
@@ -21,12 +21,16 @@ case class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Pro
   override def toString = _value
 
   def this(map: Map[String, String]) = {
-    this(map.get("value")
-      match {
+    this(
+      map.get("value") match {
         case Some(x) => x
         case None => ""
       },
-      new KnowledgeURI(map), new Probability(map))
+      new KnowledgeURI(map), new Probability(map),
+      map.get("KB_ID") match {
+        case Some(x) => x.toLong
+        case None => -1
+      })
   }
 
   override def export: Map[String, String] = {

@@ -69,6 +69,7 @@ object N4JKB extends KB {
       relationship.setProperty( "key", key );
 
       tx.success();
+      child.KB_ID = childNode.getId
       ok = true
     }
     finally
@@ -89,14 +90,15 @@ object N4JKB extends KB {
       val relationship:Relationship = i.next()
       if (relationship.getProperty("key") == key)
       {
-        var values = new HashMap[String,  String]
         val node:Node = relationship.getEndNode
+        var values = new HashMap[String,  String]
         val j = node.getPropertyKeys.iterator()
         while(j.hasNext)
         {
           val key:String = j.next()
           values += key -> node.getProperty(key).toString
         }
+        values += ("KB_ID" -> node.getId.toString)
         return values
       }
     }
@@ -120,14 +122,15 @@ object N4JKB extends KB {
     while (i.hasNext) //(x:Relationship <- parent.getRelationships.iterator())
     {
       val relationship:Relationship = i.next()
-      var values = new HashMap[String,  String]
       val node:Node = relationship.getEndNode
+      var values = new HashMap[String,  String]
       val j = node.getPropertyKeys.iterator()
       while(j.hasNext)
       {
         val key:String = j.next()
         values += key -> node.getProperty(key).toString
       }
+      values += ("KB_ID" -> node.getId.toString)
       res += relationship.getProperty("key").toString -> values
     }
     res
