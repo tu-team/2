@@ -5,23 +5,20 @@ import org.scalatest.junit.JUnitRunner
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import util.Random
-import org.scalatest.{BeforeAndAfterAll, Suite, FunSuite}
+import org.scalatest.FunSuite
 
 /**
- * Created by IntelliJ IDEA.
- * User: adel
- * Date: 26.08.12
- * Time: 22:24
- * To change this template use File | Settings | File Templates.
+ * @author adel
+ *         Date: 26.08.12
+ *         Time: 22:24
  */
 
 @RunWith(classOf[JUnitRunner])
-class N4JKBTest extends FunSuite{
+class N4JKBTest extends FunSuite {
 
-  test("write string to db and read from")
-  {
+  test("write string to db and read from") {
     val random = Random.nextInt().toString
-    val x = new KnowledgeString("value" + random, KnowledgeURI("uri" + random), new Probability(0.77, 0.44) )
+    val x = new KnowledgeString("value" + random, KnowledgeURI("uri" + random), new Probability(0.77, 0.44))
     assert(x.KB_ID == -1)
     val saveResult = N4JKB.saveResource(x, "key" + random)
 
@@ -62,4 +59,5 @@ class MasterSuite extends Suite with BeforeAndAfterAll {
      //     maybe remove all test data?
    }
  }
- */ //todo - try to run with with BeforeAndAfterAll Suite
+ */
+//todo - try to run with with BeforeAndAfterAll Suite
