@@ -47,9 +47,11 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
   }
 
   def save(kb:KB, parent:Resource, key:String):Boolean =
-    kb.saveResource(this, parent, key)
+    save(kb, parent, key, Constant.DEFAULT_LINK_NAME)
 
   def save(kb:KB, parent:Resource, key:String, linkType:String):Boolean =
     kb.saveResource(this, parent, key, linkType)
+
+  def loadLinks(kb:KB):Boolean = true
 
 }

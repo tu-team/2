@@ -5,8 +5,8 @@ import tu.model.knowledge.training.Goal
 import org.neo4j.graphdb.index.Index
 import collection.immutable.HashMap
 import org.neo4j.graphdb._
-import org.slf4j.{LoggerFactory, Logger}
 import tu.model.knowledge.{KB, Resource}
+import org.slf4j.{LoggerFactory}
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -51,7 +51,16 @@ object N4JKB extends KB {
   override def loadChildrenMap(parent:Resource, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent), linkType)
 
 
-  private def getNodeByResource( resource:Resource) : Node = {N4JKB().getReferenceNode} //TODO - get by uri
+  private def getNodeByResource( resource:Resource) : Node = {
+    try{
+      return N4JKB().getNodeById(resource.KB_ID)
+      }
+    catch{
+      case _ => LoggerFactory.getLogger(this.getClass).error("try to get ID for non-saved resource {}", resource.uri.toString)
+      //TODO - get by uri??? - oh, no :)
+    }
+    N4JKB().getReferenceNode
+  }
 
   private def saveResource(child:Resource, parentNode:Node, key:String, linkType:String):Boolean = {
 
