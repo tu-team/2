@@ -37,7 +37,7 @@ class ResourceTest extends FunSuite {
   }
 
   /*
-  test("new exemplar from map shoul be equivalent to original ") {
+  test("new exemplar from map should be equivalent to original ") {
     val s = new R("test1")
     val d = new R("test1")
     expect(t.content)(kl)
