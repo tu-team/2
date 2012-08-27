@@ -14,6 +14,7 @@ import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkN
 import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
 import annotator.AnnotatedPhrase
+import communication.{ContextHelper, Context}
 import domain.{ConceptLink, Concept}
 
 @RunWith(classOf[JUnitRunner])
@@ -40,6 +41,25 @@ class ConceptTest extends FunSuite {
     val c = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
     expect(c.content)(content)
+  }
+
+
+  //TODO: Max, I have wish. Could you write unit-tests for compare written and restored Concept objects?
+  //now stored only generalisation links, but for true TDD tests should be written before $)
+  test("Concept should be stored and restored") {
+    val content = new KnowledgeString("name", uri)
+    val x = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
+
+    val context = ContextHelper(Nil, x, "test context")
+
+    N4JKB.save(context)
+    x.save(N4JKB, context, "testKey", "testRelation")
+
+    val y = new Concept(N4JKB.loadChild(context, "testKey", "testRelation"))
+    y.loadLinks(N4JKB)
+
+    expect(x.content)(y.content)
   }
 
 
