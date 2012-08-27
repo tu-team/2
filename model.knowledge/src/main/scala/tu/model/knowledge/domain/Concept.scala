@@ -30,6 +30,20 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
   }
 
+
+  def this(map: Map[String, String]) = {
+    this(
+      TypedKLine[Concept]("generalisation"),
+      TypedKLine[Concept]("specialisation"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
+      map.get("name") match {
+        case Some(x) => KnowledgeString(x, x)
+        case None => KnowledgeString("NONAME", "NONAME") //TODO: case for all type of content
+      },
+      List[ConceptLink](), new KnowledgeURI(map), new Probability(map))
+
+  }
+
   def phrases: TypedKLine[AnnotatedPhrase] = _phrases
 
   def phrases_=(in: TypedKLine[AnnotatedPhrase]): Concept = {
@@ -82,7 +96,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   /**
    * Returns true if current Concept has at least one same parent with specified.
-   * @param parent Concept to compare with
+   * @param parent Concept to compare with          PHRASES
    * @return Boolean true if that has same parent.
    */
   def hasGeneralisation(parent: Concept): Boolean = {
@@ -97,6 +111,27 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     }.toList.flatten
     res
   }
+
+
+  override def save(kb:KB, parent:Resource, key:String, linkType:String):Boolean =
+  {
+    var res = kb.saveResource(this, parent, key)
+    for(x:Resource <- generalisations.frames.values.iterator)
+      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
+    res
+  }
+
+  override def loadLinks(kb:KB):Boolean =
+  {
+    val genList = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
+    for(x:Map[String, String] <- genList.iterator)
+    {
+      val c = new Concept(x)
+      _generalisations + (c.uri, c)
+    }
+    true
+  }
+
 }
 
 object Concept {
