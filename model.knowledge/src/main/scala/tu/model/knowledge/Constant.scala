@@ -30,4 +30,11 @@ object Constant {
   val LAST_RESULT_NAME = "LastResult"
   val CLASSIFICATION_RESULT_NAME = "ClassificationResult"
   val LINK_PARSER_RESULT_NAME = "LinkedNarrative"
+
+  val LINK_NAME = "link"
+  val DEFAULT_LINK_NAME = "defaultLink"
+  val GENERALISATION_LINK_NAME = "generalisationLink"
+  val SPECIALISATION_LINK_NAME = "specialisationLink"
+  val PHRASES_LINK_NAME = "phrasesLink"
+  val CONCEPT_LINK_NAME = "phrasesLink"
 }
