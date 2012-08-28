@@ -126,16 +126,28 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     var res = kb.saveResource(this, parent, key)
     for (x: Resource <- generalisations.frames.values.iterator)
       res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
+    for (x: Resource <- specialisations.frames.values.iterator)
+      res &= x.save(kb, this, x.uri.toString, Constant.SPECIALISATION_LINK_NAME)
+    for (x: Resource <- phrases.frames.values.iterator)
+      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME)
     res
   }
 
   override def loadLinks(kb: KB): Boolean = {
-    val genList = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
-    for (x: Map[String, String] <- genList.iterator) {
-      val c = new Concept(x, kb)
-      _generalisations +(c.uri, c)
+    def oneList(linkType:String, tkList:TypedKLine[Concept]):Boolean =
+    {
+      val list = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
+      for (x: Map[String, String] <- list.iterator) {
+        val c = new Concept(x, kb)
+        tkList +(c.uri, c)
+      }
+      true
     }
-    true
+
+    var res = oneList(Constant.GENERALISATION_LINK_NAME, _generalisations)
+           && oneList(Constant.SPECIALISATION_LINK_NAME, _specialisations)
+           && oneList(Constant.PHRASES_LINK_NAME, _phrases)
+
   }
 
 }
