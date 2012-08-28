@@ -43,6 +43,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
         case Some(text) => text.toDouble
         case None => 0
       }
+      //TODO add load links here
     )
   }
 
