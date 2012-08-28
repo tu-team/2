@@ -13,7 +13,8 @@ import tu.model.knowledge.Tag
  *         time: 10:55 PM
  */
 
-case class HowTo(var _parameters: List[TypedFrame[Resource]], var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class HowTo(var _parameters: List[TypedFrame[Resource]],
+                 var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
   def this(_parameters: List[TypedFrame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
