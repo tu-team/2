@@ -1,8 +1,7 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge._
-import domain.{ConceptLink, Concept}
-import tu.model.knowledge.primitive.KnowledgeString
+import domain.Concept
 import scala.Some
 
 /**
@@ -40,8 +39,20 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
       List[AnnotatedPhrase](),
       new KnowledgeURI(map),
       new Probability(map),
-      map.get("text") match { case Some(text) => text case None => ""}
+      map.get("text") match {
+        case Some(text) => text
+        case None => ""
+      }
     )
+  }
+
+  override def loadLinks(kb: KB): List[Concept] = {
+    val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new Concept(x)
+      }
+    }
   }
 
 }
