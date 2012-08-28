@@ -1,7 +1,9 @@
 package tu.model.knowledge.annotator
 
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.domain.Concept
+import tu.model.knowledge._
+import domain.{ConceptLink, Concept}
+import tu.model.knowledge.primitive.KnowledgeString
+import scala.Some
 
 /**
  * @author alex toschev
@@ -31,6 +33,15 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
       p: AnnotatedPhrase => p.concepts
     }.flatten
     concepts
+  }
+
+  def this(map: Map[String, String]) = {
+    this(
+      List[AnnotatedPhrase](),
+      new KnowledgeURI(map),
+      new Probability(map),
+      map.get("text") match { case Some(text) => text case None => ""}
+    )
   }
 
 }
