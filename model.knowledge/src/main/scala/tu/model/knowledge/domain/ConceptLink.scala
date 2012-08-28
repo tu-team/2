@@ -4,6 +4,7 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.semanticnetwork.SemanticNetworkLink
 import util.Random
 import tu.model.knowledge.{Constant, Probability, KnowledgeURI, TypedKLine}
+import tu.model.knowledge.primitive.KnowledgeString
 
 /**
  * Class stores the SemanticNetworkLink of the Concepts.
@@ -30,6 +31,18 @@ case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
     this(_generalisations, _specialisations, _phrases, _source, _destination, _uri: KnowledgeURI, new Probability())
   }
 
+  def this(map: Map[String, String]) = {
+    this(
+      TypedKLine[ConceptLink]("generalisation"),
+      TypedKLine[ConceptLink]("specialisation"),
+      TypedKLine[AnnotatedPhrase]("phrases"),
+      new Concept(map),
+      new Concept(map),
+      new KnowledgeURI(map),
+      new Probability(map)
+    )
+  }
+
   def phrases = _phrases
 
   def phrases_=(in: TypedKLine[AnnotatedPhrase]): ConceptLink = {
@@ -52,6 +65,7 @@ case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
   }
 
   override def source: Concept = _source
+
   override def destination: Concept = _destination
 }
 
@@ -74,7 +88,7 @@ object ConceptLink {
 
   def createInstanceConceptLink(parent: ConceptLink, source: Concept, destination: Concept, probability: Probability = new Probability()): ConceptLink = {
     val it = new ConceptLink(TypedKLine("generalisations", parent), TypedKLine("specialisations"), TypedKLine("sentences"),
-      source, destination, KnowledgeURI(parent.uri.name +"&ID=" +Random.nextInt(Constant.INSTANCE_ID_LENGTH) + "ConceptLink"), probability)
+      source, destination, KnowledgeURI(parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH) + "ConceptLink"), probability)
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
