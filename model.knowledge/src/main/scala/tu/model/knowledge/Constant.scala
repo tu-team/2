@@ -37,4 +37,5 @@ object Constant {
   val SPECIALISATION_LINK_NAME = "specialisationLink"
   val PHRASES_LINK_NAME = "phrasesLink"
   val CONCEPT_LINK_NAME = "phrasesLink"
+  val NO_NAME = "NONAME"
 }

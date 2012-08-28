@@ -35,13 +35,15 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this(
       TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("sentences"),
-      map.get("name") match {
+      TypedKLine[AnnotatedPhrase]("phrases"),
+      map.get("content") match {
         case Some(x) => KnowledgeString(x, x)
-        case None => KnowledgeString("NONAME", "NONAME") //TODO: case for all type of content
+        case None => KnowledgeString(Constant.NO_NAME, Constant.NO_NAME)
       },
-      List[ConceptLink](), new KnowledgeURI(map), new Probability(map))
-
+      List[ConceptLink](),
+      new KnowledgeURI(map),
+      new Probability(map)
+    )
   }
 
   def phrases: TypedKLine[AnnotatedPhrase] = _phrases
@@ -113,21 +115,18 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
 
-  override def save(kb:KB, parent:Resource, key:String, linkType:String):Boolean =
-  {
+  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key)
-    for(x:Resource <- generalisations.frames.values.iterator)
+    for (x: Resource <- generalisations.frames.values.iterator)
       res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
     res
   }
 
-  override def loadLinks(kb:KB):Boolean =
-  {
+  override def loadLinks(kb: KB): Boolean = {
     val genList = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
-    for(x:Map[String, String] <- genList.iterator)
-    {
+    for (x: Map[String, String] <- genList.iterator) {
       val c = new Concept(x)
-      _generalisations + (c.uri, c)
+      _generalisations +(c.uri, c)
     }
     true
   }
