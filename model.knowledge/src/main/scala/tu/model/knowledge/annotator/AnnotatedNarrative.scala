@@ -1,7 +1,8 @@
 package tu.model.knowledge.annotator
 
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
+import tu.model.knowledge._
 import tu.model.knowledge.domain.{ConceptNetwork, Concept}
+import scala.Some
 
 
 /**
@@ -14,7 +15,28 @@ import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: KnowledgeURI, _probability: Probability = new Probability(), text: String = "")
   extends Resource(_uri, _probability) {
 
-  def sentences: List[AnnotatedSentence] = _sentences // or Nil, but not null
+  def sentences: List[AnnotatedSentence] = _sentences
+
+  def this(map: Map[String, String]) = {
+    this(
+      List[AnnotatedSentence](),
+      new KnowledgeURI(map),
+      new Probability(map),
+      map.get("text") match {
+        case Some(text) => text
+        case None => ""
+      }
+    )
+  }
+
+  override def loadLinks(kb: KB): List[AnnotatedSentence] = {
+    val list = kb.loadChildrenList(this, Constant.SENTENCES_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new AnnotatedSentence(x)
+      }
+    }
+  }
 
   /**
    * Returns List[Concepts in current AnnotatedNarrative.
