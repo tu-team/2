@@ -30,22 +30,6 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
   }
 
-
-  def this(map: Map[String, String]) = {
-    this(
-      TypedKLine[Concept]("generalisation"),
-      TypedKLine[Concept]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
-      map.get("content") match {
-        case Some(x) => KnowledgeString(x, x)
-        case None => KnowledgeString(Constant.NO_NAME, Constant.NO_NAME)
-      },
-      List[ConceptLink](),
-      new KnowledgeURI(map),
-      new Probability(map)
-    )
-  }
-
   def this(map: Map[String, String]) = {
     this(
       TypedKLine[Concept]("generalisation"),
@@ -140,7 +124,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   override def loadLinks(kb: KB): Boolean = {
     val genList = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
     for (x: Map[String, String] <- genList.iterator) {
-      val c = new Concept(x)
+      val c: Concept = new Concept(x)
       _generalisations +(c.uri, c)
     }
     true
