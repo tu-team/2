@@ -1,7 +1,7 @@
 package tu.model.knowledge.domain
 
-import tu.model.knowledge.semanticnetwork.SemanticNetwork
-import tu.model.knowledge.{TypedKLine, Probability, KnowledgeURI}
+import tu.model.knowledge._
+import semanticnetwork.SemanticNetwork
 
 /**
  * @author max
@@ -14,6 +14,24 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
                           override val _uri: KnowledgeURI,
                           override val _probability: Probability = new Probability())
   extends SemanticNetwork(_nodes, _uri, _probability) {
+
+  def this(map: Map[String, String]) = {
+    this(
+      List[Concept](),
+      List[ConceptLink](),
+      new KnowledgeURI(map),
+      new Probability(map)
+    )
+  }
+
+  def loadLinksNodes(kb: KB): List[Concept] = {
+    val list = kb.loadChildrenList(this, Constant.NODES_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new Concept(x)
+      }
+    }
+  }
 
   def this(uri: KnowledgeURI) = {
     this(List[Concept](), List[ConceptLink](), uri)
@@ -69,7 +87,7 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     }
   }
 
-  override  def toString = {
+  override def toString = {
     this.getClass.getName + " [" + nodes.toString + "][" + links + "]@" + uri.toString
   }
 
@@ -84,7 +102,7 @@ object ConceptNetwork {
 
   def apply(nodes: List[Concept], name: String) = {
     val uri = KnowledgeURI(name)
-    val links: List[ConceptLink] = nodes.map{
+    val links: List[ConceptLink] = nodes.map {
       node: Concept => {
         node.links
       }
@@ -136,6 +154,5 @@ object ConceptNetwork {
         }
       }
     }
-
   }
 }

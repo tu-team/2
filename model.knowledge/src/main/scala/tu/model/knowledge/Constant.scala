@@ -38,6 +38,7 @@ object Constant {
   val PHRASES_LINK_NAME = "phrasesLink"
   val CONCEPT_LINK_SOURCE_NAME = "conceptLinkSrc"
   val CONCEPT_LINK_DESTINATION_NAME = "conceptLinkDst"
+  val NODES_LINK_NAME = "nodesLink"
   val NO_NAME = "NONAME"
 
   val NO_KB_NODE = -1

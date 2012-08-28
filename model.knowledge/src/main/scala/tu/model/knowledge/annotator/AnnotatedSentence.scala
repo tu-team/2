@@ -1,7 +1,8 @@
 package tu.model.knowledge.annotator
 
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
-import tu.model.knowledge.domain.Concept
+import tu.model.knowledge._
+import domain.Concept
+import scala.Some
 
 /**
  * @author alex toschev
@@ -33,6 +34,27 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
     concepts
   }
 
+  def this(map: Map[String, String]) = {
+    this(
+      List[AnnotatedPhrase](),
+      new KnowledgeURI(map),
+      new Probability(map),
+      map.get("text") match {
+        case Some(text) => text
+        case None => ""
+      }
+    )
+    // TODO add loadLinks here
+  }
+
+  override def loadLinks(kb: KB): List[AnnotatedPhrase] = {
+    val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new AnnotatedPhrase(x)
+      }
+    }
+  }
 }
 
 object AnnotatedSentence {
