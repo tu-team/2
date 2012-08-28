@@ -5,6 +5,7 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import util.Random
 import tu.model.knowledge._
+import org.slf4j.LoggerFactory
 
 /**
  * @author max
@@ -130,13 +131,18 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       res &= x.save(kb, this, x.uri.toString, Constant.SPECIALISATION_LINK_NAME)
     for (x: Resource <- phrases.frames.values.iterator)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME)
+    for (x: ConceptLink <- _conceptLinks)
+    {
+      res &= x.source.save(kb, this, x.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
+      res &= x.destination.save(kb, this, x.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
+    }
     res
   }
 
   override def loadLinks(kb: KB): Boolean = {
     def oneList(linkType:String, tkList:TypedKLine[Concept]):Boolean =
     {
-      val list = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
+      val list = kb.loadChildrenList(this, linkType)
       for (x: Map[String, String] <- list.iterator) {
         val c = new Concept(x, kb)
         tkList +(c.uri, c)
@@ -148,6 +154,25 @@ case class Concept(var _generalisations: TypedKLine[Concept],
            && oneList(Constant.SPECIALISATION_LINK_NAME, _specialisations)
            && oneList(Constant.PHRASES_LINK_NAME, _phrases)
 
+    val linksSourceMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val linksDestinationMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
+    for (x: String <- linksSourceMap.valuesIterator) {
+      val source = new Concept(linkSourceMap[x], kb)
+      linksDestinationMap[x] match
+      {
+        case Some(destinationMap) =>
+        {
+          val destination = new Concept(destinationMap, kb)
+          _conceptLinks += ConceptLink(source, destination, x)
+        }
+        case None =>
+        {
+          LoggerFactory.getLogger(scope).error("$destination not stored for link {} in {} ", x, this.uri.toString )
+          res = false
+        }
+      }
+      val destination = new Concept(, kb)
+    }
   }
 
 }
