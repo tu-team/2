@@ -44,17 +44,17 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
         case None => ""
       }
     )
+    // TODO add loadLinks here
   }
 
-  override def loadLinks(kb: KB): List[Concept] = {
+  override def loadLinks(kb: KB): List[AnnotatedPhrase] = {
     val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
     list.map {
       x: Map[String, String] => {
-        new Concept(x)
+        new AnnotatedPhrase(x)
       }
     }
   }
-
 }
 
 object AnnotatedSentence {
