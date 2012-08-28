@@ -9,11 +9,9 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.TypedKLine
 
 /**
- * Created with IntelliJ IDEA.
- * User: ChepkunovA
+ * @author achepkunov
  * Date: 28.08.12
  * Time: 12:41
- * To change this template use File | Settings | File Templates.
  */
 
   @RunWith(classOf[JUnitRunner])
