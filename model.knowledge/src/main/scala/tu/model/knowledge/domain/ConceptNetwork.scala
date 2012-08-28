@@ -33,6 +33,17 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     }
   }
 
+  //TODO
+  /*
+  def loadLinksLinks(kb: KB): List[ConceptLink] = {
+    val list = kb.loadChildrenList(this, Constant.LINKS_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new ConceptLink(x)
+      }
+    }
+  }*/
+
   def this(uri: KnowledgeURI) = {
     this(List[Concept](), List[ConceptLink](), uri)
   }
