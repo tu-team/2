@@ -46,6 +46,21 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     )
   }
 
+  def this(map: Map[String, String]) = {
+    this(
+      TypedKLine[Concept]("generalisation"),
+      TypedKLine[Concept]("specialisation"),
+      TypedKLine[AnnotatedPhrase]("phrases"),
+      map.get("content") match {
+        case Some(x) => KnowledgeString(x, x)
+        case None => KnowledgeString(Constant.NO_NAME, Constant.NO_NAME)
+      },
+      List[ConceptLink](),
+      new KnowledgeURI(map),
+      new Probability(map)
+    )
+  }
+
   def phrases: TypedKLine[AnnotatedPhrase] = _phrases
 
   def phrases_=(in: TypedKLine[AnnotatedPhrase]): Concept = {

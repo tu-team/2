@@ -4,7 +4,6 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.semanticnetwork.SemanticNetworkLink
 import util.Random
 import tu.model.knowledge.{Constant, Probability, KnowledgeURI, TypedKLine}
-import tu.model.knowledge.primitive.KnowledgeString
 
 /**
  * Class stores the SemanticNetworkLink of the Concepts.
@@ -29,18 +28,6 @@ case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
            _destination: Concept,
            _uri: KnowledgeURI) = {
     this(_generalisations, _specialisations, _phrases, _source, _destination, _uri: KnowledgeURI, new Probability())
-  }
-
-  def this(map: Map[String, String]) = {
-    this(
-      TypedKLine[ConceptLink]("generalisation"),
-      TypedKLine[ConceptLink]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
-      new Concept(map),
-      new Concept(map),
-      new KnowledgeURI(map),
-      new Probability(map)
-    )
   }
 
   def phrases = _phrases
