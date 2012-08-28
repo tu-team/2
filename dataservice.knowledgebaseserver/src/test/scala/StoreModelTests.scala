@@ -25,7 +25,6 @@ import tu.model.knowledge.TypedKLine
 
     val context = ContextHelper(Nil, x, "test context")
 
-    //TODO there is no such method save
     N4JKB.saveResource(context, "testContext")
     x.save(N4JKB, context, "testKey", "testRelation")
 
