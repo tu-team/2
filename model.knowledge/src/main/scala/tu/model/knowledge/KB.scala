@@ -21,6 +21,11 @@ trait KB {
   // For example for store all generalisations of concept, used Constant.GENERALISATION_LINK_NAME
   //
 
+  def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")
+  match {
+    case Some(x) => x.toLong
+    case None => Constant.NO_KB_NODE
+  }
 
   // methods above should be implemented in real database server
   def saveResource(resource:Resource, key:String): Boolean = saveResource(resource, key, DEFAULT_LINK_NAME)

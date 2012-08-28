@@ -9,19 +9,21 @@ import org.slf4j.LoggerFactory
  *         Time: 11:19 PM
  */
 
-abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Probability(), var KB_ID:Long = -1) {
+abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Probability(), var KB_ID:Long = Constant.NO_KB_NODE, kb:Option[KB] = None ) {
+
+  if (KB_ID != Constant.NO_KB_NODE)
+    kb match {case Some(x) => loadLinks(x)
+      case _ => Unit}
 
   def this(uri: KnowledgeURI) = {
     this(uri, new Probability())
   }
 
-  def this(map:Map[String, String]) = {
+  def this(map:Map[String, String], kb:KB) = {
     this(new KnowledgeURI(map), new Probability(map),
-       map.get("KB_ID")
-      match {
-        case Some(x) => x.toLong
-        case None => -1
-      })
+      kb.getIdFromMap(map),
+      Some(kb)
+    )
   }
 
   def uri: KnowledgeURI = _uri

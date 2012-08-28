@@ -1,6 +1,7 @@
 package tu.model.knowledge.semanticnetwork
 
-import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
+import tu.model.knowledge._
+import scala.{None, Some}
 
 
 /**
@@ -10,8 +11,8 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         time: 10:53 PM
  */
 
-case class SemanticNetworkNode[Type<:Resource](_content: Type, var _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability)
-  extends Resource(_uri, _probability) {
+case class SemanticNetworkNode[Type<:Resource](_content: Type, var _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability, _KB_ID:Long = Constant.NO_KB_NODE, _kb:Option[KB] = None )
+  extends Resource(_uri, _probability, _KB_ID, _kb) {
 
   def this(_content: Type, _links: List[SemanticNetworkLink], _uri: KnowledgeURI) = {
     this(_content, _links, _uri, new Probability())

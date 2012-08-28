@@ -18,8 +18,9 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    __content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
-                   override val _probability: Probability = new Probability())
-  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
+                   override val _probability: Probability = new Probability(),
+                   __KB_ID:Long = Constant.NO_KB_NODE, __kb:Option[KB] = None  )
+  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability, __KB_ID, __kb) {
 
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
@@ -27,11 +28,11 @@ case class Concept(var _generalisations: TypedKLine[Concept],
            _content: Resource,
            _links: List[ConceptLink],
            _uri: KnowledgeURI) {
-    this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
+    this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability(), Constant.NO_KB_NODE, None)
   }
 
 
-  def this(map: Map[String, String]) = {
+  def this(map: Map[String, String], _kb:KB) = {
     this(
       TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
@@ -42,24 +43,15 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       },
       List[ConceptLink](),
       new KnowledgeURI(map),
-      new Probability(map)
+      new Probability(map),
+      _kb.getIdFromMap(map),
+      Some(_kb)
     )
   }
 
-  def this(map: Map[String, String]) = {
-    this(
-      TypedKLine[Concept]("generalisation"),
-      TypedKLine[Concept]("specialisation"),
-      TypedKLine[AnnotatedPhrase]("phrases"),
-      map.get("content") match {
-        case Some(x) => KnowledgeString(x, x)
-        case None => KnowledgeString(Constant.NO_NAME, Constant.NO_NAME)
-      },
-      List[ConceptLink](),
-      new KnowledgeURI(map),
-      new Probability(map)
-    )
-  }
+  def this(_kb:KB, parent:Resource, keyOfLink:String, typeOfLink:String) =
+    this(_kb.loadChild(parent, "testKey", "testRelation"), _kb)
+
 
   def phrases: TypedKLine[AnnotatedPhrase] = _phrases
 
@@ -140,7 +132,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   override def loadLinks(kb: KB): Boolean = {
     val genList = kb.loadChildrenList(this, Constant.GENERALISATION_LINK_NAME)
     for (x: Map[String, String] <- genList.iterator) {
-      val c = new Concept(x)
+      val c = new Concept(x, kb)
       _generalisations +(c.uri, c)
     }
     true

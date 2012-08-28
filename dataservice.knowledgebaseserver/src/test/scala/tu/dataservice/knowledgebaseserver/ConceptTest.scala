@@ -43,23 +43,4 @@ class ConceptTest extends FunSuite {
     expect(c.content)(content)
   }
 
-  //now stored only generalisation links, but for true TDD tests should be written before $)
-  test("Concept should be stored and restored") {
-    val content = new KnowledgeString("content", uri)
-    val x = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
-      TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
-
-    val context = ContextHelper(Nil, x, "test context")
-
-    //TODO there is no such method save
-    N4JKB.saveResource(context, "testContext")
-    x.save(N4JKB, context, "testKey", "testRelation")
-
-    val y = new Concept(N4JKB.loadChild(context, "testKey", "testRelation"))
-    y.loadLinks(N4JKB)
-
-    expect(x.content)(y.content)
-  }
-
-
 }
