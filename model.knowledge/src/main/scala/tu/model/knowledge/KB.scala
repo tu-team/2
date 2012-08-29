@@ -39,11 +39,11 @@ trait KB {
   }
 
   // methods above should be implemented in real database server
+
+  // with root as parent
   def saveResource(resource:Resource, key:String): Boolean = saveResource(resource, key, DEFAULT_LINK_NAME)
 
   def saveResource(resource:Resource, key:String, linkType:String): Boolean = false
-
-  def saveResource(child:Resource, parent:Resource, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
 
   def loadChild(key:String):Map[String,  String] = loadChild(key, DEFAULT_LINK_NAME)
 
@@ -57,10 +57,25 @@ trait KB {
 
   def loadChildrenMap(linkType:String):Map[String,  Map[String,  String]] = Map()
 
+
+
+  // with Resource as parent
+  def saveResource(child:Resource, parent:Resource, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
+
   def loadChild(parent:Resource, key:String, linkType:String = DEFAULT_LINK_NAME):Map[String,  String]  = Map()
 
   def loadChildrenList(parent:Resource, linkType:String = DEFAULT_LINK_NAME):List[Map[String,  String]] = List()
 
   def loadChildrenMap(parent:Resource, linkType:String = DEFAULT_LINK_NAME):Map[String,  Map[String,  String]] = Map()
+
+
+  // with ID as parent
+  def saveResource(child:Resource, parentId:Long, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
+
+  def loadChild(parentId:Long, key:String, linkType:String = DEFAULT_LINK_NAME):Map[String,  String]  = Map()
+
+  def loadChildrenList(parentId:Long, linkType:String = DEFAULT_LINK_NAME):List[Map[String,  String]] = List()
+
+  def loadChildrenMap(parentId:Long, linkType:String = DEFAULT_LINK_NAME):Map[String,  Map[String,  String]] = Map()
 
 }

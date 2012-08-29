@@ -51,10 +51,29 @@ object N4JKB extends KB {
   override def loadChildrenMap(parent:Resource, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent), linkType)
 
 
+  override def saveResource(child:Resource, parentId:Long, key:String, linkType:String = "defaultLink"):Boolean = {saveResource (child, getNodeById(parentId), key, linkType)}
+
+  override def loadChild(parentId:Long, key:String, linkType:String):Map[String,  String] = loadChild(getNodeById(parentId), key, linkType)
+
+  override def loadChildrenList(parentId:Long, linkType:String):List[Map[String,  String]] = loadChildrenList(getNodeById(parentId), linkType)
+
+  override def loadChildrenMap(parentId:Long, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeById(parentId), linkType)
+
+
+  private def getNodeById( Id:Long) : Node = {
+    try{
+      return N4JKB().getNodeById(Id)
+    }
+    catch{
+      case _ => LoggerFactory.getLogger(this.getClass).error("try to get not existed node with ID {}", Id.toString)
+    }
+    N4JKB().getReferenceNode
+  }
+
   private def getNodeByResource( resource:Resource) : Node = {
     try{
       return N4JKB().getNodeById(resource.KB_ID)
-      }
+    }
     catch{
       case _ => LoggerFactory.getLogger(this.getClass).error("try to get ID for non-saved resource {}", resource.uri.toString)
       //TODO - get by uri??? - oh, no :)
