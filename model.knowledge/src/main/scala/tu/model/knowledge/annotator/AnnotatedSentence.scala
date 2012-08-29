@@ -57,6 +57,14 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
     }
   }
   */
+
+  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+    var res = kb.saveResource(this, parent, key)
+
+    for (x: Resource <- _phrases)
+      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME)
+    res
+  }
 }
 
 object AnnotatedSentence {
