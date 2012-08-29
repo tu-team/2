@@ -163,9 +163,9 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
     val linksSourceMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
     val linksDestinationMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
-    for (x: String <- linksSourceMap.valuesIterator) {
+    for (x: String <- linksSourceMap.keysIterator) {
       val source = new Concept(linksSourceMap(x), kb)
-      linksDestinationMap(x) match {
+      linksDestinationMap.get(x) match {
         case Some(destinationMap: Map[String, String]) => {
           val destination = new Concept(destinationMap, kb)
           _conceptLinks ::: List(ConceptLink(source, destination, x))
