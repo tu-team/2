@@ -61,6 +61,14 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
     res
   }
 
+  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+    var res = kb.saveResource(this, parent, key)
+    for (x: Resource <- sentences)
+      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
+
+    res
+  }
+
 }
 
 object AnnotatedNarrative {
