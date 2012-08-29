@@ -47,6 +47,10 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
     // TODO add loadLinks here
   }
 
+  override def export:Map[String, String] = {
+    super.export ++ Map("text" -> this.text)
+  }
+
   /* TODO: new AnnotatedPhrase()
   override def loadLinks(kb: KB): List[AnnotatedPhrase] = {
     val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
