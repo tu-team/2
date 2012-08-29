@@ -153,7 +153,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     def oneListPhrases(linkType: String, tkList: TypedKLine[AnnotatedPhrase]): Boolean = {
       val list = kb.loadChildrenList(this, linkType)
       for (x: Map[String, String] <- list.iterator) {
-        val c = new AnnotatedPhrase(x, kb)
+        val c = new AnnotatedPhrase() // TODO: new AnnotatedPhrase(x, kb)
         tkList +(c.uri, c)
       }
       true

@@ -29,6 +29,7 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
     )
   }
 
+  /*TODO: move to object
   override def loadLinks(kb: KB): List[AnnotatedSentence] = {
     val list = kb.loadChildrenList(this, Constant.SENTENCES_LINK_NAME)
     list.map {
@@ -37,6 +38,7 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
       }
     }
   }
+  */
 
   /**
    * Returns List[Concepts in current AnnotatedNarrative.

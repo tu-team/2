@@ -25,12 +25,14 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
   }
 
   def loadLinksNodes(kb: KB): List[Concept] = {
+    Nil
+    /* TODO - move to object
     val list = kb.loadChildrenList(this, Constant.NODES_LINK_NAME)
     list.map {
       x: Map[String, String] => {
         new Concept(x)
       }
-    }
+    }*/
   }
 
   //TODO

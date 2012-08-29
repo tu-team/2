@@ -27,6 +27,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     this(List[AnnotatedPhrase](), KnowledgeURI("Phrase"))
   }
 
+  /* TODO: move to object
   def this(map: Map[String, String], kb: KB) = {
     this(
       loadLinksPhrases(kb),
@@ -78,6 +79,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
       }
     }
   }
+  */
 
   def concepts = _concepts
 
