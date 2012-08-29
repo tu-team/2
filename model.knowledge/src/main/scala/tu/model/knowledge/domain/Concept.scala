@@ -20,8 +20,11 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability(),
-                   __KB_ID:Long = Constant.NO_KB_NODE, __kb:Option[KB] = None  )
+                   __KB_ID: Long = Constant.NO_KB_NODE,
+                   __kb: Option[KB] = None)
   extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability, __KB_ID, __kb) {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
@@ -32,8 +35,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability(), Constant.NO_KB_NODE, None)
   }
 
-
-  def this(map: Map[String, String], _kb:KB) = {
+  def this(map: Map[String, String], _kb: KB) = {
     this(
       TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
@@ -50,7 +52,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     )
   }
 
-  def this(_kb:KB, parent:Resource, keyOfLink:String, typeOfLink:String) =
+  def this(_kb: KB, parent: Resource, keyOfLink: String, typeOfLink: String) =
     this(_kb.loadChild(parent, "testKey", "testRelation"), _kb)
 
 
@@ -131,8 +133,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       res &= x.save(kb, this, x.uri.toString, Constant.SPECIALISATION_LINK_NAME)
     for (x: Resource <- phrases.frames.values.iterator)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME)
-    for (x: ConceptLink <- _conceptLinks)
-    {
+    for (x: ConceptLink <- _conceptLinks) {
       res &= x.source.save(kb, this, x.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
       res &= x.destination.save(kb, this, x.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
     }
@@ -140,8 +141,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   override def loadLinks(kb: KB): Boolean = {
-    def oneList(linkType:String, tkList:TypedKLine[Concept]):Boolean =
-    {
+    def oneList(linkType: String, tkList: TypedKLine[Concept]): Boolean = {
       val list = kb.loadChildrenList(this, linkType)
       for (x: Map[String, String] <- list.iterator) {
         val c = new Concept(x, kb)
@@ -150,31 +150,36 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       true
     }
 
-    var res = oneList(Constant.GENERALISATION_LINK_NAME, _generalisations)
-           && oneList(Constant.SPECIALISATION_LINK_NAME, _specialisations)
-           && oneList(Constant.PHRASES_LINK_NAME, _phrases)
+    def oneListPhrases(linkType: String, tkList: TypedKLine[AnnotatedPhrase]): Boolean = {
+      val list = kb.loadChildrenList(this, linkType)
+      for (x: Map[String, String] <- list.iterator) {
+        val c = new AnnotatedPhrase(x, kb)
+        tkList +(c.uri, c)
+      }
+      true
+    }
+
+    var res = oneList(Constant.GENERALISATION_LINK_NAME, _generalisations) && oneList(Constant.SPECIALISATION_LINK_NAME, _specialisations) && oneListPhrases(Constant.PHRASES_LINK_NAME, _phrases)
 
     val linksSourceMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
     val linksDestinationMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
     for (x: String <- linksSourceMap.valuesIterator) {
-      val source = new Concept(linkSourceMap[x], kb)
-      linksDestinationMap[x] match
-      {
-        case Some(destinationMap) =>
-        {
+      val source = new Concept(linksSourceMap(x), kb)
+      linksDestinationMap(x) match {
+        case Some(destinationMap: Map[String, String]) => {
           val destination = new Concept(destinationMap, kb)
-          _conceptLinks += ConceptLink(source, destination, x)
+          _conceptLinks ::: List(ConceptLink(source, destination, x))
         }
-        case None =>
-        {
-          LoggerFactory.getLogger(scope).error("$destination not stored for link {} in {} ", x, this.uri.toString )
+        case None => {
+          log.error("$destination not stored for link {} in {} ", x, this.uri.toString)
           res = false
         }
       }
-      val destination = new Concept(, kb)
+      //TODO correct this.
+      // val destination = new Concept(, kb)
     }
+    res
   }
-
 }
 
 object Concept {

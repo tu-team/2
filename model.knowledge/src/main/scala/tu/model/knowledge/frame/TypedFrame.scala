@@ -8,18 +8,24 @@ import tu.model.knowledge.domain.Concept
  * @author toschev alex, talanov max
  *         Date: 03.05.12
  *         Time: 12:29
-
  */
 
-case class Frame(var __resources: Map[KnowledgeURI, Resource],override val _uri: KnowledgeURI,override val _probability: Probability = new Probability())
+case class Frame(var __resources: Map[KnowledgeURI, Resource],
+                 override val _uri: KnowledgeURI,
+                 override val _probability: Probability = new Probability())
   extends TypedFrame[Resource](__resources, _uri, _probability) {
 }
 
-case class TypedFrame[Type <: Resource](var _resources: Map[KnowledgeURI, Type], _uri: KnowledgeURI, _probability: Probability = new Probability())
+case class TypedFrame[Type <: Resource](var _resources: Map[KnowledgeURI, Type],
+                                        _uri: KnowledgeURI,
+                                        _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_resources: Map[KnowledgeURI, Type], _uri: KnowledgeURI) {
-    this(_resources: Map[KnowledgeURI, Type], _uri: KnowledgeURI, new Probability())
+  def this(_resources: Map[KnowledgeURI, Type],
+           _uri: KnowledgeURI) {
+    this(_resources: Map[KnowledgeURI, Type],
+      _uri: KnowledgeURI,
+      new Probability())
   }
 
   def resources = _resources
@@ -32,6 +38,8 @@ case class TypedFrame[Type <: Resource](var _resources: Map[KnowledgeURI, Type],
   override def equals(that: Any) = {
     (that.isInstanceOf[TypedFrame[Resource]] && that.asInstanceOf[TypedFrame[Resource]].resources.equals(this.resources))
   }
+
+
 }
 
 object TypedFrame {

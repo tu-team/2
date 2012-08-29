@@ -27,9 +27,24 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     this(List[AnnotatedPhrase](), KnowledgeURI("Phrase"))
   }
 
+  def this(map: Map[String, String], kb: KB) = {
+    this(
+      loadLinksPhrases(kb),
+      loadLinksConcepts(kb),
+      new KnowledgeURI(map),
+      new Probability(map),
+      map.get("text") match {
+        case Some(text) => text
+        case None => ""
+      },
+      map.get("index") match {
+        case Some(text) => text.toDouble
+        case None => 0
+      }
+    )
+  }
 
   def this(map: Map[String, String]) = {
-
     this(
       List[AnnotatedPhrase](),
       List[Concept](),
@@ -43,8 +58,25 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
         case Some(text) => text.toDouble
         case None => 0
       }
-      //TODO add load links here
     )
+  }
+
+  def loadLinksPhrases(kb: KB): List[AnnotatedPhrase] = {
+    val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new AnnotatedPhrase(x)
+      }
+    }
+  }
+
+  def loadLinksConcepts(kb: KB): List[Concept] = {
+    val list = kb.loadChildrenList(this, Constant.CONCEPT_LINK_NAME)
+    list.map {
+      x: Map[String, String] => {
+        new Concept(x, kb)
+      }
+    }
   }
 
   def concepts = _concepts
