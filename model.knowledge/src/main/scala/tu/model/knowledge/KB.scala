@@ -29,7 +29,7 @@ trait KB {
   //    inside this methods KB.saveResource with or without "parent" parameter should be called
   //
   //  for restore
-  //    object (helper) should contain apply(kb: KB, parent: Resource, key: String, linkType: String) method for load this node and they child nodes
+  //    object (helper) should contain load(kb: KB, parent: Resource, key: String, linkType: String) method for load this node and they child nodes
 
 
   def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")

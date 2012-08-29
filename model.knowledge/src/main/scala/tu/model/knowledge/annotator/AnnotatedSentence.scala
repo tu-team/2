@@ -96,5 +96,10 @@ object AnnotatedSentence {
   def apply(text: String, phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedSentence = {
     new AnnotatedSentence(phrases, uri, new Probability(), text)
   }
+
+  def apply(text: String, phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedSentence = {
+    new AnnotatedSentence(phrases, uri, new Probability(), text)
+  }
+
 }
 
