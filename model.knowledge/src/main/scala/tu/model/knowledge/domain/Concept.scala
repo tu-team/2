@@ -48,9 +48,6 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     )
   }
 
-  def this(_kb: KB, parent: Resource, keyOfLink: String, typeOfLink: String) =
-    this(_kb.loadChild(parent, "testKey", "testRelation"), _kb)
-
 
   def phrases: TypedKLine[AnnotatedPhrase] = _phrases
 
@@ -141,48 +138,10 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
 
-
-  override def loadLinks(kb: KB): Boolean = {
-    def oneList(linkType: String, tkList: TypedKLine[Concept]): Boolean = {
-      val list = kb.loadChildrenList(this, linkType)
-      for (x: Map[String, String] <- list.iterator) {
-        val c = new Concept(x, kb)
-        tkList +(c.uri, c)
-      }
-      true
-    }
-
-    def oneListPhrases(linkType: String, tkList: TypedKLine[AnnotatedPhrase]): Boolean = {
-      val list = kb.loadChildrenList(this, linkType)
-      for (x: Map[String, String] <- list.iterator) {
-        val c = new AnnotatedPhrase() // TODO: new AnnotatedPhrase(x, kb)
-        tkList +(c.uri, c)
-      }
-      true
-    }
-
-    var res = oneList(Constant.GENERALISATION_LINK_NAME, _generalisations) && oneList(Constant.SPECIALISATION_LINK_NAME, _specialisations) && oneListPhrases(Constant.PHRASES_LINK_NAME, _phrases)
-
-    val linksSourceMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
-    val linksDestinationMap = kb.loadChildrenMap(this, Constant.CONCEPT_LINK_SOURCE_NAME)
-    for (x: String <- linksSourceMap.keysIterator) {
-      val source = new Concept(linksSourceMap(x), kb)
-      linksDestinationMap.get(x) match {
-        case Some(destinationMap: Map[String, String]) => {
-          val destination = new Concept(destinationMap, kb)
-          _conceptLinks ::: List(ConceptLink(source, destination, x))
-        }
-        case None => {
-          Concept.log.error("$destination not stored for link {} in {} ", List(x, this.uri.toString))
-          res = false
-        }
-      }
-      //TODO correct this.
-      // val destination = new Concept(, kb)
-    }
-    res
-  }
 }
+
+
+
 
 object Concept {
 
@@ -278,12 +237,6 @@ object Concept {
 
   def load(kb: KB, selfMap:Map[String,  String]):Concept = {
 
-    if (selfMap.isEmpty)
-    {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      return apply("LoadError for " + parent.uri.toString)
-    }
-
     val ID = kb.getIdFromMap(selfMap)
 
     def oneList(items: Map[String,  Map[String, String]]): Map[KnowledgeURI,  Concept] = {
@@ -318,7 +271,7 @@ object Concept {
     val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
     val conceptLinkList:List[ConceptLink] =
       linksSourceMap.keys.foldLeft(List[ConceptLink]())
-         {(acc, uri) => acc :: ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri)}
+         {(acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc }
 
     new Concept(generalisation,
       specialisation,
