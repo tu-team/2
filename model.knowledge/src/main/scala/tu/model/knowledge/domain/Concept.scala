@@ -119,16 +119,22 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
 
   override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
-    var res = kb.saveResource(this, parent, key)
+    var res = kb.saveResource(this, parent, key, linkType)
+
     for (x: Resource <- generalisations.frames.values.iterator)
-      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
-    for (x: Resource <- specialisations.frames.values.iterator)
-      res &= x.save(kb, this, x.uri.toString, Constant.SPECIALISATION_LINK_NAME)
-    for (x: Resource <- phrases.frames.values.iterator)
-      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME)
-    for (x: ConceptLink <- _conceptLinks) {
-      res &= x.source.save(kb, this, x.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
-      res &= x.destination.save(kb, this, x.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
+      { res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)  }
+
+    for (y: Resource <- specialisations.frames.values.iterator)
+      {  res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME) }
+
+    for (z: Resource <- phrases.frames.values.iterator)
+    {
+      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME)
+     }
+
+    for (t: ConceptLink <- _conceptLinks) {
+      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
+      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
     }
     res
   }

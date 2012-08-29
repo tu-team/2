@@ -6,7 +6,7 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptLink, Concept}
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.TypedKLine
+import tu.model.knowledge.{KnowledgeURI, TypedKLine}
 
 /**
  * @author achepkunov
@@ -17,20 +17,41 @@ import tu.model.knowledge.TypedKLine
   @RunWith(classOf[JUnitRunner])
   class StoreModelTest extends FunSuite{
 
-  //now stored only generalisation links, but for true TDD tests should be written before $)
+  val uri = KnowledgeURI("testuri")
+
   test("Concept should be stored and restored") {
+
+    val context = ContextHelper(Nil, "test context")  //context is parent node for x:Concept
+    N4JKB.saveResource(context, "testContext")
+
+    // empty concept
+
     val content = new KnowledgeString("content", uri)
     val x = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
 
-    val context = ContextHelper(Nil, x, "test context")
-
-    N4JKB.saveResource(context, "testContext")
     x.save(N4JKB, context, "testKey", "testRelation")
 
-    val y = new Concept(N4JKB, context, "testKey", "testRelation")
+    val y = Concept.load(N4JKB, context, "testKey", "testRelation")
 
-    expect(x.content)(y.content)
+    expect(x.content.uri.name)(y.content.uri.name)
+    expect(x.generalisations.frames.size)(y.generalisations.frames.size)
+    expect(x.links.size)(y.links.size)
+
+
+    // concept with generalisation
+
+    val objectConcept = Concept("object")
+    val systemConcept = Concept.createSubConcept(objectConcept, "system")
+
+    systemConcept.save(N4JKB, context, "testKey", "testRelation")
+
+    val z = Concept.load(N4JKB, context, "testKey", "testRelation")
+
+    expect(systemConcept.content.uri.name)(z.content.uri.name)
+    expect(systemConcept.generalisations.frames.size)(z.generalisations.frames.size)
+    expect(systemConcept.links.size)(z.links.size)
+
   }
 
 
