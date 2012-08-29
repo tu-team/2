@@ -20,6 +20,17 @@ trait KB {
   // for read set of objects you should specify only parent node and type of link. it is useful for read lists of sub-object.
   // For example for store all generalisations of concept, used Constant.GENERALISATION_LINK_NAME
   //
+  //
+  //common way of using database:
+  //
+  //  for store
+  //    object should contain "save(kb: KB, parent: Resource, key: String, linkType: String)" method for any object can be save own childs. parent value is this for this case
+  //    if object should stored into root node, it should contain  "save(kb: KB, key: String, linkType: String)" method also
+  //    inside this methods KB.saveResource with or without "parent" parameter should be called
+  //
+  //  for restore
+  //    object (helper) should contain apply(kb: KB, parent: Resource, key: String, linkType: String) method for load this node and they child nodes
+
 
   def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")
   match {
