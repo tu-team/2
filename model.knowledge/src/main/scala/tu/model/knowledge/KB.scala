@@ -30,6 +30,10 @@ trait KB {
   //
   //  for restore
   //    object (helper) should contain load(kb: KB, parent: Resource, key: String, linkType: String) method for load this node and they child nodes
+  //                                 and maybe load(kb: KB, parentId: Long, key: String, linkType: String) method for load this node and they child nodes
+  //    second method (with ParentId) need for load children if object not created yet: complex object as child of other complex object
+  //
+  //  if object has some simple fields, it should has constructor from Map[String, String] and export function which return appropriate Map[String, String]
 
 
   def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")

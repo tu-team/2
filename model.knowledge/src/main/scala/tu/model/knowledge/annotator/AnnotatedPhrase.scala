@@ -223,4 +223,14 @@ object AnnotatedPhrase {
     concept.phrases = concept.phrases + (it.uri -> it)
     it
   }
+
+
+  def load(kb: KB, parent: Resource, key: String, linkType: String):AnnotatedPhrase = {
+    apply("dummy phrase from Resource-parent")
+  }
+
+  def load(kb: KB, parent: Long, key: String, linkType: String):AnnotatedPhrase = {
+    apply("dummy phrase from ID-parent")
+  }
+
 }

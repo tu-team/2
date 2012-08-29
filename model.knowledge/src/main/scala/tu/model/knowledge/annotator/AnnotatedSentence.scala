@@ -48,7 +48,7 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
   }
 
   override def export:Map[String, String] = {
-    super.export ++ Map("text" -> this.text)
+    super.export + Pair("text",  this.text)
   }
 
   /* TODO: new AnnotatedPhrase()

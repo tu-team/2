@@ -44,5 +44,5 @@ object Constant {
   val LINKS_LINK_NAME = "links"
   val NO_NAME = "NONAME"
 
-  val NO_KB_NODE = -1
+  val NO_KB_NODE = -1L
 }

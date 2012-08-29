@@ -18,7 +18,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
         case Some(x) => x
         case None => Constant.defaultNamespace
       },
-      map.get("name") match {
+      map.get("uri-name") match {
         case Some(x) => x
         case None => {
           val randomName: String = Random.nextInt(Constant.INSTANCE_ID_LENGTH).toString
@@ -84,7 +84,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   def export: Map[String, String] = {
     Map(
       "namespace" -> this.namespace(),
-      "name" -> this.name,
+      "uri-name" -> this.name,
       "revision" -> this.revision())
   }
 }

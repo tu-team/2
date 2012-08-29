@@ -24,8 +24,6 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    __kb: Option[KB] = None)
   extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability, __KB_ID, __kb) {
 
-  val log = LoggerFactory.getLogger(this.getClass)
-
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
            _phrases: TypedKLine[AnnotatedPhrase],
@@ -35,7 +33,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability(), Constant.NO_KB_NODE, None)
   }
 
-  def this(map: Map[String, String], _kb: KB) = {
+  def this(map: Map[String, String]) = {
     this(
       TypedKLine[Concept]("generalisation"),
       TypedKLine[Concept]("specialisation"),
@@ -46,9 +44,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       },
       List[ConceptLink](),
       new KnowledgeURI(map),
-      new Probability(map),
-      _kb.getIdFromMap(map),
-      Some(_kb)
+      new Probability(map)
     )
   }
 
@@ -140,6 +136,12 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
+  override def export:Map[String, String] = {
+    super.export + Pair("content",  this._content.uri.name)
+  }
+
+
+
   override def loadLinks(kb: KB): Boolean = {
     def oneList(linkType: String, tkList: TypedKLine[Concept]): Boolean = {
       val list = kb.loadChildrenList(this, linkType)
@@ -171,7 +173,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
           _conceptLinks ::: List(ConceptLink(source, destination, x))
         }
         case None => {
-          log.error("$destination not stored for link {} in {} ", x, this.uri.toString)
+          Concept.log.error("$destination not stored for link {} in {} ", List(x, this.uri.toString))
           res = false
         }
       }
@@ -183,6 +185,8 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 }
 
 object Concept {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def apply(phrases: TypedKLine[AnnotatedPhrase], name: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"), TypedKLine[Concept]("specialisation"),
@@ -249,14 +253,80 @@ object Concept {
     it
   }
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String):Concept = {
 
-    val generalisation = TypedKLine[Concept]("generalisation")
+  def load(kb: KB, parent: Resource, key: String, linkType: String):Concept = {
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty)
+    {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
+      return apply("LoadError for " + parent.uri.toString)
+    }
+
+    load(kb, selfMap)
+  }
+
+  def load(kb: KB, parentId: Long, key: String, linkType: String):Concept = {
+    val selfMap = kb.loadChild(parentId, key, linkType)
+    if (selfMap.isEmpty)
+    {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      return apply("LoadError for ID" + parentId.toString)
+    }
+
+    load(kb, kb.loadChild(parentId, key, linkType))
+  }
+
+  def load(kb: KB, selfMap:Map[String,  String]):Concept = {
+
+    if (selfMap.isEmpty)
+    {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
+      return apply("LoadError for " + parent.uri.toString)
+    }
+
+    val ID = kb.getIdFromMap(selfMap)
+
+    def oneList(items: Map[String,  Map[String, String]]): Map[KnowledgeURI,  Concept] = {
+      items.keys.foldLeft(Map[KnowledgeURI,  Concept]()) {(acc, uri) => acc+ Pair(KnowledgeURI(uri), new Concept(items(uri)))}
+    }
+
+    def oneListPhrases(items: Map[String,  Map[String, String]]): Map[KnowledgeURI,  AnnotatedPhrase] = {
+      items.keys.foldLeft(Map[KnowledgeURI,  AnnotatedPhrase]()) {(acc, uri) => acc+ Pair(KnowledgeURI(uri), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))}
+    }
+
+    val generalisation =
+      TypedKLine[Concept](
+        "generalisation",
+        oneList(kb.loadChildrenMap(ID, Constant.GENERALISATION_LINK_NAME))
+      )
+
+    val specialisation =
+      TypedKLine[Concept](
+        "specialisation",
+        oneList(kb.loadChildrenMap(ID, Constant.SPECIALISATION_LINK_NAME))
+      )
+
+    val sentences =
+      TypedKLine[AnnotatedPhrase](
+        "specialisation",
+        oneListPhrases(kb.loadChildrenMap(ID, Constant.SENTENCES_LINK_NAME))
+      )
+
+    val name = selfMap.get("content") match {case Some(x) => x; case None => {log.error("Concept without content"); "" }}
+
+    val linksSourceMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val conceptLinkList:List[ConceptLink] =
+      linksSourceMap.keys.foldLeft(List[ConceptLink]())
+         {(acc, uri) => acc :: ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri)}
+
     new Concept(generalisation,
-    TypedKLine[Concept]("specialisation"),
-    TypedKLine[AnnotatedPhrase]("sentences"),
-    KnowledgeString("name", "name"),
-    List[ConceptLink](),
-    KnowledgeURI("name" + "Concept"))
+      specialisation,
+      sentences,
+      KnowledgeString(name, name),
+      conceptLinkList,
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap)
+    )
   }
 }
