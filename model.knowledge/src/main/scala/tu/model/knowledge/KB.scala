@@ -58,7 +58,6 @@ trait KB {
   def loadChildrenMap(linkType:String):Map[String,  Map[String,  String]] = Map()
 
 
-
   // with Resource as parent
   def saveResource(child:Resource, parent:Resource, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
 
@@ -70,12 +69,12 @@ trait KB {
 
 
   // with ID as parent
-  def saveResource(child:Resource, parentId:Long, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
+  def saveResource(child:Resource, parentId:Long, key:String, linkType:String): Boolean = false
 
-  def loadChild(parentId:Long, key:String, linkType:String = DEFAULT_LINK_NAME):Map[String,  String]  = Map()
+  def loadChild(parentId:Long, key:String, linkType:String):Map[String,  String]  = Map()
 
-  def loadChildrenList(parentId:Long, linkType:String = DEFAULT_LINK_NAME):List[Map[String,  String]] = List()
+  def loadChildrenList(parentId:Long, linkType:String):List[Map[String,  String]] = List()
 
-  def loadChildrenMap(parentId:Long, linkType:String = DEFAULT_LINK_NAME):Map[String,  Map[String,  String]] = Map()
+  def loadChildrenMap(parentId:Long, linkType:String):Map[String,  Map[String,  String]] = Map()
 
 }

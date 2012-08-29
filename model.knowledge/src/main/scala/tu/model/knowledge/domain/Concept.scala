@@ -251,12 +251,12 @@ object Concept {
 
   def load(kb: KB, parent: Resource, key: String, linkType: String):Concept = {
 
-    val generalisation = new TypedKLine[Concept]("generalisation")
+    val generalisation = TypedKLine[Concept]("generalisation")
     new Concept(generalisation,
     TypedKLine[Concept]("specialisation"),
     TypedKLine[AnnotatedPhrase]("sentences"),
-    KnowledgeString(name, name),
+    KnowledgeString("name", "name"),
     List[ConceptLink](),
-    KnowledgeURI(name + "Concept"))
+    KnowledgeURI("name" + "Concept"))
   }
 }

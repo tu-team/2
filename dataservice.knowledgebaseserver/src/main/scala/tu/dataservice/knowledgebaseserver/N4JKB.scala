@@ -51,7 +51,7 @@ object N4JKB extends KB {
   override def loadChildrenMap(parent:Resource, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent), linkType)
 
 
-  override def saveResource(child:Resource, parentId:Long, key:String, linkType:String = "defaultLink"):Boolean = {saveResource (child, getNodeById(parentId), key, linkType)}
+  override def saveResource(child:Resource, parentId:Long, key:String, linkType:String):Boolean = {saveResource (child, getNodeById(parentId), key, linkType)}
 
   override def loadChild(parentId:Long, key:String, linkType:String):Map[String,  String] = loadChild(getNodeById(parentId), key, linkType)
 
