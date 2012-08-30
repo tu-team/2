@@ -1,6 +1,5 @@
 package tu.model.knowledge
 
-import primitive.KnowledgeString
 import semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
 
 /**
@@ -17,4 +16,5 @@ case class Tag(override val _content: KLine, var __links: List[SemanticNetworkLi
   }
 
   override def links = __links
+
 }
