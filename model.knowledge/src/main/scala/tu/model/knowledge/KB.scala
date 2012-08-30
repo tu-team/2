@@ -5,7 +5,6 @@ import Constant.DEFAULT_LINK_NAME
  * @author ${user.name}
  */
 
-
 trait KB {
 
   //any objects stored with link from other (parent) object. If parent object not applied, then root node used insted one.
@@ -35,12 +34,7 @@ trait KB {
   //
   //  if object has some simple fields, it should has constructor from Map[String, String] and export function which return appropriate Map[String, String]
 
-
-  def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")
-  match {
-    case Some(x) => x.toLong
-    case None => Constant.NO_KB_NODE
-  }
+  def getIdFromMap(map:Map[String, String]) =  KB.getIdFromMap(map)
 
   // methods above should be implemented in real database server
 
@@ -80,5 +74,16 @@ trait KB {
   def loadChildrenList(parentId:Long, linkType:String):List[Map[String,  String]] = List()
 
   def loadChildrenMap(parentId:Long, linkType:String):Map[String,  Map[String,  String]] = Map()
+
+}
+
+
+object KB {
+
+  def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")
+  match {
+    case Some(x) => x.toLong
+    case None => Constant.NO_KB_NODE
+  }
 
 }

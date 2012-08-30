@@ -20,10 +20,10 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    __content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
-                   override val _probability: Probability = new Probability(),
-                   __KB_ID: Long = Constant.NO_KB_NODE,
-                   __kb: Option[KB] = None)
-  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability, __KB_ID, __kb) {
+                   override val _probability: Probability = new Probability()
+
+                  )
+  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
 
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
@@ -31,7 +31,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
            _content: Resource,
            _links: List[ConceptLink],
            _uri: KnowledgeURI) {
-    this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability(), Constant.NO_KB_NODE, None)
+    this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
   }
 
   def this(map: Map[String, String]) = {
@@ -236,7 +236,7 @@ object Concept {
     load(kb, kb.loadChild(parentId, key, linkType))
   }
 
-  def load(kb: KB, selfMap: Map[String, String]): Concept = {
+  private def load(kb: KB, selfMap: Map[String, String]): Concept = {
 
     val ID = kb.getIdFromMap(selfMap)
 
