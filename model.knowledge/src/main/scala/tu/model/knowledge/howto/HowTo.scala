@@ -82,28 +82,14 @@ object HowTo {
     it
   }
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String): HowTo = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): HowTo = {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      throw new UnexpectedException("LoadError for " + parent.uri.toString)
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))
+      throw new UnexpectedException("LoadError for " + parent.ID.toString)
     }
 
-    load(kb, selfMap)
-  }
-
-  def load(kb: KB, parentId: Long, key: String, linkType: String): HowTo = {
-    val selfMap = kb.loadChild(parentId, key, linkType)
-    if (selfMap.isEmpty) {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
-    }
-    load(kb, kb.loadChild(parentId, key, linkType))
-  }
-
-  def load(kb: KB, selfMap: Map[String, String]): HowTo = {
-
-    val ID = kb.getIdFromMap(selfMap)
+    val ID = KBNodeId(selfMap)
 
     def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
