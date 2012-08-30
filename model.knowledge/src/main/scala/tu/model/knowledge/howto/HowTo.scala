@@ -2,7 +2,7 @@ package tu.model.knowledge.howto
 
 import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
-import domain.Concept
+import domain.{ConceptTag, Concept}
 import util.Random
 import tu.model.knowledge.Tag
 
@@ -14,10 +14,12 @@ import tu.model.knowledge.Tag
  */
 
 case class HowTo(var _parameters: List[TypedFrame[Resource]],
-                 var _tags: List[Tag], _uri: KnowledgeURI, _probability: Probability = new Probability())
+                 var _tags: List[ConceptTag],
+                 _uri: KnowledgeURI,
+                 _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_parameters: List[TypedFrame[Resource]], _tags: List[Tag], _uri: KnowledgeURI) {
+  def this(_parameters: List[TypedFrame[Resource]], _tags: List[ConceptTag], _uri: KnowledgeURI) {
     this(_parameters, _tags, _uri, new Probability())
   }
 
@@ -30,7 +32,7 @@ case class HowTo(var _parameters: List[TypedFrame[Resource]],
 
   def tags = _tags
 
-  def tags_=(in: List[Tag]): HowTo = {
+  def tags_=(in: List[ConceptTag]): HowTo = {
     _tags = in
     this
   }
@@ -48,18 +50,18 @@ object HowTo {
    * @return HowTo instance
    */
   def createInstance(parent: HowTo, parameters: List[TypedFrame[Resource]]): HowTo = {
-    val name = parent.uri.name + "&ID="+Random.nextInt(Constant.INSTANCE_ID_LENGTH)
-    val it = new HowTo(parameters, List[Tag](), KnowledgeURI(name + howToPostfix))
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val it = new HowTo(parameters, List[ConceptTag](), KnowledgeURI(name + howToPostfix))
     it
   }
 
   def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
-    val name = parent.uri.name +  "&ID="+Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
 
     val frames: List[TypedFrame[Resource]] = parameters.map(c => {
       TypedFrame(c)
     })
-    val it = new HowTo(frames, List[Tag](), KnowledgeURI(name + howToPostfix))
+    val it = new HowTo(frames, List[ConceptTag](), KnowledgeURI(name + howToPostfix))
     it
   }
 }

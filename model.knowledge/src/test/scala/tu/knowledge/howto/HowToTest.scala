@@ -13,6 +13,7 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode}
 import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
+import domain.{Concept, ConceptLink, ConceptTag}
 import howto.HowTo
 
 @RunWith(classOf[JUnitRunner])
@@ -31,8 +32,9 @@ class HowToTest extends FunSuite {
   val f1 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination), new KnowledgeURI(namespace, "f1", revision))
   val f2 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), new KnowledgeURI(namespace, "f2", revision))
   val tagName = new KnowledgeString("tagName", new KnowledgeURI(namespace, "tag", revision))
-  val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
-  val t = new Tag(kl, List[SemanticNetworkLink](), uri)
+  val c = Concept("c")
+  val kl = new TypedKLine[Concept](Map[KnowledgeURI, Concept](c.uri -> c), uri)
+  val t = new ConceptTag(kl, List[ConceptLink](), uri)
   val f = new TypedFrame(Map[KnowledgeURI, Resource](), uri)
 
   test("test Ok") {

@@ -118,7 +118,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
-  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+  def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- generalisations.frames.values.iterator) {

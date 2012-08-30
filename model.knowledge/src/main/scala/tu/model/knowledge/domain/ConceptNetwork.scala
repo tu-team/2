@@ -108,7 +108,7 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     this.getClass.getName + " [" + nodes.toString + "][" + links + "]@" + uri.toString
   }
 
-  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+  def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- _rootNodes) {

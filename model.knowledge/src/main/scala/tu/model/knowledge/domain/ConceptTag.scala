@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory
 class ConceptTag(val _content: TypedKLine[Concept],
                  var __links: List[ConceptLink],
                  val _uri: KnowledgeURI,
-                 val _probability: Probability)
+                 val _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
   def links = __links
