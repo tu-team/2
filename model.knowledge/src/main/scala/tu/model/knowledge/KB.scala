@@ -35,6 +35,8 @@ trait KB {
   //
   //  if object has some simple fields, it should has constructor from Map[String, String] and export function which return appropriate Map[String, String]
 
+  // TODO edit and remove objects
+
   def getIdFromMap(map:Map[String, String]) =  KB.getIdFromMap(map)
 
   // methods above should be implemented in real database server

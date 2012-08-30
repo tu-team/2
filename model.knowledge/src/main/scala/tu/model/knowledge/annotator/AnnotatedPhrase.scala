@@ -217,7 +217,7 @@ object AnnotatedPhrase {
     }
 
     val res = new AnnotatedPhrase(
-      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)),
+      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)), //TODO recursive load
       kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_)),
       new KnowledgeURI(selfMap),
       new Probability(selfMap),
