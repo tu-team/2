@@ -118,23 +118,29 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
 
-  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+  override def save(kb: KB, parent: Resource, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
+
+    val uri = this.uri.toString
+    if (saved.contains(uri))
+      return true
+    val savedPlus:List[String] = uri :: saved
+
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- generalisations.frames.values.iterator)
-      { res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)  }
+      { res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME, savedPlus)  }
 
     for (y: Resource <- specialisations.frames.values.iterator)
-      {  res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME) }
+      {  res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME, savedPlus) }
 
     for (z: Resource <- phrases.frames.values.iterator)
     {
-      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME)
+      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
      }
 
     for (t: ConceptLink <- _conceptLinks) {
-      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
-      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
+      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME, savedPlus)
+      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME, savedPlus)
     }
     res
   }
