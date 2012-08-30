@@ -1,7 +1,7 @@
 package tu.model.knowledge.howto
 
-import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
+import frame.TypedFrame
 import primitive.KnowledgeString
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import domain.{ConceptLink, ConceptTag, Concept}
@@ -103,9 +103,16 @@ object HowTo {
       }
     }
 
-    //TODO correct this
-    val parameters =
-      List[TypedFrame[Resource]]()
+
+    val framesID = kb.loadChildrenList(ID, Constant.CONCEPTS_LINK_NAME).map(KBNodeId(_))
+
+    //TODO if howto will stored not only Concepts, then we should store relations with different linkTypes
+    def oneFrame(node:KBNodeId):TypedFrame[Resource] = {
+      TypedFrame.apply(kb.loadChildrenList(node, Constant.CONCEPTS_LINK_NAME).map(new Concept(_)), KnowledgeURI("frameInHowTo"))
+    }
+
+    val parameters = framesID.map(oneFrame(_))
+
 
     val tags: List[ConceptTag] = List[ConceptTag]()
       // kb.loadChildrenMap(ID, Constant.TAGS)
