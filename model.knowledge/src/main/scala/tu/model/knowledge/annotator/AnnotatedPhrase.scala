@@ -205,7 +205,7 @@ object AnnotatedPhrase {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
       //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
     }
 
     val ID = new KBNodeId(selfMap)

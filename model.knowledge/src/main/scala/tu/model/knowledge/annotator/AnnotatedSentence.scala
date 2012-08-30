@@ -3,6 +3,7 @@ package tu.model.knowledge.annotator
 import tu.model.knowledge._
 import domain.Concept
 import scala.Some
+import tu.exception.UnexpectedException
 
 /**
  * @author alex toschev
@@ -44,23 +45,11 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
         case None => ""
       }
     )
-    // TODO add loadLinks here
   }
 
   override def export:Map[String, String] = {
     super.export + Pair("text",  this.text)
   }
-
-  /* TODO: new AnnotatedPhrase()
-  override def loadLinks(kb: KB): List[AnnotatedPhrase] = {
-    val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new AnnotatedPhrase(x)
-      }
-    }
-  }
-  */
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
 
@@ -101,6 +90,31 @@ object AnnotatedSentence {
    */
   def apply(text: String, phrases: List[AnnotatedPhrase], uri: KnowledgeURI): AnnotatedSentence = {
     new AnnotatedSentence(phrases, uri, new Probability(), text)
+  }
+
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String):AnnotatedSentence = {
+
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
+    }
+
+    val ID = new KBNodeId(selfMap)
+
+    val res = new AnnotatedSentence(
+      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)),
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap),
+      selfMap.get("text") match {
+        case Some(text) => text
+        case None => ""
+      }
+    )
+
+    KBMap.register(res, ID.ID)
+
+    res
   }
 
 }

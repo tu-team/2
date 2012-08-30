@@ -3,6 +3,7 @@ package tu.model.knowledge.annotator
 import tu.model.knowledge._
 import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 import scala.Some
+import tu.exception.UnexpectedException
 
 
 /**
@@ -29,16 +30,6 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
     )
   }
 
-  /*TODO: move to object
-  override def loadLinks(kb: KB): List[AnnotatedSentence] = {
-    val list = kb.loadChildrenList(this, Constant.SENTENCES_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new AnnotatedSentence(x)
-      }
-    }
-  }
-  */
 
   /**
    * Returns List[Concepts in current AnnotatedNarrative.
@@ -70,7 +61,7 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
 
     var res = kb.saveResource(this, parent, key)
     for (x: Resource <- sentences)
-      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME, savedPlus)
+      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
 
     res
   }
@@ -87,4 +78,32 @@ object AnnotatedNarrative {
     val sentence = AnnotatedSentence(phrases)
     new AnnotatedNarrative(List(sentence), uri, new Probability(), text)
   }
+
+
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String):AnnotatedNarrative = {
+
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
+    }
+
+    val ID = new KBNodeId(selfMap)
+
+    val res = new AnnotatedNarrative(
+        kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedSentence(_)),
+        new KnowledgeURI(selfMap),
+        new Probability(selfMap),
+        selfMap.get("text") match {
+          case Some(text) => text
+          case None => ""
+        }
+      )
+
+    KBMap.register(res, ID.ID)
+
+    res
+  }
+
+
 }
