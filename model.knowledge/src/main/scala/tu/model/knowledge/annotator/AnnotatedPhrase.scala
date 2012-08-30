@@ -3,6 +3,7 @@ package tu.model.knowledge.annotator
 import tu.model.knowledge._
 import domain.Concept
 import scala.Some
+import tu.exception.UnexpectedException
 
 
 /**
@@ -44,6 +45,9 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     )
   }
 
+  override def export: Map[String, String] = {
+    Map("text" -> this.text, "index" -> this.index.toString) ++ super.export
+  }
 
   def concepts = _concepts
 
@@ -127,9 +131,9 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
 
     var res = kb.saveResource(this, parent, key)
     for (x: Resource <- _phrases)
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
+      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
     for (x: Resource <- _concepts)
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.CONCEPT_LINK_NAME, savedPlus)
+      res &= x.save(kb, this, x.uri.toString, Constant.CONCEPT_LINK_NAME, savedPlus)
 
     res
   }
@@ -196,30 +200,42 @@ object AnnotatedPhrase {
 
 
   def load(kb: KB, parent: KBNodeId, key: String, linkType: String):AnnotatedPhrase = {
-    apply("dummy phrase from ID-parent")
-  }
+//    apply("dummy phrase from ID-parent")
 
-  //private def load(kb: KB, selfMap: Map[String, String]):AnnotatedPhrase = {
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
+    }
 
-/*
-  def loadLinksPhrases(kb: KB): List[AnnotatedPhrase] = {
-    val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new AnnotatedPhrase(x)
+    val ID = new KBNodeId(selfMap)
+
+    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
       }
     }
+
+    val res = new AnnotatedPhrase(
+      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)),
+      kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_)),
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap),
+      selfMap.get("text") match {
+        case Some(text) => text
+        case None => ""
+      },
+      selfMap.get("index") match {
+        case Some(text) => text.toDouble
+        case None => 0
+      }
+    )
+
+    KBMap.register(res, ID.ID)
+
+    res
   }
 
-  def loadLinksConcepts(kb: KB): List[Concept] = {
-    val list = kb.loadChildrenList(this, Constant.CONCEPT_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new Concept(x, kb)
-      }
-    }
-  }
-  */
 
 
 }
