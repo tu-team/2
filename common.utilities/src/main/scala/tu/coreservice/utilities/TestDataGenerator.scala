@@ -1,6 +1,6 @@
 package tu.coreservice.utilities
 
-import tu.model.knowledge.domain.{ConceptLink, ConceptNetwork, Concept}
+import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.{Resource, Tag, KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
@@ -161,8 +161,8 @@ object TestDataGenerator {
   /**
    * HowTo-s
    */
-  val installHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[Tag](), KnowledgeURI("installHowTo"))
-  val reinstallHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[Tag](), KnowledgeURI("reinstallHowTo"))
+  val installHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[ConceptTag](), KnowledgeURI("installHowTo"))
+  val reinstallHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[ConceptTag](), KnowledgeURI("reinstallHowTo"))
 
   /**
    * Test sentences

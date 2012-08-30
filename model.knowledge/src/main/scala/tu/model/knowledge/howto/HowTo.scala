@@ -2,9 +2,13 @@ package tu.model.knowledge.howto
 
 import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
-import domain.{ConceptTag, Concept}
+import primitive.KnowledgeString
+import tu.model.knowledge.annotator.AnnotatedPhrase
+import domain.{ConceptLink, ConceptTag, Concept}
 import util.Random
-import tu.model.knowledge.Tag
+import tu.exception.UnexpectedException
+import scala.Some
+import org.slf4j.LoggerFactory
 
 /**
  * Stores HowTo and it's parameters.
@@ -37,9 +41,22 @@ case class HowTo(var _parameters: List[TypedFrame[Resource]],
     this
   }
 
+  def this(map: Map[String, String]) = {
+    this(
+      List[TypedFrame[Resource]](),
+      List[ConceptTag](),
+      new KnowledgeURI(map),
+      new Probability(map)
+    )
+  }
+
+
+
 }
 
 object HowTo {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   val howToPostfix = "HowTo"
 
@@ -63,5 +80,54 @@ object HowTo {
     })
     val it = new HowTo(frames, List[ConceptTag](), KnowledgeURI(name + howToPostfix))
     it
+  }
+
+  def load(kb: KB, parent: Resource, key: String, linkType: String): HowTo = {
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
+      throw new UnexpectedException("LoadError for " + parent.uri.toString)
+    }
+
+    load(kb, selfMap)
+  }
+
+  def load(kb: KB, parentId: Long, key: String, linkType: String): HowTo = {
+    val selfMap = kb.loadChild(parentId, key, linkType)
+    if (selfMap.isEmpty) {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
+    }
+    load(kb, kb.loadChild(parentId, key, linkType))
+  }
+
+  def load(kb: KB, selfMap: Map[String, String]): HowTo = {
+
+    val ID = kb.getIdFromMap(selfMap)
+
+    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+      }
+    }
+
+    def oneListPhrases(items: Map[String, Map[String, String]]): Map[KnowledgeURI, AnnotatedPhrase] = {
+      items.keys.foldLeft(Map[KnowledgeURI, AnnotatedPhrase]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
+      }
+    }
+
+    //TODO correct this
+    val parameters =
+      List[TypedFrame[Resource]]()
+
+    val tags: List[ConceptTag] = List[ConceptTag]()
+      // kb.loadChildrenMap(ID, Constant.TAGS)
+
+    new HowTo(parameters,
+      tags,
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap)
+    )
   }
 }
