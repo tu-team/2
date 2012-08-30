@@ -118,7 +118,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
-  def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+  def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- generalisations.frames.values.iterator) {
@@ -217,28 +217,14 @@ object Concept {
     it
   }
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String): Concept = {
-    val selfMap = kb.loadChild(parent, key, linkType)
-    if (selfMap.isEmpty) {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      apply("LoadError for " + parent.uri.toString)
-    }
-
-    load(kb, selfMap)
-  }
-
-  def load(kb: KB, parentId: Long, key: String, linkType: String): Concept = {
+  def load(kb: KB, parentId: KBNodeId, key: String, linkType: String): Concept = {
     val selfMap = kb.loadChild(parentId, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
       throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
     }
-    load(kb, kb.loadChild(parentId, key, linkType))
-  }
 
-  private def load(kb: KB, selfMap: Map[String, String]): Concept = {
-
-    val ID = kb.getIdFromMap(selfMap)
+    val ID = new KBNodeId(selfMap)
 
     def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
@@ -285,7 +271,7 @@ object Concept {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
       }
 
-    new Concept(generalisation,
+    val res = new Concept(generalisation,
       specialisation,
       sentences,
       KnowledgeString(name, name),
@@ -293,5 +279,9 @@ object Concept {
       new KnowledgeURI(selfMap),
       new Probability(selfMap)
     )
+
+    KBMap.register(res, ID.ID)
+
+    res
   }
 }

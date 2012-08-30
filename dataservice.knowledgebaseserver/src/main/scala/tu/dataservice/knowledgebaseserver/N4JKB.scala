@@ -5,8 +5,8 @@ import tu.model.knowledge.training.Goal
 import org.neo4j.graphdb.index.Index
 import collection.immutable.HashMap
 import org.neo4j.graphdb._
-import tu.model.knowledge.{KB, Resource}
 import org.slf4j.{LoggerFactory}
+import tu.model.knowledge.{KBMap, KBNodeId, KB, Resource}
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -42,22 +42,14 @@ object N4JKB extends KB {
   override def loadChildrenMap(linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(N4JKB().getReferenceNode, linkType)
 
 
-  override def saveResource(child:Resource, parent:Resource, key:String, linkType:String = "defaultLink"):Boolean = {saveResource (child, getNodeByResource(parent), key, linkType)}
+  override def saveResource(child:Resource, parent:KBNodeId, key:String, linkType:String = "defaultLink"):Boolean = {saveResource (child, getNodeById(parent.ID), key, linkType)}
 
-  override def loadChild(parent:Resource, key:String, linkType:String):Map[String,  String] = loadChild(getNodeByResource(parent), key, linkType)
+  override def loadChild(parent:KBNodeId, key:String, linkType:String):Map[String,  String] = loadChild(getNodeById(parent.ID), key, linkType)
 
-  override def loadChildrenList(parent:Resource, linkType:String):List[Map[String,  String]] = loadChildrenList(getNodeByResource(parent), linkType)
+  override def loadChildrenList(parent:KBNodeId, linkType:String):List[Map[String,  String]] = loadChildrenList(getNodeById(parent.ID), linkType)
 
-  override def loadChildrenMap(parent:Resource, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeByResource(parent), linkType)
+  override def loadChildrenMap(parent:KBNodeId, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeById(parent.ID), linkType)
 
-
-  override def saveResource(child:Resource, parentId:Long, key:String, linkType:String):Boolean = {saveResource (child, getNodeById(parentId), key, linkType)}
-
-  override def loadChild(parentId:Long, key:String, linkType:String):Map[String,  String] = loadChild(getNodeById(parentId), key, linkType)
-
-  override def loadChildrenList(parentId:Long, linkType:String):List[Map[String,  String]] = loadChildrenList(getNodeById(parentId), linkType)
-
-  override def loadChildrenMap(parentId:Long, linkType:String):Map[String,  Map[String,  String]] = loadChildrenMap(getNodeById(parentId), linkType)
 
 
   private def getNodeById( Id:Long) : Node = {
@@ -66,17 +58,6 @@ object N4JKB extends KB {
     }
     catch{
       case _ => LoggerFactory.getLogger(this.getClass).error("try to get not existed node with ID {}", Id.toString)
-    }
-    N4JKB().getReferenceNode
-  }
-
-  private def getNodeByResource( resource:Resource) : Node = {
-    try{
-      return N4JKB().getNodeById(resource.KB_ID)
-    }
-    catch{
-      case _ => LoggerFactory.getLogger(this.getClass).error("try to get ID for non-saved resource {}", resource.uri.toString)
-      //TODO - get by uri??? - oh, no :)
     }
     N4JKB().getReferenceNode
   }
@@ -97,7 +78,7 @@ object N4JKB extends KB {
       relationship.setProperty( "key", key );
 
       tx.success();
-      child.KB_ID = childNode.getId
+      KBMap.register(child, childNode.getId)
       ok = true
     }
     finally

@@ -61,7 +61,7 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
     res
   }
 
-  override def save(kb: KB, parent: Resource, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
 
     val uri = this.uri.toString
     if (saved.contains(uri))

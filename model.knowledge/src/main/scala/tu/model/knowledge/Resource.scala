@@ -21,6 +21,9 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
     this(new KnowledgeURI(map), new Probability(map))
   }
 
+  implicit def Resource2KBNodeId(h: Resource) = new KBNodeId(h)
+
+
   def uri: KnowledgeURI = _uri
 
   def probability: Probability = _probability
@@ -43,10 +46,10 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
     Map()
   }
 
-  def save(kb:KB, parent:Resource, key:String):Boolean =
+  def save(kb:KB, parent:KBNodeId, key:String):Boolean =
     save(kb, parent, key, Constant.DEFAULT_LINK_NAME)
 
-  def save(kb:KB, parent:Resource, key:String, linkType:String, saved: List[String] = Nil):Boolean =
+  def save(kb:KB, parent:KBNodeId, key:String, linkType:String, saved: List[String] = Nil):Boolean =
     kb.saveResource(this, parent, key, linkType)
 
   def loadLinks(kb:KB):Boolean = true

@@ -118,7 +118,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     }
   }
 
-  override def save(kb: KB, parent: Resource, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
 
     val uri = this.uri.toString
     if (saved.contains(uri))
@@ -127,9 +127,9 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
 
     var res = kb.saveResource(this, parent, key)
     for (x: Resource <- _phrases)
-      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
     for (x: Resource <- _concepts)
-      res &= x.save(kb, this, x.uri.toString, Constant.CONCEPT_LINK_NAME, savedPlus)
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.CONCEPT_LINK_NAME, savedPlus)
 
     res
   }
@@ -195,11 +195,7 @@ object AnnotatedPhrase {
   }
 
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String):AnnotatedPhrase = {
-    apply("dummy phrase from Resource-parent")
-  }
-
-  def load(kb: KB, parent: Long, key: String, linkType: String):AnnotatedPhrase = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String):AnnotatedPhrase = {
     apply("dummy phrase from ID-parent")
   }
 

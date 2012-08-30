@@ -13,6 +13,13 @@ class KBNodeId (val ID:Long) {
   def this(m:Map[String,  String]) {this(KB.getIdFromMap(m))}
 }
 
+object KBNodeId {
+
+  def apply(ID:Long):KBNodeId = {new KBNodeId (ID)}
+  def apply(r:Resource):KBNodeId = {new KBNodeId (KBMap.get(r))}
+  def apply(m:Map[String,  String]):KBNodeId = {new KBNodeId (KB.getIdFromMap(m))}
+}
+
 
 object KBMap {
 
@@ -37,7 +44,6 @@ object KBMap {
       case Some(x) => x
       case None => Constant.NO_KB_NODE
     }
-
 
   }
 

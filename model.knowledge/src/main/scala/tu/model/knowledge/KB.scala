@@ -23,14 +23,15 @@ trait KB {
   //common way of using database:
   //
   //  for store
-  //    object should contain "save(kb: KB, parent: Resource, key: String, linkType: String)" method for any object can be save own childs. parent value is this for this case
+  //    object should contain "save(kb: KB, parent: KBNodeId, key: String, linkType: String)" method for any object can be save own childs. parent value is this for this case
   //    if object should stored into root node, it should contain  "save(kb: KB, key: String, linkType: String)" method also
   //    inside this methods KB.saveResource with or without "parent" parameter should be called
   //
   //  for restore
-  //    object (helper) should contain load(kb: KB, parent: Resource, key: String, linkType: String) method for load this node and they child nodes
-  //                                 and maybe load(kb: KB, parentId: Long, key: String, linkType: String) method for load this node and they child nodes
-  //    second method (with ParentId) need for load children if object not created yet: complex object as child of other complex object
+  //    object (helper) should contain load(kb: KB, parent: KBNodeId, key: String, linkType: String) method for load this node and they child nodes
+  //
+  //  KBNodeId should be inited from Resource of from Long or from map[String String] need for load children if object not created yet: complex object as child of other complex object
+  //    it is good if yor register you object after create
   //
   //  if object has some simple fields, it should has constructor from Map[String, String] and export function which return appropriate Map[String, String]
 
@@ -57,23 +58,14 @@ trait KB {
 
 
   // with Resource as parent
-  def saveResource(child:Resource, parent:Resource, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
+  def saveResource(child:Resource, parent:KBNodeId, key:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false
 
-  def loadChild(parent:Resource, key:String, linkType:String = DEFAULT_LINK_NAME):Map[String,  String]  = Map()
+  def loadChild(parent:KBNodeId, key:String, linkType:String = DEFAULT_LINK_NAME):Map[String,  String]  = Map()
 
-  def loadChildrenList(parent:Resource, linkType:String = DEFAULT_LINK_NAME):List[Map[String,  String]] = List()
+  def loadChildrenList(parent:KBNodeId, linkType:String = DEFAULT_LINK_NAME):List[Map[String,  String]] = List()
 
-  def loadChildrenMap(parent:Resource, linkType:String = DEFAULT_LINK_NAME):Map[String,  Map[String,  String]] = Map()
+  def loadChildrenMap(parent:KBNodeId, linkType:String = DEFAULT_LINK_NAME):Map[String,  Map[String,  String]] = Map()
 
-
-  // with ID as parent
-  def saveResource(child:Resource, parentId:Long, key:String, linkType:String): Boolean = false
-
-  def loadChild(parentId:Long, key:String, linkType:String):Map[String,  String]  = Map()
-
-  def loadChildrenList(parentId:Long, linkType:String):List[Map[String,  String]] = List()
-
-  def loadChildrenMap(parentId:Long, linkType:String):Map[String,  Map[String,  String]] = Map()
 
 }
 
