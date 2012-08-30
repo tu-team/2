@@ -221,7 +221,7 @@ object Concept {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      apply("LoadError for " + parent.uri.toString)
+      throw new UnexpectedException("LoadError for " + parent.uri.toString)
     }
 
     load(kb, selfMap)

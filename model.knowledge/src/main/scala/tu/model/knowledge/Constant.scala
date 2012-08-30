@@ -46,6 +46,7 @@ object Constant {
   val NO_NAME = "NONAME"
   val CONTENT = "content"
   val LINKS = "links"
+  val TAGS = "tags"
 
   val NO_KB_NODE = -1L
 }
