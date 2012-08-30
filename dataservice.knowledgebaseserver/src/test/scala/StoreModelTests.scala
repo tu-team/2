@@ -44,9 +44,9 @@ import tu.model.knowledge.{KnowledgeURI, TypedKLine}
     val objectConcept = Concept("object")
     val systemConcept = Concept.createSubConcept(objectConcept, "system")
 
-    systemConcept.save(N4JKB, context, "testKey", "testRelation")
+    systemConcept.save(N4JKB, context, "testKey1", "testRelation")
 
-    val z = Concept.load(N4JKB, context, "testKey", "testRelation")
+    val z = Concept.load(N4JKB, context, "testKey1", "testRelation")
 
     expect(systemConcept.content.uri.name)(z.content.uri.name)
     expect(systemConcept.generalisations.frames.size)(z.generalisations.frames.size)
