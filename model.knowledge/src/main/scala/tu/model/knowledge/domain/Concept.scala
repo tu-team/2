@@ -6,6 +6,7 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import util.Random
 import tu.model.knowledge._
 import org.slf4j.LoggerFactory
+import tu.exception.UnexpectedException
 
 /**
  * @author max
@@ -117,42 +118,34 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
-
-  override def save(kb: KB, parent: Resource, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
-
-    val uri = this.uri.toString
-    if (saved.contains(uri))
-      return true
-    val savedPlus:List[String] = uri :: saved
-
+  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
-    for (x: Resource <- generalisations.frames.values.iterator)
-      { res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME, savedPlus)  }
+    for (x: Resource <- generalisations.frames.values.iterator) {
+      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
+    }
 
-    for (y: Resource <- specialisations.frames.values.iterator)
-      {  res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME, savedPlus) }
+    for (y: Resource <- specialisations.frames.values.iterator) {
+      res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME)
+    }
 
-    for (z: Resource <- phrases.frames.values.iterator)
-    {
-      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
-     }
+    for (z: Resource <- phrases.frames.values.iterator) {
+      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME)
+    }
 
     for (t: ConceptLink <- _conceptLinks) {
-      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME, savedPlus)
-      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME, savedPlus)
+      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
+      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
     }
     res
   }
 
-  override def export:Map[String, String] = {
-    super.export + Pair("content",  this._content.uri.name)
+  override def export: Map[String, String] = {
+    super.export + Pair("content", this._content.uri.name)
   }
 
 
 }
-
-
 
 
 object Concept {
@@ -224,39 +217,39 @@ object Concept {
     it
   }
 
-
-  def load(kb: KB, parent: Resource, key: String, linkType: String):Concept = {
+  def load(kb: KB, parent: Resource, key: String, linkType: String): Concept = {
     val selfMap = kb.loadChild(parent, key, linkType)
-    if (selfMap.isEmpty)
-    {
+    if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      return apply("LoadError for " + parent.uri.toString)
+      apply("LoadError for " + parent.uri.toString)
     }
 
     load(kb, selfMap)
   }
 
-  def load(kb: KB, parentId: Long, key: String, linkType: String):Concept = {
+  def load(kb: KB, parentId: Long, key: String, linkType: String): Concept = {
     val selfMap = kb.loadChild(parentId, key, linkType)
-    if (selfMap.isEmpty)
-    {
+    if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      return apply("LoadError for ID" + parentId.toString)
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
     }
-
     load(kb, kb.loadChild(parentId, key, linkType))
   }
 
-  def load(kb: KB, selfMap:Map[String,  String]):Concept = {
+  def load(kb: KB, selfMap: Map[String, String]): Concept = {
 
     val ID = kb.getIdFromMap(selfMap)
 
-    def oneList(items: Map[String,  Map[String, String]]): Map[KnowledgeURI,  Concept] = {
-      items.keys.foldLeft(Map[KnowledgeURI,  Concept]()) {(acc, uri) => acc+ Pair(KnowledgeURI(uri), new Concept(items(uri)))}
+    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+      }
     }
 
-    def oneListPhrases(items: Map[String,  Map[String, String]]): Map[KnowledgeURI,  AnnotatedPhrase] = {
-      items.keys.foldLeft(Map[KnowledgeURI,  AnnotatedPhrase]()) {(acc, uri) => acc+ Pair(KnowledgeURI(uri), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))}
+    def oneListPhrases(items: Map[String, Map[String, String]]): Map[KnowledgeURI, AnnotatedPhrase] = {
+      items.keys.foldLeft(Map[KnowledgeURI, AnnotatedPhrase]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
+      }
     }
 
     val generalisation =
@@ -277,13 +270,20 @@ object Concept {
         oneListPhrases(kb.loadChildrenMap(ID, Constant.SENTENCES_LINK_NAME))
       )
 
-    val name = selfMap.get("content") match {case Some(x) => x; case None => {log.error("Concept without content"); "" }}
+    val name = selfMap.get("content") match {
+      case Some(x) => x;
+      case None => {
+        log.error("Concept without content");
+        ""
+      }
+    }
 
     val linksSourceMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
     val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
-    val conceptLinkList:List[ConceptLink] =
-      linksSourceMap.keys.foldLeft(List[ConceptLink]())
-         {(acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc }
+    val conceptLinkList: List[ConceptLink] =
+      linksSourceMap.keys.foldLeft(List[ConceptLink]()) {
+        (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
+      }
 
     new Concept(generalisation,
       specialisation,

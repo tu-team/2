@@ -1,7 +1,9 @@
 package tu.model.knowledge.domain
 
 import tu.model.knowledge._
-import semanticnetwork.SemanticNetwork
+import tu.model.knowledge.semanticnetwork.SemanticNetwork
+import org.slf4j.LoggerFactory
+import tu.exception.UnexpectedException
 
 /**
  * @author max talanov
@@ -14,6 +16,8 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
                           override val _uri: KnowledgeURI,
                           override val _probability: Probability = new Probability())
   extends SemanticNetwork(_nodes, _uri, _probability) {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def this(map: Map[String, String]) = {
     this(
@@ -107,7 +111,7 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
   override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
-    for (x: Resource <- _nodes) {
+    for (x: Resource <- _rootNodes) {
       res &= x.save(kb, this, x.uri.toString, Constant.NODES_LINK_NAME)
     }
 
@@ -119,6 +123,57 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
 }
 
 object ConceptNetwork {
+
+  val log = LoggerFactory.getLogger(this.getClass)
+
+  def load(kb: KB, parent: Resource, key: String, linkType: String): ConceptNetwork = {
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.uri.toString)
+    }
+
+    load(kb, selfMap)
+  }
+
+  def load(kb: KB, selfMap: Map[String, String]): ConceptNetwork = {
+
+    val ID = kb.getIdFromMap(selfMap)
+
+    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+      }
+    }
+
+    val concepts: List[Concept] = oneList(kb.loadChildrenMap(ID, Constant.NODES_LINK_NAME)).map {
+      pair: Pair[KnowledgeURI, Resource] => pair._2.asInstanceOf[Concept]
+    }.toList
+
+    val linksSourceMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val conceptLinkList: List[ConceptLink] =
+      linksSourceMap.keys.foldLeft(List[ConceptLink]()) {
+        (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
+      }
+
+    new ConceptNetwork(concepts,
+      conceptLinkList,
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap)
+    )
+  }
+
+  def load(kb: KB, parentId: Long, key: String, linkType: String): ConceptNetwork = {
+    val selfMap = kb.loadChild(parentId, key, linkType)
+    if (selfMap.isEmpty) {
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      // TODO WTF
+      // return apply("LoadError for ID" + parentId.toString)
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
+    }
+    load(kb, kb.loadChild(parentId, key, linkType))
+  }
 
   def apply(nodes: List[Concept], links: List[ConceptLink], name: String) = {
     val uri = KnowledgeURI(name)
