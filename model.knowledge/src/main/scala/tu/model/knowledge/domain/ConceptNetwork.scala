@@ -4,7 +4,7 @@ import tu.model.knowledge._
 import semanticnetwork.SemanticNetwork
 
 /**
- * @author max
+ * @author max talanov
  *         date 2012-06-17
  *         time: 10:41 PM
  */
@@ -104,6 +104,18 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     this.getClass.getName + " [" + nodes.toString + "][" + links + "]@" + uri.toString
   }
 
+  override def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+    var res = kb.saveResource(this, parent, key, linkType)
+
+    for (x: Resource <- _nodes) {
+      res &= x.save(kb, this, x.uri.toString, Constant.NODES_LINK_NAME)
+    }
+
+    for (y: Resource <- links) {
+      res &= y.save(kb, this, y.uri.toString, Constant.LINKS_LINK_NAME)
+    }
+    res
+  }
 }
 
 object ConceptNetwork {
