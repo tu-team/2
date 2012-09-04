@@ -6,7 +6,7 @@ import org.neo4j.graphdb.index.Index
 import collection.immutable.HashMap
 import org.neo4j.graphdb._
 import org.slf4j.{LoggerFactory}
-import tu.model.knowledge.{KBMap, KBNodeId, KB, Resource}
+import tu.model.knowledge._
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -67,23 +67,24 @@ object N4JKB extends KB {
     val relationType = new RelationType(linkType)
 
     var ok = false
-    val tx:Transaction = N4JKB().beginTx();
+    val tx:Transaction = N4JKB().beginTx()
     try
     {
 
-      val childNode = N4JKB().createNode();
+      val childNode = N4JKB().createNode()
       for ((x, y) <- child.export)
-          childNode.setProperty( x, y );
-      val relationship = parentNode.createRelationshipTo( childNode , relationType );
-      relationship.setProperty( "key", key );
+          childNode.setProperty( x, y )
+      childNode.setProperty( Constant.KB_CLASS_NAME, child.getClass.getName )
+      val relationship = parentNode.createRelationshipTo( childNode , relationType )
+      relationship.setProperty( "key", key )
 
-      tx.success();
+      tx.success()
       KBMap.register(child, childNode.getId)
       ok = true
     }
     finally
     {
-      tx.finish();
+      tx.finish()
     }
     ok
   }
@@ -107,7 +108,7 @@ object N4JKB extends KB {
           val key:String = j.next()
           values += key -> node.getProperty(key).toString
         }
-        values += ("KB_ID" -> node.getId.toString)
+        values += (Constant.KB_ID -> node.getId.toString)
         return values
       }
     }
@@ -139,7 +140,7 @@ object N4JKB extends KB {
         val key:String = j.next()
         values += key -> node.getProperty(key).toString
       }
-      values += ("KB_ID" -> node.getId.toString)
+      values += (Constant.KB_ID -> node.getId.toString)
       res += relationship.getProperty("key").toString -> values
     }
     res

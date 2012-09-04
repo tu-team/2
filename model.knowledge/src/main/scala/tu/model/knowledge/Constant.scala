@@ -49,4 +49,6 @@ object Constant {
   val TAGS = "tags"
 
   val NO_KB_NODE = -1L
+  val KB_ID = "KB_ID"
+  val KB_CLASS_NAME = "KB_CLASS_NAME"
 }

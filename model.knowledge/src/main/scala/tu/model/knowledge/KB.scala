@@ -85,7 +85,7 @@ trait KB {
 
 object KB {
 
-  def getIdFromMap(map:Map[String, String]) =  map.get("KB_ID")
+  def getIdFromMap(map:Map[String, String]) =  map.get(Constant.KB_ID)
   match {
     case Some(x) => x.toLong
     case None => Constant.NO_KB_NODE
