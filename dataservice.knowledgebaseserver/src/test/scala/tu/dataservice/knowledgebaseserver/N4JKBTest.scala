@@ -3,7 +3,7 @@ package tu.dataservice.knowledgebaseserver
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.model.knowledge.{KBMap, Probability, KnowledgeURI}
 import util.Random
 import org.scalatest.FunSuite
 
@@ -19,11 +19,9 @@ class N4JKBTest extends FunSuite {
   test("write string to db and read from") {
     val random = Random.nextInt().toString
     val x = new KnowledgeString("value" + random, KnowledgeURI("uri" + random), new Probability(0.77, 0.44))
-    assert(x.KB_ID == -1)
     val saveResult = N4JKB.saveResource(x, "key" + random)
 
     assert(saveResult)
-    assert(x.KB_ID != -1)
 
 
     val y = new KnowledgeString(N4JKB.loadChild("key" + random))
@@ -33,8 +31,7 @@ class N4JKBTest extends FunSuite {
 
     expect(x.uri.toString)(y.uri.toString)
 
-    expect(x.KB_ID)(y.KB_ID)
-
+    KBMap.get(y)
   }
 
 }
