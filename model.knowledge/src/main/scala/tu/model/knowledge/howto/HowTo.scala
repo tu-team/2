@@ -1,14 +1,13 @@
 package tu.model.knowledge.howto
 
-import tu.model.knowledge._
-import frame.TypedFrame
-import primitive.KnowledgeString
 import tu.model.knowledge.annotator.AnnotatedPhrase
-import domain.{ConceptLink, ConceptTag, Concept}
 import util.Random
 import tu.exception.UnexpectedException
 import scala.Some
 import org.slf4j.LoggerFactory
+import tu.model.knowledge._
+import domain.{ConceptLink, ConceptTag, Concept}
+import frame.Frame
 
 /**
  * Stores HowTo and it's parameters.
@@ -17,19 +16,19 @@ import org.slf4j.LoggerFactory
  *         time: 10:55 PM
  */
 
-case class HowTo(var _parameters: List[TypedFrame[Resource]],
+case class HowTo(var _parameters: List[Frame],
                  var _tags: List[ConceptTag],
                  _uri: KnowledgeURI,
                  _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
-  def this(_parameters: List[TypedFrame[Resource]], _tags: List[ConceptTag], _uri: KnowledgeURI) {
+  def this(_parameters: List[Frame], _tags: List[ConceptTag], _uri: KnowledgeURI) {
     this(_parameters, _tags, _uri, new Probability())
   }
 
   def parameters = _parameters
 
-  def parameters_=(in: List[TypedFrame[Resource]]): HowTo = {
+  def parameters_=(in: List[Frame]): HowTo = {
     _parameters = in
     this
   }
@@ -43,7 +42,7 @@ case class HowTo(var _parameters: List[TypedFrame[Resource]],
 
   def this(map: Map[String, String]) = {
     this(
-      List[TypedFrame[Resource]](),
+      List[Frame](),
       List[ConceptTag](),
       new KnowledgeURI(map),
       new Probability(map)
@@ -51,7 +50,22 @@ case class HowTo(var _parameters: List[TypedFrame[Resource]],
   }
 
 
+  def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
+    var res = kb.saveResource(this, parent, key, linkType)
 
+    for (x: Frame <- _parameters) {
+
+      res &= x.save(kb, this, x.uri.toString)
+      for (k:KnowledgeURI <- x.resources.keys) {
+        val y = x.resources(k)
+        y.save(kb, x, k.toString)
+
+      }
+
+    }
+
+    res
+  }
 }
 
 object HowTo {
@@ -66,7 +80,7 @@ object HowTo {
    * @param parameters Resources List
    * @return HowTo instance
    */
-  def createInstance(parent: HowTo, parameters: List[TypedFrame[Resource]]): HowTo = {
+  def createInstance(parent: HowTo, parameters: List[Frame]): HowTo = {
     val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
     val it = new HowTo(parameters, List[ConceptTag](), KnowledgeURI(name + howToPostfix))
     it
@@ -75,8 +89,8 @@ object HowTo {
   def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
     val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
 
-    val frames: List[TypedFrame[Resource]] = parameters.map(c => {
-      TypedFrame(c)
+    val frames: List[Frame] = parameters.map(c => {
+      Frame(c)
     })
     val it = new HowTo(frames, List[ConceptTag](), KnowledgeURI(name + howToPostfix))
     it
@@ -91,24 +105,21 @@ object HowTo {
 
     val ID = KBNodeId(selfMap)
 
-    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
-      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
-      }
-    }
-
-    def oneListPhrases(items: Map[String, Map[String, String]]): Map[KnowledgeURI, AnnotatedPhrase] = {
-      items.keys.foldLeft(Map[KnowledgeURI, AnnotatedPhrase]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
-      }
-    }
-
 
     val framesID = kb.loadChildrenList(ID, Constant.CONCEPTS_LINK_NAME).map(KBNodeId(_))
 
-    //TODO if howto will stored not only Concepts, then we should store relations with different linkTypes
-    def oneFrame(node:KBNodeId):TypedFrame[Resource] = {
-      TypedFrame.apply(kb.loadChildrenList(node, Constant.CONCEPTS_LINK_NAME).map(new Concept(_)), KnowledgeURI("frameInHowTo"))
+    def oneResource (m:Map[String, String]):Resource =
+    {
+      if (Constant.KB_CLASS_NAME == Concept.getClass.getName)
+        new Concept(m)
+        // ToDo case HowTo.getClass.getName => HowTo.load(m)
+      else
+        throw new UnexpectedException("HowTo shouldn't contain " + m(Constant.KB_CLASS_NAME) + " for ID " + parent.toString)
+
+    }
+
+    def oneFrame(node:KBNodeId):Frame = {
+      Frame.apply(kb.loadChildrenList(node, Constant.CONCEPTS_LINK_NAME).map(oneResource(_)), KnowledgeURI("frameInHowTo"))
     }
 
     val parameters = framesID.map(oneFrame(_))

@@ -16,6 +16,27 @@ case class Frame(var __resources: Map[KnowledgeURI, Resource],
   extends TypedFrame[Resource](__resources, _uri, _probability) {
 }
 
+object Frame{
+  val framePostfix = "Frame"
+/**
+ * Creates TypedFrame based on Resource list.
+ * @param resource to store
+ * @return TypedFrame[Resource]
+ */
+  def apply(resource: Resource): Frame = {
+    new Frame(Map[KnowledgeURI, Resource](resource.uri -> resource), KnowledgeURI(resource.uri.name + framePostfix))
+  }
+
+  def apply(someList: List[Resource], uri: KnowledgeURI): Frame = {
+    val conceptMap: Map[KnowledgeURI, Resource] = someList.map {
+      t => (t.uri, t)
+    }.toMap
+    new Frame(conceptMap, uri)
+  }
+
+
+}
+
 case class TypedFrame[Type <: Resource](var _resources: Map[KnowledgeURI, Type],
                                         _uri: KnowledgeURI,
                                         _probability: Probability = new Probability())
