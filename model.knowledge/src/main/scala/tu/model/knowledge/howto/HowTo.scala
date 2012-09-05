@@ -1,9 +1,6 @@
 package tu.model.knowledge.howto
 
-import _root_.frame.{Frame, TypedFrame}
-import primitive.KnowledgeString
 import tu.model.knowledge.annotator.AnnotatedPhrase
-import domain.{ConceptLink, ConceptTag, Concept}
 import util.Random
 import tu.exception.UnexpectedException
 import scala.Some
@@ -113,12 +110,11 @@ object HowTo {
 
     def oneResource (m:Map[String, String]):Resource =
     {
-      m(Constant.KB_CLASS_NAME) match {
-        case Concept.getClass.getName => new Concept(m)
+      if (Constant.KB_CLASS_NAME == Concept.getClass.getName)
+        new Concept(m)
         // ToDo case HowTo.getClass.getName => HowTo.load(m)
-        case _ => throw new UnexpectedException("HowTo shouldn't contain " + m(Constant.KB_CLASS_NAME) + " for ID " + parent.toString)
-
-      }
+      else
+        throw new UnexpectedException("HowTo shouldn't contain " + m(Constant.KB_CLASS_NAME) + " for ID " + parent.toString)
 
     }
 
