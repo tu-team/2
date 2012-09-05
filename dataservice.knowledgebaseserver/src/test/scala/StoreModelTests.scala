@@ -76,5 +76,27 @@ class StoreModelTest extends FunSuite {
 
   }
 
+  test("ConceptNetwork should be stored and restored") {
+
+    val context = ContextHelper(Nil, "test context") //context is parent node for x:Concept
+    N4JKB.saveResource(context, "testContext")
+
+    // empty concept
+
+    val userConcept = Concept.createSubConcept(subjectConcept, "user")
+    val x = AnnotatedPhrase("user", userConcept)
+
+    x.save(N4JKB, context, "testUserPhrase", "testRelation")
+
+    val y: AnnotatedPhrase = AnnotatedPhrase.load(N4JKB, context, "testUserPhrase", "testRelation")
+
+    expect(x.content.uri.name)(y.nodes(0).uri.name)
+    expect(x.concepts.size)(y.concepts.size)
+    expect(x.concepts(1).uri)(y.concepts(1).uri)
+
+    expect(x.phrase)(y.phrase)
+
+  }
+
 
 }
