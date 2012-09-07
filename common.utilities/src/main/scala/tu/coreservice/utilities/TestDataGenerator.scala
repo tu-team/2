@@ -4,7 +4,7 @@ import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Conce
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.{Resource, Tag, KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
-import tu.model.knowledge.frame.TypedFrame
+import tu.model.knowledge.frame.{Frame, TypedFrame}
 
 /**
  * Test data generator object.
@@ -161,8 +161,8 @@ object TestDataGenerator {
   /**
    * HowTo-s
    */
-  val installHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[ConceptTag](), KnowledgeURI("installHowTo"))
-  val reinstallHowTo = new HowTo(List[TypedFrame[Resource]](TypedFrame(objectConcept)), List[ConceptTag](), KnowledgeURI("reinstallHowTo"))
+  val installHowTo = new HowTo(List[Frame](Frame(objectConcept)), List[ConceptTag](), KnowledgeURI("installHowTo"))
+  val reinstallHowTo = new HowTo(List[Frame](Frame(objectConcept)), List[ConceptTag](), KnowledgeURI("reinstallHowTo"))
 
   /**
    * Test sentences
@@ -239,8 +239,8 @@ object TestDataGenerator {
   val iHaveProblemWithIE8ReformulationTest = new ConceptNetwork(List[Concept](userConcept, computerConcept, addressConcept, internetExplorerConcept),
     List[ConceptLink](), KnowledgeURI("iHaveProblemWithIE8Reformulation"))
 
-  val installFirefoxHowTo = HowTo.createInstance(installHowTo, List(TypedFrame(firefoxConcept)))
-  val reinstallIEHowTo = HowTo.createInstance(installHowTo, List(TypedFrame(internetExplorerConcept)))
+  val installFirefoxHowTo = HowTo.createInstance(installHowTo, List(Frame(firefoxConcept)))
+  val reinstallIEHowTo = HowTo.createInstance(installHowTo, List(Frame(internetExplorerConcept)))
 
 
   def generateDirectInstructionNarrative = pleaseInstallFF

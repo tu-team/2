@@ -6,7 +6,7 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.{KnowledgeURI, TypedKLine}
+import tu.model.knowledge.{KBNodeId, KBMap, KnowledgeURI, TypedKLine}
 
 /**
  * @author achepkunov
@@ -31,7 +31,7 @@ class StoreModelTest extends FunSuite {
     val x = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
 
-    x.save(N4JKB, context, "testKey", "testRelation")
+    x.save(N4JKB, new KBNodeId( KBMap.get(context)), "testKey", "testRelation")
 
     val y = Concept.load(N4JKB, context, "testKey", "testRelation")
 
