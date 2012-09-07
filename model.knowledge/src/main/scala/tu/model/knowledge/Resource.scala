@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory
  *         Time: 11:19 PM
  */
 
-abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Probability()) {
+
+
+abstract class Resource( _uri: KnowledgeURI, _probability: Probability = new Probability())   {
 
   KBMap.register(this)
 
@@ -21,10 +23,12 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
     this(new KnowledgeURI(map), new Probability(map))
   }
 
-  implicit def Resource2KBNodeId(h: Resource) = new KBNodeId(h)
+
 
 
   def uri: KnowledgeURI = _uri
+
+  //def uri_=(in: KnowledgeURI) = _uri = in
 
   def probability: Probability = _probability
 
@@ -55,3 +59,4 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
   def loadLinks(kb:KB):Boolean = true
 
 }
+

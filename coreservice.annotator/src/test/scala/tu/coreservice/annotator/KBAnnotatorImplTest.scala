@@ -23,8 +23,9 @@ import tu.providers.WordnetAnnotatorProvider
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.coreservice.utilities.URIHelper
-import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedWord, AnnotatedPhrase}
+import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedWord, AnnotatedPhrase}
 import tu.model.knowledge.narrative.Narrative
+import tu.model.knowledge.helper.URIGenerator
 
 @RunWith(classOf[JUnitRunner])
 class KBAnnotatorImplTest extends FunSuite with MustMatchers {
@@ -968,27 +969,27 @@ noun_number(Lotus_Notes, singular)
           AnnotatedPhrase("get"),
           AnnotatedPhrase("rid"),
           AnnotatedPhrase("off")
-        ), null
+        ), URIGenerator.generateURI("AnnotatedSentence")
       ),
       //
       new AnnotatedPhrase(
         List(
           AnnotatedPhrase("please")
-        ), null
+        ), URIGenerator.generateURI("AnnotatedSentence")
       )
     ), new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.sentenceMark() + "1", URIHelper.version()))
 
 
     val inputCtx = ContextHelper.createContext(Map(
       new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.splitterMark() + "1", URIHelper.version()) ->
-        Narrative.apply[AnnotatedSentence](List(sentence), new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.splitterMark() + "1", URIHelper.version()), new Probability(1, 1))
-    ), null, null
+        AnnotatedNarrative.apply(List(sentence), new KnowledgeURI(URIHelper.annotatorNamespace(), URIHelper.splitterMark() + "1", URIHelper.version()), new Probability(1, 1))
+    ), null, "ctx"
     )
 
     val output = annotator.apply(inputCtx)
 
     //check if please has annotation
-    expect(true)(output.lastResult.get.asInstanceOf[Narrative[AnnotatedSentence]]._resources.head._phrases.count(p => p.phrase == "please" && p.concepts.length > 0) > 0)
+    expect(true)(output.lastResult.get.asInstanceOf[AnnotatedNarrative].sentences.head._phrases.count(p => p.phrase == "please" && p.concepts.length > 0) > 0)
 
   }
 

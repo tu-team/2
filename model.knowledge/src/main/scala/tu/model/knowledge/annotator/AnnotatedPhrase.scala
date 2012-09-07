@@ -4,6 +4,7 @@ import tu.model.knowledge._
 import domain.Concept
 import scala.Some
 import tu.exception.UnexpectedException
+import tu.model.knowledge.KBMap._
 
 
 /**
@@ -129,7 +130,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
       return true
     val savedPlus:List[String] = uri :: saved
 
-    var res = kb.saveResource(this, parent, key)
+    var res = kb.saveResource(this, parent, key, linkType)
     for (x: Resource <- _phrases)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
     for (x: Resource <- _concepts)
@@ -139,9 +140,11 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
   }
 }
 
+//TODO: For all apply with string pararameter generate unique ID for newly created object
 object AnnotatedPhrase {
+  //TODO: for example here
   def apply(word: String): AnnotatedPhrase = {
-    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), KnowledgeURI(word + "Phrase"), new Probability(), word, 0)
+    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), KnowledgeURI(word + "EmptyPhrase"), new Probability(), word, 0)
   }
 
   def apply(word: String, index: Double): AnnotatedPhrase = {

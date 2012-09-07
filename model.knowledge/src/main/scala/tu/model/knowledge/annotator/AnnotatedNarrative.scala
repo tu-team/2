@@ -4,6 +4,7 @@ import tu.model.knowledge._
 import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 import scala.Some
 import tu.exception.UnexpectedException
+import tu.model.knowledge.KBMap._
 
 
 /**
@@ -59,7 +60,7 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
       return true
     val savedPlus:List[String] = uri :: saved
 
-    var res = kb.saveResource(this, parent, key)
+    var res = kb.saveResource(this, parent, key, linkType)
     for (x: Resource <- sentences)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
 

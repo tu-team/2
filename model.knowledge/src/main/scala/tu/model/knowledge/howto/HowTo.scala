@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory
 import tu.model.knowledge._
 import domain.{ConceptLink, ConceptTag, Concept}
 import frame.Frame
+import tu.model.knowledge.KBMap._
 
 /**
  * Stores HowTo and it's parameters.
@@ -81,13 +82,13 @@ object HowTo {
    * @return HowTo instance
    */
   def createInstance(parent: HowTo, parameters: List[Frame]): HowTo = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new HowTo(parameters, List[ConceptTag](), KnowledgeURI(name + howToPostfix))
     it
   }
 
   def crateInstance(parent: HowTo, parameters: List[Concept]): HowTo = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
 
     val frames: List[Frame] = parameters.map(c => {
       Frame(c)

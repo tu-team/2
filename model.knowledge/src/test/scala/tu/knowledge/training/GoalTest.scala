@@ -14,12 +14,9 @@ import tu.model.knowledge.training.Goal
 @RunWith(classOf[JUnitRunner])
 class GoalTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
 
   test("Goal constructors test") {
-    val g = new Goal(Map("name" -> "name"))
+    val g = new Goal(Map("uri-name" -> "name"))
     expect("name")(g.uri.name)
   }
 

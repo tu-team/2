@@ -21,7 +21,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
       map.get("uri-name") match {
         case Some(x) => x
         case None => {
-          val randomName: String = Random.nextInt(Constant.INSTANCE_ID_LENGTH).toString
+          val randomName: String = Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED).toString
           val scope = map.get("class") match {
             case Some(x) => x
             case None => KnowledgeURI.getClass.getName

@@ -4,6 +4,7 @@ import tu.model.knowledge._
 import domain.Concept
 import scala.Some
 import tu.exception.UnexpectedException
+import tu.model.knowledge.KBMap._
 
 /**
  * @author alex toschev
@@ -58,7 +59,7 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
       return true
     val savedPlus:List[String] = uri :: saved
 
-    var res = kb.saveResource(this, parent, key)
+    var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- _phrases)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)

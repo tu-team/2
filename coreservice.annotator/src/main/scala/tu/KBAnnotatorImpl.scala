@@ -6,6 +6,7 @@ import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.coreservice.utilities.URIHelper
+import tu.model.knowledge.narrative.Narrative
 
 /**
  * Simple KBAnnotator implementation.

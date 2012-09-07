@@ -7,6 +7,7 @@ import util.Random
 import tu.model.knowledge._
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
+import tu.model.knowledge.KBMap._
 
 /**
  * @author max
@@ -111,7 +112,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = this.uri.name
 
-  def getGeneralisationsRec: List[Concept] = {
+  def getGeneralisationsRec(): List[Concept] = {
     val res: List[Concept] = this.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
@@ -196,7 +197,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept): Concept = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
@@ -207,7 +208,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
