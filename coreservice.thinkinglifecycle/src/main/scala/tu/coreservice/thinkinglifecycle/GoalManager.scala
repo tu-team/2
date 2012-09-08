@@ -1,7 +1,7 @@
 package tu.coreservice.thinkinglifecycle
 
 import tu.model.knowledge.training.Goal
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
 
 /**
  * @author max talanov
@@ -11,7 +11,7 @@ import tu.dataservice.knowledgebaseserver.KBPrototype
 
 class GoalManager {
 
-  private val goals = KBPrototype.workflow
+  private val goals = KBAdapter.workflow
   private var currentIndex = 0
 
   /**

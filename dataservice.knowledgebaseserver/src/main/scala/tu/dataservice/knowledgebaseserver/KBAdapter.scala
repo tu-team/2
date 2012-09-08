@@ -19,7 +19,7 @@ import tu.model.knowledge.narrative.Rule
  *         time: 1:58 PM
  */
 
-object KBPrototype {
+object KBAdapter {
 
   def model = TestDataGenerator.generateDomainModelConceptNetwork
 

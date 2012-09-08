@@ -13,7 +13,7 @@ import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
 import tu.coreservice.utilities.TestDataGenerator
 import tu.exception.UnexpectedException
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
 
 
 /**
@@ -103,7 +103,7 @@ class ThinkingLifeCycleMinimal
    */
   def processReflectiveCritics(contextToCheck: Context): List[Context] = {
     //TODO migrate to real storage
-    val reflectiveCritics: List[CriticModel] = KBPrototype.getReflectiveCritics()
+    val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics()
     processResources(reflectiveCritics)
   }
 
