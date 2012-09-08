@@ -71,6 +71,11 @@ class ThinkingLifeCycleMinimal
     contexts
   }
 
+  /**
+   * Runs through resources and interprets them as Critics or Way2Think with global context, stores result in global context.
+   * @param resources to process
+   * @return List of Contexts results of processing
+   */
   def processResources(resources: List[Resource]): List[Context] = {
     log info "processResources(" + resources + ": List[Resource]): List[Context]"
     val contexts: List[List[Context]] = for (r <- resources) yield {
@@ -91,10 +96,15 @@ class ThinkingLifeCycleMinimal
     contexts.flatten
   }
 
-  //TODO start reflective critics and Cry4Help Way2Think here
-  def processReflectiveCritics(contextToCheck: Context): Context = {
-    KBPrototype.getReflectiveCritics()
-    contextToCheck
+  /**
+   * Start reflective critics and Cry4Help Way2Think
+   * @param contextToCheck the context to check by reflective critics
+   * @return Context with SelectorRequest-s
+   */
+  def processReflectiveCritics(contextToCheck: Context): List[Context] = {
+    //TODO migrate to real storage
+    val reflectiveCritics: List[CriticModel] = KBPrototype.getReflectiveCritics()
+    processResources(reflectiveCritics)
   }
 
   def translate(resource: Resource, globalContext: Context): Context = {

@@ -150,11 +150,11 @@ object KBPrototype {
     new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, uri, probability)
   }
 
-  /***
-   * Gets annotations according to specified word
-   * @param word to find annotations
-   * @return annotated phrase by word (for example get rid off)
-   */
+  /** *
+    * Gets annotations according to specified word
+    * @param word to find annotations
+    * @return annotated phrase by word (for example get rid off)
+    */
   def getAnnotationByWord(word: String): Option[AnnotatedPhrase] = {
 
     val resources = this.annotations
