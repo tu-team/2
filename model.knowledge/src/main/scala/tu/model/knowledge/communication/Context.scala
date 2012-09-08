@@ -24,6 +24,17 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _domainModel: Option[ConceptNetwork] = None
   var _simulationModel: Option[ConceptNetwork] = None
   var _reformulationModel: Option[ConceptNetwork] = None
+  var _lastError: Option[Error] = None
+
+  def lastError: Option[Error] = _lastError
+
+  def lastError_=(e: Error) {
+    _lastError = Some(e)
+  }
+
+  def lastError_=(e: Option[Error]) {
+    _lastError = e
+  }
 
   def lastResult = _lastResult
 
@@ -37,7 +48,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
         }
       }
       case Some(r: Resource) => {
-         _frames += (r.uri -> r)
+        _frames += (r.uri -> r)
       }
       case None => {
         // Do nothing
@@ -88,7 +99,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def findByName(name: String): Option[Resource] = {
     val filteredFrames: List[KnowledgeURI] = _frames.keys.filter(
-    (uri : KnowledgeURI) => uri.name == name
+      (uri: KnowledgeURI) => uri.name == name
     ).toList
     if (filteredFrames.size > 0) {
       _frames.get(filteredFrames.head)

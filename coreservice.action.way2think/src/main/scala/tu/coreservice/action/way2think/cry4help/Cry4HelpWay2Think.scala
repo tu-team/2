@@ -25,7 +25,8 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
    */
   def apply(inputContext: Context): Context = {
     this._inputContext = inputContext
-    //TODO do some communication here
+    //TODO get message from last error
+    //TODO run console adapter
     inputContext
   }
 
