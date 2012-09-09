@@ -4,6 +4,8 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.exception.UnexpectedException
+import org.slf4j.LoggerFactory
 
 /**
  * @author max talanov
@@ -13,6 +15,8 @@ import tu.model.knowledge.primitive.KnowledgeString
 
 class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
   extends Way2Think(_uri) {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def this() = {
     this(ContextHelper.apply(List[Resource](KnowledgeString("", "Cry4HelpMessage")), ""), KnowledgeURI("Cry4HelpMessage"))
@@ -26,8 +30,16 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
   def apply(inputContext: Context): Context = {
     this._inputContext = inputContext
     //TODO get message from last error
-    //TODO run console adapter
-    inputContext
+    inputContext.lastError match {
+      case Some(error: Error) => {
+        //TODO run console adapter
+        inputContext
+      }
+      case None => {
+        log error "$LastError_is_empty"
+        throw new UnexpectedException("$LastError_is_empty")
+      }
+    }
   }
 
   def start() = false
