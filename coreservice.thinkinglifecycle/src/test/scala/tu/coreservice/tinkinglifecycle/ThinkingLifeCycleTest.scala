@@ -22,7 +22,7 @@ class ThinkingLifeCycleTest extends FunSuite {
   val log = LoggerFactory.getLogger(this.getClass)
 
   test("test Ok") {
-    assert(condition = true)
+    assert(true)
   }
 
   test("run comelete lifecycle with dummy way2think") {

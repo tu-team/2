@@ -3,6 +3,7 @@ package tu.model.knowledge.communication
 import tu.model.knowledge._
 import domain.ConceptNetwork
 import selector.SelectorRequest
+import training.Goal
 
 /**
  * Stores contexts parameters.
@@ -16,7 +17,6 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
                    override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
-
   var bestClassificationResult: Option[SelectorRequest] = None
   var _lastResult: Option[Resource] = None
   var classificationResults: List[SelectorRequest] = Nil
@@ -25,8 +25,32 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _simulationModel: Option[ConceptNetwork] = None
   var _reformulationModel: Option[ConceptNetwork] = None
   var _lastError: Option[Error] = None
+  var _userResponse: Option[Response] = None
+  var _nextGoal: Option[Goal] = None
 
-  var _userResponse:Option[String]=None
+  def nextGoal = _nextGoal
+
+  def nextGoal_=(g: Option[Goal]): Context = {
+    this._nextGoal = g
+    this
+  }
+
+  def nextGoal_=(g: Goal): Context = {
+    this._nextGoal = Some(g)
+    this
+  }
+
+  def userResponse: Option[Response] = _userResponse
+
+  def userResponse_=(r: Response): Context = {
+    _userResponse = Some(r)
+    this
+  }
+
+  def userResponse_=(r: Option[Response]): Context = {
+    _userResponse = r
+    this
+  }
 
   def lastError: Option[Error] = _lastError
 
@@ -238,6 +262,7 @@ object ContextHelper {
       res.domainModel = contexts.head.domainModel
       res.simulationModel = contexts.head.simulationModel
       res.reformulationModel = contexts.head.reformulationModel
+      res.userResponse = contexts.head.userResponse
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }

@@ -47,6 +47,12 @@ object KBAdapter {
         ),
       Goal("SearchSolution") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.SearchSolution")
+        ),
+      Goal("ProcessResponse") ->
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
+          Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
+          Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
+          Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think")//TODO ResponseSimulationWithMerge
         )
     )
 

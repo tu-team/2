@@ -54,15 +54,22 @@ class ThinkingLifeCycleMinimal
           log info "Goal:" + goal
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
-          val mergedContexts = ContextHelper.mergeLast(contexts)
-          this.globalContext = copyGlobalContext(mergedContexts)
+          this.globalContext = mergeContexts(contexts)
+          val refContexts = processReflectiveCritics(globalContext)
+          this.globalContext = mergeContexts(refContexts)
           log info "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
-      goalManager.nextGoal
+      goalManager.nextGoal(globalContext)
     }
     log info "apply()"
+  }
+
+  def mergeContexts(contexts: List[Context]): Context = {
+    val mergedRefContexts = ContextHelper.mergeLast(contexts)
+    this.globalContext = copyGlobalContext(mergedRefContexts)
+    this.globalContext
   }
 
   def processSelectorRequest(request: SelectorRequest): List[Context] = {

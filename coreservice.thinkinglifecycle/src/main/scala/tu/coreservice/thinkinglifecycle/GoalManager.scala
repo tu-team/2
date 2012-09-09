@@ -2,6 +2,7 @@ package tu.coreservice.thinkinglifecycle
 
 import tu.model.knowledge.training.Goal
 import tu.dataservice.knowledgebaseserver.KBAdapter
+import tu.model.knowledge.communication.Context
 
 /**
  * @author max talanov
@@ -28,6 +29,15 @@ class GoalManager {
         None
       } else {
         Some(goals(index))
+      }
+    }
+  }
+
+  def nextGoal(inputContext: Context): Option[Goal] = {
+    inputContext.nextGoal match {
+      case Some(g: Goal) => Some(g)
+      case None => {
+        nextGoal
       }
     }
   }
