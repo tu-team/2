@@ -38,7 +38,10 @@ object SolvedIssue {
       //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
       throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
     }
+    load(kb, selfMap)
+  }
 
+  def load(kb: KB, selfMap: Map[String,  String]): SolvedIssue = {
     val ID = new KBNodeId(selfMap)
     val issue:ConceptNetwork = ConceptNetwork.load(kb, ID, selfMap("uri-name") + "issue", Constant.DEFAULT_LINK_NAME)
     val solution: Solution = Solution.load(kb, ID, selfMap("uri-name") + "solution", Constant.DEFAULT_LINK_NAME)

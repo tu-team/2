@@ -147,6 +147,11 @@ object N4JKB extends KB {
   }
 
 
+  //private def loadSelf(self:Node):Map[String, String] ={
+  //  //TODO do it
+  //  Map[String, String]()
+  //}
+
 
 //  private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
 

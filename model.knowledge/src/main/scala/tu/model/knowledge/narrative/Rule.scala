@@ -11,12 +11,12 @@ import tu.model.knowledge.howto.HowTo
  *         Time: 11:21
  */
 
-  case class RuleHowTo(var _antecedent: Expression, var _consequent: List[HowTo], _uri: KnowledgeURI, _probability: Probability)
-    extends Rule[HowTo](_antecedent, _consequent, _uri, _probability) {
-  }
+case class RuleHowTo(__antecedent: Expression, __consequent: List[HowTo], override val _uri: KnowledgeURI, override val _probability: Probability)
+  extends Rule[HowTo](__antecedent, __consequent, _uri, _probability) {
+}
 
-  case class Rule[Type <: Resource](var _antecedent: Expression, var _consequent: List[Type], _uri: KnowledgeURI, _probability: Probability)
-    extends Resource(_uri, _probability) {
+case class Rule[Type <: Resource](var _antecedent: Expression, var _consequent: List[Type], _uri: KnowledgeURI, _probability: Probability)
+  extends Resource(_uri, _probability) {
 
 
   def this(_antecedent: Expression, _consequent: List[Type], _uri: KnowledgeURI) {
