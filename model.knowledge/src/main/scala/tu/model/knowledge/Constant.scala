@@ -43,6 +43,8 @@ object Constant {
   val CONCEPT_LINK_DESTINATION_NAME = "conceptLinkDst"
   val NODES_LINK_NAME = "nodesLink"
   val LINKS_LINK_NAME = "links"
+  val CONCEPTS_NETWORK_NAME = "conceptNetwork"
+  val SOLUTION_NAME = "solution"
   val NO_NAME = "NONAME"
   val CONTENT = "content"
   val LINKS = "links"

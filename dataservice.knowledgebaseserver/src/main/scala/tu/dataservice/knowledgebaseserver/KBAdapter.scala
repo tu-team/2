@@ -11,6 +11,7 @@ import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.primitive.KnowledgeBoolean
 import tu.model.knowledge.narrative.Rule
+import tu.model.knowledge.KBMap._
 
 /**
  * KBSever stub only for prototype purposes.
@@ -20,6 +21,8 @@ import tu.model.knowledge.narrative.Rule
  */
 
 object KBAdapter {
+
+  var kb = N4JKB
 
   def model = TestDataGenerator.generateDomainModelConceptNetwork
 
@@ -120,6 +123,8 @@ object KBAdapter {
   val probability = new Probability
 
   def solutions(): List[SolvedIssue] = {
+
+    res = Solutions.load(N4JKB, context, "testKey", "testRelation")
     val uri = new KnowledgeURI("namespace", "name", "revision")
 
     val ex: Expression = new Expression(uri) {
@@ -132,28 +137,41 @@ object KBAdapter {
     List(new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
   }
 
-  def getTestSolvedIssue2(): SolvedIssue = {
+  private def get_default_solutions: List[SolvedIssue] = {
+    def getTestSolvedIssue2(): SolvedIssue = {
+
+      val ex: Expression = new Expression(uri) {
+        def apply = new KnowledgeBoolean(true, uri)
+      }
+
+      val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
+
+      val s = new Solution(List(r), uri)
+      new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, uri, probability)
+    }
+
+    def getTestSolvedIssue3(): SolvedIssue = {
+
+      val ex: Expression = new Expression(uri) {
+        def apply = new KnowledgeBoolean(true, uri)
+      }
+
+      val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
+
+      val s = new Solution(List(r), uri)
+      new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, uri, probability)
+    }
+
+    val uri = new KnowledgeURI("namespace", "name", "revision")
 
     val ex: Expression = new Expression(uri) {
       def apply = new KnowledgeBoolean(true, uri)
     }
 
-    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
+    val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
 
     val s = new Solution(List(r), uri)
-    new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, uri, probability)
-  }
-
-  def getTestSolvedIssue3(): SolvedIssue = {
-
-    val ex: Expression = new Expression(uri) {
-      def apply = new KnowledgeBoolean(true, uri)
-    }
-
-    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
-
-    val s = new Solution(List(r), uri)
-    new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, uri, probability)
+    List(new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
   }
 
   /** *
