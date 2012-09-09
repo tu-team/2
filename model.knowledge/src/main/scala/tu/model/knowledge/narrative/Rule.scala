@@ -43,3 +43,4 @@ case class Rule[Type <: Resource](var _antecedent: Expression, var _consequent: 
     this
   }
 }
+

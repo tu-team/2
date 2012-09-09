@@ -17,7 +17,7 @@ import tu.exception.UnexpectedException
 
 case class SolvedIssue (var issue:ConceptNetwork, val solution: Solution,   _uri: KnowledgeURI, _probability: Probability)
                                                                               extends Resource(_uri, _probability) {
-  override def save(kb:KB, parent:KBNodeId, key:String, linkType:String): Boolean = {
+  override def save(kb:KB, parent:KBNodeId, key:String, linkType:String, saved: List[String] = Nil): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
     issue.save(kb, this, this.uri.name + "issue", Constant.DEFAULT_LINK_NAME)
