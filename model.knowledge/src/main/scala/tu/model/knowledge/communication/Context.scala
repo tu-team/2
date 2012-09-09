@@ -26,6 +26,8 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _reformulationModel: Option[ConceptNetwork] = None
   var _lastError: Option[Error] = None
 
+  var _userResponse:Option[String]=None
+
   def lastError: Option[Error] = _lastError
 
   def lastError_=(e: Error) {
