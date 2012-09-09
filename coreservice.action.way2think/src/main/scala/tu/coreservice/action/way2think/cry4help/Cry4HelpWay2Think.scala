@@ -4,6 +4,7 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.coreservice.utilities.LocalizedResources
 
 /**
  * @author max talanov
@@ -25,8 +26,12 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
    */
   def apply(inputContext: Context): Context = {
     this._inputContext = inputContext
-    //TODO get message from last error
-    //TODO run console adapter
+    val provider = Cry4HelpProviders.GetProvider()
+
+    provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
+    provider.showInformation(inputContext.lastError.toString)
+
+    inputContext._userResponse=Option( provider.askQuestion(LocalizedResources.GetString("ProvideAdditionalInfo")) )
     inputContext
   }
 
