@@ -1,8 +1,8 @@
 package tu.model.knowledge.howto
 
-import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.model.knowledge.narrative.{Rule, RulesNarrative}
 import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.{KBNodeId, KB, Probability, KnowledgeURI}
 
 /**
  * Stores Solution that is container for List of HowTo-s.
@@ -26,5 +26,9 @@ object Solution {
   }
 
 
+  def load(kb: KB, parentId: KBNodeId, key: String, linkType: String): Solution = {
+    Solution(List())
+    //TODO do it
+  }
 
 }

@@ -20,10 +20,11 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 class Solutions{
   var solutions:List[SolvedIssue] = KBAdapter.solutions()
 
-  def add(item:SolvedIssue) =
+  def add(item:SolvedIssue):List[SolvedIssue] =
   {
+    KBAdapter.solutions_add(item)
     solutions = item::solutions
-
+    solutions
   }
 
   def search(issue:ConceptNetwork, badSolutions: List[ConceptNetwork]):Option[SolvedIssue] =

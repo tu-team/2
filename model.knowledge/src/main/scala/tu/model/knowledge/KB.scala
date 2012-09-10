@@ -80,6 +80,8 @@ trait KB {
   def loadChildrenMap(parent:KBNodeId, linkType:String = DEFAULT_LINK_NAME):Map[String,  Map[String,  String]] = Map()
 
 
+  //def loadSelf(parent:KBNodeId):Map[String,  String] = Map()
+
 }
 
 
