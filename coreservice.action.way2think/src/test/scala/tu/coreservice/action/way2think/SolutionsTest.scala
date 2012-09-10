@@ -30,11 +30,13 @@ class SolutionsTest extends FunSuite{
   val si2 = getTestSolvedIssue2
   val si3 = getTestSolvedIssue3
 
-  //Solutions.add(si1)
-  //Solutions.add(si2)
-  //Solutions.add(si3)
-
   val searcher = new Solutions
+
+  searcher.searcher = List()
+
+  searcher.add(si1)
+  searcher.add(si2)
+  searcher.add(si3)
 
   test("Solutions can search one-node network") {
 

@@ -28,7 +28,7 @@ class Solutions{
   }
 
   def search(issue:ConceptNetwork, badSolutions: List[ConceptNetwork]):Option[SolvedIssue] =
-  {//TODO
+  {
     var found_solutions:List[SolvedIssue] = Nil
     for(s <- solutions)
     {
