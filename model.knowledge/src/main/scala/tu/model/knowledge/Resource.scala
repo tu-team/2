@@ -9,24 +9,26 @@ import org.slf4j.LoggerFactory
  *         Time: 11:19 PM
  */
 
-abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Probability(), var KB_ID:Long = Constant.NO_KB_NODE, kb:Option[KB] = None ) {
 
-  if (KB_ID != Constant.NO_KB_NODE)
-    kb match {case Some(x) => loadLinks(x)
-      case _ => Unit}
+
+abstract class Resource( _uri: KnowledgeURI, _probability: Probability = new Probability())   {
+
+  KBMap.register(this)
 
   def this(uri: KnowledgeURI) = {
     this(uri, new Probability())
   }
 
-  def this(map:Map[String, String], kb:KB) = {
-    this(new KnowledgeURI(map), new Probability(map),
-      kb.getIdFromMap(map),
-      Some(kb)
-    )
+  def this(map:Map[String, String]) = {
+    this(new KnowledgeURI(map), new Probability(map))
   }
 
+
+
+
   def uri: KnowledgeURI = _uri
+
+  //def uri_=(in: KnowledgeURI) = _uri = in
 
   def probability: Probability = _probability
 
@@ -48,12 +50,13 @@ abstract class Resource(_uri: KnowledgeURI, _probability: Probability = new Prob
     Map()
   }
 
-  def save(kb:KB, parent:Resource, key:String):Boolean =
+  def save(kb:KB, parent:KBNodeId, key:String):Boolean =
     save(kb, parent, key, Constant.DEFAULT_LINK_NAME)
 
-  def save(kb:KB, parent:Resource, key:String, linkType:String, saved: List[String] = Nil):Boolean =
+  def save(kb:KB, parent:KBNodeId, key:String, linkType:String, saved: List[String] = Nil):Boolean =
     kb.saveResource(this, parent, key, linkType)
 
   def loadLinks(kb:KB):Boolean = true
 
 }
+

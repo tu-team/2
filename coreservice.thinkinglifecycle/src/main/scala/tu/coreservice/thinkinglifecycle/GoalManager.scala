@@ -1,7 +1,8 @@
 package tu.coreservice.thinkinglifecycle
 
 import tu.model.knowledge.training.Goal
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
+import tu.model.knowledge.communication.Context
 
 /**
  * @author max talanov
@@ -11,7 +12,7 @@ import tu.dataservice.knowledgebaseserver.KBPrototype
 
 class GoalManager {
 
-  private val goals = KBPrototype.workflow
+  private val goals = KBAdapter.workflow
   private var currentIndex = 0
 
   /**
@@ -28,6 +29,15 @@ class GoalManager {
         None
       } else {
         Some(goals(index))
+      }
+    }
+  }
+
+  def nextGoal(inputContext: Context): Option[Goal] = {
+    inputContext.nextGoal match {
+      case Some(g: Goal) => Some(g)
+      case None => {
+        nextGoal
       }
     }
   }

@@ -7,6 +7,7 @@ import util.Random
 import tu.model.knowledge._
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
+import tu.model.knowledge.KBMap._
 
 /**
  * @author max
@@ -20,10 +21,10 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    __content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
-                   override val _probability: Probability = new Probability(),
-                   __KB_ID: Long = Constant.NO_KB_NODE,
-                   __kb: Option[KB] = None)
-  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability, __KB_ID, __kb) {
+                   override val _probability: Probability = new Probability()
+
+                  )
+  extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
 
   def this(_generalisations: TypedKLine[Concept],
            _specialisations: TypedKLine[Concept],
@@ -31,7 +32,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
            _content: Resource,
            _links: List[ConceptLink],
            _uri: KnowledgeURI) {
-    this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability(), Constant.NO_KB_NODE, None)
+    this(_generalisations, _specialisations, _phrases, _content, _links, _uri, new Probability())
   }
 
   def this(map: Map[String, String]) = {
@@ -111,14 +112,14 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = this.uri.name
 
-  def getGeneralisationsRec: List[Concept] = {
+  def getGeneralisationsRec(): List[Concept] = {
     val res: List[Concept] = this.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
     res
   }
 
-  def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+  def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- generalisations.frames.values.iterator) {
@@ -196,7 +197,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept): Concept = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
@@ -207,7 +208,7 @@ object Concept {
   }
 
   def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_LENGTH)
+    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
@@ -217,29 +218,14 @@ object Concept {
     it
   }
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String): Concept = {
-    val selfMap = kb.loadChild(parent, key, linkType)
-    if (selfMap.isEmpty) {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      throw new UnexpectedException("LoadError for " + parent.uri.toString)
-
-    }
-
-    load(kb, selfMap)
-  }
-
-  def load(kb: KB, parentId: Long, key: String, linkType: String): Concept = {
+  def load(kb: KB, parentId: KBNodeId, key: String, linkType: String): Concept = {
     val selfMap = kb.loadChild(parentId, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
       throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
     }
-    load(kb, kb.loadChild(parentId, key, linkType))
-  }
 
-  def load(kb: KB, selfMap: Map[String, String]): Concept = {
-
-    val ID = kb.getIdFromMap(selfMap)
+    val ID = new KBNodeId(selfMap)
 
     def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
@@ -286,7 +272,7 @@ object Concept {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
       }
 
-    new Concept(generalisation,
+    val res = new Concept(generalisation,
       specialisation,
       sentences,
       KnowledgeString(name, name),
@@ -294,5 +280,9 @@ object Concept {
       new KnowledgeURI(selfMap),
       new Probability(selfMap)
     )
+
+    KBMap.register(res, ID.ID)
+
+    res
   }
 }

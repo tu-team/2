@@ -169,6 +169,8 @@ trait SimulationReformulationAbstract {
     filteredConceptLinks ::: gLinks
   }
 
+
+
   def selectWithGeneralisations(concept: Concept, checkList: List[Concept]): List[Concept] = {
     checkList.filter {
       c: Concept => {

@@ -1,7 +1,7 @@
 package tu.providers
 
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedWord}
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
 
 /**
  * @author alex
@@ -35,6 +35,6 @@ class LocalKBAnnotatorProvider extends AnnotatorProvider {
     *  @return annotated word from local knowledge base
     */
   def apply(word:String ):Option[AnnotatedPhrase] ={
-      return KBPrototype.getAnnotationByWord(word)
+      return KBAdapter.getAnnotationByWord(word)
   }
 }

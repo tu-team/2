@@ -3,6 +3,8 @@ package tu.model.knowledge.annotator
 import tu.model.knowledge._
 import domain.Concept
 import scala.Some
+import tu.exception.UnexpectedException
+import tu.model.knowledge.KBMap._
 
 
 /**
@@ -27,24 +29,6 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     this(List[AnnotatedPhrase](), KnowledgeURI("Phrase"))
   }
 
-  /* TODO: move to object
-  def this(map: Map[String, String], kb: KB) = {
-    this(
-      loadLinksPhrases(kb),
-      loadLinksConcepts(kb),
-      new KnowledgeURI(map),
-      new Probability(map),
-      map.get("text") match {
-        case Some(text) => text
-        case None => ""
-      },
-      map.get("index") match {
-        case Some(text) => text.toDouble
-        case None => 0
-      }
-    )
-  }
-
   def this(map: Map[String, String]) = {
     this(
       List[AnnotatedPhrase](),
@@ -62,24 +46,9 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     )
   }
 
-  def loadLinksPhrases(kb: KB): List[AnnotatedPhrase] = {
-    val list = kb.loadChildrenList(this, Constant.PHRASES_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new AnnotatedPhrase(x)
-      }
-    }
+  override def export: Map[String, String] = {
+    Map("text" -> this.text, "index" -> this.index.toString) ++ super.export
   }
-
-  def loadLinksConcepts(kb: KB): List[Concept] = {
-    val list = kb.loadChildrenList(this, Constant.CONCEPT_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new Concept(x, kb)
-      }
-    }
-  }
-  */
 
   def concepts = _concepts
 
@@ -154,14 +123,14 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     }
   }
 
-  override def save(kb: KB, parent: Resource, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
 
     val uri = this.uri.toString
     if (saved.contains(uri))
       return true
     val savedPlus:List[String] = uri :: saved
 
-    var res = kb.saveResource(this, parent, key)
+    var res = kb.saveResource(this, parent, key, linkType)
     for (x: Resource <- _phrases)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
     for (x: Resource <- _concepts)
@@ -171,9 +140,11 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
   }
 }
 
+//TODO: For all apply with string pararameter generate unique ID for newly created object
 object AnnotatedPhrase {
+  //TODO: for example here
   def apply(word: String): AnnotatedPhrase = {
-    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), KnowledgeURI(word + "Phrase"), new Probability(), word, 0)
+    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), KnowledgeURI(word + "EmptyPhrase"), new Probability(), word, 0)
   }
 
   def apply(word: String, index: Double): AnnotatedPhrase = {
@@ -231,12 +202,43 @@ object AnnotatedPhrase {
   }
 
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String):AnnotatedPhrase = {
-    apply("dummy phrase from Resource-parent")
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String):AnnotatedPhrase = {
+//    apply("dummy phrase from ID-parent")
+
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
+    }
+
+    val ID = new KBNodeId(selfMap)
+
+    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+      }
+    }
+
+    val res = new AnnotatedPhrase(
+      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)), //TODO recursive load
+      kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_)),
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap),
+      selfMap.get("text") match {
+        case Some(text) => text
+        case None => ""
+      },
+      selfMap.get("index") match {
+        case Some(text) => text.toDouble
+        case None => 0
+      }
+    )
+
+    KBMap.register(res, ID.ID)
+
+    res
   }
 
-  def load(kb: KB, parent: Long, key: String, linkType: String):AnnotatedPhrase = {
-    apply("dummy phrase from ID-parent")
-  }
+
 
 }

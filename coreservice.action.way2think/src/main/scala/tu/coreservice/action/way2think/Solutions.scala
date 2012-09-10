@@ -2,7 +2,7 @@ package tu.coreservice.action.way2think
 
 import tu.model.knowledge.{SolvedIssue, Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
 
 
 /**
@@ -18,12 +18,13 @@ import tu.dataservice.knowledgebaseserver.KBPrototype
 //}
 
 class Solutions{
-  var solutions:List[SolvedIssue] = KBPrototype.solutions()
+  var solutions:List[SolvedIssue] = KBAdapter.solutions()
 
-  def add(item:SolvedIssue) =
+  def add(item:SolvedIssue):List[SolvedIssue] =
   {
+    KBAdapter.solutions_add(item)
     solutions = item::solutions
-
+    solutions
   }
 
   def search(issue:ConceptNetwork, badSolutions: List[ConceptNetwork]):Option[SolvedIssue] =

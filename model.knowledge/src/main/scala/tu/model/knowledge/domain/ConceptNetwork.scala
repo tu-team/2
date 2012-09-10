@@ -108,15 +108,15 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     this.getClass.getName + " [" + nodes.toString + "][" + links + "]@" + uri.toString
   }
 
-  def save(kb: KB, parent: Resource, key: String, linkType: String): Boolean = {
+  def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- _rootNodes) {
-      res &= x.save(kb, this, x.uri.toString, Constant.NODES_LINK_NAME)
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME)
     }
 
     for (y: Resource <- links) {
-      res &= y.save(kb, this, y.uri.toString, Constant.LINKS_LINK_NAME)
+      res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME)
     }
     res
   }
@@ -126,19 +126,15 @@ object ConceptNetwork {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  def load(kb: KB, parent: Resource, key: String, linkType: String): ConceptNetwork = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): ConceptNetwork = {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.uri.toString))
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.uri.toString)
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.ID.toString)
     }
 
-    load(kb, selfMap)
-  }
 
-  def load(kb: KB, selfMap: Map[String, String]): ConceptNetwork = {
-
-    val ID = kb.getIdFromMap(selfMap)
+    val ID = new KBNodeId(selfMap)
 
     def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
@@ -164,16 +160,6 @@ object ConceptNetwork {
     )
   }
 
-  def load(kb: KB, parentId: Long, key: String, linkType: String): ConceptNetwork = {
-    val selfMap = kb.loadChild(parentId, key, linkType)
-    if (selfMap.isEmpty) {
-      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      // TODO WTF
-      // return apply("LoadError for ID" + parentId.toString)
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
-    }
-    load(kb, kb.loadChild(parentId, key, linkType))
-  }
 
   def apply(nodes: List[Concept], links: List[ConceptLink], name: String) = {
     val uri = KnowledgeURI(name)

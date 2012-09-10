@@ -14,7 +14,7 @@ object Constant {
   val defaultNamespace = "2/"
   val defaultConceptsNamespace = "concepts/"
   val defaultRevision = "0.0"
-  val INSTANCE_ID_LENGTH = 900
+  val INSTANCE_ID_RANDOM_SEED = 900
 
   val SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME = "DirectInstructionRequest"
   val SELECTOR_REQUEST_PROBLEM_DESCRIPTION_URI_NAME = "ProblemDesriptionRequest"
@@ -43,9 +43,16 @@ object Constant {
   val CONCEPT_LINK_DESTINATION_NAME = "conceptLinkDst"
   val NODES_LINK_NAME = "nodesLink"
   val LINKS_LINK_NAME = "links"
+  val CONCEPTS_NETWORK_NAME = "conceptNetwork"
+  val SOLUTION_NAME = "solution"
   val NO_NAME = "NONAME"
   val CONTENT = "content"
   val LINKS = "links"
+  val TAGS = "tags"
 
   val NO_KB_NODE = -1L
+  val KB_ID = "KB_ID"
+  val KB_CLASS_NAME = "KB_CLASS_NAME"
+  val SELECTOR_REQUEST_CRY4HELP_URI = "tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think"
+  val SELECTOR_REQUEST_CRY4HELP_URI_NAME = "Cry4Help"
 }

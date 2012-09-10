@@ -1,9 +1,10 @@
 package tu.coreservice.action.way2think.cry4help
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{Response, ContextHelper, Context}
 import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.coreservice.utilities.LocalizedResources
 
 /**
  * @author max talanov
@@ -25,15 +26,21 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
    */
   def apply(inputContext: Context): Context = {
     this._inputContext = inputContext
-    //TODO do some communication here
-    inputContext
+    val provider = Cry4HelpProviders.GetProvider()
+
+    provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
+    provider.showInformation(inputContext.lastError.toString)
+    val userResponseText = provider.askQuestion(LocalizedResources.GetString("ProvideAdditionalInfo"))
+    val outputContext: Context = ContextHelper(List[Resource](), this.getClass.getName)
+    outputContext.userResponse = Some(new Response(KnowledgeString(userResponseText, "responsetext"), KnowledgeURI("Response")))
+    outputContext
   }
 
   def start() = false
 
   def stop() = false
 
-  override def toString(): String = {
+  override def toString: String = {
     this.getClass.getName + ":" + _inputContext.toString()
   }
 }

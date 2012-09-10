@@ -3,14 +3,24 @@ package tu.coreservice.action.way2think
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
-import tu.model.knowledge.domain.{Concept, ConceptNetwork}
+
 import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkNode, SemanticNetwork}
-import tu.model.knowledge.frame.TypedFrame
+import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.frame.{Frame, TypedFrame}
 import tu.model.knowledge.howto.{HowTo, Solution}
-import tu.model.knowledge._
+
+
 import tu.model.knowledge.primitive.{KnowledgeBoolean, KnowledgeString}
 import tu.model.knowledge.narrative.Rule
 import tu.coreservice.utilities.TestDataGenerator
+import tu.model.knowledge._
+import domain.{ConceptLink, ConceptTag, Concept, ConceptNetwork}
+import domain.ConceptLink
+import narrative.Rule
+import primitive.KnowledgeBoolean
+import semanticnetwork.SemanticNetwork
+import semanticnetwork.SemanticNetworkLink
+import semanticnetwork.SemanticNetworkNode
 
 /**
  * @author adel
@@ -54,12 +64,13 @@ class SolvedIssueTest extends FunSuite {
     val source: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString(sourceContent, uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "source", revision))
     val destination: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString(destinationContent, uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "dest", revision))
     val test: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString("TestContent", uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "test", revision))
-    val f1 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination), new KnowledgeURI(namespace, "f1", revision))
-    val f2 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), new KnowledgeURI(namespace, "f2", revision))
+    val c1 = Concept("f1")
+    val f1 = new Frame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination), new KnowledgeURI(namespace, "f1", revision))
+    val f2 = new Frame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), new KnowledgeURI(namespace, "f2", revision))
     val klName = new KnowledgeString("name", uri)
-    val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
-    val t = new Tag(kl, List[SemanticNetworkLink](), uri)
-    val f = new TypedFrame(Map[KnowledgeURI, Resource](), uri)
+    val kl = new TypedKLine[Concept](Map[KnowledgeURI, Concept](c1.uri -> c1), uri)
+    val t = new ConceptTag(kl, List[ConceptLink](), uri)
+    val f = new Frame(Map[KnowledgeURI, Resource](), uri)
     val h = new HowTo(List(f), List(t), uri)
     def apply = new KnowledgeBoolean(false, uri)
     val ex: Expression = new Expression(uri) {

@@ -1,6 +1,9 @@
 package tu.coreservice.utilities
 
 import java.net.URI
+import util.Random
+import tu.model.knowledge.{KnowledgeURI, Constant}
+import com.sun.jndi.toolkit.url.Uri
 
 /**
  * Created by IntelliJ IDEA.
@@ -64,4 +67,6 @@ object URIHelper {
   def sentenceMark():String={
     return "sentense"
   }
+
+
 }

@@ -13,7 +13,7 @@ import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
 import tu.coreservice.utilities.TestDataGenerator
 import tu.exception.UnexpectedException
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
 
 
 /**
@@ -54,15 +54,22 @@ class ThinkingLifeCycleMinimal
           log info "Goal:" + goal
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
-          val mergedContexts = ContextHelper.mergeLast(contexts)
-          this.globalContext = copyGlobalContext(mergedContexts)
+          this.globalContext = mergeContexts(contexts)
+          val refContexts = processReflectiveCritics(globalContext)
+          this.globalContext = mergeContexts(refContexts)
           log info "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
-      goalManager.nextGoal
+      goalManager.nextGoal(globalContext)
     }
     log info "apply()"
+  }
+
+  def mergeContexts(contexts: List[Context]): Context = {
+    val mergedRefContexts = ContextHelper.mergeLast(contexts)
+    this.globalContext = copyGlobalContext(mergedRefContexts)
+    this.globalContext
   }
 
   def processSelectorRequest(request: SelectorRequest): List[Context] = {
@@ -71,6 +78,11 @@ class ThinkingLifeCycleMinimal
     contexts
   }
 
+  /**
+   * Runs through resources and interprets them as Critics or Way2Think with global context, stores result in global context.
+   * @param resources to process
+   * @return List of Contexts results of processing
+   */
   def processResources(resources: List[Resource]): List[Context] = {
     log info "processResources(" + resources + ": List[Resource]): List[Context]"
     val contexts: List[List[Context]] = for (r <- resources) yield {
@@ -91,10 +103,14 @@ class ThinkingLifeCycleMinimal
     contexts.flatten
   }
 
-  //TODO start reflective critics and Cry4Help Way2Think here
-  def processReflectiveCritics(contextToCheck: Context): Context = {
-    KBPrototype.getReflectiveCritics()
-    contextToCheck
+  /**
+   * Start reflective critics and Cry4Help Way2Think
+   * @param contextToCheck the context to check by reflective critics
+   * @return Context with SelectorRequest-s
+   */
+  def processReflectiveCritics(contextToCheck: Context): List[Context] = {
+    val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics()
+    processResources(reflectiveCritics)
   }
 
   def translate(resource: Resource, globalContext: Context): Context = {

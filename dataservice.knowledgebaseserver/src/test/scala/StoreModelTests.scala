@@ -6,13 +6,16 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.{KnowledgeURI, TypedKLine}
+import tu.model.knowledge._
+import tu.model.knowledge.KBMap._
 
 /**
  * @author achepkunov
  *         Date: 28.08.12
  *         Time: 12:41
  */
+
+
 
 @RunWith(classOf[JUnitRunner])
 class StoreModelTest extends FunSuite {
@@ -31,7 +34,7 @@ class StoreModelTest extends FunSuite {
     val x = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
 
-    x.save(N4JKB, context, "testKey", "testRelation")
+    x.save(N4JKB, new KBNodeId( KBMap.get(context)), "testKey", "testRelation")
 
     val y = Concept.load(N4JKB, context, "testKey", "testRelation")
 
@@ -73,6 +76,28 @@ class StoreModelTest extends FunSuite {
 
     expect(x.content.uri.name)(y.nodes(0).uri.name)
     expect(x.links.size)(y.links.size)
+
+  }
+
+  test("AnnotatedPhrase should be stored and restored") {
+
+    val context = ContextHelper(Nil, "test context 3") //context is parent node for x:Concept
+    N4JKB.saveResource(context, "testContext")
+
+    // empty concept
+    val subjectConcept = Concept("subject")
+    val userConcept = Concept.createSubConcept(subjectConcept, "user")
+    val x = AnnotatedPhrase("user", userConcept)
+
+    x.save(N4JKB, context, "testUserPhrase", "testRelation")
+
+    val y: AnnotatedPhrase = AnnotatedPhrase.load(N4JKB, context, "testUserPhrase", "testRelation")
+
+    expect(x.uri.name)(y.uri.name)
+    expect(x.concepts.size)(y.concepts.size)
+    expect(x.concepts(0).uri.name)(y.concepts(0).uri.name)
+
+    expect(x.phrase)(y.phrase)
 
   }
 

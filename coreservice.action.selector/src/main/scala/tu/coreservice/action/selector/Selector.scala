@@ -2,7 +2,7 @@ package tu.coreservice.action.selector
 
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.{KnowledgeURI, Resource}
-import tu.dataservice.knowledgebaseserver.KBPrototype
+import tu.dataservice.knowledgebaseserver.KBAdapter
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.communication.Request
 import tu.model.knowledge.selector.SelectorRequest
@@ -18,8 +18,8 @@ import tu.model.knowledge.domain.Concept
 class Selector {
 
   def apply(goal: Goal): List[Resource] = {
-    //TODO get rid of KBPrototype
-    KBPrototype.getByGoalName(goal.uri.name) match {
+    //TODO get rid of KBAdapter
+    KBAdapter.getByGoalName(goal.uri.name) match {
       case Some(resources) => {
         resources
       }
@@ -31,7 +31,7 @@ class Selector {
 
   /*
   def apply(request: Request): List[Resource] = {
-    KBPrototype.goalResourceMap.get(Goal("ProcessIncident")) match {
+    KBAdapter.goalResourceMap.get(Goal("ProcessIncident")) match {
       case Some(resources) => {
         resources
       }
@@ -44,7 +44,7 @@ class Selector {
 
   def apply(request: SelectorRequest): List[Resource] = {
     val resourcesOption: List[Option[Resource]] = request.resourceURIList.map {
-      uri: KnowledgeURI => KBPrototype.stringResourcesMap.get(uri.name)
+      uri: KnowledgeURI => KBAdapter.stringResourcesMap.get(uri.name)
     }
     val filteredResources: List[Option[Resource]] = resourcesOption.filter{
       case Some(_) => true
@@ -56,6 +56,6 @@ class Selector {
     res
   }
 
-  //def workflow = KBPrototype.workflow
+  //def workflow = KBAdapter.workflow
 
 }
