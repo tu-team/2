@@ -19,7 +19,7 @@ trait SimulationReformulationAbstract {
    * Filters list of concepts, returns only concepts found in model.
    * @param currentConcepts List[Concept] to filter.
    * @param model ConceptNetwork to be filtered at.
-   * @return List[Concept] filtered.
+   * @return List[Concept] filtered model concepts.
    */
   def filterConceptList(currentConcepts: List[Concept], model: ConceptNetwork): List[Concept] = {
     val concepts: List[Concept] = currentConcepts.filter {
