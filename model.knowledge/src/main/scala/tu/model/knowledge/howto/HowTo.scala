@@ -104,6 +104,11 @@ object HowTo {
       throw new UnexpectedException("LoadError for " + parent.ID.toString)
     }
 
+    load(kb, selfMap)
+  }
+
+  def load(kb: KB, selfMap: Map[String, String]): HowTo = {
+
     val ID = KBNodeId(selfMap)
 
 

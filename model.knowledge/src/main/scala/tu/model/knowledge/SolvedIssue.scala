@@ -20,8 +20,8 @@ case class SolvedIssue (var issue:ConceptNetwork, val solution: Solution,   _uri
   override def save(kb:KB, parent:KBNodeId, key:String, linkType:String, saved: List[String] = Nil): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
-    issue.save(kb, this, this.uri.name + "issue", Constant.DEFAULT_LINK_NAME)
-    solution.save(kb, this, this.uri.name + "solution", Constant.DEFAULT_LINK_NAME)
+    issue.save(kb, this, "", Constant.CONCEPTS_NETWORK_NAME)
+    solution.save(kb, this, "", Constant.SOLUTION_NAME)
   }
 }
 
@@ -43,8 +43,8 @@ object SolvedIssue {
 
   def load(kb: KB, selfMap: Map[String,  String]): SolvedIssue = {
     val ID = new KBNodeId(selfMap)
-    val issue:ConceptNetwork = ConceptNetwork.load(kb, ID, selfMap("uri-name") + "issue", Constant.DEFAULT_LINK_NAME)
-    val solution: Solution = Solution.load(kb, ID, selfMap("uri-name") + "solution", Constant.DEFAULT_LINK_NAME)
+    val issue:ConceptNetwork = ConceptNetwork.load(kb, ID, "", Constant.CONCEPTS_NETWORK_NAME)
+    val solution: Solution = Solution.load(kb, ID, "", Constant.SOLUTION_NAME)
     SolvedIssue(issue, solution)
   }
 }

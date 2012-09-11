@@ -7,6 +7,7 @@ import collection.immutable.HashMap
 import org.neo4j.graphdb._
 import org.slf4j.{LoggerFactory}
 import tu.model.knowledge._
+import scala.Long
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -146,12 +147,23 @@ object N4JKB extends KB {
     res
   }
 
+  /*
+  override def loadSelf(selfID:KBNodeId):Map[String, String] ={
+    loadSelf(N4JKB().getNodeById(selfID))
+  }
 
-  //private def loadSelf(self:Node):Map[String, String] ={
-  //  //TODO do it
-  //  Map[String, String]()
-  //}
-
+  private def loadSelf(node:Node):Map[String, String] = {
+    var values = new HashMap[String,  String]
+    val j = node.getPropertyKeys.iterator()
+    while(j.hasNext)
+    {
+      val key:String = j.next()
+      values += key -> node.getProperty(key).toString
+    }
+    values += (Constant.KB_ID -> node.getId.toString)
+    values
+  }
+  */
 
 //  private var goalIndex:Index[Node] = _GraphDb.index().forNodes( Goal.getClass.getName )
 
