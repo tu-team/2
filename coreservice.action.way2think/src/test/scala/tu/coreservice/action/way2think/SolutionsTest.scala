@@ -6,7 +6,6 @@ import org.scalatest.FunSuite
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.model.knowledge.semanticnetwork.{SemanticNetwork, SemanticNetworkLink, SemanticNetworkNode}
 import tu.coreservice.utilities.TestDataGenerator
-import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge.howto.{HowTo, Solution}
 import tu.model.knowledge.primitive.{KnowledgeBoolean, KnowledgeString}
 import tu.model.knowledge._
