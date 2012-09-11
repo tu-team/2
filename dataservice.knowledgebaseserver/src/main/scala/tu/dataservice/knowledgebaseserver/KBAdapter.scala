@@ -127,7 +127,6 @@ object KBAdapter {
 
   def solutions(): List[SolvedIssue] = {
 
-    //TODO load
     val res:List[SolvedIssue] = kb.loadChildrenList(solutionsName).map(x => SolvedIssue.load(kb, x) )
 
     if (res.isEmpty)
@@ -137,7 +136,7 @@ object KBAdapter {
   }
 
   def solutions_add(item:SolvedIssue): List[SolvedIssue] = {
-    //TODO: save
+    kb.saveResource(item, item.uri.toString, solutionsName)
     solutions()
   }
 
