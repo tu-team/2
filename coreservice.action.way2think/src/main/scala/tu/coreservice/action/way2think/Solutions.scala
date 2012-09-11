@@ -23,7 +23,7 @@ class Solutions{
   def add(item:SolvedIssue):List[SolvedIssue] =
   {
     KBAdapter.solutions_add(item)
-    solutions = item::solutions
+    solutions = item :: solutions
     solutions
   }
 

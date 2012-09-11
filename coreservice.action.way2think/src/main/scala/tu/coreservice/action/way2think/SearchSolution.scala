@@ -9,7 +9,7 @@ import tu.model.knowledge.{Resource, SolvedIssue}
  *         Date: 10.07.12
  *         Time: 7:00
  */
-
+         /*
 class SearchSolution extends Way2Think {
   def start() = false
 
@@ -45,4 +45,4 @@ object SearchSolution {
   def search(target: ConceptNetwork): Option[SolvedIssue] = {
     searcher.search(target, Nil)
   }
-}
+}              */

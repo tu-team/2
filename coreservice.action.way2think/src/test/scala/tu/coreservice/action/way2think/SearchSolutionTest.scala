@@ -25,25 +25,28 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
  * Date: 10.07.12
  * Time: 7:11
  */
-
+/*
 @RunWith(classOf[JUnitRunner])
 class SearchSolutionTest  extends FunSuite
 {
 
   // all test cases should be placed in tests of Solutions object
-  // in this unit we only testing input and output parameters we
-
-  val si1 =KBAdapter.solutions().head
-
-
-
+  // in this unit we only testing input and output parameters
 
 
   test("SearchSolution should work") {
 
-    val net1 =KBAdapter.solutions().head.issue
+    val searcher = new Solutions
 
-    val inputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
+    //searcher.solutions = Nil
+
+    //searcher.add(getTestSolvedIssue1)
+
+    val si1 = searcher.solutions.head
+
+    val net1 = si1.issue
+
+    val inputContext = ContextHelper(List[Resource](), this.getClass.getName + " request")
     inputContext.lastResult = Some(net1)
 
     val instance = new SearchSolution
@@ -53,7 +56,7 @@ class SearchSolutionTest  extends FunSuite
 
     outputContext.lastResult match {
       case Some(si: SolvedIssue) => {
-        expect(si.issue.uri)(si1.issue.uri)
+        expect(si.issue.uri.name)(si1.issue.uri.name)
       }
       case _ => {
         //Unexpected type or None instead Some
@@ -65,7 +68,7 @@ class SearchSolutionTest  extends FunSuite
 
 
 
-  /*def getTestSolvedIssue1(): SolvedIssue = {
+  def getTestSolvedIssue1(): SolvedIssue = {
     val uri = new KnowledgeURI("namespace", "name", "revision")
 
     val ex: Expression = new Expression(uri) {
@@ -76,6 +79,6 @@ class SearchSolutionTest  extends FunSuite
 
     val s = new Solution(List(r), uri)
     new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability)
-  } */
+  }
 
-}
+} */
