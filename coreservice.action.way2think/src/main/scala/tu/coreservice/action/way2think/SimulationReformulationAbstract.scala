@@ -22,12 +22,27 @@ trait SimulationReformulationAbstract {
    * @return List[Concept] filtered.
    */
   def filterConceptList(currentConcepts: List[Concept], model: ConceptNetwork): List[Concept] = {
-    val modelConcepts: List[Concept] = currentConcepts.filter {
+    val concepts: List[Concept] = currentConcepts.filter {
       c => {
         model.getNodeByName(c.uri.name).size > 0
       }
     }
-    modelConcepts
+    concepts
+  }
+
+  /**
+   * Filters list of concepts, returns only concepts not found in model.
+   * @param currentConcepts List[Concept] to filter.
+   * @param model ConceptNetwork to be filtered at.
+   * @return List[Concept] filtered.
+   */
+  def filterConceptListNegative(currentConcepts: List[Concept], model: ConceptNetwork): List[Concept] = {
+    val concepts: List[Concept] = currentConcepts.filter {
+      c => {
+        model.getNodeByName(c.uri.name).size < 1
+      }
+    }
+    concepts
   }
 
   /**
@@ -168,7 +183,6 @@ trait SimulationReformulationAbstract {
     }
     filteredConceptLinks ::: gLinks
   }
-
 
 
   def selectWithGeneralisations(concept: Concept, checkList: List[Concept]): List[Concept] = {
