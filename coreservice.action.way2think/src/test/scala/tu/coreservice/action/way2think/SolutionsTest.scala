@@ -100,37 +100,17 @@ class SolutionsTest extends FunSuite{
 
 
   def getTestSolvedIssue1(): SolvedIssue = {
-    val ex: Expression = new Expression(uri) {
-      def apply = new KnowledgeBoolean(false, uri)
-    }
-
-    val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
-
-    val s = new Solution(List(r), uri)
+    val s = new Solution(List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
     new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, probability)
   }
 
   def getTestSolvedIssue2(): SolvedIssue = {
-
-    val ex: Expression = new Expression(uri) {
-      def apply = new KnowledgeBoolean(false, uri)
-    }
-
-    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
-
-    val s = new Solution(List(r), uri)
+    val s = new Solution(List(TestDataGenerator.generateReinstallIE8HowTo), uri)
     new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, uri, probability)
   }
 
   def getTestSolvedIssue3(): SolvedIssue = {
-
-    val ex: Expression = new Expression(uri) {
-      def apply = new KnowledgeBoolean(false, uri)
-    }
-
-    val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), uri)
-
-    val s = new Solution(List(r), uri)
+    val s = new Solution(List(TestDataGenerator.generateReinstallIE8HowTo), uri)
     new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, uri, probability)
   }
 
