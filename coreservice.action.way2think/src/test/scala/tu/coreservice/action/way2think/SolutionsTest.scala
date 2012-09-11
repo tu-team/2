@@ -32,7 +32,7 @@ class SolutionsTest extends FunSuite{
 
   val searcher = new Solutions
 
-  searcher.searcher = List()
+  searcher.solutions = List()
 
   searcher.add(si1)
   searcher.add(si2)
