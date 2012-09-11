@@ -38,18 +38,10 @@ class SolutionTest extends FunSuite {
   val t = new ConceptTag(kl, List[ConceptLink](), uri)
   val f = new Frame(Map[KnowledgeURI, Resource](), uri)
   val h = new HowTo(List(f), List(t), uri)
-  val ex: Expression = new Expression(uri) {
-    def apply = new KnowledgeBoolean(false, uri)
-  }
-  val r = new Rule(ex, List(h), uri)
-
-  test("test Ok") {
-    assert(true)
-  }
 
   test("Solution should contain HowTo-s") {
-    val s = new Solution(List(r), uri)
-    expect(s.rules)(List(r))
+    val s = new Solution(List(h), uri)
+    expect(s.resources)(List(h))
   }
 
 }

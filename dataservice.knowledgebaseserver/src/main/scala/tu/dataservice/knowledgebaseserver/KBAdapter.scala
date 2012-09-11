@@ -145,37 +145,19 @@ object KBAdapter {
     val in_uri = new KnowledgeURI("namespace", "name", "revision")
     def getTestSolvedIssue2(): SolvedIssue = {
 
-      val ex: Expression = new Expression(in_uri) {
-        def apply = new KnowledgeBoolean(true, in_uri)
-      }
-
-      val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), in_uri)
-
-      val s = new Solution(List(r), in_uri)
+      val s = new Solution(List(TestDataGenerator.generateReinstallIE8HowTo), in_uri)
       new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, in_uri, probability)
     }
 
     def getTestSolvedIssue3(): SolvedIssue = {
 
-      val ex: Expression = new Expression(in_uri) {
-        def apply = new KnowledgeBoolean(true, in_uri)
-      }
-
-      val r = new Rule(ex, List(TestDataGenerator.generateReinstallIE8HowTo), in_uri)
-
-      val s = new Solution(List(r), in_uri)
+      val s = new Solution(List(TestDataGenerator.generateReinstallIE8HowTo), in_uri)
       new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, in_uri, probability)
     }
 
     val uri = new KnowledgeURI("namespace", "name", "revision")
 
-    val ex: Expression = new Expression(uri) {
-      def apply = new KnowledgeBoolean(true, uri)
-    }
-
-    val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
-
-    val s = new Solution(List(r), uri)
+    val s = new Solution(List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
     List(new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
   }
 

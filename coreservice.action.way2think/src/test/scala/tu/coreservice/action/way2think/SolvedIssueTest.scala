@@ -73,12 +73,12 @@ class SolvedIssueTest extends FunSuite {
     val f = new Frame(Map[KnowledgeURI, Resource](), uri)
     val h = new HowTo(List(f), List(t), uri)
     def apply = new KnowledgeBoolean(false, uri)
-    val ex: Expression = new Expression(uri) {
-      def apply = new KnowledgeBoolean(false, uri)
-    }
-    val r = new Rule(ex, List(h), uri)
+    //val ex: Expression = new Expression(uri) {
+//      def apply = new KnowledgeBoolean(false, uri)
+  //  }
+    //val r = new Rule(ex, List(h), uri)
 
-    val s = new Solution(List(r), uri)
+    val s = new Solution(List(h), uri)
     s
   }
 }
