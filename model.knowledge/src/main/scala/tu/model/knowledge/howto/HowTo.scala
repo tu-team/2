@@ -120,7 +120,7 @@ object HowTo {
         new Concept(m)
         // ToDo case HowTo.getClass.getName => HowTo.load(m)
       else
-        throw new UnexpectedException("HowTo shouldn't contain " + m(Constant.KB_CLASS_NAME) + " for ID " + parent.toString)
+        throw new UnexpectedException("HowTo shouldn't contain " + m(Constant.KB_CLASS_NAME) + " for ID " + ID)
 
     }
 
