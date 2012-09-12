@@ -50,7 +50,7 @@ class Correlation extends SimulationReformulationAbstract {
       List(mappingConcept)
     } else {
       if (mappingConcept.links.size > 0) {
-        val filteredLinks = filteredLinks(mappingConcept.links, mappingConcept, processedConcepts)
+        val filteredLinks = filterLinks(mappingConcept.links, mappingConcept, processedConcepts)
         val intermediateConcepts = filterLinksConcepts(mappingConcept.links, mappingConcept)
         val res: List[List[Concept]] = intermediateConcepts.map {
           c: Concept => {
