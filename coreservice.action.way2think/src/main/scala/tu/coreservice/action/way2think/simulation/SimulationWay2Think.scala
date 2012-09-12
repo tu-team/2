@@ -9,7 +9,7 @@ import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 
 /**
  * Wrapper class for Simulation to provide Way2Think interface.
- * @author max
+ * @author max talanov
  *         date 2012-06-25
  *         time: 12:41 PM
  */
