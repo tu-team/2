@@ -22,7 +22,7 @@ import tu.model.knowledge.KBMap._
 
 object KBAdapter {
 
-  val solutionsName = "solutions_name"
+  val solutionsName = "stored_solutions_name"
   val goalsName = "goals_name"
 
   var kb = N4JKB
@@ -136,7 +136,7 @@ object KBAdapter {
   }
 
   def solutions_add(item:SolvedIssue): List[SolvedIssue] = {
-    kb.saveResource(item, item.uri.toString, solutionsName)
+    item.save(kb, KBNodeId(KB.getRootId()), item.uri.toString, solutionsName)
     solutions()
   }
 

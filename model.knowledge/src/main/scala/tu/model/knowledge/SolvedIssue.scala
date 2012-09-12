@@ -6,6 +6,8 @@ import howto.{Solution, HowTo}
 import semanticnetwork.SemanticNetwork
 import tu.model.knowledge.KBMap._
 import tu.exception.UnexpectedException
+import scala._
+import tu.model.knowledge.helper.URIGenerator
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,7 +30,7 @@ case class SolvedIssue (var issue:ConceptNetwork, val solution: Solution,   _uri
 
 object SolvedIssue {
   def apply(issue:ConceptNetwork,solution:Solution): SolvedIssue = {
-    new SolvedIssue(issue,solution,null,null)
+    new SolvedIssue(issue,solution, URIGenerator.generateURI(SolvedIssue.getClass.getName), new Probability())
   }
 
 
@@ -45,6 +47,6 @@ object SolvedIssue {
     val ID = new KBNodeId(selfMap)
     val issue:ConceptNetwork = ConceptNetwork.load(kb, ID, "", Constant.CONCEPTS_NETWORK_NAME)
     val solution: Solution = Solution.load(kb, ID, "", Constant.SOLUTION_NAME)
-    SolvedIssue(issue, solution)
+    new SolvedIssue(issue, solution, new KnowledgeURI(selfMap), new Probability(selfMap))
   }
 }

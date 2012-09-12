@@ -87,6 +87,8 @@ trait KB {
 
 object KB {
 
+  def getRootId() =  0L
+
   def getIdFromMap(map:Map[String, String]) =  map.get(Constant.KB_ID)
   match {
     case Some(x) => x.toLong
