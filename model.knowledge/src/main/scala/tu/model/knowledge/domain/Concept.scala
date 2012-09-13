@@ -10,7 +10,7 @@ import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
 
 /**
- * @author max
+ * @author max talanov
  *         date 2012-06-01
  *         time: 8:50 AM
  */
@@ -23,7 +23,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability()
 
-                  )
+                    )
   extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
 
   def this(_generalisations: TypedKLine[Concept],
@@ -112,7 +112,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = this.uri.name
 
-  def getGeneralisationsRec(): List[Concept] = {
+  def getGeneralisationsRec: List[Concept] = {
     val res: List[Concept] = this.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
@@ -258,9 +258,9 @@ object Concept {
       )
 
     val name = selfMap.get("content") match {
-      case Some(x) => x;
+      case Some(x) => x
       case None => {
-        log.error("Concept without content");
+        log.error("Concept without content")
         ""
       }
     }

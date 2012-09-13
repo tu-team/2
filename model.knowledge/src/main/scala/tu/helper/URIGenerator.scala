@@ -4,15 +4,16 @@ import util.Random
 import tu.model.knowledge.{Constant, KnowledgeURI}
 
 /**
- * @author alex
+ * @author alex toschev
  *         Time stamp: 9/7/12 8:32 PM
  */
 object URIGenerator {
   /**
-   *
-   * @return
+   * Generates URI for instance with specified name
+   * @param inst the name of instance for URI to be generated
+   * @return KnowledgeURI
    */
-  def generateURI(inst: String):KnowledgeURI={
-    return new KnowledgeURI("", inst +"&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED),"1.0")
+  def generateURI(inst: String): KnowledgeURI = {
+    new KnowledgeURI("", inst + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED), "1.0")
   }
 }

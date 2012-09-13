@@ -188,7 +188,7 @@ trait SimulationReformulationAbstract {
   def selectWithGeneralisations(concept: Concept, checkList: List[Concept]): List[Concept] = {
     checkList.filter {
       c: Concept => {
-        c.getGeneralisationsRec().filter {
+        c.getGeneralisationsRec.filter {
           cG: Concept => cG.uri.name == concept.uri.name
         }.size > 0 || c.uri.name == concept.uri.name
       }

@@ -11,6 +11,7 @@ object Constant {
   val DELIMITER = "."
   val REVISION_DELIMITER = "/"
   val UID_DELIMITER = "#"
+  val UID_INSTANCE_DELIMITER = "&ID="
   val defaultNamespace = "2/"
   val defaultConceptsNamespace = "concepts/"
   val defaultRevision = "0.0"

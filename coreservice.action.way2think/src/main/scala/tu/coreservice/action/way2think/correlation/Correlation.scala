@@ -3,6 +3,8 @@ package tu.coreservice.action.way2think.correlation
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
+import tu.model.knowledge.Constant
+import tu.exception.UnexpectedException
 
 /**
  * @author max talanov
@@ -11,10 +13,13 @@ import tu.coreservice.action.way2think.SimulationReformulationAbstract
  */
 class Correlation extends SimulationReformulationAbstract {
 
-  def apply(clarification: AnnotatedNarrative, simulationResult: ConceptNetwork, domainModel: ConceptNetwork): Option[ConceptNetwork] = {
+  def apply(clarification: AnnotatedNarrative,
+            simulationResult: ConceptNetwork,
+            domainModel: ConceptNetwork): Option[Pair[ConceptNetwork, List[Concept]]] = {
     val notKnown: List[Concept] = filterConceptListNegative(simulationResult.nodes, domainModel)
     if (notKnown.size > 0) {
-      Some(ConceptNetwork(processNotKnown(notKnown, clarification, domainModel), this.getClass.getName + "result"))
+      val processed = processNotKnown(notKnown, clarification, domainModel)
+      Some(ConceptNetwork(processed._1, this.getClass.getName + "result"), processed._2)
     } else {
       None
     }
@@ -27,18 +32,37 @@ class Correlation extends SimulationReformulationAbstract {
    * @param targetModel the List of Concept-s to be mapped to.
    * @return notKnown List[Concept] mapped to targetModel
    */
-  def processNotKnown(notKnown: List[Concept], mappingNarrative: AnnotatedNarrative, targetModel: ConceptNetwork): List[Concept] = {
+  def processNotKnown(notKnown: List[Concept],
+                      mappingNarrative: AnnotatedNarrative,
+                      targetModel: ConceptNetwork): Pair[List[Concept], List[Concept]] = {
     val clarifiedConcepts = filterConceptList(notKnown, mappingNarrative.conceptNetwork)
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
         findInTarget(c, targetModel).size > 0
       }
     }
-    clarifiedTargetConcepts.map {
+    val shortestMaps = clarifiedTargetConcepts.map {
       c: Concept => {
         findMapToTarget(c, targetModel, List[Concept]())
       }
     }.flatten
+    val domainConcepts = createDomainConcepts(shortestMaps)
+    (shortestMaps, domainConcepts)
+  }
+
+  def createDomainConcepts(mappingConceptsInstances: List[Concept]): List[Concept] = {
+    mappingConceptsInstances.map {
+      c: Concept => {
+        if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
+          val parentName = c.uri.name.substring(c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
+          val parentConcept = Concept(parentName)
+          c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
+          parentConcept
+        } else {
+          throw new UnexpectedException("$Can_not_create_parent_not_from_instance")
+        }
+      }
+    }
   }
 
   def findInTarget(mappingConcept: Concept, targetModel: ConceptNetwork): List[Concept] = {
@@ -51,7 +75,7 @@ class Correlation extends SimulationReformulationAbstract {
     } else {
       if (mappingConcept.links.size > 0) {
         val filteredLinks = filterLinks(mappingConcept.links, mappingConcept, processedConcepts)
-        val intermediateConcepts = filterLinksConcepts(mappingConcept.links, mappingConcept)
+        val intermediateConcepts = filterLinksConcepts(filteredLinks, mappingConcept)
         val res: List[List[Concept]] = intermediateConcepts.map {
           c: Concept => {
             findMapToTarget(c, targetModel, processedConcepts ::: List(mappingConcept))
