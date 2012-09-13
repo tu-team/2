@@ -2,6 +2,8 @@ package tu.coreservice.action.critic.manager
 
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.coreservice.utilities.URIHelper
+import tu.model.knowledge.helper.URIGenerator
 
 /**
  * @author max talanov
@@ -10,6 +12,9 @@ import tu.model.knowledge.communication.{ContextHelper, Context}
  */
 class DoNotUnderstandManager(_uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
+
+
+  def this()=this(URIGenerator.generateURI("DoNotUnderstandManager"))
 
   def start() = false
 

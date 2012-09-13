@@ -1,6 +1,10 @@
 package tu.host.console
 
 import tu.coreservice.annotator.KBAnnotatorImpl
+import tu.model.knowledge.communication.Request
+import tu.model.knowledge.primitive.KnowledgeString
+import tu.model.knowledge.KnowledgeURI
+import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 
 
 /**
@@ -13,22 +17,41 @@ object AppMain {
 
   def main(args: Array[String]) = {
 
+    var exitConsole=false
+
+
+
     Console.println("Starting test... ")
 
-       if (args.length<=0)
-       {
-         Console.println("Format: <sentence> For example, run with 'This is a simple sentence'")
-       }
-       else
-       {
-         Console.println("Testing "+ args(0))
-         //extract sentence
-         val sentence = args(0);
-         //TODO fix this:
-         // val res=annotator.parseString(sentence);
-         val res = ""
-         Console.println(res);
-       }
+    while (!exitConsole)
+    {
+      Console.println("TU is welcome you. Enter: 'exit' for quit.")
+      Console.println("========================================")
+      Console.println("You request :>")
+
+      val sentence:String = Console.readLine()
+
+      exitConsole=sentence=="exit" || sentence =="'exit'"
+
+      if (exitConsole) {
+        Console.println("Exiting...")
+        scala.util.control.Breaks.break()
+
+      }
+
+      Console.println("Testing:" + sentence)
+      //extract sentence
+
+      val requestText = sentence
+      Console.println("Running thinking lifecycle:" + sentence)
+      val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+      val t = new ThinkingLifeCycleMinimal()
+      val res = t(r)
+      Console.println("End of execution");
+    }
+
+
+
 
   }
 }
