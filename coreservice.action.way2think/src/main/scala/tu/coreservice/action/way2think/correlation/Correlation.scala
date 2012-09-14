@@ -26,7 +26,7 @@ class Correlation extends SimulationReformulationAbstract {
   }
 
   /**
-   * Crates mapping of notKnown List[Concept] to targetModel via mappingNarrative concepts, creating new concept List.
+   * Creates mapping of notKnown List[Concept] to targetModel via mappingNarrative concepts, creating new concept List.
    * @param notKnown List of concepts to be mapped.
    * @param mappingNarrative AnnotatedNarrative to be used for mapping.
    * @param targetModel the List of Concept-s to be mapped to.
@@ -41,13 +41,31 @@ class Correlation extends SimulationReformulationAbstract {
         findInTarget(c, targetModel).size > 0
       }
     }
-    val shortestMaps = clarifiedTargetConcepts.map {
+    val shortestMaps: List[List[Concept]] = clarifiedTargetConcepts.map {
       c: Concept => {
         findMapToTarget(c, targetModel, List[Concept]())
       }
-    }.flatten
-    val domainConcepts = createDomainConcepts(shortestMaps)
-    (shortestMaps, domainConcepts)
+    }
+    val domainConcepts = createDomainConcepts(shortestMaps.flatten)
+    (shortestMaps.flatten, domainConcepts)
+  }
+
+  /**
+   * Checks if all shortest maps tail concepts are in targetModel.
+   * @param shortestMaps = maps to check
+   * @return List of tail concepts not found in targetModel.
+   */
+  def checkShortestMaps(shortestMaps: List[List[Concept]], targetModel: ConceptNetwork): List[Concept] = {
+    val notUnderstood = shortestMaps.filter {
+      c: List[Concept] => {
+        targetModel.getNodeByName(c.last.uri.name).size > 0
+      }
+    }
+    notUnderstood.map {
+      c: List[Concept] => {
+        c.last
+      }
+    }
   }
 
   def createDomainConcepts(mappingConceptsInstances: List[Concept]): List[Concept] = {
