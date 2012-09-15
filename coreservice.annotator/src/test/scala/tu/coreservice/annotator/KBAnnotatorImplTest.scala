@@ -9,7 +9,6 @@ package tu.coreservice.annotator
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import relex.entity.{EntityMaintainer, EntityTaggerFactory, EntityTagger}
 import relex.{ParsedSentence, Sentence, RelationExtractor}
@@ -26,6 +25,8 @@ import tu.coreservice.utilities.URIHelper
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedWord, AnnotatedPhrase}
 import tu.model.knowledge.narrative.Narrative
 import tu.model.knowledge.helper.URIGenerator
+import org.scalatest.{Ignore, FunSuite}
+
 
 @RunWith(classOf[JUnitRunner])
 class KBAnnotatorImplTest extends FunSuite with MustMatchers {
