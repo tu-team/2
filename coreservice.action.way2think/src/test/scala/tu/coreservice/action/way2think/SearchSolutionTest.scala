@@ -25,7 +25,7 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
  * Date: 10.07.12
  * Time: 7:11
  */
-/*
+
 @RunWith(classOf[JUnitRunner])
 class SearchSolutionTest  extends FunSuite
 {
@@ -75,10 +75,8 @@ class SearchSolutionTest  extends FunSuite
       def apply = new KnowledgeBoolean(false, uri)
     }
 
-    val r = new Rule(ex, List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
-
-    val s = new Solution(List(r), uri)
+    val s = new Solution(List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
     new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability)
   }
 
-} */
+}
