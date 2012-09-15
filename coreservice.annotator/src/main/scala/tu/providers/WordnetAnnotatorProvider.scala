@@ -23,12 +23,11 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
     var res: List[String] = List[String]()
 
     //Sends request to wordnet
-    val proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
-
     var rawString=""
 
     try {
       val connection = if (Configurator.proxyAddress().useProxy) {
+        val proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
         url.openConnection(proxy)
       } else {
         url.openConnection()
