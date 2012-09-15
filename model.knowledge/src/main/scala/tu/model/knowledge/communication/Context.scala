@@ -27,6 +27,19 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _lastError: Option[Error] = None
   var _userResponse: Option[Response] = None
   var _nextGoal: Option[Goal] = None
+  var _simulationResult: Option[ConceptNetwork] = None
+
+  def simulationResult = _simulationResult
+
+  def simulationResult_=(in: ConceptNetwork): Context = {
+    _simulationResult = Some(in)
+    this
+  }
+
+  def simulationResult_=(in: Option[ConceptNetwork]): Context = {
+    _simulationResult = in
+    this
+  }
 
   def nextGoal = _nextGoal
 
