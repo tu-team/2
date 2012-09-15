@@ -15,11 +15,11 @@ class Correlation extends SimulationReformulationAbstract {
 
   def apply(clarification: AnnotatedNarrative,
             simulationResult: ConceptNetwork,
-            domainModel: ConceptNetwork): Option[Pair[ConceptNetwork, List[Concept]]] = {
+            domainModel: ConceptNetwork): Option[Triple[ConceptNetwork, List[Concept], List[Concept]]] = {
     val notKnown: List[Concept] = filterConceptListNegative(simulationResult.nodes, domainModel)
     if (notKnown.size > 0) {
       val processed = processNotKnown(notKnown, clarification, domainModel)
-      Some(ConceptNetwork(processed._1, this.getClass.getName + "result"), processed._2)
+      Some(ConceptNetwork(processed._1, this.getClass.getName + "result"), processed._2, processed._3)
     } else {
       None
     }
@@ -34,7 +34,7 @@ class Correlation extends SimulationReformulationAbstract {
    */
   def processNotKnown(notKnown: List[Concept],
                       mappingNarrative: AnnotatedNarrative,
-                      targetModel: ConceptNetwork): Pair[List[Concept], List[Concept]] = {
+                      targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedConcepts = filterConceptList(notKnown, mappingNarrative.conceptNetwork)
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
@@ -46,8 +46,9 @@ class Correlation extends SimulationReformulationAbstract {
         findMapToTarget(c, targetModel, List[Concept]())
       }
     }
+    val notUnderstood = this.checkShortestMaps(shortestMaps, targetModel)
     val domainConcepts = createDomainConcepts(shortestMaps.flatten)
-    (shortestMaps.flatten, domainConcepts)
+    (shortestMaps.flatten, domainConcepts, notUnderstood)
   }
 
   /**
