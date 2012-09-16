@@ -1,7 +1,7 @@
 package tu.model.knowledge.communication
 
 import tu.model.knowledge._
-import domain.ConceptNetwork
+import domain.{Concept, ConceptNetwork}
 import selector.SelectorRequest
 import training.Goal
 
@@ -28,6 +28,14 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _userResponse: Option[Response] = None
   var _nextGoal: Option[Goal] = None
   var _simulationResult: Option[ConceptNetwork] = None
+  var _notUnderstoodConcepts: List[Concept] = List[Concept]()
+
+  def notUnderstoodConcepts = _notUnderstoodConcepts
+
+  def notUnderstoodConcepts_=(in: List[Concept]): Context = {
+    _notUnderstoodConcepts = in
+    this
+  }
 
   def simulationResult = _simulationResult
 
@@ -108,7 +116,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
     this
   }
 
-  def simulationModel = _simulationModel
+  def simulationModel:Option[ConceptNetwork] = _simulationModel
 
   def simulationModel_=(aModel: ConceptNetwork): Context = {
     this._simulationModel = Some(aModel)

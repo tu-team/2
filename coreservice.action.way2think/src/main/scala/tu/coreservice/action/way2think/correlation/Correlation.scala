@@ -15,11 +15,11 @@ class Correlation extends SimulationReformulationAbstract {
 
   def apply(clarification: AnnotatedNarrative,
             simulationResult: ConceptNetwork,
-            domainModel: ConceptNetwork): Option[Triple[ConceptNetwork, List[Concept], List[Concept]]] = {
+            domainModel: ConceptNetwork): Option[Triple[List[Concept], List[Concept], List[Concept]]] = {
     val notKnown: List[Concept] = filterConceptListNegative(simulationResult.nodes, domainModel)
     if (notKnown.size > 0) {
       val processed = processNotKnown(notKnown, clarification, domainModel)
-      Some(ConceptNetwork(processed._1, this.getClass.getName + "result"), processed._2, processed._3)
+      Some(processed._1, processed._2, processed._3)
     } else {
       None
     }

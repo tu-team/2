@@ -56,4 +56,5 @@ object Constant {
   val KB_CLASS_NAME = "KB_CLASS_NAME"
   val SELECTOR_REQUEST_CRY4HELP_URI = "tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think"
   val SELECTOR_REQUEST_CRY4HELP_URI_NAME = "Cry4Help"
+  val RESULT = "result"
 }
