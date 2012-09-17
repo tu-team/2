@@ -1,7 +1,7 @@
 package tu.coreservice.spellcorrector
 
 import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{Constant, Resource}
 
 /**
  * Created by IntelliJ IDEA.
@@ -49,6 +49,6 @@ class SpellCorrectorCompound extends SpellCorrector {
    * @return outputContext
    */
   def apply(inputContext: Context) = {
-    ContextHelper(List[Resource](), this.getClass.getName + " result")
+    ContextHelper(List[Resource](), this.getClass.getName + Constant.RESULT)
   }
 }
