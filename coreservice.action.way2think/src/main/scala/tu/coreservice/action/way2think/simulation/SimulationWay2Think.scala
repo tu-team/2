@@ -24,7 +24,6 @@ class SimulationWay2Think extends Way2Think {
     try {
       inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {
-
           inputContext.simulationModel match {
             case Some(model: ConceptNetwork) => {
               val conceptNetworkOption = this.apply(narrative, model)
