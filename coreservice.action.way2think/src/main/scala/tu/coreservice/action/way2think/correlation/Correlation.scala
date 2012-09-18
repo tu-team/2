@@ -13,6 +13,13 @@ import tu.exception.UnexpectedException
  */
 class Correlation extends SimulationReformulationAbstract {
 
+  /**
+   * Process clarification over simulationResult, creating mapping from simulationResult to domainModel
+   * @param clarification AnnotatedNarrative to map simulationResult to domainModel
+   * @param simulationResult clarified
+   * @param domainModel model to be mapped to
+   * @return Option of Triple of shortestMaps, domainConcepts, notUnderstood concepts from clarification response.
+   */
   def apply(clarification: AnnotatedNarrative,
             simulationResult: ConceptNetwork,
             domainModel: ConceptNetwork): Option[Triple[List[Concept], List[Concept], List[Concept]]] = {
@@ -26,11 +33,47 @@ class Correlation extends SimulationReformulationAbstract {
   }
 
   /**
+   * Process clarification (simple training), creating mapping from clarification to domainModel
+   * @param clarification AnnotatedNarrative to map simulationResult to domainModel
+   * @param domainModel model to be mapped to
+   * @return Option of Triple of shortestMaps, domainConcepts, notUnderstood concepts from clarification response.
+   */
+  def apply(clarification: AnnotatedNarrative,
+            domainModel: ConceptNetwork): Option[Triple[List[Concept], List[Concept], List[Concept]]] = {
+      val processed = processClarification(clarification, domainModel)
+      Some(processed._1, processed._2, processed._3)
+  }
+
+  /**
+   * Creates mapping of notKnown List[Concept] to targetModel via mappingNarrative concepts, creating new concept List.
+   * @param mappingNarrative AnnotatedNarrative to be used for mapping.
+   * @param targetModel the List of Concept-s to be mapped to.
+   * @return Triple of shortestMaps, domainConcepts, notUnderstood concepts from clarification response.
+   */
+  def processClarification(mappingNarrative: AnnotatedNarrative,
+                      targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
+    val clarifiedConcepts = mappingNarrative.conceptNetwork.nodes
+    val clarifiedTargetConcepts = clarifiedConcepts.filter {
+      c: Concept => {
+        findInTarget(c, targetModel).size < 1
+      }
+    }
+    val shortestMaps: List[List[Concept]] = clarifiedTargetConcepts.map {
+      c: Concept => {
+        findMapToTarget(c, targetModel, List[Concept]())
+      }
+    }
+    val notUnderstood = this.checkShortestMaps(shortestMaps, targetModel)
+    val domainConcepts = createDomainConcepts(shortestMaps.flatten)
+    (shortestMaps.flatten, domainConcepts, notUnderstood)
+  }
+
+  /**
    * Creates mapping of notKnown List[Concept] to targetModel via mappingNarrative concepts, creating new concept List.
    * @param notKnown List of concepts to be mapped.
    * @param mappingNarrative AnnotatedNarrative to be used for mapping.
    * @param targetModel the List of Concept-s to be mapped to.
-   * @return notKnown List[Concept] mapped to targetModel
+   * @return Triple of shortestMaps, domainConcepts, notUnderstood concepts from clarification response.
    */
   def processNotKnown(notKnown: List[Concept],
                       mappingNarrative: AnnotatedNarrative,
@@ -38,7 +81,7 @@ class Correlation extends SimulationReformulationAbstract {
     val clarifiedConcepts = filterConceptList(notKnown, mappingNarrative.conceptNetwork)
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
-        findInTarget(c, targetModel).size > 0
+        findInTarget(c, targetModel).size < 1
       }
     }
     val shortestMaps: List[List[Concept]] = clarifiedTargetConcepts.map {
