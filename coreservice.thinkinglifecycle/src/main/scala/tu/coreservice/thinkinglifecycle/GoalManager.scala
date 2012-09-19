@@ -3,6 +3,7 @@ package tu.coreservice.thinkinglifecycle
 import tu.model.knowledge.training.Goal
 import tu.dataservice.knowledgebaseserver.KBAdapter
 import tu.model.knowledge.communication.Context
+import tu.model.knowledge.action.ActionModel
 
 /**
  * @author max talanov
@@ -63,4 +64,9 @@ class GoalManager {
       Some(goals(this.currentIndex))
     }
   }
+
+  def currentTrainingGoal: List[Goal] = {
+    KBAdapter.trainingGoal.keys.toList
+  }
+
 }

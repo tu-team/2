@@ -26,7 +26,7 @@ class CorrelationWay2Think extends Way2Think {
             case Some(model: ConceptNetwork) => {
               inputContext.simulationResult match {
                 case Some(result: ConceptNetwork) => {
-                  val tripleResult: Option[Triple[List[Concept], List[Concept], List[Concept]]] = this.apply(narrative, model, result)
+                  val tripleResult: Option[Triple[List[Concept], List[Concept], List[Concept]]] = this.apply(narrative, result, model)
                   tripleResult match {
                     case Some(tr: Triple[List[Concept], List[Concept], List[Concept]]) => {
                       val updatedSimulationResult = ConceptNetwork(result.nodes ::: tr._1, this.getClass.getName + "Simulation" + Constant.RESULT)
@@ -41,34 +41,43 @@ class CorrelationWay2Think extends Way2Think {
                       context
                     }
                     case None => {
-                      // val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
-                      // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
                       throw new UnexpectedException("$No_matches_detected_in_domain_model")
                     }
                   }
                 }
                 case None => {
-                  throw new UnexpectedException("$No_simulation_result_specified")
+                  val tripleResult: Option[Triple[List[Concept], List[Concept], List[Concept]]] = this.apply(narrative, model)
+                  tripleResult match {
+                    case Some(tr: Triple[List[Concept], List[Concept], List[Concept]]) => {
+                      val updatedSimulationResult = ConceptNetwork(tr._1, this.getClass.getName + "Training" + Constant.RESULT)
+                      val context = ContextHelper(List[Resource](), updatedSimulationResult, this.getClass.getName + "Context" + Constant.RESULT)
+                      if (tr._2.size > 0) {
+                        val updatedSimulationModel = ConceptNetwork(model.nodes ::: tr._2, this.getClass.getName + "Model" + Constant.RESULT)
+                        context.simulationModel = Some(updatedSimulationModel)
+                      }
+                      if (tr._3.size > 0) {
+                        context.notUnderstoodConcepts = tr._3
+                      }
+                      context
+                    }
+                    case None => {
+                      throw new UnexpectedException("$No_matches_detected_in_domain_model")
+                    }
+                  }
                 }
               }
             }
             case None => {
-              // val cry4Help = Cry4HelpWay2Think("$No_model_specified")
-              //ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
               throw new UnexpectedException("$No_domain_model_specified")
             }
           }
         }
         case None => {
-          //val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_None")
-          // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
           throw new UnexpectedException("$Context_lastResult_is_None")
         }
       }
     } catch {
       case e: ClassCastException => {
-        //val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
-        // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
         throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
       }
     }
@@ -85,6 +94,18 @@ class CorrelationWay2Think extends Way2Think {
   Option[Triple[List[Concept], List[Concept], List[Concept]]] = {
     val s = new Correlation()
     s.apply(clarification, simulationResult, domainModel)
+  }
+
+  /**
+   * Searches for mapping paths from simulation result to domainModel via clarification.
+   * @param clarification AnnotatedNarrative of clarification
+   * @param domainModel overall domain model to be used to analyse current situation as ConceptNetwork.
+   * @return shortest maps, domainModel concepts List, notUnderstood concepts List.
+   */
+  def apply(clarification: AnnotatedNarrative, domainModel: ConceptNetwork):
+  Option[Triple[List[Concept], List[Concept], List[Concept]]] = {
+    val s = new Correlation()
+    s.apply(clarification, domainModel)
   }
 
   def start() = false

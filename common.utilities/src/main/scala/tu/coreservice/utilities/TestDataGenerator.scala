@@ -2,9 +2,9 @@ package tu.coreservice.utilities
 
 import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
-import tu.model.knowledge.{Resource, Tag, KnowledgeURI, Probability}
+import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
-import tu.model.knowledge.frame.{Frame, TypedFrame}
+import tu.model.knowledge.frame.Frame
 
 /**
  * Test data generator object.
