@@ -130,6 +130,8 @@ object KBAdapter {
     val res:List[SolvedIssue] = kb.loadChildrenList(solutionsName).map(x => SolvedIssue.load(kb, x) )
 
     if (res.isEmpty)
+      //save solutions
+
       get_default_solutions()
 
     res
