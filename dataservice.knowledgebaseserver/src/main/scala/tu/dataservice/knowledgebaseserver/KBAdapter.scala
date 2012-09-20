@@ -136,12 +136,12 @@ object KBAdapter {
 
   def domainModel(): ConceptNetwork = {
     try{
-      val res:ConceptNetwork = ConceptNetwork.load(kb, 0, domainName, Constant.DEFAULT_LINK_NAME).map(x => SolvedIssue.load(kb, x) )
+      val res:ConceptNetwork = ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
       res
     }
     catch
     {
-      get_default_domain()
+      case _ => get_default_domain()
     }
 
     //TODO: store and update it
