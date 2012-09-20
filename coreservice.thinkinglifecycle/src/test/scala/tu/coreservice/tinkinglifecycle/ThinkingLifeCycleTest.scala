@@ -11,8 +11,8 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import scala.actors.Actor
-import tu.model.knowledge.communication.Request
-import tu.model.knowledge.KnowledgeURI
+import tu.model.knowledge.communication.{TrainingRequest, Request}
+import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
 
@@ -52,33 +52,40 @@ class ThinkingLifeCycleTest extends FunSuite {
     log info res.toString
   }
 
+  test("Training Chrome is a browser") {
+    val requestText = "Chrome is a browser."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    assert(res != null)
+    log info res.toString
+  }
 
-  def testCycle(input:String){
+
+  def testCycle(input: String) {
     val requestText = input
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
     log info res.toString
-
-
   }
 
   //TODO
-  test("User needs document portal uppdate")  {
+  test("User needs document portal uppdate") {
     testCycle("User needs document portal uppdate")
   }
 
   //TODO
-  test("Add new alias Host name on host that alias is wanted to: hrportal.lalala.biz IP adress on host that alias is wanted to: 322.223.333.22 Wanted Alias:    webadviser.lalala.net")  {
+  test("Add new alias") {
     testCycle("Add new alias Host name on host that alias is wanted to: hrportal.lalala.biz IP adress on host that alias is wanted to: 322.223.333.22 Wanted Alias:    webadviser.lalala.net")
   }
   //TODO
-  test("Outlook Web Access (CCC) - 403 - Forbidden: Access is denied'C:\\WINDOWS\\system32\\LALA\\Cache\\A0000B72.1.System\\install.vbs'")  {
+  test("Outlook Web Access '") {
     testCycle("Outlook Web Access (CCC) - 403 - Forbidden: Access is denied'C:\\WINDOWS\\system32\\LALA\\Cache\\A0000B72.1.System\\install.vbs'")
   }
   //TODO
-  test("PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc.")  {
+  test("PP2C - Cisco IP communicator.") {
     testCycle("PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc.")
   }
 

@@ -34,15 +34,14 @@ class ThinkingLifeCycleMinimal
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
-  def apply(request: TrainingRequest) {
+  def apply(request: TrainingRequest): List[Goal] = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
     globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
     globalContext.reformulationModel = TestDataGenerator.generateReformulationModelConceptNetwork
-
     val goalManager = new GoalManager
-
+    var resGoals: List[Goal] = List[Goal]()
     // process resources
     while (goalManager.currentGoal != None) {
       // get next goal
@@ -51,6 +50,7 @@ class ThinkingLifeCycleMinimal
       goalOption match {
         case Some(goal: Goal) => {
           log info "Goal:" + goal
+          resGoals = resGoals ::: List(goal)
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
           this.globalContext = mergeContexts(contexts)
@@ -63,21 +63,22 @@ class ThinkingLifeCycleMinimal
       goalManager.nextGoal(globalContext)
     }
     log info "apply()"
-
+    resGoals
   }
 
   /**
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
-  def apply(request: Request) {
+  def apply(request: Request): List[Goal] = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
     globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
     globalContext.reformulationModel = TestDataGenerator.generateReformulationModelConceptNetwork
-
     val goalManager = new GoalManager
+
+    var resGoals: List[Goal] = List[Goal]()
 
     // get selector resources for request this is first goal = Goal("ProcessIncident")
     // val resources: List[Resource] = selector.apply(request)
@@ -91,6 +92,7 @@ class ThinkingLifeCycleMinimal
       goalOption match {
         case Some(goal: Goal) => {
           log info "Goal:" + goal
+          resGoals = resGoals ::: List(goal)
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
           this.globalContext = mergeContexts(contexts)
@@ -103,6 +105,7 @@ class ThinkingLifeCycleMinimal
       goalManager.nextGoal(globalContext)
     }
     log info "apply()"
+    resGoals
   }
 
   def mergeContexts(contexts: List[Context]): Context = {

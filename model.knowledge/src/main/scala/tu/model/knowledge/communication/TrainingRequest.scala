@@ -9,5 +9,5 @@ package tu.model.knowledge.communication
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.model.knowledge.primitive.KnowledgeString
 
-class TrainingRequest(_inputText: KnowledgeString, _uri: KnowledgeURI, _probability: Probability)
+class TrainingRequest(_inputText: KnowledgeString, _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Request(_inputText, _uri, _probability)
