@@ -6,8 +6,8 @@ import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge._
+import domain.{ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.AnnotatedPhrase
-import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.primitive.KnowledgeBoolean
 import tu.model.knowledge.narrative.Rule
@@ -24,6 +24,7 @@ object KBAdapter {
 
   val solutionsName = "stored_solutions_name"
   val goalsName = "goals_name"
+  val domainName = "domain_name"
 
   var kb = N4JKB
 
@@ -124,6 +125,23 @@ object KBAdapter {
 
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
+
+  def domainModel(): ConceptNetwork = {
+    try{
+      val res:ConceptNetwork = ConceptNetwork.load(kb, 0, domainName, Constant.DEFAULT_LINK_NAME).map(x => SolvedIssue.load(kb, x) )
+      res
+    }
+    catch
+    {
+      get_default_domain()
+    }
+
+
+
+  }
+
+  def get_default_domain() =
+  {}
 
   def solutions(): List[SolvedIssue] = {
 
