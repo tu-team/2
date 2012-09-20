@@ -25,11 +25,13 @@ object TestDataGenerator {
    */
   val CONCEPT = Concept("concept")
   val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
-  val word = Concept("word")
+  val wordConcept = Concept("word")
   val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
   val objectConcept = Concept.createSubConcept(CONCEPT, "object")
   val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
   val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
+
+  //for Perl - below
 
   /**
    * concepts
