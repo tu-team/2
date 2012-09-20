@@ -9,9 +9,6 @@ import tu.model.knowledge._
 import domain.{ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.howto.Solution
-import tu.model.knowledge.primitive.KnowledgeBoolean
-import tu.model.knowledge.narrative.Rule
-import tu.model.knowledge.KBMap._
 
 /**
  * KBSever stub only for prototype purposes.
@@ -93,6 +90,15 @@ object KBAdapter {
 
   def workflow = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
+  def trainingGoal = Map[Goal, List[ActionModel]](
+    Goal("ProcessIncident") ->
+      List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
+        Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
+        Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
+        Way2ThinkModel("tu.coreservice.action.way2think.simulation.CorrelationWay2Think")
+      )
+  )
+
   def getByGoalName(name: String): Option[List[ActionModel]] = {
     val resources = this.goalResourceMap
     val keys: Iterable[Goal] = resources.keys.filter {
@@ -145,15 +151,17 @@ object KBAdapter {
 
   def solutions(): List[SolvedIssue] = {
 
-    val res:List[SolvedIssue] = kb.loadChildrenList(solutionsName).map(x => SolvedIssue.load(kb, x) )
+    val res: List[SolvedIssue] = kb.loadChildrenList(solutionsName).map(x => SolvedIssue.load(kb, x))
 
     if (res.isEmpty)
+      //save solutions
+
       get_default_solutions()
 
     res
   }
 
-  def solutions_add(item:SolvedIssue): List[SolvedIssue] = {
+  def solutions_add(item: SolvedIssue): List[SolvedIssue] = {
     item.save(kb, KBNodeId(KB.getRootId()), item.uri.toString, solutionsName)
     solutions()
   }

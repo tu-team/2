@@ -2,9 +2,10 @@ package tu.coreservice.action.way2think.cry4help
 
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{Response, ContextHelper, Context}
-import tu.model.knowledge.{KnowledgeURI, Resource}
+import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.utilities.LocalizedResources
+import tu.model.knowledge.domain.Concept
 
 /**
  * @author max talanov
@@ -30,6 +31,13 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
 
     provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
     provider.showInformation(inputContext.lastError.toString)
+    if (inputContext.notUnderstoodConcepts.size > 0) {
+      inputContext.notUnderstoodConcepts.map {
+        c: Concept => {
+          provider.showInformation(Constant.NOT_UNDERSTOOD_PREFIX + c.toString)
+        }
+      }
+    }
     val userResponseText = provider.askQuestion(LocalizedResources.GetString("ProvideAdditionalInfo"))
     val outputContext: Context = ContextHelper(List[Resource](), this.getClass.getName)
     outputContext.userResponse = Some(new Response(KnowledgeString(userResponseText, "responsetext"), KnowledgeURI("Response")))

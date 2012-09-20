@@ -7,6 +7,11 @@ import tu.coreservice.spellcorrector.SpellCorrector
 class CorrectorTest {
 
   @Test
+  def testDummy() {
+    assertTrue(true)
+  }
+
+  @Test
   def testCompoundCorrector() = {
     //Hello world test
     var corrector = SpellCorrector.apply()

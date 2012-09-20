@@ -63,4 +63,14 @@ class GoalManager {
       Some(goals(this.currentIndex))
     }
   }
+
+  def currentTrainingGoal: Option[Goal] = {
+    val res = KBAdapter.trainingGoal.keys.toList
+    if (res.size > 0) {
+      Some(res(0))
+    } else {
+      None
+    }
+  }
+
 }

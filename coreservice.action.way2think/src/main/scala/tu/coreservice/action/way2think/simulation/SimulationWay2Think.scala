@@ -5,7 +5,7 @@ import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.{Constant, Resource}
-import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
+import tu.exception.NoExpectedInformationException
 
 /**
  * Wrapper class for Simulation to provide Way2Think interface.
@@ -24,24 +24,25 @@ class SimulationWay2Think extends Way2Think {
     try {
       inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {
-
           inputContext.simulationModel match {
             case Some(model: ConceptNetwork) => {
               val conceptNetworkOption = this.apply(narrative, model)
               conceptNetworkOption match {
                 case Some(cn: ConceptNetwork) => {
-                  ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+                  val context = ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+                  context.simulationResult = Some(cn)
                 }
                 case None => {
-                  val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
-                  ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+                  // val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
+                  // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+                  throw new NoExpectedInformationException("$No_matches_detected_in_domain_model")
                 }
               }
             }
             case None => {
-              val cry4Help = Cry4HelpWay2Think("$No_model_specified")
-              // throw new UnexpectedException("$No_domain_model_specified")
-              ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+              // val cry4Help = Cry4HelpWay2Think("$No_model_specified")
+              // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+              throw new NoExpectedInformationException("$No_domain_model_specified")
             }
           }
           // simulation model
@@ -50,32 +51,34 @@ class SimulationWay2Think extends Way2Think {
               val conceptNetworkOption = this.apply(narrative, model)
               conceptNetworkOption match {
                 case Some(cn: ConceptNetwork) => {
-                  ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+                  val context = ContextHelper(List[Resource](), cn, this.getClass.getName + Constant.RESULT)
+                  context.simulationResult = cn
                 }
                 case None => {
-                  val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
-                  ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+                  // val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
+                  // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+                  throw new NoExpectedInformationException("$No_matches_detected_in_domain_model")
                 }
               }
             }
             case None => {
-              val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
-              // throw new UnexpectedException("$No_domain_model_specified")
-              ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+              // val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
+              // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+              throw new NoExpectedInformationException("$No_domain_model_specified")
             }
           }
         }
         case None => {
-          val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_None")
-          // throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
-          ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+          //val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_None")
+          // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+          throw new NoExpectedInformationException("$Context_lastResult_is_None")
         }
       }
     } catch {
       case e: ClassCastException => {
-        val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
-        // throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
-        ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+        //val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
+        //ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+        throw new NoExpectedInformationException("$Context_lastResult_is_not_expectedType " + e.getMessage)
       }
     }
   }

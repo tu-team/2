@@ -1,10 +1,11 @@
 package tu.coreservice.utilities
 
-import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
-import tu.model.knowledge.{Resource, Tag, KnowledgeURI, Probability}
+import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
-import tu.model.knowledge.frame.{Frame, TypedFrame}
+import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.domain._
+import tu.coreservice.utilities.TestDataGenerator._
 
 /**
  * Test data generator object.
@@ -20,13 +21,23 @@ object TestDataGenerator {
   val namespace = "2/concepts/"
   val revision = "0.0"
 
+  /* will be hardcoded
+   */
+  val CONCEPT = Concept("concept")
+  val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
+  val wordConcept = Concept("word")
+  val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
+  val objectConcept = Concept.createSubConcept(CONCEPT, "object")
+  val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
+  val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
+
+  //for Perl - below
+
   /**
    * concepts
    */
   val tenseConcept = Concept("tense")
   val posConcept = Concept("pos")
-  val subjectConcept = Concept("subject")
-  val objectConcept = Concept("object")
   val systemConcept = Concept.createSubConcept(objectConcept, "system")
   val userConcept = Concept.createSubConcept(subjectConcept, "user")
   val computerConcept = Concept.createSubConcept(objectConcept, "computer")
@@ -94,7 +105,6 @@ object TestDataGenerator {
   /**
    * has
    */
-  val has = ConceptLink(subjectConcept, objectConcept, "has")
   val hasComputer = ConceptLink.createSubConceptLink(has, userConcept, computerConcept, "hasComputer", new Probability(1.0, 1.0))
   val userComputerLinkedPair = ConceptLink.likConcepts(hasComputer, userConcept, computerConcept)
   val hasSoftware = ConceptLink.createSubConceptLink(has, computerConcept, softwareConcept, "hasSoftware", new Probability(1.0, 0.9))
@@ -109,7 +119,6 @@ object TestDataGenerator {
   val isUsedFor = ConceptLink(subjectConcept, objectConcept, "isUsedFor")
   val browserIsUsedForInternet = ConceptLink.createSubConceptLink(isUsedFor, browserConcept, internetConcept, "browserIsUsedForInternet")
 
-  val isLink = ConceptLink(subjectConcept, objectConcept, "is")
   val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
   val missLink = ConceptLink(userConcept, objectConcept, "miss")
   val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")

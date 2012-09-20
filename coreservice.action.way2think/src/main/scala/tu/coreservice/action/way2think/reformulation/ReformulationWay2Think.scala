@@ -4,7 +4,7 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.Resource
-import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
+import tu.exception.NoExpectedInformationException
 
 /**
  * @author max
@@ -31,22 +31,23 @@ class ReformulationWay2Think extends Way2Think {
               ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
             }
             case None => {
-              val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
-              ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+              // val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
+              // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+              throw new NoExpectedInformationException("$No_matches_detected_in_domain_model")
             }
           }
         }
         case None => {
-          val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
-          // throw new UnexpectedException("$No_domain_model_specified")
-          ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+          // val cry4Help = Cry4HelpWay2Think("$No_domain_model_specified")
+          // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+          throw new NoExpectedInformationException("$No_domain_model_specified")
         }
       }
     } catch {
       case e: ClassCastException => {
-        val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
-        // throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
-        ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+        // val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
+        // ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
+        throw new NoExpectedInformationException("$Context_lastResult_is_not_expectedType " + e.getMessage)
       }
     }
   }

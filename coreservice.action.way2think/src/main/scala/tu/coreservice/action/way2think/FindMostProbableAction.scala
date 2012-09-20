@@ -11,7 +11,7 @@ import tu.model.knowledge.selector.SelectorRequest
  */
 
 
-class FindMostProbableAction extends  Way2Think {
+class FindMostProbableAction extends Way2Think {
   def start() = false
 
   def stop() = false
@@ -36,9 +36,9 @@ object FindMostProbableAction {
     }
     else {
       outputContext.classificationResults
-        =inputContext.classificationResults
-             .filter( p => ! inputContext.checkedClassificationResults.exists ( q => p==q))
-             .sortWith((s, t) => s.probability.frequency > t.probability.frequency)
+        = inputContext.classificationResults
+        .filter(p => !inputContext.checkedClassificationResults.exists(q => p == q))
+        .sortWith((s, t) => s.probability.frequency > t.probability.frequency)
       outputContext.bestClassificationResult = outputContext.classificationResults.headOption
       outputContext.lastResult = outputContext.classificationResults.headOption
       outputContext.bestClassificationResult match {

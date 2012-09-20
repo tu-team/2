@@ -14,7 +14,7 @@ import relex.feature.{FeatureNameFilter, FeatureNode}
 import org.slf4j.LoggerFactory
 import tu.model.knowledge.domain.{Concept, ConceptLink}
 import tu.coreservice.utilities.TestDataGenerator
-import tu.exception.UnexpectedException
+import tu.exception.{NoExpectedInformationException, UnexpectedException}
 
 
 /**
@@ -51,14 +51,13 @@ class LinkParser extends Way2Think {
     try {
       inputContext.lastResult match {
         case Some(narrative: AnnotatedNarrative) => narrative
-        case _ => throw new UnexpectedException("$Last_result_contains_no_narrative")
+        case _ => throw new NoExpectedInformationException("$Last_result_contains_no_narrative")
       }
     } catch {
       case e: ClassCastException => {
         val cry4Help = Cry4HelpWay2Think("$Context_lastResult_is_not_expectedType " + e.getMessage)
-        // throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
         ContextHelper(List[Resource](cry4Help), cry4Help, this.getClass.getName + " result")
-        throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
+        throw new NoExpectedInformationException("$Context_lastResult_is_not_expectedType " + e.getMessage)
       }
     }
   }
@@ -186,17 +185,17 @@ class LinkParser extends Way2Think {
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
     val underscoreLess: String = value.replaceAll("_", " ")
 
-    var filteredPhrase:List[AnnotatedPhrase]=List[AnnotatedPhrase]()
-    sentence.phrases.foreach(f=>
-    f.findPhrase(underscoreLess.trim.toLowerCase)  match {
-      case Some(f1)=>{
-        filteredPhrase::=f1
+    var filteredPhrase: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
+    sentence.phrases.foreach(f =>
+      f.findPhrase(underscoreLess.trim.toLowerCase) match {
+        case Some(f1) => {
+          filteredPhrase ::= f1
 
-      }
-      case None=> {
+        }
+        case None => {
 
+        }
       }
-    }
     )
 
 
