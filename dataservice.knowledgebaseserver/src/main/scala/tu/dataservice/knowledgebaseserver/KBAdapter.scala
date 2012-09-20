@@ -6,7 +6,8 @@ import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge._
-import domain.{ConceptNetwork, Concept}
+import domain.ConceptLink._
+import domain.{ConceptLink, ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.howto.Solution
 
@@ -132,6 +133,7 @@ object KBAdapter {
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
 
+
   def domainModel(): ConceptNetwork = {
     try{
       val res:ConceptNetwork = ConceptNetwork.load(kb, 0, domainName, Constant.DEFAULT_LINK_NAME).map(x => SolvedIssue.load(kb, x) )
@@ -142,12 +144,27 @@ object KBAdapter {
       get_default_domain()
     }
 
-
+    //TODO: store and update it
 
   }
 
-  def get_default_domain() =
-  {}
+  def get_default_domain():ConceptNetwork =
+  {
+    val CONCEPT = Concept("concept")
+    val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
+    val wordConcept = Concept("word")
+    val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
+    val objectConcept = Concept.createSubConcept(CONCEPT, "object")
+    val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
+    val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
+
+    val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept)
+
+    val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, isLink)
+
+    ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel"))
+
+  }
 
   def solutions(): List[SolvedIssue] = {
 

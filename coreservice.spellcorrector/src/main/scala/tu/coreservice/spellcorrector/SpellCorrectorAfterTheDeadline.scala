@@ -37,10 +37,9 @@ class SpellCorrectorAfterTheDeadline extends SpellCorrector {
     }
 
 
-    var proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
-
     var connection: URLConnection = null;
     if (Configurator.proxyAddress().useProxy) {
+      val proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort))
       connection = url.openConnection(proxy)
     }
     else {
