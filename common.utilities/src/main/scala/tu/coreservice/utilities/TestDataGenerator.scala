@@ -1,10 +1,11 @@
 package tu.coreservice.utilities
 
-import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
 import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.domain._
+import tu.coreservice.utilities.TestDataGenerator._
 
 /**
  * Test data generator object.
@@ -19,6 +20,12 @@ object TestDataGenerator {
    */
   val namespace = "2/concepts/"
   val revision = "0.0"
+
+  /* will be hardcoded
+
+   */
+  val CONCEPT = Concept("concept")
+  val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
 
   /**
    * concepts
@@ -94,7 +101,7 @@ object TestDataGenerator {
   /**
    * has
    */
-  val has = ConceptLink(subjectConcept, objectConcept, "has")
+  val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has")
   val hasComputer = ConceptLink.createSubConceptLink(has, userConcept, computerConcept, "hasComputer", new Probability(1.0, 1.0))
   val userComputerLinkedPair = ConceptLink.likConcepts(hasComputer, userConcept, computerConcept)
   val hasSoftware = ConceptLink.createSubConceptLink(has, computerConcept, softwareConcept, "hasSoftware", new Probability(1.0, 0.9))

@@ -17,4 +17,9 @@ while(my $line = <FILE>)
  {
     print "$2 is kind of $1.\n";
  }
+
+ if($line =~ /createSubConceptLink\((.*), (.*)Concept, (.*)Concept, "(.*)"\)/)
+ {
+    print "$4 is $1 from $2 to $3.\n";
+ }
 }
