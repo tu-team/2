@@ -141,14 +141,14 @@ object KBAdapter {
     }
     catch
     {
-      case _ => get_default_domain()
+      case _ => getDefaultDomain()
     }
 
     //TODO: store and update it
 
   }
 
-  def get_default_domain():ConceptNetwork =
+  def getDefaultDomain():ConceptNetwork =
   {
     val CONCEPT = Concept("concept")
     val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
@@ -173,17 +173,17 @@ object KBAdapter {
     if (res.isEmpty)
       //save solutions
 
-      get_default_solutions()
+      getDefaultSolutions()
 
     res
   }
 
-  def solutions_add(item: SolvedIssue): List[SolvedIssue] = {
+  def solutionsAdd(item: SolvedIssue): List[SolvedIssue] = {
     item.save(kb, KBNodeId(KB.getRootId()), item.uri.toString, solutionsName)
     solutions()
   }
 
-  private def get_default_solutions(): List[SolvedIssue] = {
+  private def getDefaultSolutions(): List[SolvedIssue] = {
     val in_uri = new KnowledgeURI("namespace", "name", "revision")
     def getTestSolvedIssue2(): SolvedIssue = {
 

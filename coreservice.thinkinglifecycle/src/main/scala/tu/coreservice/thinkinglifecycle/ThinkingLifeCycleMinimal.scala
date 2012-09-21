@@ -73,9 +73,10 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request): List[Goal] = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
-    globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
-    globalContext.reformulationModel = TestDataGenerator.generateReformulationModelConceptNetwork
+    globalContext.domainModel = KBAdapter.domainModel //TestDataGenerator.generateDomainModelConceptNetwork
+    globalContext.simulationModel = KBAdapter.domainModel //TestDataGenerator.generateSimulationModelConceptNetwork
+    globalContext.reformulationModel = KBAdapter.domainModel //TestDataGenerator.generateReformulationModelConceptNetwork
+    //todo - make simulationModel and reformulationModel subsets domainModel
     val goalManager = new GoalManager
 
     var resGoals: List[Goal] = List[Goal]()
