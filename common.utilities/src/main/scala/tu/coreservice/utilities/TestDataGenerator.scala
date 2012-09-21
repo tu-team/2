@@ -106,13 +106,9 @@ object TestDataGenerator {
    * has
    */
   val hasComputer = ConceptLink.createSubConceptLink(has, userConcept, computerConcept, "hasComputer", new Probability(1.0, 1.0))
-  val userComputerLinkedPair = ConceptLink.likConcepts(hasComputer, userConcept, computerConcept)
   val hasSoftware = ConceptLink.createSubConceptLink(has, computerConcept, softwareConcept, "hasSoftware", new Probability(1.0, 0.9))
-  val computerSoftwareLinkedPair = ConceptLink.likConcepts(hasSoftware, computerConcept, softwareConcept)
   val hasAccount = ConceptLink.createSubConceptLink(has, userConcept, accountConcept, "hasAccount", new Probability(1.0, 0.9))
-  val userAccountLinkedPair = ConceptLink.likConcepts(has, userConcept, accountConcept)
   val hasVersion = ConceptLink.createSubConceptLink(has, softwareConcept, versionConcept, "hasVersion", new Probability(1.0, 0.9))
-  val hasVersionLinkedPair = ConceptLink.likConcepts(has, softwareConcept, versionConcept)
   /**
    * uses
    */
