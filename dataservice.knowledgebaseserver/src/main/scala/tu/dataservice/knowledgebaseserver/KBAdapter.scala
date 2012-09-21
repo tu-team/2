@@ -152,7 +152,7 @@ object KBAdapter {
   {
     val CONCEPT = Concept("concept")
     val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
-    val wordConcept = Concept("word")
+    val wordConcept = Concept.createSubConcept(CONCEPT, "word")
     val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
     val objectConcept = Concept.createSubConcept(CONCEPT, "object")
     val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
