@@ -1,7 +1,6 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.communication.Request
-import tu.model.knowledge.training.Goal
+import tu.model.knowledge.communication.{Context, Request}
 
 /**
  * Main component to manage Action-s (Selector, Way2Think,Critic).
@@ -15,5 +14,5 @@ import tu.model.knowledge.training.Goal
 
 
 trait ThinkingLifeCycle {
-  def apply(request: Request): List[Goal]
+  def apply(request: Request): Context
 }
