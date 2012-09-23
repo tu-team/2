@@ -5,7 +5,6 @@ import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.howto.HowTo
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.domain._
-import tu.coreservice.utilities.TestDataGenerator._
 
 /**
  * Test data generator object.

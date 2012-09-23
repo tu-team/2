@@ -68,7 +68,7 @@ trait KB {
    * @param child    resource to be saved
    * @param parent  parent of resource to be saved
    * @param nameOfLink name of link from parent to child/ Can be used to read specified child
-   * @param linkType  is defined by child type (for example geneneralisation and specialisation, ConceptList)
+   * @param linkType  is defined by child type (for example generalisation and specialisation, ConceptList)
    * @return          result of saving
    */
   def saveResource(child:Resource, parent:KBNodeId, nameOfLink:String, linkType:String = DEFAULT_LINK_NAME): Boolean = false

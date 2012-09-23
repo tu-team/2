@@ -147,6 +147,7 @@ class LinkParser extends Way2Think {
     }
   }
 
+  //TODO Pair[Option[Concept], List[Error]]
   def getConcept(name: String, sentence: AnnotatedSentence): Concept = {
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
@@ -156,7 +157,8 @@ class LinkParser extends Way2Think {
         val concept = concepts.head
         concept
       } else if (concepts.size < 1) {
-        throw new UnexpectedException("$No_concepts_found")
+        //TODO this should be error in context
+        throw new UnexpectedException("$No_concepts_found_for_phrase: " + phrase)
       } else {
         throw new UnexpectedException("$Ambiguous_concepts")
       }

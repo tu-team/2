@@ -6,7 +6,6 @@ import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.coreservice.utilities.URIHelper
-import tu.model.knowledge.narrative.Narrative
 
 /**
  * Simple KBAnnotator implementation.
@@ -40,8 +39,8 @@ class KBAnnotatorImpl extends Way2Think {
     }
 
 
-    def annotatePhrase(ph:AnnotatedPhrase):Boolean={
-      var result=false
+    def annotatePhrase(ph: AnnotatedPhrase): Boolean = {
+      var result = false
       var annotationFound = checkLocalKB(ph.phrase)
       def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
         ref.concepts = src.concepts
@@ -56,7 +55,7 @@ class KBAnnotatorImpl extends Way2Think {
             annotationFound = checkLocalKB(syn)
             if (!annotationFound.isEmpty) {
               appendAnnotation(ph, annotationFound.get)
-              result=true
+              result = true
               scala.util.control.Breaks.break()
             }
           })
@@ -64,21 +63,19 @@ class KBAnnotatorImpl extends Way2Think {
       }
       else {
         appendAnnotation(ph, annotationFound.get)
-        result=true
+        result = true
       }
-      return result
+      result
     }
 
 
-    def recurrentlyCheckPhrase(ph:AnnotatedPhrase):Boolean={
+    def recurrentlyCheckPhrase(ph: AnnotatedPhrase): Boolean = {
       var annotateFound = annotatePhrase(ph)
-      if (!annotateFound)
-      {
+      if (!annotateFound) {
 
-          ph.phrases.foreach(ph1=>{
-            recurrentlyCheckPhrase(ph1)
-          })
-
+        ph.phrases.foreach(ph1 => {
+          recurrentlyCheckPhrase(ph1)
+        })
       }
       true
     }

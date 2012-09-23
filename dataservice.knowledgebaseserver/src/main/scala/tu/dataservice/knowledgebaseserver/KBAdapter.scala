@@ -6,9 +6,8 @@ import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge._
-import domain.ConceptLink._
 import domain.{ConceptLink, ConceptNetwork, Concept}
-import tu.model.knowledge.annotator.AnnotatedPhrase
+import annotator.AnnotatedPhrase
 import tu.model.knowledge.howto.Solution
 
 /**
@@ -124,7 +123,7 @@ object KBAdapter {
       TestDataGenerator.installAnnotatedPhrase
   )
 
-  def annotations: Map[String, AnnotatedPhrase] = TestDataGenerator.phrases.map(
+  def annotations: Map[String, AnnotatedPhrase] = getPhrases.map(
     (phrase: AnnotatedPhrase) => {
       phrase.text -> phrase
     }
@@ -135,46 +134,57 @@ object KBAdapter {
 
 
   def domainModel(): ConceptNetwork = {
-    try{
-      val res:ConceptNetwork = ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
+    try {
+      val res: ConceptNetwork = ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
       res
     }
-    catch
-    {
-      case _ => getDefaultDomain()
+    catch {
+      case _ => getDefaultDomainConceptNetwork
     }
 
     //TODO: store and update it
 
   }
 
-  def getDefaultDomain():ConceptNetwork =
-  {
+  def getDefaultDomain: Pair[ConceptNetwork, List[AnnotatedPhrase]] = {
     val CONCEPT = Concept("concept")
     val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
+    val conceptPhrase = AnnotatedPhrase("concept", CONCEPT)
     val wordConcept = Concept.createSubConcept(CONCEPT, "word")
+    val wordPhrase = AnnotatedPhrase("word", CONCEPT)
     val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
+    val subjectPhrase = AnnotatedPhrase("subject", CONCEPT)
     val objectConcept = Concept.createSubConcept(CONCEPT, "object")
+    val objectPhrase = AnnotatedPhrase("object", CONCEPT)
     val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
+    val hasPhrase = AnnotatedPhrase("has", has)
     val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
-
+    val isPhrase = AnnotatedPhrase("is", isLink)
+    val generalisationLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "generalisation")
+    val isAPhrase = AnnotatedPhrase("is a", generalisationLink)
+    val kindOfPhrase = AnnotatedPhrase("kind of", generalisationLink)
     val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept)
+    val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, isLink, generalisationLink)
+    val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase)
+    (ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel")), phrases)
+  }
 
-    val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, isLink)
+  def getDefaultDomainConceptNetwork: ConceptNetwork = {
+    this.getDefaultDomain._1
+  }
 
-    ConceptNetwork(concepts, conceptLinks, KnowledgeURI("domainModel"))
-
+  def getPhrases: List[AnnotatedPhrase] = {
+    this.getDefaultDomain._2
   }
 
   def solutions(): List[SolvedIssue] = {
 
     val res: List[SolvedIssue] = kb.loadChildrenList(solutionsName).map(x => SolvedIssue.load(kb, x))
 
-    if (res.isEmpty)
+    if (res.isEmpty) {
       //save solutions
-
-      getDefaultSolutions()
-
+      getDefaultSolutions
+    }
     res
   }
 
@@ -183,15 +193,15 @@ object KBAdapter {
     solutions()
   }
 
-  private def getDefaultSolutions(): List[SolvedIssue] = {
+  private def getDefaultSolutions: List[SolvedIssue] = {
     val in_uri = new KnowledgeURI("namespace", "name", "revision")
-    def getTestSolvedIssue2(): SolvedIssue = {
+    def getTestSolvedIssue2: SolvedIssue = {
 
       val s = new Solution(List(TestDataGenerator.generateReinstallIE8HowTo), in_uri)
       new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Simulation, s, in_uri, probability)
     }
 
-    def getTestSolvedIssue3(): SolvedIssue = {
+    def getTestSolvedIssue3: SolvedIssue = {
 
       val s = new Solution(List(TestDataGenerator.generateReinstallIE8HowTo), in_uri)
       new SolvedIssue(TestDataGenerator.iHaveProblemWithIE8Reformulation, s, in_uri, probability)
@@ -223,7 +233,7 @@ object KBAdapter {
     }
   }
 
-  def getReflectiveCritics(): List[CriticModel] = {
+  def getReflectiveCritics: List[CriticModel] = {
     List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
     )
   }
