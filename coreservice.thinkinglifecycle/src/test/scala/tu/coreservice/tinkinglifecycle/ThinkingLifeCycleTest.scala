@@ -61,6 +61,15 @@ class ThinkingLifeCycleTest extends FunSuite {
     log info res.toString
   }
 
+  test("tense is kind of concept.") {
+    val requestText = "Tense is kind of concept."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    assert(res != null)
+    log info res.toString
+  }
+
 
   def testCycle(input: String) {
     val requestText = input
@@ -88,9 +97,6 @@ class ThinkingLifeCycleTest extends FunSuite {
   test("PP2C - Cisco IP communicator.") {
     testCycle("PP2C - Cisco IP communicator. Please see if you can fix the problem with the ip phone, it's stuck on configuring ip + sometimes Server error rejected: Security etc.")
   }
-
-
-
 
   test("start 5 paralel actors and join") {
 
