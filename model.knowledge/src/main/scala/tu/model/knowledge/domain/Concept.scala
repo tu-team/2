@@ -60,6 +60,10 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   def generalisations = _generalisations
 
+  def generalisationsList:List[Concept] = {
+    _generalisations.frames.values.toList
+  }
+
   def generalisations_=(in: TypedKLine[Concept]): Concept = {
     _generalisations = in
     this
