@@ -25,6 +25,24 @@ class ThinkingLifeCycleTest extends FunSuite {
     assert(true)
   }
 
+  test("sentence with kind off") {
+    val requestText = "Firefox is a kind of soft."
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+    assert(res != null)
+    log info res.toString
+  }
+
+  test("run comelete lifecycle with dummy way2think") {
+    val requestText = "Please install Firefox."
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+    assert(res != null)
+    log info res.toString
+  }
+
   test("run comelete lifecycle with dummy way2think") {
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
