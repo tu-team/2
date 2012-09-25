@@ -107,38 +107,43 @@ class LinkParser extends Way2Think {
     re
   }
 
-  def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Concept = {
-    val leftWall = "LEFT-WALL"
+  def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     try {
-
       val name: String = getName(feature)
-      val concept: Concept = getConcept(name, sentence)
+      val conceptError: Pair[Option[Concept], Option[Error]] = getConcept(name, sentence)
 
-      if (feature.get("tense") != null) {
-        log info "tense=" + feature.get("tense").getValue
-        val tense = Concept.createInstanceConcept(TestDataGenerator.tenseConcept, feature.get("tense").getValue)
-        val tenseLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.tenseLink, concept, tense)
-        concept.links = concept.links ::: List(tenseLink)
-      }
-      if (feature.get("pos") != null) {
-        log info "pos=" + feature.get("pos").getValue
-        val pos = Concept.createInstanceConcept(TestDataGenerator.posConcept, feature.get("pos").getValue)
-        val posLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.posLink, concept, pos)
-        concept.links = concept.links ::: List(posLink)
-      }
+      conceptError match {
+        case Pair(Some(concept: Concept), None) => {
+          if (feature.get("tense") != null) {
+            log info "tense=" + feature.get("tense").getValue
+            val tense = Concept.createInstanceConcept(TestDataGenerator.tenseConcept, feature.get("tense").getValue)
+            val tenseLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.tenseLink, concept, tense)
+            concept.links = concept.links ::: List(tenseLink)
+          }
+          if (feature.get("pos") != null) {
+            log info "pos=" + feature.get("pos").getValue
+            val pos = Concept.createInstanceConcept(TestDataGenerator.posConcept, feature.get("pos").getValue)
+            val posLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.posLink, concept, pos)
+            concept.links = concept.links ::: List(posLink)
+          }
 
-      if (feature.get("links") != null) {
-        // log info "links=" + feature.get("links").toString(getZHeadsFilter)
-        log info "==>"
-        val processedLinks = processLink(feature.get("links"), concept, sentence)
-        concept.links = concept.links ::: processedLinks
+          if (feature.get("links") != null) {
+            // log info "links=" + feature.get("links").toString(getZHeadsFilter)
+            log info "==>"
+            val processedLinks = processLink(feature.get("links"), concept, sentence)
+            concept.links = concept.links ::: processedLinks
+          }
+          val next = feature.get("NEXT")
+          if (next != null) {
+            log info "=>"
+            processNode(next, sentence)
+          }
+          (Some(concept), None)
+        }
+        case Pair(None, Some(e: Error)) => {
+          (None, Some(e))
+        }
       }
-      val next = feature.get("NEXT")
-      if (next != null) {
-        log info "=>"
-        processNode(next, sentence)
-      }
-      concept
     } catch {
       case e: RuntimeException => {
         log error e.getMessage
@@ -148,19 +153,25 @@ class LinkParser extends Way2Think {
   }
 
   //TODO Pair[Option[Concept], List[Error]]
-  def getConcept(name: String, sentence: AnnotatedSentence): Concept = {
+  def getConcept(name: String, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
       val phrase = phrases.head
       val concepts = phrase.concepts
-      if (concepts.size == 1) {
+      val res = if (concepts.size == 1) {
         val concept = concepts.head
         concept
       } else if (concepts.size < 1) {
         //TODO this should be error in context
-        throw new UnexpectedException("$No_concepts_found_for_phrase: " + phrase)
+        // throw new UnexpectedException("$No_concepts_found_for_phrase: " + phrase)
+        new Error("$No_concepts_found_for_phrase: " + phrase)
       } else {
-        throw new UnexpectedException("$Ambiguous_concepts")
+        // throw new UnexpectedException("$Ambiguous_concepts")
+        new Error("$Ambiguous_concepts")
+      }
+      res match {
+        case c: Concept => (Some(c), None)
+        case e: Error => (None, Some(e))
       }
     } else if (phrases.size < 1) {
       throw new UnexpectedException("$No_phrases_found " + name)
@@ -199,8 +210,6 @@ class LinkParser extends Way2Think {
         }
       }
     )
-
-
     /*val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
         phrase.findPhrase(underscoreLess.trim.toLowerCase) match {
@@ -219,10 +228,27 @@ class LinkParser extends Way2Think {
         name: String => names.contains(name)
       }
       if (filteredFeatures.size > 0) {
-        val conceptLinks: List[ConceptLink] = filteredFeatures.toList.map(
+        val filteredDestinationFeatures = filteredFeatures.toList.filter {
           (name: String) => {
-            val destination = processNode(feature.get(name), sentence)
-            ConceptLink(source, destination, name.substring(1))
+            val destinationError = processNode(feature.get(name), sentence)
+            destinationError match {
+              case Pair(Some(destination), None) => {
+                true
+              }
+              case Pair(None, Some(e: Error)) => {
+                false
+              }
+            }
+          }
+        }
+        val conceptLinks: List[ConceptLink] = filteredDestinationFeatures.toList.map(
+          (name: String) => {
+            val destinationError = processNode(feature.get(name), sentence)
+            destinationError match {
+              case Pair(Some(destination), None) => {
+                ConceptLink(source, destination, name.substring(1))
+              }
+            }
           }
         )
         conceptLinks
