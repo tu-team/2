@@ -1,6 +1,7 @@
 package tu.model.knowledge.communication
 
 import tu.model.knowledge._
+import annotator.AnnotatedPhrase
 import domain.{Concept, ConceptNetwork}
 import selector.SelectorRequest
 import training.Goal
@@ -24,11 +25,20 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   var _domainModel: Option[ConceptNetwork] = None
   var _simulationModel: Option[ConceptNetwork] = None
   var _reformulationModel: Option[ConceptNetwork] = None
+  var _errors: List[Error] = List[Error]()
   var _lastError: Option[Error] = None
   var _userResponse: Option[Response] = None
   var _nextGoal: Option[Goal] = None
   var _simulationResult: Option[ConceptNetwork] = None
   var _notUnderstoodConcepts: List[Concept] = List[Concept]()
+  var _notUnderstoodPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
+
+  def notUnderstoodPhrases = _notUnderstoodPhrases
+
+  def notUnderstoodPhrases_=(in: List[AnnotatedPhrase]): Context = {
+    _notUnderstoodPhrases = in
+    this
+  }
 
   def notUnderstoodConcepts = _notUnderstoodConcepts
 
@@ -71,6 +81,16 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
   def userResponse_=(r: Option[Response]): Context = {
     _userResponse = r
     this
+  }
+
+  def errors: List[Error] = _errors
+
+  def errors_=(e: Error) {
+    _errors = List[Error](e)
+  }
+
+  def errors_=(e: List[Error]) {
+    _errors = e
   }
 
   def lastError: Option[Error] = _lastError
@@ -116,7 +136,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
     this
   }
 
-  def simulationModel:Option[ConceptNetwork] = _simulationModel
+  def simulationModel: Option[ConceptNetwork] = _simulationModel
 
   def simulationModel_=(aModel: ConceptNetwork): Context = {
     this._simulationModel = Some(aModel)

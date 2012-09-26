@@ -69,7 +69,12 @@ class LinkParser extends Way2Think {
         val node: FeatureNode = new FeatureNode()
         node.set("head", parse.getLeft.get("head"))
         node.set("background", parse.getLeft.get("background"))
-        processNode(node.get("head"), sentence)
+        val res = processNode(node.get("head"), sentence)
+        res match {
+          case (None, Some(e: Error)) => {
+            context.errors = context.errors ::: List(e)
+          }
+        }
       }
     }
     sentences
@@ -162,7 +167,6 @@ class LinkParser extends Way2Think {
         val concept = concepts.head
         concept
       } else if (concepts.size < 1) {
-        //TODO this should be error in context
         // throw new UnexpectedException("$No_concepts_found_for_phrase: " + phrase)
         new Error("$No_concepts_found_for_phrase: " + phrase)
       } else {
