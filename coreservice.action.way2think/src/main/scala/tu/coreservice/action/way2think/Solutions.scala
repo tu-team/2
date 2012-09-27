@@ -19,7 +19,7 @@ class Solutions {
   var solutions: List[SolvedIssue] = KBAdapter.solutions()
 
   def add(item: SolvedIssue): List[SolvedIssue] = {
-    KBAdapter.solutions_add(item)
+    KBAdapter.solutionsAdd(item)
     solutions = item :: solutions
     solutions
   }
