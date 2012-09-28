@@ -52,6 +52,9 @@ User interacts with system by WebService.
 ## Knowledge data model
 [Knowledge model](https://github.com/development-team/2/blob/master/doc/design-specification/knowledge.md)
 
+### Memory
+[Memory](https://github.com/development-team/2/blob/master/doc/design-specification/memory.md)
+
 ## <a name="Activity_diagram">Activity diagram</a>
 
 ### Training
