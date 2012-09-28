@@ -1,7 +1,7 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge._
-import domain.Concept
+import domain.{ConceptLink, Concept}
 import scala.Some
 import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
@@ -15,6 +15,7 @@ import tu.model.knowledge.KBMap._
 
 case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
                            var _concepts: List[Concept] = List[Concept](),
+                           var _links: List[ConceptLink] = List[ConceptLink](),
                            _uri: KnowledgeURI,
                            _probability: Probability = new Probability(),
                            text: String = "",
@@ -22,7 +23,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
   extends Resource(_uri, _probability) {
 
   def this(_phrases: List[AnnotatedPhrase], _uri: KnowledgeURI) = {
-    this(_phrases, List[Concept](), _uri, new Probability(), "", 0)
+    this(_phrases, List[Concept](), List[ConceptLink](), _uri, new Probability(), "", 0)
   }
 
   def this() = {
@@ -33,14 +34,15 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     this(
       List[AnnotatedPhrase](),
       List[Concept](),
+      List[ConceptLink](),
       new KnowledgeURI(map),
       new Probability(map),
       map.get("text") match {
-        case Some(text) => text
+        case Some(aText) => aText
         case None => ""
       },
       map.get("index") match {
-        case Some(text) => text.toDouble
+        case Some(aText) => aText.toDouble
         case None => 0
       }
     )
@@ -61,7 +63,9 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
 
   def sentenceIndex = _sentenceIndex
 
-  def sentenceIndex_=(in: Double) = _sentenceIndex = in
+  def sentenceIndex_=(in: Double) {
+    _sentenceIndex = in
+  }
 
   /**
    * concatenated phrase
@@ -84,17 +88,19 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     ph
   }
 
-  override def toString(): String = {
-    return phrase
+  override def toString: String = {
+    phrase
   }
 
   def phrases = _phrases
 
-  def phrases_=(in: List[AnnotatedPhrase]) = _phrases = in
+  def phrases_=(in: List[AnnotatedPhrase]) {
+    _phrases = in
+  }
 
   def findPhrase(word: String): Option[AnnotatedPhrase] = {
 
-    if (this.toString().toLowerCase() == word.toLowerCase) {
+    if (this.toString.toLowerCase == word.toLowerCase) {
       Some(this)
     }
     else {
@@ -109,7 +115,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
         } match {
           case Some(ph: AnnotatedPhrase) => Some(ph)
           case None => {
-            if (this.text.toLowerCase() == word.toLowerCase) {
+            if (this.text.toLowerCase == word.toLowerCase) {
               Some(this)
             } else {
               None
@@ -128,7 +134,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     val uri = this.uri.toString
     if (saved.contains(uri))
       return true
-    val savedPlus:List[String] = uri :: saved
+    val savedPlus: List[String] = uri :: saved
 
     var res = kb.saveResource(this, parent, key, linkType)
     for (x: Resource <- _phrases)
@@ -140,15 +146,17 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
   }
 }
 
-//TODO: For all apply with string pararameter generate unique ID for newly created object
+//TODO: For all apply with string parameter generate unique ID for newly created object
 object AnnotatedPhrase {
   //TODO: for example here
   def apply(word: String): AnnotatedPhrase = {
-    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), KnowledgeURI(word + "EmptyPhrase"), new Probability(), word, 0)
+    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), List[ConceptLink](),
+      KnowledgeURI(word + "EmptyPhrase"), new Probability(), word, 0)
   }
 
   def apply(word: String, index: Double): AnnotatedPhrase = {
-    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), KnowledgeURI(word + "Phrase"), new Probability(), word, index)
+    new AnnotatedPhrase(List[AnnotatedPhrase](), List[Concept](), List[ConceptLink](),
+      KnowledgeURI(word + "Phrase"), new Probability(), word, index)
   }
 
   def apply(words: List[AnnotatedPhrase], index: Double): AnnotatedPhrase = {
@@ -157,7 +165,8 @@ object AnnotatedPhrase {
         a + " " + i.text
       }
     )
-    new AnnotatedPhrase(words, List[Concept](), KnowledgeURI(words.toString() + "Phrase"), new Probability(), wordsValues, index)
+    new AnnotatedPhrase(words, List[Concept](), List[ConceptLink](),
+      KnowledgeURI(words.toString() + "Phrase"), new Probability(), wordsValues, index)
   }
 
   def apply(words: List[AnnotatedPhrase]): AnnotatedPhrase = {
@@ -165,7 +174,8 @@ object AnnotatedPhrase {
   }
 
   def apply(words: List[AnnotatedPhrase], text: String): AnnotatedPhrase = {
-    new AnnotatedPhrase(words, List[Concept](), KnowledgeURI(words.toString() + "Phrase"), new Probability(), text, 0)
+    new AnnotatedPhrase(words, List[Concept](), List[ConceptLink](),
+      KnowledgeURI(words.toString() + "Phrase"), new Probability(), text, 0)
   }
 
   def split(words: String, name: String): AnnotatedPhrase = {
@@ -173,15 +183,25 @@ object AnnotatedPhrase {
     val wordsList: List[AnnotatedPhrase] = (wordsArray.map(x => {
       AnnotatedPhrase(x.trim)
     })).toList
-    new AnnotatedPhrase(wordsList, List[Concept](), KnowledgeURI(name), new Probability(), words, 0)
+    new AnnotatedPhrase(wordsList, List[Concept](), List[ConceptLink](),
+      KnowledgeURI(name), new Probability(), words, 0)
   }
 
   def apply(words: List[AnnotatedPhrase], concepts: List[Concept]): AnnotatedPhrase = {
-    new AnnotatedPhrase(words, concepts, KnowledgeURI(words.toString() + "Phrase"))
+    new AnnotatedPhrase(words, concepts, List[ConceptLink](), KnowledgeURI(words.toString() + "Phrase"))
+  }
+
+  def apply(words: List[AnnotatedPhrase], conceptLink: ConceptLink): AnnotatedPhrase = {
+    new AnnotatedPhrase(words, List[Concept](), List(conceptLink), KnowledgeURI(words.toString() + "Phrase"))
+  }
+
+  def apply(words: List[AnnotatedPhrase], concepts: List[Concept], conceptLinks: List[ConceptLink]): AnnotatedPhrase = {
+    new AnnotatedPhrase(words, concepts, conceptLinks, KnowledgeURI(words.toString() + "Phrase"))
   }
 
   def apply(word: String, concepts: List[Concept]): AnnotatedPhrase = {
-    val it = new AnnotatedPhrase(List(AnnotatedPhrase(word)), concepts, KnowledgeURI(word + "Phrase"), new Probability(), word)
+    val it = new AnnotatedPhrase(List(AnnotatedPhrase(word)), concepts, List[ConceptLink](),
+      KnowledgeURI(word + "Phrase"), new Probability(), word)
     concepts.map((in: Concept) => {
       in.phrases = in.phrases + (it.uri -> it)
       in
@@ -190,20 +210,28 @@ object AnnotatedPhrase {
   }
 
   def apply(words: List[String], concept: Concept): AnnotatedPhrase = {
-    val it = new AnnotatedPhrase(words.map(w => AnnotatedPhrase(w)), List(concept), KnowledgeURI(words + "Phrase"))
+    val it = new AnnotatedPhrase(words.map(w => AnnotatedPhrase(w)), List(concept), List[ConceptLink](),
+      KnowledgeURI(words + "Phrase"))
     concept.phrases = concept.phrases + (it.uri -> it)
     it
   }
 
   def apply(word: String, concept: Concept): AnnotatedPhrase = {
-    val it = new AnnotatedPhrase(List(AnnotatedPhrase(word)), List(concept), KnowledgeURI(word + "Phrase"), new Probability(), word)
+    val it = new AnnotatedPhrase(List(AnnotatedPhrase(word)), List(concept), List[ConceptLink](),
+      KnowledgeURI(word + "Phrase"), new Probability(), word)
     concept.phrases = concept.phrases + (it.uri -> it)
     it
   }
 
+  def apply(word: String, conceptLink: ConceptLink): AnnotatedPhrase = {
+    val it = new AnnotatedPhrase(List(AnnotatedPhrase(word)), List[Concept](), List[ConceptLink](conceptLink),
+      KnowledgeURI(word + "Phrase"), new Probability(), word)
+    conceptLink.phrases = conceptLink.phrases + (it.uri -> it)
+    it
+  }
 
-  def load(kb: KB, parent: KBNodeId, key: String, linkType: String):AnnotatedPhrase = {
-//    apply("dummy phrase from ID-parent")
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): AnnotatedPhrase = {
+    //    apply("dummy phrase from ID-parent")
 
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
@@ -213,15 +241,17 @@ object AnnotatedPhrase {
 
     val ID = new KBNodeId(selfMap)
 
-    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
-      items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+    val loadConcepts: List[Concept] = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
+    val loadLinks: List[ConceptLink] = loadConcepts.map {
+      c: Concept => {
+        c.links
       }
-    }
+    }.flatten
 
     val res = new AnnotatedPhrase(
       kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)), //TODO recursive load
-      kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_)),
+      loadConcepts,
+      loadLinks,
       new KnowledgeURI(selfMap),
       new Probability(selfMap),
       selfMap.get("text") match {
@@ -238,7 +268,6 @@ object AnnotatedPhrase {
 
     res
   }
-
 
 
 }
