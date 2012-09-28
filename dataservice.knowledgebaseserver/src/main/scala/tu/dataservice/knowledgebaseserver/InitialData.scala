@@ -19,5 +19,11 @@ object InitialData {
 
   }
 
+  def fillReflectiveCrititcs(){
+         // List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
+
+
+  }
+
 
 }

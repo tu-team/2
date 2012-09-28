@@ -23,6 +23,8 @@ object KBAdapter {
   val goalsName = "goals_name"
   val domainName = "domain_name"
 
+  val selfReflectiveCritics="selfReflectiveCritics"
+
   var kb = N4JKB
 
   def model = TestDataGenerator.generateDomainModelConceptNetwork
@@ -234,6 +236,7 @@ object KBAdapter {
   }
 
   def getReflectiveCritics: List[CriticModel] = {
+   // kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
     List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
     )
   }
