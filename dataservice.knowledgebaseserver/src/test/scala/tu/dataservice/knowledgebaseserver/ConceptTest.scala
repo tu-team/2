@@ -53,7 +53,7 @@ class ConceptTest extends FunSuite {
     val generalisationLink = ConceptLink(c, generalConcept, Constant.GENERALISATION_LINK_NAME)
     c.linksAdd(generalisationLink)
     expect(1)(c.generalisations.frames.size)
-    expect(Constant.GENERALISATION_LINK_NAME)(c.generalisations.frames(KnowledgeURI(Constant.GENERALISATION_LINK_NAME)))
+    expect(generalConceptName.substring(0,7))(c.generalisations.frames.values.head.uri.name.substring(0,7))
   }
 
 }
