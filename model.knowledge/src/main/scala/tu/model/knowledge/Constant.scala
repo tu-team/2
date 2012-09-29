@@ -50,9 +50,8 @@ object Constant {
   val CONTENT = "content"
   val LINKS = "links"
   val TAGS = "tags"
-  val CRITIC_MODEL_NAME="CriticModelName"
-  val CRITIC_MODEL_NAME_LINK="CriticModelNameLink"
-
+  val CRITIC_MODEL_NAME = "CriticModelName"
+  val CRITIC_MODEL_NAME_LINK = "CriticModelNameLink"
 
   val NO_KB_NODE = -1L
   val KB_ID = "KB_ID"

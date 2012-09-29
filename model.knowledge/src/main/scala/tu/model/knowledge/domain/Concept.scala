@@ -58,7 +58,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
-  def generalisations = _generalisations
+  def generalisations: TypedKLine[Concept] = _generalisations
 
   /**
    * Assigns generalisation list to specified.
@@ -75,8 +75,8 @@ case class Concept(var _generalisations: TypedKLine[Concept],
    * @param concept a Concept to add
    * @return this
    */
-  def generalisations_+(concept: Concept): Concept = {
-    _generalisations.frames + (concept.uri -> concept)
+  def generalisationsAdd(concept: Concept): Concept = {
+    _generalisations.frames = _generalisations.frames + (concept.uri -> concept)
     this
   }
 
@@ -99,8 +99,12 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
-  def linksAdd(in: ConceptLink): Concept = {
-    _conceptLinks = _conceptLinks ::: List(in)
+  def linksAdd(link: ConceptLink): Concept = {
+    _conceptLinks = _conceptLinks ::: List(link)
+    // generalisations are unidirectional
+    if (link.isGeneralisationLink && link.destination != null) {
+       generalisationsAdd(link.destination)
+    }
     this
   }
 

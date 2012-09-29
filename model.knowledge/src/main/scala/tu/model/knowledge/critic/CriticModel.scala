@@ -22,7 +22,7 @@ class CriticModel(_uri: KnowledgeURI, _probability: Probability = new Probabilit
   def load(kb: KB, selfMap: Map[String,  String]): CriticModel = {
     val ID = new KBNodeId(selfMap)
     var name =kb.loadChild(ID, Constant.CRITIC_MODEL_NAME,Constant.CRITIC_MODEL_NAME_LINK).toString()
-    return new CriticModel(KnowledgeURI(name))
+    new CriticModel(KnowledgeURI(name))
 
   }
 }

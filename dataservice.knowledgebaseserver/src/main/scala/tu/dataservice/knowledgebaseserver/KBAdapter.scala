@@ -218,8 +218,8 @@ object KBAdapter {
 
   def getReflectiveCritics: List[CriticModel] = {
     // kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
-    List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
-    )
+    CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
+    List[CriticModel]()
   }
 
   object Defaults {

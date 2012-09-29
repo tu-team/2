@@ -54,6 +54,9 @@ case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
   override def source: Concept = _source
 
   override def destination: Concept = _destination
+
+  def isGeneralisationLink: Boolean = this._uri.name.contains(Constant.GENERALISATION_LINK_NAME)
+
 }
 
 object ConceptLink {
@@ -87,4 +90,5 @@ object ConceptLink {
     destination.links = dl
     (source, destination)
   }
+
 }

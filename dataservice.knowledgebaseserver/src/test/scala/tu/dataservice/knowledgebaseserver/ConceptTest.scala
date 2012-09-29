@@ -27,6 +27,7 @@ class ConceptTest extends FunSuite {
   val probability = new Probability
   val sourceContent = "Source"
   val destinationContent = "Dest"
+  val generalConceptName = "General"
   val source: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString(sourceContent, uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "source", revision))
   val destination: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString(destinationContent, uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "dest", revision))
   val test: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode(new KnowledgeString("TestContent", uri), List[SemanticNetworkLink](), new KnowledgeURI(namespace, "test", revision))
@@ -35,12 +36,24 @@ class ConceptTest extends FunSuite {
   val klName = new KnowledgeString("name", uri)
   val kl = new KLine(Map[KnowledgeURI, Resource](f1.uri -> f1), uri)
   val userPhrase = new KLine(Map(KnowledgeURI("user" + "Phrase") -> AnnotatedPhrase("user")), KnowledgeURI("userKLine"))
+  val generalConcept = Concept(generalConceptName)
 
   test("Concept should contain name") {
     val content = new KnowledgeString("name", uri)
     val c = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
     expect(c.content)(content)
+  }
+
+  test("add generalisation ConceptLink") {
+    val content = new KnowledgeString("name", uri)
+    val c = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("user", AnnotatedPhrase("user")), content, List[ConceptLink](), uri)
+    expect(c.content)(content)
+    val generalisationLink = ConceptLink(c, generalConcept, Constant.GENERALISATION_LINK_NAME)
+    c.linksAdd(generalisationLink)
+    expect(1)(c.generalisations.frames.size)
+    expect(Constant.GENERALISATION_LINK_NAME)(c.generalisations.frames(KnowledgeURI(Constant.GENERALISATION_LINK_NAME)))
   }
 
 }
