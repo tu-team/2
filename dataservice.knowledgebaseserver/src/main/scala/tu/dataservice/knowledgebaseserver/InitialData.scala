@@ -24,6 +24,7 @@ object InitialData {
   }
 
   def fillSimulationModelConceptNetwork() {
+    // todo - do it like KBAdatper.domainModel()
     var dt = TestDataGenerator.generateDomainModelConceptNetwork
     N4JKB.saveResource(dt,"simulationConceptNetwork")
 
@@ -77,6 +78,11 @@ object Defaults {
   val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
   val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
 
+
+  /**
+   * domain-s (ConceptNetworks
+   */
+  val domainModelConceptNetwork = ConceptNetwork(Defaults.concepts, Defaults.conceptLinks, KnowledgeURI("domainModel"))
   /**
    * HowTo-s
    */

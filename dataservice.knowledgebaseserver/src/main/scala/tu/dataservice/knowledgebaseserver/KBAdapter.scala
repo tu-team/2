@@ -124,7 +124,7 @@ object KBAdapter {
       TestDataGenerator.installAnnotatedPhrase
   )
 
-  def annotations: Map[String, AnnotatedPhrase] = getPhrases.map(
+  def annotations: Map[String, AnnotatedPhrase] = Defaults.phrases.map(
     (phrase: AnnotatedPhrase) => {
       phrase.text -> phrase
     }
@@ -136,28 +136,15 @@ object KBAdapter {
 
   def domainModel(): ConceptNetwork = {
     try {
-      val res: ConceptNetwork = ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
-      res
+      ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
     }
     catch {
-      case _ => getDefaultDomainConceptNetwork
+      case _ =>
+        val res: ConceptNetwork = Defaults.domainModelConceptNetwork
+        res.save(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
+        res
     }
 
-    //TODO: store and update it
-
-  }
-
-  def getDefaultDomain: Pair[ConceptNetwork, List[AnnotatedPhrase]] = {
-
-    (ConceptNetwork(Defaults.concepts, Defaults.conceptLinks, KnowledgeURI("domainModel")), Defaults.phrases)
-  }
-
-  def getDefaultDomainConceptNetwork: ConceptNetwork = {
-    this.getDefaultDomain._1
-  }
-
-  def getPhrases: List[AnnotatedPhrase] = {
-    this.getDefaultDomain._2
   }
 
   def solutions(): List[SolvedIssue] = {
