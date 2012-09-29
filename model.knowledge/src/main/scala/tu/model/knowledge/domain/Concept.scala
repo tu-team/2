@@ -60,8 +60,23 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   def generalisations = _generalisations
 
-  def generalisations_=(in: TypedKLine[Concept]): Concept = {
-    _generalisations = in
+  /**
+   * Assigns generalisation list to specified.
+   * @param conceptKline List of concepts to assign
+   * @return this
+   */
+  def generalisations_=(conceptKline: TypedKLine[Concept]): Concept = {
+    _generalisations = conceptKline
+    this
+  }
+
+  /**
+   * Adds generalisation concept to TypedKline[Concept]
+   * @param concept a Concept to add
+   * @return this
+   */
+  def generalisations_=(concept: Concept): Concept = {
+    _generalisations.frames + (concept.uri -> concept)
     this
   }
 
