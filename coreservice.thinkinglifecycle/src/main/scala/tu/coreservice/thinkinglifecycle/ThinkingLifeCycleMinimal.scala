@@ -150,7 +150,7 @@ class ThinkingLifeCycleMinimal
    * @return Context with SelectorRequest-s
    */
   def processReflectiveCritics(contextToCheck: Context): List[Context] = {
-    val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics()
+    val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics
     processResources(reflectiveCritics)
   }
 

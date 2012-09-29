@@ -13,7 +13,7 @@ import tu.model.knowledge.frame.Frame
  *         time: 3:55 PM
  */
 
-object TestDataGenerator {
+@deprecated object TestDataGenerator {
   /**
    * Simulation structures
    */
