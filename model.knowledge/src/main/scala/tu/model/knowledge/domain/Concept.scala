@@ -75,7 +75,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
    * @param concept a Concept to add
    * @return this
    */
-  def generalisations_=(concept: Concept): Concept = {
+  def generalisations_+(concept: Concept): Concept = {
     _generalisations.frames + (concept.uri -> concept)
     this
   }
