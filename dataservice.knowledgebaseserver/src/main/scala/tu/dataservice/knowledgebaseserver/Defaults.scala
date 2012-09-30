@@ -17,6 +17,8 @@ import tu.model.knowledge.{KnowledgeURI, Probability}
  * @author alex
  *         Time stamp: 9/18/12 6:29 PM
  */
+
+/*
 object InitialData {
 
   def fill() {
@@ -24,13 +26,13 @@ object InitialData {
   }
 
   def fillSimulationModelConceptNetwork() {
-    // todo - do it like KBAdatper.domainModel()
+    // did it - see KBAdapter.simulationModel()
     var dt = TestDataGenerator.generateDomainModelConceptNetwork
     N4JKB.saveResource(dt,"simulationConceptNetwork")
 
   }
 
-  def fillReflectiveCrititcs(){
+  def fillReflectiveCritics(){
          // List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
 
 
@@ -38,6 +40,7 @@ object InitialData {
 
 
 }
+ */
 
 object Defaults {
 

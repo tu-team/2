@@ -23,6 +23,8 @@ object KBAdapter {
   val solutionsName = "stored_solutions_name"
   val goalsName = "goals_name"
   val domainName = "domain_name"
+  val simulationName = "simulation_name"
+  val reformulationName = "reformulation_name"
 
   val selfReflectiveCritics = "selfReflectiveCritics"
 
@@ -134,14 +136,20 @@ object KBAdapter {
   val probability = new Probability
 
 
-  def domainModel(): ConceptNetwork = {
+  def domainModel(): ConceptNetwork = someModel(domainName)
+
+  def simulationModel(): ConceptNetwork = someModel(simulationName)
+
+  def reformulationModel(): ConceptNetwork = someModel(reformulationName)
+
+  private def someModel(modelName: String): ConceptNetwork = {
     try {
-      ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
+      ConceptNetwork.load(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
     }
     catch {
       case _ =>
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
-        res.save(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
+        res.save(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
         res
     }
 
