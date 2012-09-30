@@ -11,7 +11,6 @@ import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
-import tu.coreservice.utilities.TestDataGenerator
 import tu.exception.UnexpectedException
 import tu.dataservice.knowledgebaseserver.KBAdapter
 
@@ -37,9 +36,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: TrainingRequest): List[Goal] = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
-    globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
-    globalContext.reformulationModel = TestDataGenerator.generateReformulationModelConceptNetwork
+    globalContext.domainModel = KBAdapter.domainModel
+    globalContext.simulationModel = KBAdapter.simulationModel
+    globalContext.reformulationModel = KBAdapter.reformulationModel
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
     // process resources
@@ -73,9 +72,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request): List[Goal] = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = TestDataGenerator.generateDomainModelConceptNetwork
-    globalContext.simulationModel = TestDataGenerator.generateSimulationModelConceptNetwork
-    globalContext.reformulationModel = TestDataGenerator.generateReformulationModelConceptNetwork
+    globalContext.domainModel = KBAdapter.domainModel
+    globalContext.simulationModel = KBAdapter.simulationModel
+    globalContext.reformulationModel = KBAdapter.reformulationModel
     val goalManager = new GoalManager
 
     var resGoals: List[Goal] = List[Goal]()
