@@ -19,16 +19,18 @@ class CriticModel(_uri: KnowledgeURI, _probability: Probability = new Probabilit
   }
 
 
-  def load(kb: KB, selfMap: Map[String,  String]): CriticModel = {
-    val ID = new KBNodeId(selfMap)
-    var name =kb.loadChild(ID, Constant.CRITIC_MODEL_NAME,Constant.CRITIC_MODEL_NAME_LINK).toString()
-    new CriticModel(KnowledgeURI(name))
 
-  }
 }
 
 object CriticModel{
   def apply(name: String): CriticModel = {
     new CriticModel(KnowledgeURI(name))
+  }
+
+  def load(kb: KB, selfMap: Map[String,  String]): CriticModel = {
+
+    var name =selfMap("class")
+    new CriticModel(KnowledgeURI(name))
+
   }
 }

@@ -12,6 +12,7 @@ import tu.model.knowledge.frame.Frame._
 import tu.model.knowledge.KnowledgeURI._
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptTag, ConceptLink, Concept}
 import tu.model.knowledge.{KnowledgeURI, Probability}
+import tu.model.knowledge.critic.CriticModel
 
 /**
  * @author alex
@@ -141,5 +142,8 @@ object Defaults {
   val systemInstallFirefox = ConceptLink.createSubConceptLink(appliedLink, systemConcept, firefoxConceptInst, "systemInstallFirefox")
   val pleaseInstallFFSimulation = new ConceptNetwork(List[Concept](installActionInst, firefoxConceptInst), List[ConceptLink](systemInstallFirefox),
     KnowledgeURI("pleaseInstallFFSimulation"))
+
+  val defaultSelfReflectiveCritics  =   List(CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager"))
+
 }
 

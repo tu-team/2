@@ -1,7 +1,7 @@
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
-import tu.dataservice.knowledgebaseserver.N4JKB
+import tu.dataservice.knowledgebaseserver.{KBAdapter, N4JKB}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
@@ -117,5 +117,16 @@ class StoreModelTest extends FunSuite {
 
   }
 
+  test("Get Self Reflective Critics")
+  {
+    expect ( KBAdapter.getReflectiveCritics.isEmpty)(false)
+  }
+
+  test("Test getAnnotationByWord")
+  {
+    expect ( KBAdapter.getAnnotationByWord("word").isEmpty)(false)
+
+    //TODO add save test
+  }
 
 }
