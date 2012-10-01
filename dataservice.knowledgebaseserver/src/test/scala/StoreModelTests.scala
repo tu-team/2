@@ -22,6 +22,7 @@ class StoreModelTest extends FunSuite {
 
   val uri = KnowledgeURI("testuri")
   val uri1 = KnowledgeURI("testuri1")
+  val uri2 = KnowledgeURI("testuri2")
 
   test("Concept should be stored and restored") {
 
@@ -76,6 +77,21 @@ class StoreModelTest extends FunSuite {
 
     expect(x.content.uri.name)(y.nodes(0).uri.name)
     expect(x.links.size)(y.links.size)
+
+    val CONCEPT = Concept("concept")
+    val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
+    val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
+    val objectConcept = Concept.createSubConcept(CONCEPT, "object")
+    val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
+    val concepts = List[Concept](CONCEPT, subjectConcept, objectConcept)
+    val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has)
+    val cN2 = new ConceptNetwork(concepts, conceptLinks, uri2)
+
+    cN2.save(N4JKB, context, "testKeyCN2", "testRelation")
+
+    val y2: ConceptNetwork = ConceptNetwork.load(N4JKB, context, "testKeyCN2", "testRelation")
+
+    expect(cN2.links.size)(y.links.size)
 
   }
 
