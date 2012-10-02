@@ -5,9 +5,10 @@ import tu.dataservice.knowledgebaseserver.{KBAdapter, N4JKB}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
+import tu.model.knowledge.KBMap._
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge._
-import tu.model.knowledge.KBMap._
+import annotator.AnnotatedPhrase._
 
 /**
  * @author achepkunov
@@ -100,7 +101,7 @@ class StoreModelTest extends FunSuite {
     val context = ContextHelper(Nil, "test context 3") //context is parent node for x:Concept
     N4JKB.saveResource(context, "testContext")
 
-    // empty concept
+    // empty phrase
     val subjectConcept = Concept("subject")
     val userConcept = Concept.createSubConcept(subjectConcept, "user")
     val x = AnnotatedPhrase("user", userConcept)
@@ -114,6 +115,22 @@ class StoreModelTest extends FunSuite {
     expect(x.concepts(0).uri.name)(y.concepts(0).uri.name)
 
     expect(x.phrase)(y.phrase)
+
+    // rec phrase
+    val manualConcept = Concept.createSubConcept(subjectConcept, "manual")
+    val xx = AnnotatedPhrase("manual", manualConcept)
+
+    val x2 = AnnotatedPhrase(List(x, xx))
+
+    x2.save(N4JKB, context, "testUserPhrase2", "testRelation")
+
+    val y2: AnnotatedPhrase = AnnotatedPhrase.load(N4JKB, context, "testUserPhrase2", "testRelation")
+
+
+    expect(x2.phrase)(y2.phrase)
+    expect(x2.phrases.size)(y2.phrases.size)
+    expect(x2.phrases(0).phrase)(y2.phrases(0).phrase)
+    expect(x2.phrases(1).phrase)(y2.phrases(1).phrase)
 
   }
 
