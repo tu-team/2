@@ -254,8 +254,10 @@ object AnnotatedPhrase {
       }
     }.flatten
 
+    val loadSubPhrases = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(load(kb, _))
+
     val res = new AnnotatedPhrase(
-      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)), //TODO recursive load
+      loadSubPhrases,
       loadConcepts,
       loadLinks,
       new KnowledgeURI(selfMap),
