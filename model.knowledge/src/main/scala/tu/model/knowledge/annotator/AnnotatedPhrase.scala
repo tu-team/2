@@ -247,19 +247,23 @@ object AnnotatedPhrase {
   private def subload(kb: KB, selfMap: Map[String, String], ID: KBNodeId): AnnotatedPhrase = {
 
 
-    val loadConcepts: List[Concept] = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
-    val loadLinks: List[ConceptLink] = loadConcepts.map {
+    val loadedConcepts: List[Concept] = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
+    val loadedLinks: List[ConceptLink] = loadedConcepts.map {
       c: Concept => {
         c.links
       }
     }.flatten
 
-    val loadSubPhrases = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(load(kb, _))
-
+    val subPhrasesRaw = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME)
+    val subPhrases =
+      if (subPhrasesRaw.size == 1)
+        subPhrasesRaw.map(new AnnotatedPhrase(_))
+      else
+        subPhrasesRaw.map(load(kb, _))
     val res = new AnnotatedPhrase(
-      loadSubPhrases,
-      loadConcepts,
-      loadLinks,
+      subPhrases,
+      loadedConcepts,
+      loadedLinks,
       new KnowledgeURI(selfMap),
       new Probability(selfMap),
       selfMap.get("text") match {
