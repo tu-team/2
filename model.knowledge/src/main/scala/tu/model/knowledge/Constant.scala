@@ -8,6 +8,20 @@ package tu.model.knowledge
 
 object Constant {
 
+  final val NOUN_F: String = "noun"
+  final val VERB_F: String = "verb"
+  final val ADJ_F: String = "adj"
+  final val ADV_F: String = "adv"
+  final val ROOT_F: String = "root"
+  final val TYPE_F: String = "type"
+  final val NEG_F: String = "neg"
+
+  val subjectConceptName = "subject"
+  val objectConceptName = "object"
+  val actionConceptName = "action"
+  val desireConceptName = "desire"
+  val formOfPoliteness = "formOfPoliteness"
+
   val DELIMITER = "."
   val REVISION_DELIMITER = "/"
   val UID_DELIMITER = "#"

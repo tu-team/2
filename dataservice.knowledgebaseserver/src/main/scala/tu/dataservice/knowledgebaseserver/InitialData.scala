@@ -71,6 +71,14 @@ object Defaults {
   val firefoxConcept = Concept.createSubConcept(browserConcept, "Mozilla Firefox")
   val systemConcept = Concept.createSubConcept(objectConcept, "system")
 
+
+  // lexical
+  val tenseConcept = Concept("tense")
+  val posConcept = Concept("pos")
+  val formOfPoliteness = Concept("formOfPoliteness")
+  val tenseLink = ConceptLink(subjectConcept, objectConcept, "tense")
+  val posLink = ConceptLink(subjectConcept, objectConcept, "pos")
+
   /**
    * Links
    */

@@ -13,8 +13,8 @@ import relex.ParsedSentence
 import relex.feature.{FeatureNameFilter, FeatureNode}
 import org.slf4j.LoggerFactory
 import tu.model.knowledge.domain.{Concept, ConceptLink}
-import tu.coreservice.utilities.TestDataGenerator
 import tu.exception.{NoExpectedInformationException, UnexpectedException}
+import tu.dataservice.knowledgebaseserver.Defaults
 
 
 /**
@@ -121,14 +121,14 @@ class LinkParser extends Way2Think {
         case Pair(Some(concept: Concept), None) => {
           if (feature.get("tense") != null) {
             log info "tense=" + feature.get("tense").getValue
-            val tense = Concept.createInstanceConcept(TestDataGenerator.tenseConcept, feature.get("tense").getValue)
-            val tenseLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.tenseLink, concept, tense)
+            val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
+            val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
             concept.links = concept.links ::: List(tenseLink)
           }
           if (feature.get("pos") != null) {
             log info "pos=" + feature.get("pos").getValue
-            val pos = Concept.createInstanceConcept(TestDataGenerator.posConcept, feature.get("pos").getValue)
-            val posLink = ConceptLink.createInstanceConceptLink(TestDataGenerator.posLink, concept, pos)
+            val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
+            val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
             concept.links = concept.links ::: List(posLink)
           }
 
@@ -167,8 +167,6 @@ class LinkParser extends Way2Think {
         val concept = concepts.head
         concept
       } else if (concepts.size < 1) {
-        //TODO this should be error in context
-        // throw new UnexpectedException("$No_concepts_found_for_phrase: " + phrase)
         new Error("$No_concepts_found_for_phrase: " + phrase)
       } else {
         // throw new UnexpectedException("$Ambiguous_concepts")
