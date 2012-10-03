@@ -8,6 +8,7 @@ import org.neo4j.graphdb._
 import org.slf4j.{LoggerFactory}
 import tu.model.knowledge._
 import scala.Long
+import tu.dataservice.knowledgebaseserver.RelationType
 
 
 class RelationType(_name:String) extends RelationshipType
@@ -134,15 +135,18 @@ object N4JKB extends KB {
     {
       val relationship:Relationship = i.next()
       val node:Node = relationship.getEndNode
-      var values = new HashMap[String,  String]
-      val j = node.getPropertyKeys.iterator()
-      while(j.hasNext)
+      if (node.getId != parent.getId)
       {
-        val key:String = j.next()
-        values += key -> node.getProperty(key).toString
+        var values = new HashMap[String,  String]
+        val j = node.getPropertyKeys.iterator()
+        while(j.hasNext)
+        {
+          val key:String = j.next()
+          values += key -> node.getProperty(key).toString
+        }
+        values += (Constant.KB_ID -> node.getId.toString)
+        res += relationship.getProperty("key").toString -> values
       }
-      values += (Constant.KB_ID -> node.getId.toString)
-      res += relationship.getProperty("key").toString -> values
     }
     res
   }

@@ -254,12 +254,14 @@ object AnnotatedPhrase {
       }
     }.flatten
 
-    val subPhrasesRaw = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME)
+    val subPhrases = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(load(kb, _))
+    /*
     val subPhrases =
       if (subPhrasesRaw.size == 1)
         subPhrasesRaw.map(new AnnotatedPhrase(_))
       else
         subPhrasesRaw.map(load(kb, _))
+        */
     val res = new AnnotatedPhrase(
       subPhrases,
       loadedConcepts,
