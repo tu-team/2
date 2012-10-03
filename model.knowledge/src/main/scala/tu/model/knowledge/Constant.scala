@@ -61,4 +61,18 @@ object Constant {
   val RESULT = "result"
   val NOT_UNDERSTOOD_PREFIX = "$I_can_not_understand_following_concept "
   val INPUT_TEXT = "inputtext"
+
+  final val NOUN_F: String = "noun"
+  final val VERB_F: String = "verb"
+  final val ADJ_F: String = "adj"
+  final val ADV_F: String = "adv"
+  final val ROOT_F: String = "root"
+  final val TYPE_F: String = "type"
+  final val NEG_F: String = "neg"
+
+  val subjectConceptName = "subject"
+  val objectConceptName = "object"
+  val actionConceptName = "action"
+  val desireConceptName = "desire"
+  val formOfPoliteness = "formOfPoliteness"
 }

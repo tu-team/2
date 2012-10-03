@@ -1,14 +1,12 @@
 package tu.coreservice.linkparser
 
 import relex.morphy.{MorphyJWNL, Morphed}
-import tu.model.knowledge.communication.{ContextHelper, Context}
-import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedPhrase, AnnotatedSentence}
+import tu.model.knowledge.communication.Context
+import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence}
 import java.rmi.UnexpectedException
 import tu.model.knowledge.frame.Frame
-import tu.model.knowledge.{Resource, KnowledgeURI}
+import tu.model.knowledge.{Constant, Resource, KnowledgeURI}
 import tu.model.knowledge.domain.Concept
-import relex.feature.FeatureNode
-import java.util
 
 /**
  * @author alex toschev, max talanov
@@ -22,21 +20,11 @@ class MorphyKB(var _sentences: List[AnnotatedSentence]) extends MorphyJWNL {
   }
 
   def sentences = _sentences
-  def sentences_=(in: List[AnnotatedSentence]) = _sentences = in
 
-  final val NOUN_F: String = "noun"
-  final val VERB_F: String = "verb"
-  final val ADJ_F: String = "adj"
-  final val ADV_F: String = "adv"
-  final val ROOT_F: String = "root"
-  final val TYPE_F: String = "type"
-  final val NEG_F: String = "neg"
+  def sentences_=(in: List[AnnotatedSentence]) {
+    _sentences = in
+  }
 
-  val subjectConceptName = "subject"
-  val objectConceptName = "object"
-  val actionConceptName = "action"
-  val desireConceptName = "desire"
-  val formOfPoliteness = "formOfPoliteness"
 
   override def morph(word: String): Morphed = {
     val res: Morphed = super.morph(word)
@@ -66,21 +54,21 @@ m.putRoot(ADV_F, root);
 else
 throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root [" + root + "]"); */
 
-      if (!getConceptByName(mostGenericConcepts, subjectConceptName).isEmpty) {
+      if (!getConceptByName(mostGenericConcepts, Constant.subjectConceptName).isEmpty) {
         res.getFeatures.clear()
-        res.putRoot(this.NOUN_F, word)
-      } else if (!getConceptByName(mostGenericConcepts, objectConceptName).isEmpty) {
+        res.putRoot(Constant.NOUN_F, word)
+      } else if (!getConceptByName(mostGenericConcepts, Constant.objectConceptName).isEmpty) {
         res.getFeatures.clear()
-        res.putRoot(this.NOUN_F, word)
-      } else if (!getConceptByName(mostGenericConcepts, actionConceptName).isEmpty) {
+        res.putRoot(Constant.NOUN_F, word)
+      } else if (!getConceptByName(mostGenericConcepts, Constant.actionConceptName).isEmpty) {
         res.getFeatures.clear()
-        res.putRoot(VERB_F, word)
-      } else if (!getConceptByName(mostGenericConcepts, desireConceptName).isEmpty) {
+        res.putRoot(Constant.VERB_F, word)
+      } else if (!getConceptByName(mostGenericConcepts, Constant.desireConceptName).isEmpty) {
         res.getFeatures.clear()
-        res.putRoot(VERB_F, word)
-      } else if (!getConceptByName(mostGenericConcepts, formOfPoliteness).isEmpty) {
+        res.putRoot(Constant.VERB_F, word)
+      } else if (!getConceptByName(mostGenericConcepts, Constant.formOfPoliteness).isEmpty) {
         res.getFeatures.clear()
-        res.putRoot(ADV_F, word)
+        res.putRoot(Constant.ADV_F, word)
       }
       res
     } else {

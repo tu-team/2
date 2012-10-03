@@ -70,6 +70,16 @@ class ThinkingLifeCycleTest extends FunSuite {
     log info res.toString
   }
 
+  test("Training please is a form of politeness") {
+    val requestText = "Please is a form of politeness."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    assert(res != null)
+    log info res.toString
+  }
+
+
 
   def testCycle(input: String) {
     val requestText = input
