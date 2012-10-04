@@ -6,6 +6,4 @@ package tu.exception
  *         time: 6:57 PM
  */
 
-class UnexpectedStateException extends Exception {
-
-}
+class UnexpectedStateException(message: String) extends Exception(message)

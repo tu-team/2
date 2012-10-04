@@ -21,7 +21,10 @@ class MorphyKB(var _sentences: List[AnnotatedSentence]) extends MorphyJWNL {
 
   def sentences = _sentences
 
-  def sentences_=(in: List[AnnotatedSentence]) = _sentences = in
+  def sentences_=(in: List[AnnotatedSentence]) {
+    _sentences = in
+  }
+
 
   override def morph(word: String): Morphed = {
     val res: Morphed = super.morph(word)

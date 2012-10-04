@@ -13,7 +13,7 @@ import tu.model.knowledge.selector.SelectorRequest
  */
 
 class ProblemDescriptionAnalyserCritic(_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Critic(_exclude, _include, _uri, _probability) {
+  extends Analyser(_exclude, _include, _uri, _probability) {
 
   def this() = this(List[CriticLink](), List[CriticLink](), KnowledgeURI("ProblemDescriptionAnalyserCritic"))
 

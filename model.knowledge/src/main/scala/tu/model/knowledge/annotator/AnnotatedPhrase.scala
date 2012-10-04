@@ -1,7 +1,8 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge._
-import domain.{ConceptLink, Concept}
+import domain.{ConceptNetwork, ConceptLink, Concept}
+import howto.Solution
 import scala.Some
 import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
@@ -230,28 +231,41 @@ object AnnotatedPhrase {
     it
   }
 
-  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): AnnotatedPhrase = {
-    //    apply("dummy phrase from ID-parent")
 
-    val selfMap = kb.loadChild(parent, key, linkType)
-    if (selfMap.isEmpty) {
-      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
-    }
-
+  /**
+   * load from primary storage
+   * @param kb
+   * @param selfMap
+   * @return
+   */
+  def load(kb: KB, selfMap: Map[String, String]): AnnotatedPhrase = {
     val ID = new KBNodeId(selfMap)
+    subload (kb,selfMap,ID )
+  }
 
-    val loadConcepts: List[Concept] = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
-    val loadLinks: List[ConceptLink] = loadConcepts.map {
+
+  private def subload(kb: KB, selfMap: Map[String, String], ID: KBNodeId): AnnotatedPhrase = {
+
+
+    val loadedConcepts: List[Concept] = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
+    val loadedLinks: List[ConceptLink] = loadedConcepts.map {
       c: Concept => {
         c.links
       }
     }.flatten
 
+    val subPhrases = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(load(kb, _))
+    /*
+    val subPhrases =
+      if (subPhrasesRaw.size == 1)
+        subPhrasesRaw.map(new AnnotatedPhrase(_))
+      else
+        subPhrasesRaw.map(load(kb, _))
+        */
     val res = new AnnotatedPhrase(
-      kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(new AnnotatedPhrase(_)), //TODO recursive load
-      loadConcepts,
-      loadLinks,
+      subPhrases,
+      loadedConcepts,
+      loadedLinks,
       new KnowledgeURI(selfMap),
       new Probability(selfMap),
       selfMap.get("text") match {
@@ -267,6 +281,20 @@ object AnnotatedPhrase {
     KBMap.register(res, ID.ID)
 
     res
+  }
+
+
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): AnnotatedPhrase = {
+    //    apply("dummy phrase from ID-parent")
+
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
+    }
+
+    val ID = new KBNodeId(selfMap)
+    subload (kb,selfMap ,ID)
   }
 
 

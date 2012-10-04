@@ -1,22 +1,19 @@
 package tu.dataservice.knowledgebaseserver
 
 
-import tu.coreservice.utilities.TestDataGenerator
-import tu.model.knowledge.domain.Concept._
-import tu.model.knowledge.domain.ConceptLink._
-import tu.model.knowledge.annotator.AnnotatedPhrase._
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.howto.HowTo
 import tu.model.knowledge.frame.Frame
-import tu.model.knowledge.frame.Frame._
-import tu.model.knowledge.KnowledgeURI._
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptTag, ConceptLink, Concept}
 import tu.model.knowledge.{KnowledgeURI, Probability}
+import tu.model.knowledge.critic.CriticModel
 
 /**
  * @author alex
  *         Time stamp: 9/18/12 6:29 PM
  */
+
+/*
 object InitialData {
 
   def fill() {
@@ -24,13 +21,13 @@ object InitialData {
   }
 
   def fillSimulationModelConceptNetwork() {
-    // todo - do it like KBAdatper.domainModel()
+    // did it - see KBAdapter.simulationModel()
     var dt = TestDataGenerator.generateDomainModelConceptNetwork
     N4JKB.saveResource(dt,"simulationConceptNetwork")
 
   }
 
-  def fillReflectiveCrititcs(){
+  def fillReflectiveCritics(){
          // List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
 
 
@@ -38,6 +35,7 @@ object InitialData {
 
 
 }
+ */
 
 object Defaults {
 
@@ -49,7 +47,10 @@ object Defaults {
   val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
   val subjectPhrase = AnnotatedPhrase("subject", CONCEPT)
   val objectConcept = Concept.createSubConcept(CONCEPT, "object")
-  val objectPhrase = AnnotatedPhrase("object", CONCEPT)
+  val objectPhrase = AnnotatedPhrase("object", objectConcept)
+  val formOfPolitenessConcept = Concept.createSubConcept(CONCEPT, "formOfPoliteness")
+  val formOfPolitenessPhrase = AnnotatedPhrase("form of politeness", formOfPolitenessConcept)
+
   val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
   val hasPhrase = AnnotatedPhrase("has", has)
   val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
@@ -146,5 +147,8 @@ object Defaults {
   val systemInstallFirefox = ConceptLink.createSubConceptLink(appliedLink, systemConcept, firefoxConceptInst, "systemInstallFirefox")
   val pleaseInstallFFSimulation = new ConceptNetwork(List[Concept](installActionInst, firefoxConceptInst), List[ConceptLink](systemInstallFirefox),
     KnowledgeURI("pleaseInstallFFSimulation"))
+
+  val defaultSelfReflectiveCritics = List(CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager"))
+
 }
 

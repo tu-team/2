@@ -1,7 +1,8 @@
 package tu.coreservice.action.critic.manager
 
 import tu.model.knowledge.selector.SelectorRequest
-import tu.model.knowledge.{Probability, Constant, KnowledgeURI}
+import tu.model.knowledge.{Constant, KnowledgeURI}
+import tu.model.knowledge.domain.Concept
 
 /**
  * @author max talanov
@@ -11,8 +12,10 @@ import tu.model.knowledge.{Probability, Constant, KnowledgeURI}
 class DoNotUnderstand {
 
   def apply(error: Error): SelectorRequest = {
-    new SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_CRY4HELP_URI), KnowledgeURI(Constant.SELECTOR_REQUEST_CRY4HELP_URI_NAME),
-      new Probability())
+    SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_CRY4HELP_URI), KnowledgeURI(Constant.SELECTOR_REQUEST_CRY4HELP_URI_NAME))
   }
 
+  def apply(notUnderstoodConcepts: List[Concept]): SelectorRequest = {
+    SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_CRY4HELP_URI), KnowledgeURI(Constant.SELECTOR_REQUEST_CRY4HELP_URI_NAME))
+  }
 }

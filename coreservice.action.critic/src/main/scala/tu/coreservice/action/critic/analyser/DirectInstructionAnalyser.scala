@@ -86,7 +86,7 @@ class DirectInstructionAnalyser {
       frequencyConfidence = (0.0, frequencyConfidence._2)
     }
 
-    new SelectorRequest(KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI), KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI_NAME),
+    new SelectorRequest(List(KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI)), KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI_NAME),
       new Probability(frequencyConfidence._1, frequencyConfidence._2))
   }
 

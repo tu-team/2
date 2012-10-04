@@ -10,10 +10,11 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         time: 5:34 PM
  */
 
-case class SelectorRequest(resourceURIList: List[KnowledgeURI], _uri: KnowledgeURI, _probability: Probability)
-  extends Resource(_uri, _probability){
+case class SelectorRequest(resourceURIList: List[KnowledgeURI], _uri: KnowledgeURI, _probability: Probability = new Probability())
+  extends Resource(_uri, _probability)
 
-  def this(_resourceURI: KnowledgeURI, _uri: KnowledgeURI, _probability: Probability = new Probability()) =
-  this (List(_resourceURI), _uri, _probability)
-
+object SelectorRequest {
+  def apply(resourceURIList: KnowledgeURI, _uri: KnowledgeURI): SelectorRequest = {
+    new SelectorRequest(List(resourceURIList), _uri)
+  }
 }

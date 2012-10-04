@@ -6,10 +6,10 @@ import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge._
-import domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
-import annotator.AnnotatedPhrase
-import frame.Frame
-import howto.{HowTo, Solution}
+import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
+import tu.model.knowledge.annotator.AnnotatedPhrase
+import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.howto.{HowTo, Solution}
 
 /**
  * KBSever stub only for prototype purposes.
@@ -23,8 +23,12 @@ object KBAdapter {
   val solutionsName = "stored_solutions_name"
   val goalsName = "goals_name"
   val domainName = "domain_name"
+  val simulationName = "simulation_name"
+  val reformulationName = "reformulation_name"
 
   val selfReflectiveCritics = "selfReflectiveCritics"
+
+  val savedAnnotations ="savedWordAnnotations"
 
   var kb = N4JKB
 
@@ -134,14 +138,20 @@ object KBAdapter {
   val probability = new Probability
 
 
-  def domainModel(): ConceptNetwork = {
+  def domainModel(): ConceptNetwork = someModel(domainName)
+
+  def simulationModel(): ConceptNetwork = someModel(simulationName)
+
+  def reformulationModel(): ConceptNetwork = someModel(reformulationName)
+
+  private def someModel(modelName: String): ConceptNetwork = {
     try {
-      ConceptNetwork.load(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
+      ConceptNetwork.load(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
     }
     catch {
       case _ =>
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
-        res.save(kb, KBNodeId(0), domainName, Constant.DEFAULT_LINK_NAME)
+        res.save(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
         res
     }
 
@@ -188,23 +198,35 @@ object KBAdapter {
     */
   def getAnnotationByWord(word: String): Option[AnnotatedPhrase] = {
 
-    val resources = this.annotations
-    val keys: Iterable[String] = resources.keys.filter {
-      g: String => {
-        g.toLowerCase.equals(word.toLowerCase)
+    var resources = kb.loadChildrenList(savedAnnotations).map(x => AnnotatedPhrase.load(kb, x))
+
+    if (resources.isEmpty )
+    {
+      resources= Defaults.phrases
+    }
+
+    val phrases: Iterable[AnnotatedPhrase] = resources.toList.filter {
+      g: AnnotatedPhrase  => {
+        g.toString.equals (word)
       }
     }
-    if (keys.size > 0) {
-      resources.get(keys.head)
+    if (phrases.size > 0) {
+      Option(phrases.head)
     } else {
       None
     }
   }
 
   def getReflectiveCritics: List[CriticModel] = {
-    // kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
-    CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
-    List[CriticModel]()
+    var list=  kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
+
+    if (list.isEmpty)
+    {
+       //save list to db and return
+      list=Defaults.defaultSelfReflectiveCritics
+    }
+
+    list
   }
 
   //object Defaults moved to InitialData file

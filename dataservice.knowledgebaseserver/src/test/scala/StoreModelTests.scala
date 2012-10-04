@@ -1,13 +1,14 @@
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
-import tu.dataservice.knowledgebaseserver.N4JKB
+import tu.dataservice.knowledgebaseserver.{KBAdapter, N4JKB}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}
+import tu.model.knowledge.KBMap._
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge._
-import tu.model.knowledge.KBMap._
+import annotator.AnnotatedPhrase._
 
 /**
  * @author achepkunov
@@ -22,6 +23,7 @@ class StoreModelTest extends FunSuite {
 
   val uri = KnowledgeURI("testuri")
   val uri1 = KnowledgeURI("testuri1")
+  val uri2 = KnowledgeURI("testuri2")
 
   test("Concept should be stored and restored") {
 
@@ -77,6 +79,21 @@ class StoreModelTest extends FunSuite {
     expect(x.content.uri.name)(y.nodes(0).uri.name)
     expect(x.links.size)(y.links.size)
 
+    val CONCEPT = Concept("concept")
+    val subjectConcept = Concept.createSubConcept(CONCEPT, "subject")
+    val CONCEPT_LINK = ConceptLink(CONCEPT, CONCEPT, "conceptLink")
+    val objectConcept = Concept.createSubConcept(CONCEPT, "object")
+    val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
+    val concepts = List[Concept](CONCEPT, subjectConcept, objectConcept)
+    val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has)
+    val cN2 = new ConceptNetwork(concepts, conceptLinks, uri2)
+
+    cN2.save(N4JKB, context, "testKeyCN2", "testRelation")
+
+    val y2: ConceptNetwork = ConceptNetwork.load(N4JKB, context, "testKeyCN2", "testRelation")
+
+    expect(cN2.links.size)(y.links.size)
+
   }
 
   test("AnnotatedPhrase should be stored and restored") {
@@ -84,7 +101,7 @@ class StoreModelTest extends FunSuite {
     val context = ContextHelper(Nil, "test context 3") //context is parent node for x:Concept
     N4JKB.saveResource(context, "testContext")
 
-    // empty concept
+    // empty phrase
     val subjectConcept = Concept("subject")
     val userConcept = Concept.createSubConcept(subjectConcept, "user")
     val x = AnnotatedPhrase("user", userConcept)
@@ -99,7 +116,34 @@ class StoreModelTest extends FunSuite {
 
     expect(x.phrase)(y.phrase)
 
+    // rec phrase
+    val manualConcept = Concept.createSubConcept(subjectConcept, "manual")
+    val xx = AnnotatedPhrase("manual", manualConcept)
+
+    val x2 = AnnotatedPhrase(List(x, xx))
+
+    x2.save(N4JKB, context, "testUserPhrase2", "testRelation")
+
+    val y2: AnnotatedPhrase = AnnotatedPhrase.load(N4JKB, context, "testUserPhrase2", "testRelation")
+
+
+    expect(x2.phrase)(y2.phrase)
+    expect(x2.phrases.size)(y2.phrases.size)
+    expect(x2.phrases(0).phrase)(y2.phrases(0).phrase)
+    expect(x2.phrases(1).phrase)(y2.phrases(1).phrase)
+
   }
 
+  test("Get Self Reflective Critics")
+  {
+    expect ( KBAdapter.getReflectiveCritics.isEmpty)(false)
+  }
+
+  test("Test getAnnotationByWord")
+  {
+    expect ( KBAdapter.getAnnotationByWord("word").isEmpty)(false)
+
+    //TODO add save test
+  }
 
 }

@@ -25,6 +25,15 @@ class ThinkingLifeCycleTest extends FunSuite {
     assert(true)
   }
 
+  test("tense is kind of concept.") {
+    val requestText = "Tense is kind of concept."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    assert(res != null)
+    log info res.toString
+  }
+
   test("run comelete lifecycle with dummy way2think") {
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
@@ -61,14 +70,15 @@ class ThinkingLifeCycleTest extends FunSuite {
     log info res.toString
   }
 
-  test("tense is kind of concept.") {
-    val requestText = "Tense is kind of concept."
+  test("Training please is a form of politeness") {
+    val requestText = "Please is a form of politeness."
     val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
     log info res.toString
   }
+
 
 
   def testCycle(input: String) {
