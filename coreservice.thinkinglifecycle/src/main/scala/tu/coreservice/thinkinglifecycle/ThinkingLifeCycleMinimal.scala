@@ -36,9 +36,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: TrainingRequest): List[Goal] = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = KBAdapter.domainModel
-    globalContext.simulationModel = KBAdapter.simulationModel
-    globalContext.reformulationModel = KBAdapter.reformulationModel
+    globalContext.domainModel = KBAdapter.domainModel()
+    globalContext.simulationModel = KBAdapter.simulationModel()
+    globalContext.reformulationModel = KBAdapter.reformulationModel()
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
     // process resources
@@ -72,9 +72,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request): List[Goal] = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = KBAdapter.domainModel
-    globalContext.simulationModel = KBAdapter.simulationModel
-    globalContext.reformulationModel = KBAdapter.reformulationModel
+    globalContext.domainModel = KBAdapter.domainModel()
+    globalContext.simulationModel = KBAdapter.simulationModel()
+    globalContext.reformulationModel = KBAdapter.reformulationModel()
     val goalManager = new GoalManager
 
     var resGoals: List[Goal] = List[Goal]()

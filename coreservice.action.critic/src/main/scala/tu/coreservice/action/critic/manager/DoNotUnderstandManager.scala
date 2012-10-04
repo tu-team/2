@@ -4,7 +4,6 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.communication.{ContextHelper, Context}
 import tu.model.knowledge.helper.URIGenerator
 import tu.coreservice.action.critic.{CriticLink, Critic}
-import tu.exception.UnexpectedStateException
 
 /**
  * @author max talanov
@@ -37,7 +36,7 @@ class DoNotUnderstandManager(_exclude: List[CriticLink], _include: List[CriticLi
           val d = new DoNotUnderstand()
           ContextHelper(List[Resource](), d(inputContext.notUnderstoodConcepts), this.getClass.getName + " result")
         } else {
-          throw new UnexpectedStateException("$DoNotUnderstandManager_was_invoked_incorrectly")
+          ContextHelper(List[Resource](), this.getClass.getName + " result")
         }
       }
     }

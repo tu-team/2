@@ -96,7 +96,7 @@ object KBAdapter {
   def workflow = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
   def trainingGoal = Map[Goal, List[ActionModel]](
-    Goal("ProcessIncident") ->
+    Goal("Train") ->
       List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
         Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
         Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
