@@ -6,10 +6,9 @@ import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge._
-import tu.model.knowledge.domain.{ConceptTag, ConceptLink, ConceptNetwork, Concept}
+import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.AnnotatedPhrase
-import tu.model.knowledge.frame.Frame
-import tu.model.knowledge.howto.{HowTo, Solution}
+import tu.model.knowledge.howto.Solution
 
 /**
  * KBSever stub only for prototype purposes.
@@ -28,7 +27,7 @@ object KBAdapter {
 
   val selfReflectiveCritics = "selfReflectiveCritics"
 
-  val savedAnnotations ="savedWordAnnotations"
+  val savedAnnotations = "savedWordAnnotations"
 
   var kb = N4JKB
 
@@ -58,6 +57,12 @@ object KBAdapter {
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.SearchSolution")
         ),
       Goal("ProcessResponse") ->
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
+          Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
+          Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
+          Way2ThinkModel("tu.coreservice.action.way2think.simulation.CorrelationWay2Think")
+        ),
+      Goal("Train") ->
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
           Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
@@ -200,14 +205,13 @@ object KBAdapter {
 
     var resources = kb.loadChildrenList(savedAnnotations).map(x => AnnotatedPhrase.load(kb, x))
 
-    if (resources.isEmpty )
-    {
-      resources= Defaults.phrases
+    if (resources.isEmpty) {
+      resources = Defaults.phrases
     }
 
     val phrases: Iterable[AnnotatedPhrase] = resources.toList.filter {
-      g: AnnotatedPhrase  => {
-        g.toString.equals (word)
+      g: AnnotatedPhrase => {
+        g.toString.equals(word)
       }
     }
     if (phrases.size > 0) {
@@ -218,12 +222,11 @@ object KBAdapter {
   }
 
   def getReflectiveCritics: List[CriticModel] = {
-    var list=  kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
+    var list = kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
 
-    if (list.isEmpty)
-    {
-       //save list to db and return
-      list=Defaults.defaultSelfReflectiveCritics
+    if (list.isEmpty) {
+      //save list to db and return
+      list = Defaults.defaultSelfReflectiveCritics
     }
 
     list

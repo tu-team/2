@@ -7,6 +7,7 @@ import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.communication.Request
 import tu.model.knowledge.selector.SelectorRequest
 import tu.model.knowledge.domain.Concept
+import tu.exception.UnexpectedStateException
 
 
 /**
@@ -24,7 +25,8 @@ class Selector {
         resources
       }
       case None => {
-        List(Cry4HelpWay2Think("$Can_not_find_resources_for_goal"))
+        // List(Cry4HelpWay2Think("$Can_not_find_resources_for_goal"))
+        throw new UnexpectedStateException("Can not find resource for goal " + goal)
       }
     }
   }
