@@ -1,5 +1,7 @@
 package tu.coreservice.utilities
 
+import util.matching.Regex
+
 /**
  * @author toschev alex
  *         Date: 28.05.12
@@ -11,6 +13,11 @@ package tu.coreservice.utilities
  */
 object Configurator {
 
+  val configFile = java.lang.System.getProperty("user.home") + "/tu.ini"
+  val fileLines = io.Source.fromFile(configFile).getLines.toList
+
+  val useProxyPattern = new Regex("useProxy *= *(true|yes|1)")
+  val useProxy = fileLines.exists(useProxyPattern.findAllIn(_).hasNext)
   /*
     proxy description
    */
@@ -19,7 +26,7 @@ object Configurator {
     var res = new ProxyDescription
     res.proxyHost = "ru100279159"
     res.proxyPort = 3128
-    res.useProxy = true
+    res.useProxy = useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
     return res
   }
 
