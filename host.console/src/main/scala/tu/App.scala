@@ -19,38 +19,61 @@ object AppMain {
 
     var exitConsole=false
 
-
-
-    Console.println("Starting test... ")
-
-    while (!exitConsole)
+    if (args(0)=="trainfile")
     {
-      Console.println("TU is welcome you. Enter: 'exit' for quit.")
-      Console.println("========================================")
-      Console.println("You request :>")
-
-      val sentence:String = Console.readLine()
-
-      exitConsole=sentence=="exit" || sentence =="'exit'"
-
-      if (exitConsole) {
-        Console.println("Exiting...")
-        scala.util.control.Breaks.break()
-
-      }
-
-      Console.println("Testing:" + sentence)
-      //extract sentence
-
-      val requestText = sentence
-      Console.println("Running thinking lifecycle:" + sentence)
-      val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
-      val t = new ThinkingLifeCycleMinimal()
-      val res = t(r)
-      Console.println("End of execution");
+        val file = args(1)
+        Console.println("Trying to load train data from file " + file)
+        val lines = scala.io.Source.fromFile(file).mkString
+        train(lines)
     }
 
+    Console.println("Starting test... ")
+    if (args.length<=0)
+    {
+      while (!exitConsole)
+      {
+        Console.println("TU is welcome you. Enter: 'exit' for quit, 'request' to enter ")
+        Console.println("request mode, 'train' to enter training mode")
+        Console.println("==================================================================")
+        Console.println(" :>")
 
+        val command:String = Console.readLine()
+
+        exitConsole=command=="exit" || command =="'exit'"
+
+        if (exitConsole) {
+          Console.println("Exiting...")
+          exitConsole=true
+
+        }
+        else if (command =="train")
+        {
+          Console.println("Entering training mode, please enter train phrase ->")
+
+          train(Console.readLine())
+        }
+        else if (command =="request")
+        {
+          Console.println("Entering request mode, please enter request phrase ->")
+          //extract sentence
+
+          val requestText = Console.readLine()
+          Console.println("Running thinking lifecycle:" + command)
+          val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+          val t = new ThinkingLifeCycleMinimal()
+          val res = t(r)
+          Console.println("End of execution");
+        }
+
+
+
+      }
+    }
+
+    def train(st:String)
+    {
+       //TODO:  //add training here
+    }
 
 
   }
