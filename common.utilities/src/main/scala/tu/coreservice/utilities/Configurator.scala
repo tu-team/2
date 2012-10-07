@@ -13,11 +13,12 @@ import util.matching.Regex
  */
 object Configurator {
 
+  /* this is not correct way to load ini!
   val configFile = java.lang.System.getProperty("user.home") + "/tu.ini"
   val fileLines = io.Source.fromFile(configFile).getLines.toList
 
   val useProxyPattern = new Regex("useProxy *= *(true|yes|1)")
-  val useProxy = fileLines.exists(useProxyPattern.findAllIn(_).hasNext)
+  val useProxy = fileLines.exists(useProxyPattern.findAllIn(_).hasNext)   */
   /*
     proxy description
    */
@@ -26,7 +27,7 @@ object Configurator {
     var res = new ProxyDescription
     res.proxyHost = "ru100279159"
     res.proxyPort = 3128
-    res.useProxy = useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
+    res.useProxy =false // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
     return res
   }
 

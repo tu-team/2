@@ -51,6 +51,15 @@ object Defaults {
   val formOfPolitenessConcept = Concept.createSubConcept(CONCEPT, "formOfPoliteness")
   val formOfPolitenessPhrase = AnnotatedPhrase("form of politeness", formOfPolitenessConcept)
 
+  /**
+   * Links
+   */
+  val missLink = ConceptLink(userConcept, objectConcept, "miss")
+  val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
+  val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
+
+
+
   val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
   val hasPhrase = AnnotatedPhrase("has", has)
   val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
@@ -58,9 +67,13 @@ object Defaults {
   val generalisationLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "generalisation")
   val isAPhrase = AnnotatedPhrase("is a", generalisationLink)
   val kindOfPhrase = AnnotatedPhrase("kind of", generalisationLink)
+  val missPhrase = AnnotatedPhrase("miss", missLink )
   val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept)
   val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, isLink, generalisationLink)
-  val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase)
+
+
+
+  val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase,missPhrase)
 
   val softwareConcept = Concept.createSubConcept(objectConcept, "sofware")
   val browserConcept = Concept.createSubConcept(softwareConcept, "Browser")
@@ -80,12 +93,6 @@ object Defaults {
   val tenseLink = ConceptLink(subjectConcept, objectConcept, "tense")
   val posLink = ConceptLink(subjectConcept, objectConcept, "pos")
 
-  /**
-   * Links
-   */
-  val missLink = ConceptLink(userConcept, objectConcept, "miss")
-  val hasNo = ConceptLink(subjectConcept, objectConcept, "hasNo")
-  val appliedLink = ConceptLink(subjectConcept, objectConcept, "applied")
 
 
   /**
