@@ -176,6 +176,8 @@ object ConceptNetwork {
     new ConceptNetwork(nodes, links, uri)
   }
 
+  //strange
+
   /**
    * Returns nodes that has generalisations with specified name.
    * @param nodes List[Concept] to filter.
