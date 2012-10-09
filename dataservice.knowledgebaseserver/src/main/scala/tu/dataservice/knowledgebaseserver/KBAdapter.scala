@@ -66,7 +66,7 @@ object KBAdapter {
         List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
           Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
-          Way2ThinkModel("tu.coreservice.action.way2think.simulation.CorrelationWay2Think")
+          Way2ThinkModel("tu.coreservice.action.way2think.correlation.CorrelationWay2Think")
         )
     )
 
@@ -105,7 +105,7 @@ object KBAdapter {
       List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
         Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
         Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
-        Way2ThinkModel("tu.coreservice.action.way2think.simulation.CorrelationWay2Think")
+        Way2ThinkModel("tu.coreservice.action.way2think.correlation.CorrelationWay2Think")
       )
   )
 
