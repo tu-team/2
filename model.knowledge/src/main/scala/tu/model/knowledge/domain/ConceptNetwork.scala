@@ -28,27 +28,6 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     )
   }
 
-  def loadLinksNodes(kb: KB): List[Concept] = {
-    Nil
-    /* TODO - move to object
-    val list = kb.loadChildrenList(this, Constant.NODES_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new Concept(x)
-      }
-    }*/
-  }
-
-  //TODO
-  /*
-  def loadLinksLinks(kb: KB): List[ConceptLink] = {
-    val list = kb.loadChildrenList(this, Constant.LINKS_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new ConceptLink(x)
-      }
-    }
-  }*/
 
   def this(uri: KnowledgeURI) = {
     this(List[Concept](), List[ConceptLink](), uri)
@@ -146,8 +125,8 @@ object ConceptNetwork {
       pair: Pair[KnowledgeURI, Resource] => pair._2.asInstanceOf[Concept]
     }.toList
 
-    val linksSourceMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
-    val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val linksSourceMap = kb.loadChildrenMap(ID, Constant.LINKS_LINK_NAME)
+    val linksDestinationMap = kb.loadChildrenMap(ID, Constant.LINKS_LINK_NAME)
     val conceptLinkList: List[ConceptLink] =
       linksSourceMap.keys.foldLeft(List[ConceptLink]()) {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
