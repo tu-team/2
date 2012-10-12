@@ -60,6 +60,12 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   def generalisations: TypedKLine[Concept] = _generalisations
 
+
+  def generalisationsList:List[Concept] = {
+      _generalisations.frames.values.toList
+    }
+
+
   /**
    * Assigns generalisation list to specified.
    * @param conceptKline List of concepts to assign

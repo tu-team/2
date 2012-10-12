@@ -28,27 +28,6 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     )
   }
 
-  def loadLinksNodes(kb: KB): List[Concept] = {
-    Nil
-    /* TODO - move to object
-    val list = kb.loadChildrenList(this, Constant.NODES_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new Concept(x)
-      }
-    }*/
-  }
-
-  //TODO
-  /*
-  def loadLinksLinks(kb: KB): List[ConceptLink] = {
-    val list = kb.loadChildrenList(this, Constant.LINKS_LINK_NAME)
-    list.map {
-      x: Map[String, String] => {
-        new ConceptLink(x)
-      }
-    }
-  }*/
 
   def this(uri: KnowledgeURI) = {
     this(List[Concept](), List[ConceptLink](), uri)
@@ -108,6 +87,50 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
     this.getClass.getName + " [" + nodes.toString + "][" + links + "]@" + uri.toString
   }
 
+  def toText = {
+    def searchToUp(where:Concept,  what:Concept):Boolean = {
+      if (where.uri.name == what.uri.name)
+        return true;
+      val up = where.generalisationsList
+      if( up.size == 0)
+        return false;
+      searchToUp(up.head, what)
+    }
+    val leafs = nodes.filter(i => nodes.filter(j => j.uri.name != i.uri.name && searchToUp(j, i) ).isEmpty)
+
+    def oneLink(x:Concept, l:ConceptLink):String = {
+      val lString = l.uri.name
+      if (l.source.toString == l.destination.toString)
+        "<" + lString + ">"
+      else if (x.toString == l.destination.toString)
+        "["+ l.source.toString + " <" + lString + ">]"
+      else if (l.source.toString == x.toString)
+        "[<" + lString + "> " + l.destination.toString + "]"
+      else
+        ""
+    }
+    def listLinks(x:Concept):String = {
+      _links.map(l => oneLink(x, l)).mkString("")
+    }
+
+    def oneConcept(x:Concept):String = {
+      if (_nodes.contains(x))
+        x.__content.toString +listLinks(x)
+      else
+        "(" + x.__content.toString + ")"
+    }
+
+    def oneLeaf(x:Concept):String = {
+      val up = x.generalisationsList
+      if( up.size == 0)
+        return x.toString
+      oneConcept(x) + " <- " + oneLeaf(up.head)
+    }
+
+    leafs.map(oneLeaf).mkString("\n")
+
+  }
+
   def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
 
@@ -146,8 +169,8 @@ object ConceptNetwork {
       pair: Pair[KnowledgeURI, Resource] => pair._2.asInstanceOf[Concept]
     }.toList
 
-    val linksSourceMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
-    val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
+    val linksSourceMap = kb.loadChildrenMap(ID, Constant.LINKS_LINK_NAME)
+    val linksDestinationMap = kb.loadChildrenMap(ID, Constant.LINKS_LINK_NAME)
     val conceptLinkList: List[ConceptLink] =
       linksSourceMap.keys.foldLeft(List[ConceptLink]()) {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
