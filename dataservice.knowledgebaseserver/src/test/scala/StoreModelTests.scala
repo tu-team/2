@@ -92,7 +92,7 @@ class StoreModelTest extends FunSuite {
 
     val y2: ConceptNetwork = ConceptNetwork.load(N4JKB, context, "testKeyCN2", "testRelation")
 
-    expect(cN2.links.size)(y.links.size)
+    expect(cN2.links.size)(y2.links.size)
 
   }
 
