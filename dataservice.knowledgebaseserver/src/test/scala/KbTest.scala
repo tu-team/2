@@ -14,56 +14,45 @@
  * limitations under the License.
  */
 
-import collection.Map
 import tu.dataservice.knowledgebaseserver.N4JKB
-import org.neo4j.graphdb.{Node, GraphDatabaseService, Transaction, RelationshipType}
-import org.neo4j.kernel.EmbeddedGraphDatabase
+import org.neo4j.graphdb.{Transaction, RelationshipType}
 import org.scalatest._
-import org.scalatest.Assertions._
 
 
 /*
 Here's an example of a FunSuite with ShouldMatchers mixed in:
 */
 
-import org.scalatest.matchers.ShouldMatchers
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 
- import java.io.FileReader
- import java.io.FileWriter
- import java.io.File
-
-
-class TestRelation extends RelationshipType
-{
-  def name():String = {"test"}
+class TestRelation extends RelationshipType {
+  def name(): String = {
+    "test"
+  }
 }
 
 @RunWith(classOf[JUnitRunner])
-class KbTest extends FunSuite{
-  test("empty ...")
-  {
+class KbTest extends FunSuite {
+  test("empty ...") {
     val testRelation = new TestRelation
-    var ok:Boolean = false
+    var ok: Boolean = false
 
 
     assert(!ok)
 
-    val tx:Transaction = N4JKB().beginTx();
-    try
-    {
+    val tx: Transaction = N4JKB().beginTx()
+    try {
       var indexedNode = N4JKB.addIndexedNode("node1")
       indexedNode.setProperty("test_property", "test_value")
       //val firstNode:Node = N4JKB.addLinkedNode(fromNode:Node, relation:RelationshipType)
-      tx.success();
+      tx.success()
       ok = true
     }
-    finally
-    {
-      tx.finish();
+    finally {
+      tx.finish()
     }
     assert(ok)
     //dummy.graphDb.shutdown()
@@ -73,27 +62,24 @@ class KbTest extends FunSuite{
 }
 
 @RunWith(classOf[JUnitRunner])
-class N4JTest extends FunSuite{
-  test("empty write to db")
-  {
+class N4JTest extends FunSuite {
+  test("empty write to db") {
     val testRelation = new TestRelation
-    var ok:Boolean = false
-    val tx:Transaction = N4JKB().beginTx();
-    try
-    {
-      val firstNode = N4JKB().createNode();
-      firstNode.setProperty( "message", "Hello, " );
-      val secondNode = N4JKB().createNode();
-      secondNode.setProperty( "message", "World!" );
-      val relationship = firstNode.createRelationshipTo( secondNode, testRelation );
-      relationship.setProperty( "message", "brave Neo4j " );
+    var ok: Boolean = false
+    val tx: Transaction = N4JKB().beginTx()
+    try {
+      val firstNode = N4JKB().createNode()
+      firstNode.setProperty("message", "Hello, ")
+      val secondNode = N4JKB().createNode()
+      secondNode.setProperty("message", "World!")
+      val relationship = firstNode.createRelationshipTo(secondNode, testRelation)
+      relationship.setProperty("message", "brave Neo4j ")
 
-      tx.success();
+      tx.success()
       ok = true
     }
-    finally
-    {
-      tx.finish();
+    finally {
+      tx.finish()
     }
     assert(ok)
     //dummy.graphDb.shutdown()
@@ -103,29 +89,29 @@ class N4JTest extends FunSuite{
 }
 
 @RunWith(classOf[JUnitRunner])
-class N4JStressTest extends FunSuite{
+class N4JStressTest extends FunSuite {
 
 }
 
 @RunWith(classOf[JUnitRunner])
 class MasterSuite extends Suite with BeforeAndAfterAll {
 
-   // Set up the temp file needed by the test, taking
-   // a file name from the configMap
-   //override def beforeAll(configMap: Map[String, Any]) {
-   override def beforeAll() {
+  // Set up the temp file needed by the test, taking
+  // a file name from the configMap
+  //override def beforeAll(configMap: Map[String, Any]) {
+  override def beforeAll() {
 
-//     dummy.graphDb = new EmbeddedGraphDatabase( "~/kb" )
+    //     dummy.graphDb = new EmbeddedGraphDatabase( "~/kb" )
 
-   }
+  }
 
-   override def nestedSuites =
-     List(new KbTest, new N4JTest, new N4JStressTest)
+  override def nestedSuites =
+    List(new KbTest, new N4JTest, new N4JStressTest)
 
-   override def afterAll() {
-     //     maybe remove all test data?
-     //ToDo - find about multi thread for study
-   }
- }
+  override def afterAll() {
+    //     maybe remove all test data?
+    //ToDo - find about multi thread for study
+  }
+}
 
 
