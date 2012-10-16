@@ -11,7 +11,7 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 object LongTermMemory {
 
   def merge(updatedResource: ShortTermMemoryResourceWrapper, domainURI: KnowledgeURI) {
-     KBAdapter
+     KBAdapter.domainModel()
   }
 
 }

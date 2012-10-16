@@ -139,16 +139,24 @@ object KBAdapter {
 
   def domainModel(name: String) = someModel(name)
 
+  def domainModel(uri: KnowledgeURI) = someModel(uri.name)
+
   @deprecated
   def simulationModel(): ConceptNetwork = someModel(Constant.simulationName)
 
   def simulationModel(name: String): ConceptNetwork = someModel(name)
+
+  def simulationModel(uri: KnowledgeURI): ConceptNetwork = someModel(uri.name)
 
   @deprecated
   def reformulationModel(): ConceptNetwork = someModel(Constant.reformulationName)
 
   def reformulationModel(name: String): ConceptNetwork = someModel(name)
 
+  def reformulationModel(uri: KnowledgeURI): ConceptNetwork = someModel(uri.name)
+
+  //TODO Adel this sohould used KnowledgeURI not the name
+  @deprecated
   private def someModel(modelName: String): ConceptNetwork = {
     try {
       ConceptNetwork.load(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
