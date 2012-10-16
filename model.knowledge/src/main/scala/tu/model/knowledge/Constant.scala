@@ -8,6 +8,16 @@ package tu.model.knowledge
 
 object Constant {
 
+  val solutionsName = "stored_solutions_name"
+  val goalsName = "goals_name"
+  val domainName = "domain_name"
+  val simulationName = "simulation_name"
+  val reformulationName = "reformulation_name"
+
+  val selfReflectiveCritics = "selfReflectiveCritics"
+
+  val savedAnnotations = "savedWordAnnotations"
+
   val DELIMITER = "."
   val REVISION_DELIMITER = "/"
   val UID_DELIMITER = "#"

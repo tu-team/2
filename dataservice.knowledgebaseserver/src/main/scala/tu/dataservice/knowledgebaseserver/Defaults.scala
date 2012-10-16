@@ -9,7 +9,7 @@ import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.critic.CriticModel
 
 /**
- * @author alex
+ * @author alex toschev
  *         Time stamp: 9/18/12 6:29 PM
  */
 

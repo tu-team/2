@@ -9,6 +9,7 @@ import tu.model.knowledge._
 import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.howto.Solution
+import tu.model.knowledge.Constant
 
 /**
  * KBSever stub only for prototype purposes.
@@ -19,15 +20,13 @@ import tu.model.knowledge.howto.Solution
 
 object KBAdapter {
 
-  val solutionsName = "stored_solutions_name"
-  val goalsName = "goals_name"
-  val domainName = "domain_name"
-  val simulationName = "simulation_name"
-  val reformulationName = "reformulation_name"
-
-  val selfReflectiveCritics = "selfReflectiveCritics"
-
-  val savedAnnotations = "savedWordAnnotations"
+  val solutionsName = Constant.solutionsName
+  val goalsName = Constant.goalsName
+  val domainName = Constant.domainName
+  val simulationName = Constant.simulationName
+  val reformulationName = Constant.reformulationName
+  val selfReflectiveCritics = Constant.selfReflectiveCritics
+  val savedAnnotations = Constant.savedAnnotations
 
   var kb = N4JKB
 
@@ -143,11 +142,20 @@ object KBAdapter {
   val probability = new Probability
 
 
+  @deprecated
   def domainModel(): ConceptNetwork = someModel(domainName)
 
+  def domainModel(name: String)  = someModel(name)
+
+  @deprecated
   def simulationModel(): ConceptNetwork = someModel(simulationName)
 
+  def simulationModel(name: String): ConceptNetwork = someModel(name)
+
+  @deprecated
   def reformulationModel(): ConceptNetwork = someModel(reformulationName)
+
+  def reformulationModel(name: String): ConceptNetwork = someModel(name)
 
   private def someModel(modelName: String): ConceptNetwork = {
     try {
