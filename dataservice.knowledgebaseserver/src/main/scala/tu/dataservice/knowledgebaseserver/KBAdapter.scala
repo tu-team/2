@@ -20,14 +20,6 @@ import tu.model.knowledge.Constant
 
 object KBAdapter {
 
-  val solutionsName = Constant.solutionsName
-  val goalsName = Constant.goalsName
-  val domainName = Constant.domainName
-  val simulationName = Constant.simulationName
-  val reformulationName = Constant.reformulationName
-  val selfReflectiveCritics = Constant.selfReflectiveCritics
-  val savedAnnotations = Constant.savedAnnotations
-
   var kb = N4JKB
 
   private def goalResourceMap =
@@ -143,17 +135,17 @@ object KBAdapter {
 
 
   @deprecated
-  def domainModel(): ConceptNetwork = someModel(domainName)
+  def domainModel(): ConceptNetwork = someModel(Constant.domainName)
 
-  def domainModel(name: String)  = someModel(name)
+  def domainModel(name: String) = someModel(name)
 
   @deprecated
-  def simulationModel(): ConceptNetwork = someModel(simulationName)
+  def simulationModel(): ConceptNetwork = someModel(Constant.simulationName)
 
   def simulationModel(name: String): ConceptNetwork = someModel(name)
 
   @deprecated
-  def reformulationModel(): ConceptNetwork = someModel(reformulationName)
+  def reformulationModel(): ConceptNetwork = someModel(Constant.reformulationName)
 
   def reformulationModel(name: String): ConceptNetwork = someModel(name)
 
@@ -171,7 +163,7 @@ object KBAdapter {
   }
 
   def solutions(): List[SolvedIssue] = {
-    val res: List[SolvedIssue] = kb.loadChildrenList(solutionsName).map(x => SolvedIssue.load(kb, x))
+    val res: List[SolvedIssue] = kb.loadChildrenList(Constant.solutionsName).map(x => SolvedIssue.load(kb, x))
     if (res.isEmpty) {
       //save solutions
       getDefaultSolutions
@@ -180,7 +172,7 @@ object KBAdapter {
   }
 
   def solutionsAdd(item: SolvedIssue): List[SolvedIssue] = {
-    item.save(kb, KBNodeId(KB.getRootId()), item.uri.toString, solutionsName)
+    item.save(kb, KBNodeId(KB.getRootId()), item.uri.toString, Constant.solutionsName)
     solutions()
   }
 
@@ -211,7 +203,7 @@ object KBAdapter {
     */
   def getAnnotationByWord(word: String): Option[AnnotatedPhrase] = {
 
-    var resources = kb.loadChildrenList(savedAnnotations).map(x => AnnotatedPhrase.load(kb, x))
+    var resources = kb.loadChildrenList(Constant.savedAnnotations).map(x => AnnotatedPhrase.load(kb, x))
 
     if (resources.isEmpty) {
       resources = Defaults.phrases
@@ -230,7 +222,7 @@ object KBAdapter {
   }
 
   def getReflectiveCritics: List[CriticModel] = {
-    var list = kb.loadChildrenList(selfReflectiveCritics).map(x => CriticModel.load(kb, x))
+    var list = kb.loadChildrenList(Constant.selfReflectiveCritics).map(x => CriticModel.load(kb, x))
 
     if (list.isEmpty) {
       //save list to db and return
