@@ -7,7 +7,7 @@ import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.selector.SelectorRequest
-import tu.model.knowledge.communication.{Context, ContextHelper}
+import tu.model.knowledge.communication.{ShortTermMemory, ContextHelper}
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import tu.coreservice.utilities.URIHelper
@@ -23,7 +23,7 @@ class Cry4HelpTest extends FunSuite {
 
   test("Read response from user") {
     var cry4help = new Cry4HelpWay2Think()
-    var ctx = Context(Map[KnowledgeURI,Resource](),new KnowledgeURI("none","none","None"))
+    var ctx = ShortTermMemory(Map[KnowledgeURI,Resource](),new KnowledgeURI("none","none","None"))
 
     ctx.lastError = new Error("Simple error occured")
 

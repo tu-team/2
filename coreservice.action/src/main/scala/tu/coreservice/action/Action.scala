@@ -1,8 +1,8 @@
 package tu.coreservice.action
 
 import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
-import tu.model.knowledge.communication.Context
-import actors.Actor
+import tu.model.knowledge.communication.ShortTermMemory
+
 
 /**
  * Abstract class of an actions.
@@ -19,10 +19,10 @@ abstract class Action(_uri: KnowledgeURI, _probability: Probability)
   def stop(): Boolean
 
   /**
-   * Generic method of the action to be applied over input Context and put all results in output Context.
-   * @param inputContext Context of all inbound parameters
-   * @return output Context.
+   * Generic method of the action to be applied over input ShortTermMemory and put all results in output ShortTermMemory.
+   * @param inputContext ShortTermMemory of all inbound parameters
+   * @return output ShortTermMemory.
    */
-  def apply(inputContext: Context): Context
+  def apply(inputContext: ShortTermMemory): ShortTermMemory
 
 }

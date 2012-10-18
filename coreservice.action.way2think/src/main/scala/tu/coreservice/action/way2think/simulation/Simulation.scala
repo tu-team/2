@@ -2,7 +2,7 @@ package tu.coreservice.action.way2think.simulation
 
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase, AnnotatedNarrative}
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.Resource
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
@@ -115,7 +115,7 @@ class Simulation extends SimulationReformulationAbstract {
     this.countLinks(concept, text.concepts)
   }
 
-  private def processNotKnown(in: List[AnnotatedPhrase]): Context = {
+  private def processNotKnown(in: List[AnnotatedPhrase]): ShortTermMemory = {
     var res: List[Resource] = in
     res = res ++ List[Resource](KnowledgeString("Please clarify phreses", "Please.clarify.sentences"))
     val context = ContextHelper.apply(res, "notKnown")

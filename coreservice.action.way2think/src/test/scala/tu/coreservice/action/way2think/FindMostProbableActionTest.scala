@@ -3,7 +3,7 @@ package tu.coreservice.action.way2think
 import org.scalatest.FunSuite
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.model.knowledge.selector.SelectorRequest
-import tu.model.knowledge.communication.{Context, ContextHelper}
+import tu.model.knowledge.communication.{ShortTermMemory, ContextHelper}
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
@@ -25,7 +25,7 @@ class FindMostProbableActionTest extends FunSuite {
     org.scalatest.Assertions.expect(1 > 0)(true) //expected, actual
     val w2t0 = SelectorRequest(List(KnowledgeURI("test1k")), KnowledgeURI("test1"), new Probability(0.9))
 
-    var context0: Context = ContextHelper(Nil, "test context")
+    var context0: ShortTermMemory = ContextHelper(Nil, "test context")
     context0.classificationResultsAdd(w2t0)
     val context1 = FindMostProbableAction(context0)
 
@@ -43,7 +43,7 @@ class FindMostProbableActionTest extends FunSuite {
     val w2t0 = new SelectorRequest(List(KnowledgeURI("test1k")), KnowledgeURI("test1"), new Probability(0.9))
     val w2t1 = new SelectorRequest(List(KnowledgeURI("test2k")), KnowledgeURI("test2"), new Probability(0.8))
 
-    val context0: Context = ContextHelper(Nil, "test context")
+    val context0: ShortTermMemory = ContextHelper(Nil, "test context")
 
     context0.classificationResultsAdd(w2t0)
     context0.classificationResultsAdd(w2t1)

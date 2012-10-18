@@ -1,7 +1,6 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.Resource
-import tu.model.knowledge.communication.{Context, ContextHelper}
+import tu.model.knowledge.communication.{ShortTermMemory, ContextHelper}
 import tu.coreservice.action.{Action, ActionActor}
 import tu.coreservice.action.event.{Stop, Start}
 import org.slf4j.LoggerFactory
@@ -17,7 +16,7 @@ object JoinProcessor {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  def apply(actions: List[Action], context: Context): Context = {
+  def apply(actions: List[Action], context: ShortTermMemory): ShortTermMemory = {
     // initialisation and asynchronous call
     val actionActors: List[ActionActor] = for (a <- actions) yield {
       val aA: ActionActor = new ActionActor
@@ -26,9 +25,9 @@ object JoinProcessor {
       aA
     }
     // join
-    val contexts: List[Context] = for (a <- actionActors) yield {
+    val contexts: List[ShortTermMemory] = for (a <- actionActors) yield {
       a !? Stop match {
-        case res: Context => {
+        case res: ShortTermMemory => {
           log info res.toString
           res
         }

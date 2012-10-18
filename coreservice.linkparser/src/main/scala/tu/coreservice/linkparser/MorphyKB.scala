@@ -1,7 +1,7 @@
 package tu.coreservice.linkparser
 
 import relex.morphy.{MorphyJWNL, Morphed}
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence}
 import java.rmi.UnexpectedException
 import tu.model.knowledge.frame.Frame
@@ -141,7 +141,7 @@ throw new RuntimeException("Unknown WordNet category: [" + cat + "] with root ["
     }
   }
 
-  def processLastResult(context: Context): List[AnnotatedSentence] = {
+  def processLastResult(context: ShortTermMemory): List[AnnotatedSentence] = {
     val lastResult = context.lastResult
     lastResult match {
       case Some(frame: Frame) => {

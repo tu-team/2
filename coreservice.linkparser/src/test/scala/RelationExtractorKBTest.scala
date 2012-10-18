@@ -16,7 +16,7 @@ import relex.feature.{FeatureNameFilter, FeatureNode}
 import tu.coreservice.linkparser.RelationExtractorKB
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
-import tu.model.knowledge.communication.{Context, ContextHelper}
+import tu.model.knowledge.communication.{ShortTermMemory, ContextHelper}
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.{Resource, KnowledgeURI}
 import tu.model.knowledge.primitive.KnowledgeString

@@ -1,9 +1,8 @@
 package tu.coreservice.action.way2think
 
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 import tu.model.knowledge.{Probability, KnowledgeURI}
 import tu.coreservice.action.{Action}
-import tu.coreservice.utilities.URIHelper
 
 import tu.model.knowledge.helper.URIGenerator
 
@@ -20,10 +19,10 @@ abstract class Way2Think(_uri: KnowledgeURI, _probability: Probability = new Pro
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context): Context
+  def apply(inputContext: ShortTermMemory): ShortTermMemory
 
   def this() = this(URIGenerator.generateURI("Way2Think"))
 

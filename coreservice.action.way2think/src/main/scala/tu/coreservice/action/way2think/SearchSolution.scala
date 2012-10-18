@@ -1,6 +1,6 @@
 package tu.coreservice.action.way2think
 
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.{Resource, SolvedIssue}
 
@@ -17,16 +17,16 @@ class SearchSolution extends Way2Think {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = SearchSolution(inputContext)
+  def apply(inputContext: ShortTermMemory) = SearchSolution(inputContext)
 }
 
 object SearchSolution {
   val searcher = new Solutions
 
-  def apply(inputContext: Context): Context = {
+  def apply(inputContext: ShortTermMemory): ShortTermMemory = {
 
 
     val res = inputContext.lastResult match {

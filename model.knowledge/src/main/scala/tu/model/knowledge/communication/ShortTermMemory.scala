@@ -14,7 +14,7 @@ import training.Goal
  *         time: 11:27 PM
  */
 
-case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
+case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
@@ -35,50 +35,50 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def notUnderstoodPhrases = _notUnderstoodPhrases
 
-  def notUnderstoodPhrases_=(in: List[AnnotatedPhrase]): Context = {
+  def notUnderstoodPhrases_=(in: List[AnnotatedPhrase]): ShortTermMemory = {
     _notUnderstoodPhrases = in
     this
   }
 
   def notUnderstoodConcepts = _notUnderstoodConcepts
 
-  def notUnderstoodConcepts_=(in: List[Concept]): Context = {
+  def notUnderstoodConcepts_=(in: List[Concept]): ShortTermMemory = {
     _notUnderstoodConcepts = in
     this
   }
 
   def simulationResult = _simulationResult
 
-  def simulationResult_=(in: ConceptNetwork): Context = {
+  def simulationResult_=(in: ConceptNetwork): ShortTermMemory = {
     _simulationResult = Some(in)
     this
   }
 
-  def simulationResult_=(in: Option[ConceptNetwork]): Context = {
+  def simulationResult_=(in: Option[ConceptNetwork]): ShortTermMemory = {
     _simulationResult = in
     this
   }
 
   def nextGoal = _nextGoal
 
-  def nextGoal_=(g: Option[Goal]): Context = {
+  def nextGoal_=(g: Option[Goal]): ShortTermMemory = {
     this._nextGoal = g
     this
   }
 
-  def nextGoal_=(g: Goal): Context = {
+  def nextGoal_=(g: Goal): ShortTermMemory = {
     this._nextGoal = Some(g)
     this
   }
 
   def userResponse: Option[Response] = _userResponse
 
-  def userResponse_=(r: Response): Context = {
+  def userResponse_=(r: Response): ShortTermMemory = {
     _userResponse = Some(r)
     this
   }
 
-  def userResponse_=(r: Option[Response]): Context = {
+  def userResponse_=(r: Option[Response]): ShortTermMemory = {
     _userResponse = r
     this
   }
@@ -105,7 +105,7 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def lastResult = _lastResult
 
-  def lastResult_=(in: Option[Resource]): Context = {
+  def lastResult_=(in: Option[Resource]): ShortTermMemory = {
     _lastResult = in
     in match {
       case Some(sr: SelectorRequest) => {
@@ -126,36 +126,36 @@ case class Context(__frames: Map[KnowledgeURI, Resource], override val _uri: Kno
 
   def domainModel = _domainModel
 
-  def domainModel_=(aDomainModel: ConceptNetwork): Context = {
+  def domainModel_=(aDomainModel: ConceptNetwork): ShortTermMemory = {
     this._domainModel = Some(aDomainModel)
     this
   }
 
-  def domainModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
+  def domainModel_=(aDomainModel: Option[ConceptNetwork]): ShortTermMemory = {
     this._domainModel = aDomainModel
     this
   }
 
   def simulationModel: Option[ConceptNetwork] = _simulationModel
 
-  def simulationModel_=(aModel: ConceptNetwork): Context = {
+  def simulationModel_=(aModel: ConceptNetwork): ShortTermMemory = {
     this._simulationModel = Some(aModel)
     this
   }
 
-  def simulationModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
+  def simulationModel_=(aDomainModel: Option[ConceptNetwork]): ShortTermMemory = {
     this._simulationModel = aDomainModel
     this
   }
 
   def reformulationModel = _reformulationModel
 
-  def reformulationModel_=(aModel: ConceptNetwork): Context = {
+  def reformulationModel_=(aModel: ConceptNetwork): ShortTermMemory = {
     this._reformulationModel = Some(aModel)
     this
   }
 
-  def reformulationModel_=(aDomainModel: Option[ConceptNetwork]): Context = {
+  def reformulationModel_=(aDomainModel: Option[ConceptNetwork]): ShortTermMemory = {
     this._reformulationModel = aDomainModel
     this
   }
@@ -189,66 +189,66 @@ object ContextHelper {
 
   /**
    * return initialized context to the user
-   * @param ctx Context to initialize
+   * @param ctx ShortTermMemory to initialize
    * @return
    */
-  def initializeContext(ctx: Context): Context = {
+  def initializeContext(ctx: ShortTermMemory): ShortTermMemory = {
     var returnContext = ctx
-    if (returnContext == null) returnContext = new Context(Map.empty[KnowledgeURI, Resource], new KnowledgeURI("empty", "empty", "1.0"), new Probability())
+    if (returnContext == null) returnContext = new ShortTermMemory(Map.empty[KnowledgeURI, Resource], new KnowledgeURI("empty", "empty", "1.0"), new Probability())
     returnContext
   }
 
   /**
-   * Creates Context based on List of Resource and name specified. Name is used as base for URI.
-   * @param resources List of Resource used to create Context.
+   * Creates ShortTermMemory based on List of Resource and name specified. Name is used as base for URI.
+   * @param resources List of Resource used to create ShortTermMemory.
    * @param name URI.name
-   * @return Context
+   * @return ShortTermMemory
    */
-  def apply(resources: List[Resource], name: String): Context = {
+  def apply(resources: List[Resource], name: String): ShortTermMemory = {
     val uri = KnowledgeURI(name)
     val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
       t => (t.uri, t)
     }.toMap
-    new Context(resourcesMap, uri)
+    new ShortTermMemory(resourcesMap, uri)
   }
 
   /**
-   * Creates Context based on List of Resource and name specified. Name is used as base for URI.
-   * @param resources List of Resource used to create Context.
+   * Creates ShortTermMemory based on List of Resource and name specified. Name is used as base for URI.
+   * @param resources List of Resource used to create ShortTermMemory.
    * @param classificationResults List of classification results
    * @param name URI.name
-   * @return Context
+   * @return ShortTermMemory
    */
-  def apply(resources: List[Resource], classificationResults: List[SelectorRequest], name: String): Context = {
+  def apply(resources: List[Resource], classificationResults: List[SelectorRequest], name: String): ShortTermMemory = {
     val uri = KnowledgeURI(name)
     val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
       t => (t.uri, t)
     }.toMap
-    val res = new Context(resourcesMap, uri)
+    val res = new ShortTermMemory(resourcesMap, uri)
     res.classificationResults = classificationResults
     res
   }
 
   /**
-   * Creates Context based on List of Resource and name specified and lastResult resource. Name is used as base for URI.
-   * @param resources List of Resource used to create Context.
+   * Creates ShortTermMemory based on List of Resource and name specified and lastResult resource. Name is used as base for URI.
+   * @param resources List of Resource used to create ShortTermMemory.
    * @param lastResult Resource is last result.
    * @param name URI.name
-   * @return Context
+   * @return ShortTermMemory
    */
-  def apply(resources: List[Resource], lastResult: Resource, name: String): Context = {
+  def apply(resources: List[Resource], lastResult: Resource, name: String): ShortTermMemory = {
     val uri = KnowledgeURI(name)
     val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
       t => (t.uri, t)
     }.toMap
-    val res = new Context(resourcesMap, uri)
+    val res = new ShortTermMemory(resourcesMap, uri)
     res.lastResult = Some(lastResult)
     res
   }
 
-  def createContext(resourcesMap: Map[KnowledgeURI, Resource], classificationResults: List[SelectorRequest], name: String): Context = {
+  def createContext(resourcesMap: Map[KnowledgeURI, Resource], classificationResults: List[SelectorRequest], name: String): ShortTermMemory = {
     val uri = KnowledgeURI(name)
-    val res = new Context(resourcesMap, uri)
+    val res = new ShortTermMemory(resourcesMap, uri)
     res.classificationResults = classificationResults
     res
   }
@@ -257,9 +257,9 @@ object ContextHelper {
    * Merges fist and second contexts: their frames, classificationResults and names.
    * @param first context to merge
    * @param second context to merge.
-   * @return merged Context
+   * @return merged ShortTermMemory
    */
-  def merge(first: Context, second: Context): Context = {
+  def merge(first: ShortTermMemory, second: ShortTermMemory): ShortTermMemory = {
     val res = ContextHelper.createContext(first.frames ++ second.frames, mergeList(first.classificationResults, second.classificationResults),
       first.uri.name + "&" + second.uri.name)
     res.checkedClassificationResults = mergeList(first.checkedClassificationResults, second.checkedClassificationResults)
@@ -268,12 +268,12 @@ object ContextHelper {
 
   /**
    * Merges context folding them to left.
-   * @param contexts List[Context] to merge.
-   * @return merged Context
+   * @param contexts List[ShortTermMemory] to merge.
+   * @return merged ShortTermMemory
    */
-  def merge(contexts: List[Context]): Context = {
+  def merge(contexts: List[ShortTermMemory]): ShortTermMemory = {
     if (contexts.size > 0) {
-      val res: Context = contexts.reduceLeft((i: Context, s: Context) => ContextHelper.merge(i, s))
+      val res: ShortTermMemory = contexts.reduceLeft((i: ShortTermMemory, s: ShortTermMemory) => ContextHelper.merge(i, s))
       res
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
@@ -284,7 +284,7 @@ object ContextHelper {
     x.filter(p => !y.exists(q => p == q)) ::: y
   }
 
-  def mergeLast(contexts: List[Context]): Context = {
+  def mergeLast(contexts: List[ShortTermMemory]): ShortTermMemory = {
     if (contexts.size > 0) {
       val res = merge(contexts)
       res.lastResult = contexts.last.lastResult
@@ -296,7 +296,7 @@ object ContextHelper {
     }
   }
 
-  def mergeFirstAndLastResult(contexts: List[Context]): Context = {
+  def mergeFirstAndLastResult(contexts: List[ShortTermMemory]): ShortTermMemory = {
     if (contexts.size > 0) {
       val res = merge(contexts)
       res.lastResult = contexts.last.lastResult

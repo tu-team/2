@@ -3,7 +3,7 @@ package tu.coreservice.action.way2think
 import cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.Resource
 import tu.model.knowledge.primitive.KnowledgeString
 
@@ -48,10 +48,10 @@ trait SimulationReformulationAbstract {
   /**
    * Really stupid method to process ambiguity.
    * @param in List[Concept]
-   * @return Context of Cry4HelpWay2Think
+   * @return ShortTermMemory of Cry4HelpWay2Think
    * @deprecated
    */
-  def processAmbiguous(in: List[AnnotatedPhrase]): Context = {
+  def processAmbiguous(in: List[AnnotatedPhrase]): ShortTermMemory = {
     // ambiguity
     var res: List[Resource] = in
     res = res ++ List[Resource](KnowledgeString("Please clarify ambiquity", "Please.clarify.ambiquity"))

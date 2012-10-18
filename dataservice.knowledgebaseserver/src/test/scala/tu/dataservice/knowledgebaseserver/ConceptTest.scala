@@ -14,7 +14,7 @@ import tu.model.knowledge.semanticnetwork.{SemanticNetworkLink, SemanticNetworkN
 import tu.model.knowledge.frame.TypedFrame
 import tu.model.knowledge._
 import annotator.AnnotatedPhrase
-import communication.{ContextHelper, Context}
+import communication.{ContextHelper, ShortTermMemory}
 import domain.{ConceptLink, Concept}
 
 @RunWith(classOf[JUnitRunner])

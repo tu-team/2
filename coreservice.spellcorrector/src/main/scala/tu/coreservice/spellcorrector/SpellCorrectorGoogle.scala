@@ -2,7 +2,7 @@ package tu.coreservice.spellcorrector
 
 import org.xeustechnologies.googleapi.spelling.{SpellRequest, Language, SpellChecker, Configuration}
 import tu.coreservice.utilities.Configurator
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 import org.slf4j.LoggerFactory
 
 
@@ -77,8 +77,8 @@ class SpellCorrectorGoogle extends SpellCorrector {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = null
+  def apply(inputContext: ShortTermMemory) = null
 }

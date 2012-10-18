@@ -1,6 +1,6 @@
 package tu.coreservice.spellcorrector
 
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{Constant, Resource}
 
 /**
@@ -45,7 +45,7 @@ class SpellCorrectorCompound extends SpellCorrector {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
   def apply(inputContext: Context) = {

@@ -12,7 +12,7 @@ import org.scalatest.FunSuite
 import tu.coreservice.action.critic.analyser._
 import tu.coreservice.action.{Action, ActionActor}
 import tu.coreservice.action.event.{Stop, Start}
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{KnowledgeURI, Resource}
 import tu.coreservice.action.critic.analyser.DirectInstructionAnalyserCritic
 import tu.coreservice.action.critic.CriticLink
@@ -45,7 +45,7 @@ class ActionActorTest extends FunSuite {
     // join
     for (a <- actionActors) {
       a !? Stop match {
-        case res: Context => log info res.toString
+        case res: ShortTermMemory => log info res.toString
       }
     }
   }
@@ -70,9 +70,9 @@ class ActionActorTest extends FunSuite {
       i = i + 1
     }
     // join
-    val contexts: List[Context] = for (a <- actionActors) yield {
+    val contexts: List[ShortTermMemory] = for (a <- actionActors) yield {
       a !? Stop match {
-        case res: Context => {
+        case res: ShortTermMemory => {
           log info res.toString
           res
         }

@@ -1,6 +1,6 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.communication.{TrainingRequest, ContextHelper, Context, Request}
+import tu.model.knowledge.communication.{TrainingRequest, ContextHelper, ShortTermMemory, Request}
 import tu.coreservice.action.selector.Selector
 import tu.coreservice.action.Action
 import tu.model.knowledge.Resource
@@ -107,13 +107,13 @@ class ThinkingLifeCycleMinimal
     resGoals
   }
 
-  def mergeContexts(contexts: List[Context]): Context = {
+  def mergeContexts(contexts: List[ShortTermMemory]): ShortTermMemory = {
     val mergedRefContexts = ContextHelper.mergeLast(contexts)
     this.globalContext = copyGlobalContext(mergedRefContexts)
     this.globalContext
   }
 
-  def processSelectorRequest(request: SelectorRequest): List[Context] = {
+  def processSelectorRequest(request: SelectorRequest): List[ShortTermMemory] = {
     val resources: List[Resource] = selector.apply(request)
     val contexts = processResources(resources)
     contexts
@@ -124,9 +124,9 @@ class ThinkingLifeCycleMinimal
    * @param resources to process
    * @return List of Contexts results of processing
    */
-  def processResources(resources: List[Resource]): List[Context] = {
-    log info "processResources(" + resources + ": List[Resource]): List[Context]"
-    val contexts: List[List[Context]] = for (r <- resources) yield {
+  def processResources(resources: List[Resource]): List[ShortTermMemory] = {
+    log info "processResources(" + resources + ": List[Resource]): List[ShortTermMemory]"
+    val contexts: List[List[ShortTermMemory]] = for (r <- resources) yield {
       val resContext = translate(r, this.globalContext)
       if (resContext != null) {
         globalContext = copyGlobalContext(resContext)
@@ -135,26 +135,26 @@ class ThinkingLifeCycleMinimal
         case Some(sR: SelectorRequest) => {
           this.processSelectorRequest(sR)
         }
-        case _ => List[Context](resContext)
+        case _ => List[ShortTermMemory](resContext)
       }
       contextToCheck
     }
-    log info "processResources(): List[Context] = " + contexts.flatten.toString()
+    log info "processResources(): List[ShortTermMemory] = " + contexts.flatten.toString()
     contexts.flatten
   }
 
   /**
    * Start reflective critics and Cry4Help Way2Think
    * @param contextToCheck the context to check by reflective critics
-   * @return Context with SelectorRequest-s
+   * @return ShortTermMemory with SelectorRequest-s
    */
-  def processReflectiveCritics(contextToCheck: Context): List[Context] = {
+  def processReflectiveCritics(contextToCheck: ShortTermMemory): List[ShortTermMemory] = {
     val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics
     processResources(reflectiveCritics)
   }
 
-  def translate(resource: Resource, globalContext: Context): Context = {
-    log info "translate(" + resource + ": Resource, " + globalContext + ": Context)"
+  def translate(resource: Resource, globalContext: ShortTermMemory): ShortTermMemory = {
+    log info "translate(" + resource + ": Resource, " + globalContext + ": ShortTermMemory)"
     resource match {
       case joinWay2Think: JoinWay2ThinkModel => {
         // run JoinProcessor
@@ -163,19 +163,19 @@ class ThinkingLifeCycleMinimal
           a: ActionModel => this.instantiate(a.uri.name)
         }
         val res = JoinProcessor(actions, globalContext)
-        log info "translate(): Context " + res.toString
+        log info "translate(): ShortTermMemory " + res.toString
         res
       }
       case w2t: Way2ThinkModel => {
         val action = this.instantiate(w2t.uri.name)
         val res = action.apply(globalContext)
-        log info "translate(): Context " + res.toString
+        log info "translate(): ShortTermMemory " + res.toString
         res
       }
       case critic: CriticModel => {
         val action = this.instantiate(critic.uri.name)
         val res = action.apply(globalContext)
-        log info "translate(): Context " + res.toString
+        log info "translate(): ShortTermMemory " + res.toString
         res
       }
     }
@@ -198,7 +198,7 @@ class ThinkingLifeCycleMinimal
     }
   }
 
-  def copyGlobalContext(resContext: Context): Context = {
+  def copyGlobalContext(resContext: ShortTermMemory): ShortTermMemory = {
     this.globalContext = ContextHelper.mergeFirstAndLastResult(List(this.globalContext, resContext))
     this.globalContext
   }

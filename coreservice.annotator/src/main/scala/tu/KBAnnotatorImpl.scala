@@ -2,7 +2,7 @@ package tu.coreservice.annotator
 
 import org.slf4j.LoggerFactory
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.coreservice.utilities.URIHelper
@@ -21,7 +21,7 @@ class KBAnnotatorImpl extends Way2Think {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {

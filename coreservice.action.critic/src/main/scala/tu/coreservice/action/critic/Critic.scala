@@ -2,7 +2,7 @@ package tu.coreservice.action.critic
 
 import tu.coreservice.action.Action
 import tu.model.knowledge.{Probability, KnowledgeURI}
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 
 
 /**
@@ -28,9 +28,9 @@ abstract class Critic(_excluded: List[CriticLink], _included: List[CriticLink], 
   def include(): List[CriticLink] = _included
 
   /**
-   * Generic method of the action to be applied over input Context and put all results in output Context.
-   * @param inputContext Context of all inbound parameters
-   * @return output Context.
+   * Generic method of the action to be applied over input ShortTermMemory and put all results in output ShortTermMemory.
+   * @param inputContext ShortTermMemory of all inbound parameters
+   * @return output ShortTermMemory.
    */
-  def apply(inputContext: Context): Context
+  def apply(inputContext: ShortTermMemory): ShortTermMemory
 }

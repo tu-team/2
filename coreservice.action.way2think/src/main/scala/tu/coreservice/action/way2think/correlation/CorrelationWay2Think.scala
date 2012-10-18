@@ -1,7 +1,7 @@
 package tu.coreservice.action.way2think.correlation
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{Resource, Constant}
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
@@ -15,10 +15,10 @@ import tu.exception.UnexpectedException
 class CorrelationWay2Think extends Way2Think {
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = {
+  def apply(inputContext: ShortTermMemory) = {
     try {
       inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {
@@ -30,7 +30,7 @@ class CorrelationWay2Think extends Way2Think {
                   tripleResult match {
                     case Some(tr: Triple[List[Concept], List[Concept], List[Concept]]) => {
                       val updatedSimulationResult = ConceptNetwork(result.nodes ::: tr._1, this.getClass.getName + "Simulation" + Constant.RESULT)
-                      val context = ContextHelper(List[Resource](), updatedSimulationResult, this.getClass.getName + "Context" + Constant.RESULT)
+                      val context = ContextHelper(List[Resource](), updatedSimulationResult, this.getClass.getName + "ShortTermMemory" + Constant.RESULT)
                       if (tr._2.size > 0) {
                         val updatedSimulationModel = ConceptNetwork(model.nodes ::: tr._2, this.getClass.getName + "Model" + Constant.RESULT)
                         context.simulationModel = Some(updatedSimulationModel)
@@ -50,7 +50,7 @@ class CorrelationWay2Think extends Way2Think {
                   tripleResult match {
                     case Some(tr: Triple[List[Concept], List[Concept], List[Concept]]) => {
                       val updatedSimulationResult = ConceptNetwork(tr._1, this.getClass.getName + "Training" + Constant.RESULT)
-                      val context = ContextHelper(List[Resource](), updatedSimulationResult, this.getClass.getName + "Context" + Constant.RESULT)
+                      val context = ContextHelper(List[Resource](), updatedSimulationResult, this.getClass.getName + "ShortTermMemory" + Constant.RESULT)
                       if (tr._2.size > 0) {
                         val updatedSimulationModel = ConceptNetwork(model.nodes ::: tr._2, this.getClass.getName + "Model" + Constant.RESULT)
                         context.simulationModel = Some(updatedSimulationModel)

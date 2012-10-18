@@ -1,7 +1,7 @@
 package tu.coreservice.action.way2think.reformulation
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.Resource
 import tu.exception.NoExpectedInformationException
@@ -16,10 +16,10 @@ class ReformulationWay2Think extends Way2Think {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = {
+  def apply(inputContext: ShortTermMemory) = {
 
     try {
       val lastResult: ConceptNetwork = inputContext.lastResult.asInstanceOf[ConceptNetwork]

@@ -1,7 +1,7 @@
 package tu.coreservice.action.event
 
 import tu.coreservice.action.Action
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 
 /**
  * Start event width action and inputContext parameters.
@@ -10,6 +10,6 @@ import tu.model.knowledge.communication.Context
  *         time: 7:05 PM
  */
 
-case class Start(action: Action, inputContext: Context) {
+case class Start(action: Action, inputContext: ShortTermMemory) {
 
 }

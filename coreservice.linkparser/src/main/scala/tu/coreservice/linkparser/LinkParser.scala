@@ -3,7 +3,7 @@ package tu.coreservice.linkparser
 
 import collection.JavaConversions._
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence, AnnotatedNarrative}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
@@ -35,7 +35,7 @@ class LinkParser extends Way2Think {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {

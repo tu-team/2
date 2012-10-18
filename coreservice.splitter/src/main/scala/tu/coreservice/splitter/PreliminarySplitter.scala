@@ -3,7 +3,7 @@ package tu.coreservice.splitter
 import _root_.relex.corpus.{DocSplitterFactory, DocSplitter}
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{Resource, KnowledgeURI}
 import tu.coreservice.spellcorrector.SpellCorrector
 import relex.entity.EntityMaintainer
@@ -62,12 +62,12 @@ class PreliminarySplitter extends Way2Think {
 
   /**
    * Way2Think interface.
-   * @param inputContext the Context to process.
+   * @param inputContext the ShortTermMemory to process.
    * @return outputContext
    */
   def apply(inputContext: Context): Context = {
 
-    log info "apply(" + inputContext + ": Context)"
+    log info "apply(" + inputContext + ": ShortTermMemory)"
 
     val textFrames = inputContext.frames.filter(p =>
       p._1.name == "inputtext"

@@ -2,7 +2,7 @@ package tu.coreservice.thinkinglifecycle
 
 import tu.model.knowledge.training.Goal
 import tu.dataservice.knowledgebaseserver.KBAdapter
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 
 /**
  * @author max talanov
@@ -33,7 +33,7 @@ class GoalManager {
     }
   }
 
-  def nextGoal(inputContext: Context): Option[Goal] = {
+  def nextGoal(inputContext: ShortTermMemory): Option[Goal] = {
     inputContext.nextGoal match {
       case Some(g: Goal) => Some(g)
       case None => {

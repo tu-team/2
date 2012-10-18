@@ -1,7 +1,7 @@
 package tu.coreservice.thinkinglifecycle
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.Context
+import tu.model.knowledge.communication.ShortTermMemory
 import tu.coreservice.action.Action
 
 /**
@@ -17,8 +17,8 @@ case class JoinWay2Think(actions: List[Action]) extends Way2Think{
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = null
+  def apply(inputContext: ShortTermMemory) = null
 }

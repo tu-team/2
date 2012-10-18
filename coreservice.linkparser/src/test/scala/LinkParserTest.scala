@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory
 import tu.coreservice.linkparser.LinkParser
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{KnowledgeURI, Resource}

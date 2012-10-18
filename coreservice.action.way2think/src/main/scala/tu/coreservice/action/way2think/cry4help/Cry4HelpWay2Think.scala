@@ -1,7 +1,7 @@
 package tu.coreservice.action.way2think.cry4help
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{Response, ContextHelper, Context}
+import tu.model.knowledge.communication.{Response, ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.utilities.LocalizedResources
@@ -13,7 +13,7 @@ import tu.model.knowledge.domain.Concept
  *         time: 4:25 PM
  */
 
-class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
+class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
   extends Way2Think(_uri) {
 
   def this() = {
@@ -22,10 +22,10 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context): Context = {
+  def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     this._inputContext = inputContext
     val provider = Cry4HelpProviders.GetProvider()
 
@@ -39,7 +39,7 @@ class Cry4HelpWay2Think(var _inputContext: Context, _uri: KnowledgeURI)
       }
     }
     val userResponseText = provider.askQuestion(LocalizedResources.GetString("ProvideAdditionalInfo"))
-    val outputContext: Context = ContextHelper(List[Resource](), this.getClass.getName)
+    val outputContext: ShortTermMemory = ContextHelper(List[Resource](), this.getClass.getName)
     outputContext.userResponse = Some(new Response(KnowledgeString(userResponseText, "responsetext"), KnowledgeURI("Response")))
     outputContext
   }

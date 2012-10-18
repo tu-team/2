@@ -4,7 +4,7 @@ import tu.coreservice.action.critic.{CriticLink, Critic}
 import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.selector.SelectorRequest
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 
@@ -24,7 +24,7 @@ abstract class Analyser(_exclude: List[CriticLink], _include: List[CriticLink], 
    */
   def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): SelectorRequest
 
-  override def apply(inputContext: Context): Context = {
+  override def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     // get lastResult ConceptNetwork from inputContext
     try {
       inputContext.lastResult match {

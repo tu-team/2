@@ -1,7 +1,7 @@
 package tu.coreservice.action.way2think.simulation
 
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.{Constant, Resource}
@@ -17,10 +17,10 @@ import tu.exception.NoExpectedInformationException
 class SimulationWay2Think extends Way2Think {
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = {
+  def apply(inputContext: ShortTermMemory) = {
     try {
       inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {

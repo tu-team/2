@@ -1,6 +1,6 @@
 package tu.coreservice.action.way2think
 
-import tu.model.knowledge.communication.{ContextHelper, Context}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.Resource
 import tu.model.knowledge.selector.SelectorRequest
 
@@ -18,17 +18,17 @@ class FindMostProbableAction extends Way2Think {
 
   /**
    * Way2Think interface.
-   * @param inputContext Context of all inbound parameters.
+   * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = {
+  def apply(inputContext: ShortTermMemory) = {
     FindMostProbableAction(inputContext)
   }
 }
 
 object FindMostProbableAction {
 
-  def apply(inputContext: Context): Context = {
+  def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     val outputContext = ContextHelper(List[Resource](), "OutputContex")
     if (inputContext.classificationResults.isEmpty) {
       outputContext.bestClassificationResult = None
