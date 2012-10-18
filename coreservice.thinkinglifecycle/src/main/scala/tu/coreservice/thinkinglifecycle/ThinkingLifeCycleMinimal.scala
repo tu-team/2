@@ -33,7 +33,7 @@ class ThinkingLifeCycleMinimal
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
-  def apply(request: TrainingRequest): List[Goal] = {
+  def apply(request: TrainingRequest): Context = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = KBAdapter.domainModel()
@@ -62,14 +62,14 @@ class ThinkingLifeCycleMinimal
       goalManager.nextGoal(globalContext)
     }
     log info "apply()"
-    resGoals
+    globalContext
   }
 
   /**
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
-  def apply(request: Request): List[Goal] = {
+  def apply(request: Request): Context = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = KBAdapter.domainModel()
@@ -104,7 +104,7 @@ class ThinkingLifeCycleMinimal
       goalManager.nextGoal(globalContext)
     }
     log info "apply()"
-    resGoals
+    globalContext
   }
 
   def mergeContexts(contexts: List[ShortTermMemory]): ShortTermMemory = {
