@@ -15,6 +15,7 @@ import tu.model.knowledge.communication.{TrainingRequest, Request}
 import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.model.knowledge.domain.ConceptNetwork
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -76,6 +77,16 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
+    assert(res._notUnderstoodConcepts == Nil)
+    assert(res._notUnderstoodPhrases == Nil)
+    res._simulationModel match {
+      case Some(x:ConceptNetwork)
+         => {x._rootNodes.contains(_.toString == ("Please")) }
+      case None =>
+         assert(false)
+    }
+
+    CorrelationWay2Think
     log info res.toString
   }
 
