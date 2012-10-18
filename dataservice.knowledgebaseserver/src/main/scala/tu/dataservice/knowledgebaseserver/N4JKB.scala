@@ -21,7 +21,17 @@ class RelationType(_name: String) extends RelationshipType {
 
 object N4JKB extends KB {
   val log = LoggerFactory.getLogger(this.getClass)
-  var defaultFilename = java.lang.System.getProperty("user.home") + "/tu_kb"
+  val defaultFilename = {
+    //load file name or use default
+    val conf = ConfigFactory.load()
+    val suffix = conf.getString("tu.knowledgebaseserver.dir")
+    if (suffix.size == 0)
+      java.lang.System.getProperty("user.home") + "/" + "tu_kb"
+    else if (suffix.charAt(0) == '/' || suffix.charAt(2) == ':')
+      suffix
+    else
+      java.lang.System.getProperty("user.home") + "/" + suffix
+  }
   val keyField = "key"
   private var inited = false
   private var _GraphDb: EmbeddedGraphDatabase = _
@@ -29,10 +39,7 @@ object N4JKB extends KB {
 
   def apply(): EmbeddedGraphDatabase = {
     if (!inited) {
-      //load file name or use default
-      val conf = ConfigFactory.load()
 
-      defaultFilename = conf.getString("tu.knowledgebaseserver.dir")
       _GraphDb = new EmbeddedGraphDatabase(defaultFilename)
       log.info("Neo4j database initialized. Location "+defaultFilename)
       ShutdownHook(_GraphDb.shutdown())

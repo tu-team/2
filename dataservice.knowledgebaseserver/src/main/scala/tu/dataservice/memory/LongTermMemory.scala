@@ -2,7 +2,7 @@ package tu.dataservice.memory
 
 import tu.model.knowledge.KnowledgeURI
 import tu.dataservice.knowledgebaseserver.KBAdapter
-import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 
 /**
  * @author max talanov
@@ -17,10 +17,10 @@ object LongTermMemory {
    * @param domainURI the URI of domain to be updated.
    * @return updated domain ConceptNetwork.
    */
-  def merge(updatedResource: ShortTermMemoryResourceWrapper, domainURI: KnowledgeURI): ConceptNetwork = {
+  def merge(updatedResource: ShortTermMemoryConceptWrapper, domainURI: KnowledgeURI): ConceptNetwork = {
     val domainModel = KBAdapter.domainModel(domainURI)
     if (domainModel.nodes.contains(updatedResource.longTermMemoryResource)) {
-      domainModel
+      Concept.copy(updatedResource.resource, updatedResource.longTermMemoryResource)
     }
     domainModel
   }

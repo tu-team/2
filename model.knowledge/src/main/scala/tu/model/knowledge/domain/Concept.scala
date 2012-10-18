@@ -310,4 +310,23 @@ object Concept {
 
     res
   }
+
+  /**
+   * Copies generalisations, specialisations, phrases, links from source concept to destination concept.
+   * @param source to from copy generalisations, specialisations, phrases, links.
+   * @param destination to copy to generalisations, specialisations, phrases, links.
+   * @return updated destination Concept.
+   */
+  def copy(source: Concept, destination: Concept): Concept = {
+    /*var _generalisations: TypedKLine[Concept],
+    var _specialisations: TypedKLine[Concept],
+    var _phrases: TypedKLine[AnnotatedPhrase],
+    __content: Resource,
+    var _conceptLinks: List[ConceptLink],*/
+    destination.generalisations = source.generalisations
+    destination.specialisations = source.specialisations
+    destination.phrases = source.phrases
+    destination.links = source.links
+    destination
+  }
 }
