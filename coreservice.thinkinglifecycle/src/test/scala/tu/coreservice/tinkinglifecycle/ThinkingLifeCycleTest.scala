@@ -12,10 +12,11 @@ import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import scala.actors.Actor
 import tu.model.knowledge.communication.{TrainingRequest, Request}
-import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.semanticnetwork.SemanticNetworkNode
+import tu.model.knowledge.{Resource, Constant, KnowledgeURI}
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -81,7 +82,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     assert(res._notUnderstoodPhrases == Nil)
     res._simulationModel match {
       case Some(x:ConceptNetwork)
-         => {x._rootNodes.contains((k) => k.toString == ("Please")) }
+         => {x._rootNodes.contains((k:SemanticNetworkNode[Resource]) => k.toString == ("Please")) }
       case None =>
          assert(false)
     }
