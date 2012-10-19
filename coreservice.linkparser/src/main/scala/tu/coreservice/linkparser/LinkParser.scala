@@ -43,7 +43,7 @@ class LinkParser extends Way2Think {
     val sentences: List[AnnotatedSentence] = narrative.sentences
     val updatedSentences = processSentences(sentences, inputContext)
     val updatedNarrative = AnnotatedNarrative(updatedSentences, KnowledgeURI(Constant.LINK_PARSER_RESULT_NAME))
-    val outputContext = ContextHelper(List[Resource](), updatedNarrative, this.getClass.getName)
+    val outputContext = ContextHelper(List[Resource](updatedNarrative), updatedNarrative, this.getClass.getName)
     outputContext
   }
 
