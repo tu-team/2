@@ -48,7 +48,7 @@ class SpellCorrectorCompound extends SpellCorrector {
    * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context) = {
+  def apply(inputContext: ShortTermMemory) = {
     ContextHelper(List[Resource](), this.getClass.getName + Constant.RESULT)
   }
 }

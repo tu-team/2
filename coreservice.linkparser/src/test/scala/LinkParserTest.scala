@@ -32,7 +32,7 @@ class LinkParserTest extends FunSuite {
     assert(res != null)
   }
 
-  private def createContext: Context = {
+  private def createContext: ShortTermMemory = {
     val testString = KnowledgeString("Please", "Please")
     val please: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
     val install: AnnotatedPhrase = AnnotatedPhrase("install", TestDataGenerator.installActionInst)

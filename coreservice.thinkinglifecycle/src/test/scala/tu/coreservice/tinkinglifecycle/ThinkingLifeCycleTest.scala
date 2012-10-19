@@ -86,7 +86,6 @@ class ThinkingLifeCycleTest extends FunSuite {
          assert(false)
     }
 
-    CorrelationWay2Think
     log info res.toString
   }
 

@@ -167,7 +167,7 @@ class RelationExtractorKBTest extends FunSuite {
     re
   }
 
-  private def createContext: Context = {
+  private def createContext: ShortTermMemory = {
     val testString = KnowledgeString("Please", "Please")
     val phrase: AnnotatedPhrase = AnnotatedPhrase("Please", TestDataGenerator.formOfPoliteness)
     val sentence: AnnotatedSentence = AnnotatedSentence(List(phrase))

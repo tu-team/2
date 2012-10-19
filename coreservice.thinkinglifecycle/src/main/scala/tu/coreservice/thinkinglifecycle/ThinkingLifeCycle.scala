@@ -1,6 +1,7 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.communication.{Context, Request}
+import tu.model.knowledge.communication.{ShortTermMemory, Request}
+
 
 /**
  * Main component to manage Action-s (Selector, Way2Think,Critic).
@@ -14,5 +15,5 @@ import tu.model.knowledge.communication.{Context, Request}
 
 
 trait ThinkingLifeCycle {
-  def apply(request: Request): Context
+  def apply(request: Request): ShortTermMemory
 }

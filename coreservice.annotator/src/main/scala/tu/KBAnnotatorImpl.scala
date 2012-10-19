@@ -24,7 +24,7 @@ class KBAnnotatorImpl extends Way2Think {
    * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context): Context = {
+  def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     //we have output context from splitter
     //splitter return annotated sentences array
 

@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory
 import relex.feature.{FeatureNodeCallback, FeatureNode}
 import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
 import tu.model.knowledge.domain.{ConceptLink, Concept}
-import tu.coreservice.utilities.TestDataGenerator
 import tu.exception.UnexpectedException
 
 
@@ -65,7 +64,7 @@ class PreliminarySplitter extends Way2Think {
    * @param inputContext the ShortTermMemory to process.
    * @return outputContext
    */
-  def apply(inputContext: Context): Context = {
+  def apply(inputContext: ShortTermMemory): ShortTermMemory = {
 
     log info "apply(" + inputContext + ": ShortTermMemory)"
 

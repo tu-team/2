@@ -33,7 +33,7 @@ class ThinkingLifeCycleMinimal
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
-  def apply(request: TrainingRequest): Context = {
+  def apply(request: TrainingRequest): ShortTermMemory = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = KBAdapter.domainModel()
@@ -69,7 +69,7 @@ class ThinkingLifeCycleMinimal
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
-  def apply(request: Request): Context = {
+  def apply(request: Request): ShortTermMemory = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = KBAdapter.domainModel()

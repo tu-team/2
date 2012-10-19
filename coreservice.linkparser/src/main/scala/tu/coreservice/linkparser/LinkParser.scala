@@ -38,7 +38,7 @@ class LinkParser extends Way2Think {
    * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
-  def apply(inputContext: Context): Context = {
+  def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     val narrative = getLastResult(inputContext)
     val sentences: List[AnnotatedSentence] = narrative.sentences
     val updatedSentences = processSentences(sentences, inputContext)
@@ -47,7 +47,7 @@ class LinkParser extends Way2Think {
     outputContext
   }
 
-  def getLastResult(inputContext: Context): AnnotatedNarrative = {
+  def getLastResult(inputContext: ShortTermMemory): AnnotatedNarrative = {
     try {
       inputContext.lastResult match {
         case Some(narrative: AnnotatedNarrative) => narrative
@@ -62,7 +62,7 @@ class LinkParser extends Way2Think {
     }
   }
 
-  def processSentences(sentences: List[AnnotatedSentence], context: Context): List[AnnotatedSentence] = {
+  def processSentences(sentences: List[AnnotatedSentence], context: ShortTermMemory): List[AnnotatedSentence] = {
     sentences.map {
       sentence: AnnotatedSentence => {
         val parse: ParsedSentence = processSentence(sentence, sentences)
