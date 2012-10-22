@@ -1,7 +1,7 @@
 package tu.dataservice.knowledgebaseserver
 
 /**
- * @author max
+  * @author max
  *         date 2012-06-01
  *         time: 8:58 AM
  */
@@ -16,7 +16,6 @@ import tu.model.knowledge._
 import annotator.AnnotatedPhrase
 import communication.{ContextHelper, ShortTermMemory}
 import domain.{ConceptLink, Concept}
-
 @RunWith(classOf[JUnitRunner])
 class ConceptTest extends FunSuite {
 
