@@ -16,6 +16,8 @@ object Constant {
 
   val selfReflectiveCritics = "selfReflectiveCritics"
 
+  val defaultDomainName="ITSM-GDC"
+
   val savedAnnotations = "savedWordAnnotations"
 
   val DELIMITER = "."

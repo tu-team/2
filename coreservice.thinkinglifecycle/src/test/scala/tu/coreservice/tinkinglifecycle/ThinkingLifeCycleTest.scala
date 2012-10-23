@@ -29,7 +29,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("tense is kind of concept.") {
     val requestText = "Tense is kind of concept."
-    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
@@ -38,7 +38,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("run comelete lifecycle with dummy way2think") {
     val requestText = "Please install Firefox."
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -47,7 +47,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Please install Firefox case.") {
     val requestText = "Please install Firefox."
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -56,7 +56,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("User miss Internet Explorer 8.") {
     val requestText = "User miss Internet Explorer 8."
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -65,7 +65,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Training Chrome is a browser") {
     val requestText = "Chrome is a browser."
-    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
@@ -74,7 +74,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Training please is a form of politeness") {
     val requestText = "Please is a form of politeness."
-    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"))
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
@@ -94,7 +94,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   def testCycle(input: String) {
     val requestText = input
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)

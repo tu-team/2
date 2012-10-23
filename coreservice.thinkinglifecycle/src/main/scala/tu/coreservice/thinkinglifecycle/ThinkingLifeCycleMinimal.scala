@@ -3,7 +3,7 @@ package tu.coreservice.thinkinglifecycle
 import tu.model.knowledge.communication.{TrainingRequest, ContextHelper, ShortTermMemory, Request}
 import tu.coreservice.action.selector.Selector
 import tu.coreservice.action.Action
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{Constant, Resource}
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.critic.CriticModel
@@ -36,9 +36,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: TrainingRequest): ShortTermMemory = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = KBAdapter.domainModel()
-    globalContext.simulationModel = KBAdapter.simulationModel()
-    globalContext.reformulationModel = KBAdapter.reformulationModel()
+    globalContext.domainModel = KBAdapter.domainModel(request.domainName)
+    globalContext.simulationModel = KBAdapter.simulationModel(request.domainName)
+    globalContext.reformulationModel = KBAdapter.reformulationModel(request.domainName)
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
     // process resources
@@ -72,9 +72,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request): ShortTermMemory = {
     log info "apply(" + request + ": Request))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = KBAdapter.domainModel()
-    globalContext.simulationModel = KBAdapter.simulationModel()
-    globalContext.reformulationModel = KBAdapter.reformulationModel()
+    globalContext.domainModel = KBAdapter.domainModel(request.domainName)
+    globalContext.simulationModel = KBAdapter.simulationModel(request.domainName)
+    globalContext.reformulationModel = KBAdapter.reformulationModel(request.domainName)
     val goalManager = new GoalManager
 
     var resGoals: List[Goal] = List[Goal]()
