@@ -134,41 +134,41 @@ object KBAdapter {
   val probability = new Probability
 
 
-  @deprecated
-  def domainModel(): ConceptNetwork = someModel(Constant.domainName)
+  //@deprecated
+  //def domainModel(): ConceptNetwork = someModel(Constant.domainName)
 
-  def domainModel(name: String) = someModel(name)
+  //def domainModel(name: String) = someModel(name)
 
-  def domainModel(uri: KnowledgeURI) = someModel(uri.name)
+  def domainModel(uri: KnowledgeURI) = someModel(uri)
 
-  @deprecated
-  def simulationModel(): ConceptNetwork = someModel(Constant.simulationName)
+  //@deprecated
+  //def simulationModel(): ConceptNetwork = someModel(Constant.simulationName)
 
-  def simulationModel(name: String): ConceptNetwork = someModel(name)
+  //def simulationModel(name: String): ConceptNetwork = someModel(name)
 
-  def simulationModel(uri: KnowledgeURI): ConceptNetwork = someModel(uri.name)
+  def simulationModel(uri: KnowledgeURI): ConceptNetwork = someModel(uri)
 
-  @deprecated
-  def reformulationModel(): ConceptNetwork = someModel(Constant.reformulationName)
+  //@deprecated
+  //def reformulationModel(): ConceptNetwork = someModel(Constant.reformulationName)
 
-  def reformulationModel(name: String): ConceptNetwork = someModel(name)
+  //def reformulationModel(name: String): ConceptNetwork = someModel(name)
 
-  def reformulationModel(uri: KnowledgeURI): ConceptNetwork = someModel(uri.name)
+  def reformulationModel(uri: KnowledgeURI): ConceptNetwork = someModel(uri)
 
-  //TODO Adel this sohould used KnowledgeURI not the name
-  @deprecated
-  private def someModel(modelName: String): ConceptNetwork = {
+  private def someModel(modelName: KnowledgeURI): ConceptNetwork = {
     try {
-      ConceptNetwork.load(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
+      ConceptNetwork.load(kb, KBNodeId(0), modelName.uid(), Constant.DEFAULT_LINK_NAME)
     }
     catch {
       case _ =>
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
-        res.save(kb, KBNodeId(0), modelName, Constant.DEFAULT_LINK_NAME)
+        res.save(kb, KBNodeId(0), modelName.uid(), Constant.DEFAULT_LINK_NAME)
         res
     }
 
   }
+
+
 
   def solutions(): List[SolvedIssue] = {
     val res: List[SolvedIssue] = kb.loadChildrenList(Constant.solutionsName).map(x => SolvedIssue.load(kb, x))

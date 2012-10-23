@@ -26,7 +26,7 @@ class LongTermMemoryTest extends FunSuite {
   test("merge concepts") {
     val cp = Concept("parent")
     val cc = Concept.createSubConcept(cp, "child")
-    val dm = KBAdapter.domainModel(testURIString)
+    val dm = KBAdapter.domainModel(KnowledgeURI(testURIString))
     assert(dm.nodes.size > 0)
     val c = dm.nodes(0)
     val stmc = new ShortTermMemoryConceptWrapper(cc, c)
