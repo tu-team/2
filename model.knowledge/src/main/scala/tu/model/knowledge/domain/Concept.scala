@@ -114,6 +114,17 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
+  def linkedConcepts: Set[Concept] = {
+    val res: List[Concept] = for (l <- _conceptLinks) yield {
+      if (l._destination == this) {
+        l.source
+      } else {
+        l.destination
+      }
+    }
+    res.toSet
+  }
+
   /**
    * Returns true if current Concept has at least one same parent(generalisation) with specified.
    * @param that Concept to compare

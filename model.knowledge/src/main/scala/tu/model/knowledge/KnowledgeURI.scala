@@ -87,6 +87,10 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
       "uri-name" -> this.name,
       "revision" -> this.revision())
   }
+
+  def equals(aUri: KnowledgeURI): Boolean = {
+    name.equals(aUri.name) && namespace.eq(aUri.namespace) && revision().equals(aUri.revision())
+  }
 }
 
 object KnowledgeURI {

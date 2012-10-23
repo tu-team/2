@@ -31,16 +31,16 @@ class LongTermMemoryTest extends FunSuite {
     val c = dm.nodes(0)
     val stmc = new ShortTermMemoryConceptWrapper(cc, c)
     val resCN = LongTermMemory.merge(stmc, testURI)
-    /* val children = resCN.nodes.filter {
+    val children = resCN.nodes.filter {
       c: Concept => {
-        c.generalisations.frames.filter{
-          val keyValue = {
-
+        c.generalisations.frames.filter {
+          keyValue: Pair[KnowledgeURI, Concept] => {
+            keyValue._1.name == "parentConcept"
           }
-        }
+        }.size > 0
       }
-    }*/
-    // assert (children.size > 0)
+    }
+    assert (children.size > 0)
   }
 
 }

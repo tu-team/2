@@ -10,9 +10,9 @@ import tu.exception.UnexpectedException
  *         date 2012-06-17
  *         time: 10:41 PM
  */
-
-case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
-                          _links: List[ConceptLink] = List[ConceptLink](),
+//TODO refactor nodes and links to Set and make it val
+case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
+                          var _links: List[ConceptLink] = List[ConceptLink](),
                           override val _uri: KnowledgeURI,
                           override val _probability: Probability = new Probability())
   extends SemanticNetwork(_nodes, _uri, _probability) {
@@ -34,6 +34,8 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
   }
 
   def nodes = _nodes
+
+  def nodes_=(aNodes: List[Concept]) = _nodes = aNodes
 
   def links = _links
 
@@ -88,41 +90,41 @@ case class ConceptNetwork(_nodes: List[Concept] = List[Concept](),
   }
 
   def toText = {
-    def searchToUp(where:Concept,  what:Concept):Boolean = {
+    def searchToUp(where: Concept, what: Concept): Boolean = {
       if (where.uri.name == what.uri.name)
         return true;
       val up = where.generalisationsList
-      if( up.size == 0)
+      if (up.size == 0)
         return false;
       searchToUp(up.head, what)
     }
-    val leafs = nodes.filter(i => nodes.filter(j => j.uri.name != i.uri.name && searchToUp(j, i) ).isEmpty)
+    val leafs = nodes.filter(i => nodes.filter(j => j.uri.name != i.uri.name && searchToUp(j, i)).isEmpty)
 
-    def oneLink(x:Concept, l:ConceptLink):String = {
+    def oneLink(x: Concept, l: ConceptLink): String = {
       val lString = l.uri.name
       if (l.source.toString == l.destination.toString)
         "<" + lString + ">"
       else if (x.toString == l.destination.toString)
-        "["+ l.source.toString + " <" + lString + ">]"
+        "[" + l.source.toString + " <" + lString + ">]"
       else if (l.source.toString == x.toString)
         "[<" + lString + "> " + l.destination.toString + "]"
       else
         ""
     }
-    def listLinks(x:Concept):String = {
+    def listLinks(x: Concept): String = {
       _links.map(l => oneLink(x, l)).mkString("")
     }
 
-    def oneConcept(x:Concept):String = {
+    def oneConcept(x: Concept): String = {
       if (_nodes.contains(x))
-        x.__content.toString +listLinks(x)
+        x.__content.toString + listLinks(x)
       else
         "(" + x.__content.toString + ")"
     }
 
-    def oneLeaf(x:Concept):String = {
+    def oneLeaf(x: Concept): String = {
       val up = x.generalisationsList
-      if( up.size == 0)
+      if (up.size == 0)
         return x.toString
       oneConcept(x) + " <- " + oneLeaf(up.head)
     }
@@ -243,6 +245,22 @@ object ConceptNetwork {
         } else {
           filterGeneralisations(uriConcept._2.generalisations, name).size > 0
         }
+      }
+    }
+  }
+
+  def containsConceptByURI(conceptNetWork: ConceptNetwork, uri: KnowledgeURI): Boolean = {
+    conceptNetWork.nodes.filter {
+      c: Concept => {
+        c.uri.equals(uri)
+      }
+    }.size > 0
+  }
+
+  def findConceptByURI(conceptNetWork: ConceptNetwork, uri: KnowledgeURI): Option[Concept] = {
+    conceptNetWork.nodes.find {
+      c: Concept => {
+        c.uri.equals(uri)
       }
     }
   }
