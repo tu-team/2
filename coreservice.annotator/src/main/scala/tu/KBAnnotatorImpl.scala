@@ -7,6 +7,7 @@ import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.coreservice.utilities.URIHelper
 import tu.model.knowledge.narrative.Narrative
+import tu.model.knowledge.KnowledgeURI
 
 /**
  * Simple KBAnnotator implementation.
@@ -32,11 +33,21 @@ class KBAnnotatorImpl extends Way2Think {
     val extractedNarratives = sentences.map(b => b._2.asInstanceOf[AnnotatedNarrative])
     var wordsDetected = 0
     //trying to annotate sentences
-    val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
+    //val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
     def checkLocalKB(phrase: String): Option[AnnotatedPhrase] = {
-      val localAnnotated = localAnnotator.apply(phrase)
-      localAnnotated
+      //we should check in local context
+      //inputContext.domainModel.
+      //val localAnnotated = localAnnotator.apply(phrase)
+      val phrases=  inputContext.domainModel.get.nodes.filter(n=>n.phrases.frames.map(p=>p._2).toString().toLowerCase.equals(phrase.toLowerCase))
+       //TODO:Correct
+      if (phrases.size > 0) {
+        Option(phrases.head.phrases.frames.head._2)
+      } else {
+        None
+      }
+
+      //localAnnotated
     }
 
 

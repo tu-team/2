@@ -17,13 +17,14 @@ object AnnotatorRegistry {
    */
   def listAnnotators(): List[AnnotatorProvider] = {
     //Append annotator classes here
-    return List(new LocalKBAnnotatorProvider,new WordnetAnnotatorProvider).sortWith((it1,it2)=> it1.priority() < it2.priority() )
+    return List(new WordnetAnnotatorProvider).sortWith((it1,it2)=> it1.priority() < it2.priority() )
   }
 
   /**
    * local KBAnnotator provider
    * @return local KBAnnotator provider
    */
+  @deprecated
   def getLocalAnnotator():AnnotatorProvider ={
     return new LocalKBAnnotatorProvider
   }

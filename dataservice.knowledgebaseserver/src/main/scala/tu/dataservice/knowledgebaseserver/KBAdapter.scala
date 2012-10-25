@@ -157,12 +157,12 @@ object KBAdapter {
 
   private def someModel(modelName: KnowledgeURI): ConceptNetwork = {
     try {
-      ConceptNetwork.load(kb, KBNodeId(0), modelName.uid(), Constant.DEFAULT_LINK_NAME)
+      ConceptNetwork.load(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
     }
     catch {
       case _ =>
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
-        res.save(kb, KBNodeId(0), modelName.uid(), Constant.DEFAULT_LINK_NAME)
+        res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
         res
     }
 

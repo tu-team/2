@@ -12,6 +12,7 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 /**
  * @define local knowledge base provider
  */
+@deprecated
 class LocalKBAnnotatorProvider extends AnnotatorProvider {
 
   def annotate(word: String):List[String] = {
@@ -35,6 +36,7 @@ class LocalKBAnnotatorProvider extends AnnotatorProvider {
     *  @return annotated word from local knowledge base
     */
   def apply(word:String ):Option[AnnotatedPhrase] ={
+      //TODO: use local context
       return KBAdapter.getAnnotationByWord(word)
   }
 }

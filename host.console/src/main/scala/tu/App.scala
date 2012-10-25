@@ -3,7 +3,7 @@ package tu.host.console
 import tu.coreservice.annotator.KBAnnotatorImpl
 import tu.model.knowledge.communication.Request
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.KnowledgeURI
+import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 
 
@@ -59,7 +59,7 @@ object AppMain {
 
           val requestText = Console.readLine()
           Console.println("Running thinking lifecycle:" + command)
-          val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"))
+          val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
           val t = new ThinkingLifeCycleMinimal()
           val res = t(r)
           Console.println("End of execution");
