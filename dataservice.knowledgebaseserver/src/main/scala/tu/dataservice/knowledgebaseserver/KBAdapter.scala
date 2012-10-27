@@ -1,5 +1,6 @@
 package tu.dataservice.knowledgebaseserver
 
+import providers.N4JKB
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}

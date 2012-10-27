@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import tu.dataservice.knowledgebaseserver.N4JKB
+import tu.dataservice.knowledgebaseserver.providers.N4JKB
 import org.neo4j.graphdb.{Transaction, RelationshipType}
 import org.scalatest._
 

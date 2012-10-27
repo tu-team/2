@@ -1,7 +1,8 @@
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
-import tu.dataservice.knowledgebaseserver.{KBAdapter, N4JKB}
+import tu.dataservice.knowledgebaseserver.providers.N4JKB
+import tu.dataservice.knowledgebaseserver.{KBAdapter}
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.ContextHelper
 import tu.model.knowledge.domain.{ConceptNetwork, ConceptLink, Concept}

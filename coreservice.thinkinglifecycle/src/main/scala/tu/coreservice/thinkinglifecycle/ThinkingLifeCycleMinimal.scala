@@ -13,6 +13,7 @@ import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
 import tu.dataservice.knowledgebaseserver.KBAdapter
+import tu.dataservice.memory.LongTermMemory
 
 
 /**
@@ -36,9 +37,9 @@ class ThinkingLifeCycleMinimal
   def apply(request: TrainingRequest): ShortTermMemory = {
     log info "apply(" + request + ": TrainingRequest))"
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = KBAdapter.domainModel(request.domainName)
-    globalContext.simulationModel = KBAdapter.simulationModel(request.domainName)
-    globalContext.reformulationModel = KBAdapter.reformulationModel(request.domainName)
+    globalContext.domainModel = LongTermMemory.domainModel(request.domainName)
+    globalContext.simulationModel = LongTermMemory.simulationModel(request.domainName)
+    globalContext.reformulationModel = LongTermMemory.reformulationModel(request.domainName)
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
     // process resources

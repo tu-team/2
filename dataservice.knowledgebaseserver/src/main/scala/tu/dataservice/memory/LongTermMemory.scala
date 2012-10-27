@@ -1,8 +1,10 @@
 package tu.dataservice.memory
 
-import tu.model.knowledge.KnowledgeURI
-import tu.dataservice.knowledgebaseserver.KBAdapter
+import tu.model.knowledge.{Constant, KBNodeId, KB, KnowledgeURI}
+import tu.dataservice.knowledgebaseserver.{Defaults, KBAdapter}
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
+import tu.dataservice.knowledgebaseserver.providers.N4JKB
+import tu.model.knowledge.communication.ShortTermMemory
 
 /**
  * @author max talanov
@@ -10,6 +12,8 @@ import tu.model.knowledge.domain.{Concept, ConceptNetwork}
  *         Time: 12:35 AM
  */
 object LongTermMemory {
+
+  private def kb:KB= N4JKB;
 
   /**
    * Merges domain addressed via domainURI and specified Resource via substation of longTermMemoryResource by resource of ShortTermMemoryResourceWrapper.
@@ -28,6 +32,73 @@ object LongTermMemory {
         copiedConcept.specialisations.frames.values.toList ::: copiedConcept.linkedConcepts.toList
     }
     domainModel
+  }
+
+
+  /**
+   * load concept network according to selected domain
+   * @param domain uri of selected domain
+   * @return concept network
+   */
+  def domainModel(domain: KnowledgeURI):ConceptNetwork = someModel(domain)
+
+
+  /**
+   * load simulation model according to selected domain
+   * @param domain uri of selected domain
+   * @return  simulation model
+   */
+  def simulationModel(domain: KnowledgeURI): ConceptNetwork = someModel(domain)
+
+  /**
+   * reformulation model according to selected domain
+   * @param domain uri of selected domain
+   * @return reformulation model
+   */
+  def reformulationModel(domain: KnowledgeURI): ConceptNetwork = someModel(domain)
+
+  private def someModel(modelName: KnowledgeURI): ConceptNetwork = {
+    try {
+      ConceptNetwork.load(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
+    }
+    catch {
+      case _ =>
+        val res: ConceptNetwork = Defaults.domainModelConceptNetwork
+        res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
+        res
+    }
+
+  }
+
+
+  /**
+   * save provided model in storage
+   * @param modelName uri of target model
+   * @param model model
+   */
+  def saveModel(modelName: KnowledgeURI,model:ConceptNetwork)={
+    model.save(kb,KBNodeId(0),modelName.uri().get.toString,Constant.DEFAULT_LINK_NAME)
+
+  }
+
+  /**
+   * save the whole ST context to LT memory
+   * @param context to be transfered to LT memory
+   */
+  def saveShortTermContext(context:ShortTermMemory)={
+
+    if (context.domainModel.isDefined)
+      //save domain model
+      saveModel(context.domainModel.get.uri,context.domainModel.get)
+
+    if (context.reformulationModel.isDefined)
+      //save reformulation model
+      saveModel(context.reformulationModel.get.uri,context.reformulationModel.get)
+
+    if (context.simulationModel.isDefined)
+      //save simulationModel model
+      saveModel(context.simulationModel.get.uri,context.simulationModel.get)
+
   }
 
 }

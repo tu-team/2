@@ -1,24 +1,22 @@
-package tu.dataservice.knowledgebaseserver
 
-import org.neo4j.kernel.EmbeddedGraphDatabase
-import tu.model.knowledge.training.Goal
-import org.neo4j.graphdb.index.Index
-import collection.immutable.HashMap
-import org.neo4j.graphdb._
-import org.slf4j.{LoggerFactory}
+package tu.dataservice.knowledgebaseserver.providers
+
+import org.neo4j.graphdb.{Relationship, Transaction, RelationshipType, Node}
 import tu.model.knowledge._
-import scala.Long
-import tu.dataservice.knowledgebaseserver.RelationType
+import org.slf4j.LoggerFactory
 import com.typesafe.config.ConfigFactory
+import org.neo4j.kernel.EmbeddedGraphDatabase
+import collection.mutable
+import collection.immutable.HashMap
+import org.neo4j.graphdb.index.Index
 
-
-class RelationType(_name: String) extends RelationshipType {
-  def name(): String = {
-    _name
-  }
-}
-
-
+/**
+ *
+ * @author: Alexander Toschev
+ *          Date: 10/30/12
+ *          Time: 5:51 AM
+ *
+ */
 object N4JKB extends KB {
   val log = LoggerFactory.getLogger(this.getClass)
   val defaultFilename = {
@@ -118,7 +116,7 @@ object N4JKB extends KB {
       val relationship: Relationship = i.next()
       if (relationship.getProperty("key") == key) {
         val node: Node = relationship.getEndNode
-        var values = new HashMap[String, String]
+        var values = Map[String, String]()
         val j = node.getPropertyKeys.iterator()
         while (j.hasNext) {
           val key: String = j.next()
@@ -225,11 +223,11 @@ object N4JKB extends KB {
 
 }
 
-
-/**
- * from https://issues.scala-lang.org/browse/SI-4200?page=com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel
- * by Christian Krause
- */
+class RelationType(_name: String) extends RelationshipType {
+  def name(): String = {
+    _name
+  }
+}
 
 /**
  * A virtual machine shutdown hook.

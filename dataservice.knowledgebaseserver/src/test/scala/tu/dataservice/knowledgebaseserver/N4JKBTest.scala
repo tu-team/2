@@ -2,6 +2,7 @@ package tu.dataservice.knowledgebaseserver
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+import providers.N4JKB
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{KBMap, Probability, KnowledgeURI}
 import util.Random
