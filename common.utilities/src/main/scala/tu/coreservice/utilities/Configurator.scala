@@ -27,7 +27,7 @@ object Configurator {
     var res = new ProxyDescription
     res.proxyHost = "RU1202197816"
     res.proxyPort = 3128
-    res.useProxy =true // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
+    res.useProxy = false // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
     return res
   }
 
