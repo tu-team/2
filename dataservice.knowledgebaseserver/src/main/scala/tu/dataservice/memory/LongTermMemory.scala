@@ -5,6 +5,7 @@ import tu.dataservice.knowledgebaseserver.{Defaults, KBAdapter}
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.dataservice.knowledgebaseserver.providers.N4JKB
 import tu.model.knowledge.communication.ShortTermMemory
+import collection.mutable.ListBuffer
 
 /**
  * @author max talanov
@@ -77,7 +78,10 @@ object LongTermMemory {
    * @param model model
    */
   def saveModel(modelName: KnowledgeURI,model:ConceptNetwork)={
-    model.save(kb,KBNodeId(0),modelName.uri().get.toString,Constant.DEFAULT_LINK_NAME)
+    //instantiate save context
+    var alreadySaved =new ListBuffer[String]()
+
+    model.save(kb,KBNodeId(0),modelName.uri().get.toString,Constant.DEFAULT_LINK_NAME,alreadySaved)
 
   }
 

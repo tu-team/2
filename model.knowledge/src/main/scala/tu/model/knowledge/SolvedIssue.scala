@@ -5,6 +5,7 @@ import howto.Solution
 import tu.model.knowledge.KBMap._
 import tu.exception.UnexpectedException
 import scala._
+import collection.mutable.ListBuffer
 import tu.model.knowledge.helper.URIGenerator
 
 /**
@@ -15,7 +16,7 @@ import tu.model.knowledge.helper.URIGenerator
 
 case class SolvedIssue(var issue: ConceptNetwork, solution: Solution, _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
-  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
     var res = kb.saveResource(this, parent, key, linkType)
     issue.save(kb, this, "", Constant.CONCEPTS_NETWORK_NAME)
     solution.save(kb, this, "", Constant.SOLUTION_NAME)

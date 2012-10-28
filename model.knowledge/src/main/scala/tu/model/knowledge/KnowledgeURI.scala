@@ -98,5 +98,7 @@ object KnowledgeURI {
   def apply(name: String): KnowledgeURI = {
     new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
   }
-
+  def apply(name: String,uri:Boolean): KnowledgeURI = {
+    new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
+  }
 }

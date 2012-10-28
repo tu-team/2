@@ -27,4 +27,9 @@ case class SemanticNetworkNode[Type<:Resource](_content: Type, var _links: List[
     this
   }
 
+  //override def save(kb:KB, parent:KBNodeId, key:String):Boolean =
+  //{
+  //      super.save(kb,parent,key);
+  //}
+
 }

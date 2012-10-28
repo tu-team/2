@@ -5,6 +5,7 @@ import domain.Concept
 import scala.Some
 import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
+import collection.mutable.ListBuffer
 
 /**
  * @author alex toschev
@@ -52,17 +53,18 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
     super.export + Pair("text",  this.text)
   }
 
-  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: List[String] = Nil): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
 
     val uri = this.uri.toString
     if (saved.contains(uri))
       return true
-    val savedPlus:List[String] = uri :: saved
+    //val savedPlus:List[String] = uri :: saved
+    saved.append(uri)
 
     var res = kb.saveResource(this, parent, key, linkType)
 
     for (x: Resource <- _phrases)
-      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, savedPlus)
+      res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, saved)
     res
   }
 }

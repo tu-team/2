@@ -8,6 +8,7 @@ import tu.model.knowledge._
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
+import collection.mutable.ListBuffer
 
 /**
  * @author max talanov
@@ -155,24 +156,31 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
-  def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved:ListBuffer[String] = new ListBuffer[String]()): Boolean = {
+    if (saved.contains(key)) return true;
     var res = kb.saveResource(this, parent, key, linkType)
-
+    saved.append(key)
+    //var savedLocal = List[String](key)
+    //if (saved!=null) savedLocal::=savedLocal
     for (x: Resource <- generalisations.frames.values.iterator) {
-      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME)
+      //if (!savedLocal.contains(x.uri.toString))
+      //{
+        res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME,saved)
+      //  savedLocal::=x.uri.toString
+      //}
     }
 
     for (y: Resource <- specialisations.frames.values.iterator) {
-      res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME)
+      res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME,saved)
     }
 
     for (z: Resource <- phrases.frames.values.iterator) {
-      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME)
+      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME,saved)
     }
 
     for (t: ConceptLink <- _conceptLinks) {
-      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME)
-      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME)
+      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME,saved)
+      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME,saved)
     }
     res
   }
@@ -258,33 +266,34 @@ object Concept {
     val selfMap = kb.loadChild(parentId, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
+      //throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
+      return null
     }
 
     val ID = new KBNodeId(selfMap)
 
-    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+    def oneList(items: Map[String, Map[String, String]],linkName:String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri,true), Concept.load(kb,ID,uri,linkName))
       }
     }
 
     def oneListPhrases(items: Map[String, Map[String, String]]): Map[KnowledgeURI, AnnotatedPhrase] = {
       items.keys.foldLeft(Map[KnowledgeURI, AnnotatedPhrase]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri,true), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
       }
     }
 
     val generalisation =
       TypedKLine[Concept](
         "generalisation",
-        oneList(kb.loadChildrenMap(ID, Constant.GENERALISATION_LINK_NAME))
+        oneList(kb.loadChildrenMap(ID, Constant.GENERALISATION_LINK_NAME), Constant.GENERALISATION_LINK_NAME)
       )
 
     val specialisation =
       TypedKLine[Concept](
         "specialisation",
-        oneList(kb.loadChildrenMap(ID, Constant.SPECIALISATION_LINK_NAME))
+        oneList(kb.loadChildrenMap(ID, Constant.SPECIALISATION_LINK_NAME), Constant.SPECIALISATION_LINK_NAME)
       )
 
     val sentences =

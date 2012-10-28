@@ -3,6 +3,7 @@ package tu.model.knowledge
 import java.util.Calendar
 import util.Random
 import org.slf4j.LoggerFactory
+import collection.mutable.ListBuffer
 
 /**
  * @author max talanov
@@ -53,7 +54,7 @@ abstract class Resource( _uri: KnowledgeURI, _probability: Probability = new Pro
   def save(kb:KB, parent:KBNodeId, key:String):Boolean =
     save(kb, parent, key, Constant.DEFAULT_LINK_NAME)
 
-  def save(kb:KB, parent:KBNodeId, key:String, linkType:String, saved: List[String] = Nil):Boolean =
+  def save(kb:KB, parent:KBNodeId, key:String, linkType:String, saved:ListBuffer[String] = new ListBuffer[String]()):Boolean =
     kb.saveResource(this, parent, key, linkType)
 
   def loadLinks(kb:KB):Boolean = true

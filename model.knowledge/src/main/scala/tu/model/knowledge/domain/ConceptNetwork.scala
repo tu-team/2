@@ -4,6 +4,7 @@ import tu.model.knowledge._
 import tu.model.knowledge.semanticnetwork.SemanticNetwork
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
+import collection.mutable.ListBuffer
 
 /**
  * @author max talanov
@@ -133,15 +134,22 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
 
   }
 
-  def save(kb: KB, parent: KBNodeId, key: String, linkType: String): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
+    if (saved !=null && saved.contains(key)) return true
+
     var res = kb.saveResource(this, parent, key, linkType)
+    saved.append(key)
+
+    for (x: Resource <- nodes) {
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME,saved)
+    }
 
     for (x: Resource <- _rootNodes) {
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME)
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.ROOT_NODES_LINK_NAME,saved)
     }
 
     for (y: Resource <- links) {
-      res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME)
+      res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME,saved)
     }
     res
   }
@@ -161,15 +169,18 @@ object ConceptNetwork {
 
     val ID = new KBNodeId(selfMap)
 
-    def oneList(items: Map[String, Map[String, String]]): Map[KnowledgeURI, Concept] = {
+    def oneList(items: Map[String, Map[String, String]], linkName:String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), new Concept(items(uri)))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri), Concept.load(kb, ID,uri,linkName))//new Concept(items(uri)))
       }
     }
 
-    val concepts: List[Concept] = oneList(kb.loadChildrenMap(ID, Constant.NODES_LINK_NAME)).map {
+    val concepts: List[Concept] = oneList(kb.loadChildrenMap(ID, Constant.NODES_LINK_NAME),Constant.NODES_LINK_NAME).map {
       pair: Pair[KnowledgeURI, Resource] => pair._2.asInstanceOf[Concept]
     }.toList
+
+    //load each concept link
+
 
     val linksSourceMap = kb.loadChildrenMap(ID, Constant.LINKS_LINK_NAME)
     val linksDestinationMap = kb.loadChildrenMap(ID, Constant.LINKS_LINK_NAME)
