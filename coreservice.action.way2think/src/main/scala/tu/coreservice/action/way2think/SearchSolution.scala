@@ -27,7 +27,7 @@ object SearchSolution {
   val searcher = new Solutions
 
   def apply(inputContext: ShortTermMemory): ShortTermMemory = {
-
+    searcher.solutions=inputContext.solutions
 
     val res = inputContext.lastResult match {
       case Some(cn: ConceptNetwork) =>

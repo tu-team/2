@@ -17,6 +17,7 @@ class LongTermMemoryTest extends FunSuite {
 
   val testURIString = "test"
   val testURI = KnowledgeURI(testURIString)
+  val testURI2 = KnowledgeURI("test2")
 
   test("test Ok") {
     assert(true)
@@ -50,9 +51,9 @@ class LongTermMemoryTest extends FunSuite {
     val c = dm.nodes(0)
     val stmc = new ShortTermMemoryConceptWrapper(cc, c)
     var resCN = LongTermMemory.merge(stmc, testURI)
-    LongTermMemory.saveModel(testURI, resCN)
+    LongTermMemory.saveModel(testURI2, resCN)
     //reload model and test if context is saved
-    resCN = LongTermMemory.domainModel(testURI)
+    resCN = LongTermMemory.domainModel(testURI2)
 
     val children = resCN.nodes.filter {
       c: Concept => {

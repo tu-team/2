@@ -25,6 +25,7 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _domainModel: Option[ConceptNetwork] = None
   var _simulationModel: Option[ConceptNetwork] = None
   var _reformulationModel: Option[ConceptNetwork] = None
+  var _solutions: List[SolvedIssue]=Nil
   var _errors: List[Error] = List[Error]()
   var _lastError: Option[Error] = None
   var _userResponse: Option[Response] = None
@@ -145,6 +146,13 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
 
   def simulationModel_=(aDomainModel: Option[ConceptNetwork]): ShortTermMemory = {
     this._simulationModel = aDomainModel
+    this
+  }
+
+  def solutions: List[SolvedIssue] = _solutions
+
+  def solutions_=(aSln: List[SolvedIssue]): ShortTermMemory = {
+    this._solutions = aSln
     this
   }
 

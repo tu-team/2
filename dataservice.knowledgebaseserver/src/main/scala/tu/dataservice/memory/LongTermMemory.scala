@@ -1,6 +1,7 @@
 package tu.dataservice.memory
 
-import tu.model.knowledge.{Constant, KBNodeId, KB, KnowledgeURI}
+import tu.model.knowledge._
+import communication.ShortTermMemory
 import tu.dataservice.knowledgebaseserver.{Defaults, KBAdapter}
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.dataservice.knowledgebaseserver.providers.N4JKB
@@ -35,6 +36,10 @@ object LongTermMemory {
     domainModel
   }
 
+  def solutions(domain:KnowledgeURI):List[SolvedIssue]=
+  {
+    KBAdapter.solutions()
+  }
 
   /**
    * load concept network according to selected domain

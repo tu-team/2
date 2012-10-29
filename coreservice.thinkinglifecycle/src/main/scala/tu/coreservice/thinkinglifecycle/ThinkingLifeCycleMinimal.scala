@@ -1,6 +1,6 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.communication.{TrainingRequest, ContextHelper, ShortTermMemory, Request}
+import tu.model.knowledge.communication._
 import tu.coreservice.action.selector.Selector
 import tu.coreservice.action.Action
 import tu.model.knowledge.{Constant, Resource}
@@ -14,6 +14,8 @@ import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
 import tu.dataservice.knowledgebaseserver.KBAdapter
 import tu.dataservice.memory.LongTermMemory
+import tu.model.knowledge.communication.ShortTermMemory
+import scala.Some
 
 
 /**
@@ -30,16 +32,21 @@ class ThinkingLifeCycleMinimal
   val selector = new Selector
   var globalContext = ContextHelper(List[Resource](), "globalContext")
 
+  private def initializeGlobalContext(request:Request)={
+    globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
+    globalContext.domainModel = LongTermMemory.domainModel(request.domainName)
+    globalContext.simulationModel = LongTermMemory.simulationModel(request.domainName)
+    globalContext.reformulationModel = LongTermMemory.reformulationModel(request.domainName)
+    globalContext.solutions=  LongTermMemory.solutions(request.domainName)
+  }
+
   /**
    * Runs Goals linked to Request as work-flows.
    * @param request to process.
    */
   def apply(request: TrainingRequest): ShortTermMemory = {
     log info "apply(" + request + ": TrainingRequest))"
-    globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = LongTermMemory.domainModel(request.domainName)
-    globalContext.simulationModel = LongTermMemory.simulationModel(request.domainName)
-    globalContext.reformulationModel = LongTermMemory.reformulationModel(request.domainName)
+    initializeGlobalContext(request)
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
     // process resources
@@ -72,10 +79,7 @@ class ThinkingLifeCycleMinimal
    */
   def apply(request: Request): ShortTermMemory = {
     log info "apply(" + request + ": Request))"
-    globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
-    globalContext.domainModel = KBAdapter.domainModel(request.domainName)
-    globalContext.simulationModel = KBAdapter.simulationModel(request.domainName)
-    globalContext.reformulationModel = KBAdapter.reformulationModel(request.domainName)
+    initializeGlobalContext(request)
     val goalManager = new GoalManager
 
     var resGoals: List[Goal] = List[Goal]()
