@@ -82,7 +82,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     assert(res._notUnderstoodPhrases == Nil)
     assert (res._simulationModel match {
       case Some(x:ConceptNetwork)
-         => {x._rootNodes.contains((k:SemanticNetworkNode[Resource]) => k.toString == ("Please")) }
+         => {x._rootNodes.contains((k:SemanticNetworkNode[Resource]) => k.toString == ("please")) }
       case None =>
          false
     }

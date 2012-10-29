@@ -27,7 +27,7 @@ class LinkParser extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  val names: List[String] = List("_subj", "_obj", "_iobj", "_advmod")
+  val names: List[String] = List("_subj", "_obj", "_iobj", "_advmod", "of")
 
   def start() = false
 
@@ -63,10 +63,10 @@ class LinkParser extends Way2Think {
   }
 
   /**
-   * Run through List of AnnotatedSentence
-   * @param sentences
-   * @param context
-   * @return
+   * Run through List of AnnotatedSentence and processes each AnnotatedSentence via RelationExtractorKB.
+   * @param sentences to process.
+   * @param context ShortTermMemory to store Errors in.
+   * @return List of AnnotatedSentence.
    */
   def processSentences(sentences: List[AnnotatedSentence], context: ShortTermMemory): List[AnnotatedSentence] = {
     sentences.map {
@@ -80,6 +80,15 @@ class LinkParser extends Way2Think {
           case (None, Some(e: Error)) => {
             context.errors = context.errors ::: List(e)
           }
+          case (Some(c: Concept), None) => {
+            // no processing
+          }
+          case (Some(c: Concept), Some(e: Error)) => {
+            context.errors = context.errors ::: List(e)
+          }
+          case (None, None) => {
+            // no processing
+          }
         }
       }
     }
@@ -90,7 +99,7 @@ class LinkParser extends Way2Think {
    * Processes sentence with RelationExtractorKB that takes in account KBAnnotator results.
    * @param sentence to process via RelationExtractorKB
    * @param sentences processed
-   * @return
+   * @return ProcessedSentence
    */
   def processSentence(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
     //run relex and extract sentences
@@ -137,18 +146,18 @@ class LinkParser extends Way2Think {
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     try {
       val name: String = getName(feature)
-      val conceptError: Pair[Option[Concept], Option[Error]] = getConcept(name, sentence)
+      val conceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
 
       conceptError match {
-        case Pair(Some(concept: Concept), None) => {
+        case Triple(a: AnnotatedPhrase, Some(concept: Concept), None) => {
           val updatedConcept = updateTensePos(feature, concept, sentence)
           (Some(updatedConcept), None)
         }
-        case Pair(Some(concept: Concept), Some(e: Error)) => {
+        case Triple(a: AnnotatedPhrase, Some(concept: Concept), Some(e: Error)) => {
           val updatedConcept = updateTensePos(feature, concept, sentence)
           (Some(updatedConcept), None)
         }
-        case Pair(None, Some(e: Error)) => {
+        case Triple(a: AnnotatedPhrase, None, Some(e: Error)) => {
           (None, Some(e))
         }
       }
@@ -201,18 +210,21 @@ class LinkParser extends Way2Think {
    * @param sentence to search AnnotatedPhrase in.
    * @return Concept and Error pair.
    */
-  def getConcept(name: String, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
+  def getConcept(name: String, sentence: AnnotatedSentence): Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = {
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
       val phrase = phrases.head
       val concepts = phrase.concepts
       if (concepts.size == 1) {
         val concept = concepts.head
-        (Some(concept), None)
+        phrase.conceptsAdd(concept)
+        (phrase, Some(concept), None)
       } else if (concepts.size < 1) {
-        (Some(Concept(phrase.text)), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
+        val concept = Concept(phrase.text)
+        phrase.conceptsAdd(concept)
+        (phrase, Some(concept), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
       } else {
-        (None, Some(new Error("$Ambiguous_concepts")))
+        (phrase, None, Some(new Error("$Ambiguous_concepts")))
       }
     } else if (phrases.size < 1) {
       throw new UnexpectedException("$No_phrases_found " + name)
@@ -239,7 +251,7 @@ class LinkParser extends Way2Think {
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
     val underscoreLess: String = value.replaceAll("_", " ")
 
-    var filteredPhrase: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
+    /* var filteredPhrase: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
     sentence.phrases.foreach(f =>
       f.findPhrase(underscoreLess.trim.toLowerCase) match {
         case Some(f1) => {
@@ -250,15 +262,15 @@ class LinkParser extends Way2Think {
 
         }
       }
-    )
-    /*val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
+    )*/
+    val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
         phrase.findPhrase(underscoreLess.trim.toLowerCase) match {
-          case Some(str: String) => true
+          case Some(ph: AnnotatedPhrase) => true
           case None => false
         }
       }
-    } */
+    }
     filteredPhrase
   }
 

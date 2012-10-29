@@ -235,7 +235,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
     }
     catch {
       case e: Exception => {
-        System.err.println("Error: Failed to process sentence: " + sentence)
+        log.error("Error: Failed to process sentence: " + sentence)
         e.printStackTrace
       }
     }

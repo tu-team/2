@@ -1,8 +1,7 @@
 package tu.model.knowledge.annotator
 
 import tu.model.knowledge._
-import domain.{ConceptNetwork, ConceptLink, Concept}
-import howto.Solution
+import domain.{ConceptLink, Concept}
 import scala.Some
 import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
@@ -58,6 +57,11 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
 
   def concepts_=(in: List[Concept]): AnnotatedPhrase = {
     _concepts = in
+    this
+  }
+
+  def conceptsAdd(in: Concept): AnnotatedPhrase = {
+    _concepts = concepts ::: List(in)
     this
   }
 
@@ -131,7 +135,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     }
   }
 
-  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved:ListBuffer[String] = new ListBuffer[String]()): Boolean = {
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
 
     val uri = this.uri.toString
     if (saved.contains(uri))
@@ -236,13 +240,13 @@ object AnnotatedPhrase {
 
   /**
    * load from primary storage
-   * @param kb
-   * @param selfMap
-   * @return
+   * @param kb KB to load.
+   * @param selfMap map to load.
+   * @return loaded AnnotatedPhrase
    */
   def load(kb: KB, selfMap: Map[String, String]): AnnotatedPhrase = {
     val ID = new KBNodeId(selfMap)
-    subload (kb,selfMap,ID )
+    subload(kb, selfMap, ID)
   }
 
 
@@ -296,7 +300,7 @@ object AnnotatedPhrase {
     }
 
     val ID = new KBNodeId(selfMap)
-    subload (kb,selfMap ,ID)
+    subload(kb, selfMap, ID)
   }
 
 
