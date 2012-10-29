@@ -62,6 +62,12 @@ class LinkParser extends Way2Think {
     }
   }
 
+  /**
+   * Run through List of AnnotatedSentence
+   * @param sentences
+   * @param context
+   * @return
+   */
   def processSentences(sentences: List[AnnotatedSentence], context: ShortTermMemory): List[AnnotatedSentence] = {
     sentences.map {
       sentence: AnnotatedSentence => {
@@ -80,6 +86,12 @@ class LinkParser extends Way2Think {
     sentences
   }
 
+  /**
+   * Processes sentence with RelationExtractorKB that takes in account KBAnnotator results.
+   * @param sentence to process via RelationExtractorKB
+   * @param sentences processed
+   * @return
+   */
   def processSentence(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
@@ -90,10 +102,14 @@ class LinkParser extends Way2Think {
       throw new UnexpectedException("$No_parses_produced")
     } else {
       relexSentence.getParses.get(0)
-
     }
   }
 
+  /**
+   * Setup OpenCog to use RelationExtractorKB that uses KBAnnotator results.
+   * @param sentences to process via RelationExtractorKB.
+   * @return RelationExtractorKB with proper setup to use KBAnnotator results
+   */
   def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
     val re = new RelationExtractorKB(false, sentences)
@@ -112,6 +128,12 @@ class LinkParser extends Way2Think {
     re
   }
 
+  /**
+   * Gets Concept from sentence if not found, creates orphan Concept and returns Error, if found returns Concept with no Error, otherwise only Error is returned.
+   * @param feature FeatureNode to process: find AnnotatedPhrase -> Concept,
+   * @param sentence to find FeatureNode in.
+   * @return Pair of Concept and Error
+   */
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     try {
       val name: String = getName(feature)
@@ -119,31 +141,12 @@ class LinkParser extends Way2Think {
 
       conceptError match {
         case Pair(Some(concept: Concept), None) => {
-          if (feature.get("tense") != null) {
-            log info "tense=" + feature.get("tense").getValue
-            val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
-            val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
-            concept.links = concept.links ::: List(tenseLink)
-          }
-          if (feature.get("pos") != null) {
-            log info "pos=" + feature.get("pos").getValue
-            val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
-            val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
-            concept.links = concept.links ::: List(posLink)
-          }
-
-          if (feature.get("links") != null) {
-            // log info "links=" + feature.get("links").toString(getZHeadsFilter)
-            log info "==>"
-            val processedLinks = processLink(feature.get("links"), concept, sentence)
-            concept.links = concept.links ::: processedLinks
-          }
-          val next = feature.get("NEXT")
-          if (next != null) {
-            log info "=>"
-            processNode(next, sentence)
-          }
-          (Some(concept), None)
+          val updatedConcept = updateTensePos(feature, concept, sentence)
+          (Some(updatedConcept), None)
+        }
+        case Pair(Some(concept: Concept), Some(e: Error)) => {
+          val updatedConcept = updateTensePos(feature, concept, sentence)
+          (Some(updatedConcept), None)
         }
         case Pair(None, Some(e: Error)) => {
           (None, Some(e))
@@ -157,24 +160,59 @@ class LinkParser extends Way2Think {
     }
   }
 
-  //TODO Pair[Option[Concept], List[Error]]
+  /**
+   * Updates ConceptLink-s of tense and pos.
+   * @param feature based on it the Concept's ConceptLink-s are updated.
+   * @param concept Concept to update ConceptLink-s
+   * @param sentence to recursively process FeatureNode-s and ConceptLink-s.
+   * @return updated Concept.
+   */
+  private def updateTensePos(feature: FeatureNode, concept: Concept, sentence: AnnotatedSentence): Concept = {
+    if (feature.get("tense") != null) {
+      log info "tense=" + feature.get("tense").getValue
+      val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
+      val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
+      concept.links = concept.links ::: List(tenseLink)
+    }
+    if (feature.get("pos") != null) {
+      log info "pos=" + feature.get("pos").getValue
+      val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
+      val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
+      concept.links = concept.links ::: List(posLink)
+    }
+
+    if (feature.get("links") != null) {
+      // log info "links=" + feature.get("links").toString(getZHeadsFilter)
+      log info "==>"
+      val processedLinks = processLink(feature.get("links"), concept, sentence)
+      concept.links = concept.links ::: processedLinks
+    }
+    val next = feature.get("NEXT")
+    if (next != null) {
+      log info "=>"
+      processNode(next, sentence)
+    }
+    concept
+  }
+
+  /**
+   * Searches for AnnotatedPhrase via specified name in specified AnnotatedSentence, if no Concept found new orphan Concept is created and Error is set, if more than 1 Concept found Error returned.
+   * @param name to be used to search for a AnnotatedPhrase.
+   * @param sentence to search AnnotatedPhrase in.
+   * @return Concept and Error pair.
+   */
   def getConcept(name: String, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
       val phrase = phrases.head
       val concepts = phrase.concepts
-      val res = if (concepts.size == 1) {
+      if (concepts.size == 1) {
         val concept = concepts.head
-        concept
+        (Some(concept), None)
       } else if (concepts.size < 1) {
-        new Error("$No_concepts_found_for_phrase: " + phrase)
+        (Some(Concept(phrase.text)), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
       } else {
-        // throw new UnexpectedException("$Ambiguous_concepts")
-        new Error("$Ambiguous_concepts")
-      }
-      res match {
-        case c: Concept => (Some(c), None)
-        case e: Error => (None, Some(e))
+        (None, Some(new Error("$Ambiguous_concepts")))
       }
     } else if (phrases.size < 1) {
       throw new UnexpectedException("$No_phrases_found " + name)

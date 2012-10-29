@@ -6,7 +6,6 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import util.Random
 import tu.model.knowledge._
 import org.slf4j.LoggerFactory
-import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
 import collection.mutable.ListBuffer
 
@@ -23,7 +22,6 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability()
-
                     )
   extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
 
@@ -62,9 +60,9 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   def generalisations: TypedKLine[Concept] = _generalisations
 
 
-  def generalisationsList:List[Concept] = {
-      _generalisations.frames.values.toList
-    }
+  def generalisationsList: List[Concept] = {
+    _generalisations.frames.values.toList
+  }
 
 
   /**
@@ -110,7 +108,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     _conceptLinks = _conceptLinks ::: List(link)
     // generalisations are unidirectional
     if (link.isGeneralisationLink && link.destination != null) {
-       generalisationsAdd(link.destination)
+      generalisationsAdd(link.destination)
     }
     this
   }
@@ -156,8 +154,9 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
-  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved:ListBuffer[String] = new ListBuffer[String]()): Boolean = {
-    if (saved.contains(key)) return true;
+  override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
+    if (saved.contains(key)) return true
+
     var res = kb.saveResource(this, parent, key, linkType)
     saved.append(key)
     //var savedLocal = List[String](key)
@@ -165,22 +164,22 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     for (x: Resource <- generalisations.frames.values.iterator) {
       //if (!savedLocal.contains(x.uri.toString))
       //{
-        res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME,saved)
+      res &= x.save(kb, this, x.uri.toString, Constant.GENERALISATION_LINK_NAME, saved)
       //  savedLocal::=x.uri.toString
       //}
     }
 
     for (y: Resource <- specialisations.frames.values.iterator) {
-      res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME,saved)
+      res &= y.save(kb, this, y.uri.toString, Constant.SPECIALISATION_LINK_NAME, saved)
     }
 
     for (z: Resource <- phrases.frames.values.iterator) {
-      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME,saved)
+      res &= z.save(kb, this, z.uri.toString, Constant.PHRASES_LINK_NAME, saved)
     }
 
     for (t: ConceptLink <- _conceptLinks) {
-      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME,saved)
-      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME,saved)
+      res &= t.source.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_SOURCE_NAME, saved)
+      res &= t.destination.save(kb, this, t.uri.name, Constant.CONCEPT_LINK_DESTINATION_NAME, saved)
     }
     res
   }
@@ -272,15 +271,15 @@ object Concept {
 
     val ID = new KBNodeId(selfMap)
 
-    def oneList(items: Map[String, Map[String, String]],linkName:String): Map[KnowledgeURI, Concept] = {
+    def oneList(items: Map[String, Map[String, String]], linkName: String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri,true), Concept.load(kb,ID,uri,linkName))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri, true), Concept.load(kb, ID, uri, linkName))
       }
     }
 
     def oneListPhrases(items: Map[String, Map[String, String]]): Map[KnowledgeURI, AnnotatedPhrase] = {
       items.keys.foldLeft(Map[KnowledgeURI, AnnotatedPhrase]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri,true), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri, true), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
       }
     }
 

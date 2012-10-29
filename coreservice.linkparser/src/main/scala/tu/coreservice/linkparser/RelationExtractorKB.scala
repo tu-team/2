@@ -187,6 +187,12 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
     processSentence(sentence, null)
   }
 
+  /**
+   * Process one sentence with entityMaintainer already setup.
+   * @param sentence to process via EntityMaintainer.
+   * @param _entityMaintainer EntityMaintainer
+   * @return processed Sentence
+   */
   def processSentence(sentence: String, _entityMaintainer: EntityMaintainer): Sentence = {
     _starttime = System.currentTimeMillis
     var entityMaintainer = _entityMaintainer
