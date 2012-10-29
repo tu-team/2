@@ -16,7 +16,7 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 //}
 
 class Solutions {
-  var solutions: List[SolvedIssue] = KBAdapter.solutions()
+  var solutions: List[SolvedIssue] = Nil
 
   def add(item: SolvedIssue): List[SolvedIssue] = {
     KBAdapter.solutionsAdd(item)
