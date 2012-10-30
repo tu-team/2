@@ -58,8 +58,11 @@ case class AnnotatedNarrative(_sentences: List[AnnotatedSentence], _uri: Knowled
 
     val uri = this.uri.toString
     if (saved.contains(uri))
+    {
+      kb.createLink(parent,this,linkType)
       return true
-    saved.append(uri)
+    }
+      saved.append(uri)
 
     var res = kb.saveResource(this, parent, key, linkType)
     for (x: Resource <- sentences)

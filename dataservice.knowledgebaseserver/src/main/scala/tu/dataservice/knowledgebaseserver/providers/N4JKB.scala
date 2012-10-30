@@ -81,12 +81,12 @@ object N4JKB extends KB {
     N4JKB().getReferenceNode
   }
 
-  def createLink(parent: KBNodeId, child:Resource,linkType: String)={
+  def createLink(parent: KBNodeId, child:KBNodeId,linkType: String)={
     var ok = false
     val tx: Transaction = N4JKB().beginTx()
     try {
     var parentNode =   N4JKB().getNodeById(parent.ID)
-    var childNode =  N4JKB().getNodeById(KBMap.get(child))
+    var childNode =  N4JKB().getNodeById(child.ID)
     parentNode.createRelationshipTo(childNode,new RelationType(linkType))
     }
     finally {

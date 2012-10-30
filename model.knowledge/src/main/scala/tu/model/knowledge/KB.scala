@@ -87,7 +87,7 @@ trait KB {
    * @param child    reference
    * @param linkType  type of link
    */
-  def createLink(parent:KBNodeId, child:Resource,linkType: String)
+  def createLink(parent:KBNodeId, child:KBNodeId,linkType: String)
 
 }
 
