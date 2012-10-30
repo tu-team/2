@@ -15,10 +15,12 @@ import org.slf4j.LoggerFactory
 import relex.feature.FeatureNode
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
 import tu.exception.UnexpectedException
+import tu.coreservice.utilities.URIHelper
 
 
 /**
  * @author toschev alex
+ * @author talanov max
  *         Date: 01.06.12
  *         Time: 18:59
  *
@@ -31,11 +33,6 @@ import tu.exception.UnexpectedException
 class PreliminarySplitter extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
-
-  /**
-   * list of phrase's types that should be processed as separate Annotated Phrases
-   */
-  private val separateProcessingPhraseType = List[String]()
 
   def setup: RelationExtractor = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
@@ -104,10 +101,7 @@ class PreliminarySplitter extends Way2Think {
       val relExt = setup
       val relexSentence = relExt.processSentence(sentence, em)
       val parse = relexSentence.getParses.get(0)
-      var phrases = List[AnnotatedPhrase]()
-
-      processNode(parse.getLeft.get("head"))
-
+      var phrases = processNodeRec(parse.getLeft.get("head"))
 
       def processNode(feature: FeatureNode): Boolean = {
         try {
@@ -129,6 +123,9 @@ class PreliminarySplitter extends Way2Think {
             if (filteredFeatures.size > 0) {
               filteredFeatures.foreach(f => {
                 processNode(feature.get("links").get(f))
+                if (Constant.RelexFeaturesPhrases.contains(f)) {
+                  phrases ::= AnnotatedPhrase(f, sentenceIndex + 0.01)
+                }
               })
             }
           }
@@ -147,15 +144,15 @@ class PreliminarySplitter extends Way2Think {
         }
       }
 
-      //rearrange phrases according to sentence occurence
+      //rearrange phrases according to sentence occurrence
       phrases = phrases.sortBy(b => b.sentenceIndex)
 
-      outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
+      outputContext.frames += (new KnowledgeURI(URIHelper.uriProjectName, sentenceURI.name + "-" + sntOrder, URIHelper.version())
         -> new KnowledgeString(sentence, sentenceURI))
 
       //also add sentences to sentence
       val annotatedSentence = AnnotatedSentence(sentence, phrases,
-        new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3"))
+        new KnowledgeURI(URIHelper.uriProjectName, sentenceURI.name + "-" + sntOrder, URIHelper.version()))
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
       annotatedSentences ::= annotatedSentence
@@ -186,4 +183,58 @@ class PreliminarySplitter extends Way2Think {
   def start() = false
 
   def stop() = false
+
+  private def processNodeRec(feature: FeatureNode): List[AnnotatedPhrase] = {
+    var phrases = List[AnnotatedPhrase]()
+    try {
+      val name: String = getName(feature)
+      //apply sentence index
+      val sentenceIndex = feature.get("nameSource").get("index_in_sentence").getValue.toDouble
+
+      val currentPhrase = if (name.contains("_")) {
+        //split phrase by two
+        AnnotatedPhrase(name.split("_").map(b => AnnotatedPhrase(b)).toList, sentenceIndex)
+      }
+      else {
+        AnnotatedPhrase(name, sentenceIndex)
+      }
+
+      if (feature.get("links") != null) {
+        val filteredFeatures = feature.get("links").getFeatureNames.filter {
+          n: String => Constant.RelexFeatures.contains(n)
+        }
+        if (filteredFeatures.size > 0) {
+          filteredFeatures.foreach(f => {
+            val childPhrases = processNodeRec(feature.get("links").get(f))
+            if (Constant.RelexFeaturesPhrases.contains(f)) {
+              val connectionPhrase = AnnotatedPhrase(f, sentenceIndex)
+              if (childPhrases.size > 0) {
+                val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase, childPhrases(0)), sentenceIndex)
+                phrases :::= List(compoundPhrase) ::: childPhrases.slice(1, childPhrases.size)
+              } else {
+                val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase), sentenceIndex)
+                phrases ::= compoundPhrase
+              }
+            } else {
+              phrases :::= List(currentPhrase) ::: childPhrases
+            }
+          })
+        }
+      } else {
+        phrases ::= currentPhrase
+      }
+
+      val next = feature.get("NEXT")
+      if (next != null) {
+        log info "=>"
+        phrases :::= processNodeRec(next)
+      }
+      phrases
+    } catch {
+      case e: RuntimeException => {
+        log error e.getMessage
+        throw new UnexpectedException("$Wrong_feature_requested " + e.getMessage)
+      }
+    }
+  }
 }

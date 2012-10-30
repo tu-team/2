@@ -1,15 +1,11 @@
 package tu.coreservice.utilities
 
 import java.net.URI
-import util.Random
-import tu.model.knowledge.{KnowledgeURI, Constant}
-import com.sun.jndi.toolkit.url.Uri
 
 /**
- * Created by IntelliJ IDEA.
- * User: toscheva
- * Date: 06.06.12
- * Time: 10:50
+ * @author toscheva
+ *         Date: 06.06.12
+ *         Time: 10:50
  *
  */
 
@@ -25,7 +21,7 @@ object URIHelper {
    * @return true if uri contains tag
    */
   def isContainTag(tag: String, uri: URI): Boolean = {
-    return uri.toString.contains(tag)
+    uri.toString.contains(tag)
   }
 
   /**
@@ -34,24 +30,28 @@ object URIHelper {
    */
   def emptyURI() = "http://tu-project.com/knowledge/empty"
 
-  def generateURIForFrame(frameUniqueName:String):String={
-    return "http://tu-project.com/"+frameUniqueName
+  def uriPrefix() = "http://tu-project.com/"
+
+  def uriProjectName = "tu-project.com"
+
+  def generateURIForFrame(frameUniqueName: String): String = {
+    "http://tu-project.com/" + frameUniqueName
   }
 
   /**
    *
    * @return  namespace for annotator
    */
-  def annotatorNamespace():String={
-    return "tu.coreservice.annotator"
+  def annotatorNamespace(): String = {
+    "tu.coreservice.annotator"
   }
 
   /**
    * return project version
    * @return  project version
    */
-  def version():String={
-    return "0.3.0"
+  def version(): String = {
+    "1.0"
   }
 
 
@@ -59,13 +59,13 @@ object URIHelper {
    * text mark for splitter results
    * @return
    */
-  def splitterMark():String={
+  def splitterMark(): String = {
     // return "splitted"
     "tu.coreservice.splitter.PreliminarySplitter"
   }
 
-  def sentenceMark():String={
-    return "sentense"
+  def sentenceMark(): String = {
+    "sentense"
   }
 
 

@@ -297,7 +297,12 @@ class LinkParser extends Way2Think {
             val destinationError = processNode(feature.get(name), sentence)
             destinationError match {
               case Pair(Some(destination), None) => {
-                ConceptLink(source, destination, name.substring(1))
+                val conceptLinkName = if (name.indexOf("_") > -1) {
+                  name.substring(1)
+                } else {
+                  name
+                }
+                ConceptLink(source, destination, conceptLinkName)
               }
             }
           }

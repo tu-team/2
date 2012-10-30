@@ -6,22 +6,22 @@ import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.coreservice.utilities.URIHelper
-import tu.model.knowledge.narrative.Narrative
-import tu.model.knowledge.KnowledgeURI
 
 /**
  * Simple KBAnnotator implementation.
  * @author toschev alex
+ * @author talanov max
  *         Date: 15.06.12
  *         Time: 18:26
  *
  */
+
 class KBAnnotatorImpl extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
   /**
-   * Way2Think interface.
+   * Annotate split Sentence with KB Concepts.
    * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
@@ -31,7 +31,6 @@ class KBAnnotatorImpl extends Way2Think {
 
     val sentences = inputContext.frames.filter(p => p._1.name.contains(URIHelper.splitterMark()))
     val extractedNarratives = sentences.map(b => b._2.asInstanceOf[AnnotatedNarrative])
-    var wordsDetected = 0
     //trying to annotate sentences
     //val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
@@ -39,8 +38,8 @@ class KBAnnotatorImpl extends Way2Think {
       //we should check in local context
       //inputContext.domainModel.
       //val localAnnotated = localAnnotator.apply(phrase)
-      val phrases=  inputContext.domainModel.get.nodes.filter(n=>n.phrases.frames.map(p=>p._2).toString().toLowerCase.equals(phrase.toLowerCase))
-       //TODO:Correct
+      val phrases = inputContext.domainModel.get.nodes.filter(n => n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase))
+      //TODO:Correct
       if (phrases.size > 0) {
         Option(phrases.head.phrases.frames.head._2)
       } else {
@@ -51,8 +50,8 @@ class KBAnnotatorImpl extends Way2Think {
     }
 
 
-    def annotatePhrase(ph:AnnotatedPhrase):Boolean={
-      var result=false
+    def annotatePhrase(ph: AnnotatedPhrase): Boolean = {
+      var result = false
       var annotationFound = checkLocalKB(ph.phrase)
       def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
         ref.concepts = src.concepts
@@ -67,7 +66,7 @@ class KBAnnotatorImpl extends Way2Think {
             annotationFound = checkLocalKB(syn)
             if (!annotationFound.isEmpty) {
               appendAnnotation(ph, annotationFound.get)
-              result=true
+              result = true
               scala.util.control.Breaks.break()
             }
           })
@@ -75,21 +74,18 @@ class KBAnnotatorImpl extends Way2Think {
       }
       else {
         appendAnnotation(ph, annotationFound.get)
-        result=true
+        result = true
       }
-      return result
+      result
     }
 
 
-    def recurrentlyCheckPhrase(ph:AnnotatedPhrase):Boolean={
-      var annotateFound = annotatePhrase(ph)
-      if (!annotateFound)
-      {
-
-          ph.phrases.foreach(ph1=>{
-            recurrentlyCheckPhrase(ph1)
-          })
-
+    def recurrentlyCheckPhrase(ph: AnnotatedPhrase): Boolean = {
+      val annotateFound = annotatePhrase(ph)
+      if (!annotateFound) {
+        ph.phrases.foreach(ph1 => {
+          recurrentlyCheckPhrase(ph1)
+        })
       }
       true
     }
