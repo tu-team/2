@@ -35,7 +35,7 @@ class LongTermMemoryTest extends FunSuite {
       c: Concept => {
         c.generalisations.frames.filter {
           keyValue: Pair[KnowledgeURI, Concept] => {
-            keyValue._1.name == "parentConcept"
+            keyValue._2.uri.name == "parentConcept"
           }
         }.size > 0
       }

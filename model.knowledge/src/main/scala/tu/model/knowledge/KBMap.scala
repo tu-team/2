@@ -38,6 +38,7 @@ object KBMap {
   var id2object = HashMap[Long, Resource]()
 
   def register(r:Resource, id:Long)  {
+   // r.uri.uid=id.toString
     val uri = r.uri.toString
     uri2id(uri) = id
     id2object(id) = r

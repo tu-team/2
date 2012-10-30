@@ -58,7 +58,7 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
     val uri = this.uri.toString
     if (saved.contains(uri))
     {
-      kb.createLink(parent,this,linkType)
+      kb.createLink(parent,this,linkType,key)
       return true
     }
     //val savedPlus:List[String] = uri :: saved

@@ -141,7 +141,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     if (saved.contains(uri))
     {
       //only create link
-      kb.createLink(parent,this,linkType)
+      kb.createLink(parent,this,linkType,key)
       return true
     }
     saved.append(uri)
