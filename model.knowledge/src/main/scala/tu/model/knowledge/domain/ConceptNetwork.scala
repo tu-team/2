@@ -171,7 +171,7 @@ object ConceptNetwork {
 
     def oneList(items: Map[String, Map[String, String]], linkName:String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri), Concept.load(kb, ID,uri,linkName))//new Concept(items(uri)))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri,true), Concept.load(kb, ID,uri,linkName))//new Concept(items(uri)))
       }
     }
 

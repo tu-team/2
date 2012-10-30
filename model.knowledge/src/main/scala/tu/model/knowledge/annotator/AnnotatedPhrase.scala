@@ -139,8 +139,11 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
 
     val uri = this.uri.toString
     if (saved.contains(uri))
+    {
+      //only create link
+      kb.createLink(parent,this,linkType)
       return true
-
+    }
     saved.append(uri)
 
     var res = kb.saveResource(this, parent, key, linkType)

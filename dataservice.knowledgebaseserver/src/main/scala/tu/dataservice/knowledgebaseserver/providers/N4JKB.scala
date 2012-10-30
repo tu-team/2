@@ -9,6 +9,7 @@ import org.neo4j.kernel.EmbeddedGraphDatabase
 import collection.mutable
 import collection.immutable.HashMap
 import org.neo4j.graphdb.index.Index
+import org.neo4j.cypher.commands.Return
 
 /**
  *
@@ -78,6 +79,20 @@ object N4JKB extends KB {
       case _ => LoggerFactory.getLogger(this.getClass).error("try to get not existed node with ID {}", Id.toString)
     }
     N4JKB().getReferenceNode
+  }
+
+  def createLink(parent: KBNodeId, child:Resource,linkType: String)={
+    var ok = false
+    val tx: Transaction = N4JKB().beginTx()
+    try {
+    var parentNode =   N4JKB().getNodeById(parent.ID)
+    var childNode =  N4JKB().getNodeById(KBMap.get(child))
+    parentNode.createRelationshipTo(childNode,new RelationType(linkType))
+    }
+    finally {
+      tx.finish()
+    }
+    ok
   }
 
   private def saveResource(child: Resource, parentNode: Node, key: String, linkType: String): Boolean = {

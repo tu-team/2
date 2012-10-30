@@ -61,7 +61,7 @@ case class ConceptLink(var _generalisations: TypedKLine[ConceptLink],
 
 object ConceptLink {
   def apply(source: Concept, destination: Concept, name: String): ConceptLink = {
-    new ConceptLink(TypedKLine("generalisations"), TypedKLine("specialisations"), TypedKLine("sentences"), source, destination, KnowledgeURI(name))
+    new ConceptLink(TypedKLine("generalisations"), TypedKLine("specialisations"), TypedKLine("sentences"), source, destination, KnowledgeURI(name,true))
   }
 
   def apply(source: Concept, destination: Concept, name: String, probability: Probability): ConceptLink = {

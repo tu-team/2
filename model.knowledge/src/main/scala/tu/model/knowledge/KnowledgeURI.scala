@@ -3,6 +3,7 @@ package tu.model.knowledge
 import java.net.URI
 import util.Random
 import org.slf4j.LoggerFactory
+import tu.model.knowledge.helper.URIGenerator
 
 /**
  * Universal Identifier of the model.
@@ -49,22 +50,25 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
   def revision(): String = _revision
 
-  def uid(): String = _uID
+  def uid = _uID
 
-  def uid_=(in: String): KnowledgeURI = {
-    this._uID = in
-    this
-  }
+  def uid_=(in: String) = _uID=in
+
 
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        if (namespace().size > 0 && name.size > 0 && revision.size > 0 ) {
-          this._uRI = Some(new URI(namespace + Constant.DELIMITER + name + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
-          this._uRI
-        } else {
-          None
+        //if (namespace().size > 0 && name.size > 0 && revision.size > 0 ) {
+        if (_uID=="")
+        {
+          //generate UID
+          //_uID=URIGenerator.generateUID()
         }
+        this._uRI = Some(new URI(namespace + Constant.DELIMITER + name.replace(" ","-") + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
+        this._uRI
+        //} else {
+        //  None
+        //}
       }
       case Some(_) => {
         _uRI
@@ -78,7 +82,8 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   }
 
   override def toString: String = {
-    namespace() + delimiter + name + "@" + revision()
+    uri().get.toString
+    //namespace() + delimiter + name + "@" + revision()
   }
 
   def export: Map[String, String] = {
@@ -98,7 +103,25 @@ object KnowledgeURI {
   def apply(name: String): KnowledgeURI = {
     new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
   }
-  def apply(name: String,uri:Boolean): KnowledgeURI = {
-    new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
+
+  private def checkIfThisIsRawString(input:String):Boolean={
+    return input.contains(Constant.DELIMITER) &&
+      input.contains(Constant.REVISION_DELIMITER)  &&
+      input.contains(Constant.UID_DELIMITER)
+  }
+
+  def apply(raw: String,uri:Boolean): KnowledgeURI = {
+    if (!checkIfThisIsRawString(raw)) return KnowledgeURI(raw)
+    // Some(new URI(namespace + Constant.DELIMITER + name + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
+    val namespace = raw.substring(0, raw.indexOf(Constant.DELIMITER))
+    val name =  raw.substring(raw.indexOf(Constant.DELIMITER)+1, raw.indexOf(Constant.REVISION_DELIMITER )).replace("-"," ")
+    val revision =      raw.substring(raw.indexOf(Constant.REVISION_DELIMITER)+1, raw.indexOf(Constant.UID_DELIMITER ))
+    val uID=   raw.substring(raw.indexOf(Constant.UID_DELIMITER)+1)
+
+    var kURI =new KnowledgeURI(namespace, name, revision )
+
+    kURI.uid=uID
+
+    return kURI
   }
 }

@@ -81,6 +81,13 @@ trait KB {
 
 
   //def loadSelf(parent:KBNodeId):Map[String,  String] = Map()
+  /**
+   * Create link between 2 nodes
+   * @param parent  reference
+   * @param child    reference
+   * @param linkType  type of link
+   */
+  def createLink(parent:KBNodeId, child:Resource,linkType: String)
 
 }
 

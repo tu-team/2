@@ -22,13 +22,13 @@ object Constant {
 
   val savedAnnotations = "savedWordAnnotations"
 
-  val DELIMITER = "."
-  val REVISION_DELIMITER = "/"
+  val DELIMITER = "/"
+  val REVISION_DELIMITER = "@"
   val UID_DELIMITER = "#"
   val UID_INSTANCE_DELIMITER = "&ID="
-  val defaultNamespace = "2/"
+  val defaultNamespace = "tu-project.com"
   val defaultConceptsNamespace = "concepts/"
-  val defaultRevision = "0.0"
+  val defaultRevision = "0.3"
   val INSTANCE_ID_RANDOM_SEED = 900
 
   val SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME = "DirectInstructionRequest"
