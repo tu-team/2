@@ -4,7 +4,7 @@ import _root_.relex.corpus.{DocSplitterFactory, DocSplitter}
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
-import tu.model.knowledge.{Resource, KnowledgeURI}
+import tu.model.knowledge.{Constant, Resource, KnowledgeURI}
 import tu.coreservice.spellcorrector.SpellCorrector
 import relex.entity.EntityMaintainer
 import relex.RelationExtractor
@@ -12,9 +12,8 @@ import relex.output.OpenCogScheme
 import scala.collection.JavaConversions._
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import org.slf4j.LoggerFactory
-import relex.feature.{FeatureNodeCallback, FeatureNode}
-import tu.model.knowledge.annotator.{AnnotatedWord, AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
-import tu.model.knowledge.domain.{ConceptLink, Concept}
+import relex.feature.FeatureNode
+import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedSentence, AnnotatedPhrase}
 import tu.exception.UnexpectedException
 
 
@@ -26,19 +25,17 @@ import tu.exception.UnexpectedException
  */
 
 /**
- * split text in sentence
+ * Split text in sentence and phrases.
  * https://github.com/development-team/2/blob/master/doc/design-specification/splitting-text-to-sentences.md
  */
 class PreliminarySplitter extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  val names: List[String] = List("_subj", "_obj", "_iobj", "_advmod")
-
   /**
    * list of phrase's types that should be processed as separate Annotated Phrases
    */
-  private val separateProcessingPhraseType=List[String]()
+  private val separateProcessingPhraseType = List[String]()
 
   def setup: RelationExtractor = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
@@ -107,41 +104,32 @@ class PreliminarySplitter extends Way2Think {
       val relExt = setup
       val relexSentence = relExt.processSentence(sentence, em)
       val parse = relexSentence.getParses.get(0)
-      var  phrases  = List[AnnotatedPhrase]()
+      var phrases = List[AnnotatedPhrase]()
 
       processNode(parse.getLeft.get("head"))
 
 
-      def processNode(feature: FeatureNode):Boolean = {
-
+      def processNode(feature: FeatureNode): Boolean = {
         try {
-
           val name: String = getName(feature)
-
           //apply sentence index
-          val sentenceIndex = feature.get("nameSource").get("index_in_sentence").getValue().toDouble
+          val sentenceIndex = feature.get("nameSource").get("index_in_sentence").getValue.toDouble
 
-          if (name.contains("_"))
-          {
+          if (name.contains("_")) {
             //split phrase by two
-            phrases ::= AnnotatedPhrase(name.split("_").map(b=> AnnotatedPhrase(b)).toList,sentenceIndex)
-
+            phrases ::= AnnotatedPhrase(name.split("_").map(b => AnnotatedPhrase(b)).toList, sentenceIndex)
           }
-          else
-          {
-            phrases ::= AnnotatedPhrase(name,sentenceIndex)
+          else {
+            phrases ::= AnnotatedPhrase(name, sentenceIndex)
           }
-            if (feature.get("links") != null) {
+          if (feature.get("links") != null) {
             val filteredFeatures = feature.get("links").getFeatureNames.filter {
-              n: String => names.contains(n)
+              n: String => Constant.RelexFeatures.contains(n)
             }
             if (filteredFeatures.size > 0) {
-
-              filteredFeatures.foreach(f=>{
+              filteredFeatures.foreach(f => {
                 processNode(feature.get("links").get(f))
               })
-
-
             }
           }
 
@@ -160,7 +148,7 @@ class PreliminarySplitter extends Way2Think {
       }
 
       //rearrange phrases according to sentence occurence
-      phrases=phrases.sortBy(b=>b.sentenceIndex)
+      phrases = phrases.sortBy(b => b.sentenceIndex)
 
       outputContext.frames += (new KnowledgeURI("tu-project.com", sentenceURI.name + "-" + sntOrder, "0.3")
         -> new KnowledgeString(sentence, sentenceURI))
@@ -177,8 +165,6 @@ class PreliminarySplitter extends Way2Think {
     log info "apply():" + outputContext.toString
     outputContext
   }
-
-
 
 
   def getName(feature: FeatureNode): String = {

@@ -8,6 +8,8 @@ package tu.model.knowledge
 
 object Constant {
 
+  val RelexFeatures: List[String] = List("_subj", "_obj", "_iobj", "_advmod", "of")
+
   val solutionsName = "stored_solutions_name"
   val goalsName = "goals_name"
   val domainName = "domain_name"

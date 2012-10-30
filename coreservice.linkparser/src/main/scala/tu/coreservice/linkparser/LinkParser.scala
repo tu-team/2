@@ -27,8 +27,6 @@ class LinkParser extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  val names: List[String] = List("_subj", "_obj", "_iobj", "_advmod", "of")
-
   def start() = false
 
   def stop() = false
@@ -278,7 +276,7 @@ class LinkParser extends Way2Think {
 
     try {
       val filteredFeatures = feature.getFeatureNames.filter {
-        name: String => names.contains(name)
+        name: String => Constant.RelexFeatures.contains(name)
       }
       if (filteredFeatures.size > 0) {
         val filteredDestinationFeatures = filteredFeatures.toList.filter {
@@ -371,7 +369,7 @@ class LinkParser extends Way2Think {
     ignores.add("words")
 
     val order: java.util.ArrayList[String] = new java.util.ArrayList[String]
-    names.map {
+    Constant.RelexFeatures.map {
       name: String => order.add(name)
     }
     new FeatureNameFilter(ignores, order)
