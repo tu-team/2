@@ -69,7 +69,7 @@ class LinkParser extends Way2Think {
   def processSentences(sentences: List[AnnotatedSentence], context: ShortTermMemory): List[AnnotatedSentence] = {
     sentences.map {
       sentence: AnnotatedSentence => {
-        val parse: ParsedSentence = processSentence(sentence, sentences)
+        val parse: ParsedSentence = processSentenceRelex(sentence, sentences)
         val node: FeatureNode = new FeatureNode()
         node.set("head", parse.getLeft.get("head"))
         node.set("background", parse.getLeft.get("background"))
@@ -94,12 +94,36 @@ class LinkParser extends Way2Think {
   }
 
   /**
+   * Process every AnnotatedPhrase from specified AnnotatedSentence: creates links between concepts of each phrase.
+   * @param sentence to process.
+   * @return updated AnnotatedSentence.
+   */
+  def processAnnotatedSentence(sentence: AnnotatedSentence, relexSentence: ParsedSentence): AnnotatedSentence = {
+    val phrases = sentence.phrases
+    phrases.map {
+      ph: AnnotatedPhrase => {
+        //TODO add node processing here
+        val concepts = ph.concepts
+        if (concepts.size == 1) {
+          //TODO add links here
+        } else if (concepts.size > 1) {
+          // ambiguous concepts
+          throw new UnexpectedException("$Ambiguous_concept")
+        } else {
+          throw new UnexpectedException("$No_concept_found")
+        }
+      }
+    }
+    sentence
+  }
+
+  /**
    * Processes sentence with RelationExtractorKB that takes in account KBAnnotator results.
    * @param sentence to process via RelationExtractorKB
    * @param sentences processed
    * @return ProcessedSentence
    */
-  def processSentence(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
+  def processSentenceRelex(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
     val relExt = setup(sentences)
@@ -203,6 +227,61 @@ class LinkParser extends Way2Think {
   }
 
   /**
+   * Searches for FeatureNode with specified name.
+   * @param feature FeatureNode to start search.
+   * @param nameToFind the String name to find.
+   * @return first found FeatureNode or None.
+   */
+  private def findFeatureNode(feature: FeatureNode, nameToFind: String): Option[FeatureNode] = {
+    val name: String = getName(feature)
+    if (name == nameToFind) {
+      Some(feature)
+    } else {
+      if (feature.get("links") != null) {
+        log info "==>"
+        val processedLinks = findFeatureInLinks(feature.get("links"), nameToFind)
+        processedLinks
+      }
+      val next = feature.get("NEXT")
+      if (next != null) {
+        log info "=>"
+        findFeatureNode(next, nameToFind)
+      }
+      None
+    }
+  }
+
+  private def findFeatureInLinks(feature: FeatureNode, nameToFind: String): Option[FeatureNode] = {
+    val filteredFeatures = feature.getFeatureNames.filter {
+      name: String => Constant.RelexFeatures.contains(name)
+    }
+    if (filteredFeatures.size > 0) {
+      val foundNodeString: Option[String] = filteredFeatures.toList.find {
+        (name: String) => {
+          val found = findFeatureNode(feature.get(name), nameToFind)
+          found match {
+            case Some(f) => {
+              true
+            }
+            case Pair(None, Some(e: Error)) => {
+              false
+            }
+          }
+        }
+      }
+      foundNodeString match {
+        case Some(featureName) => {
+          val found: Option[FeatureNode] = findFeatureNode(feature.get(featureName), nameToFind)
+          found
+        }
+        case None => None
+      }
+    } else {
+      None
+    }
+  }
+
+  /**
    * Searches for AnnotatedPhrase via specified name in specified AnnotatedSentence, if no Concept found new orphan Concept is created and Error is set, if more than 1 Concept found Error returned.
    * @param name to be used to search for a AnnotatedPhrase.
    * @param sentence to search AnnotatedPhrase in.
@@ -273,7 +352,6 @@ class LinkParser extends Way2Think {
   }
 
   def processLink(feature: FeatureNode, source: Concept, sentence: AnnotatedSentence): List[ConceptLink] = {
-
     try {
       val filteredFeatures = feature.getFeatureNames.filter {
         name: String => Constant.RelexFeatures.contains(name)
