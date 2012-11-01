@@ -19,8 +19,8 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
                            var _links: List[ConceptLink] = List[ConceptLink](),
                            _uri: KnowledgeURI,
                            _probability: Probability = new Probability(),
-                           text: String = "",
-                           index: Double = 0)
+                           var _text: String = "",
+                           _index: Double = 0)
   extends Resource(_uri, _probability) {
 
   def this(_phrases: List[AnnotatedPhrase], _uri: KnowledgeURI) = {
@@ -50,7 +50,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
   }
 
   override def export: Map[String, String] = {
-    Map("text" -> this.text, "index" -> this.index.toString) ++ super.export
+    Map("text" -> this.text, "index" -> this._index.toString) ++ super.export
   }
 
   def concepts = _concepts
@@ -65,12 +65,18 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     this
   }
 
-  var _sentenceIndex: Double = index
+  var _sentenceIndex: Double = _index
 
   def sentenceIndex = _sentenceIndex
 
   def sentenceIndex_=(in: Double) {
     _sentenceIndex = in
+  }
+
+  def text = _text
+
+  def text_=(in: String) {
+    _text = in
   }
 
   /**
@@ -104,12 +110,16 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     _phrases = in
   }
 
+  /**
+   * Recursively searches for the textual representation of the AnnotatedPhrase according to specified word.
+   * @param word String to find.
+   * @return Some(AnnotatedPhrase) if found None if not found.
+   */
   def findPhrase(word: String): Option[AnnotatedPhrase] = {
 
-    if (this.toString.toLowerCase == word.toLowerCase) {
+    if (this.text.toLowerCase == word.toLowerCase) {
       Some(this)
-    }
-    else {
+    } else {
       if (phrases.size > 0) {
         phrases.find {
           ph: AnnotatedPhrase => {
@@ -118,30 +128,18 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
               case None => false
             }
           }
-        } match {
-          case Some(ph: AnnotatedPhrase) => Some(ph)
-          case None => {
-            if (this.text.toLowerCase == word.toLowerCase) {
-              Some(this)
-            } else {
-              None
-            }
-          }
         }
-      }
-      else {
+      } else {
         None
       }
     }
   }
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
-
     val uri = this.uri.toString
-    if (saved.contains(uri))
-    {
+    if (saved.contains(uri)) {
       //only create link
-      kb.createLink(parent,this,linkType,key)
+      kb.createLink(parent, this, linkType, key)
       return true
     }
     saved.append(uri)

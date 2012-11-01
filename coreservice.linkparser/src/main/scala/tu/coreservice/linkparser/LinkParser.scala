@@ -94,30 +94,6 @@ class LinkParser extends Way2Think {
   }
 
   /**
-   * Process every AnnotatedPhrase from specified AnnotatedSentence: creates links between concepts of each phrase.
-   * @param sentence to process.
-   * @return updated AnnotatedSentence.
-   */
-  def processAnnotatedSentence(sentence: AnnotatedSentence, relexSentence: ParsedSentence): AnnotatedSentence = {
-    val phrases = sentence.phrases
-    phrases.map {
-      ph: AnnotatedPhrase => {
-        //TODO add node processing here
-        val concepts = ph.concepts
-        if (concepts.size == 1) {
-          //TODO add links here
-        } else if (concepts.size > 1) {
-          // ambiguous concepts
-          throw new UnexpectedException("$Ambiguous_concept")
-        } else {
-          throw new UnexpectedException("$No_concept_found")
-        }
-      }
-    }
-    sentence
-  }
-
-  /**
    * Processes sentence with RelationExtractorKB that takes in account KBAnnotator results.
    * @param sentence to process via RelationExtractorKB
    * @param sentences processed
@@ -168,9 +144,9 @@ class LinkParser extends Way2Think {
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     try {
       val name: String = getName(feature)
-      val conceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
+      val phraseConceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
 
-      conceptError match {
+      phraseConceptError match {
         case Triple(a: AnnotatedPhrase, Some(concept: Concept), None) => {
           val updatedConcept = updateTensePos(feature, concept, sentence)
           (Some(updatedConcept), None)
@@ -294,7 +270,6 @@ class LinkParser extends Way2Think {
       val concepts = phrase.concepts
       if (concepts.size == 1) {
         val concept = concepts.head
-        phrase.conceptsAdd(concept)
         (phrase, Some(concept), None)
       } else if (concepts.size < 1) {
         val concept = Concept(phrase.text)
@@ -327,19 +302,6 @@ class LinkParser extends Way2Think {
 
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
     val underscoreLess: String = value.replaceAll("_", " ")
-
-    /* var filteredPhrase: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
-    sentence.phrases.foreach(f =>
-      f.findPhrase(underscoreLess.trim.toLowerCase) match {
-        case Some(f1) => {
-          filteredPhrase ::= f1
-
-        }
-        case None => {
-
-        }
-      }
-    )*/
     val filteredPhrase: List[AnnotatedPhrase] = sentence.phrases.filter {
       phrase: AnnotatedPhrase => {
         phrase.findPhrase(underscoreLess.trim.toLowerCase) match {
