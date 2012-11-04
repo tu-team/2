@@ -5,6 +5,7 @@ import tu.model.knowledge.semanticnetwork.SemanticNetwork
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
 import collection.mutable.ListBuffer
+import tu.model.knowledge.helper.ModelHelper
 
 /**
  * @author max talanov
@@ -135,10 +136,16 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   }
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
-    if (saved !=null && saved.contains(key)) return true
 
+    if (ModelHelper.checkIfSaved(kb,parent,key,linkType,saved,KBNodeId(this),this.uri )) return true
+
+    //if (saved !=null && saved.contains(key))
+    //{
+
+    //  return true
+    //}
     var res = kb.saveResource(this, parent, key, linkType)
-    saved.append(key)
+    //saved.append(key)
 
     for (x: Resource <- nodes) {
       res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME,saved)
@@ -159,13 +166,16 @@ object ConceptNetwork {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): ConceptNetwork = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String, aleadyLoaded:ListBuffer[String] = new ListBuffer[String]()): ConceptNetwork = {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))
       throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.ID.toString)
     }
 
+    //try to load from cache
+    var cached=KBMap.loadFromCache(new KnowledgeURI(selfMap))
+    if (cached!=null) return cached.asInstanceOf[ConceptNetwork]
 
     val ID = new KBNodeId(selfMap)
 

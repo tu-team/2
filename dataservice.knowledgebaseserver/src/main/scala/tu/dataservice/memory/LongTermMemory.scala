@@ -7,6 +7,7 @@ import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.dataservice.knowledgebaseserver.providers.N4JKB
 import tu.model.knowledge.communication.ShortTermMemory
 import collection.mutable.ListBuffer
+import org.slf4j.LoggerFactory
 
 /**
  * @author max talanov
@@ -14,7 +15,7 @@ import collection.mutable.ListBuffer
  *         Time: 12:35 AM
  */
 object LongTermMemory {
-
+  val log = LoggerFactory.getLogger(this.getClass)
   private def kb:KB= N4JKB;
 
   /**
@@ -68,7 +69,8 @@ object LongTermMemory {
       ConceptNetwork.load(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
     }
     catch {
-      case _ =>
+      case e:Exception =>
+        log.error(e.toString)
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
         res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
         res

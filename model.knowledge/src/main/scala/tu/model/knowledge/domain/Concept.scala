@@ -8,6 +8,7 @@ import tu.model.knowledge._
 import org.slf4j.LoggerFactory
 import tu.model.knowledge.KBMap._
 import collection.mutable.ListBuffer
+import tu.model.knowledge.helper.ModelHelper
 
 /**
  * @author max talanov
@@ -155,10 +156,12 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
-    if (saved.contains(key)) return true
+    //if (saved.contains(key)) return true
+
+    if (ModelHelper.checkIfSaved(kb,parent,key,linkType,saved,this,this.uri )) return true
 
     var res = kb.saveResource(this, parent, key, linkType)
-    saved.append(key)
+    //saved.append(key)
     //var savedLocal = List[String](key)
     //if (saved!=null) savedLocal::=savedLocal
     for (x: Resource <- generalisations.frames.values.iterator) {
@@ -268,9 +271,35 @@ object Concept {
       //throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parentId.toString)
       return null
     }
+    //try to load from cache
+    var cached=KBMap.loadFromCache(new KnowledgeURI(selfMap))
+    if (cached!=null) return cached.asInstanceOf[Concept]
+
 
     val ID = new KBNodeId(selfMap)
 
+    val name = selfMap.get("content") match {
+      case Some(x) => x
+      case None => {
+        log.error("Concept without content")
+        ""
+      }
+    }
+
+    val res = new Concept(null,
+      null,
+      null,
+      KnowledgeString(name, name),
+      null,
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap)
+    )
+
+    //register primary object
+    KBMap.register(res, ID.ID)
+
+
+    //load children list
     def oneList(items: Map[String, Map[String, String]], linkName: String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
         (acc, uri) => acc + Pair(KnowledgeURI(uri, true), Concept.load(kb, ID, uri, linkName))
@@ -301,13 +330,6 @@ object Concept {
         oneListPhrases(kb.loadChildrenMap(ID, Constant.SENTENCES_LINK_NAME))
       )
 
-    val name = selfMap.get("content") match {
-      case Some(x) => x
-      case None => {
-        log.error("Concept without content")
-        ""
-      }
-    }
 
     val linksSourceMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
     val linksDestinationMap = kb.loadChildrenMap(ID, Constant.CONCEPT_LINK_SOURCE_NAME)
@@ -315,17 +337,25 @@ object Concept {
       linksSourceMap.keys.foldLeft(List[ConceptLink]()) {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
       }
+    /* assign loaded children*/
+    res.generalisations=generalisation
+    res.specialisations=specialisation
+    res.phrases=sentences
+    res.links=conceptLinkList
 
-    val res = new Concept(generalisation,
+
+
+
+    /*val res = new Concept(generalisation,
       specialisation,
       sentences,
       KnowledgeString(name, name),
       conceptLinkList,
       new KnowledgeURI(selfMap),
       new Probability(selfMap)
-    )
+    ) */
 
-    KBMap.register(res, ID.ID)
+    //KBMap.register(res, ID.ID)
 
     res
   }

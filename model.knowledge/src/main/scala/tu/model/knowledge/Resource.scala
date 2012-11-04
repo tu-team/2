@@ -59,5 +59,10 @@ abstract class Resource( _uri: KnowledgeURI, _probability: Probability = new Pro
 
   def loadLinks(kb:KB):Boolean = true
 
+
+  //abstract def load(kb: KB, parentId: KBNodeId, key: String, linkType: String, saved:ListBuffer[String] = new ListBuffer[String]()): Resource
+
+
+
 }
 

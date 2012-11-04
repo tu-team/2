@@ -43,6 +43,12 @@ class LongTermMemoryTest extends FunSuite {
     assert(children.size > 0)
   }
 
+  test ("load domain model") {
+    val dm = LongTermMemory.domainModel(testURI)
+    assert(dm.nodes.size > 1)
+
+  }
+
   test("save short term memory context to long term memory test") {
     val cp = Concept("parent")
     val cc = Concept.createSubConcept(cp, "child")
@@ -66,6 +72,7 @@ class LongTermMemoryTest extends FunSuite {
     }
     assert(children.size > 0)
   }
+
 
 
 }

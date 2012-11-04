@@ -1,6 +1,7 @@
 package tu.model.knowledge
 
 import collection.mutable.HashMap
+import org.slf4j.LoggerFactory
 
 
 /**
@@ -34,6 +35,9 @@ object KBMap {
 
   implicit def Resource2KBNodeId(h:Resource) = new KBNodeId(h)
 
+
+  val log = LoggerFactory.getLogger(this.getClass)
+
   var uri2id = HashMap[String, Long]()
   var id2object = HashMap[Long, Resource]()
 
@@ -59,6 +63,22 @@ object KBMap {
       case None => Constant.NO_KB_NODE
     }
 
+  }
+
+  def loadFromCache(uri:KnowledgeURI):Resource ={
+    var uriS= uri.toString
+    uri2id.get(uriS) match {
+      case Some(x) =>{
+        id2object.get(x) match {
+
+          case Some(z)=>{
+            log.info("Resource "+ uriS + " has been loaded already and obtained from cache")
+            z
+          }
+        }
+      }
+      case None => null
+    }
   }
 
 }
