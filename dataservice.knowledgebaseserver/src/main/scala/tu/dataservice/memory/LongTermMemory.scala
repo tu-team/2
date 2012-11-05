@@ -73,7 +73,7 @@ object LongTermMemory {
         log.error(e.toString)
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
         res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
-        res
+        someModel(modelName)
     }
 
   }

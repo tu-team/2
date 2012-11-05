@@ -25,12 +25,16 @@ object ModelHelper {
    */
    def checkIfSaved(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String], refObject:KBNodeId,uri:KnowledgeURI): Boolean = {
     val uriC =uri.toString
-    if (saved.contains(key)) {
+    if (saved.contains(uriC)) {
       //only create link
+      if (parent.ID<=0 || refObject.ID<=0)
+      {
+         var test="";
+      }
       kb.createLink(parent, refObject, linkType, key)
       return true
     }
-    saved.append(key)
+    saved.append(uriC)
     return false
    }
 }
