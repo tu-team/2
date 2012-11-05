@@ -40,8 +40,8 @@ class Correlation extends SimulationReformulationAbstract {
    */
   def apply(clarification: AnnotatedNarrative,
             domainModel: ConceptNetwork): Option[Triple[List[Concept], List[Concept], List[Concept]]] = {
-      val processed = processClarification(clarification, domainModel)
-      Some(processed._1, processed._2, processed._3)
+    val processed = processClarification(clarification, domainModel)
+    Some(processed._1, processed._2, processed._3)
   }
 
   /**
@@ -51,7 +51,7 @@ class Correlation extends SimulationReformulationAbstract {
    * @return Triple of shortestMaps, domainConcepts, notUnderstood concepts from clarification response.
    */
   def processClarification(mappingNarrative: AnnotatedNarrative,
-                      targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
+                           targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedConcepts = mappingNarrative.conceptNetwork.nodes
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
@@ -146,11 +146,15 @@ class Correlation extends SimulationReformulationAbstract {
         val foundMappings: List[List[Concept]] = res.filter {
           lC: List[Concept] => lC.size > 0
         }
-        val shortestMapping: List[Concept] = foundMappings.reduceLeft((s1, s2) =>
-          if (s2.size > s1.size) s1
-          else s2
-        )
-        shortestMapping
+        if (foundMappings.size > 0) {
+          val shortestMapping: List[Concept] = foundMappings.reduceLeft((s1, s2) =>
+            if (s2.size > s1.size) s1
+            else s2
+          )
+          shortestMapping
+        } else {
+          List[Concept]()
+        }
       } else {
         List[Concept]()
       }

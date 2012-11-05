@@ -10,31 +10,8 @@ import tu.model.knowledge.critic.CriticModel
 
 /**
  * @author alex toschev
+ * @author max talanov
  *         Time stamp: 9/18/12 6:29 PM
- */
-
-/*
-object InitialData {
-
-  def fill() {
-
-  }
-
-  def fillSimulationModelConceptNetwork() {
-    // did it - see KBAdapter.simulationModel()
-    var dt = TestDataGenerator.generateDomainModelConceptNetwork
-    N4JKB.saveResource(dt,"simulationConceptNetwork")
-
-  }
-
-  def fillReflectiveCritics(){
-         // List[CriticModel](CriticModel("tu.coreservice.action.critic.manager.DoNotUnderstandManager")
-
-
-  }
-
-
-}
  */
 
 object Defaults {
@@ -48,7 +25,7 @@ object Defaults {
   val subjectPhrase = AnnotatedPhrase("subject", subjectConcept)
   val objectConcept = Concept.createSubConcept(CONCEPT, "object")
   val objectPhrase = AnnotatedPhrase("object", objectConcept)
-  val formOfPolitenessConcept = Concept.createSubConcept(CONCEPT, "formOfPoliteness")
+  val formOfPolitenessConcept = Concept.createSubConcept(CONCEPT, "FormOfPoliteness")
   val formOfPolitenessPhrase = AnnotatedPhrase("form of politeness", formOfPolitenessConcept)
 
   /**

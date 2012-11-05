@@ -272,7 +272,7 @@ class LinkParser extends Way2Think {
         val concept = concepts.head
         (phrase, Some(concept), None)
       } else if (concepts.size < 1) {
-        val concept = Concept(phrase.text)
+        val concept = Concept(Concept.prepareName(phrase.text))
         phrase.conceptsAdd(concept)
         (phrase, Some(concept), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
       } else {

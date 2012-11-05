@@ -55,4 +55,9 @@ class ConceptTest extends FunSuite {
     expect(generalConceptName.substring(0,7))(c.generalisations.frames.values.head.uri.name.substring(0,7))
   }
 
+  test("prepare name") {
+    val res =  Concept.prepareName(" prepare name")
+    expect ("PrepareName")(res)
+  }
+
 }

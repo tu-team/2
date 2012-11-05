@@ -158,7 +158,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
     //if (saved.contains(key)) return true
 
-    if (ModelHelper.checkIfSaved(kb,parent,key,linkType,saved,this,this.uri )) return true
+    if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, this, this.uri)) return true
 
     var res = kb.saveResource(this, parent, key, linkType)
     //saved.append(key)
@@ -201,7 +201,7 @@ object Concept {
 
   def apply(phrases: TypedKLine[AnnotatedPhrase], name: String): Concept = {
     new Concept(TypedKLine[Concept]("generalisation"), TypedKLine[Concept]("specialisation"),
-      phrases, KnowledgeString(name, name), List[ConceptLink](), KnowledgeURI(name + "Concept"))
+      phrases, KnowledgeString(name, name), List[ConceptLink](), KnowledgeURI(name + Constant.conceptSuffix))
   }
 
   def apply(word: String, name: String): Concept = {
@@ -210,7 +210,7 @@ object Concept {
       TypedKLine[AnnotatedPhrase]("sentences", AnnotatedPhrase(word)),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name + "Concept"))
+      KnowledgeURI(name + Constant.conceptSuffix))
   }
 
   def apply(name: String): Concept = {
@@ -219,7 +219,33 @@ object Concept {
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name + "Concept"))
+      KnowledgeURI(name + Constant.conceptSuffix))
+  }
+
+  /**
+   * Translates name to camelCase.
+   * @param name to process.
+   * @return camelCase name.
+   */
+  def prepareName(name: String): String = {
+    val space = " "
+    if (name.contains(space)) {
+      val nameSplit = name.split(space)
+      val nameUpdated = nameSplit.reverse.reduceLeft(
+        (element: String, accumulator: String) => {
+          if (element.size > 1) {
+            accumulator + element.substring(0, 1).capitalize + element.substring(1)
+          } else if (element.size == 1) {
+            accumulator + element.substring(0, 1).capitalize
+          } else {
+            accumulator
+          }
+        }
+      )
+      nameUpdated
+    } else {
+      name
+    }
   }
 
   def apply(name: String, probability: Probability): Concept = {
@@ -228,7 +254,7 @@ object Concept {
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name + "Concept"),
+      KnowledgeURI(name + Constant.conceptSuffix),
       probability)
   }
 
@@ -237,7 +263,7 @@ object Concept {
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name + "Concept"))
+      KnowledgeURI(name + Constant.conceptSuffix))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
@@ -248,7 +274,7 @@ object Concept {
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name + "Concept"))
+      KnowledgeURI(name + Constant.conceptSuffix))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
@@ -259,7 +285,7 @@ object Concept {
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
       List[ConceptLink](),
-      KnowledgeURI(name + "Concept"))
+      KnowledgeURI(name + Constant.conceptSuffix))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
@@ -272,8 +298,8 @@ object Concept {
       return null
     }
     //try to load from cache
-    var cached=KBMap.loadFromCache(new KnowledgeURI(selfMap))
-    if (cached!=null) return cached.asInstanceOf[Concept]
+    var cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
+    if (cached != null) return cached.asInstanceOf[Concept]
 
 
     val ID = new KBNodeId(selfMap)
@@ -338,10 +364,10 @@ object Concept {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
       }
     /* assign loaded children*/
-    res.generalisations=generalisation
-    res.specialisations=specialisation
-    res.phrases=sentences
-    res.links=conceptLinkList
+    res.generalisations = generalisation
+    res.specialisations = specialisation
+    res.phrases = sentences
+    res.links = conceptLinkList
 
 
 
