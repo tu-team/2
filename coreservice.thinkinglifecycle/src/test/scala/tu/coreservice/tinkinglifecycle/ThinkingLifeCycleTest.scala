@@ -14,7 +14,7 @@ import scala.actors.Actor
 import tu.model.knowledge.communication.{TrainingRequest, Request}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.semanticnetwork.SemanticNetworkNode
 import tu.model.knowledge.{Resource, Constant, KnowledgeURI}
 
@@ -29,7 +29,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("tense is kind of concept.") {
     val requestText = "Tense is kind of concept."
-    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"),KnowledgeURI(Constant.domainName))
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
@@ -38,7 +38,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("run comelete lifecycle with dummy way2think") {
     val requestText = "Please install Firefox."
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -47,7 +47,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Please install Firefox case.") {
     val requestText = "Please install Firefox."
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -56,7 +56,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("User miss Internet Explorer 8.") {
     val requestText = "User miss Internet Explorer 8."
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -65,7 +65,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Training Chrome is a browser") {
     val requestText = "Chrome is a browser."
-    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"),KnowledgeURI(Constant.domainName))
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
@@ -74,17 +74,22 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Training please is a form of politeness") {
     val requestText = "Please is a form of politeness."
-    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"),KnowledgeURI(Constant.domainName))
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
-    assert(res._notUnderstoodConcepts == Nil)
-    assert(res._notUnderstoodPhrases == Nil)
-    assert (res._simulationModel match {
-      case Some(x:ConceptNetwork)
-         => {x._rootNodes.contains((k:SemanticNetworkNode[Resource]) => k.toString == ("please")) }
+    assert(res.notUnderstoodConcepts == Nil)
+    assert(res.notUnderstoodPhrases == Nil)
+    assert(res.simulationResult match {
+      case Some(x: ConceptNetwork)
+      => {
+        x.nodes.find((k: Concept) => k.toString.startsWith("pleaseConceptConcept")) match {
+          case None => false
+          case Some(c: Concept) => true
+        }
+      }
       case None =>
-         false
+        false
     }
     )
     log info res.toString
@@ -92,7 +97,7 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   def testCycle(input: String) {
     val requestText = input
-    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"),KnowledgeURI(Constant.domainName))
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
@@ -100,8 +105,8 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   //TODO
-  /* test("User needs document portal uppdate") {
-    testCycle("User needs document portal uppdate")
+  /* test("User needs document portal update") {
+    testCycle("User needs document portal update")
   }*/
 
   //TODO

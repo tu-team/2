@@ -15,7 +15,7 @@ import training.Goal
  */
 
 case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
-                   override val _probability: Probability = new Probability())
+                           override val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
   var bestClassificationResult: Option[SelectorRequest] = None
@@ -25,7 +25,7 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _domainModel: Option[ConceptNetwork] = None
   var _simulationModel: Option[ConceptNetwork] = None
   var _reformulationModel: Option[ConceptNetwork] = None
-  var _solutions: List[SolvedIssue]=Nil
+  var _solutions: List[SolvedIssue] = Nil
   var _errors: List[Error] = List[Error]()
   var _lastError: Option[Error] = None
   var _userResponse: Option[Response] = None
@@ -296,6 +296,15 @@ object ContextHelper {
     if (contexts.size > 0) {
       val res = merge(contexts)
       res.lastResult = contexts.last.lastResult
+      res.simulationResult = contexts.find {
+        (c: ShortTermMemory) => c.simulationResult match {
+          case Some(cN: ConceptNetwork) => true
+          case None => false
+        }
+      } match {
+        case Some(c: ShortTermMemory) => c.simulationResult
+        case None => None
+      }
       res.domainModel = contexts.last.domainModel
       res.simulationModel = contexts.last.simulationModel
       res.reformulationModel = contexts.last.reformulationModel
@@ -308,6 +317,15 @@ object ContextHelper {
     if (contexts.size > 0) {
       val res = merge(contexts)
       res.lastResult = contexts.last.lastResult
+      res.simulationResult = contexts.find {
+        (c: ShortTermMemory) => c.simulationResult match {
+          case Some(cN: ConceptNetwork) => true
+          case None => false
+        }
+      } match {
+        case Some(c: ShortTermMemory) => c.simulationResult
+        case None => None
+      }
       res.domainModel = contexts.head.domainModel
       res.simulationModel = contexts.head.simulationModel
       res.reformulationModel = contexts.head.reformulationModel

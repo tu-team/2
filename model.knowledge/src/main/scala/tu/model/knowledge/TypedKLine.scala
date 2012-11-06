@@ -13,6 +13,8 @@ import tu.exception.UnexpectedException
 case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
+  def size = frames.size
+
   def this(_frames: Map[KnowledgeURI, Type], _uri: KnowledgeURI) = {
     this(_frames, _uri, new Probability())
   }

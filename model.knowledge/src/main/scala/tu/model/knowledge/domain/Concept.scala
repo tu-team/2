@@ -19,7 +19,7 @@ import tu.model.knowledge.helper.ModelHelper
 case class Concept(var _generalisations: TypedKLine[Concept],
                    var _specialisations: TypedKLine[Concept],
                    var _phrases: TypedKLine[AnnotatedPhrase],
-                   __content: Resource,
+                   @deprecated __content: Resource,
                    var _conceptLinks: List[ConceptLink],
                    override val _uri: KnowledgeURI,
                    override val _probability: Probability = new Probability()
@@ -190,8 +190,6 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   override def export: Map[String, String] = {
     super.export + Pair("content", this._content.uri.name)
   }
-
-
 }
 
 
@@ -268,8 +266,13 @@ object Concept {
     it
   }
 
+  /**
+   * Creates instance of the concept based on specified Concept.
+   * @param parent base Concept.
+   * @return created Concept instance.
+   */
   def createInstanceConcept(parent: Concept): Concept = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val name = parent.uri.name + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
@@ -279,14 +282,66 @@ object Concept {
     it
   }
 
+  /**
+   * Creates instance of the concept based on specified Concept and name.
+   * @param parent base Concept.
+   * @param content of the instance Concept.
+   * @return created Concept instance.
+   */
   def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name + "&ID=" + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val name = parent.uri.name + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
       List[ConceptLink](),
       KnowledgeURI(name + Constant.conceptSuffix))
     parent.specialisations = parent.specialisations + (it.uri -> it)
+    it
+  }
+
+  /**
+   * Creates instance of the concept based on specified name.
+   * @param instanceName of the instance Concept.
+   * @return created Concept instance.
+   */
+  def createInstanceConcept(instanceName: String): Concept = {
+    val name = instanceName + Constant.conceptSuffix + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val it = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("sentences"),
+      KnowledgeString(name, name),
+      List[ConceptLink](),
+      KnowledgeURI(name))
+    it
+  }
+
+  /**
+   * Creates instance of the concept based on specified name and phrase.
+   * @param instanceName of the instance Concept.
+   * @param phrase the phrase to be used in Concept.
+   * @return created Concept instance.
+   */
+  def createInstanceConcept(instanceName: String, phrase: AnnotatedPhrase): Concept = {
+    val name = instanceName + Constant.conceptSuffix + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val it = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("phrases", phrase),
+      KnowledgeString(name, name),
+      List[ConceptLink](),
+      KnowledgeURI(name))
+    it
+  }
+
+  /**
+   * Creates instance of the concept based on specified phrase.
+   * @param phrase the phrase to be used in Concept.
+   * @return created Concept instance.
+   */
+  def createInstanceConcept(phrase: AnnotatedPhrase): Concept = {
+    val name =   Concept.prepareName(phrase.text) + Constant.conceptSuffix + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val it = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
+      TypedKLine[AnnotatedPhrase]("phrases", phrase),
+      KnowledgeString(name, name),
+      List[ConceptLink](),
+      KnowledgeURI(name))
     it
   }
 
@@ -298,12 +353,9 @@ object Concept {
       return null
     }
     //try to load from cache
-    var cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
+    val cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
     if (cached != null) return cached.asInstanceOf[Concept]
-
-
     val ID = new KBNodeId(selfMap)
-
     val name = selfMap.get("content") match {
       case Some(x) => x
       case None => {

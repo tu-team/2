@@ -1,9 +1,9 @@
 package tu.coreservice.action.way2think.correlation
 
-import tu.model.knowledge.annotator.AnnotatedNarrative
+import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative}
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
-import tu.model.knowledge.Constant
+import tu.model.knowledge.{KnowledgeURI, Constant}
 import tu.exception.UnexpectedException
 
 /**
@@ -45,7 +45,7 @@ class Correlation extends SimulationReformulationAbstract {
   }
 
   /**
-   * Creates mapping of notKnown List[Concept] to targetModel via mappingNarrative concepts, creating new concept List.
+   * Creates mapping of mappingNarrative to targetModel via mappingNarrative concepts, creating new concept List.
    * @param mappingNarrative AnnotatedNarrative to be used for mapping.
    * @param targetModel the List of Concept-s to be mapped to.
    * @return Triple of shortestMaps, domainConcepts, notUnderstood concepts from clarification response.
@@ -81,7 +81,10 @@ class Correlation extends SimulationReformulationAbstract {
     val clarifiedConcepts = filterConceptList(notKnown, mappingNarrative.conceptNetwork)
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
-        findInTarget(c, targetModel).size < 1
+        findInTarget(c, targetModel) match {
+          case Some(c: Concept) => false
+          case None => true
+        }
       }
     }
     val shortestMaps: List[List[Concept]] = clarifiedTargetConcepts.map {
@@ -102,13 +105,17 @@ class Correlation extends SimulationReformulationAbstract {
   def checkShortestMaps(shortestMaps: List[List[Concept]], targetModel: ConceptNetwork): List[Concept] = {
     val notUnderstood = shortestMaps.filter {
       c: List[Concept] => {
-        targetModel.getNodeByName(c.last.uri.name).size > 0
+        c.size > 0 && targetModel.getNodeByName(c.last.uri.name).size > 0
       }
     }
-    notUnderstood.map {
-      c: List[Concept] => {
-        c.last
+    if (notUnderstood.size > 0) {
+      notUnderstood.map {
+        c: List[Concept] => {
+          c.last
+        }
       }
+    } else {
+      List[Concept]()
     }
   }
 
@@ -116,7 +123,7 @@ class Correlation extends SimulationReformulationAbstract {
     mappingConceptsInstances.map {
       c: Concept => {
         if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
-          val parentName = c.uri.name.substring(c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
+          val parentName = c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
           val parentConcept = Concept(parentName)
           c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
           parentConcept
@@ -127,36 +134,52 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
-  def findInTarget(mappingConcept: Concept, targetModel: ConceptNetwork): List[Concept] = {
-    targetModel.getNodeByName(mappingConcept.uri.name)
+  def findInTarget(mappingConcept: Concept, targetModel: ConceptNetwork): Option[Concept] = {
+    if (mappingConcept.phrases.size > 0) {
+      val res = mappingConcept.phrases.frames.filter {
+        (uriPhrase: Pair[KnowledgeURI, AnnotatedPhrase]) => {
+          targetModel.getNodeByPhrase(uriPhrase._2).size > 0
+        }
+      }
+      if (res.size > 0) {
+        Some(mappingConcept)
+      } else {
+        None
+      }
+    } else {
+      None
+    }
   }
 
   def findMapToTarget(mappingConcept: Concept, targetModel: ConceptNetwork, processedConcepts: List[Concept]): List[Concept] = {
-    if (findInTarget(mappingConcept, targetModel).size > 0) {
-      List(mappingConcept)
-    } else {
-      if (mappingConcept.links.size > 0) {
-        val filteredLinks = filterLinks(mappingConcept.links, mappingConcept, processedConcepts)
-        val intermediateConcepts = filterLinksConcepts(filteredLinks, mappingConcept)
-        val res: List[List[Concept]] = intermediateConcepts.map {
-          c: Concept => {
-            findMapToTarget(c, targetModel, processedConcepts ::: List(mappingConcept))
+    findInTarget(mappingConcept, targetModel) match {
+      case Some(c: Concept) => {
+        List(c)
+      }
+      case None => {
+        if (mappingConcept.links.size > 0) {
+          val filteredLinks = filterLinks(mappingConcept.links, mappingConcept, processedConcepts)
+          val intermediateConcepts = filterLinksConcepts(filteredLinks, mappingConcept)
+          val res: List[List[Concept]] = intermediateConcepts.map {
+            c: Concept => {
+              findMapToTarget(c, targetModel, processedConcepts ::: List(mappingConcept))
+            }
           }
-        }
-        val foundMappings: List[List[Concept]] = res.filter {
-          lC: List[Concept] => lC.size > 0
-        }
-        if (foundMappings.size > 0) {
-          val shortestMapping: List[Concept] = foundMappings.reduceLeft((s1, s2) =>
-            if (s2.size > s1.size) s1
-            else s2
-          )
-          shortestMapping
+          val foundMappings: List[List[Concept]] = res.filter {
+            lC: List[Concept] => lC.size > 0
+          }
+          if (foundMappings.size > 0) {
+            val shortestMapping: List[Concept] = foundMappings.reduceLeft((s1, s2) =>
+              if (s2.size > s1.size) s1
+              else s2
+            )
+            List(mappingConcept) ::: shortestMapping
+          } else {
+            List[Concept]()
+          }
         } else {
           List[Concept]()
         }
-      } else {
-        List[Concept]()
       }
     }
   }

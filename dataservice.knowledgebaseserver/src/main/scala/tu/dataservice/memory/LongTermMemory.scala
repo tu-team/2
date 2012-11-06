@@ -16,7 +16,8 @@ import org.slf4j.LoggerFactory
  */
 object LongTermMemory {
   val log = LoggerFactory.getLogger(this.getClass)
-  private def kb:KB= N4JKB;
+
+  private def kb: KB = N4JKB;
 
   /**
    * Merges domain addressed via domainURI and specified Resource via substation of longTermMemoryResource by resource of ShortTermMemoryResourceWrapper.
@@ -37,8 +38,7 @@ object LongTermMemory {
     domainModel
   }
 
-  def solutions(domain:KnowledgeURI):List[SolvedIssue]=
-  {
+  def solutions(domain: KnowledgeURI): List[SolvedIssue] = {
     KBAdapter.solutions()
   }
 
@@ -47,7 +47,7 @@ object LongTermMemory {
    * @param domain uri of selected domain
    * @return concept network
    */
-  def domainModel(domain: KnowledgeURI):ConceptNetwork = someModel(domain)
+  def domainModel(domain: KnowledgeURI): ConceptNetwork = someModel(domain)
 
 
   /**
@@ -69,13 +69,12 @@ object LongTermMemory {
       ConceptNetwork.load(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
     }
     catch {
-      case e:Exception =>
+      case e: Exception =>
         log.error(e.toString)
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
         res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
         someModel(modelName)
     }
-
   }
 
 
@@ -84,31 +83,31 @@ object LongTermMemory {
    * @param modelName uri of target model
    * @param model model
    */
-  def saveModel(modelName: KnowledgeURI,model:ConceptNetwork)={
+  def saveModel(modelName: KnowledgeURI, model: ConceptNetwork) = {
     //instantiate save context
-    var alreadySaved =new ListBuffer[String]()
+    var alreadySaved = new ListBuffer[String]()
 
-    model.save(kb,KBNodeId(0),modelName.uri().get.toString,Constant.DEFAULT_LINK_NAME,alreadySaved)
+    model.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME, alreadySaved)
 
   }
 
   /**
    * save the whole ST context to LT memory
-   * @param context to be transfered to LT memory
+   * @param context to be transferred to LT memory
    */
-  def saveShortTermContext(context:ShortTermMemory)={
+  def saveShortTermContext(context: ShortTermMemory) = {
 
     if (context.domainModel.isDefined)
-      //save domain model
-      saveModel(context.domainModel.get.uri,context.domainModel.get)
+    //save domain model
+      saveModel(context.domainModel.get.uri, context.domainModel.get)
 
     if (context.reformulationModel.isDefined)
-      //save reformulation model
-      saveModel(context.reformulationModel.get.uri,context.reformulationModel.get)
+    //save reformulation model
+      saveModel(context.reformulationModel.get.uri, context.reformulationModel.get)
 
     if (context.simulationModel.isDefined)
-      //save simulationModel model
-      saveModel(context.simulationModel.get.uri,context.simulationModel.get)
+    //save simulationModel model
+      saveModel(context.simulationModel.get.uri, context.simulationModel.get)
 
   }
 

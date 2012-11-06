@@ -1,6 +1,7 @@
 package tu.model.knowledge.domain
 
 import tu.model.knowledge._
+import annotator.AnnotatedPhrase
 import tu.model.knowledge.semanticnetwork.SemanticNetwork
 import org.slf4j.LoggerFactory
 import tu.exception.UnexpectedException
@@ -57,6 +58,23 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   }
 
   /**
+   * Returns nodes that starts with specified start.
+   * @param start String parameter of filter
+   * @return List[Concept] that has uri-s with specified name.
+   */
+  def getNodeByStartOfName(start: String): List[Concept] = {
+    if (start.trim.size > 0) {
+      _nodes.filter {
+        concept: Concept => {
+          concept.uri.name.startsWith(start)
+        }
+      }
+    } else {
+      List[Concept]()
+    }
+  }
+
+  /**
    * Returns links with specified name.
    * @param name String parameter of filter
    * @return List[ConceptLink] that has uri-s with specified name.
@@ -85,6 +103,25 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
         gens.size > 0
       }
     }
+  }
+
+  /**
+   * Returns nodes that has generalisations with specified name.
+   * @param aPhrase AnnotatedPhrase parameter of filter.
+   * @return List[Concepts] that has generalisations uri-s with specified name.
+   */
+  def getNodeByPhrase(aPhrase: AnnotatedPhrase): List[Concept] = {
+    val res = this.nodes.filter {
+      concept: Concept => {
+        val phrases: Map[KnowledgeURI, AnnotatedPhrase] = concept.phrases.frames.filter {
+          uriPhrase: Pair[KnowledgeURI, AnnotatedPhrase] => {
+            uriPhrase._2.text.trim == aPhrase.text.trim
+          }
+        }
+        phrases.size > 0
+      }
+    }
+    res
   }
 
   override def toString = {
@@ -137,7 +174,7 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
 
-    if (ModelHelper.checkIfSaved(kb,parent,key,linkType,saved,KBNodeId(this),this.uri )) return true
+    if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, KBNodeId(this), this.uri)) return true
 
     //if (saved !=null && saved.contains(key))
     //{
@@ -148,15 +185,15 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
     //saved.append(key)
 
     for (x: Resource <- nodes) {
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME,saved)
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME, saved)
     }
 
     for (x: Resource <- _rootNodes) {
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.ROOT_NODES_LINK_NAME,saved)
+      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.ROOT_NODES_LINK_NAME, saved)
     }
 
     for (y: Resource <- links) {
-      res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME,saved)
+      res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME, saved)
     }
     res
   }
@@ -166,7 +203,7 @@ object ConceptNetwork {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  def load(kb: KB, parent: KBNodeId, key: String, linkType: String, aleadyLoaded:ListBuffer[String] = new ListBuffer[String]()): ConceptNetwork = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String, aleadyLoaded: ListBuffer[String] = new ListBuffer[String]()): ConceptNetwork = {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))
@@ -174,18 +211,18 @@ object ConceptNetwork {
     }
 
     //try to load from cache
-    var cached=KBMap.loadFromCache(new KnowledgeURI(selfMap))
-    if (cached!=null) return cached.asInstanceOf[ConceptNetwork]
+    val cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
+    if (cached != null) return cached.asInstanceOf[ConceptNetwork]
 
     val ID = new KBNodeId(selfMap)
 
-    def oneList(items: Map[String, Map[String, String]], linkName:String): Map[KnowledgeURI, Concept] = {
+    def oneList(items: Map[String, Map[String, String]], linkName: String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri,true), Concept.load(kb, ID,uri,linkName))//new Concept(items(uri)))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri, true), Concept.load(kb, ID, uri, linkName)) //new Concept(items(uri)))
       }
     }
 
-    val concepts: List[Concept] = oneList(kb.loadChildrenMap(ID, Constant.NODES_LINK_NAME),Constant.NODES_LINK_NAME).map {
+    val concepts: List[Concept] = oneList(kb.loadChildrenMap(ID, Constant.NODES_LINK_NAME), Constant.NODES_LINK_NAME).map {
       pair: Pair[KnowledgeURI, Resource] => pair._2.asInstanceOf[Concept]
     }.toList
 
@@ -222,8 +259,6 @@ object ConceptNetwork {
     new ConceptNetwork(nodes, links, uri)
   }
 
-  //strange
-
   /**
    * Returns nodes that has generalisations with specified name.
    * @param nodes List[Concept] to filter.
@@ -257,6 +292,7 @@ object ConceptNetwork {
       }
     }
   }
+
 
   private def filterGeneralisations(generalisations: TypedKLine[Concept], name: String): Map[KnowledgeURI, Concept] = {
     generalisations.frames.filter {
