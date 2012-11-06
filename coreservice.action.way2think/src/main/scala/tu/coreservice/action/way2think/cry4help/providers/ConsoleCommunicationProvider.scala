@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory
 
 /**
  *
- * @author: Alexander Toschev
- *          Date: 9/9/12
- *          Time: 7:06 PM
+ * @author Alexander Toschev
+ *         Date: 9/9/12
+ *         Time: 7:06 PM
  *
  */
 
@@ -27,21 +27,21 @@ class ConsoleCommunicationProvider extends Cry4HelpCommunicationProvider {
     //try to identify if console is availible
 
 
-    var consoleAvailible = "false"
+    var consoleAvailable = "false"
     try {
       val conf = ConfigFactory.load("application.properties")
-      consoleAvailible = conf.getString("coreservice.action.way2think.cry4help.console")
+      consoleAvailable = conf.getString("coreservice.action.way2think.cry4help.console")
     }
     catch {
       case ex: Exception => log.error("unable load config")
     }
-    if (consoleAvailible == "true") {
+    if (consoleAvailable == "true") {
       log.info("Console is availible. Read from tu.coreservice.action.way2think.cry4help.console. Using input")
-      return Console.readLine()
+      Console.readLine()
     }
     else {
       log.info("Console is not availible. Returning empty string")
-      return ""
+      ""
     }
 
   }
@@ -52,7 +52,7 @@ class ConsoleCommunicationProvider extends Cry4HelpCommunicationProvider {
 
   /**
    * just print information without any output
-   * @param inf
+   * @param inf to be indicated in Console
    */
   def showInformation(inf: String) {
     showInfo(inf)
