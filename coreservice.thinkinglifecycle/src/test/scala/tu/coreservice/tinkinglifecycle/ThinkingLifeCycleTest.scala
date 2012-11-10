@@ -15,8 +15,7 @@ import tu.model.knowledge.communication.{TrainingRequest, Request}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
-import tu.model.knowledge.semanticnetwork.SemanticNetworkNode
-import tu.model.knowledge.{Resource, Constant, KnowledgeURI}
+import tu.model.knowledge.{Constant, KnowledgeURI}
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -33,7 +32,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
-    log info res.toString
+    log debug res.toString
   }
 
   test("run comelete lifecycle with dummy way2think") {
@@ -42,7 +41,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
-    log info res.toString
+    log debug res.toString
   }
 
   test("Please install Firefox case.") {
@@ -51,7 +50,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
-    log info res.toString
+    log debug res.toString
   }
 
   test("User miss Internet Explorer 8.") {
@@ -60,7 +59,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
-    log info res.toString
+    log debug res.toString
   }
 
   test("Training Chrome is a browser") {
@@ -69,7 +68,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)
     assert(res != null)
-    log info res.toString
+    log debug res.toString
   }
 
   test("Training please is a form of politeness") {
@@ -92,7 +91,7 @@ class ThinkingLifeCycleTest extends FunSuite {
         false
     }
     )
-    log info res.toString
+    log debug res.toString
   }
 
   def testCycle(input: String) {
@@ -101,7 +100,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
-    log info res.toString
+    log debug res.toString
   }
 
   //TODO
@@ -172,13 +171,13 @@ class ThinkingLifeCycleTest extends FunSuite {
     val name = "A"
 
     def act() {
-      log info("{} started", name)
+      log debug("{} started", name)
       var sum = 0
       loop {
         react {
           case Accumulate(n) => {
             for (i <- (1 to 10)) {
-              log info("count {} {}", name, i)
+              log debug("count {} {}", name, i)
               sum = i
             }
           }
@@ -210,13 +209,13 @@ class ThinkingLifeCycleTest extends FunSuite {
   // actor definition
   object Accumulator extends Actor {
     def act = {
-      log info "Acummulatior started"
+      log debug "Acummulatior started"
       var sum = 0
       loop {
         react {
           case Accumulate(n) => {
             sum += n
-            log info("sum {} {}", sum, n)
+            log debug("sum {} {}", sum, n)
           }
           case Reset => sum = 0
           case Total => reply(sum); exit

@@ -5,6 +5,8 @@ import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
 import tu.model.knowledge.{KnowledgeURI, Constant}
 import tu.exception.UnexpectedException
+import org.slf4j.LoggerFactory
+import scala.collection.JavaConversions._
 
 /**
  * @author max talanov
@@ -12,6 +14,8 @@ import tu.exception.UnexpectedException
  *         time: 11:15 PM
  */
 class Correlation extends SimulationReformulationAbstract {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   /**
    * Process clarification over simulationResult, creating mapping from simulationResult to domainModel
@@ -53,19 +57,7 @@ class Correlation extends SimulationReformulationAbstract {
   def processClarification(mappingNarrative: AnnotatedNarrative,
                            targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedConcepts = mappingNarrative.conceptNetwork.nodes
-    val clarifiedTargetConcepts = clarifiedConcepts.filter {
-      c: Concept => {
-        findInTarget(c, targetModel).size < 1
-      }
-    }
-    val shortestMaps: List[List[Concept]] = clarifiedTargetConcepts.map {
-      c: Concept => {
-        findMapToTarget(c, targetModel, List[Concept]())
-      }
-    }
-    val notUnderstood = this.checkShortestMaps(shortestMaps, targetModel)
-    val domainConcepts = createDomainConcepts(shortestMaps.flatten)
-    (shortestMaps.flatten, domainConcepts, notUnderstood)
+    processClarifiedConcepts(clarifiedConcepts, targetModel)
   }
 
   /**
@@ -79,6 +71,10 @@ class Correlation extends SimulationReformulationAbstract {
                       mappingNarrative: AnnotatedNarrative,
                       targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedConcepts = filterConceptList(notKnown, mappingNarrative.conceptNetwork)
+    processClarifiedConcepts(clarifiedConcepts, targetModel)
+  }
+
+  def processClarifiedConcepts(clarifiedConcepts: List[Concept], targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] =  {
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
         findInTarget(c, targetModel) match {
@@ -94,6 +90,9 @@ class Correlation extends SimulationReformulationAbstract {
     }
     val notUnderstood = this.checkShortestMaps(shortestMaps, targetModel)
     val domainConcepts = createDomainConcepts(shortestMaps.flatten)
+    log.info("found maps={}, ", shortestMaps)
+    log.info("created domain concepts={},", domainConcepts)
+    log.info("not understood concepts={}", notUnderstood)
     (shortestMaps.flatten, domainConcepts, notUnderstood)
   }
 

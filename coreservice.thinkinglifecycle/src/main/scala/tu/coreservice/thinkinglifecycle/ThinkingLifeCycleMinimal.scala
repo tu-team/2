@@ -3,7 +3,7 @@ package tu.coreservice.thinkinglifecycle
 import tu.model.knowledge.communication._
 import tu.coreservice.action.selector.Selector
 import tu.coreservice.action.Action
-import tu.model.knowledge.{Constant, Resource}
+import tu.model.knowledge.Resource
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.critic.CriticModel
@@ -45,7 +45,7 @@ class ThinkingLifeCycleMinimal
    * @param request to process.
    */
   def apply(request: TrainingRequest): ShortTermMemory = {
-    log info "apply(" + request + ": TrainingRequest))"
+    log debug "apply(" + request + ": TrainingRequest))"
     initializeGlobalContext(request)
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
@@ -56,20 +56,20 @@ class ThinkingLifeCycleMinimal
       val goalOption = goalManager.currentTrainingGoal
       goalOption match {
         case Some(goal: Goal) => {
-          log info "Goal:" + goal
+          log debug "Goal:" + goal
           resGoals = resGoals ::: List(goal)
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
           this.globalContext = mergeContexts(contexts)
           val refContexts = processReflectiveCritics(globalContext)
           this.globalContext = mergeContexts(refContexts)
-          log info "out Contexts: " + contexts.toString()
+          log debug "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
       goalManager.nextGoal(globalContext)
     }
-    log info "apply()"
+    log debug "apply()"
     globalContext
   }
 
@@ -78,7 +78,7 @@ class ThinkingLifeCycleMinimal
    * @param request to process.
    */
   def apply(request: Request): ShortTermMemory = {
-    log info "apply(" + request + ": Request))"
+    log debug "apply(" + request + ": Request))"
     initializeGlobalContext(request)
     val goalManager = new GoalManager
 
@@ -95,20 +95,20 @@ class ThinkingLifeCycleMinimal
       val goalOption = goalManager.currentGoal
       goalOption match {
         case Some(goal: Goal) => {
-          log info "Goal:" + goal
+          log debug "Goal:" + goal
           resGoals = resGoals ::: List(goal)
           val resources: List[Resource] = selector.apply(goal)
           val contexts = processResources(resources)
           this.globalContext = mergeContexts(contexts)
           val refContexts = processReflectiveCritics(globalContext)
           this.globalContext = mergeContexts(refContexts)
-          log info "out Contexts: " + contexts.toString()
+          log debug "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
       goalManager.nextGoal(globalContext)
     }
-    log info "apply()"
+    log debug "apply()"
     globalContext
   }
 
@@ -130,7 +130,7 @@ class ThinkingLifeCycleMinimal
    * @return List of Contexts results of processing
    */
   def processResources(resources: List[Resource]): List[ShortTermMemory] = {
-    log info "processResources(" + resources + ": List[Resource]): List[ShortTermMemory]"
+    log debug "processResources(" + resources + ": List[Resource]): List[ShortTermMemory]"
     val contexts: List[List[ShortTermMemory]] = for (r <- resources) yield {
       val resContext = translate(r, this.globalContext)
       if (resContext != null) {
@@ -144,7 +144,7 @@ class ThinkingLifeCycleMinimal
       }
       contextToCheck
     }
-    log info "processResources(): List[ShortTermMemory] = " + contexts.flatten.toString()
+    log debug "processResources(): List[ShortTermMemory] = " + contexts.flatten.toString()
     contexts.flatten
   }
 
@@ -159,7 +159,7 @@ class ThinkingLifeCycleMinimal
   }
 
   def translate(resource: Resource, globalContext: ShortTermMemory): ShortTermMemory = {
-    log info "translate(" + resource + ": Resource, " + globalContext + ": ShortTermMemory)"
+    log debug "translate(" + resource + ": Resource, " + globalContext + ": ShortTermMemory)"
     resource match {
       case joinWay2Think: JoinWay2ThinkModel => {
         // run JoinProcessor
@@ -168,19 +168,19 @@ class ThinkingLifeCycleMinimal
           a: ActionModel => this.instantiate(a.uri.name)
         }
         val res = JoinProcessor(actions, globalContext)
-        log info "translate(): ShortTermMemory " + res.toString
+        log debug "translate(): ShortTermMemory " + res.toString
         res
       }
       case w2t: Way2ThinkModel => {
         val action = this.instantiate(w2t.uri.name)
         val res = action.apply(globalContext)
-        log info "translate(): ShortTermMemory " + res.toString
+        log debug "translate(): ShortTermMemory " + res.toString
         res
       }
       case critic: CriticModel => {
         val action = this.instantiate(critic.uri.name)
         val res = action.apply(globalContext)
-        log info "translate(): ShortTermMemory " + res.toString
+        log debug "translate(): ShortTermMemory " + res.toString
         res
       }
     }
@@ -188,12 +188,12 @@ class ThinkingLifeCycleMinimal
   }
 
   def instantiate(className: String): Action = {
-    log info "instantiate(" + className + ": String): Action"
+    log debug "instantiate(" + className + ": String): Action"
     val clazz = Class.forName(className)
     try {
       val temp = clazz.newInstance()
       val instance = temp.asInstanceOf[Action]
-      log info "instantiate(): Action = " + instance.toString
+      log debug "instantiate(): Action = " + instance.toString
       instance
     } catch {
       case e: ClassCastException => {
