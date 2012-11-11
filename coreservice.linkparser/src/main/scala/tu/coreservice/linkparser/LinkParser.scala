@@ -16,8 +16,8 @@ import tu.model.knowledge.domain.{Concept, ConceptLink}
 import tu.exception.{NoExpectedInformationException, UnexpectedException}
 import tu.dataservice.knowledgebaseserver.Defaults
 
-
 /**
+ * Processes AnnotatedSentence each AnnotatedSentence via RelationExtractorKB.
  * @author max talanov
  *         Date: 7/31/12
  *         Time: 4:18 AM
@@ -149,13 +149,16 @@ class LinkParser extends Way2Think {
       phraseConceptError match {
         case Triple(a: AnnotatedPhrase, Some(concept: Concept), None) => {
           val updatedConcept = updateTensePos(feature, concept, sentence)
+          log info("updated concept={}, it was={}", updatedConcept, concept)
           (Some(updatedConcept), None)
         }
         case Triple(a: AnnotatedPhrase, Some(concept: Concept), Some(e: Error)) => {
           val updatedConcept = updateTensePos(feature, concept, sentence)
+          log info("updated concept={}, it was={}", updatedConcept.toString, concept.toString)
           (Some(updatedConcept), None)
         }
         case Triple(a: AnnotatedPhrase, None, Some(e: Error)) => {
+          log info("produced parsing error={}", e)
           (None, Some(e))
         }
       }
@@ -179,12 +182,14 @@ class LinkParser extends Way2Think {
       log debug "tense=" + feature.get("tense").getValue
       val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
       val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
+      log info ("added link={} to concept={}", tenseLink, concept)
       concept.links = concept.links ::: List(tenseLink)
     }
     if (feature.get("pos") != null) {
       log debug "pos=" + feature.get("pos").getValue
       val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
       val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
+      log info ("added link={} to concept={}", posLink, concept)
       concept.links = concept.links ::: List(posLink)
     }
 
@@ -270,12 +275,16 @@ class LinkParser extends Way2Think {
       val concepts = phrase.concepts
       if (concepts.size == 1) {
         val concept = concepts.head
+        log info ("returned concept={}", concept)
         (phrase, Some(concept), None)
       } else if (concepts.size < 1) {
         val concept = Concept.createInstanceConcept(phrase)
         phrase.conceptsAdd(concept)
+        log info ("created new concept={}", concept)
+        log info ("added it to phrase={}", phrase)
         (phrase, Some(concept), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
       } else {
+        log info ("concepts were ambiguous")
         (phrase, None, Some(new Error("$Ambiguous_concepts")))
       }
     } else if (phrases.size < 1) {

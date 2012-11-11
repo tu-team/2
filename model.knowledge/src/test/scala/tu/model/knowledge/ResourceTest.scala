@@ -6,11 +6,9 @@ import org.scalatest.junit.JUnitRunner
 import semanticnetwork.SemanticNetworkLink
 
 /**
- * Created by IntelliJ IDEA.
- * User: adel
+ * @author adel
  * Date: 23.08.12
  * Time: 6:45
- * To change this template use File | Settings | File Templates.
  */
 
 @RunWith(classOf[JUnitRunner])
@@ -25,7 +23,7 @@ class ResourceTest extends FunSuite {
 
     override def export:Map[String, String] =
     {
-      var x:Map[String, String] = super.export
+      val x:Map[String, String] = super.export
       //x("class") = this.getClass.className
       x
     }

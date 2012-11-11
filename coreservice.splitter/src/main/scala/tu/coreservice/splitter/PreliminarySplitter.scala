@@ -60,7 +60,7 @@ class PreliminarySplitter extends Way2Think {
    */
   def apply(inputContext: ShortTermMemory): ShortTermMemory = {
 
-    log info "apply(" + inputContext + ": ShortTermMemory)"
+    log debug "apply(" + inputContext + ": ShortTermMemory)"
 
     val textFrames = inputContext.frames.filter(p =>
       p._1.name == "inputtext"
@@ -74,7 +74,7 @@ class PreliminarySplitter extends Way2Think {
       return outputContext
     }
 
-    val sentenceURI = new KnowledgeURI("tu-project.com", "sentence", "0.3")
+    val sentenceURI = new KnowledgeURI("tu-project.com", "sentence", Constant.defaultRevision)
 
     // split text using relex
     val ds: DocSplitter = DocSplitterFactory.create()
@@ -132,7 +132,7 @@ class PreliminarySplitter extends Way2Think {
 
           val next = feature.get("NEXT")
           if (next != null) {
-            log info "=>"
+            log debug "=>"
             processNode(next)
           }
           true
@@ -156,10 +156,13 @@ class PreliminarySplitter extends Way2Think {
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
       annotatedSentences ::= annotatedSentence
+      log info ("created phrases={}", phrases)
+      log info ("created sentences={}", annotatedSentences)
     }
     val annotatedNarrative = AnnotatedNarrative(annotatedSentences, KnowledgeURI(this.getClass.getName + " result"))
+    log info ("created narrative={}", annotatedNarrative)
     outputContext.lastResult = Some(annotatedNarrative)
-    log info "apply():" + outputContext.toString
+    log debug ("apply()= {}", outputContext.toString)
     outputContext
   }
 
@@ -168,11 +171,11 @@ class PreliminarySplitter extends Way2Think {
 
     if (feature.get("name") != null) {
       val name = feature.get("name").getValue
-      log info "name=" + feature.get("name").getValue
+      log debug "name=" + feature.get("name").getValue
       name
     } else if (feature.get("orig_str") != null) {
       val origStr = feature.get("orig_str").getValue
-      log info "orig_str" + feature.get("orig_str").getValue
+      log debug "orig_str" + feature.get("orig_str").getValue
       origStr
     } else {
       throw new UnexpectedException("$No_name_specified")
@@ -226,7 +229,7 @@ class PreliminarySplitter extends Way2Think {
 
       val next = feature.get("NEXT")
       if (next != null) {
-        log info "=>"
+        log debug "=>"
         phrases :::= processNodeRec(next)
       }
       phrases

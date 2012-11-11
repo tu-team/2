@@ -139,14 +139,20 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   /**
    * Returns true if current Concept has at least one same parent with specified.
-   * @param parent Concept to compare with          PHRASES
+   * @param parent Concept to compare with PHRASES
    * @return Boolean true if that has same parent.
    */
   def hasGeneralisation(parent: Concept): Boolean = {
     this.generalisations.frames.contains(parent.uri)
   }
 
-  override def toString: String = this.uri.name
+  override def toString: String = {
+    this.uri.name +
+      "[generalisations=" + _generalisations.size.toString +
+      ",specialisations=" + _specialisations.size.toString +
+      ",links=" + _conceptLinks.size.toString +
+      "]"
+  }
 
   def getGeneralisationsRec: List[Concept] = {
     val res: List[Concept] = this.generalisations.frames.values.map {

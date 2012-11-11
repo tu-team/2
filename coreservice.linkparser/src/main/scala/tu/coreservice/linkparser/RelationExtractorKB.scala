@@ -236,7 +236,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
     catch {
       case e: Exception => {
         log.error("Error: Failed to process sentence: " + sentence)
-        e.printStackTrace
+        e.printStackTrace()
       }
     }
     if (verbosity > 0) reportTime("RelEx processing: ")

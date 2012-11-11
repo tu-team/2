@@ -24,11 +24,11 @@ object Configurator {
    */
   def proxyAddress(): ProxyDescription
   = {
-    var res = new ProxyDescription
+    val res = new ProxyDescription
     res.proxyHost = "RU1202197816"
     res.proxyPort = 3128
     res.useProxy = false // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
-    return res
+    res
   }
 
 
