@@ -176,27 +176,27 @@ class LinkParser extends Way2Think {
    */
   private def updateTensePos(feature: FeatureNode, concept: Concept, sentence: AnnotatedSentence): Concept = {
     if (feature.get("tense") != null) {
-      log info "tense=" + feature.get("tense").getValue
+      log debug "tense=" + feature.get("tense").getValue
       val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
       val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
       concept.links = concept.links ::: List(tenseLink)
     }
     if (feature.get("pos") != null) {
-      log info "pos=" + feature.get("pos").getValue
+      log debug "pos=" + feature.get("pos").getValue
       val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
       val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
       concept.links = concept.links ::: List(posLink)
     }
 
     if (feature.get("links") != null) {
-      // log info "links=" + feature.get("links").toString(getZHeadsFilter)
-      log info "==>"
+      // log debug "links=" + feature.get("links").toString(getZHeadsFilter)
+      log debug "==>"
       val processedLinks = processLink(feature.get("links"), concept, sentence)
       concept.links = concept.links ::: processedLinks
     }
     val next = feature.get("NEXT")
     if (next != null) {
-      log info "=>"
+      log debug "=>"
       processNode(next, sentence)
     }
     concept
@@ -214,13 +214,13 @@ class LinkParser extends Way2Think {
       Some(feature)
     } else {
       if (feature.get("links") != null) {
-        log info "==>"
+        log debug "==>"
         val processedLinks = findFeatureInLinks(feature.get("links"), nameToFind)
         processedLinks
       }
       val next = feature.get("NEXT")
       if (next != null) {
-        log info "=>"
+        log debug "=>"
         findFeatureNode(next, nameToFind)
       }
       None
@@ -289,11 +289,11 @@ class LinkParser extends Way2Think {
 
     if (feature.get("name") != null) {
       val name = feature.get("name").getValue
-      log info "name=" + feature.get("name").getValue
+      log debug "name=" + feature.get("name").getValue
       name
     } else if (feature.get("orig_str") != null) {
       val origStr = feature.get("orig_str").getValue
-      log info "orig_str" + feature.get("orig_str").getValue
+      log debug "orig_str" + feature.get("orig_str").getValue
       origStr
     } else {
       throw new UnexpectedException("$No_name_specified")

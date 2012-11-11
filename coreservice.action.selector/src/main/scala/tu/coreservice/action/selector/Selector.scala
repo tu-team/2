@@ -48,7 +48,7 @@ class Selector {
     val resourcesOption: List[Option[Resource]] = request.resourceURIList.map {
       uri: KnowledgeURI => KBAdapter.stringResourcesMap.get(uri.name)
     }
-    val filteredResources: List[Option[Resource]] = resourcesOption.filter{
+    val filteredResources: List[Option[Resource]] = resourcesOption.filter {
       case Some(_) => true
       case None => false
     }
