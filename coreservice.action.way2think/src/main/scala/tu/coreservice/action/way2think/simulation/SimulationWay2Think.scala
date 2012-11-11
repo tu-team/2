@@ -6,6 +6,7 @@ import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.{Constant, Resource}
 import tu.exception.NoExpectedInformationException
+import org.slf4j.LoggerFactory
 
 /**
  * Wrapper class for Simulation to provide Way2Think interface.
@@ -15,12 +16,16 @@ import tu.exception.NoExpectedInformationException
  */
 
 class SimulationWay2Think extends Way2Think {
+
+  val log = LoggerFactory.getLogger(this.getClass)
+
   /**
    * Way2Think interface.
    * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */
   def apply(inputContext: ShortTermMemory) = {
+    log debug("apply({}: ShortTermMemory)", inputContext)
     try {
       inputContext.findByName(Constant.LINK_PARSER_RESULT_NAME) match {
         case Some(narrative: AnnotatedNarrative) => {
