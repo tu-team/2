@@ -53,6 +53,7 @@ class KBAnnotatorImpl extends Way2Think {
     def annotatePhrase(ph: AnnotatedPhrase): Boolean = {
       var result = false
       var annotationFound = checkLocalKB(ph.phrase)
+      log info("found annatations={}", annotationFound)
       def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
         ref.concepts = src.concepts
         //ref.phrases = src.phrases
@@ -66,6 +67,7 @@ class KBAnnotatorImpl extends Way2Think {
             annotationFound = checkLocalKB(syn)
             if (!annotationFound.isEmpty) {
               appendAnnotation(ph, annotationFound.get)
+              log info("appended annotation={} to phrase={}", annotationFound, ph)
               result = true
               scala.util.control.Breaks.break()
             }

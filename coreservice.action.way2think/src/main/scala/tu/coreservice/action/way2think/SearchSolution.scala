@@ -3,6 +3,7 @@ package tu.coreservice.action.way2think
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.{Resource, SolvedIssue}
+import org.slf4j.LoggerFactory
 
 /**
  * @author adel chepkunov
@@ -24,6 +25,9 @@ class SearchSolution extends Way2Think {
 }
 
 object SearchSolution {
+
+  val log = LoggerFactory.getLogger(this.getClass)
+
   val searcher = new Solutions
 
   def apply(inputContext: ShortTermMemory): ShortTermMemory = {
@@ -34,7 +38,7 @@ object SearchSolution {
         searcher.search(cn, Nil)
       case _ => None
     }
-
+    log info("search solution result={}", res)
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
     outputContext.lastResult = res
     outputContext

@@ -4,6 +4,7 @@ import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.model.knowledge.selector.SelectorRequest
 import tu.model.knowledge.{Constant, Probability, KnowledgeURI}
 import tu.model.knowledge.annotator.AnnotatedNarrative
+import org.slf4j.LoggerFactory
 
 /**
  * Direct Instruction Analyser, detects direct instruction and return Selector request with proper Probability.
@@ -13,6 +14,8 @@ import tu.model.knowledge.annotator.AnnotatedNarrative
  */
 
 class DirectInstructionAnalyser {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   /**
    * Detects direct instruction and return SelectorRequest with proper Probability.
@@ -86,8 +89,10 @@ class DirectInstructionAnalyser {
       frequencyConfidence = (0.0, frequencyConfidence._2)
     }
 
-    new SelectorRequest(List(KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI)), KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI_NAME),
+    val res = new SelectorRequest(List(KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI)), KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI_NAME),
       new Probability(frequencyConfidence._1, frequencyConfidence._2))
+    log info("created selector request={}", res)
+    res
   }
 
   /**

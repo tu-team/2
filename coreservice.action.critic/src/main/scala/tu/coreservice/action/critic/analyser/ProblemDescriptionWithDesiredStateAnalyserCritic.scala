@@ -28,7 +28,7 @@ class ProblemDescriptionWithDesiredStateAnalyserCritic(_exclude: List[CriticLink
    * @return SelectorRequest with set probability
    */
   def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): SelectorRequest = {
-    val a = new DirectInstructionAnalyser()
+    val a = new ProblemDescriptionWithDesiredStateAnalyser()
     val selectorRequest: SelectorRequest = a.apply(currentSituation)
     selectorRequest
   }

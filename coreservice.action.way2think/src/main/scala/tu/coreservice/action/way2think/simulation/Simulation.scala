@@ -75,9 +75,11 @@ class Simulation extends SimulationReformulationAbstract {
         filteredPhrases
       }
     }.flatten
-
+    log info("exact matches={}, matches={}", exactMatch, hasMatches)
+    log info("ambiguous={}", ambiguous)
+    log info("not known={}", notKnown)
     val unAmbiguous = processAmbiguousBackReferences(ambiguous, in)
-
+    log info("processed ambiguous={}", unAmbiguous)
     if (notKnown.size > 0) {
       this.processNotKnown(notKnown)
     }
@@ -147,7 +149,7 @@ class Simulation extends SimulationReformulationAbstract {
       }
     }
     val res = instantiateConcepts(concepts, name, simulationModel)
-    log info "processMatches()=" + res.toString
+    log info ("processed matches={}", res.toString)
     res
   }
 }

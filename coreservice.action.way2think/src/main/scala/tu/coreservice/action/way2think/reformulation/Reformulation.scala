@@ -3,6 +3,7 @@ package tu.coreservice.action.way2think.reformulation
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
 import tu.model.knowledge.KnowledgeURI
+import org.slf4j.LoggerFactory
 
 /**
  * @author max talanov
@@ -22,6 +23,8 @@ class Reformulation extends SimulationReformulationAbstract {
    */
   def apply(toReformulate: ConceptNetwork, model: ConceptNetwork): Option[ConceptNetwork] = {
 
+    val log = LoggerFactory.getLogger(this.getClass)
+
     val known: List[Concept] = this.filterConceptList(toReformulate.nodes, model)
 
     val notKnown: List[Concept] = toReformulate.nodes.filter {
@@ -33,7 +36,8 @@ class Reformulation extends SimulationReformulationAbstract {
     val unAmbiguous: List[Concept] = processAmbiguous(generalisationsMap, toReformulate)
 
     val combined = known ::: unAmbiguous
-
+    log info("known concepts={}", known)
+    log info("un ambiguous={}", unAmbiguous)
     if (combined.size > 0) {
       Some(instantiateConcepts(combined, name, model))
     } else {

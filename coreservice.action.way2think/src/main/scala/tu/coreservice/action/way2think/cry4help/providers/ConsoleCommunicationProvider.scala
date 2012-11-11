@@ -36,11 +36,11 @@ class ConsoleCommunicationProvider extends Cry4HelpCommunicationProvider {
       case ex: Exception => log.error("unable load config")
     }
     if (consoleAvailable == "true") {
-      log.info("Console is availible. Read from tu.coreservice.action.way2think.cry4help.console. Using input")
+      log.debug("Console is availible. Read from tu.coreservice.action.way2think.cry4help.console. Using input")
       Console.readLine()
     }
     else {
-      log.info("Console is not availible. Returning empty string")
+      log.debug("Console is not availible. Returning empty string")
       ""
     }
 

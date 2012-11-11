@@ -28,7 +28,7 @@ object JoinProcessor {
     val contexts: List[ShortTermMemory] = for (a <- actionActors) yield {
       a !? Stop match {
         case res: ShortTermMemory => {
-          log info res.toString
+          log debug res.toString
           res
         }
       }

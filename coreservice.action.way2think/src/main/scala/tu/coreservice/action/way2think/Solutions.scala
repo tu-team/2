@@ -3,6 +3,7 @@ package tu.coreservice.action.way2think
 import tu.model.knowledge.SolvedIssue
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.dataservice.knowledgebaseserver.KBAdapter
+import org.slf4j.LoggerFactory
 
 
 /**
@@ -16,6 +17,8 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 //}
 
 class Solutions {
+
+  val log = LoggerFactory.getLogger(this.getClass)
   var solutions: List[SolvedIssue] = Nil
 
   def add(item: SolvedIssue): List[SolvedIssue] = {
@@ -31,14 +34,14 @@ class Solutions {
         found_solutions = s :: found_solutions
     }
 
-
     //If not found, then return None else - return SolvedIssue with minimal size
-    if (found_solutions.isEmpty) {
+    val res = if (found_solutions.isEmpty) {
       None
     } else {
       Some(found_solutions.sortWith((s, t) => s.issue.nodes.size < t.issue.nodes.size).head)
     }
-
+    log info("solutions found={}", res)
+    res
   }
 
   def distance(issue: ConceptNetwork, master: ConceptNetwork, k: Int): Int = {

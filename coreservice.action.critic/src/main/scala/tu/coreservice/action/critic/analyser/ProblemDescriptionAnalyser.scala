@@ -4,6 +4,7 @@ import tu.model.knowledge.domain.{ConceptNetwork, Concept}
 import tu.model.knowledge.selector.SelectorRequest
 import tu.model.knowledge.{Probability, Constant, KnowledgeURI}
 import tu.model.knowledge.annotator.AnnotatedNarrative
+import org.slf4j.LoggerFactory
 
 /**
  * Problem Description Analyser, detects problem description and return Selector request with proper Probability.
@@ -13,6 +14,8 @@ import tu.model.knowledge.annotator.AnnotatedNarrative
  */
 
 class ProblemDescriptionAnalyser {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   /**
    * Detects problem description and return SelectorRequest with proper Probability.
@@ -62,11 +65,13 @@ class ProblemDescriptionAnalyser {
       }
     }
 
-    new SelectorRequest(
+    val res = new SelectorRequest(
       List(KnowledgeURI(Constant.SELECTOR_REQUEST_SIMULATION_URI),
         KnowledgeURI(Constant.SELECTOR_REQUEST_REFORMULATION_URI)),
       KnowledgeURI(Constant.SELECTOR_REQUEST_PROBLEM_DESCRIPTION_URI_NAME),
       new Probability(frequencyConfidence._1, frequencyConfidence._2))
+    log info("created selector request={}", res)
+    res
   }
 
 }

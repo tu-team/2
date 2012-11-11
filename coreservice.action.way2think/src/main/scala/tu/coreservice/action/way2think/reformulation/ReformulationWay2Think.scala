@@ -7,7 +7,7 @@ import tu.model.knowledge.Resource
 import tu.exception.NoExpectedInformationException
 
 /**
- * @author max
+ * @author max talanov
  *         date 2012-07-16
  *         time: 5:52 PM
  */
@@ -59,8 +59,8 @@ class ReformulationWay2Think extends Way2Think {
    * @return SelectorRequest with set probability
    */
   def apply(currentSituation: ConceptNetwork, domainModel: ConceptNetwork): Option[ConceptNetwork] = {
-    val s = new Reformulation()
-    s.apply(currentSituation, domainModel)
+    val r = new Reformulation()
+    r.apply(currentSituation, domainModel)
   }
 
   def start() = false

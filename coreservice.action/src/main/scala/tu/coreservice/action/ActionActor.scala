@@ -22,7 +22,7 @@ class ActionActor extends Actor {
    * Starts inbound Action with inputContext.
    */
   def act() {
-    log info("{} started", this.getClass.getName)
+    log debug("{} started", this.getClass.getName)
     var outputContext = ContextHelper(List[Resource](), "OutputContex")
     loop {
       react {
