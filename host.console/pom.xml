@@ -127,6 +127,30 @@
                     </classpathContainers>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <includeProjectDependencies>true</includeProjectDependencies>
+                    <mainClass>tu.host.console.AppMain</mainClass>
+                    <systemProperties>
+                        <!-- -Djava.library.path=/usr/local/lib -Dlog4j.debug -Dlog4j.configuration=file:log4j.properties -->
+                        <systemProperty>
+                            <key>java.library.path</key>
+                            <value>/usr/local/lib</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <key>log4j.configuration</key>
+                            <value>file:log4j.properties</value>
+                        </systemProperty>
+                        <!--systemProperty>
+                            <key>log4j.debug</key>
+                            <value>true</value>
+                        </systemProperty-->
+                    </systemProperties>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <reporting>
