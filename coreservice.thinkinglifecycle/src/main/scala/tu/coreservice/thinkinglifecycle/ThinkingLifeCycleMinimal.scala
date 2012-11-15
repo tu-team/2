@@ -50,7 +50,7 @@ class ThinkingLifeCycleMinimal
     val goalManager = new GoalManager
     var resGoals: List[Goal] = List[Goal]()
     // process resources
-    while (goalManager.currentGoal != None) {
+    while (goalManager.currentTrainingGoal != None) {
       // get next goal
       // process next goal
       val goalOption = goalManager.currentTrainingGoal

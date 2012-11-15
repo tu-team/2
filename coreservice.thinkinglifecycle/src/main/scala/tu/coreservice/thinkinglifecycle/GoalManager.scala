@@ -13,6 +13,7 @@ import tu.model.knowledge.communication.ShortTermMemory
 class GoalManager {
 
   private val goals = KBAdapter.workflow
+  private val trainingGoals = KBAdapter.trainingGoal.keys.toList
   private var currentIndex = 0
 
   /**
@@ -42,6 +43,24 @@ class GoalManager {
     }
   }
 
+  def nextTrainingGoal(inputContext: ShortTermMemory): Option[Goal] = {
+    inputContext.nextGoal match {
+      case Some(g: Goal) => Some(g)
+      case None => {
+        nextTrainingGoal
+      }
+    }
+  }
+
+  def nextTrainingGoal: Option[Goal] = {
+    this.currentIndex += 1
+    if (this.currentIndex >= goals.size) {
+      None
+    } else {
+      Some(trainingGoals(currentIndex))
+    }
+  }
+
   def nextGoal: Option[Goal] = {
     this.currentIndex += 1
     if (this.currentIndex >= goals.size) {
@@ -65,11 +84,10 @@ class GoalManager {
   }
 
   def currentTrainingGoal: Option[Goal] = {
-    val res = KBAdapter.trainingGoal.keys.toList
-    if (res.size > 0) {
-      Some(res(0))
-    } else {
+    if (currentIndex >= trainingGoals.size || currentIndex < 0) {
       None
+    } else {
+      Some(trainingGoals(this.currentIndex))
     }
   }
 
