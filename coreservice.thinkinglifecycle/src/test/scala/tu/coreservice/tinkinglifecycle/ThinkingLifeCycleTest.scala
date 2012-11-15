@@ -45,12 +45,50 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   test("Please install Firefox case.") {
+    // training
+    PleaseTraining
+    BrowserTraining
+    FirefoxTraining
+    InstallTraining
+
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
     assert(res != null)
     log debug res.toString
+  }
+
+  private def BrowserTraining {
+    val requestText = "Browser is an object."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("browserTrainingRequest"), KnowledgeURI(Constant.domainName))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    res
+  }
+
+  private def FirefoxTraining {
+    val requestText = "Firefox is a browser."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("firefoxTrainingRequest"), KnowledgeURI(Constant.domainName))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    res
+  }
+
+  private def InstallTraining {
+    val requestText = "Install is an action."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("installTrainingRequest"), KnowledgeURI(Constant.domainName))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    res
+  }
+
+  private def PleaseTraining {
+    val requestText = "Please is a form of politeness."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("actionTrainingRequest"), KnowledgeURI(Constant.domainName))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    res
   }
 
   test("User miss Internet Explorer 8.") {
