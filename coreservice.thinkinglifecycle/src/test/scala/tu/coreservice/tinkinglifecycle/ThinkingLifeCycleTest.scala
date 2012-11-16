@@ -51,6 +51,8 @@ class ThinkingLifeCycleTest extends FunSuite {
     FirefoxTraining
     InstallTraining
 
+    log info ("Trainig is over")
+
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
