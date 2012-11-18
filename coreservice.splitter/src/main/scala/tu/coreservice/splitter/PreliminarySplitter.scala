@@ -211,7 +211,7 @@ class PreliminarySplitter extends Way2Think {
             if (Constant.RelexFeaturesPhrases.contains(f)) {
               val connectionPhrase = AnnotatedPhrase(f, sentenceIndex)
               if (childPhrases.size > 0) {
-                val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase, childPhrases(0)), sentenceIndex)
+                val compoundPhrase = AnnotatedPhrase(List(connectionPhrase, childPhrases(0)), sentenceIndex)
                 phrases :::= List(compoundPhrase) ::: childPhrases.slice(1, childPhrases.size)
               } else {
                 val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase), sentenceIndex)
