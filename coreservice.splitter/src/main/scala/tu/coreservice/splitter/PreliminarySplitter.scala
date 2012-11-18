@@ -156,13 +156,13 @@ class PreliminarySplitter extends Way2Think {
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
       annotatedSentences ::= annotatedSentence
-      log info("created phrases={}", phrases)
-      log info("created sentences={}", annotatedSentences)
+      log info ("created phrases={}", phrases)
+      log info ("created sentences={}", annotatedSentences)
     }
     val annotatedNarrative = AnnotatedNarrative(annotatedSentences, KnowledgeURI(this.getClass.getName + " result"))
-    log info("created narrative={}", annotatedNarrative)
+    log info ("created narrative={}", annotatedNarrative)
     outputContext.lastResult = Some(annotatedNarrative)
-    log debug("apply()= {}", outputContext.toString)
+    log debug ("apply()= {}", outputContext.toString)
     outputContext
   }
 
@@ -197,7 +197,8 @@ class PreliminarySplitter extends Way2Think {
       val currentPhrase = if (name.contains("_")) {
         //split phrase by two
         AnnotatedPhrase(name.split("_").map(b => AnnotatedPhrase(b)).toList, sentenceIndex)
-      } else {
+      }
+      else {
         AnnotatedPhrase(name, sentenceIndex)
       }
 
@@ -205,7 +206,7 @@ class PreliminarySplitter extends Way2Think {
         val filteredFeatures = feature.get("links").getFeatureNames.filter {
           n: String => Constant.RelexFeatures.contains(n)
         }
-        var compoundPhraseCase = false
+        var notCompound = false
         if (filteredFeatures.size > 0) {
           filteredFeatures.foreach(f => {
             val childPhrases = processNodeRec(feature.get("links").get(f))
@@ -214,17 +215,16 @@ class PreliminarySplitter extends Way2Think {
               if (childPhrases.size > 0) {
                 val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase, childPhrases(0)), sentenceIndex)
                 phrases :::= List(compoundPhrase) ::: childPhrases.slice(1, childPhrases.size)
-                compoundPhraseCase = true
               } else {
                 val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase), sentenceIndex)
                 phrases ::= compoundPhrase
-                compoundPhraseCase = true
               }
             } else {
+              notCompound = true
               phrases :::= childPhrases
             }
           })
-          if (!compoundPhraseCase) {
+          if (notCompound) {
             phrases ::= currentPhrase
           }
         }
