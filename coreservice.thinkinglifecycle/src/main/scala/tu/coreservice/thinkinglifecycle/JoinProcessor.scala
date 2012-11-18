@@ -29,6 +29,7 @@ object JoinProcessor {
       a !? Stop match {
         case res: ShortTermMemory => {
           log debug res.toString
+          log info ("received last result={}", res.lastResult)
           res
         }
       }
