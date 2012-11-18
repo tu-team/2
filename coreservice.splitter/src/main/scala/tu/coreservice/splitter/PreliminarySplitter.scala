@@ -156,13 +156,13 @@ class PreliminarySplitter extends Way2Think {
       sntOrder = sntOrder + 1
       sentence = ds.getNextSentence
       annotatedSentences ::= annotatedSentence
-      log info ("created phrases={}", phrases)
-      log info ("created sentences={}", annotatedSentences)
+      log info("created phrases={}", phrases)
+      log info("created sentences={}", annotatedSentences)
     }
     val annotatedNarrative = AnnotatedNarrative(annotatedSentences, KnowledgeURI(this.getClass.getName + " result"))
-    log info ("created narrative={}", annotatedNarrative)
+    log info("created narrative={}", annotatedNarrative)
     outputContext.lastResult = Some(annotatedNarrative)
-    log debug ("apply()= {}", outputContext.toString)
+    log debug("apply()= {}", outputContext.toString)
     outputContext
   }
 
@@ -205,24 +205,29 @@ class PreliminarySplitter extends Way2Think {
         val filteredFeatures = feature.get("links").getFeatureNames.filter {
           n: String => Constant.RelexFeatures.contains(n)
         }
+        var compoundPhraseCase = false
         if (filteredFeatures.size > 0) {
           filteredFeatures.foreach(f => {
             val childPhrases = processNodeRec(feature.get("links").get(f))
             if (Constant.RelexFeaturesPhrases.contains(f)) {
               val connectionPhrase = AnnotatedPhrase(f, sentenceIndex)
               if (childPhrases.size > 0) {
-                val compoundPhrase = AnnotatedPhrase(List(connectionPhrase, childPhrases(0)), sentenceIndex)
+                val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase, childPhrases(0)), sentenceIndex)
                 phrases :::= List(compoundPhrase) ::: childPhrases.slice(1, childPhrases.size)
+                compoundPhraseCase = true
               } else {
                 val compoundPhrase = AnnotatedPhrase(List(currentPhrase, connectionPhrase), sentenceIndex)
                 phrases ::= compoundPhrase
+                compoundPhraseCase = true
               }
             } else {
               phrases :::= childPhrases
             }
           })
+          if (!compoundPhraseCase) {
+            phrases ::= currentPhrase
+          }
         }
-        phrases ::= currentPhrase
       } else {
         phrases ::= currentPhrase
       }

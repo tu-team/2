@@ -39,9 +39,8 @@ class KBAnnotatorImpl extends Way2Think {
       //inputContext.domainModel.
       //val localAnnotated = localAnnotator.apply(phrase)
       val phrases = inputContext.domainModel.get.nodes.filter(n => n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase))
-      //TODO:Correct
       if (phrases.size > 0) {
-        Option(phrases.head.phrases.frames.head._2)
+        Some(phrases.head.phrases.frames.head._2)
       } else {
         None
       }
@@ -57,7 +56,6 @@ class KBAnnotatorImpl extends Way2Think {
       def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
         ref.concepts = src.concepts
         //ref.phrases = src.phrases
-
       }
       if (annotationFound.isEmpty) {
         AnnotatorRegistry.listAnnotators().filter(p => p.isLocal() != true).foreach(a => {
@@ -76,6 +74,7 @@ class KBAnnotatorImpl extends Way2Think {
       }
       else {
         appendAnnotation(ph, annotationFound.get)
+        log info("appended annotation={} to phrase={}", annotationFound, ph)
         result = true
       }
       result

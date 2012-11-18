@@ -62,7 +62,7 @@ class KBAnnotatorImplTest extends FunSuite with MustMatchers {
   }
 
   def logRes(sent: Sentence) {
-    for (val parse: ParsedSentence <- sent.getParses) {
+    for (parse: ParsedSentence <- sent.getParses) {
       // log.info("\n====\n")
       // log.info("Dependency graph:\n")
       // log.info(RawView.printZHeads(parse.getLeft))
@@ -109,7 +109,7 @@ class KBAnnotatorImplTest extends FunSuite with MustMatchers {
     val re = setup
     val res = parse(corrected, re)
     logRes(res)
-    for (val parse: ParsedSentence <- res.getParses) {
+    for (parse: ParsedSentence <- res.getParses) {
       expect(this.line1Relations)(SimpleView.printRelations(parse))
     }
   }
