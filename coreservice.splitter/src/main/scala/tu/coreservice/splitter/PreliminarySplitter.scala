@@ -197,8 +197,7 @@ class PreliminarySplitter extends Way2Think {
       val currentPhrase = if (name.contains("_")) {
         //split phrase by two
         AnnotatedPhrase(name.split("_").map(b => AnnotatedPhrase(b)).toList, sentenceIndex)
-      }
-      else {
+      } else {
         AnnotatedPhrase(name, sentenceIndex)
       }
 
@@ -219,10 +218,11 @@ class PreliminarySplitter extends Way2Think {
                 phrases ::= compoundPhrase
               }
             } else {
-              phrases :::= List(currentPhrase) ::: childPhrases
+              phrases :::= childPhrases
             }
           })
         }
+        phrases ::= currentPhrase
       } else {
         phrases ::= currentPhrase
       }

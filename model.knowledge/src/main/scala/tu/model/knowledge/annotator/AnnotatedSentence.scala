@@ -19,6 +19,10 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
     this(_phrases, _uri, new Probability())
   }
 
+  override def toString: String = {
+    uri.name + ":" + text
+  }
+
   def phrases = _phrases
 
   def concepts_=(in: List[AnnotatedPhrase]): AnnotatedSentence = {
@@ -43,7 +47,7 @@ case class AnnotatedSentence(var _phrases: List[AnnotatedPhrase], _uri: Knowledg
       new KnowledgeURI(map),
       new Probability(map),
       map.get("text") match {
-        case Some(text) => text
+        case Some(aText) => aText
         case None => ""
       }
     )
