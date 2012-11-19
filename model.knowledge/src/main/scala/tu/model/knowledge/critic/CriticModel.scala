@@ -1,14 +1,12 @@
 package tu.model.knowledge.critic
 
 /**
- * @author max
+ * @author max talanov
  *         date 2012-07-12
  *         time: 12:08 AM
  */
 
 import tu.model.knowledge._
-import howto.Solution
-import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.action.ActionModel
 
 class CriticModel(_uri: KnowledgeURI, _probability: Probability = new Probability())
@@ -17,20 +15,15 @@ class CriticModel(_uri: KnowledgeURI, _probability: Probability = new Probabilit
   def this(map: Map[String, String]) = {
     this(new KnowledgeURI(map), new Probability(map))
   }
-
-
-
 }
 
-object CriticModel{
+object CriticModel {
   def apply(name: String): CriticModel = {
     new CriticModel(KnowledgeURI(name))
   }
 
-  def load(kb: KB, selfMap: Map[String,  String]): CriticModel = {
-
-    var name =selfMap("class")
+  def load(kb: KB, selfMap: Map[String, String]): CriticModel = {
+    val name = selfMap("class")
     new CriticModel(KnowledgeURI(name))
-
   }
 }

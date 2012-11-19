@@ -33,6 +33,13 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _simulationResult: Option[ConceptNetwork] = None
   var _notUnderstoodConcepts: List[Concept] = List[Concept]()
   var _notUnderstoodPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
+  var _lastReflectiveResult: Option[Resource] = None
+
+  def lastReflectiveResult = _lastReflectiveResult
+
+  def lastReflectiveResult_=(in: Option[Resource]) {
+    _lastReflectiveResult = in
+  }
 
   def notUnderstoodPhrases = _notUnderstoodPhrases
 
@@ -251,6 +258,20 @@ object ContextHelper {
     }.toMap
     val res = new ShortTermMemory(resourcesMap, uri)
     res.lastResult = Some(lastResult)
+    res
+  }
+
+  /**
+   * Creates ShortTermMemory based on name specified and lastResult resource. Name is used as base for URI.
+   * @param lastResult Resource is last result.
+   * @param name URI.name
+   * @return ShortTermMemory
+   */
+  def createReflectiveContext(lastResult: Resource, name: String): ShortTermMemory = {
+    val uri = KnowledgeURI(name)
+    val resourcesMap = Map[KnowledgeURI, Resource](lastResult.uri -> lastResult)
+    val res = new ShortTermMemory(resourcesMap, uri)
+    res.lastReflectiveResult = Some(lastResult)
     res
   }
 

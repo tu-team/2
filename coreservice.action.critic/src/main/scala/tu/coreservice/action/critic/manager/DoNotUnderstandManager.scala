@@ -34,7 +34,7 @@ class DoNotUnderstandManager(_exclude: List[CriticLink], _include: List[CriticLi
       case None => {
         if (inputContext.notUnderstoodConcepts.size > 0) {
           val d = new DoNotUnderstand()
-          ContextHelper(List[Resource](), d(inputContext.notUnderstoodConcepts), this.getClass.getName + " result")
+          ContextHelper.createReflectiveContext(d(inputContext.notUnderstoodConcepts), this.getClass.getName + " result")
         } else {
           ContextHelper(List[Resource](), this.getClass.getName + " result")
         }
