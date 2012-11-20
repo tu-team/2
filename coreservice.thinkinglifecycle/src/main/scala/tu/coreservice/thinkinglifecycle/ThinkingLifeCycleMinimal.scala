@@ -3,7 +3,7 @@ package tu.coreservice.thinkinglifecycle
 import tu.model.knowledge.communication._
 import tu.coreservice.action.selector.Selector
 import tu.coreservice.action.Action
-import tu.model.knowledge.Resource
+import tu.model.knowledge.{Constant, Resource}
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.critic.CriticModel
@@ -16,6 +16,7 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 import tu.dataservice.memory.LongTermMemory
 import tu.model.knowledge.communication.ShortTermMemory
 import scala.Some
+import tu.model.knowledge.domain.ConceptNetwork
 
 
 /**
@@ -32,12 +33,12 @@ class ThinkingLifeCycleMinimal
   val selector = new Selector
   var globalContext = ContextHelper(List[Resource](), "globalContext")
 
-  private def initializeGlobalContext(request:Request)={
+  private def initializeGlobalContext(request: Request) = {
     globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
     globalContext.domainModel = LongTermMemory.domainModel(request.domainName)
     globalContext.simulationModel = LongTermMemory.simulationModel(request.domainName)
     globalContext.reformulationModel = LongTermMemory.reformulationModel(request.domainName)
-    globalContext.solutions=  LongTermMemory.solutions(request.domainName)
+    globalContext.solutions = LongTermMemory.solutions(request.domainName)
   }
 
   /**
@@ -70,6 +71,14 @@ class ThinkingLifeCycleMinimal
       goalManager.nextGoal(globalContext)
     }
     log debug "apply()"
+    globalContext.lastResult match {
+      case Some(r: ConceptNetwork) => {
+        LongTermMemory.saveModel(request.domainName, r)
+      }
+      case None => {
+        //do nothing
+      }
+    }
     globalContext
   }
 

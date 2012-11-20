@@ -151,6 +151,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       "[generalisations=" + _generalisations.size.toString +
       ",specialisations=" + _specialisations.size.toString +
       ",links=" + _conceptLinks.size.toString +
+      ",phrase=" + _phrases +
       "]"
   }
 

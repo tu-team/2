@@ -27,6 +27,10 @@ object Defaults {
   val objectPhrase = AnnotatedPhrase("object", objectConcept)
   val formOfPolitenessConcept = Concept.createSubConcept(CONCEPT, "FormOfPoliteness")
   val formOfPolitenessPhrase = AnnotatedPhrase("form of politeness", formOfPolitenessConcept)
+  val actionConcept = Concept.createSubConcept(CONCEPT, "action")
+  val actionPhrase = AnnotatedPhrase("action", actionConcept)
+  val programConcept = Concept.createSubConcept(CONCEPT, "program")
+  val programPhrase = AnnotatedPhrase("program", actionConcept)
 
   /**
    * Links
@@ -45,7 +49,7 @@ object Defaults {
   val missPhrase = AnnotatedPhrase("miss", missLink )
 
 
-  val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept, formOfPolitenessConcept)
+  val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept, formOfPolitenessConcept, actionConcept)
   val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, isLink, generalisationLink)
   val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase, missPhrase, formOfPolitenessPhrase)
 
@@ -78,7 +82,6 @@ object Defaults {
   val reinstallHowTo = new HowTo(List[Frame](Frame(CONCEPT)), List[ConceptTag](), KnowledgeURI("reinstallHowTo"))
 
   // actions
-  val actionConcept = Concept("action")
   val installConcept = Concept.createSubConcept(actionConcept, "install")
   val removeConcept = Concept.createSubConcept(actionConcept, "remove")
   val cleanConcept = Concept.createSubConcept(actionConcept, "clean")

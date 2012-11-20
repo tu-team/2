@@ -46,10 +46,10 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Please install Firefox case.") {
     // training
+    InstallTraining
     BrowserTraining
     PleaseTraining
     FirefoxTraining
-    InstallTraining
 
     log info ("Trainig is over")
 
@@ -62,7 +62,7 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   private def BrowserTraining {
-    val requestText = "Browser is an object."
+    val requestText = "Browser is a program."
     val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("browserTrainingRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)

@@ -85,8 +85,7 @@ object LongTermMemory {
    */
   def saveModel(modelName: KnowledgeURI, model: ConceptNetwork) = {
     //instantiate save context
-    var alreadySaved = new ListBuffer[String]()
-
+    val alreadySaved = new ListBuffer[String]()
     model.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME, alreadySaved)
 
   }
