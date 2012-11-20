@@ -195,7 +195,7 @@ class LinkParser extends Way2Think {
 
     if (feature.get("links") != null) {
       // log debug "links=" + feature.get("links").toString(getZHeadsFilter)
-      log debug "==>"
+      log info "==>"
       val processedLinks = processLink(feature.get("links"), concept, sentence)
       concept.links = concept.links ::: processedLinks
     }
