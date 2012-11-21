@@ -73,10 +73,19 @@ class ThinkingLifeCycleMinimal
     log debug "apply()"
     globalContext.lastResult match {
       case Some(r: ConceptNetwork) => {
-        LongTermMemory.saveModel(request.domainName, r)
+        globalContext.domainModel match {
+          case Some(model: ConceptNetwork) => {
+            model.nodes = model.nodes ::: r.nodes
+            globalContext.domainModel = Some(model)
+            LongTermMemory.saveModel(request.domainName, model)
+          }
+          case None => {
+            // no domain model  => do nothing
+          }
+        }
       }
       case None => {
-        //do nothing
+        //no updated concepts => do nothing
       }
     }
     globalContext
@@ -213,7 +222,7 @@ class ThinkingLifeCycleMinimal
   }
 
   def copyGlobalContext(resContext: ShortTermMemory): ShortTermMemory = {
-    this.globalContext = ContextHelper.mergeFirstAndLastResult(List(this.globalContext, resContext))
+    this.globalContext = ContextHelper.mergeWithBaseContext(globalContext, List(this.globalContext, resContext))
     this.globalContext
   }
 }

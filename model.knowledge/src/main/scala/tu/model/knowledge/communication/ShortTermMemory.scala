@@ -337,7 +337,60 @@ object ContextHelper {
   def mergeFirstAndLastResult(contexts: List[ShortTermMemory]): ShortTermMemory = {
     if (contexts.size > 0) {
       val res = merge(contexts)
-      res.lastResult = contexts.last.lastResult
+      contexts.last.lastResult match {
+        case Some(r: Resource) => {
+          res.lastResult = contexts.last.lastResult
+        }
+        case None => {
+          // save previous state
+        }
+      }
+      contexts.last.lastReflectiveResult match {
+        case Some(r: Resource) => {
+          res.lastReflectiveResult = contexts.last.lastReflectiveResult
+        }
+        case None => {
+          // save previous state
+        }
+      }
+      res.simulationResult = contexts.find {
+        (c: ShortTermMemory) => c.simulationResult match {
+          case Some(cN: ConceptNetwork) => true
+          case None => false
+        }
+      } match {
+        case Some(c: ShortTermMemory) => c.simulationResult
+        case None => None
+      }
+      res.domainModel = contexts.head.domainModel
+      res.simulationModel = contexts.head.simulationModel
+      res.reformulationModel = contexts.head.reformulationModel
+      res.userResponse = contexts.head.userResponse
+    } else {
+      ContextHelper.apply(List[Resource](), "AnonymousContext")
+    }
+  }
+
+  def mergeWithBaseContext(baseContext: ShortTermMemory, supplementalContexts: List[ShortTermMemory]): ShortTermMemory = {
+    val contexts = List(baseContext) ::: supplementalContexts
+    if (baseContext != null && contexts.size > 0) {
+      val res = merge(contexts)
+      contexts.last.lastResult match {
+        case Some(r: Resource) => {
+          res.lastResult = contexts.last.lastResult
+        }
+        case None => {
+          res.lastResult = baseContext.lastResult
+        }
+      }
+      contexts.last.lastReflectiveResult match {
+        case Some(r: Resource) => {
+          res.lastReflectiveResult = contexts.last.lastReflectiveResult
+        }
+        case None => {
+          res.lastReflectiveResult = baseContext.lastReflectiveResult
+        }
+      }
       res.simulationResult = contexts.find {
         (c: ShortTermMemory) => c.simulationResult match {
           case Some(cN: ConceptNetwork) => true
