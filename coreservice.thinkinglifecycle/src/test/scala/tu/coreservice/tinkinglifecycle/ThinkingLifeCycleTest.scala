@@ -46,8 +46,8 @@ class ThinkingLifeCycleTest extends FunSuite {
 
   test("Please install Firefox case.") {
     // training
-    InstallTraining
     BrowserTraining
+    InstallTraining
     PleaseTraining
     FirefoxTraining
 

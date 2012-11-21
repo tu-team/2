@@ -194,7 +194,7 @@ class LinkParser extends Way2Think {
     }
 
     if (feature.get("links") != null) {
-      // log debug "links=" + feature.get("links").toString(getZHeadsFilter)
+      // log debug "links=" + feature.get("links")
       log debug "==>"
       val processedLinks = processLink(feature.get("links"), concept, sentence)
       concept.links = concept.links ::: processedLinks
@@ -269,6 +269,7 @@ class LinkParser extends Way2Think {
    * @return Concept and Error pair.
    */
   def getConcept(name: String, sentence: AnnotatedSentence): Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = {
+    log debug ("getConcept(name = {})", name)
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
       val phrase = phrases.head
@@ -323,10 +324,13 @@ class LinkParser extends Way2Think {
   }
 
   def processLink(feature: FeatureNode, source: Concept, sentence: AnnotatedSentence): List[ConceptLink] = {
+    log debug ("processLink(feature: {}", feature.get("name"))
+    log debug ("feature names={}", feature.getFeatureNames)
     try {
       val filteredFeatures = feature.getFeatureNames.filter {
         name: String => Constant.RelexFeatures.contains(name)
       }
+      log debug ("filteredFeatures ={}", filteredFeatures)
       if (filteredFeatures.size > 0) {
         val filteredDestinationFeatures = filteredFeatures.toList.filter {
           (name: String) => {
