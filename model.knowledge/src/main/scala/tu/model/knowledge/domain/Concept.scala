@@ -58,6 +58,11 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     this
   }
 
+  def phrasesAdd(in: AnnotatedPhrase): Concept = {
+    _phrases = _phrases + in
+    this
+  }
+
   def generalisations: TypedKLine[Concept] = _generalisations
 
 

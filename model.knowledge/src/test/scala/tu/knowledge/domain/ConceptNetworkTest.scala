@@ -43,7 +43,7 @@ class ConceptNetworkTest extends FunSuite {
   test("ConceptNetwork should be exported via toText") {
     val sn0 = new ConceptNetwork(List[Concept](concept, subjectConcept), List(), uri)
     val res0 = sn0.toText
-    expect("subject <- CONCEPT")(res0)
+    expect("subject <- CONCEPT[[generalisations=0,specialisations=2,links=0,phrase=tu-project.com/userTypedKLine@0.3#:0.0:1.0]]")(res0)
 
     val sn1 = new ConceptNetwork(List[Concept](concept, subjectConcept, objectConcept), List(), uri)
     val res1 = sn1.toText

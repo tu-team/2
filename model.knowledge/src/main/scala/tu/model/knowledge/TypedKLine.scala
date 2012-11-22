@@ -31,6 +31,11 @@ case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _u
     this
   }
 
+  def +(in: Type): TypedKLine[Type] = {
+    _frames = _frames + (in.uri -> in)
+    this
+  }
+
   //TODO correct this
   /*def this(map: Map[String, String]) = {
     val typeString = map.get("type") match {
