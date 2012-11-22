@@ -409,10 +409,10 @@ object Concept {
         oneList(kb.loadChildrenMap(ID, Constant.SPECIALISATION_LINK_NAME), Constant.SPECIALISATION_LINK_NAME)
       )
 
-    val sentences =
+    val phrases =
       TypedKLine[AnnotatedPhrase](
         "specialisation",
-        oneListPhrases(kb.loadChildrenMap(ID, Constant.SENTENCES_LINK_NAME))
+        oneListPhrases(kb.loadChildrenMap(ID, Constant.PHRASES_LINK_NAME))
       )
 
 
@@ -425,7 +425,7 @@ object Concept {
     /* assign loaded children*/
     res.generalisations = generalisation
     res.specialisations = specialisation
-    res.phrases = sentences
+    res.phrases = phrases
     res.links = conceptLinkList
 
 
