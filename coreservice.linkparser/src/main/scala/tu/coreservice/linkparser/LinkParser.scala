@@ -70,6 +70,7 @@ class LinkParser extends Way2Think {
     sentences.map {
       sentence: AnnotatedSentence => {
         val parse: ParsedSentence = processSentenceRelex(sentence, sentences)
+        log debug ("parse = {}", parse.toString)
         val node: FeatureNode = new FeatureNode()
         node.set("head", parse.getLeft.get("head"))
         node.set("background", parse.getLeft.get("background"))
@@ -104,6 +105,7 @@ class LinkParser extends Way2Think {
     val em: EntityMaintainer = new EntityMaintainer()
     val relExt = setup(sentences)
     val relexSentence = relExt.processSentence(sentence.text, em)
+    log debug ("relexSentence ={}", relexSentence)
     val parsesNum = relexSentence.getNumParses
     if (parsesNum < 1) {
       throw new UnexpectedException("$No_parses_produced")
@@ -142,6 +144,7 @@ class LinkParser extends Way2Think {
    * @return Pair of Concept and Error
    */
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
+    log debug ("processNode(feature={})", feature)
     try {
       val name: String = getName(feature)
       val phraseConceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)

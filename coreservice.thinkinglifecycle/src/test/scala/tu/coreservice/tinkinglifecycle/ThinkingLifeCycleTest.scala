@@ -62,7 +62,7 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   private def BrowserTraining {
-    val requestText = "Browser is a program."
+    val requestText = "Browser is an object."
     val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("browserTrainingRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t.apply(r)

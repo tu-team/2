@@ -1,0 +1,674 @@
+/usr/lib/jvm/java-6-sun/bin/java -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:42002,suspend=y,server=n -Djava.library.path=/usr/local/lib -Dlog4j.configuration=file:log4j.properties "-Dspecs2.ex=Please install Firefox case." -Dfile.encoding=UTF-8 -classpath /home/max/.IdeaIC11/config/plugins/Scala/lib/scala-plugin-runners.jar:/usr/lib/jvm/java-6-sun/jre/lib/rt.jar:/usr/lib/jvm/java-6-sun/jre/lib/javaws.jar:/usr/lib/jvm/java-6-sun/jre/lib/resources.jar:/usr/lib/jvm/java-6-sun/jre/lib/jsse.jar:/usr/lib/jvm/java-6-sun/jre/lib/deploy.jar:/usr/lib/jvm/java-6-sun/jre/lib/management-agent.jar:/usr/lib/jvm/java-6-sun/jre/lib/jce.jar:/usr/lib/jvm/java-6-sun/jre/lib/plugin.jar:/usr/lib/jvm/java-6-sun/jre/lib/charsets.jar:/usr/lib/jvm/java-6-sun/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-6-sun/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-6-sun/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-6-sun/jre/lib/ext/sunjce_provider.jar:/home/max/Projects/2/2/coreservice.thinkinglifecycle/target/test-classes:/home/max/Projects/2/2/coreservice.thinkinglifecycle/target/classes:/home/max/.m2/repository/org/scala-lang/scala-library/2.9.1/scala-library-2.9.1.jar:/home/max/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/home/max/.m2/repository/org/scala-tools/testing/specs_2.9.1/1.6.9/specs_2.9.1-1.6.9.jar:/home/max/.m2/repository/org/scala-lang/scala-compiler/2.9.1/scala-compiler-2.9.1.jar:/home/max/.m2/repository/org/scalatest/scalatest_2.9.1/1.7.2/scalatest_2.9.1-1.7.2.jar:/home/max/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/home/max/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/home/max/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/home/max/Projects/2/2/model.knowledge/target/classes:/home/max/Projects/2/2/coreservice.action/target/classes:/home/max/Projects/2/2/coreservice.action.critic/target/classes:/home/max/Projects/2/2/common.utilities/target/classes:/home/max/Projects/2/2/coreservice.action.way2think/target/classes:/home/max/.m2/repository/org/skife/com/typesafe/config/typesafe-config/0.3.0/typesafe-config-0.3.0.jar:/home/max/Projects/2/2/dataservice.knowledgebaseserver/target/classes:/home/max/.m2/repository/org/neo4j/neo4j/1.6/neo4j-1.6.jar:/home/max/.m2/repository/org/neo4j/neo4j-kernel/1.6/neo4j-kernel-1.6.jar:/home/max/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar:/home/max/.m2/repository/org/neo4j/neo4j-lucene-index/1.6/neo4j-lucene-index-1.6.jar:/home/max/.m2/repository/org/apache/lucene/lucene-core/3.5.0/lucene-core-3.5.0.jar:/home/max/.m2/repository/org/neo4j/neo4j-graph-algo/1.6/neo4j-graph-algo-1.6.jar:/home/max/.m2/repository/org/neo4j/neo4j-udc/1.6/neo4j-udc-1.6.jar:/home/max/.m2/repository/org/neo4j/neo4j-graph-matching/1.6/neo4j-graph-matching-1.6.jar:/home/max/.m2/repository/org/neo4j/neo4j-cypher/1.6/neo4j-cypher-1.6.jar:/home/max/.m2/repository/org/neo4j/neo4j-jmx/1.6/neo4j-jmx-1.6.jar:/home/max/Projects/2/2/coreservice.action.selector/target/classes:/home/max/Projects/2/2/coreservice.splitter/target/classes:/home/max/.m2/repository/uk/ac/gate/gate/4.0/gate-4.0.jar:/home/max/.m2/repository/org/opencog/linkgrammar/4.7.6/linkgrammar-4.7.6.jar:/home/max/.m2/repository/owlapi/sourceforge/net/owlapi/2.2.0/owlapi-2.2.0.jar:/home/max/.m2/repository/opennlp/opennlp-tools/1.5.0/opennlp-tools-1.5.0.jar:/home/max/.m2/repository/opennlp/maxent/3.0.0/maxent-3.0.0.jar:/home/max/.m2/repository/net/sf/jwordnet/jwnl/1.4_rc3/jwnl-1.4_rc3.jar:/home/max/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/max/.m2/repository/gnu/trove/trove/1.0.2/trove-1.0.2.jar:/home/max/.m2/repository/gnu/getopt/java-getopt/1.0.13/java-getopt-1.0.13.jar:/home/max/.m2/repository/org/opencog/relex/1.4.0/relex-1.4.0.jar:/home/max/Projects/2/2/coreservice.spellcorrector/target/classes:/home/max/.m2/repository/org/xeustechnologies/google-api/google-api-spelling-java/1.1/google-api-spelling-java-1.1.jar:/home/max/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/home/max/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/max/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/max/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.5/jaxb-impl-2.1.5.jar:/home/max/Projects/2/2/coreservice.annotator/target/classes:/home/max/Projects/2/2/lib/target/classes:/home/max/Projects/2/2/coreservice.linkparser/target/classes:/home/max/Projects/2/2/host.console/target/test-classes:/home/max/Projects/2/2/host.console/target/classes:/home/max/bin/ideaIC-11.1.1/lib/idea_rt.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s tu.coreservice.tinkinglifecycle.ThinkingLifeCycleTest -testName "Please install Firefox case." -showProgressMessages true -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter
+Testing started at 7:42 AM ...
+Connected to the target VM, address: '127.0.0.1:42002', transport: 'socket'
+[22.11 06:42:14] [main] DEBUG ThinkingLifeCycleMinimal  - apply(tu-project.com/browserTrainingRequest@0.3#:0.0:1.0: TrainingRequest))
+[22.11 06:42:17] [main] INFO  N4JKB$  - Neo4j database initialized. Location /home/max/tudb/tu-kb
+[22.11 06:42:17] [main] ERROR ConceptNetwork$  - Concept not loaded for link List(tu-project.com/domain_name@0.3#, defaultLink, 0)/{} for {}
+[22.11 06:42:17] [main] ERROR LongTermMemory$  - tu.exception.UnexpectedException: Concept not loaded for link tu-project.com/domain_name@0.3#/defaultLink for 0
+[22.11 06:42:19] [main] DEBUG KBMap$  - Resource tu-project.com/domainModel@0.3# has been loaded already and obtained from cache
+[22.11 06:42:19] [main] DEBUG KBMap$  - Resource tu-project.com/domainModel@0.3# has been loaded already and obtained from cache
+[22.11 06:42:19] [main] DEBUG KBMap$  - Resource tu-project.com/domainModel@0.3# has been loaded already and obtained from cache
+[22.11 06:42:19] [main] DEBUG ThinkingLifeCycleMinimal  - Goal:tu-project.com/Train@0.3#:0.0:1.0
+[22.11 06:42:19] [main] DEBUG ThinkingLifeCycleMinimal  - processResources(List(tu-project.com/tu.coreservice.splitter.PreliminarySplitter@0.3#:0.0:1.0, tu-project.com/tu.coreservice.annotator.KBAnnotatorImpl@0.3#:0.0:1.0, tu-project.com/tu.coreservice.linkparser.LinkParser@0.3#:0.0:1.0, tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2Think@0.3#:0.0:1.0): List[Resource]): List[ShortTermMemory]
+[22.11 06:42:19] [main] DEBUG ThinkingLifeCycleMinimal  - translate(tu-project.com/tu.coreservice.splitter.PreliminarySplitter@0.3#:0.0:1.0: Resource, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/globalContext@0.3#[Map(tu-project.com/inputtext@0.3# -> Browser is a program.)][Some(Browser is a program.)] @0.0:1.0: ShortTermMemory)
+[22.11 06:42:19] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(tu.coreservice.splitter.PreliminarySplitter: String): Action
+[22.11 06:42:19] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(): Action = /Way2Think&ID=682@1.0#:0.0:1.0
+[22.11 06:42:19] [main] DEBUG PreliminarySplitter  - apply(tu.model.knowledge.communication.ShortTermMemory:tu-project.com/globalContext@0.3#[Map(tu-project.com/inputtext@0.3# -> Browser is a program.)][Some(Browser is a program.)] @0.0:1.0: ShortTermMemory)
+
+WARNING:
+	It appears that the OpenNLP tools are not installed or are not
+	correctly specified in the java classpath. The OpenNLP tools are
+	used to perform sentence detection. Without them, ReleEx will use
+	the less accurate Java sentence detector. See the README file for info.
+
+[22.11 06:42:21] [main] DEBUG SpellChecker  - <?xml version="1.0" encoding="UTF-8" standalone="yes"?><spellrequest textalreadyclipped="0" ignoredigits="1" ignoreallcaps="1" ignoredups="1"><text>Browser is a program. </text></spellrequest>
+[22.11 06:42:21] [main] DEBUG SpellChecker  - <?xml version="1.0" encoding="UTF-8"?><spellresult error="0" clipped="0" charschecked="22"></spellresult>
+Info: Using file_properties.xml from resource (jar file).
+[22.11 06:42:22] [main] INFO  MessageLog  - Installing dictionary net.didion.jwnl.dictionary.FileBackedDictionary@e84763
+Info: Using concept_vars.txt from resource (jar file).
+Info: Using mapping_rules.txt from resource (jar file).
+link-grammar: Info: Dictionary found at /usr/local/share/link-grammar/en/4.0.dict
+link-grammar: Info: JNI: dictionary version 4.7.6
+Link-parsing: 657 milliseconds (avg=657 millisecs, cnt=1)
+RelEx processing: 375 milliseconds (avg=375 millisecs, cnt=1)
+[22.11 06:42:30] [main] DEBUG PreliminarySplitter  - name=be
+[22.11 06:42:30] [main] DEBUG PreliminarySplitter  - name=program
+[22.11 06:42:30] [main] DEBUG PreliminarySplitter  - name=Browser
+[22.11 06:42:30] [main] INFO  PreliminarySplitter  - created phrases=List(Browser, be, program)
+[22.11 06:42:30] [main] INFO  PreliminarySplitter  - created sentences=List(sentence-1:Browser is a program.)
+[22.11 06:42:30] [main] INFO  PreliminarySplitter  - created narrative=tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0
+[22.11 06:42:30] [main] DEBUG PreliminarySplitter  - apply()= tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.splitter.PreliminarySplitter@0.3#[Map(tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0
+[22.11 06:42:30] [main] DEBUG ThinkingLifeCycleMinimal  - translate(): ShortTermMemory tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.splitter.PreliminarySplitter@0.3#[Map(tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0
+[22.11 06:42:30] [main] DEBUG ThinkingLifeCycleMinimal  - translate(tu-project.com/tu.coreservice.annotator.KBAnnotatorImpl@0.3#:0.0:1.0: Resource, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter@0.3#[Map(tu-project.com/inputtext@0.3# -> Browser is a program., tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0: ShortTermMemory)
+[22.11 06:42:30] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(tu.coreservice.annotator.KBAnnotatorImpl: String): Action
+[22.11 06:42:30] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(): Action = /Way2Think&ID=484@1.0#:0.0:1.0
+[22.11 06:42:30] [main] INFO  KBAnnotatorImpl  - found annatations=None
+[22.11 06:42:30] [main] INFO  KBAnnotatorImpl  - found annatations=None
+[22.11 06:42:31] [main] INFO  KBAnnotatorImpl  - found annatations=None
+[22.11 06:42:32] [main] DEBUG ThinkingLifeCycleMinimal  - translate(): ShortTermMemory tu.model.knowledge.communication.ShortTermMemory:tu-project.com/AnnotationResult@0.3#[Map(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0
+[22.11 06:42:32] [main] DEBUG ThinkingLifeCycleMinimal  - translate(tu-project.com/tu.coreservice.linkparser.LinkParser@0.3#:0.0:1.0: Resource, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult@0.3#[Map(tu-project.com/inputtext@0.3# -> Browser is a program., tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0: ShortTermMemory)
+[22.11 06:42:32] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(tu.coreservice.linkparser.LinkParser: String): Action
+[22.11 06:42:32] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(): Action = /Way2Think&ID=702@1.0#:0.0:1.0
+Info: Using file_properties.xml from resource (jar file).
+[22.11 06:42:32] [main] INFO  MessageLog  - Installing dictionary net.didion.jwnl.dictionary.FileBackedDictionary@ffb35e
+Info: Using file_properties.xml from resource (jar file).
+[22.11 06:42:32] [main] INFO  MessageLog  - Installing dictionary net.didion.jwnl.dictionary.FileBackedDictionary@a2bd15
+Link-parsing: 32 milliseconds (avg=32 millisecs, cnt=1)
+[22.11 06:42:32] [main] DEBUG LinkParser$$anonfun$processSentences$1  - parse = Browser is a program.
+RelEx processing: 94 milliseconds (avg=94 millisecs, cnt=1)
+[22.11 06:42:39] [main] DEBUG LinkParser  - processNode(feature=$2[inflection-TAG $24<<.v>>
+   links [_subj $6[definite-FLAG <<T>>
+                   name $30<<Browser>>
+                   nameSource $1[DISJUNCT <<Wd- Ss+ >>
+                                 ENTITY-FLAG <<T>>
+                                 GOOD-REF-FLAG <<T>>
+                                 NEXT $3[DISJUNCT <<Ss- >>
+                                         GOOD-REF-FLAG <<T>>
+                                         HEAD-FLAG <<T>>
+                                         NEXT $9[DETERMINER_FLAG <<T>>
+                                                 DISJUNCT <<Ds+ >>
+                                                 GOOD-REF-FLAG <<T>>
+                                                 NEXT $0[DET-FLAG <<T>>
+                                                         DISJUNCT <<Ds- >>
+                                                         GOOD-REF-FLAG <<T>>
+                                                         NEXT $8[DISJUNCT <<Xp- >>
+                                                                 GOOD-REF-FLAG <<T>>
+                                                                 POS $15<<punctuation>>
+                                                                 PREV $0
+                                                                 SIG <<MORPHY_ALG BASIC_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                                 end_char <<21>>
+                                                                 index_in_sentence <<5>>
+                                                                 linkL0 $4[F_L $5[ENTITY-FLAG <<T>>
+                                                                                  GOOD-REF-FLAG <<T>>
+                                                                                  NEXT $1
+                                                                                  POS $11<<noun>>
+                                                                                  SIG <<MORPHY_ALG BASIC_REF ENTITY_IS_NOUN DEFINITE_ENTITIES ENTITY_SINGULAR NUM_TO_REF HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                                                  end_char <<-1>>
+                                                                                  head $2
+                                                                                  head-word $3
+                                                                                  index_in_sentence <<0>>
+                                                                                  linkR0 $4
+                                                                                  linkR1 $27[F_L $5
+                                                                                             F_R $1
+                                                                                             LAB <<Wd>>
+                                                                                             SIG <<POS_CONJUNCTION_INVERTED HEAD_TO_CLAUSE_AND_WALL>>
+                                                                                             lab_L <<Wd>>
+                                                                                             lab_R <<Wd>>]
+                                                                                  meta [and_cost <<0>>
+                                                                                        disjunct_cost <<6>>
+                                                                                        link_cost <<4>>
+                                                                                        num_skipped_words <<1>>
+                                                                                        num_violations <<0>>]
+                                                                                  num $10<<singular>>
+                                                                                  num_right_links <<2>>
+                                                                                  orig_str <<LEFT-WALL>>
+                                                                                  phr-head $13[phr-leader $19[inflection-TAG $17<<.n>>
+                                                                                                              name $20<<program>>
+                                                                                                              nameSource $0
+                                                                                                              noun_number $18<<singular>>
+                                                                                                              pos $16<<noun>>]
+                                                                                               phr-next $7[phr-head [phr-next [phr-head $29[phr-leader $6
+                                                                                                                                            phr-next [phr-word $1]
+                                                                                                                                            phr-root $7
+                                                                                                                                            phr-type <<NP>>]
+                                                                                                                               phr-next [phr-head $25[phr-leader $2
+                                                                                                                                                      phr-next [phr-word $3]
+                                                                                                                                                      phr-root $7
+                                                                                                                                                      phr-type <<VP>>]]]
+                                                                                                                     phr-root $5
+                                                                                                                     phr-type <<S>>]
+                                                                                                           phr-next [phr-next [phr-next [phr-word $8]
+                                                                                                                               phr-word $0]
+                                                                                                                     phr-word $9]]
+                                                                                               phr-type <<S>>]
+                                                                                  punc $14<<.>>
+                                                                                  ref [definite-FLAG <<T>>
+                                                                                       name $12<<LEFT-WALL>>
+                                                                                       nameSource $5
+                                                                                       noun_number $10<<singular>>
+                                                                                       pos $11<<noun>>]
+                                                                                  start_char <<-1>>
+                                                                                  str $12<<LEFT-WALL>>
+                                                                                  this $5
+                                                                                  uuid <<LEFT-WALL@sentence@7340a761-0fe5-417c-bbe6-843188ed73b8_parse_0>>
+                                                                                  wall $5]
+                                                                           F_R $8
+                                                                           LAB <<Xp>>
+                                                                           SIG <<POS_PUNCTUATION DECLARATIVE_QUESTION1>>
+                                                                           lab_L <<Xp>>
+                                                                           lab_R <<Xp>>]
+                                                                 num_left_links <<1>>
+                                                                 orig_str <<.>>
+                                                                 phr-head $13
+                                                                 ref [name $14<<.>>
+                                                                      nameSource $8
+                                                                      pos $15<<punctuation>>]
+                                                                 start_char <<20>>
+                                                                 str $14<<.>>
+                                                                 this $8
+                                                                 uuid <<.@e652a85d-2bef-4c3f-96ca-c5257761205b>>
+                                                                 wall $5]
+                                                         POS $16<<noun>>
+                                                         PREV $9
+                                                         SIG <<SUBSCR_POS_N MORPHY_ALG BASIC_REF INFLECTION_TAG NUM_TO_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                         end_char <<20>>
+                                                         index_in_sentence <<4>>
+                                                         inflection $17<<.n>>
+                                                         linkL0 $21[DETERMINER_LINK_FLAG <<T>>
+                                                                    F_L $9
+                                                                    F_R $0
+                                                                    LAB <<Ds>>
+                                                                    SIG <<DETERMINER_POS SINGULAR_DET DET-FLAG>>
+                                                                    lab_L <<Ds>>
+                                                                    lab_R <<Ds>>]
+                                                         morph [root <<program>>
+                                                                type <<noun>>]
+                                                         num $18<<singular>>
+                                                         num_left_links <<1>>
+                                                         orig_str <<program>>
+                                                         phr-head $13
+                                                         ref $19
+                                                         start_char <<13>>
+                                                         str $20<<program>>
+                                                         this $0
+                                                         uuid <<program@52d2a376-8ec7-47aa-bb3a-d1ab4a61bd36>>
+                                                         wall $5]
+                                                 POS $22<<det>>
+                                                 PREV $3
+                                                 SIG <<MORPHY_ALG BASIC_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                 end_char <<12>>
+                                                 index_in_sentence <<3>>
+                                                 linkR0 $21
+                                                 num_right_links <<1>>
+                                                 orig_str <<a>>
+                                                 phr-head $13
+                                                 ref [name $23<<a>>
+                                                      nameSource $9
+                                                      pos $22<<det>>]
+                                                 start_char <<11>>
+                                                 str $23<<a>>
+                                                 this $9
+                                                 uuid <<a@fa2f8a7f-e6f9-4a1a-aa6f-d3831a84dc9b>>
+                                                 wall $5]
+                                         POS $33<<verb>>
+                                         PREV $1
+                                         SIG <<SUBSCR_POS_V MORPHY_ALG TENSE_PRESENT BASIC_REF INFLECTION_TAG TENSE_LIST_CONNECT1 HEAD_IDENTIFY TENSE_CONJOIN HEAD_INIT HEAD_TO_FIRST_VERB PROPOGATE_HEAD-WORD SUBJ_TO_LINKS HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF COPY_TENSE_TO_REF CLEAN_UP_BAD_REFS1>>
+                                         end_char <<10>>
+                                         head $2
+                                         head-word $3
+                                         index_in_sentence <<2>>
+                                         inflection $24<<.v>>
+                                         linkL0 $28[F_L $1
+                                                    F_R $3
+                                                    IS_SUBJ_LINK <<T>>
+                                                    LAB <<Ss>>
+                                                    SIG <<POS_NOUN STANDARD_SUBJ MAKE_STANDARD_SUBJ HEAD_TO_SUBJ_AND_OBJ1 HEAD_TO_SUBJ_AND_OBJ2>>
+                                                    lab_L <<Ss>>
+                                                    lab_R <<Ss>>]
+                                         morph [root $26<<be>>
+                                                type <<verb>>]
+                                         num_left_links <<1>>
+                                         orig_str <<is>>
+                                         phr-head $25
+                                         ref $2
+                                         start_char <<8>>
+                                         str $26<<be>>
+                                         subj $6
+                                         tense [first_verb $3
+                                                name $34<<present>>
+                                                val <<present>>]
+                                         this $3
+                                         uuid <<is@9fbbd613-cc74-4f47-abca-5abfecf0c573>>
+                                         wall $5]
+                                 POS $32<<noun>>
+                                 PREV $5
+                                 SIG <<MORPHY_ALG BASIC_REF ENTITY_IS_NOUN DEFINITE_ENTITIES ENTITY_SINGULAR NUM_TO_REF HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                 end_char <<7>>
+                                 head $2
+                                 head-word $3
+                                 index_in_sentence <<1>>
+                                 linkL0 $27
+                                 linkR0 $28
+                                 num $31<<singular>>
+                                 num_left_links <<1>>
+                                 num_right_links <<1>>
+                                 orig_str <<Browser>>
+                                 phr-head $29
+                                 ref $6
+                                 start_char <<0>>
+                                 str $30<<Browser>>
+                                 this $1
+                                 uuid <<Browser@17fda42e-0d5e-4577-87df-a5db2916a0e2>>
+                                 wall $5]
+                   noun_number $31<<singular>>
+                   pos $32<<noun>>]]
+   name $26<<be>>
+   nameSource $3
+   pos $33<<verb>>
+   tense $34<<present>>])
+[22.11 06:42:39] [main] DEBUG LinkParser  - name=be
+[22.11 06:42:45] [main] DEBUG LinkParser  - getConcept(name = be)
+[22.11 06:42:45] [main] INFO  LinkParser  - created new concept=beConcept&ID=205[generalisations=0,specialisations=0,links=0,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:42:45] [main] INFO  LinkParser  - added it to phrase=be
+[22.11 06:42:47] [main] DEBUG LinkParser  - tense=present
+[22.11 06:42:47] [main] INFO  LinkParser  - added link=tu-project.com/tense&ID=591ConceptLink@0.3#:0.0:1.0 to concept=beConcept&ID=205[generalisations=0,specialisations=0,links=0,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:42:47] [main] DEBUG LinkParser  - pos=verb
+[22.11 06:42:47] [main] INFO  LinkParser  - added link=tu-project.com/pos&ID=365ConceptLink@0.3#:0.0:1.0 to concept=beConcept&ID=205[generalisations=0,specialisations=0,links=1,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:42:49] [main] DEBUG LinkParser  - ==>
+[22.11 06:42:49] [main] DEBUG LinkParser  - processLink(feature: null
+[22.11 06:42:50] [main] DEBUG LinkParser  - feature names=[_subj]
+[22.11 06:42:51] [main] DEBUG LinkParser  - filteredFeatures =Set(_subj)
+[22.11 06:42:51] [main] DEBUG LinkParser  - processNode(feature=$2[definite-FLAG <<T>>
+   name $32<<Browser>>
+   nameSource $1[DISJUNCT <<Wd- Ss+ >>
+                 ENTITY-FLAG <<T>>
+                 GOOD-REF-FLAG <<T>>
+                 NEXT $3[DISJUNCT <<Ss- >>
+                         GOOD-REF-FLAG <<T>>
+                         HEAD-FLAG <<T>>
+                         NEXT $9[DETERMINER_FLAG <<T>>
+                                 DISJUNCT <<Ds+ >>
+                                 GOOD-REF-FLAG <<T>>
+                                 NEXT $0[DET-FLAG <<T>>
+                                         DISJUNCT <<Ds- >>
+                                         GOOD-REF-FLAG <<T>>
+                                         NEXT $8[DISJUNCT <<Xp- >>
+                                                 GOOD-REF-FLAG <<T>>
+                                                 POS $15<<punctuation>>
+                                                 PREV $0
+                                                 SIG <<MORPHY_ALG BASIC_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                 end_char <<21>>
+                                                 index_in_sentence <<5>>
+                                                 linkL0 $4[F_L $5[ENTITY-FLAG <<T>>
+                                                                  GOOD-REF-FLAG <<T>>
+                                                                  NEXT $1
+                                                                  POS $11<<noun>>
+                                                                  SIG <<MORPHY_ALG BASIC_REF ENTITY_IS_NOUN DEFINITE_ENTITIES ENTITY_SINGULAR NUM_TO_REF HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                                  end_char <<-1>>
+                                                                  head $7[inflection-TAG $25<<.v>>
+                                                                          links [_subj $2]
+                                                                          name $26<<be>>
+                                                                          nameSource $3
+                                                                          pos $24<<verb>>
+                                                                          tense $28<<present>>]
+                                                                  head-word $3
+                                                                  index_in_sentence <<0>>
+                                                                  linkR0 $4
+                                                                  linkR1 $29[F_L $5
+                                                                             F_R $1
+                                                                             LAB <<Wd>>
+                                                                             SIG <<POS_CONJUNCTION_INVERTED HEAD_TO_CLAUSE_AND_WALL>>
+                                                                             lab_L <<Wd>>
+                                                                             lab_R <<Wd>>]
+                                                                  meta [and_cost <<0>>
+                                                                        disjunct_cost <<6>>
+                                                                        link_cost <<4>>
+                                                                        num_skipped_words <<1>>
+                                                                        num_violations <<0>>]
+                                                                  num $10<<singular>>
+                                                                  num_right_links <<2>>
+                                                                  orig_str <<LEFT-WALL>>
+                                                                  phr-head $13[phr-leader $19[inflection-TAG $17<<.n>>
+                                                                                              name $20<<program>>
+                                                                                              nameSource $0
+                                                                                              noun_number $18<<singular>>
+                                                                                              pos $16<<noun>>]
+                                                                               phr-next $6[phr-head [phr-next [phr-head $31[phr-leader $2
+                                                                                                                            phr-next [phr-word $1]
+                                                                                                                            phr-root $6
+                                                                                                                            phr-type <<NP>>]
+                                                                                                               phr-next [phr-head $27[phr-leader $7
+                                                                                                                                      phr-next [phr-word $3]
+                                                                                                                                      phr-root $6
+                                                                                                                                      phr-type <<VP>>]]]
+                                                                                                     phr-root $5
+                                                                                                     phr-type <<S>>]
+                                                                                           phr-next [phr-next [phr-next [phr-word $8]
+                                                                                                               phr-word $0]
+                                                                                                     phr-word $9]]
+                                                                               phr-type <<S>>]
+                                                                  punc $14<<.>>
+                                                                  ref [definite-FLAG <<T>>
+                                                                       name $12<<LEFT-WALL>>
+                                                                       nameSource $5
+                                                                       noun_number $10<<singular>>
+                                                                       pos $11<<noun>>]
+                                                                  start_char <<-1>>
+                                                                  str $12<<LEFT-WALL>>
+                                                                  this $5
+                                                                  uuid <<LEFT-WALL@sentence@7340a761-0fe5-417c-bbe6-843188ed73b8_parse_0>>
+                                                                  wall $5]
+                                                           F_R $8
+                                                           LAB <<Xp>>
+                                                           SIG <<POS_PUNCTUATION DECLARATIVE_QUESTION1>>
+                                                           lab_L <<Xp>>
+                                                           lab_R <<Xp>>]
+                                                 num_left_links <<1>>
+                                                 orig_str <<.>>
+                                                 phr-head $13
+                                                 ref [name $14<<.>>
+                                                      nameSource $8
+                                                      pos $15<<punctuation>>]
+                                                 start_char <<20>>
+                                                 str $14<<.>>
+                                                 this $8
+                                                 uuid <<.@e652a85d-2bef-4c3f-96ca-c5257761205b>>
+                                                 wall $5]
+                                         POS $16<<noun>>
+                                         PREV $9
+                                         SIG <<SUBSCR_POS_N MORPHY_ALG BASIC_REF INFLECTION_TAG NUM_TO_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                         end_char <<20>>
+                                         index_in_sentence <<4>>
+                                         inflection $17<<.n>>
+                                         linkL0 $21[DETERMINER_LINK_FLAG <<T>>
+                                                    F_L $9
+                                                    F_R $0
+                                                    LAB <<Ds>>
+                                                    SIG <<DETERMINER_POS SINGULAR_DET DET-FLAG>>
+                                                    lab_L <<Ds>>
+                                                    lab_R <<Ds>>]
+                                         morph [root <<program>>
+                                                type <<noun>>]
+                                         num $18<<singular>>
+                                         num_left_links <<1>>
+                                         orig_str <<program>>
+                                         phr-head $13
+                                         ref $19
+                                         start_char <<13>>
+                                         str $20<<program>>
+                                         this $0
+                                         uuid <<program@52d2a376-8ec7-47aa-bb3a-d1ab4a61bd36>>
+                                         wall $5]
+                                 POS $22<<det>>
+                                 PREV $3
+                                 SIG <<MORPHY_ALG BASIC_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                 end_char <<12>>
+                                 index_in_sentence <<3>>
+                                 linkR0 $21
+                                 num_right_links <<1>>
+                                 orig_str <<a>>
+                                 phr-head $13
+                                 ref [name $23<<a>>
+                                      nameSource $9
+                                      pos $22<<det>>]
+                                 start_char <<11>>
+                                 str $23<<a>>
+                                 this $9
+                                 uuid <<a@fa2f8a7f-e6f9-4a1a-aa6f-d3831a84dc9b>>
+                                 wall $5]
+                         POS $24<<verb>>
+                         PREV $1
+                         SIG <<SUBSCR_POS_V MORPHY_ALG TENSE_PRESENT BASIC_REF INFLECTION_TAG TENSE_LIST_CONNECT1 HEAD_IDENTIFY TENSE_CONJOIN HEAD_INIT HEAD_TO_FIRST_VERB PROPOGATE_HEAD-WORD SUBJ_TO_LINKS HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF COPY_TENSE_TO_REF CLEAN_UP_BAD_REFS1>>
+                         end_char <<10>>
+                         head $7
+                         head-word $3
+                         index_in_sentence <<2>>
+                         inflection $25<<.v>>
+                         linkL0 $30[F_L $1
+                                    F_R $3
+                                    IS_SUBJ_LINK <<T>>
+                                    LAB <<Ss>>
+                                    SIG <<POS_NOUN STANDARD_SUBJ MAKE_STANDARD_SUBJ HEAD_TO_SUBJ_AND_OBJ1 HEAD_TO_SUBJ_AND_OBJ2>>
+                                    lab_L <<Ss>>
+                                    lab_R <<Ss>>]
+                         morph [root $26<<be>>
+                                type <<verb>>]
+                         num_left_links <<1>>
+                         orig_str <<is>>
+                         phr-head $27
+                         ref $7
+                         start_char <<8>>
+                         str $26<<be>>
+                         subj $2
+                         tense [first_verb $3
+                                name $28<<present>>
+                                val <<present>>]
+                         this $3
+                         uuid <<is@9fbbd613-cc74-4f47-abca-5abfecf0c573>>
+                         wall $5]
+                 POS $34<<noun>>
+                 PREV $5
+                 SIG <<MORPHY_ALG BASIC_REF ENTITY_IS_NOUN DEFINITE_ENTITIES ENTITY_SINGULAR NUM_TO_REF HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                 end_char <<7>>
+                 head $7
+                 head-word $3
+                 index_in_sentence <<1>>
+                 linkL0 $29
+                 linkR0 $30
+                 num $33<<singular>>
+                 num_left_links <<1>>
+                 num_right_links <<1>>
+                 orig_str <<Browser>>
+                 phr-head $31
+                 ref $2
+                 start_char <<0>>
+                 str $32<<Browser>>
+                 this $1
+                 uuid <<Browser@17fda42e-0d5e-4577-87df-a5db2916a0e2>>
+                 wall $5]
+   noun_number $33<<singular>>
+   pos $34<<noun>>])
+[22.11 06:42:51] [main] DEBUG LinkParser  - name=Browser
+[22.11 06:42:52] [main] DEBUG LinkParser  - getConcept(name = Browser)
+[22.11 06:42:52] [main] INFO  LinkParser  - created new concept=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=0,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:42:52] [main] INFO  LinkParser  - added it to phrase=Browser
+[22.11 06:42:53] [main] DEBUG LinkParser  - pos=noun
+[22.11 06:42:53] [main] INFO  LinkParser  - added link=tu-project.com/pos&ID=155ConceptLink@0.3#:0.0:1.0 to concept=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=0,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:42:57] [main] INFO  LinkParser  - updated concept=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=1,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0], it was=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=1,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:42:57] [main] DEBUG LinkParser  - processNode(feature=$2[definite-FLAG <<T>>
+   name $32<<Browser>>
+   nameSource $1[DISJUNCT <<Wd- Ss+ >>
+                 ENTITY-FLAG <<T>>
+                 GOOD-REF-FLAG <<T>>
+                 NEXT $3[DISJUNCT <<Ss- >>
+                         GOOD-REF-FLAG <<T>>
+                         HEAD-FLAG <<T>>
+                         NEXT $9[DETERMINER_FLAG <<T>>
+                                 DISJUNCT <<Ds+ >>
+                                 GOOD-REF-FLAG <<T>>
+                                 NEXT $0[DET-FLAG <<T>>
+                                         DISJUNCT <<Ds- >>
+                                         GOOD-REF-FLAG <<T>>
+                                         NEXT $8[DISJUNCT <<Xp- >>
+                                                 GOOD-REF-FLAG <<T>>
+                                                 POS $15<<punctuation>>
+                                                 PREV $0
+                                                 SIG <<MORPHY_ALG BASIC_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                 end_char <<21>>
+                                                 index_in_sentence <<5>>
+                                                 linkL0 $4[F_L $5[ENTITY-FLAG <<T>>
+                                                                  GOOD-REF-FLAG <<T>>
+                                                                  NEXT $1
+                                                                  POS $11<<noun>>
+                                                                  SIG <<MORPHY_ALG BASIC_REF ENTITY_IS_NOUN DEFINITE_ENTITIES ENTITY_SINGULAR NUM_TO_REF HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                                                  end_char <<-1>>
+                                                                  head $7[inflection-TAG $25<<.v>>
+                                                                          links [_subj $2]
+                                                                          name $26<<be>>
+                                                                          nameSource $3
+                                                                          pos $24<<verb>>
+                                                                          tense $28<<present>>]
+                                                                  head-word $3
+                                                                  index_in_sentence <<0>>
+                                                                  linkR0 $4
+                                                                  linkR1 $29[F_L $5
+                                                                             F_R $1
+                                                                             LAB <<Wd>>
+                                                                             SIG <<POS_CONJUNCTION_INVERTED HEAD_TO_CLAUSE_AND_WALL>>
+                                                                             lab_L <<Wd>>
+                                                                             lab_R <<Wd>>]
+                                                                  meta [and_cost <<0>>
+                                                                        disjunct_cost <<6>>
+                                                                        link_cost <<4>>
+                                                                        num_skipped_words <<1>>
+                                                                        num_violations <<0>>]
+                                                                  num $10<<singular>>
+                                                                  num_right_links <<2>>
+                                                                  orig_str <<LEFT-WALL>>
+                                                                  phr-head $13[phr-leader $19[inflection-TAG $17<<.n>>
+                                                                                              name $20<<program>>
+                                                                                              nameSource $0
+                                                                                              noun_number $18<<singular>>
+                                                                                              pos $16<<noun>>]
+                                                                               phr-next $6[phr-head [phr-next [phr-head $31[phr-leader $2
+                                                                                                                            phr-next [phr-word $1]
+                                                                                                                            phr-root $6
+                                                                                                                            phr-type <<NP>>]
+                                                                                                               phr-next [phr-head $27[phr-leader $7
+                                                                                                                                      phr-next [phr-word $3]
+                                                                                                                                      phr-root $6
+                                                                                                                                      phr-type <<VP>>]]]
+                                                                                                     phr-root $5
+                                                                                                     phr-type <<S>>]
+                                                                                           phr-next [phr-next [phr-next [phr-word $8]
+                                                                                                               phr-word $0]
+                                                                                                     phr-word $9]]
+                                                                               phr-type <<S>>]
+                                                                  punc $14<<.>>
+                                                                  ref [definite-FLAG <<T>>
+                                                                       name $12<<LEFT-WALL>>
+                                                                       nameSource $5
+                                                                       noun_number $10<<singular>>
+                                                                       pos $11<<noun>>]
+                                                                  start_char <<-1>>
+                                                                  str $12<<LEFT-WALL>>
+                                                                  this $5
+                                                                  uuid <<LEFT-WALL@sentence@7340a761-0fe5-417c-bbe6-843188ed73b8_parse_0>>
+                                                                  wall $5]
+                                                           F_R $8
+                                                           LAB <<Xp>>
+                                                           SIG <<POS_PUNCTUATION DECLARATIVE_QUESTION1>>
+                                                           lab_L <<Xp>>
+                                                           lab_R <<Xp>>]
+                                                 num_left_links <<1>>
+                                                 orig_str <<.>>
+                                                 phr-head $13
+                                                 ref [name $14<<.>>
+                                                      nameSource $8
+                                                      pos $15<<punctuation>>]
+                                                 start_char <<20>>
+                                                 str $14<<.>>
+                                                 this $8
+                                                 uuid <<.@e652a85d-2bef-4c3f-96ca-c5257761205b>>
+                                                 wall $5]
+                                         POS $16<<noun>>
+                                         PREV $9
+                                         SIG <<SUBSCR_POS_N MORPHY_ALG BASIC_REF INFLECTION_TAG NUM_TO_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                         end_char <<20>>
+                                         index_in_sentence <<4>>
+                                         inflection $17<<.n>>
+                                         linkL0 $21[DETERMINER_LINK_FLAG <<T>>
+                                                    F_L $9
+                                                    F_R $0
+                                                    LAB <<Ds>>
+                                                    SIG <<DETERMINER_POS SINGULAR_DET DET-FLAG>>
+                                                    lab_L <<Ds>>
+                                                    lab_R <<Ds>>]
+                                         morph [root <<program>>
+                                                type <<noun>>]
+                                         num $18<<singular>>
+                                         num_left_links <<1>>
+                                         orig_str <<program>>
+                                         phr-head $13
+                                         ref $19
+                                         start_char <<13>>
+                                         str $20<<program>>
+                                         this $0
+                                         uuid <<program@52d2a376-8ec7-47aa-bb3a-d1ab4a61bd36>>
+                                         wall $5]
+                                 POS $22<<det>>
+                                 PREV $3
+                                 SIG <<MORPHY_ALG BASIC_REF COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                                 end_char <<12>>
+                                 index_in_sentence <<3>>
+                                 linkR0 $21
+                                 num_right_links <<1>>
+                                 orig_str <<a>>
+                                 phr-head $13
+                                 ref [name $23<<a>>
+                                      nameSource $9
+                                      pos $22<<det>>]
+                                 start_char <<11>>
+                                 str $23<<a>>
+                                 this $9
+                                 uuid <<a@fa2f8a7f-e6f9-4a1a-aa6f-d3831a84dc9b>>
+                                 wall $5]
+                         POS $24<<verb>>
+                         PREV $1
+                         SIG <<SUBSCR_POS_V MORPHY_ALG TENSE_PRESENT BASIC_REF INFLECTION_TAG TENSE_LIST_CONNECT1 HEAD_IDENTIFY TENSE_CONJOIN HEAD_INIT HEAD_TO_FIRST_VERB PROPOGATE_HEAD-WORD SUBJ_TO_LINKS HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF COPY_TENSE_TO_REF CLEAN_UP_BAD_REFS1>>
+                         end_char <<10>>
+                         head $7
+                         head-word $3
+                         index_in_sentence <<2>>
+                         inflection $25<<.v>>
+                         linkL0 $30[F_L $1
+                                    F_R $3
+                                    IS_SUBJ_LINK <<T>>
+                                    LAB <<Ss>>
+                                    SIG <<POS_NOUN STANDARD_SUBJ MAKE_STANDARD_SUBJ HEAD_TO_SUBJ_AND_OBJ1 HEAD_TO_SUBJ_AND_OBJ2>>
+                                    lab_L <<Ss>>
+                                    lab_R <<Ss>>]
+                         morph [root $26<<be>>
+                                type <<verb>>]
+                         num_left_links <<1>>
+                         orig_str <<is>>
+                         phr-head $27
+                         ref $7
+                         start_char <<8>>
+                         str $26<<be>>
+                         subj $2
+                         tense [first_verb $3
+                                name $28<<present>>
+                                val <<present>>]
+                         this $3
+                         uuid <<is@9fbbd613-cc74-4f47-abca-5abfecf0c573>>
+                         wall $5]
+                 POS $34<<noun>>
+                 PREV $5
+                 SIG <<MORPHY_ALG BASIC_REF ENTITY_IS_NOUN DEFINITE_ENTITIES ENTITY_SINGULAR NUM_TO_REF HEAD_WORD_REF_TO_HEAD COPY_POS_TO_REF CLEAN_UP_BAD_REFS1>>
+                 end_char <<7>>
+                 head $7
+                 head-word $3
+                 index_in_sentence <<1>>
+                 linkL0 $29
+                 linkR0 $30
+                 num $33<<singular>>
+                 num_left_links <<1>>
+                 num_right_links <<1>>
+                 orig_str <<Browser>>
+                 phr-head $31
+                 ref $2
+                 start_char <<0>>
+                 str $32<<Browser>>
+                 this $1
+                 uuid <<Browser@17fda42e-0d5e-4577-87df-a5db2916a0e2>>
+                 wall $5]
+   noun_number $33<<singular>>
+   pos $34<<noun>>])
+[22.11 06:42:57] [main] DEBUG LinkParser  - name=Browser
+[22.11 06:42:59] [main] DEBUG LinkParser  - getConcept(name = Browser)
+[22.11 06:42:59] [main] INFO  LinkParser  - returned concept=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=1,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:43:00] [main] DEBUG LinkParser  - pos=noun
+[22.11 06:43:00] [main] INFO  LinkParser  - added link=tu-project.com/pos&ID=847ConceptLink@0.3#:0.0:1.0 to concept=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=1,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:43:03] [main] INFO  LinkParser  - updated concept=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=2,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0], it was=BrowserConcept&ID=782[generalisations=0,specialisations=0,links=2,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:43:05] [main] INFO  LinkParser  - updated concept=beConcept&ID=205[generalisations=0,specialisations=0,links=3,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0], it was=beConcept&ID=205[generalisations=0,specialisations=0,links=3,phrase=tu-project.com/phrasesTypedKLine@0.3#:0.0:1.0]
+[22.11 06:43:05] [main] DEBUG ThinkingLifeCycleMinimal  - translate(): ShortTermMemory tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.linkparser.LinkParser@0.3#[Map(tu-project.com/LinkedNarrative@0.3# -> tu-project.com/LinkedNarrative@0.3#:0.0:1.0)][Some(tu-project.com/LinkedNarrative@0.3#:0.0:1.0)] @0.0:1.0
+[22.11 06:43:05] [main] DEBUG ThinkingLifeCycleMinimal  - translate(tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2Think@0.3#:0.0:1.0: Resource, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&tu.coreservice.linkparser.LinkParser@0.3#[Map(tu-project.com/inputtext@0.3# -> Browser is a program., tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0, tu-project.com/LinkedNarrative@0.3# -> tu-project.com/LinkedNarrative@0.3#:0.0:1.0)][Some(tu-project.com/LinkedNarrative@0.3#:0.0:1.0)] @0.0:1.0: ShortTermMemory)
+[22.11 06:43:05] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(tu.coreservice.action.way2think.correlation.CorrelationWay2Think: String): Action
+[22.11 06:43:05] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(): Action = /Way2Think&ID=312@1.0#:0.0:1.0
+[22.11 06:43:05] [main] INFO  Correlation  - found maps=List(List(), List()),
+[22.11 06:43:05] [main] INFO  Correlation  - created domain concepts=List(),
+[22.11 06:43:07] [main] INFO  Correlation  - not understood concepts=List()
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - translate(): ShortTermMemory tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkShortTermMemoryresult@0.3#[Map(tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3# -> tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)][Some(tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)] @0.0:1.0
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - processResources(): List[ShortTermMemory] = List(tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.splitter.PreliminarySplitter@0.3#[Map(tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/AnnotationResult@0.3#[Map(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.linkparser.LinkParser@0.3#[Map(tu-project.com/LinkedNarrative@0.3# -> tu-project.com/LinkedNarrative@0.3#:0.0:1.0)][Some(tu-project.com/LinkedNarrative@0.3#:0.0:1.0)] @0.0:1.0, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkShortTermMemoryresult@0.3#[Map(tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3# -> tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)][Some(tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)] @0.0:1.0)
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - processResources(List(tu-project.com/tu.coreservice.action.critic.manager.DoNotUnderstandManager@0.3#:0.0:1.0): List[Resource]): List[ShortTermMemory]
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - translate(tu-project.com/tu.coreservice.action.critic.manager.DoNotUnderstandManager@0.3#:0.0:1.0: Resource, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&tu.coreservice.linkparser.LinkParser&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&tu.coreservice.linkparser.LinkParser&tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkShortTermMemoryresult&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&tu.coreservice.linkparser.LinkParser&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&globalContext&globalContext&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&tu.coreservice.linkparser.LinkParser&tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkShortTermMemoryresult&tu.coreservice.splitter.PreliminarySplitter&AnnotationResult&tu.coreservice.linkparser.LinkParser&tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkShortTermMemoryresult@0.3#[Map(tu-project.com/inputtext@0.3# -> Browser is a program., tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3# -> tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#, tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0, tu-project.com/LinkedNarrative@0.3# -> tu-project.com/LinkedNarrative@0.3#:0.0:1.0)][Some(tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)] @0.0:1.0: ShortTermMemory)
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(tu.coreservice.action.critic.manager.DoNotUnderstandManager: String): Action
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - instantiate(): Action = /DoNotUnderstandManager&ID=428@1.0#:0.0:1.0
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - translate(): ShortTermMemory tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.action.critic.manager.DoNotUnderstandManager-result@0.3#[Map()][None] @0.0:1.0
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - processResources(): List[ShortTermMemory] = List(tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.action.critic.manager.DoNotUnderstandManager-result@0.3#[Map()][None] @0.0:1.0)
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - out Contexts: List(tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.splitter.PreliminarySplitter@0.3#[Map(tu-project.com/sentence-1@1.0# -> Browser is a program., tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/AnnotationResult@0.3#[Map(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3# -> tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)][Some(tu-project.com/tu.coreservice.splitter.PreliminarySplitter-result@0.3#:0.0:1.0)] @0.0:1.0, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.linkparser.LinkParser@0.3#[Map(tu-project.com/LinkedNarrative@0.3# -> tu-project.com/LinkedNarrative@0.3#:0.0:1.0)][Some(tu-project.com/LinkedNarrative@0.3#:0.0:1.0)] @0.0:1.0, tu.model.knowledge.communication.ShortTermMemory:tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkShortTermMemoryresult@0.3#[Map(tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3# -> tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)][Some(tu.model.knowledge.domain.ConceptNetwork [List()][List()]@tu-project.com/tu.coreservice.action.way2think.correlation.CorrelationWay2ThinkTrainingresult@0.3#)] @0.0:1.0)
+[22.11 06:43:07] [main] DEBUG ThinkingLifeCycleMinimal  - apply()
+Disconnected from the target VM, address: '127.0.0.1:42002', transport: 'socket'
+
+Process finished with exit code 255
