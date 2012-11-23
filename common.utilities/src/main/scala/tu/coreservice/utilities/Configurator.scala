@@ -22,15 +22,13 @@ object Configurator {
   /*
     proxy description
    */
-  def proxyAddress(): ProxyDescription
-  = {
+  def proxyAddress(): ProxyDescription = {
     val res = new ProxyDescription
     res.proxyHost = "ru1104150769"
     res.proxyPort = 3128
-    res.useProxy = false // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
+    res.useProxy = true // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
     res
   }
-
 
   def spellingAtDServer = "http://service.afterthedeadline.com/"
 
@@ -39,6 +37,7 @@ object Configurator {
      ATD - after the deadline
      COMPOUND - spell checker from GOOGLE and grammar checker from After The Deadline
    */
+
   def spellCheckerEngine(): String = "COMPOUND"
 
 }

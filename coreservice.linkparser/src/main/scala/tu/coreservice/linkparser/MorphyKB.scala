@@ -7,6 +7,7 @@ import java.rmi.UnexpectedException
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.{Constant, Resource, KnowledgeURI}
 import tu.model.knowledge.domain.Concept
+import org.slf4j.LoggerFactory
 
 /**
  * @author alex toschev, max talanov
@@ -14,6 +15,8 @@ import tu.model.knowledge.domain.Concept
  */
 
 class MorphyKB(var _sentences: List[AnnotatedSentence]) extends MorphyJWNL {
+
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def this() {
     this(List[AnnotatedSentence]())
@@ -26,10 +29,27 @@ class MorphyKB(var _sentences: List[AnnotatedSentence]) extends MorphyJWNL {
   }
 
 
+  /*Error case
+[22.11 23:29:21] [main] INFO  MorphyKB  - res =Browser N:Browser
+[22.11 23:29:21] [main] INFO  MorphyKB  - res =is V:be
+[22.11 23:29:21] [main] INFO  MorphyKB  - res =an N:an
+[22.11 23:29:21] [main] INFO  MorphyKB  - res =object N:object V:object
+[22.11 23:29:21] [main] INFO  MorphyKB  - res =.
+   */
+/* Correct case
+[22.11 23:35:47] [main] INFO  MorphyKB  - res =Browser N:Browser
+[22.11 23:35:47] [main] INFO  MorphyKB  - res =is V:be
+[22.11 23:35:47] [main] INFO  MorphyKB  - res =object N:object V:object
+[22.11 23:35:47] [main] INFO  MorphyKB  - res =.
+[22.11 23:35:47] [main] INFO  MorphyKB  - res =an N:an
+ */
+
+
   override def morph(word: String): Morphed = {
     val res: Morphed = super.morph(word)
     val foundPhrases: List[AnnotatedPhrase] = searchWord(word, _sentences)
     if (foundPhrases.size < 1) {
+      log info ("res ={}", res)
       res
     } else if (foundPhrases.size == 1) {
       //unambiguous case
