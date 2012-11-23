@@ -100,6 +100,7 @@ class PreliminarySplitter extends Way2Think {
       val em: EntityMaintainer = new EntityMaintainer()
       val relExt = setup
       val relexSentence = relExt.processSentence(sentence, em)
+      log debug ("relexSentence={}", relexSentence)
       val parse = relexSentence.getParses.get(0)
       var phrases = processNodeRec(parse.getLeft.get("head"))
 
