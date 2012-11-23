@@ -30,7 +30,7 @@ object Defaults {
   val actionConcept = Concept.createSubConcept(CONCEPT, "action")
   val actionPhrase = AnnotatedPhrase("action", actionConcept)
   val programConcept = Concept.createSubConcept(CONCEPT, "program")
-  val programPhrase = AnnotatedPhrase("program", actionConcept)
+  val programPhrase = AnnotatedPhrase("program", programConcept)
 
   /**
    * Links
