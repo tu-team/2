@@ -23,6 +23,7 @@ import relex.{Sentence, Document, ParseStats, Version}
 import org.slf4j.LoggerFactory
 import relex.feature.FeatureNode
 import tu.model.knowledge.annotator.AnnotatedSentence
+import org.linkgrammar.LinkGrammar
 
 /**
  * Based on RelationExtractor
@@ -194,6 +195,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
    * @return processed Sentence
    */
   def processSentence(sentence: String, _entityMaintainer: EntityMaintainer): Sentence = {
+    LinkGrammar.init()
     _starttime = System.currentTimeMillis
     var entityMaintainer = _entityMaintainer
     if (entityMaintainer == null) {
