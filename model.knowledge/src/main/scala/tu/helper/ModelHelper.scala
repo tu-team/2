@@ -27,10 +27,7 @@ object ModelHelper {
     val uriC =uri.toString
     if (saved.contains(uriC)) {
       //only create link
-      if (parent.ID<=0 || refObject.ID<=0)
-      {
-         var test="";
-      }
+
       kb.createLink(parent, refObject, linkType, key)
       return true
     }

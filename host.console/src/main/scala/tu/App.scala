@@ -44,27 +44,54 @@ object AppMain {
 
         }
         else if (command == "train") {
-          Console.println("Entering training mode, please type train phrase ->")
 
-          train(Console.readLine())
+          var exitTraining =false
+          while (!exitTraining)
+          {
+            Console.println("Entering training mode, please type train phrase or exit for exit->")
+             val cmd = Console.readLine()
+             if (cmd=="exit")
+             {
+               exitTraining=true
+             }
+             else
+             {
+               train(cmd)
+             }
+          }
+
         }
         else if (command == "request") {
-          Console.println("Entering request mode, please type request phrase ->")
-          //extract sentence
 
-          val requestText = Console.readLine()
-          Console.println("Running thinking lifecycle:" + command)
-          val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
-          val t = new ThinkingLifeCycleMinimal()
-          val res = t(r)
-          Console.println("End")
+          //extract sentence
+          var exitRequest = false
+
+          while (!exitRequest)
+          {
+            Console.println("Entering request mode, please type request phrase or exit for exit ->")
+            val cmd = Console.readLine()
+            if (cmd=="exit")
+            {
+              exitRequest=true
+            }
+            else
+            {
+              val requestText = cmd
+              Console.println("Running thinking lifecycle:" + command)
+              val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
+              val t = new ThinkingLifeCycleMinimal()
+              val res = t(r)
+              Console.println("End")
+            }
+          }
+
         }
       }
     }
 
     def train(st: String) {
       val command = "train"
-      val requestText = Console.readLine()
+      val requestText =st
       Console.println("Running thinking lifecycle:" + command)
       val r = new TrainingRequest(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
       val t = new ThinkingLifeCycleMinimal()
