@@ -23,7 +23,6 @@ import relex.{Sentence, Document, ParseStats, Version}
 import org.slf4j.LoggerFactory
 import relex.feature.FeatureNode
 import tu.model.knowledge.annotator.AnnotatedSentence
-import org.linkgrammar.LinkGrammar
 
 /**
  * Based on RelationExtractor
@@ -45,8 +44,9 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
   parser.getConfig.setStoreConstituentString(true)
   parser.getConfig.setLoadSense(true)
   /**The LinkParserClient to be used - this class isn't thread safe! */
-  val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
-  morphy.sentences = sentences
+  // val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+  val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+  // morphy.sentences = sentences
   private var context: RelexContext = new RelexContext(parser, morphy)
   /**Dependency processing */
   private var sentenceAlgorithmApplier: SentenceAlgorithmApplier = new SentenceAlgorithmApplier()
@@ -122,7 +122,10 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
 
     parser.getConfig.setStoreConstituentString(true)
     parser.getConfig.setLoadSense(true)
-    val morphy: Morphy = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB")
+
+    // val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+    val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+    // morphy.sentences = sentences
     context = new RelexContext(parser, morphy)
 
     sentenceAlgorithmApplier = new SentenceAlgorithmApplier()
@@ -195,7 +198,6 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
    * @return processed Sentence
    */
   def processSentence(sentence: String, _entityMaintainer: EntityMaintainer): Sentence = {
-    LinkGrammar.init()
     _starttime = System.currentTimeMillis
     var entityMaintainer = _entityMaintainer
     if (entityMaintainer == null) {
