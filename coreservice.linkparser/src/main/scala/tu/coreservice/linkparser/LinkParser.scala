@@ -146,7 +146,10 @@ class LinkParser extends Way2Think {
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
     log debug ("processNode(feature={})", feature)
     try {
+
+      //TODO migrate to getNameOrigString
       val name: String = getName(feature)
+
       val phraseConceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
 
       phraseConceptError match {
@@ -299,7 +302,6 @@ class LinkParser extends Way2Think {
   }
 
   def getName(feature: FeatureNode): String = {
-
     if (feature.get("name") != null) {
       val name = feature.get("name").getValue
       log debug "name=" + feature.get("name").getValue
@@ -311,6 +313,29 @@ class LinkParser extends Way2Think {
     } else {
       throw new UnexpectedException("$No_name_specified")
     }
+  }
+
+  /**
+   * Returns Pair of name and origString if found in specified FeatureNode.
+   * @param feature FeatureNode to process
+   * @return Pair of Option name and Option origString
+   */
+  def getNameOrigString(feature: FeatureNode): Pair[Option[String], Option[String]] = {
+    val optionName: Option[String] = if (feature.get("name") != null) {
+      val name = feature.get("name").getValue
+      log debug "name=" + feature.get("name").getValue
+      Some(name)
+    } else {
+      None
+    }
+    val optionOrigString: Option[String] = if (feature.get("orig_str") != null) {
+      val origStr = feature.get("orig_str").getValue
+      log debug "orig_str" + feature.get("orig_str").getValue
+      Some(origStr)
+    } else {
+      None
+    }
+    (optionName, optionOrigString)
   }
 
   def findPhrase(value: String, sentence: AnnotatedSentence): List[AnnotatedPhrase] = {
