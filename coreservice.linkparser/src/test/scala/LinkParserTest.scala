@@ -1,5 +1,5 @@
 /**
- * @author max
+ * @author max talanov
  *         Date: 8/2/12
  *         Time: 3:52 AM
  */
@@ -8,7 +8,9 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
-import relex.parser.LocalLGParser
+import relex.entity.EntityMaintainer
+import relex.parser.{LGParser, LocalLGParser}
+import relex.Sentence
 import tu.coreservice.linkparser.LinkParser
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
@@ -24,7 +26,7 @@ class LinkParserTest extends FunSuite {
   val log = LoggerFactory.getLogger(this.getClass)
 
   test("Ok") {
-    assert(condition = true)
+    assert(true)
   }
 
   test("Lisk parser should be ok") {
@@ -45,20 +47,19 @@ class LinkParserTest extends FunSuite {
     context
   }
 
-  test("Lisk parser should be stable") {
+  test("Link parser should be stable") {
     val lp: LocalLGParser = new LocalLGParser
     val src = "Browser is an object.";
     val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
 
-    for (i <- 1 until 1000)
-    {
+    for (i <- 1 until 1000) {
       log.debug("i={}", i)
-      val sntc:relex.Sentence = lp.parse(src)
+      val sntc: relex.Sentence = lp.parse(src)
       log.debug(("FOUND " + sntc.getParses.size + " sentence(s)"))
 
       if (sntc.getParses.size > 0) {
         val sentence: relex.ParsedSentence = sntc.getParses.get(0)
-        log.debug("ParsedSentence.getLinkString():\n" + sentence.getLinkString)
+        log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
         log.debug(sentence.getPhraseString)
         expect(dst)(sentence.getPhraseString)
       }
@@ -70,6 +71,29 @@ class LinkParserTest extends FunSuite {
 
     lp.close
   }
+
+  test("Recreated LinkParser should be stable") {
+    val src = "Browser is an object.";
+    val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
+    for (i <- 1 until 1000) {
+      val lp: LocalLGParser = new LocalLGParser
+      log.debug("i={}", i)
+      val sntc: relex.Sentence = lp.parse(src)
+      log.debug(("FOUND " + sntc.getParses.size + " sentence(s)"))
+      if (sntc.getParses.size > 0) {
+        val sentence: relex.ParsedSentence = sntc.getParses.get(0)
+        log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
+        log.debug(sentence.getPhraseString)
+        expect(dst)(sentence.getPhraseString)
+      }
+      else {
+        log.debug("No parse found for sentence")
+        assert(false)
+      }
+      lp.close
+    }
+  }
+
   /*
 
   test("Lisk Grammer should be stable") {
@@ -81,6 +105,53 @@ class LinkParserTest extends FunSuite {
   }
   */
 
+  final val DEFAULT_MAX_SENTENCE_LENGTH: Int = 1024
+
+  private def parseSentence(_sentence: String, entityMaintainer: EntityMaintainer, parser: LGParser): Sentence = {
+
+    var sentence = _sentence
+    if (entityMaintainer != null) {
+      entityMaintainer.convertSentence(sentence, null)
+      sentence = entityMaintainer.getConvertedSentence
+    }
+    if (sentence == null) return null
+    val orig_sentence = entityMaintainer.getOriginalSentence
+    var sent: Sentence = null
+    if (sentence.length < DEFAULT_MAX_SENTENCE_LENGTH) {
+      sent = parser.parse(sentence)
+    }
+    else {
+      System.err.println("Sentence too long!: " + sentence)
+      sent = new Sentence()
+    }
+    sent.setSentence(orig_sentence)
+    sent
+  }
+
+
+  test("Repetitive sentence parse should be stable") {
+    val src = "Browser is an object."
+    val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
+    val entityMaintainer = new EntityMaintainer()
+    for (i <- 1 until 100) {
+      val lp: LocalLGParser = new LocalLGParser
+      log.debug("i={}", i)
+      val sntc: relex.Sentence = parseSentence(src, entityMaintainer, lp)
+      log.debug(("FOUND " + sntc.getParses.size + " sentence(s)"))
+      if (sntc.getParses.size > 0) {
+        val sentence: relex.ParsedSentence = sntc.getParses.get(0)
+        log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
+        log info ("relexSentence={}", sentence)
+        log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
+        expect(dst)(sentence.getPhraseString)
+      }
+      else {
+        log.debug("No parse found for sentence")
+        assert(false)
+      }
+      lp.close()
+    }
+  }
 
 }
 
