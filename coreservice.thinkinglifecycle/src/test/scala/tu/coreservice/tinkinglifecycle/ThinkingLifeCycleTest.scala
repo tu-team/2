@@ -134,6 +134,29 @@ class ThinkingLifeCycleTest extends FunSuite {
     log debug res.toString
   }
 
+  test("Training: Browser is an object") {
+    val requestText = "Browser is an object."
+    val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("testTrainingRequest"), KnowledgeURI(Constant.domainName))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t.apply(r)
+    assert(res != null)
+    assert(res.notUnderstoodConcepts == Nil)
+    assert(res.notUnderstoodPhrases == Nil)
+    assert(res.simulationResult match {
+      case Some(x: ConceptNetwork)
+      => {
+        x.nodes.find((k: Concept) => k.toString.startsWith("BrowserConcept")) match {
+          case None => false
+          case Some(c: Concept) => true
+        }
+      }
+      case None =>
+        false
+    }
+    )
+    log debug res.toString
+  }
+
   def testCycle(input: String) {
     val requestText = input
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
