@@ -8,6 +8,7 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
+import relex.parser.LocalLGParser
 import tu.coreservice.linkparser.LinkParser
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
@@ -15,6 +16,7 @@ import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.frame.Frame
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{KnowledgeURI, Resource}
+import org.linkgrammar.LinkGrammar
 
 @RunWith(classOf[JUnitRunner])
 class LinkParserTest extends FunSuite {
@@ -43,5 +45,43 @@ class LinkParserTest extends FunSuite {
     context
   }
 
+  test("Lisk parser should be stable") {
+    val lp: LocalLGParser = new LocalLGParser
+    val src = "Browser is an object.";
+    val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
+
+    for (i <- 1 until 1000)
+    {
+      log.debug("i={}", i)
+      val sntc:relex.Sentence = lp.parse(src)
+      log.debug(("FOUND " + sntc.getParses.size + " sentence(s)"))
+
+      if (sntc.getParses.size > 0) {
+        val sentence: relex.ParsedSentence = sntc.getParses.get(0)
+        log.debug("ParsedSentence.getLinkString():\n" + sentence.getLinkString)
+        log.debug(sentence.getPhraseString)
+        expect(dst)(sentence.getPhraseString)
+      }
+      else {
+        log.debug("No parse found for sentence")
+        assert(false)
+      }
+    }
+
+    lp.close
+  }
+  /*
+
+  test("Lisk Grammer should be stable") {
+    org.linkgrammar.LinkGrammar.init()
+    org.linkgrammar.LinkGrammar.parse("Browser is an object")
+    log.debug(org.linkgrammar.LinkGrammar.getConstituentString)
+    org.linkgrammar.LinkGrammar.close()
+
+  }
+  */
+
 
 }
+
+
