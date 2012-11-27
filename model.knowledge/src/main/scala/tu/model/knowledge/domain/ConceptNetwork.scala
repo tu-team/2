@@ -176,7 +176,6 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
 
     if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, KBNodeId(this), this.uri)) return true
 
-    //if (saved !=null && saved.contains(key))
     //{
 
     //  return true
