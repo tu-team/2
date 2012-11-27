@@ -123,9 +123,9 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
     parser.getConfig.setStoreConstituentString(true)
     parser.getConfig.setLoadSense(true)
 
-    // val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
-    val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
-    // morphy.sentences = sentences
+    val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+    // val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+    morphy.sentences = sentences
     context = new RelexContext(parser, morphy)
 
     sentenceAlgorithmApplier = new SentenceAlgorithmApplier()
@@ -138,7 +138,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
     do_anaphora_resolution = false
     doco = new Document()
     do_tree_markup = false
-    do_stanford = false
+    do_stanford = true
     do_penn_tagging = false
     do_expand_preps = false
     do_pre_entity_tagging = false
