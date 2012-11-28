@@ -198,6 +198,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
    * @return processed Sentence
    */
   def processSentence(sentence: String, _entityMaintainer: EntityMaintainer): Sentence = {
+    //todo repeatable work as LinkParserTest
     _starttime = System.currentTimeMillis
     var entityMaintainer = _entityMaintainer
     if (entityMaintainer == null) {

@@ -144,6 +144,7 @@ class LinkParserTest extends FunSuite {
         log info ("relexSentence={}", sentence)
         log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
         expect(dst)(sentence.getPhraseString)
+        //todo check subject-object
       }
       else {
         log.debug("No parse found for sentence")
