@@ -9,8 +9,9 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import relex.entity.EntityMaintainer
+import relex.output.OpenCogScheme
 import relex.parser.{LGParser, LocalLGParser}
-import relex.Sentence
+import relex.{ParsedSentence, Sentence}
 import tu.coreservice.linkparser.{RelationExtractorKB, LinkParser}
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
@@ -141,7 +142,7 @@ class LinkParserTest extends FunSuite {
       if (sntc.getParses.size > 0) {
         val sentence: relex.ParsedSentence = sntc.getParses.get(0)
         log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
-        log info ("relexSentence={}", sentence)
+        log info("relexSentence={}", sentence)
         log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
         expect(dst)(sentence.getPhraseString)
         //todo check subject-object
@@ -157,21 +158,37 @@ class LinkParserTest extends FunSuite {
   test("Test stable with RelationExtractorKB") {
     val src = "Browser is an object."
     val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
-
-    var reKB = new RelationExtractorKB(false,List[AnnotatedSentence ](AnnotatedSentence(src,null)))
-
+    val reKB = new RelationExtractorKB(false, List[AnnotatedSentence](AnnotatedSentence(src, null)))
     for (i <- 1 until 100) {
-
-
-      val sntc: relex.Sentence = reKB.processSentence(src)
-      log.debug(("FOUND " + sntc.getParses.size + " sentence(s)"))
-      if (sntc.getParses.size > 0) {
-        val sentence: relex.ParsedSentence = sntc.getParses.get(0)
+      val relexSentence: relex.Sentence = reKB.processSentence(src)
+      log.debug(("FOUND " + relexSentence.getParses.size + " sentence(s)"))
+      if (relexSentence.getParses.size > 0) {
+        val sentence: ParsedSentence = relexSentence.getParses.get(0)
         log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
-        log info ("relexSentence={}", sentence)
+        log info("relexSentence={}", relexSentence)
         log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
         expect(dst)(sentence.getPhraseString)
-        //todo check subject-object
+      }
+      else {
+        log.debug("No parse found for sentence")
+        assert(false)
+      }
+    }
+  }
+
+  test("LinkParser emulation stable test") {
+    val src = "Browser is an object."
+    val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
+    val reKB = setup(List[AnnotatedSentence](AnnotatedSentence(src, null)))
+    for (i <- 1 until 100) {
+      val relexSentence: relex.Sentence = reKB.processSentence(src)
+      log.debug(("FOUND " + relexSentence.getParses.size + " sentence(s)"))
+      if (relexSentence.getParses.size > 0) {
+        val sentence: ParsedSentence = relexSentence.getParses.get(0)
+        log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
+        log info("relexSentence={}", relexSentence)
+        log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
+        expect(dst.trim)(sentence.getPhraseString.trim)
       }
       else {
         log.debug("No parse found for sentence")
@@ -179,6 +196,25 @@ class LinkParserTest extends FunSuite {
       }
 
     }
+  }
+
+
+  def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
+    // relex.RelationExtractor -n 4 -l -t -f -r -a
+    val re = new RelationExtractorKB(false, sentences)
+    // -n 4
+    re.setMaxParses(1)
+    // -l -f -a
+    val opencog: OpenCogScheme = new OpenCogScheme()
+    opencog.setShowLinkage(true)
+    opencog.setShowFrames(true)
+    re.do_anaphora_resolution = true
+    opencog.setShowAnaphora(true)
+    // -t
+    re.do_tree_markup = true
+    re.do_pre_entity_tagging = true
+    re.do_post_entity_tagging = true
+    re
   }
 }
 

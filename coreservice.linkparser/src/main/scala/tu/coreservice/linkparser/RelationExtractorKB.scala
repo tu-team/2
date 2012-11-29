@@ -44,8 +44,8 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
   parser.getConfig.setStoreConstituentString(true)
   parser.getConfig.setLoadSense(true)
   /**The LinkParserClient to be used - this class isn't thread safe! */
-  //val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
-  val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+  val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+  // val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
   // morphy.sentences = sentences
   private var context: RelexContext = new RelexContext(parser, morphy)
   /**Dependency processing */
