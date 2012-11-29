@@ -65,11 +65,6 @@
         </dependency>
         <dependency>
             <groupId>opennlp</groupId>
-            <artifactId>opennlp-tools</artifactId>
-            <version>1.4.3</version>
-        </dependency>
-        <dependency>
-            <groupId>opennlp</groupId>
             <artifactId>maxent</artifactId>
             <version>3.0.0</version>
         </dependency>
@@ -96,7 +91,7 @@
         <dependency>
             <groupId>org.opencog</groupId>
             <artifactId>relex</artifactId>
-            <version>1.4.0</version>
+            <version>1.4.1</version>
         </dependency>
 
         <!--2 dependencies -->
