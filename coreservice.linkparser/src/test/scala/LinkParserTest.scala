@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory
 import relex.entity.EntityMaintainer
 import relex.parser.{LGParser, LocalLGParser}
 import relex.Sentence
-import tu.coreservice.linkparser.LinkParser
+import tu.coreservice.linkparser.{RelationExtractorKB, LinkParser}
 import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
@@ -154,6 +154,32 @@ class LinkParserTest extends FunSuite {
     }
   }
 
+  test("Test stable with RelationExtractorKB") {
+    val src = "Browser is an object."
+    val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
+
+    var reKB = new RelationExtractorKB(false,List[AnnotatedSentence ](AnnotatedSentence(src,null)))
+
+    for (i <- 1 until 100) {
+
+
+      val sntc: relex.Sentence = reKB.processSentence(src)
+      log.debug(("FOUND " + sntc.getParses.size + " sentence(s)"))
+      if (sntc.getParses.size > 0) {
+        val sentence: relex.ParsedSentence = sntc.getParses.get(0)
+        log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
+        log info ("relexSentence={}", sentence)
+        log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
+        expect(dst)(sentence.getPhraseString)
+        //todo check subject-object
+      }
+      else {
+        log.debug("No parse found for sentence")
+        assert(false)
+      }
+
+    }
+  }
 }
 
 

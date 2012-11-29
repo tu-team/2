@@ -36,15 +36,15 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
 
   val log = LoggerFactory.getLogger(this.getClass)
   /**Syntax processing */
-  private var parser: LGParser = if (useSocket) {
+  private val parser: LGParser = new LocalLGParser /* (useSocket) {
     new RemoteLGParser()
   } else {
     new LocalLGParser()
-  }
+  }                                                  */
   parser.getConfig.setStoreConstituentString(true)
   parser.getConfig.setLoadSense(true)
   /**The LinkParserClient to be used - this class isn't thread safe! */
-  // val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+  //val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
   val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
   // morphy.sentences = sentences
   private var context: RelexContext = new RelexContext(parser, morphy)
@@ -78,7 +78,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
 
   def startime = _starttime
 
-  init(useSocket)
+  //init(useSocket)
 
   def this() {
     this(false, List[AnnotatedSentence]())
@@ -114,18 +114,14 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
 
   private def init(useSocket: Boolean) {
 
-    parser = if (useSocket) {
-      new RemoteLGParser()
-    } else {
-      new LocalLGParser()
-    }
+
 
     parser.getConfig.setStoreConstituentString(true)
     parser.getConfig.setLoadSense(true)
 
-    val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
+    //val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
     // val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
-    morphy.sentences = sentences
+    //morphy.sentences = sentences
     context = new RelexContext(parser, morphy)
 
     sentenceAlgorithmApplier = new SentenceAlgorithmApplier()
