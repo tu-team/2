@@ -17,6 +17,7 @@ import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedNarrative, AnnotatedSentence}
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.frame.Frame
+import tu.model.knowledge.narrative.Narrative
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{KnowledgeURI, Resource}
 import org.linkgrammar.LinkGrammar
@@ -145,7 +146,6 @@ class LinkParserTest extends FunSuite {
         log info("relexSentence={}", sentence)
         log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
         expect(dst)(sentence.getPhraseString)
-        //todo check subject-object
       }
       else {
         log.debug("No parse found for sentence")
@@ -179,7 +179,7 @@ class LinkParserTest extends FunSuite {
   test("LinkParser emulation stable test") {
     val src = "Browser is an object."
     val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
-    val reKB = setup(List[AnnotatedSentence](AnnotatedSentence(src, null)))
+    val reKB = setup(List[AnnotatedSentence](AnnotatedSentence(src, List[AnnotatedPhrase]())))
     for (i <- 1 until 100) {
       val relexSentence: relex.Sentence = reKB.processSentence(src)
       log.debug(("FOUND " + relexSentence.getParses.size + " sentence(s)"))
@@ -198,7 +198,6 @@ class LinkParserTest extends FunSuite {
     }
   }
 
-
   def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
     // relex.RelationExtractor -n 4 -l -t -f -r -a
     val re = new RelationExtractorKB(false, sentences)
@@ -215,6 +214,31 @@ class LinkParserTest extends FunSuite {
     re.do_pre_entity_tagging = true
     re.do_post_entity_tagging = true
     re
+  }
+
+  test("LinkParser stable test") {
+    val src = "Browser is an object."
+    val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
+    val narrative = new AnnotatedNarrative(List[AnnotatedSentence](AnnotatedSentence(src, List[AnnotatedPhrase]())), KnowledgeURI("narrative"))
+    val linkParser = new LinkParser()
+    val context = ContextHelper(List[Resource](), narrative, "testContext")
+    for (i <- 1 until 100) {
+      val res = linkParser.apply(context)
+      log.debug("Link parser result ={}", res.lastResult.toString)
+      /* log.debug(("FOUND " + relexSentence.getParses.size + " sentence(s)"))
+      if (relexSentence.getParses.size > 0) {
+        val sentence: ParsedSentence = relexSentence.getParses.get(0)
+        log.debug("ParsedSentence.getLinkString():\n{}", sentence.getLinkString)
+        log info("relexSentence={}", relexSentence)
+        log.debug("sentence.getPhraseString()={}", sentence.getPhraseString)
+        expect(dst.trim)(sentence.getPhraseString.trim)
+      }
+      else {
+        log.debug("No parse found for sentence")
+        assert(false)
+      }  */
+
+    }
   }
 }
 
