@@ -88,5 +88,6 @@
         <module>coreservice.splitter</module>
         <module>host.console</module>
         <module>coreservice.linkparser</module>
+        <module>relexAdapter</module>
     </modules>
 </project>

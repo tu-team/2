@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory
 import tu.model.knowledge.domain.{Concept, ConceptLink}
 import tu.exception.{NoExpectedInformationException, UnexpectedException}
 import tu.dataservice.knowledgebaseserver.Defaults
+import tu.nlp.server.NLPFactory
 
 /**
  * Processes AnnotatedSentence each AnnotatedSentence via RelationExtractorKB.
@@ -26,6 +27,8 @@ import tu.dataservice.knowledgebaseserver.Defaults
 class LinkParser extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
+
+  val relexServer =  NLPFactory.createProcessor()
 
   def start() = false
 
@@ -102,9 +105,8 @@ class LinkParser extends Way2Think {
    */
   def processSentenceRelex(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
     //run relex and extract sentences
-    val em: EntityMaintainer = new EntityMaintainer()
-    val relExt = setup(sentences)
-    val relexSentence = relExt.processSentence(sentence.text, em)
+
+    val relexSentence = relexServer.processSentence(sentence.text, sentences)
     log info ("relexSentence ={}", relexSentence)
     val parsesNum = relexSentence.getNumParses
     if (parsesNum < 1) {
@@ -114,28 +116,7 @@ class LinkParser extends Way2Think {
     }
   }
 
-  /**
-   * Setup OpenCog to use RelationExtractorKB that uses KBAnnotator results.
-   * @param sentences to process via RelationExtractorKB.
-   * @return RelationExtractorKB with proper setup to use KBAnnotator results
-   */
-  def setup(sentences: List[AnnotatedSentence]): RelationExtractorKB = {
-    // relex.RelationExtractor -n 4 -l -t -f -r -a
-    val re = new RelationExtractorKB(false, sentences)
-    // -n 4
-    re.setMaxParses(1)
-    // -l -f -a
-    val opencog: OpenCogScheme = new OpenCogScheme()
-    opencog.setShowLinkage(true)
-    opencog.setShowFrames(true)
-    re.do_anaphora_resolution = true
-    opencog.setShowAnaphora(true)
-    // -t
-    re.do_tree_markup = true
-    re.do_pre_entity_tagging = true
-    re.do_post_entity_tagging = true
-    re
-  }
+
 
   /**
    * Gets Concept from sentence if not found, creates orphan Concept and returns Error, if found returns Concept with no Error, otherwise only Error is returned.

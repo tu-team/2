@@ -133,6 +133,12 @@
             <artifactId>common.utilities</artifactId>
             <version>${tu.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>tu</groupId>
+            <artifactId>nlp.server</artifactId>
+            <version>${tu.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
