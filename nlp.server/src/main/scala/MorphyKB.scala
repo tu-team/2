@@ -1,4 +1,5 @@
 package tu.nlp.server
+
 import relex.morphy.{MorphyJWNL, Morphed}
 import tu.model.knowledge.communication.ShortTermMemory
 import tu.model.knowledge.annotator.{AnnotatedPhrase, AnnotatedSentence}

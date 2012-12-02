@@ -389,7 +389,13 @@ class LinkParserTest extends FunSuite {
   test("LinkParser stable test") {
     val src = "Browser is an object."
     val dst = "(S (NP Browser) (VP is (NP an object)) .)\n"
-    val narrative = new AnnotatedNarrative(List[AnnotatedSentence](AnnotatedSentence(src, List[AnnotatedPhrase]())), KnowledgeURI("narrative"))
+    val browserPhrase = AnnotatedPhrase("Browser")
+    val isPhrase = AnnotatedPhrase("is")
+    val anPhrase = AnnotatedPhrase("an")
+    val objectPhrase = AnnotatedPhrase("object")
+    val narrative = new AnnotatedNarrative(List[AnnotatedSentence](
+      AnnotatedSentence(src, List[AnnotatedPhrase](browserPhrase, isPhrase, anPhrase, objectPhrase))),
+      KnowledgeURI("narrative"))
     val linkParser = new LinkParser()
     val context = ContextHelper(List[Resource](), narrative, "testContext")
     for (i <- 1 until 100) {

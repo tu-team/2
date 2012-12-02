@@ -16,6 +16,7 @@ import tu.model.knowledge.domain.{Concept, ConceptLink}
 import tu.exception.{NoExpectedInformationException, UnexpectedException}
 import tu.dataservice.knowledgebaseserver.Defaults
 import tu.nlp.server.NLPFactory
+import tu.exception.UnexpectedException
 
 /**
  * Processes AnnotatedSentence each AnnotatedSentence via RelationExtractorKB.
@@ -28,7 +29,7 @@ class LinkParser extends Way2Think {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  val relexServer =  NLPFactory.createProcessor()
+  val relexServer = NLPFactory.createProcessor()
 
   def start() = false
 
@@ -73,7 +74,7 @@ class LinkParser extends Way2Think {
     sentences.map {
       sentence: AnnotatedSentence => {
         val parse: ParsedSentence = processSentenceRelex(sentence, sentences)
-        log info ("parse = {}", parse.toString)
+        log info("parse = {}", parse.toString)
         val node: FeatureNode = new FeatureNode()
         node.set("head", parse.getLeft.get("head"))
         node.set("background", parse.getLeft.get("background"))
@@ -107,7 +108,7 @@ class LinkParser extends Way2Think {
     //run relex and extract sentences
 
     val relexSentence = relexServer.processSentence(sentence.text, sentences)
-    log info ("relexSentence ={}", relexSentence)
+    log info("relexSentence ={}", relexSentence)
     val parsesNum = relexSentence.getNumParses
     if (parsesNum < 1) {
       throw new UnexpectedException("$No_parses_produced")
@@ -117,7 +118,6 @@ class LinkParser extends Way2Think {
   }
 
 
-
   /**
    * Gets Concept from sentence if not found, creates orphan Concept and returns Error, if found returns Concept with no Error, otherwise only Error is returned.
    * @param feature FeatureNode to process: find AnnotatedPhrase -> Concept,
@@ -125,14 +125,15 @@ class LinkParser extends Way2Think {
    * @return Pair of Concept and Error
    */
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
-    log debug ("processNode(feature={})", feature)
+    log debug("processNode(feature={})", feature)
     try {
-
-      //TODO migrate to getNameOrigString
-      val name: String = getName(feature)
-
+      val nameOrigString: Pair[Option[String], Option[String]] = getNameOrigString(feature)
+      val name: String = nameOrigString match {
+        case Pair(_, Some(oS: String)) => oS
+        case Pair(Some(n: String), None) => n
+        case Pair(None, None) => throw new UnexpectedException("$No_name_found")
+      }
       val phraseConceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
-
       phraseConceptError match {
         case Triple(a: AnnotatedPhrase, Some(concept: Concept), None) => {
           val updatedConcept = updateTensePos(feature, concept, sentence)
@@ -169,14 +170,14 @@ class LinkParser extends Way2Think {
       log debug "tense=" + feature.get("tense").getValue
       val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
       val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
-      log info ("added link={} to concept={}", tenseLink, concept)
+      log info("added link={} to concept={}", tenseLink, concept)
       concept.links = concept.links ::: List(tenseLink)
     }
     if (feature.get("pos") != null) {
       log debug "pos=" + feature.get("pos").getValue
       val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
       val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
-      log info ("added link={} to concept={}", posLink, concept)
+      log info("added link={} to concept={}", posLink, concept)
       concept.links = concept.links ::: List(posLink)
     }
 
@@ -256,20 +257,20 @@ class LinkParser extends Way2Think {
    * @return Concept and Error pair.
    */
   def getConcept(name: String, sentence: AnnotatedSentence): Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = {
-    log debug ("getConcept(name = {})", name)
+    log debug("getConcept(name = {})", name)
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
       val phrase = phrases.head
       val concepts = phrase.concepts
       if (concepts.size == 1) {
         val concept = concepts.head
-        log info ("returned concept={}", concept)
+        log info("returned concept={}", concept)
         (phrase, Some(concept), None)
       } else if (concepts.size < 1) {
         val concept = Concept.createInstanceConcept(phrase)
         phrase.conceptsAdd(concept)
-        log info ("created new concept={}", concept)
-        log info ("added it to phrase={}", phrase)
+        log info("created new concept={}", concept)
+        log info("added it to phrase={}", phrase)
         (phrase, Some(concept), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
       } else {
         log info ("concepts were ambiguous")
@@ -313,6 +314,10 @@ class LinkParser extends Way2Think {
       val origStr = feature.get("orig_str").getValue
       log debug "orig_str" + feature.get("orig_str").getValue
       Some(origStr)
+    } else if (feature.get("nameSource") != null && feature.get("nameSource").get("orig_str") != null) {
+      val origStr = feature.get("nameSource").get("orig_str").getValue
+      log debug "orig_str" + feature.get("nameSource").get("orig_str").getValue
+      Some(origStr)
     } else {
       None
     }
@@ -333,13 +338,13 @@ class LinkParser extends Way2Think {
   }
 
   def processLink(feature: FeatureNode, source: Concept, sentence: AnnotatedSentence): List[ConceptLink] = {
-    log debug ("processLink(feature: {}", feature.get("name"))
-    log debug ("feature names={}", feature.getFeatureNames)
+    log debug("processLink(feature: {}", feature.get("name"))
+    log debug("feature names={}", feature.getFeatureNames)
     try {
       val filteredFeatures = feature.getFeatureNames.filter {
         name: String => Constant.RelexFeatures.contains(name)
       }
-      log debug ("filteredFeatures ={}", filteredFeatures)
+      log debug("filteredFeatures ={}", filteredFeatures)
       if (filteredFeatures.size > 0) {
         val filteredDestinationFeatures = filteredFeatures.toList.filter {
           (name: String) => {
