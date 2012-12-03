@@ -129,8 +129,8 @@ class LinkParser extends Way2Think {
     try {
       val nameOrigString: Pair[Option[String], Option[String]] = getNameOrigString(feature)
       val name: String = nameOrigString match {
-        case Pair(_, Some(oS: String)) => oS
-        case Pair(Some(n: String), None) => n
+        case Pair(Some(n: String), _) => n
+        case Pair(None, Some(oS: String)) => oS
         case Pair(None, None) => throw new UnexpectedException("$No_name_found")
       }
       val phraseConceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
