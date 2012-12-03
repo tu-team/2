@@ -74,7 +74,7 @@ class Correlation extends SimulationReformulationAbstract {
     processClarifiedConcepts(clarifiedConcepts, targetModel)
   }
 
-  def processClarifiedConcepts(clarifiedConcepts: List[Concept], targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] =  {
+  def processClarifiedConcepts(clarifiedConcepts: List[Concept], targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
         findInTarget(c, targetModel) match {
@@ -88,7 +88,7 @@ class Correlation extends SimulationReformulationAbstract {
         findMapToTarget(c, targetModel, List[Concept]())
       }
     }
-    val notUnderstood = this.checkShortestMaps(shortestMaps, targetModel)
+    val notUnderstood = this.checkShortestMaps(clarifiedConcepts, shortestMaps, targetModel)
     val domainConcepts = createDomainConcepts(shortestMaps.flatten)
     log.info("found maps={}, ", shortestMaps)
     log.info("created domain concepts={},", domainConcepts)
@@ -101,13 +101,22 @@ class Correlation extends SimulationReformulationAbstract {
    * @param shortestMaps = maps to check
    * @return List of tail concepts not found in targetModel.
    */
-  def checkShortestMaps(shortestMaps: List[List[Concept]], targetModel: ConceptNetwork): List[Concept] = {
+  def checkShortestMaps(clarifiedTargetConcepts: List[Concept], shortestMaps: List[List[Concept]], targetModel: ConceptNetwork):
+  List[Concept] = {
     val notUnderstood = shortestMaps.filter {
       c: List[Concept] => {
         c.size > 0 && targetModel.getNodeByName(c.last.uri.name).size > 0
       }
     }
-    if (notUnderstood.size > 0) {
+    val notMapped = clarifiedTargetConcepts.filter {
+      c: Concept => {
+        shortestMaps.flatten.filter {
+          cSM: Concept => cSM.uri.name.equals(c.uri.name)
+        }.size > 0
+      }
+    }
+    val compoundNotUnderstood = notMapped ::: notUnderstood
+    if (compoundNotUnderstood.size > 0) {
       notUnderstood.map {
         c: List[Concept] => {
           c.last
@@ -174,10 +183,10 @@ class Correlation extends SimulationReformulationAbstract {
             )
             List(mappingConcept) ::: shortestMapping
           } else {
-            List[Concept]()
+            List(mappingConcept)
           }
         } else {
-          List[Concept]()
+          List(mappingConcept)
         }
       }
     }
