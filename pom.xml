@@ -89,5 +89,6 @@
         <module>host.console</module>
         <module>coreservice.linkparser</module>
         <module>nlp.server</module>
+        <module>extensions</module>
     </modules>
 </project>
