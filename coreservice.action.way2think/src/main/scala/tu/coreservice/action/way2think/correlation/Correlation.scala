@@ -128,6 +128,22 @@ class Correlation extends SimulationReformulationAbstract {
   }
 
   def createDomainConcepts(mappingConceptsInstances: List[Concept]): List[Concept] = {
+    val parents = mappingConceptsInstances.map {
+      c: Concept => {
+        if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
+          val parentName = c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
+          val parentConcept = Concept(parentName)
+          c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
+          parentConcept
+        } else {
+          throw new UnexpectedException("$Can_not_create_parent_not_from_instance")
+        }
+      }
+    }
+    parents ::: mappingConceptsInstances
+  }
+
+  def reduceLinks(mappingConceptsInstances: List[Concept]): List[Concept] = {
     mappingConceptsInstances.map {
       c: Concept => {
         if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
