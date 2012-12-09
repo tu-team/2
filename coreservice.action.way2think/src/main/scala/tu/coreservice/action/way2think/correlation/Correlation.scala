@@ -7,6 +7,7 @@ import tu.model.knowledge.{KnowledgeURI, Constant}
 import tu.exception.UnexpectedException
 import org.slf4j.LoggerFactory
 import scala.collection.JavaConversions._
+import tu.dataservice.knowledgebaseserver.Defaults
 
 /**
  * @author max talanov
@@ -140,21 +141,62 @@ class Correlation extends SimulationReformulationAbstract {
         }
       }
     }
+    reduceLinks(mappingConceptsInstances)
     parents ::: mappingConceptsInstances
   }
 
-  def reduceLinks(mappingConceptsInstances: List[Concept]): List[Concept] = {
-    mappingConceptsInstances.map {
+  def reduceLinks(mappingConceptsInstances: List[Concept]): List[ConceptLink] = {
+    val reducibleConcepts = mappingConceptsInstances.filter {
       c: Concept => {
-        if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
-          val parentName = c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
-          val parentConcept = Concept(parentName)
-          c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
-          parentConcept
-        } else {
-          throw new UnexpectedException("$Can_not_create_parent_not_from_instance")
+        Defaults.reduceLinks.keySet.filter {
+          cReducible: Concept => {
+            c.hasGeneralisation(cReducible)
+          }
+        }.size > 0
+      }
+    }
+    reducibleConcepts.map {
+      c: Concept => {
+        val optionKey = Defaults.reduceLinks.keySet.find {
+          cReducible: Concept => {
+            c.hasGeneralisation(cReducible)
+          }
+        }
+        optionKey match {
+          case Some(x: Concept) => {
+            val optionLink = Defaults.reduceLinks.get(x)
+            optionLink match {
+              case Some(x: ConceptLink) => {
+                createLinkFromConcept(c, x)
+              }
+              case None => {
+                throw new UnexpectedException("$Filtered_concepts_should_contain_key")
+              }
+            }
+          }
+          case None => {
+            throw new UnexpectedException("$Filtered_concepts_should_contain_key")
+          }
         }
       }
+    }
+  }
+
+  def createLinkFromConcept(concept: Concept, link: ConceptLink): ConceptLink = {
+    val links: List[ConceptLink] = concept.links
+    val destinations: List[ConceptLink] = links.filter {
+      cL: ConceptLink => cL.destination.uri.name != concept.uri.name
+    }
+    val sources: List[ConceptLink] = links.filter {
+      cL: ConceptLink => cL.source.uri.name != concept.uri.name
+    }
+    if (sources.size < 1 || destinations.size < 1) {
+      throw new UnexpectedException("$Not_enough_links")
+    }
+    if (sources.size > 1 || destinations.size > 1) {
+      throw new UnexpectedException("$Ambiguous_links")
+    } else {
+      ConceptLink.createSubConceptLink(link, sources(0).source, destinations(0).destination, link.uri.name)
     }
   }
 
