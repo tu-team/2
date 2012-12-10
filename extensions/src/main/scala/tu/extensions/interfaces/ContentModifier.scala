@@ -1,6 +1,7 @@
-package tu.extensions.algorithms
+package tu.extensions.interfaces
 
 import tu.model.knowledge.communication.ShortTermMemory
+
 
 /**
  * 
@@ -9,7 +10,7 @@ import tu.model.knowledge.communication.ShortTermMemory
  * Time: 12:23 AM
  *
  */
-trait ContentModifier {
+trait ContentModifier extends BaseExtension  {
 
   /**
    * Apply all modifications on context

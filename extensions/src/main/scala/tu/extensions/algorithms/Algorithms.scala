@@ -1,5 +1,8 @@
 package tu.extensions.algorithms
 
+import tu.extensions.Extensions
+import tu.extensions.interfaces.{Generalizer, ContentModifier}
+
 /**
  * 
  * @author: Alexander Toschev
@@ -15,7 +18,8 @@ object Algorithms {
    */
   def generalizer():ContentModifier =
   {
-      //check the DB or config to select proper class otherwise return default
-      return new defaults.Generalizer()
+      return Extensions.load[Generalizer]()
   }
+
+
 }

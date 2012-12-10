@@ -153,10 +153,10 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = {
     this.uri.name +
-      "[generalisations=" + _generalisations.size.toString +
-      ",specialisations=" + _specialisations.size.toString +
-      ",links=" + _conceptLinks.size.toString +
-      ",phrase=" + _phrases +
+      "[generalisations=" + _generalisations.toString  +
+      ";specialisations=" + _specialisations.toString +
+      ";links=" + _conceptLinks.map (l=>l.toString ).mkString (",") +
+      ";phrase=" + _phrases +
       "]"
   }
 

@@ -1,7 +1,8 @@
 package tu.extensions.algorithms.defaults
 
-import tu.extensions.algorithms.ContentModifier
+
 import tu.model.knowledge.communication.ShortTermMemory
+import tu.extensions.interfaces.Generalizer
 
 /**
  * 
@@ -10,7 +11,7 @@ import tu.model.knowledge.communication.ShortTermMemory
  * Time: 12:37 AM
  * 
  */
-class Generalizer extends ContentModifier {
+class GeneralizerImp extends Generalizer {
   /**
    * Apply all modifications on context
    * @param ctx context object
