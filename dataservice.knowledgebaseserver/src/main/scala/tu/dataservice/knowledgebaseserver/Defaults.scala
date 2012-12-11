@@ -31,11 +31,11 @@ object Defaults {
   val actionPhrase = AnnotatedPhrase("action", actionConcept)
   val programConcept = Concept.createSubConcept(CONCEPT, "program")
   val programPhrase = AnnotatedPhrase("program", programConcept)
-  val isConcept = Concept.createSubConcept(CONCEPT, "is")
+  val beConcept = Concept.createSubConcept(CONCEPT, "be")
   val hasConcept = Concept.createSubConcept(CONCEPT, "has")
   val consistConcept = Concept.createSubConcept(CONCEPT, "consistOf")
 
-  val reduceLinks = Map(isConcept -> isLink, hasConcept -> has, consistConcept -> has )
+  val reduceLinks = Map(beConcept -> beLink, hasConcept -> has, consistConcept -> has )
 
   /**
    * Links
@@ -46,15 +46,15 @@ object Defaults {
 
   val has = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "has", new Probability(1.0, 1.0))
   val hasPhrase = AnnotatedPhrase("has", has)
-  val isLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "is")
-  val isPhrase = AnnotatedPhrase("is", isLink)
+  val beLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "be")
+  val isPhrase = AnnotatedPhrase("is", beLink)
   val generalisationLink = ConceptLink.createSubConceptLink(CONCEPT_LINK, subjectConcept, objectConcept, "generalisation")
   val isAPhrase = AnnotatedPhrase("is a", generalisationLink)
   val kindOfPhrase = AnnotatedPhrase("kind of", generalisationLink)
   val missPhrase = AnnotatedPhrase("miss", missLink )
 
-  val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept, formOfPolitenessConcept, actionConcept, programConcept, isConcept, hasConcept)
-  val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, isLink, generalisationLink)
+  val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept, formOfPolitenessConcept, actionConcept, programConcept, beConcept, hasConcept)
+  val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, beLink, generalisationLink)
   val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase, missPhrase, formOfPolitenessPhrase)
 
   val softwareConcept = Concept.createSubConcept(objectConcept, "sofware")

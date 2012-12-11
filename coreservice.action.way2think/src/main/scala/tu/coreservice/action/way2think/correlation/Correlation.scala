@@ -132,7 +132,12 @@ class Correlation extends SimulationReformulationAbstract {
     val parents = mappingConceptsInstances.map {
       c: Concept => {
         if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
-          val parentName = c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
+          val parentName = if (c.uri.name.indexOf(Constant.conceptSuffix) != -1
+            && c.uri.name.indexOf(Constant.conceptSuffix) < c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER)) {
+            c.uri.name.substring(0, c.uri.name.indexOf(Constant.conceptSuffix))
+          } else {
+            c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
+          }
           val parentConcept = Concept(parentName)
           c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
           parentConcept
@@ -150,7 +155,7 @@ class Correlation extends SimulationReformulationAbstract {
       c: Concept => {
         Defaults.reduceLinks.keySet.filter {
           cReducible: Concept => {
-            c.hasGeneralisation(cReducible)
+            c.hasGeneralisationRec(cReducible)
           }
         }.size > 0
       }
@@ -159,7 +164,7 @@ class Correlation extends SimulationReformulationAbstract {
       c: Concept => {
         val optionKey = Defaults.reduceLinks.keySet.find {
           cReducible: Concept => {
-            c.hasGeneralisation(cReducible)
+            c.hasGeneralisationRec(cReducible)
           }
         }
         optionKey match {
