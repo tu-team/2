@@ -164,7 +164,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     val res: List[Concept] = this.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
-    res
+    res ::: this.generalisations.frames.values.toList
   }
 
   def hasGeneralisationRec(parent: Concept): Boolean = {
