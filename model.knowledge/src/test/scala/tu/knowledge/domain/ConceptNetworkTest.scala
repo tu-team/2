@@ -43,15 +43,15 @@ class ConceptNetworkTest extends FunSuite {
   test("ConceptNetwork should be exported via toText") {
     val sn0 = new ConceptNetwork(List[Concept](concept, subjectConcept), List(), uri)
     val res0 = sn0.toText
-    expect("subject <- CONCEPT[[generalisations=0,specialisations=2,links=0,phrase=tu-project.com/userTypedKLine@0.3#:0.0:1.0]]")(res0)
+    expect("subject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]")(res0)
 
     val sn1 = new ConceptNetwork(List[Concept](concept, subjectConcept, objectConcept), List(), uri)
     val res1 = sn1.toText
-    expect("subject <- CONCEPT\nobject <- CONCEPT")(res1)
+    expect("subject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]\nobject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]")(res1)
 
     val sn2 = new ConceptNetwork(List[Concept](concept, subjectConcept, objectConcept), List(has), uri)
     val res2 = sn2.toText
-    expect("subject[<has> objectConcept] <- CONCEPT\nobject[subjectConcept <has>] <- CONCEPT")(res2)
+    expect("subject[<has> objectConcept[generalisations=(testNamespace/CONCEPT@rev#);specialisations=();links=;phrase=()]] <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]\nobject[subjectConcept[generalisations=(testNamespace/CONCEPT@rev#);specialisations=();links=;phrase=()] <has>] <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]")(res2)
   }
 
 }

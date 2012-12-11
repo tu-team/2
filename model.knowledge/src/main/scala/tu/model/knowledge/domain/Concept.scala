@@ -167,6 +167,15 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res
   }
 
+  def hasGeneralisationRec(parent: Concept): Boolean = {
+    val res: List[Concept] = getGeneralisationsRec.filter {
+      c: Concept => {
+        c.uri.equals(parent.uri)
+      }
+    }
+    res.size > 0
+  }
+
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
     //if (saved.contains(key)) return true
 
