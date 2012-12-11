@@ -61,6 +61,10 @@ User interacts with system by WebService.
 Training is complex set of processes to setup and customize system according to domain requirements.
 [Training description](training.md)
 
+### UI
+Web interface for the system
+[Web Interface](web-interface.md)
+
 ### Production
 Is actual work of the system to solve the incident according to a description.
 
