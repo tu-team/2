@@ -1,0 +1,57 @@
+<mockup version="1.0" skin="sketch" measuredW="792" measuredH="540" mockupW="769" mockupH="520">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::FieldSet" x="23" y="20" w="376" h="259" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Add%20Request</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::FieldSet" x="417" y="20" w="375" h="259" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>My%20Requests</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::FieldSet" x="23" y="294" w="376" h="246" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Statistics</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::FieldSet" x="417" y="294" w="375" h="246" measuredW="200" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Me</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::ComboBox" x="36" y="46" w="227" h="-1" measuredW="115" measuredH="23" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>13</size>
+        <text>Request%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::TextArea" x="36" y="76" w="345" h="165" measuredW="200" measuredH="140" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Request%20Text</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::LineChart" x="40" y="319" w="344" h="212" measuredW="187" measuredH="175" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::DataGrid" x="440" y="52" w="346" h="212" measuredW="346" measuredH="197" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::IconLabel" x="455" y="327" w="71" h="-1" measuredW="50" measuredH="69" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mr%20User</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="326" y="243" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Send</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="554" y="322" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="554" y="345" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Surname</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
