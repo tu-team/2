@@ -92,4 +92,5 @@ object Constant {
   val desireConceptName = "desire"
   val formOfPoliteness = "formOfPoliteness"
   val conceptSuffix = "Concept"
+
 }

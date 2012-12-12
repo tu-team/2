@@ -51,8 +51,17 @@ object Defaults {
   val kindOfPhrase = AnnotatedPhrase("kind of", generalisationLink)
   val missPhrase = AnnotatedPhrase("miss", missLink )
 
+  /**
+   * Link reduction
+   */
   val reduceLinks = Map(beConcept -> beLink, hasConcept -> has, consistConcept -> has )
+  val objectLinkName = "obj"
+  val subjectLinkName = "subj"
+  val reductionConceptLinks = List(objectLinkName, subjectLinkName)
 
+  /**
+   * Containers
+   */
   val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept, formOfPolitenessConcept, actionConcept, programConcept, beConcept, hasConcept)
   val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, beLink, generalisationLink)
   val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase, missPhrase, formOfPolitenessPhrase)

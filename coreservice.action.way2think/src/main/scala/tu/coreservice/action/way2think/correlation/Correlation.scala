@@ -190,15 +190,16 @@ class Correlation extends SimulationReformulationAbstract {
   def createLinkFromConcept(concept: Concept, link: ConceptLink): ConceptLink = {
     val links: List[ConceptLink] = concept.links
     val destinations: List[ConceptLink] = links.filter {
-      cL: ConceptLink => cL.destination.uri.name != concept.uri.name
+      cL: ConceptLink => cL.destination.uri.name != concept.uri.name && Defaults.reduceLinks.contains(cL.uri.name)
     }
     val sources: List[ConceptLink] = links.filter {
-      cL: ConceptLink => cL.source.uri.name != concept.uri.name
+      cL: ConceptLink => cL.source.uri.name != concept.uri.name && Defaults.reduceLinks.contains(cL.uri.name)
     }
-    if (sources.size < 1 || destinations.size < 1) {
+
+    if (sources.size + destinations.size < 1) {
       throw new UnexpectedException("$Not_enough_links")
     }
-    if (sources.size > 1 || destinations.size > 1) {
+    if (sources.size + destinations.size > 2) {
       throw new UnexpectedException("$Ambiguous_links")
     } else {
       ConceptLink.createSubConceptLink(link, sources(0).source, destinations(0).destination, link.uri.name)
