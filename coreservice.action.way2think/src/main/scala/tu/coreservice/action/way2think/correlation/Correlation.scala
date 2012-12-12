@@ -190,19 +190,20 @@ class Correlation extends SimulationReformulationAbstract {
   def createLinkFromConcept(concept: Concept, link: ConceptLink): ConceptLink = {
     val links: List[ConceptLink] = concept.links
     val destinations: List[ConceptLink] = links.filter {
-      cL: ConceptLink => cL.destination.uri.name != concept.uri.name && Defaults.reduceLinks.contains(cL.uri.name)
+      cL: ConceptLink => cL.destination.uri.name != concept.uri.name && Defaults.reductionConceptLinks.contains(cL.uri.name)
     }
     val sources: List[ConceptLink] = links.filter {
-      cL: ConceptLink => cL.source.uri.name != concept.uri.name && Defaults.reduceLinks.contains(cL.uri.name)
+      cL: ConceptLink => cL.source.uri.name != concept.uri.name && Defaults.reductionConceptLinks.contains(cL.uri.name)
     }
 
+    val sourcesDestination = processSourcesDestinations(sources, destinations)
     if (sources.size + destinations.size < 1) {
       throw new UnexpectedException("$Not_enough_links")
     }
     if (sources.size + destinations.size > 2) {
       throw new UnexpectedException("$Ambiguous_links")
     } else {
-      ConceptLink.createSubConceptLink(link, sources(0).source, destinations(0).destination, link.uri.name)
+      ConceptLink.createSubConceptLink(link, sourcesDestination._1, sourcesDestination._2, link.uri.name)
     }
   }
 
@@ -214,19 +215,18 @@ class Correlation extends SimulationReformulationAbstract {
    * @return pair source -> destination
    */
   def processSourcesDestinations(sources: List[ConceptLink], destinations: List[ConceptLink]): Pair[Concept, Concept] = {
-
     if (sources.size > 0 && destinations.size > 0) {
       (sources(0).source, destinations(0).destination)
     } else if (sources.size > 1) {
-      processLinks(sources)
-    } else if (sources.size > 1) {
-      processLinks(destinations)
+      processLinksSources(sources)
+    } else if (destinations.size > 1) {
+      processLinksDestinations(destinations)
     } else {
       throw new UnexpectedException("$Not_enough_links")
     }
   }
 
-  private def processLinks(conceptLinks: List[ConceptLink]): Pair[Concept, Concept] = {
+  private def processLinksSources(conceptLinks: List[ConceptLink]): Pair[Concept, Concept] = {
     val sources = conceptLinks.filter {
       cL: ConceptLink => {
         cL.uri.name == Defaults.subjectLinkName
@@ -239,6 +239,24 @@ class Correlation extends SimulationReformulationAbstract {
     }
     if (sources.size > 0 && destinations.size > 0) {
       (sources(0).source, destinations(0).source)
+    } else {
+      throw new UnexpectedException("$Not_enough_links")
+    }
+  }
+
+  private def processLinksDestinations(conceptLinks: List[ConceptLink]): Pair[Concept, Concept] = {
+    val sources = conceptLinks.filter {
+      cL: ConceptLink => {
+        cL.uri.name == Defaults.subjectLinkName
+      }
+    }
+    val destinations = conceptLinks.filter {
+      cL: ConceptLink => {
+        cL.uri.name == Defaults.objectLinkName
+      }
+    }
+    if (sources.size > 0 && destinations.size > 0) {
+      (sources(0).destination, destinations(0).destination)
     } else {
       throw new UnexpectedException("$Not_enough_links")
     }
