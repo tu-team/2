@@ -206,6 +206,44 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
+  /**
+   * Process lists of sources and destination ConceptLink-s and return pair source -> destination, if at least one source and destination set first one is returned, if at least two sources or destinations are set
+   * links with name Defaults.subjectLinkName is treated as source, Defaults.objectLinkName is treated as destination.
+   * @param sources ConceptLinks to sources
+   * @param destinations ConceptLinks to destinations
+   * @return pair source -> destination
+   */
+  def processSourcesDestinations(sources: List[ConceptLink], destinations: List[ConceptLink]): Pair[Concept, Concept] = {
+
+    if (sources.size > 0 && destinations.size > 0) {
+      (sources(0).source, destinations(0).destination)
+    } else if (sources.size > 1) {
+      processLinks(sources)
+    } else if (sources.size > 1) {
+      processLinks(destinations)
+    } else {
+      throw new UnexpectedException("$Not_enough_links")
+    }
+  }
+
+  private def processLinks(conceptLinks: List[ConceptLink]): Pair[Concept, Concept] = {
+    val sources = conceptLinks.filter {
+      cL: ConceptLink => {
+        cL.uri.name == Defaults.subjectLinkName
+      }
+    }
+    val destinations = conceptLinks.filter {
+      cL: ConceptLink => {
+        cL.uri.name == Defaults.objectLinkName
+      }
+    }
+    if (sources.size > 0 && destinations.size > 0) {
+      (sources(0).source, destinations(0).source)
+    } else {
+      throw new UnexpectedException("$Not_enough_links")
+    }
+  }
+
   def findInTarget(mappingConcept: Concept, targetModel: ConceptNetwork): Option[Concept] = {
     if (mappingConcept.phrases.size > 0) {
       val res = mappingConcept.phrases.frames.filter {
