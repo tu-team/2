@@ -35,8 +35,6 @@ object Defaults {
   val hasConcept = Concept.createSubConcept(CONCEPT, "has")
   val consistConcept = Concept.createSubConcept(CONCEPT, "consistOf")
 
-  val reduceLinks = Map(beConcept -> beLink, hasConcept -> has, consistConcept -> has )
-
   /**
    * Links
    */
@@ -52,6 +50,8 @@ object Defaults {
   val isAPhrase = AnnotatedPhrase("is a", generalisationLink)
   val kindOfPhrase = AnnotatedPhrase("kind of", generalisationLink)
   val missPhrase = AnnotatedPhrase("miss", missLink )
+
+  val reduceLinks = Map(beConcept -> beLink, hasConcept -> has, consistConcept -> has )
 
   val concepts = List[Concept](CONCEPT, wordConcept, subjectConcept, objectConcept, formOfPolitenessConcept, actionConcept, programConcept, beConcept, hasConcept)
   val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, beLink, generalisationLink)
