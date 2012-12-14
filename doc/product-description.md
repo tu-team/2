@@ -36,17 +36,18 @@ Specific functional objectives the prototype will demonstrate and why these are 
 
 How will the prototype be structured to demonstrate key features of the TU 0.1 product.  Prototype TU provided and described.
 Including:
-All System Interfaces
-Logical view (UMLenough)
-Architecturally significant design packages: major - boundary classes, realization (logic view), process /task view (for example show Process view for end user submission  incident and RealTime threads and mechanism for problem solving and realization on UML diagrams (patterns) with steps descriptions
-Deployment view (UMLenough)
-System description (Node 1-2-3…etc)
-Implementation view (overview, component description, KB model and etc)
-General design decisions (architectural goals and constrains) – example: The architectural goals are to make the TU system modifiable and provide high performance and blah blah…  The TU system should be encapsulated so it's easy to port the system to different platform blah…blah…
-Architectural patterns
-User interface design
-Implementation languages and tools
-Installation and executing
+
+1. All System Interfaces
+1. Logical view (UMLenough)
+1. Architecturally significant design packages: major - boundary classes, realization (logic view), process /task view (for example show Process view for end user submission  incident and RealTime threads and mechanism for problem solving and realization on UML diagrams (patterns) with steps descriptions
+1. Deployment view (UMLenough)
+1. System description (Node 1-2-3…etc)
+1. Implementation view (overview, component description, KB model and etc)
+1. General design decisions (architectural goals and constrains) – example: The architectural goals are to make the TU system modifiable and provide high performance and blah blah…  The TU system should be encapsulated so it's easy to port the system to different platform blah…blah…
+1. Architectural patterns
+1. User interface design
+1. Implementation languages and tools
+1. Installation and executing
 
 ###Prototype Features and Capabilities
 
@@ -57,6 +58,7 @@ What does the prototype demonstrate – why is that significant in showing how t
 Challenges expected solved such completing the objectives of the prototype – ie knowledge missing, capability missing, supporting technology issues, etc.
 
 ##Glossary
-References
+
+##References
 
 
