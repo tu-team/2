@@ -1,7 +1,7 @@
 package tu.model.knowledge
 
 /**
- * @author max
+ * @author max talanov
  *         date 2012-06-04
  *         time: 12:28 AM
  */
