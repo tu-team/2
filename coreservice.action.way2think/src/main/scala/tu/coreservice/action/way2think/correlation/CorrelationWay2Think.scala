@@ -53,7 +53,7 @@ class CorrelationWay2Think extends Way2Think {
                       val context = ContextHelper(List[Resource](), updatedSimulationResult, this.getClass.getName + "ShortTermMemory" + Constant.RESULT)
                       if (tr._2.size > 0) {
                         val updatedSimulationModel = ConceptNetwork(model.nodes ::: tr._2, this.getClass.getName + "Model" + Constant.RESULT)
-                        context.simulationResult = Some(updatedSimulationModel)
+                        context.simulationModel = Some(updatedSimulationModel)
                       }
                       if (tr._3.size > 0) {
                         context.notUnderstoodConcepts = tr._3
