@@ -38,7 +38,9 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
 
   def nodes = _nodes
 
-  def nodes_=(aNodes: List[Concept]) = _nodes = aNodes
+  def nodes_=(aNodes: List[Concept]) {
+    _nodes = aNodes
+  }
 
   def links = _links
 
@@ -52,8 +54,20 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   def getNodeByName(name: String): List[Concept] = {
     _nodes.filter {
       concept: Concept => {
-        concept.uri.name == name
+        reduceInstanceIdentifier(concept.uri.name) == reduceInstanceIdentifier(name)
       }
+    }
+  }
+
+  /**
+   * Returns instance identifier reduced concept name
+   */
+  def reduceInstanceIdentifier(name: String): String = {
+    val indexOfUIDDelimiter = name indexOf tu.model.knowledge.Constant.UID_INSTANCE_DELIMITER
+    if (indexOfUIDDelimiter > -1) {
+      name.substring(0, indexOfUIDDelimiter)
+    } else {
+      name
     }
   }
 
@@ -131,10 +145,10 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   def toText = {
     def searchToUp(where: Concept, what: Concept): Boolean = {
       if (where.uri.name == what.uri.name)
-        return true;
+        return true
       val up = where.generalisationsList
       if (up.size == 0)
-        return false;
+        return false
       searchToUp(up.head, what)
     }
     val leafs = nodes.filter(i => nodes.filter(j => j.uri.name != i.uri.name && searchToUp(j, i)).isEmpty)
@@ -202,7 +216,7 @@ object ConceptNetwork {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  def load(kb: KB, parent: KBNodeId, key: String, linkType: String, aleadyLoaded: ListBuffer[String] = new ListBuffer[String]()): ConceptNetwork = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String, alreadyLoaded: ListBuffer[String] = new ListBuffer[String]()): ConceptNetwork = {
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
       log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))

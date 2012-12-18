@@ -15,6 +15,7 @@ Represents Web Service that serve User requests. Requests contain subscription i
   1. createUser(user:[User](https://github.com/development-team/2/blob/master/doc/design-specification/interface-model.md#User)):[RefObject](https://github.com/development-team/2/blob/master/doc/design-specification/interface-model.md#RefObject) - create new user.
   1. updateUser(user:[User](https://github.com/development-team/2/blob/master/doc/design-specification/interface-model.md#User))- update user
   1. removeUser(user:[RefObject](https://github.com/development-team/2/blob/master/doc/design-specification/interface-model.md#RefObject)) - remove user
+  1. findRequest(request:[RefObject](https://github.com/development-team/2/blob/master/doc/design-specification/interface-model.md#RefObject)):[Request]((https://github.com/development-team/2/blob/master/doc/design-specification/interface-model.md#Request))
 
 For class definition see [Interface Model](interface-model.md)
 

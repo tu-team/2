@@ -93,8 +93,25 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
       "revision" -> this.revision())
   }
 
+  /**
+   * Compares specified uri and current uri, via name, namespace, revision.
+   * @param aUri
+   * @return
+   */
   def equals(aUri: KnowledgeURI): Boolean = {
     name.equals(aUri.name) && namespace.eq(aUri.namespace) && revision().equals(aUri.revision())
+  }
+
+  /**
+   * Returns instance identifier reduced concept name
+   */
+  def reduceInstanceIdentifier: String = {
+    val indexOfUIDDelimiter = this.name indexOf tu.model.knowledge.Constant.UID_INSTANCE_DELIMITER
+    if (indexOfUIDDelimiter > -1) {
+      this.name.substring(0, indexOfUIDDelimiter)
+    } else {
+      this.name
+    }
   }
 }
 

@@ -404,6 +404,7 @@ object ContextHelper {
       res.simulationModel = contexts.head.simulationModel
       res.reformulationModel = contexts.head.reformulationModel
       res.userResponse = contexts.head.userResponse
+      res.solutions = contexts.head.solutions
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }

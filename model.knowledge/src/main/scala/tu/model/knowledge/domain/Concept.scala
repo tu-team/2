@@ -153,10 +153,10 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = {
     this.uri.name +
-      "[generalisations=" + _generalisations.size.toString +
-      ",specialisations=" + _specialisations.size.toString +
-      ",links=" + _conceptLinks.size.toString +
-      ",phrase=" + _phrases +
+      "[generalisations=" + _generalisations.toString  +
+      ";specialisations=" + _specialisations.toString +
+      ";links=" + _conceptLinks.map (l=>l.toString ).mkString (",") +
+      ";phrase=" + _phrases +
       "]"
   }
 
@@ -164,7 +164,16 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     val res: List[Concept] = this.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
-    res
+    res ::: this.generalisations.frames.values.toList
+  }
+
+  def hasGeneralisationRec(parent: Concept): Boolean = {
+    val res: List[Concept] = getGeneralisationsRec.filter {
+      c: Concept => {
+        c.uri.equals(parent.uri)
+      }
+    }
+    res.size > 0
   }
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {

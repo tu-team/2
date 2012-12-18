@@ -83,14 +83,17 @@ class Solutions {
   }
 
   def compareWithGeneralisation(p: Concept, q: Concept): Boolean = {
-    if (p.uri == q.uri)
+    if (p.uri == q.uri)  {
       return true
+    }
 
-    for (pgkey <- p.uri :: p._generalisations.frames.keys.toList)
-      for (qgkey <- q.uri :: q._generalisations.frames.keys.toList)
-        if (pgkey.toString == qgkey.toString)
+    for (pgkey <- p.uri :: p._generalisations.frames.keys.toList) {
+      for (qgkey <- q.uri :: q._generalisations.frames.keys.toList) {
+        if (pgkey.toString == qgkey.toString) {
           return true
-
+        }
+      }
+    }
     false
   }
 }

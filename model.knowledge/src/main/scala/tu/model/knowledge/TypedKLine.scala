@@ -36,6 +36,13 @@ case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _u
     this
   }
 
+  override def toString: String =
+  {
+
+     frames.map (f=>f._1.toString()).mkString("(",",",")")
+
+  }
+
   //TODO correct this
   /*def this(map: Map[String, String]) = {
     val typeString = map.get("type") match {
