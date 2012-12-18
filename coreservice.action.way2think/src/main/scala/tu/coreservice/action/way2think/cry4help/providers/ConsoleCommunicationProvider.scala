@@ -37,6 +37,7 @@ class ConsoleCommunicationProvider extends Cry4HelpCommunicationProvider {
     }
     if (consoleAvailable == "true") {
       log.debug("Console is availible. Read from tu.coreservice.action.way2think.cry4help.console. Using input")
+      Console.println("You :>")
       Console.readLine()
     }
     else {

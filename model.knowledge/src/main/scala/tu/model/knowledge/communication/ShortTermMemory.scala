@@ -405,6 +405,11 @@ object ContextHelper {
       res.reformulationModel = contexts.head.reformulationModel
       res.userResponse = contexts.head.userResponse
       res.solutions = contexts.head.solutions
+
+      //collect all not undestand
+      res.notUnderstoodPhrases=contexts.map(c=>c.notUnderstoodPhrases ).flatten
+      res.notUnderstoodConcepts =contexts.map(c=>c.notUnderstoodConcepts ).flatten
+
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
     }

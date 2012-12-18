@@ -6,6 +6,7 @@ import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.utilities.LocalizedResources
 import tu.model.knowledge.domain.Concept
+import tu.model.knowledge.annotator.AnnotatedPhrase
 
 /**
  * @author max talanov
@@ -29,16 +30,31 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
     this._inputContext = inputContext
     val provider = Cry4HelpProviders.GetProvider()
 
-    provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
-    provider.showInformation(inputContext.lastError.toString)
+    //provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
+    //provider.showInformation(inputContext.lastError.toString)
     if (inputContext.notUnderstoodConcepts.size > 0) {
-      inputContext.notUnderstoodConcepts.map {
+      val unkConceptStr=(inputContext.notUnderstoodConcepts.map {
         c: Concept => {
-          provider.showInformation(Constant.NOT_UNDERSTOOD_PREFIX + c.toString)
+          c.toString
         }
-      }
+      }.union (inputContext.notUnderstoodPhrases.map {
+        c: AnnotatedPhrase  => {
+          c.toString
+        }
+      })).mkString (",")
+
+
+      provider.showInformation(String.format ("%1$s %2$s ?", LocalizedResources.GetString("$ClarifyPhrases"),unkConceptStr ))
     }
-    val userResponseText = provider.askQuestion(LocalizedResources.GetString("ProvideAdditionalInfo"))
+    else
+    {
+      //old way approach
+      inputContext.frames.foreach(f=>
+      {
+        provider.showInformation(LocalizedResources.GetString(f._2.toString))
+      })
+    }
+    val userResponseText = provider.askQuestion("")
     val outputContext: ShortTermMemory = ContextHelper(List[Resource](), this.getClass.getName)
     outputContext.userResponse = Some(new Response(KnowledgeString(userResponseText, "responsetext"), KnowledgeURI("Response")))
     outputContext

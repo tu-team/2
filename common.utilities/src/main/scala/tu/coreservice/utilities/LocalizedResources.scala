@@ -9,9 +9,17 @@ package tu.coreservice.utilities
 object LocalizedResources {
 
   private val localizationMap=Map("ErrorOccured"->"An error has occured:",
-  "ProvideAdditionalInfo"->"Please provide additional information")
+  "ProvideAdditionalInfo"->"Please provide additional information",
+  "$ClarifyPhrases"->"Sorry, i can't undestand next phrases: ")
 
+  /**
+   * return localized string or string ig nothing found
+   * @param key
+   * @return
+   */
   def GetString(key:String):String={
-     localizationMap(key)
+   if (localizationMap.contains(key) )
+     return localizationMap(key)
+   key
   }
 }

@@ -35,7 +35,11 @@ object SearchSolution {
 
     val res = inputContext.lastResult match {
       case Some(cn: ConceptNetwork) =>
-        searcher.search(cn, Nil)
+        {
+          if (cn.rootNodes.size<=0)
+            return inputContext
+          searcher.search(cn, Nil)
+        }
       case _ => None
     }
     log info("search solution result={}", res)

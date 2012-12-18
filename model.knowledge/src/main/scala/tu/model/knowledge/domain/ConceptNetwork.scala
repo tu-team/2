@@ -36,6 +36,12 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
     this(List[Concept](), List[ConceptLink](), uri)
   }
 
+  private var _notKnownPhrases:List[AnnotatedPhrase]=List[AnnotatedPhrase ]()
+
+  def notKnownPhrases=_notKnownPhrases
+
+  def notKnownPhrases_=(aVal:List[AnnotatedPhrase])=_notKnownPhrases =aVal
+
   def nodes = _nodes
 
   def nodes_=(aNodes: List[Concept]) {
@@ -254,6 +260,13 @@ object ConceptNetwork {
       new KnowledgeURI(selfMap),
       new Probability(selfMap)
     )
+  }
+
+  def apply(notKnownConcept: List[AnnotatedPhrase]):ConceptNetwork  = {
+    val uri = KnowledgeURI("NotKnownConceptsHolder")
+    val re= new ConceptNetwork(List(), List(), uri)
+    re.notKnownPhrases=notKnownConcept
+    re
   }
 
 

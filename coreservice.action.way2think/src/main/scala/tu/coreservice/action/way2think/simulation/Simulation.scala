@@ -81,7 +81,7 @@ class Simulation extends SimulationReformulationAbstract {
     val unAmbiguous = processAmbiguousBackReferences(ambiguous, in)
     log info("processed ambiguous={}", unAmbiguous)
     if (notKnown.size > 0) {
-      this.processNotKnown(notKnown)
+      return Some(ConceptNetwork.apply (notKnown))
     }
 
     if (exactMatch.size > 0) {
@@ -119,7 +119,7 @@ class Simulation extends SimulationReformulationAbstract {
 
   private def processNotKnown(in: List[AnnotatedPhrase]): ShortTermMemory = {
     var res: List[Resource] = in
-    res = res ++ List[Resource](KnowledgeString("Please clarify phreses", "Please.clarify.sentences"))
+    res =  List[Resource](KnowledgeString("$ClarifyPhrases", "Please.clarify.sentences"))   ++ res
     val context = ContextHelper.apply(res, "notKnown")
     val cry4helpWay2Think = new Cry4HelpWay2Think()
     cry4helpWay2Think.apply(context)
