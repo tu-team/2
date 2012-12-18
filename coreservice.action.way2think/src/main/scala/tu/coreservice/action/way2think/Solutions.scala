@@ -28,6 +28,12 @@ class Solutions {
   }
 
   def search(issue: ConceptNetwork, badSolutions: List[ConceptNetwork]): Option[SolvedIssue] = {
+    val res = searchNotEffective(issue, badSolutions, 1)
+    if (res.size == 0) return None
+    Some(res.sortWith((s, t) => s.issue.nodes.size < t.issue.nodes.size).head)
+  }
+
+  private def searchNotEffective(issue: ConceptNetwork, badSolutions: List[ConceptNetwork], k:Int): List[SolvedIssue] = {
     var found_solutions: List[SolvedIssue] = Nil
     for (s <- solutions) {
       if (distance(issue, s.issue, 0) == 0)
@@ -35,13 +41,22 @@ class Solutions {
     }
 
     //If not found, then return None else - return SolvedIssue with minimal size
-    val res = if (found_solutions.isEmpty) {
-      None
+    val res: List[SolvedIssue] = if ( k == 0 || !found_solutions.isEmpty) {
+      found_solutions
     } else {
-      Some(found_solutions.sortWith((s, t) => s.issue.nodes.size < t.issue.nodes.size).head)
+      val subIssues = CNMinusList(issue)
+      subIssues.map(p => searchNotEffective(issue, badSolutions, k-1)).reduce((A, B) => A::: B)
     }
     log info("solutions found={}", res)
     res
+  }
+
+  private def CNMinusList(issue: ConceptNetwork): List[ConceptNetwork] = {
+    def issueWithoutNode(n:Concept):ConceptNetwork = {
+      val nodes=issue.rootNodes.filter(p => p==n)
+      return new ConceptNetwork(nodes, issue.links, issue.uri, issue.probability)
+    }
+    issue.rootNodes.map(issueWithoutNode)
   }
 
   def distance(issue: ConceptNetwork, master: ConceptNetwork, k: Int): Int = {
