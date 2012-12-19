@@ -16,8 +16,7 @@ import communication.ContextHelper._
 import howto.Solution
 import narrative.Rule
 import primitive.{KnowledgeBoolean, KnowledgeString}
-import tu.coreservice.utilities.TestDataGenerator
-import tu.dataservice.knowledgebaseserver.KBAdapter
+import tu.dataservice.knowledgebaseserver.{Defaults, KBAdapter}
 
 
 /**
@@ -75,8 +74,8 @@ class SearchSolutionTest  extends FunSuite
       def apply = new KnowledgeBoolean(false, uri)
     }
 
-    val s = new Solution(List(TestDataGenerator.generateInstallFirefoxHowTo), uri)
-    new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability)
+    val s = new Solution(List(Defaults.generateInstallFirefoxHowTo), uri)
+    new SolvedIssue(Defaults.pleaseInstallFFSimulation, s, uri, new Probability)
   }
 
 }

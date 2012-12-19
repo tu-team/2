@@ -21,6 +21,7 @@ import primitive.KnowledgeBoolean
 import semanticnetwork.SemanticNetwork
 import semanticnetwork.SemanticNetworkLink
 import semanticnetwork.SemanticNetworkNode
+import tu.dataservice.knowledgebaseserver.Defaults
 
 /**
  * @author adel
@@ -33,10 +34,10 @@ class SolvedIssueTest extends FunSuite {
 
   val uri = new KnowledgeURI("namespace", "name", "revision")
   val probability = new Probability
-  val s = new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, getTestSolution(), uri, probability)
+  val s = new SolvedIssue(Defaults.pleaseInstallFFSimulation, getTestSolution(), uri, probability)
 
   test("SolvedIssue should contain issue and solution") {
-    expect(s.issue.uri.toString)(TestDataGenerator.pleaseInstallFFSimulation.uri.toString)
+    expect(s.issue.uri.toString)(Defaults.pleaseInstallFFSimulation.uri.toString)
     expect(s.solution.uri.toString)(getTestSolution().uri.toString)
   }
 

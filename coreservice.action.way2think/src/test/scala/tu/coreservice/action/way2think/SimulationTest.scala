@@ -11,9 +11,9 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import simulation.Simulation
-import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.KnowledgeURI
+import tu.coreservice.utilities.TestDataGenerator
 
 @RunWith(classOf[JUnitRunner])
 class SimulationTest extends FunSuite {
