@@ -45,7 +45,7 @@ class Solutions {
       found_solutions
     } else {
       val subIssues = CNMinusList(issue)
-      subIssues.map(p => searchNotEffective(issue, badSolutions, k-1)).reduce((A, B) => A::: B)
+      subIssues.map(p => searchNotEffective(p, badSolutions, k-1)).reduce((A, B) => A::: B)
     }
     log info("solutions found={}", res)
     res
