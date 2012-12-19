@@ -1,7 +1,6 @@
 package tu.dataservice.knowledgebaseserver
 
 import providers.N4JKB
-import tu.coreservice.utilities.TestDataGenerator
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.model.knowledge.action.ActionModel
@@ -115,15 +114,6 @@ object KBAdapter {
     }
   }
 
-  @deprecated
-  def annotationsDep = Map[String, AnnotatedPhrase](
-    "Please" ->
-      AnnotatedPhrase.apply("Please", Concept.apply("formOfPoliteness")),
-    TestDataGenerator.fireFoxAnnotatedPhrase.text ->
-      TestDataGenerator.fireFoxAnnotatedPhrase,
-    TestDataGenerator.installAnnotatedPhrase.text ->
-      TestDataGenerator.installAnnotatedPhrase
-  )
 
   def annotations: Map[String, AnnotatedPhrase] = Defaults.phrases.map(
     (phrase: AnnotatedPhrase) => {
@@ -202,7 +192,7 @@ object KBAdapter {
     val uri = new KnowledgeURI("namespace", "name", "revision")
 
     val s = new Solution(List(Defaults.generateInstallFirefoxHowTo), uri)
-    List(new SolvedIssue(TestDataGenerator.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
+    List(new SolvedIssue(Defaults.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
   }
 
   /** *

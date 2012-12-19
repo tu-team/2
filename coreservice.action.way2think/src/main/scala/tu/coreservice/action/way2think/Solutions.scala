@@ -53,7 +53,7 @@ class Solutions {
 
   private def CNMinusList(issue: ConceptNetwork): List[ConceptNetwork] = {
     def issueWithoutNode(n:Concept):ConceptNetwork = {
-      val nodes=issue.rootNodes.filter(p => p==n)
+      val nodes=issue.rootNodes.filter(p => p!=n)
       return new ConceptNetwork(nodes, issue.links, issue.uri, issue.probability)
     }
     issue.rootNodes.map(issueWithoutNode)

@@ -73,7 +73,7 @@ object Defaults {
   val userConcept = Concept.createSubConcept(subjectConcept, "user")
   val addressConcept = Concept.createSubConcept(objectConcept, "address")
   val computerConcept = Concept.createSubConcept(objectConcept, "computer")
-  val firefoxConcept = Concept.createSubConcept(browserConcept, "Mozilla Firefox")
+  val firefoxConcept = Concept.createSubConcept(browserConcept, "Firefox")
   val systemConcept = Concept.createSubConcept(objectConcept, "system")
 
 
