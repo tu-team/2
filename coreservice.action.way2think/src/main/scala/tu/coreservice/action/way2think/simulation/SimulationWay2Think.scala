@@ -35,7 +35,10 @@ class SimulationWay2Think extends Way2Think {
               conceptNetworkOption match {
                 case Some(cn: ConceptNetwork) => {
                   val context = ContextHelper(List[Resource](), cn, this.getClass.getName + " result")
+                  context.notUnderstoodPhrases = cn.notKnownPhrases
                   context.simulationResult = Some(cn)
+
+
                 }
                 case None => {
                   // val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
@@ -57,7 +60,9 @@ class SimulationWay2Think extends Way2Think {
               conceptNetworkOption match {
                 case Some(cn: ConceptNetwork) => {
                   val context = ContextHelper(List[Resource](), cn, this.getClass.getName + Constant.RESULT)
+                  context.notUnderstoodPhrases = cn.notKnownPhrases
                   context.simulationResult = cn
+
                 }
                 case None => {
                   // val cry4Help = Cry4HelpWay2Think("$No_matches_detected_in_domain_model")
