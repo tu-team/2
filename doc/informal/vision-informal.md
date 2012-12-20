@@ -1,4 +1,4 @@
-# Menta 0.3 vision.
+# TU vision.
 Problem/prototype centric view.
 
 ![Problems mind map](https://github.com/development-team/2/raw/master/doc/informal/mind-maps/problem%20highlevel.png)
@@ -71,7 +71,7 @@ Emotion machine +
 
   1. OpenCog is created on C++, could be hard to integrate with Scala application, see [JCog](https://launchpad.net/jcog), see [PLN](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#PLN) and [MOSES](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#MOSES) prototypes
     2. Some parts of OpenCog is in Java: RelEx, NLGen2.
-  1. [OpenCog is the framework, we have to understand how do we integrate and implement parts of Menta-0.3 perceiving system.](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#OpenCog)
+  1. [OpenCog is the framework, we have to understand how do we integrate and implement parts of TU perceiving system.](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#OpenCog)
   1. AtomSpace could be not usable for our [knowledge representation](http://web.media.mit.edu/~minsky/E8/eb8.html#_Toc518305130), see [prototype](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#AtomSpace)
   1. [PLN could be hard to integrate in Scala project.](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#PLN)
   1. [MOSES could be not usable for our knowledge](https://github.com/development-team/2/blob/master/doc/informal/prototypes-estimates.md#MOSES).

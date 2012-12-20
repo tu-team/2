@@ -80,6 +80,7 @@ class Simulation extends SimulationReformulationAbstract {
     log info("not known={}", notKnown)
     val unAmbiguous = processAmbiguousBackReferences(ambiguous, in)
     log info("processed ambiguous={}", unAmbiguous)
+
     if (notKnown.size > 0) {
       return Some(ConceptNetwork.apply (notKnown))
     }
