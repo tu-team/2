@@ -1,9 +1,11 @@
-#TU PRODUCT DESCRIPTION
+#Pandora product description.
 
 
 ##Introduction
 
 Introduce the TU product and the approach to demonstrating it’s characteristics through prototyping (essentially an abstract).  Should be approximately no more than half of page in length.  Should summarize the current IS system support problem with some reference/date support.  Should outline problem and needed solution characteristics.
+
+Pandora product is ITSM problem processing system. It represents virtual personality
 
 
 ##TU Product Description
