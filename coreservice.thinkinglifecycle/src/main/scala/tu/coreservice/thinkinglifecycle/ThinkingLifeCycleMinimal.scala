@@ -120,7 +120,7 @@ class ThinkingLifeCycleMinimal
           this.globalContext = mergeContexts(contexts)
           val refContexts = processReflectiveCritics(globalContext)
           this.globalContext = mergeContexts(refContexts)
-          log debug "out Contexts: " + contexts.toString()
+         // log debug "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
