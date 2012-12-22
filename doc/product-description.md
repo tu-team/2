@@ -11,7 +11,7 @@ It represents virtual personality with only one goal to help user. Virtual perso
 According to our estimates approximatelly 60 persent of problems processed daily by IS support specialists are primitive and could be processed by systems with machine understanding. To build machined understanding we exploit human thinking model with base approach described in Marvin Minsky Book the [Emotion Machine](http://en.wikipedia.org/wiki/Emotion_machine).
 
 
-##TU Product Description
+##Product Description
 
 Top level description of TU product (define functional scope - release ability to perform required functionality) for the average (stupid) reader – summary of the solution – and its goals and objectives.
 Including:
