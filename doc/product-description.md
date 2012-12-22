@@ -5,7 +5,7 @@
 
 Introduce the TU product and the approach to demonstrating it’s characteristics through prototyping (essentially an abstract).  Should be approximately no more than half of page in length.  Should summarize the current IS system support problem with some reference/date support.  Should outline problem and needed solution characteristics.
 
-Pandora product is ITSM problem processing system. It represents virtual personality
+Pandora product is primitive problem processing system. It represents virtual personality with only one goal to help user. Virtual personality are trained to resolve only ITSM problems now, starting from monitoring of WINS, Posix, Storage systems till simple investigation/analysis of infrastructure incidents. Virtual personality is new type of service that reacts as human specialist in social environment and has cognition mechanism similar to human, therefore has emotions and exploits human thinking model. Virtual personality could be trained to solve problems in different domains except for ITSM.
 
 
 ##TU Product Description
