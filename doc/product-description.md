@@ -6,14 +6,37 @@
 Pandora product is problem processing system. 
 It represents virtual personality with only one goal to help user. Virtual personality are trained to resolve only ITSM problems now, starting from monitoring of WINS, Posix, Storage systems till simple investigation/analysis of infrastructure incidents. Virtual personality is new type of service that reacts as human specialist in social environment and has cognition mechanism similar to human, therefore has emotions and exploits human thinking model. Virtual personality could be trained to solve problems in different domains except for ITSM, for example: accounting, health care, enterprise resource processing.
 
-According to our estimates approximatelly 60 persent of problems processed daily by IS support specialists are primitive and could be processed by systems with machine understanding. To build machined understanding we exploit human thinking model with base approach described in Marvin Minsky Book the [Emotion Machine](http://en.wikipedia.org/wiki/Emotion_machine).
+According to our estimates approximately 60 percent of problems processed daily by IS support specialists are primitive and could be processed by systems with machine understanding. To build machined understanding we exploit human thinking model with base approach described in Marvin Minsky Book the [Emotion Machine](http://en.wikipedia.org/wiki/Emotion_machine).
 
+Current prototype is feasibility study of the human thinking model approach. It was created to test the virtual personality capabilities to process problems with no human interaction.
 
 ##Product Description
+
+Pandora virtual personality is new type of product. It is not peace of software it is human mind build in stored and distributed in cloud with following functions:
+
+ 1. Dialog support
+   2. Clarification requests.
+   2. Confirmation requests.
+   2. Escalations of to hard to solve problems.
+ 1. Training:
+   2. Training domain(s) concepts.
+   2. Training problem solving how-to-s.
+ 1. Operation:
+   2. Find solution.
+   2. Apply found solution.
+
+Virtual personality was created to perform repetitive and primitive operations over IT systems. Virtual personality is capable of human like thinking thus understanding and collaboration with human operators in dialog mode. Virtual personality behaviour is based on one goal to help user solve his/her problem as much effective as possible.
+
+Virtual personality collaborate with several human experts:
+
+ 1. Domain user - virtual personality user, that uses system in the boundaries of one domain.
+ 1. Domain trainer - domain expert capable of training the virtual personality domain concepts and their links.
+ 1. How-to trainer - human technical support specialist capable to train virtual personality methods and resources to solve domain user problems.
 
 Top level description of TU product (define functional scope - release ability to perform required functionality) for the average (stupid) reader – summary of the solution – and its goals and objectives.
 Including:
 System context – picture TU and interfaces to end user, learner, domain expert, Core expert and etc.
+
 
 ###Key Product Features and Capabilities
 
