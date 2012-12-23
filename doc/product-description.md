@@ -45,6 +45,8 @@ Virtual personality uses human thinking model to understand and collaborate with
 
 ###Major Components (Hardware/Software)
 
+![Main component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/MainComponents.png)
+
 Overview of how it is structured to do whatever it does – based on, and breakdown of software algorithms and flow component’s processes.
 
 ###Target Market/Customer Base
