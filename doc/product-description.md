@@ -1,4 +1,4 @@
-#Pandora product description.
+#Pandora product and prototype description.
 
 
 ##Introduction
@@ -33,14 +33,15 @@ Virtual personality collaborate with several human experts:
  1. Domain trainer - domain expert capable of training the virtual personality domain concepts and their links.
  1. How-to trainer - human technical support specialist capable to train virtual personality methods and resources to solve domain user problems.
 
-Top level description of TU product (define functional scope - release ability to perform required functionality) for the average (stupid) reader – summary of the solution – and its goals and objectives.
-Including:
-System context – picture TU and interfaces to end user, learner, domain expert, Core expert and etc.
-
-
 ###Key Product Features and Capabilities
 
-What does it do, what is significant/unique/innovative about it and what it accomplishes, describing how this solves the problem.
+Pandora virtual personality is capable of three main activities:
+ 1. Communicate and collaborate with human specialist in dialog mode.
+ 1. Be trained and train domain knowledge and problem solution how-to-s.
+ 1. Find most probable solution.
+ 1. Apply found solution over target system.
+
+Virtual personality uses human thinking model to understand and collaborate with human users, experts and specialists. Emotions and feelings play significant role in social collaboration and thinking. For example training uses emotions to emphasize solution application effect and is used as natural machine learning reinforcement. Emotions are used to control the virtual personality behaviour, for example in time control: to switch from neutral to anxious state and get more thinking resources. Virtual personality behaviour is mainly defined in Knowledge Base, that consists of two main parts: short term memory, and long term memory. Short term is used to store current problem context and long term is persistence storage.
 
 ###Major Components (Hardware/Software)
 
@@ -50,7 +51,7 @@ Overview of how it is structured to do whatever it does – based on, and breakd
 
 Who/what is if for – i.e. individuals, industry, environment – and why. Live for A.K input
 
-##TU Product Prototype Description
+##Pandor Product Prototype Description
 
 Top level description of the TU prototype as it relates to the end product TU 0.1 prom release – goal.  Are capabilities reduced or eliminated? Simulated – modeled? Readiness for final development.
 
