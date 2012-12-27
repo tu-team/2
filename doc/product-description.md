@@ -54,9 +54,9 @@ Virtual personality uses human thinking model to understand and collaborate with
 
 ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resources(Critic, Way to think) using Critic request. Critic is main analytical module of short term memory. Way to think actually changes contents of short term memory.
 
-Overview of how it is structured to do whatever it does – based on, and breakdown of software algorithms and flow component’s processes.
-
 ###Target Market/Customer Base
+
+
 
 Who/what is if for – i.e. individuals, industry, environment – and why. Live for A.K input
 
