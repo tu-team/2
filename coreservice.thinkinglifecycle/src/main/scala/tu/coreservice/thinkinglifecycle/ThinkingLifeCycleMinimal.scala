@@ -154,7 +154,7 @@ class ThinkingLifeCycleMinimal
       if (resContext != null) {
         globalContext = copyGlobalContext(resContext)
       }
-      val contextToCheck = resContext.lastResult match {
+      val contextToCheck =(resContext.lastResult) match {
         case Some(sR: SelectorRequest) => {
           this.processSelectorRequest(sR)
         }

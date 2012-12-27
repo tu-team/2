@@ -5,6 +5,7 @@ import annotator.AnnotatedPhrase
 import domain.{Concept, ConceptNetwork}
 import selector.SelectorRequest
 import training.Goal
+import java.util.Date
 
 /**
  * Stores contexts parameters.
@@ -34,6 +35,7 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _notUnderstoodConcepts: List[Concept] = List[Concept]()
   var _notUnderstoodPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
   var _lastReflectiveResult: Option[Resource] = None
+
 
   def lastReflectiveResult = _lastReflectiveResult
 
@@ -290,7 +292,7 @@ object ContextHelper {
    */
   def merge(first: ShortTermMemory, second: ShortTermMemory): ShortTermMemory = {
     val res = ContextHelper.createContext(first.frames ++ second.frames, mergeList(first.classificationResults, second.classificationResults),
-      first.uri.name + "&" + second.uri.name)
+      String.format ("CtxMerged%1$tH%1$tM%1$tS",new Date()))
     res.checkedClassificationResults = mergeList(first.checkedClassificationResults, second.checkedClassificationResults)
     res
   }
