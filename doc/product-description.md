@@ -47,12 +47,12 @@ Virtual personality uses human thinking model to understand and collaborate with
 
 ![Main component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/MainComponent.png)
 
-[ThinkingLifeCycle](thinking-life-cycle.md)
- 2. [Selector](design-specification/selector.md)
- 2. [Critics](design-specification/critics.md)
- 2. [Way2Think](design-specification/way2Think.md)
+ 1. [Thinking life cycle](design-specification/thinking-life-cycle.md)
+ 1. [Selector](design-specification/selector.md)
+ 1. [Critics](design-specification/critics.md)
+ 1. [Way to think](design-specification/way2Think.md)
 
-
+ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resources(Critic, Way to think) using Critic request. Critic is main analytical module of short term memory. Way to think actually changes contents of short term memory.
 
 Overview of how it is structured to do whatever it does – based on, and breakdown of software algorithms and flow component’s processes.
 
