@@ -48,9 +48,10 @@ Virtual personality uses human thinking model to understand and collaborate with
 ![Main component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/MainComponent.png)
 
 [ThinkingLifeCycle](thinking-life-cycle.md)
- 2. [Selector](selector.md)
- 2. [Critics](critics.md)
- 2. [Way2Think](way2Think.md)
+ 2. [Selector](design-specification/selector.md)
+ 2. [Critics](design-specification/critics.md)
+ 2. [Way2Think](design-specification/way2Think.md)
+
 
 
 Overview of how it is structured to do whatever it does – based on, and breakdown of software algorithms and flow component’s processes.
@@ -59,7 +60,7 @@ Overview of how it is structured to do whatever it does – based on, and breakd
 
 Who/what is if for – i.e. individuals, industry, environment – and why. Live for A.K input
 
-##Pandor Product Prototype Description
+##Pandora Product Prototype Description
 
 Top level description of the TU prototype as it relates to the end product TU 0.1 prom release – goal.  Are capabilities reduced or eliminated? Simulated – modeled? Readiness for final development.
 
