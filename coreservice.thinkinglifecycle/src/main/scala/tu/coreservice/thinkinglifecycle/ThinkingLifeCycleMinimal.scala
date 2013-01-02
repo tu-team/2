@@ -183,7 +183,7 @@ class ThinkingLifeCycleMinimal
    */
   def processReflectiveCritics(contextToCheck: ShortTermMemory): List[ShortTermMemory] = {
     val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics
-    processResources(reflectiveCritics)
+    processResources(reflectiveCritics, true)
   }
 
   def translate(resource: Resource, globalContext: ShortTermMemory): ShortTermMemory = {
