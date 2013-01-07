@@ -58,6 +58,9 @@ object KBAdapter {
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
           Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
           Way2ThinkModel("tu.coreservice.action.way2think.correlation.CorrelationWay2Think")
+        ),
+      Goal("Cry4Help") ->
+        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think")
         )
     )
 
