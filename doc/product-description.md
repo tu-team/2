@@ -66,12 +66,28 @@ Pandora prototype is feasibility study for simple incident processing workflow:
  1. Classify and simulate described in incident situation.
  1. Find proper solution from trained knowledge base.
 
-Training workflow looks like following:
+and training workflow:
 
  1. Understand training request text.
  1. Find corresponding concepts in trained knowledge base.
  1. Attach concepts of training request to concepts in knowledge base.
 
+To process two types of request following ways to think and critics were created:
+
+ 1. Natural language processing based on [RelEx](http://wiki.opencog.org/w/RelEx).
+ 1. Incident classification critics.
+ 1. Simulation.
+ 1. Reformulation.
+ 1. Correlation.
+ 1. Solution search.
+
+To process [KMOT]() following ways to think and critics to be designed and developed:
+
+ 1. Probabilistic reasoner based on [PLN](http://wiki.opencog.org/w/PLN)
+ 1. Analytical way to think.
+ 1. Smart solution applicator.
+ 1. Recommendation generator.
+ 1. Project documentation generator.
 
 Top level description of the TU prototype as it relates to the end product TU 0.1 prom release – goal.  Are capabilities reduced or eliminated? Simulated – modeled? Readiness for final development.
 
