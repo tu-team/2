@@ -4,7 +4,7 @@
 ##Introduction
 
 Pandora product is problem processing system. 
-It represents virtual personality with only one goal to help user. Virtual personality are trained to resolve only ITSM problems now, starting from monitoring of WINS, Posix, Storage systems till simple investigation/analysis of infrastructure incidents. Virtual personality is new type of service that reacts as human specialist in social environment and has cognition mechanism similar to human, therefore has emotions and exploits human thinking model. Virtual personality could be trained to solve problems in different domains except for ITSM, for example: accounting, health care, enterprise resource processing.
+It represents virtual personality with only one goal to help user. Virtual personality are trained to resolve only IAS problems now, starting from monitoring of WINS, Posix, Storage systems till simple investigation/analysis of infrastructure incidents. Virtual personality is new type of service that reacts as human specialist in social environment and has cognition mechanism similar to human, therefore has emotions and exploits human thinking model. Virtual personality could be trained to solve problems in different domains except for IAS, for example: accounting, health care, enterprise resource processing.
 
 According to our estimates approximately 60 percent of problems processed daily by IS support specialists are primitive and could be processed by systems with machine understanding. To build machined understanding we exploit human thinking model with base approach described in Marvin Minsky Book the [Emotion Machine](http://en.wikipedia.org/wiki/Emotion_machine).
 
@@ -56,11 +56,22 @@ ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resour
 
 ###Target Market/Customer Base
 
-
-
 Who/what is if for – i.e. individuals, industry, environment – and why. Live for A.K input
 
 ##Pandora Product Prototype Description
+
+Pandora prototype is feasibility study for simple incident processing workflow:
+
+ 1. Understand incident description.
+ 1. Classify and simulate described in incident situation.
+ 1. Find proper solution from trained knowledge base.
+
+Training workflow looks like following:
+
+ 1. Understand training request text.
+ 1. Find corresponding concepts in trained knowledge base.
+ 1. Attach concepts of training request to concepts in knowledge base.
+
 
 Top level description of the TU prototype as it relates to the end product TU 0.1 prom release – goal.  Are capabilities reduced or eliminated? Simulated – modeled? Readiness for final development.
 
