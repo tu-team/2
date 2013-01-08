@@ -3,13 +3,13 @@
 
 ##Introduction
 
-Pandora product is problem processing system. It represents new approach to service oriented business. It provides remote infrastructure managment like RIM, IaaS model, e.t.c. However, Pandora inroduces Technology as a Services. 
+Pandora product is problem processing system. It represents new approach to service oriented business model. It also provides remote infrastructure managment like RIM, IaaS model, e.t.c. However, in different way: Pandora inroduces Technology as a Services. 
 
 ##Product Description
 
 Pandora - system that leverage Machine Understanding theory into the main application of such a theory in order to develop solutions with IT infrastructure capabilities. Main goal is to create machine understanding mechanism for explaining what is to comprehend, to understand and to mean, in a IT domain with delivered solution for  a wide variety of core Infrastructure utility Services, such as hosted cloud, storage, server, collaboration and more, governed by an advanced Pandora  IT Knowledge Base. 
 
-Pandora is not software product in common sense as it suppose to be. Pandora is a technology that provided as a Service to your. For example, if you support remote infrastructure of your customer we will provide Pandora system to you, which was trained by your support manual and will act as technology support specialist. So, we provide your with Technology as a Services.
+Pandora is not software product in common sense as it suppose to be. Pandora is a technology that provided as a Service to your customers. For example, if you support remote infrastructure of your customer we will provide Pandora system to you, which was trained by your support personal and will act as technology support specialist. 
 
 Pandora support nexts functions:
 
@@ -40,7 +40,7 @@ Pandora is capable of three main activities:
  1. Find most probable solution.
  1. Apply found solution over target system.
 
-Pandora can be capable with modern RIM systems like:
+Pandora can be compatible with modern RIM systems like:
  1. HP Open View
  1. LANDesk Management Suite
  1. System Center Configuration Manager 
@@ -70,6 +70,14 @@ Top level description of the TU prototype as it relates to the end product TU 0.
 ###Prototype Functional Goals and Objectives
 
 Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
+
+Pandora prototype will cover next functions:
+
+ 1. Incident processing in natural language
+ 1. Training mode
+ 1. Solution applicator
+ 1. Ability to integrate with existing incident systems
+ 1. Ability to integrate with existing solution application systems 
 
 ###Prototype Architecture (Hardware/Software)
 
