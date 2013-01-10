@@ -1,4 +1,4 @@
-#Q1
+## Q1
 
 I have error UnsatisfiedLinkError in Ubuntu while trying to compile project
 
@@ -7,11 +7,11 @@ A: Ubuntu has problem with LD_LIBRARY_PATH. Please execute in command prompt
 or add this to .bashrc file   (/etc/bash.bashrc)
 To run tests from idea add following parameter to VM parameters:```-Djava.library.path=/usr/local/lib```
 
-#Q2 Proxy settings
+## Q2 Proxy settings
 
 How to setup proxy.
 
-##A:
+### A:
 
 In host project create proxy.conf file with following content:
 ```
