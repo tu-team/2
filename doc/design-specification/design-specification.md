@@ -8,7 +8,7 @@
 ### Production use case
 ![Production use case](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/UseCaseProduction.png)
 
-## <a name="Component_diagram">Component diagram</a>
+## Component diagram
 
 ![Component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Component.png)
 

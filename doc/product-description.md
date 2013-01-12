@@ -1,7 +1,7 @@
-#Pandora product and prototype description.
+# Pandora product and prototype description.
 
 
-##Introduction
+## Introduction
 
 Pandora product is problem processing system. 
 It represents virtual personality with only one goal to help user. Virtual personality are trained to resolve only IAS problems now, starting from monitoring of WINS, Posix, Storage systems till simple investigation/analysis of infrastructure incidents. Virtual personality is new type of service that reacts as human specialist in social environment and has cognition mechanism similar to human, therefore has emotions and exploits human thinking model. Virtual personality could be trained to solve problems in different domains except for IAS, for example: accounting, health care, enterprise resource processing.
@@ -10,11 +10,12 @@ According to our estimates approximately 60 percent of problems processed daily 
 
 Current prototype is feasibility study of the human thinking model approach. It was created to test the virtual personality capabilities to process problems with no human interaction.
 
-##Product Description
+## Product Description
 
 Pandora virtual personality is new type of product. It is not peace of software it is human mind build in stored and distributed in cloud with following functions:
 
  1. Dialog support
+   2. English request understanding.
    2. Clarification requests.
    2. Confirmation requests.
    2. Escalations of to hard to solve problems.
@@ -33,7 +34,7 @@ Virtual personality collaborate with several human experts:
  1. Domain trainer - domain expert capable of training the virtual personality domain concepts and their links.
  1. How-to trainer - human technical support specialist capable to train virtual personality methods and resources to solve domain user problems.
 
-###Key Product Features and Capabilities
+### Key Product Features and Capabilities
 
 Pandora virtual personality is capable of three main activities:
  1. Communicate and collaborate with human specialist in dialog mode.
@@ -43,7 +44,7 @@ Pandora virtual personality is capable of three main activities:
 
 Virtual personality uses human thinking model to understand and collaborate with human users, experts and specialists. Emotions and feelings play significant role in social collaboration and thinking. For example training uses emotions to emphasize solution application effect and is used as natural machine learning reinforcement. Emotions are used to control the virtual personality behaviour, for example in time control: to switch from neutral to anxious state and get more thinking resources. Virtual personality behaviour is mainly defined in Knowledge Base, that consists of two main parts: short term memory, and long term memory. Short term is used to store current problem context and long term is persistence storage.
 
-###Major Components (Hardware/Software)
+### Major Components (Hardware/Software)
 
 ![Main component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/MainComponent.png)
 
@@ -54,7 +55,7 @@ Virtual personality uses human thinking model to understand and collaborate with
 
 ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resources(Critic, Way to think) using Critic request. Critic is main analytical module of short term memory. Way to think actually changes contents of short term memory.
 
-###Target Market/Customer Base
+### Target Market/Customer Base
 
 Who/what is if for – i.e. individuals, industry, environment – and why. Live for A.K input
 
@@ -91,11 +92,12 @@ To process [KMOT]() following ways to think and critics to be designed and devel
 
 Current prototype could be used as the base for end product but requires architectural refactoring as well as technical extensions of components.
 
-###Prototype Functional Goals and Objectives
+### Prototype Functional Goals and Objectives
 
 Prototype is capable of following functions:
 
- 1. Dialog support
+ 1. Dialog support:
+   2. English request understanding.
    2. Clarification requests.
  1. Training:
    2. Training domain(s) concepts.
@@ -107,10 +109,20 @@ Main interface of the system is natural language English. Both training and oper
 
 Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
 
-###Prototype Architecture (Hardware/Software)
+### Prototype Architecture (Hardware/Software)
 
+#### All System Interfaces
 
+Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
+![GUI design](https://github.com/development-team/2/blob/master/doc/design-specification/ui-prototype/images/TU-Web.png)
+All operations and training is done via dialog with the system in English, grammatically and logically correct, though system has several mechanisms for grammatical and semantical auto-correction.
 
+Server part is web-service with two methods:
+
+ 1. apply(Request)
+ 1. apply(TrainingRequest)
+
+For operational and training modes.
 
 How will the prototype be structured to demonstrate key features of the TU 0.1 product.  Prototype TU provided and described.
 Including:
