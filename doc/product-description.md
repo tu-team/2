@@ -93,7 +93,17 @@ Current prototype could be used as the base for end product but requires archite
 
 ###Prototype Functional Goals and Objectives
 
+Prototype is capable of following functions:
 
+ 1. Dialog support
+   2. Clarification requests.
+ 1. Training:
+   2. Training domain(s) concepts.
+   2. Training problem solving how-to-s.
+ 1. Operation:
+   2. Find solution.
+
+Main interface of the system is natural language English. Both training and operation are implemented via one Instant Messenger like GUI. All communications with the system is done in dialog, system processes the inbound support request and clarifies all obscure unclear phrases and concepts. Human operator provides clarifications and then system process clarifications till it becomes able to find proper solution. Training is done in similar way: operator provides training request explaining new concepts, solution how-to-s. Clarification is used for training of the system also.
 
 Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
 
