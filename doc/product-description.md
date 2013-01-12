@@ -89,9 +89,11 @@ To process [KMOT]() following ways to think and critics to be designed and devel
  1. Recommendation generator.
  1. Project documentation generator.
 
-Top level description of the TU prototype as it relates to the end product TU 0.1 prom release – goal.  Are capabilities reduced or eliminated? Simulated – modeled? Readiness for final development.
+Current prototype could be used as the base for end product but requires architectural refactoring as well as technical extensions of components.
 
 ###Prototype Functional Goals and Objectives
+
+
 
 Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
 
