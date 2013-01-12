@@ -114,7 +114,7 @@ Specific functional objectives the prototype will demonstrate and why these are 
 #### All System Interfaces
 
 Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
-![GUI design](https://github.com/development-team/2/blob/master/doc/design-specification/ui-prototype/images/TU-Web.png)
+![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/ui-prototype/images/TU-Web.png)
 All operations and training is done via dialog with the system in English, grammatically and logically correct, though system has several mechanisms for grammatical and semantical auto-correction.
 
 Server part is web-service with two methods:
