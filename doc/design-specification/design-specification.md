@@ -57,6 +57,13 @@ User interacts with system by WebService.
 
 ## <a name="Activity_diagram">Activity diagram</a>
 
+### Operation
+Is actual work of the system to solve the incident according to a description.
+
+[Approximate workflow](https://github.com/development-team/2/blob/master/doc/informal/perceiving-modelling.md#Approximate_workflow)
+
+[Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
+
 ### Training
 Training is complex set of processes to setup and customize system according to domain requirements.
 [Training description](training.md)
@@ -64,13 +71,6 @@ Training is complex set of processes to setup and customize system according to 
 ### UI
 Web interface for the system
 [Web Interface](web-interface.md)
-
-### Production
-Is actual work of the system to solve the incident according to a description.
-
-[Approximate workflow](https://github.com/development-team/2/blob/master/doc/informal/perceiving-modelling.md#Approximate_workflow)
-
-[Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
 
 ### Third party components
 

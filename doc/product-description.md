@@ -113,10 +113,6 @@ Specific functional objectives the prototype will demonstrate and why these are 
 
 #### All System Interfaces
 
-Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
-
-![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/ui-prototype/images/TU-Web.png)
-
 All operations and training is done via dialog with the system in English, grammatically and logically correct, though system has several mechanisms for grammatical and semantical auto-correction.
 
 Server part is web-service with two methods:
@@ -128,26 +124,55 @@ For operational and training modes.
 
 #### Logical view
 
+![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/uml/images/PrototypeComponent.png)
 
+##### Architecturally significant design packages
 
-How will the prototype be structured to demonstrate key features of the TU 0.1 product.  Prototype TU provided and described.
-Including:
+ 1. [Thinking life cycle](design-specification/thinking-life-cycle.md)
+ 1. [Selector](design-specification/selector.md)
+ 1. [Critics](design-specification/critics.md)
+ 1. [Way to think](design-specification/way2Think.md)
 
-1. All System Interfaces
-1. Logical view (UMLenough)
-1. Architecturally significant design packages: major - boundary classes, realization (logic view), process /task view (for example show Process view for end user submission  incident and RealTime threads and mechanism for problem solving and realization on UML diagrams (patterns) with steps descriptions
-1. Deployment view (UMLenough)
-1. System description (Node 1-2-3…etc)
-1. Implementation view (overview, component description, KB model and etc)
-1. General design decisions (architectural goals and constrains) – example: The architectural goals are to make the TU system modifiable and provide high performance and blah blah…  The TU system should be encapsulated so it's easy to port the system to different platform blah…blah…
-1. Architectural patterns
-1. User interface design
-1. Implementation languages and tools
-1. Installation and executing
+#### User request processing
 
-###Prototype Features and Capabilities
+[Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
 
-What does the prototype demonstrate – why is that significant in showing how the problem is solved – or how we can demonstrate success. How does the prototype address the TU prom release 0.1 project risk mitigation?
+#### User interface design
+
+Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
+
+![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/ui-prototype/images/TU-Web.png)
+
+#### Knowledge data model
+[Knowledge model](https://github.com/development-team/2/blob/master/doc/design-specification/knowledge.md)
+
+###### Memory
+
+[Memory](https://github.com/development-team/2/blob/master/doc/design-specification/memory.md)
+
+####  General design decisions
+
+Whole design is build around concept of short living lose coupled parallel processes that collaborates via common short term memory.
+Short term memory is merged in long term memory after confirmation via learning,
+Machine learning is implemented in long term memory via [deductive](http://en.wikipedia.org/wiki/Deductive_reasoning), [inductive](http://en.wikipedia.org/wiki/Inductive_reasoning), and [abductive](http://en.wikipedia.org/wiki/Abductive_reasoning) reasoning.
+
+#### Implementation languages and tools
+
+##### Third party components
+
+ 1. [PLN](http://wiki.opencog.org/w/PLN) – Probabilistic Logic Networks. An logic system for uncertain inference. [GNU Affero license.](http://www.gnu.org/licenses/agpl-3.0.html)
+ 1. [RelEx](http://wiki.opencog.org/w/RelEx) – Extract grammatical parses and semantic knowledge from natural language (in English).[Apache License](http://bazaar.launchpad.net/~relex-dev/relex/trunk/view/head:/LICENSE)
+
+#### Programming languages
+
+ 1. (Scala)[http://www.scala-lang.org/]
+
+#### Tools
+
+ 1. [IntelliJ Idea](http://www.jetbrains.com/idea/)
+ 1. [Maven](http://maven.apache.org/)
+ 1. [NEO4J](http://neo4j.org/) - No SQL data base.
+ 1. [GlassFish](http://glassfish.java.net/) server
 
 ###Prototype Development Challenges solved
 
