@@ -165,7 +165,7 @@ Machine learning is implemented in long term memory via [deductive](http://en.wi
 
 #### Programming languages
 
- 1. (Scala)[http://www.scala-lang.org/]
+ 1. [Scala](http://www.scala-lang.org/)
 
 #### Tools
 
