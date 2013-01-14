@@ -180,8 +180,5 @@ New approach for the machine understanding based on thinking model and new type 
 
 Most significant challenge expected is performance that should be human specialist like, this means that system can not deal with IS incident longer than ordinary IS specialist. Second is training, that should take approximately same time as training of human IS specialist .
 
-##Glossary
-
-##References
 
 
