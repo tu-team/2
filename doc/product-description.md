@@ -176,7 +176,9 @@ Machine learning is implemented in long term memory via [deductive](http://en.wi
 
 ###Prototype Development Challenges solved
 
-Challenges expected solved such completing the objectives of the prototype – ie knowledge missing, capability missing, supporting technology issues, etc.
+New approach for the machine understanding based on thinking model and new type of software architecture was tested. Main architectural challenge was old-fashioned approaches to design and build application. This is new type of the application that could not be solved in traditional way and requires rethinking of architectural approaches.
+
+Most significant challenge expected is performance that should be human specialist like, this means that system can not deal with IS incident longer than ordinary IS specialist. Second is training, that should take approximately same time as training of human IS specialist .
 
 ##Glossary
 
