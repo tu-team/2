@@ -135,8 +135,8 @@ For operational and training modes.
 [Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
 
 #### User interface design
-[A.T.] Like instant manager
-Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
+
+Client GUI for the prototype is done like Instant Manager to communicate with virtual personality.
 
 ![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/ui-prototype/images/TU-Web.png)
 
@@ -174,8 +174,9 @@ Machine learning is implemented in long term memory via [deductive](http://en.wi
 ###Prototype Development Challenges solved
 
 New approach for the machine understanding based on thinking model and new type of software architecture was tested. Main architectural challenge was old-fashioned approaches to design and build application. This is new type of the application that could not be solved in traditional way and requires rethinking of architectural approaches.
-[A.T.] More than human specialist
-Most significant challenge expected is performance that should be human specialist like, this means that system can not deal with IS incident longer than ordinary IS specialist. Second is training, that should take approximately same time as training of human IS specialist .
+Most significant challenge expected is performance that should be similar or higher than human specialist, 
+this means that system can not deal with IS incident longer than ordinary IS specialist. 
+Second challange is training, that should take approximately same time as training of human IS specialist .
 
 
 
