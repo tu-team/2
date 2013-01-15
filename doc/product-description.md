@@ -73,8 +73,8 @@ and training workflow:
  1. Find corresponding concepts in trained knowledge base.
  1. Attach concepts of training request to concepts in knowledge base.
 
-To process two types of request following ways to think and critics were created:
-[A.T.] What is a critic and way to think?
+To process two types of request following [Ways to think](design-specification/way2Think.md) and [critics](design-specification/critics.md) were created:
+
  1. Natural language processing based on [RelEx](http://wiki.opencog.org/w/RelEx).
  1. Incident classification critics.
  1. Simulation.
