@@ -73,7 +73,7 @@ and training workflow:
  1. Find corresponding concepts in trained knowledge base.
  1. Attach concepts of training request to concepts in knowledge base.
 
-To process two types of request following ways to think and critics were created:
+To process two types of request following [Ways to think](design-specification/way2Think.md) and [critics](design-specification/critics.md) were created:
 
  1. Natural language processing based on [RelEx](http://wiki.opencog.org/w/RelEx).
  1. Incident classification critics.
@@ -105,15 +105,12 @@ Prototype is capable of following functions:
  1. Operation:
    2. Find solution.
 
-Main interface of the system is natural language English. Both training and operation are implemented via one Instant Messenger like GUI. All communications with the system is done in dialog, system processes the inbound support request and clarifies all obscure unclear phrases and concepts. Human operator provides clarifications and then system process clarifications till it becomes able to find proper solution. Training is done in similar way: operator provides training request explaining new concepts, solution how-to-s. Clarification is used for training of the system also.
-
-Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
-
 ### Prototype Architecture (Hardware/Software)
 
 #### All System Interfaces
 
 All operations and training is done via dialog with the system in English, grammatically and logically correct, though system has several mechanisms for grammatical and semantical auto-correction.
+Main interface of the system is natural language English. Both training and operation are implemented via one Instant Messenger like GUI. All communications with the system is done in dialog, system processes the inbound support request and clarifies all obscure unclear phrases and concepts. Human operator provides clarifications and then system process clarifications till it becomes able to find proper solution. Training is done in similar way: operator provides training request explaining new concepts, solution how-to-s. Clarification is used for training of the system also.
 
 Server part is web-service with two methods:
 
@@ -139,7 +136,7 @@ For operational and training modes.
 
 #### User interface design
 
-Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
+Client GUI for the prototype is done like Instant Manager to communicate with virtual personality.
 
 ![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/ui-prototype/images/TU-Web.png)
 
@@ -177,8 +174,9 @@ Machine learning is implemented in long term memory via [deductive](http://en.wi
 ###Prototype Development Challenges solved
 
 New approach for the machine understanding based on thinking model and new type of software architecture was tested. Main architectural challenge was old-fashioned approaches to design and build application. This is new type of the application that could not be solved in traditional way and requires rethinking of architectural approaches.
-
-Most significant challenge expected is performance that should be human specialist like, this means that system can not deal with IS incident longer than ordinary IS specialist. Second is training, that should take approximately same time as training of human IS specialist .
+Most significant challenge expected is performance that should be similar or higher than human specialist, 
+this means that system can not deal with IS incident longer than ordinary IS specialist. 
+Second challange is training, that should take approximately same time as training of human IS specialist .
 
 
 

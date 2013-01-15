@@ -65,13 +65,43 @@ ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resour
 
 ##Pandora Product Prototype Description
 
-Top level description of the TU prototype as it relates to the end product TU 0.1 prom release – goal.  Are capabilities reduced or eliminated? Simulated – modeled? Readiness for final development.
+TU prototype is feasibility study for simple incident processing workflow:
+
+ 1. Understand incident description.
+ 1. Classify and simulate described in incident situation.
+ 1. Find proper solution from trained knowledge base.
+
+and training workflow:
+
+ 1. Understand training request text.
+ 1. Find corresponding concepts in trained knowledge base.
+ 1. Attach concepts of training request to concepts in knowledge base.
+
+To process two types of request following ways to think and critics were created:
+
+ 1. Natural language processing based on [RelEx](http://wiki.opencog.org/w/RelEx).
+ 1. Incident classification critics.
+ 1. Simulation.
+ 1. Reformulation.
+ 1. Correlation.
+ 1. Solution search.
+
+To process [KMOT]() following ways to think and critics to be designed and developed:
+
+ 1. Probabilistic reasoner based on [PLN](http://wiki.opencog.org/w/PLN)
+ 1. Analytical way to think.
+ 1. Smart solution applicator.
+ 1. Recommendation generator.
+ 1. Project documentation generator.
+
+Current prototype could be used as the base for end product but requires architectural refactoring as well as technical extensions of components.
+
 
 ###Prototype Functional Goals and Objectives
 
 Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
 
-Pandora prototype will cover next functions:
+TU prototype will cover next functions:
 
  1. Incident processing in natural language
  1. Training mode
@@ -79,33 +109,73 @@ Pandora prototype will cover next functions:
  1. Ability to integrate with existing incident systems
  1. Ability to integrate with existing solution application systems 
 
-###Prototype Architecture (Hardware/Software)
+#### All System Interfaces
 
-How will the prototype be structured to demonstrate key features of the TU 0.1 product.  Prototype TU provided and described.
-Including:
+All operations and training is done via dialog with the system in English, grammatically and logically correct, though system has several mechanisms for grammatical and semantical auto-correction.
 
-1. All System Interfaces
-1. Logical view (UMLenough)
-1. Architecturally significant design packages: major - boundary classes, realization (logic view), process /task view (for example show Process view for end user submission  incident and RealTime threads and mechanism for problem solving and realization on UML diagrams (patterns) with steps descriptions
-1. Deployment view (UMLenough)
-1. System description (Node 1-2-3…etc)
-1. Implementation view (overview, component description, KB model and etc)
-1. General design decisions (architectural goals and constrains) – example: The architectural goals are to make the TU system modifiable and provide high performance and blah blah…  The TU system should be encapsulated so it's easy to port the system to different platform blah…blah…
-1. Architectural patterns
-1. User interface design
-1. Implementation languages and tools
-1. Installation and executing
+Server part is web-service with two methods:
 
-###Prototype Features and Capabilities
+ 1. apply(Request)
+ 1. apply(TrainingRequest)
 
-What does the prototype demonstrate – why is that significant in showing how the problem is solved – or how we can demonstrate success. How does the prototype address the TU prom release 0.1 project risk mitigation?
+For operational and training modes.
+
+#### Logical view
+
+![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/uml/images/PrototypeComponent.png)
+
+##### Architecturally significant design packages
+
+ 1. [Thinking life cycle](design-specification/thinking-life-cycle.md)
+ 1. [Selector](design-specification/selector.md)
+ 1. [Critics](design-specification/critics.md)
+ 1. [Way to think](design-specification/way2Think.md)
+
+#### User request processing
+
+[Lifecycle example, activity diagram.](https://github.com/development-team/2/blob/master/doc/design-specification/lifecycle-activity.md)
+
+#### User interface design
+
+Client GUI for the prototype is done as Instant Manager to communicate with virtual personality.
+
+![GUI design](https://raw.github.com/development-team/2/master/doc/design-specification/ui-prototype/images/TU-Web.png)
+
+#### Knowledge data model
+[Knowledge model](https://github.com/development-team/2/blob/master/doc/design-specification/knowledge.md)
+
+###### Memory
+
+[Memory](https://github.com/development-team/2/blob/master/doc/design-specification/memory.md)
+
+####  General design decisions
+
+Whole design is build around concept of short living lose coupled parallel processes that collaborates via common short term memory.
+Short term memory is merged in long term memory after confirmation via learning,
+Machine learning is implemented in long term memory via [deductive](http://en.wikipedia.org/wiki/Deductive_reasoning), [inductive](http://en.wikipedia.org/wiki/Inductive_reasoning), and [abductive](http://en.wikipedia.org/wiki/Abductive_reasoning) reasoning.
+
+#### Implementation languages and tools
+
+##### Third party components
+
+ 1. [PLN](http://wiki.opencog.org/w/PLN) – Probabilistic Logic Networks. An logic system for uncertain inference. [GNU Affero license.](http://www.gnu.org/licenses/agpl-3.0.html)
+ 1. [RelEx](http://wiki.opencog.org/w/RelEx) – Extract grammatical parses and semantic knowledge from natural language (in English).[Apache License](http://bazaar.launchpad.net/~relex-dev/relex/trunk/view/head:/LICENSE)
+
+#### Programming languages
+
+ 1. [Scala](http://www.scala-lang.org/)
+
+#### Tools
+
+ 1. [IntelliJ Idea](http://www.jetbrains.com/idea/)
+ 1. [Maven](http://maven.apache.org/)
+ 1. [NEO4J](http://neo4j.org/) - No SQL data base.
+ 1. [GlassFish](http://glassfish.java.net/) server
 
 ###Prototype Development Challenges solved
 
-Challenges expected solved such completing the objectives of the prototype – ie knowledge missing, capability missing, supporting technology issues, etc.
+New approach for the machine understanding based on thinking model and new type of software architecture was tested. Main architectural challenge was old-fashioned approaches to design and build application. This is new type of the application that could not be solved in traditional way and requires rethinking of architectural approaches.
 
-##Glossary
-
-##References
+Most significant challenge expected is performance that should be human specialist like, this means that system can not deal with IS incident longer than ordinary IS specialist. Second is training, that should take approximately same time as training of human IS specialist .
 
 
