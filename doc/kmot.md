@@ -28,3 +28,6 @@ Not all graphic modeling languages are  system-friendly that using by human engi
 
 #### Generality. 
 Generality means that the knowledge acquisition and self learning, as well as all knowledge in probabilistic reasoning subject domains, at various levels of granularity and precision should have the capacity to represented. It should enable, to represent by TU system simple models such as an instruction based solution (guide/workbook), up to complex models such as multi - leer knowledge with different level of trust to source of information, complex workflows, rule-based knowledge systems, methods and theories. 
+
+## Knowledge Modeling
+When IS KB domain expert start building a Knowledge Learning Design, two basic questions arise: “Which knowledge must be acquired by the system and what are the target competencies or educational objectives for that knowledge?” and “How should the activities and the environment be organized to achieve knowledge and competency acquisition by system? To help expert solve these questions, we have integrated graphical knowledge recognition and TU system KB modeling method and tool (Sikuli). In this section, we briefly present the basis for a TU system modeling and knowledge language adoption to provide system operational support to experts.
