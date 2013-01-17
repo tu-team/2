@@ -22,3 +22,9 @@ KMOT is the method of specialization for knowledge and competency models using o
 
 ### Desirable properties in KMOT
 That method help grasp by TU system the structure of related ideas by minimizing (clarification) the use of ambiguous natural language texts that allow increase confidence to  data object.
+
+#### TU comprehension - friendliness. 
+Not all graphic modeling languages are  system-friendly that using by human engineers, but contain itself valuable knowledge information. A good counter-example is UML. The large number of models and symbols require considerable expertise and a steep learning time for the interpretation by domain expert and for the construction of knowledge models for TU system KB. Furthermore, each type of model captures a different viewpoint of the information with own attitude to problem solving and it is provide a critical global view of a specific subject domain. The results TU system itself is prefered by the majority of tolerable solution taking into account intermediate sufficiently different meanings.
+
+#### Generality. 
+Generality means that the knowledge acquisition and self learning, as well as all knowledge in probabilistic reasoning subject domains, at various levels of granularity and precision should have the capacity to represented. It should enable, to represent by TU system simple models such as an instruction based solution (guide/workbook), up to complex models such as multi - leer knowledge with different level of trust to source of information, complex workflows, rule-based knowledge systems, methods and theories. 
