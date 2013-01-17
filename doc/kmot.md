@@ -14,3 +14,11 @@ The association between these “initial KB domain content” models and learnin
 Building high quality TU KB learning designs is a very important task but a demanding one. The point of view that a TU KB Learning Design is the result of a charging TSS knowledge engineering process is put forth, where knowledge and competencies (TSS skill sets), learning design and service delivery (monitoring, operational, engineering) models/frameworks are constructed in an integrated knowledge framework.
 
 In the next section of this article, a graphical knowledge recognition tool Sikuli with TU knowledge modeling language is defined. KMOT (knowledge modeling using object types) which was developed as the backbone of our instructional design method. Taxonomy of models will be presented and learning designs will be characterized in this taxonomy as multi-source adopted single knowledge process models.
+
+The following section will present the KMOT + TU system knowledge domain recognition for IS KB Learning Designs. As well as some examples and a process to engineer learning designs from graphical sources (screen snapshots, GUI and etc). The last section presents other types of KMOT models which for Infrastructure domain knowledge and TSS staff competencies that can be used to evaluate the quality of TU KB learning designs. Finally, we propose that the domain (Infrastructure Services) and competency models can provide a knowledge classification scheme for a library of TSS roles and competencies learning design requirements according to sufficiency of knowledge to perform end operation activity.
+
+## KMOT
+KMOT is the method of specialization for knowledge and competency models using on the probabilistic logic weights. We place method within our taxonomy of knowledge models respectively as a multi knowledge collaborative process. The association between these “content” models and learning design components by TU KB is seen as the essential task in an TU system knowledge design methodology.
+
+### Desirable properties in KMOT
+That method help grasp by TU system the structure of related ideas by minimizing (clarification) the use of ambiguous natural language texts that allow increase confidence to  data object.
