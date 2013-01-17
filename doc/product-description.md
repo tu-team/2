@@ -82,7 +82,7 @@ To process two types of request following [Ways to think](design-specification/w
  1. Correlation.
  1. Solution search.
 
-To process [KMOT]() following ways to think and critics to be designed and developed:
+To process [KMOT](kmot.md) following ways to think and critics to be designed and developed:
 
  1. Probabilistic reasoner based on [PLN](http://wiki.opencog.org/w/PLN)
  1. Analytical way to think.
