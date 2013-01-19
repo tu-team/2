@@ -57,3 +57,20 @@ Upon passing all tests the expert plans the validation of the TU system KB learn
 
 #### Phase 6: 
 Expert and service manager prepare KB elements necessary for the delivery of the learning environment to production. 
+
+
+### A knowledge modeling approach.
+
+In each of phases 2, 3 and 4, expert also proposes the development of the KB learning environment along four axes: virtual TSS knowledge and competency (content model), instructional (workflow), domain knowledgeable resources and resolution mechanism cognition. The Sikuli is used as a graphic text recognition mechanism of each axis.
+The Expert’s domain Knowledge Model centers on a representation of the learning environment content domain. In this model, the domain’s facts, standard descriptions, concepts, procedures and principles are indicated and interrelated with probabilistic links to produce explicit TU system IS KB knowledge structure. Then target and prerequisite TSS competencies are linked to knowledge element in the model. 
+*The Instructional Model* is essentially a service workflow based network of learning events and resources according level of operations (monitoring, operational, engineering), to which knowledge and target competencies are associated. Each learning resource is also described by a learning scenario specifying learning and support activities linked to project specific environment.
+
+### Generic virtual TSS Skills (Competencies) and Learning Designs.
+
+The relationship between a learning TU system KB domain design model and a “narrow” TSS knowledge and competency model is critical. As a prerequisites and learning objectives can be defined using the IS-Service specification. Using unstructured text to define competencies or learning objectives is not sufficient to help guide the TU system KB learning design environment. Furthermore, TSS competencies should be linked to particular knowledge resurces in the learning domain, where both should be associated to operational model, and activities according TSS roles and technical competencies.  In this section, the notion of TSS competency specification is elaborated by relating cognitive skills to knowledge, our New system KB taxonomy of cognitive skills is defined, a way to represent them as procedural knowledge models is understand by system. 
+
+#### Competency: Cognitive Skills Applied to Knowledge
+To say that a TU system knows something (put initial domain prerequisite) or that a system must acquire additionally such or such knowledge (learning objective) is not sufficient. What is needed is to specify a degree or a level of knowledge mastery. Thus, we define a competency as a statement that a "New smart virtual TSS" has the ability to apply to a certain knowledge resource, a precise cognitive skill, with a specific degree of “performance” in a certain context.
+We define a cognitive skill, as a generic New intellectual ability, such as to memorize, to transpose, to analyze, to synthesize, to evaluate, to self-control, which can be applied in different knowledge domains. If we need more TU system KB precision, we can add a degree of performance specifying in which situational context the cognitive skill can be applied: in familiar (relative) or new contexts, in simple or complex situations, etc.
+
+Possessing a cognitive skill means that a TU system KB as a learner can solve a corresponding class of problems. For example, if a TU system KB possesses a diagnostic or classification skill, it should be able to solve some diagnostic or classification problems to a certain performance level prescribed by the context. Another view is to see cognitive skills as active procedural – service workflow based knowledge (generic procedures) applied to general TU system KB IS domain knowledge. A third view considers the association between cognitive skills and application environment knowledge (WINTEL platform for example) as objects to be learned together. Integrating all three viewpoints will enable IS domain expert and TU system core expert to provide a complete New system KB domain cognitive skills taxonomy.
