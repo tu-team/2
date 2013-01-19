@@ -40,8 +40,20 @@ KMOT Knowledge Modelling, facilitates in system domain KB thought organization a
 ### A TU system training approach for Problem Solving.
 TU system KB knowledge adapted - resolution mechanism is subdivided into a number of steps where parts of a learning environment or system need to be constructed. These phases are sequential, but spiral, with frequent returns to modify knowledge section by the result of successful done tests (tasks on incident resolution) :
 
-Phase 1: Expert build a description of the skill set requirements and problem, TU system should solve it's context and constraints. The general goal that the TU system KB must fulfill and the main characteristics of the target service knowledge coverage are the most important aspects to address at this point. 
+#### Phase 1: 
+Expert build a description of the skill set requirements and problem, TU system should solve it's context and constraints. The general goal that the TU system KB must fulfill and the main characteristics of the target service knowledge coverage are the most important aspects to address at this point. 
 
-Phase 2: Expert defines a preliminary training solution, centered on a knowledge model for the learning domain. Prerequisite and target competencies are associated to the most important knowledge entities in the model. In this phase, expert also build a first TU system  KB pedagogical model, including all knowledge  objectives called “the TU System learning event network” grouping the main knowledge modules or learning units, their sequencing and the additional knowledge needed to perform them or to be produced by system KB  learner.
+#### Phase 2: 
+Expert defines a preliminary training solution, centered on a knowledge model for the learning domain. Prerequisite and target competencies are associated to the most important knowledge entities in the model. In this phase, expert also build a first TU system  KB pedagogical model, including all knowledge  objectives called “the TU System learning event network” grouping the main knowledge modules or learning units, their sequencing and the additional knowledge needed to perform them or to be produced by system KB  learner.
 
-Phase 3: Expert constructs and puts in TU system KB for processing a complete detailed learning design material. At the same time, a sub-model of the phase 2 knowledge model is associated to each learning unit thus defining “the learning unit content in processing”. According to the evolution of the design, media and delivery principles are refined to prepare the next phase.
+#### Phase 3: 
+Expert constructs and puts in TU system KB for processing a complete detailed learning design material. At the same time, a sub-model of the phase 2 knowledge model is associated to each learning unit thus defining “the learning unit content in processing”. According to the evolution of the design, media and delivery principles are refined to prepare the next phase.
+
+#### Phase 4: 
+Centered on the learning input in KB resources and service delivery, competency models and the properties of objects in these models several professionals may work together. TU system KB support specialists, domain experts establishes system KB knowledge understanding criteria’s and making knowledge acceptance tests. 
+
+#### Phase 5: 
+Upon passing all tests the expert plans the validation of the TU system KB learning environment and produces a list of possible revisions and decisions for improvement of the specifications used in the previous phases.
+
+#### Phase 6: 
+Expert and service manager prepare KB elements necessary for the delivery of the learning environment to production. 
