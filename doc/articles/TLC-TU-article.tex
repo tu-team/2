@@ -35,6 +35,137 @@ For example:
  \item Self-Conscious Critics.
 \end{enumerate}
 
+\subsection{Selector}
+Selector is capable to retrieve Resources (Critic or Way to think) from memory.
+
+\subsection{Way to think}
+
+For example:
+•	Simulation
+•	Correlation
+•	Reformulation
+•	Thinking by analogy
+•	…
+
+Practical example 1, “If incident is an automatically generated, process it using instruction book A”.
+Practical example 2, “If I now the problem, use analogy to solve it”. In current implementation Way To Think is a worker that modifies short term memory.
+
+\subsection{Thinking levels}
+
+Minsky indicates six thinking level. Every thinking level has its own functionality. Every next level is a more complex than previous.
+
+\begin{enumerate}
+ \item Instinctive
+ \item Learned
+ \item Deliberative
+ \item Reflective
+ \item Self-Reflective
+ \item Self-Conscious
+\end{enumerate}
+On the first level there are inborn instincts and there are highest ideals and personal goals on the top level.
+
+\subsection{Facts and statistics}
+One of the inspirations for this work is the study of Incident Dump of Fujitsu GDC Russia Company . Study indicates that there are a lot of “typical” incidents that can be automated.
+
+\subsection{Emotion machine prototype}
+This implementation based on triple Critic-Selector-Way to think. There are several critics, way-to-think and selector has been created:
+
+\begin{enumerate}
+ \item Natural language processing based on RelEx.
+ \item Incident classification critics.
+ \item Simulation.
+ \item Reformulation.
+ \item Correlation.
+ \item Solution search.
+\end{enumerate}
+
+\subsection{Implemented thinking levels}
+
+\begin{enumerate}
+ \item Learned
+ \item Deliberative
+ \item Reflective
+ \item Self Reflective
+ \item Self Conscious
+\end{enumerate}
+
+Implementation currently doesn’t include first instinctive level because there is no direct instinct or inborn reaction on ITSM incident. However, this level is planned for future use as acceleration of automatically generated incidents.
+
+\subsection{Thinking life cycle}
+
+Thinking lifecycle is a main process of current implementation. One of the part of TLC is a data transfer component called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
+
+\emph{Domain model}. Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, crititcs, way to think.\\
+
+\emph{Workflow}. TLC is also holds workflow for application activating specific critics and way to think according to requirements. Typical workflow can be described in following steps:
+
+\begin{itemize}
+ \item Incident processing starts
+ \item Suitable critic activates and returns selector request
+ \item According to selector request Selector retrieves suitable Way to think
+ \item Way To Think modifies data in Short term memory
+ \item Process repeats until all the goals are satisfied
+\end{itemize}
+
+\subsection{Parallelism of Thinking Lifecycle}
+
+\emph{TBD}
+
+\section{Thinking Model}
+
+\subsection{Learned}
+
+\emph{Preprocess manager}. This manager activates several Way To Think to perform initial incident processing. The goal on this critic is to prepare and formalize incident description. There are several Way To Think:
+\begin{itemize}
+ \item Auto Correction of spelling
+ \item Synonymic search
+ \item Annotation – finding existing concepts in Knowledge Base
+\end{itemize}
+
+\subsection{Deliberative}
+
+On the deliberative level selects suitable analyzers from Knowledge Base for Learned level, searches solutions.
+
+\emph{Direct Instruction Analyzer}. This Critic activates when direct instruction detected in incoming request. For example, “Please install MS Office 2012” is a direct instruction for system.
+\emph{Problem With Desired State Analyzer}. Critic activates when problem with desired state detected by the system. For example, “I have Internet Explorer 8 installed, but finance software required Internet Explorer 7”.
+
+\subsection{Reflective}
+
+On the reflective level system sets processing goals, performs time control, solution completeness manager.
+
+\emph{Processing goals}. Processing goals required to increase performance of incident pro-cessing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
+\begin{itemize}
+ \item Resolve incident
+ \item Understand incident type
+ \item Model Direct Instruction
+\end{itemize}
+
+\emph{Time control}. Time control watches across the thinking levels for time of incident processing. (SLA  in terms of ITSM)
+
+\emph{Solution completeness manager}. This manager finds how-to and solution for current incident.
+
+\subsection{Self-reflective}
+On this level system controls parts on lower levels like init context or start time con-trol. All communication of user is also regulated on this level by Do Not Understand Manager and communication with end user.
+\emph{End user communication}. \emph{TBD}
+
+\subsection{Self-conscious}
+This level is a top in hierarchy. On this level system watches its Emotional State. By reacting for long incident processing system changes emotional state to allocate resources for processing.
+
+\section{Initial processing results}
+
+\emph{TBD}
+
+\section{Conclusions}
+
+\emph{TBD}
+
+\section{References}
+
+\begin{itemize}
+ \item Marvin Minsky. The Emotion Machine. Simon \& Schuster Paperbacks 2006.
+ \item Hugo Liu, Henry Lieberman. Metafor: Visualizing Stories as Code, Cambridge, MIT Media Laboratory 2005
+ \item Stuart Russell, Peter Norvig, Artificial Intelligence. A Modern approach, Pearson 2010
+\end{itemize}
 
 \end{document}
 
