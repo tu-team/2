@@ -26,3 +26,13 @@ tu.util.log
 lib/target/
 common.utilities/target/
 */target/
+/web.ui/_ReSharper.TU
+/web.ui/*.DotSettings
+/web.ui/*.ncrunchsolution
+/web.ui/packages/*.*
+!NuGet.exe
+bin
+obj
+*.user
+
+*.suo

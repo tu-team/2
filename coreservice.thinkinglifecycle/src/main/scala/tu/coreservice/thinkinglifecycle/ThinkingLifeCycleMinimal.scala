@@ -3,7 +3,7 @@ package tu.coreservice.thinkinglifecycle
 import tu.model.knowledge.communication._
 import tu.coreservice.action.selector.Selector
 import tu.coreservice.action.Action
-import tu.model.knowledge.{Constant, Resource}
+import tu.model.knowledge.Resource
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.model.knowledge.critic.CriticModel
@@ -120,10 +120,11 @@ class ThinkingLifeCycleMinimal
           this.globalContext = mergeContexts(contexts)
           val refContexts = processReflectiveCritics(globalContext)
           this.globalContext = mergeContexts(refContexts)
-         // log debug "out Contexts: " + contexts.toString()
+          // log debug "out Contexts: " + contexts.toString()
         }
         case None => //End
       }
+
       goalManager.nextGoal(globalContext)
     }
     log debug "apply()"
@@ -138,27 +139,37 @@ class ThinkingLifeCycleMinimal
 
   def processSelectorRequest(request: SelectorRequest): List[ShortTermMemory] = {
     val resources: List[Resource] = selector.apply(request)
-    val contexts = processResources(resources)
+    val contexts = processResources(resources, reflectiveFlag = true)
     contexts
   }
 
   /**
    * Runs through resources and interprets them as Critics or Way2Think with global context, stores result in global context.
-   * @param resources to process
-   * @return List of Contexts results of processing
+   * @param resources to process.
+   * @param reflectiveFlag Boolean flag to identify reflectiveResult use.
+   * @return List of Contexts results of processing.
    */
-  def processResources(resources: List[Resource]): List[ShortTermMemory] = {
-    log debug "processResources(" + resources + ": List[Resource]): List[ShortTermMemory]"
+  def processResources(resources: List[Resource], reflectiveFlag: Boolean = false): List[ShortTermMemory] = {
+    log info "processResources(" + resources + ": List[Resource] " + reflectiveFlag + " Boolean ): List[ShortTermMemory]"
     val contexts: List[List[ShortTermMemory]] = for (r <- resources) yield {
       val resContext = translate(r, this.globalContext)
       if (resContext != null) {
         globalContext = copyGlobalContext(resContext)
       }
-      val contextToCheck = resContext.lastResult match {
-        case Some(sR: SelectorRequest) => {
-          this.processSelectorRequest(sR)
+      val contextToCheck = if (!reflectiveFlag) {
+        (resContext.lastResult) match {
+          case Some(sR: SelectorRequest) => {
+            this.processSelectorRequest(sR)
+          }
+          case _ => List[ShortTermMemory](resContext)
         }
-        case _ => List[ShortTermMemory](resContext)
+      } else {
+        (resContext.lastReflectiveResult) match {
+          case Some(sR: SelectorRequest) => {
+            this.processSelectorRequest(sR)
+          }
+          case _ => List[ShortTermMemory](resContext)
+        }
       }
       contextToCheck
     }
@@ -173,7 +184,7 @@ class ThinkingLifeCycleMinimal
    */
   def processReflectiveCritics(contextToCheck: ShortTermMemory): List[ShortTermMemory] = {
     val reflectiveCritics: List[CriticModel] = KBAdapter.getReflectiveCritics
-    processResources(reflectiveCritics)
+    processResources(reflectiveCritics, true)
   }
 
   def translate(resource: Resource, globalContext: ShortTermMemory): ShortTermMemory = {

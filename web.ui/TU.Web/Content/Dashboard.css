@@ -1,0 +1,56 @@
+﻿.dashboard {
+    float: left;
+    width: 100%;
+}
+
+    .dashboard .dashboard3col {
+        width: 100%;
+        float: left;
+    }
+
+.dashboardCol {
+    float: left;
+    width: 33%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.layout-a .dashboardCol, .layout-a .ui-sortable-placeholder {
+    width: 99%;
+}
+
+.layout-aa .dashboardCol, .layout-aa .ui-sortable-placeholder {
+    width: 49.5%;
+}
+
+.layout-aaa .dashboardCol, .layout-aaa .ui-sortable-placeholder {
+    width: 33%;
+}
+
+.dashboardItem {
+    margin: 0 10px 10px 0;
+    border: solid 1px #e7e7e7;
+}
+
+.dashboardItemHeader {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #dbdbdb;
+    cursor: move;
+}
+
+.dashboardItemBody {
+    margin: 10px;
+    overflow: hidden;
+}
+
+.dashboardFooter {
+    clear: both;
+    width: 100%;
+    background-color: Red;
+}
+
+.nonsortable {
+    display: none;
+}

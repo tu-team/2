@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/siteScripts")
+}
+
+<script id="conversation" type="text/html">
+    <div data-bind="style: { 'text-align' : Direction() == 0 ? 'right' : 'left' }">
+        <div data-bind="text: DateTime"></div>
+        <div data-bind="text: Text"></div>
+    </div>
+</script>
+
+<h2>Index</h2>
+
+<section class="dashboard layout-a">
+    <div class="dashboardCol" style="padding-bottom: 100px;">
+        <div class="dashboardItem">
+            <div class="dashboardItemHeader">
+                Request history
+            </div>
+            <div class="dashboardItemBody">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request name</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: requests">
+                        <tr data-bind="style: { 'background-color': isSelected() ? 'green' : '' }">
+                            <td data-bind="text: Name, click: $root.selectRequest"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="dashboardCol" style="padding-bottom: 100px;">
+        <div class="dashboardItem">
+            <div class="dashboardItemHeader">
+                <!-- ko if: selectedRequest() == null -->
+                New Request
+                <!-- /ko -->
+                <!-- ko with: selectedRequest -->
+                <div data-bind="text: Name"></div>
+                <!-- /ko -->
+            </div>
+            <div class="dashboardItemBody">
+                <table>
+                    <tr>
+                        <td>
+                            @*<textarea contenteditable="false"></textarea>*@
+                            <!-- ko with: selectedRequest -->
+                            <div data-bind="template: { name: 'conversation', foreach: Messages }"></div>
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+                    <tr data-bind="">
+                        <td>
+                            <form data-bind="submit: $root.sendMessage">
+                                <input type="text" name="msgText" data-bind="$root.currentMessage()" />
+                                <select name="requestType" data-bind="">
+                                    <option value="1">Operation</option>
+                                    <option value="2">Train</option>
+                                </select>
+                                <button type="submit" data-bind="disable: isCompleted()">Send</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="dashboardCol" style="padding-bottom: 100px;"></div>
+</section>

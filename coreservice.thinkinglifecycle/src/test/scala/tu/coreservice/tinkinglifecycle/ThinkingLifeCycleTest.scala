@@ -44,6 +44,16 @@ class ThinkingLifeCycleTest extends FunSuite {
     log debug res.toString
   }
 
+
+  test("Please install Firefox Cry4Help.") {
+    val requestText = "Please install Firefox."
+    val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
+    val t = new ThinkingLifeCycleMinimal()
+    val res = t(r)
+    assert(res != null)
+    log debug res.toString
+  }
+
   test("Please install Firefox case.") {
     // training
     BrowserTraining

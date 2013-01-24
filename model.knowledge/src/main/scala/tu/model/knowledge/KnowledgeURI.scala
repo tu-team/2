@@ -58,17 +58,16 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        //if (namespace().size > 0 && name.size > 0 && revision.size > 0 ) {
-        if (_uID=="")
+        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s%6$s%7$s",namespace,Constant.DELIMITER, name.replace(" ","-"),Constant.REVISION_DELIMITER,revision,Constant.UID_DELIMITER,_uID   )))
+
+
+        if (name.length >200)
         {
-          //generate UID
-          //_uID=URIGenerator.generateUID()
+          System.out.println ("greater than 200")
+
         }
-        this._uRI = Some(new URI(namespace + Constant.DELIMITER + name.replace(" ","-") + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
+
         this._uRI
-        //} else {
-        //  None
-        //}
       }
       case Some(_) => {
         _uRI

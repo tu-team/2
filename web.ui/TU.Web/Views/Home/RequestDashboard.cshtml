@@ -1,0 +1,29 @@
+﻿@model TU.Application.Dto.Request
+
+@{
+    ViewBag.Title = "RequestDashboard";
+    Layout = "~/Views/Shared/_DashboardItemLayout.cshtml";
+}
+
+@section dashboardHeader
+{
+Request
+}
+
+@section dashboardBody
+{
+    <table>
+        <tr>
+            <td>
+                <textarea data-bind="value: messages"></textarea></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" />
+                <select><option value="1">Operation</option>
+                    <option value="2">Train</option>
+                </select>
+                <button type="submit">Send</button></td>
+        </tr>
+    </table>
+}

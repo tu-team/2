@@ -7,6 +7,17 @@ Invokes [Selectors](selector.md), [Critics](critics.md), [Way2Think](way2Think.m
 ThinkingLifeCycle represents factory of [Scala Actors](http://www.scala-lang.org/node/242), that uses
 [publisher subscriber pattern](http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
 
+## Thinking Levels
+
+1. Self-Conscious Reflection
+2. Self-Reflective Thinking
+3. Reflective 
+4. Deliberative
+5. Learned
+6. Instinctive
+
+Instinctive level process auto-generated template match incidents.
+
 ## Description
 Objects that represents working threads used Scala Actor pattern.
 
