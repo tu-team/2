@@ -37,7 +37,7 @@ In 2006 year Marvin Minsky has published his book “The Emotion Machine” wher
 \end{enumerate}
 
 \subsection{Critic}
-Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In ITSM domain, for example, when auto generated incident comes to queue Auto Generated Incident critic will be activated. After activating critic becomes Selector. From another point of view activated Critic is a Selector
+Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In ITSM domain, for example, when auto generated incident comes to queue Auto Generated Incident critic will be activated. After activating critic returns Selector.
 For example:
 
 \begin{enumerate}
@@ -82,7 +82,7 @@ On the first level there are inborn instincts and there are highest ideals and p
 \subsection{Facts and statistics}
 One of the inspirations for this work is the study of Incident Dump of Fujitsu GDC Russia Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com} . Study indicates that there are a lot of “typical” incidents that can be automated.
 
-\subsection{Emotion machine prototype}
+\section{Emotion machine prototype}
 This implementation based on triple Critic-Selector-Way to think. There are several critics, way-to-think and selector has been created:
 
 \begin{enumerate}
@@ -106,13 +106,19 @@ This implementation based on triple Critic-Selector-Way to think. There are seve
 
 Implementation currently doesn’t include first instinctive level because there is no direct instinct or inborn reaction on ITSM incident. However, this level is planned for future use as acceleration of automatically generated incidents.
 
-\subsection{Thinking life cycle}
+\section{Thinking life cycle}
 
-Thinking lifecycle is a main process of current implementation. One of the part of TLC is a data transfer component called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
+Thinking lifecycle is a main component of current implementation. It holds control and workflow functionality of prototype. 
 
-\emph{Domain model}. Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, crititcs, way to think.\\
+\subsection{Short Term Memory}
+One of the part of TLC is a data transfer component called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
 
-\emph{Workflow}. TLC is also holds workflow for application activating specific critics and way to think according to requirements. Typical workflow can be described in following steps:
+\subsection{Long Term Memory}
+Insted of Short Term Memory Long Term Memory stores data in database. After several cycles data from Short Term Memory merged with data in Long Term Memory. 
+
+\subsection{Domain model}. Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, crititcs, way to think.\\
+
+\subsection{Workflow}. TLC is also holds workflow for application activating specific critics and way to think according to requirements. Typical workflow can be described in following steps:
 
 \begin{itemize}
  \item Incident processing starts
@@ -165,6 +171,9 @@ On this level system controls parts on lower levels like init context or start t
 
 \subsection{Self-conscious}
 This level is a top in hierarchy. On this level system watches its Emotional State. By reacting for long incident processing system changes emotional state to allocate resources for processing.
+
+\subsection{Training}
+During the work system can be trained with new data. When system faces with not-known incident. It raises clarification request to human-specialist. In this workflow processed data will be used to solve new incidents and incident that raised this clarification request. 
 
 \section{Initial processing results}
 
