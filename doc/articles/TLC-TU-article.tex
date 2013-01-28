@@ -1,19 +1,14 @@
-\documentclass[12pt]{article}
+\documentclass{llncs}
 
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage[colorlinks]{hyperref}
 
 \title{Thinking Lifecycle as an implementation of machine understanding in software maintenance domain}
-\author{Alexander Toschev\\
-Kazan State University,Postgraduate student,Kazan,Russia\\
-\texttt{Alexander.toschev@gmail.com},\\
-Max Talanov\\Fujitsu GDC Russia, software design architect, Kazan, Russia\\
-\texttt{Maxim.talanov@ts.fujitsu.com},\\
-Andrei Krekhov\\
-Fujitsu GDC Russia, business development manager, Kazan, Russia\\
-\texttt{Andrey.krekhov@ts.fujitsu.com}
-}
+
+\author{Alexander Toschev\inst{1}, Maxim Talanov\inst{2}, Andrey Krekhov\inst{2}}
+\institute{Kazan State University, Kazan, Russia
+\and
+Fujitsu GDC Russia, Kazan, Russia}
+
+
 \date{\today}
 
 \begin{document}
@@ -21,7 +16,7 @@ Fujitsu GDC Russia, business development manager, Kazan, Russia\\
 \maketitle
 
 \begin{abstract}
-IT maintenance domain is wide and contains a lot of tools that hels to solve a lot of every-day problems. IT maintenance also contains a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. Key to machine understanding is human thinking and its parts: correlation, simulation, and reformulation. All those ways to think work in thinking cycle and it could be considered as a key for whole machine understanding of IT maintenance request. In 2006 Marvin Minsky has published his book “The Emotion Machine” which was our inspiration and the base of implementation described below.
+IT maintenance domain is wide and contains a lot of tools that hels to solve a lot of every-day problems. IT maintenance also contains a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
 
 \emph{Keywords}: AI, machine understanding, it outsourcing.
 
@@ -129,8 +124,7 @@ Insted of Short Term Memory Long Term Memory stores data in database. After seve
 \end{itemize}
 
 \subsection{Parallelism of Thinking Lifecycle}
-
-\emph{TBD}
+Thinking Lifecycle run different crittics over the Short Term Memory simultaneously like a human thinking. In words of hardware different threads are used in incident processing. 
 
 \section{Thinking Model}
 
@@ -154,7 +148,7 @@ On the deliberative level selects suitable analyzers from Knowledge Base for Lea
 
 On the reflective level system sets processing goals, performs time control, solution completeness manager.
 
-\emph{Processing goals}. Processing goals required to increase performance of incident pro-cessing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
+\emph{Goal manager}. Processing goals required to increase performance of incident pro-cessing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
 \begin{itemize}
  \item Resolve incident
  \item Understand incident type
@@ -185,11 +179,24 @@ During the work system can be trained with new data. When system faces with not-
 
 \section{References}
 
-\begin{itemize}
- \item Marvin Minsky. The Emotion Machine. Simon \& Schuster Paperbacks 2006.
- \item Hugo Liu, Henry Lieberman. Metafor: Visualizing Stories as Code, Cambridge, MIT Media Laboratory 2005
- \item Stuart Russell, Peter Norvig, Artificial Intelligence. A Modern approach, Pearson 2010
-\end{itemize}
+\begin{thebibliography}{[MT1]}
+
+\bibitem[MI1]{minsk}
+Minsky M.:
+The Emotion Machine.
+Simon \& Schuster Paperbacks  (2006).
+
+\bibitem[LL1]{lili}
+Liu H., Lieberman H.:
+Metafor: Visualizing Stories as Code.
+Cambridge, MIT Media Laboratory  (2005).
+
+\bibitem[RN1]{runo}
+Russel S., Norvig P.:
+Artificial Intelligence. A Modern approach.
+Pearson (2010).
+
+\end{thebibliography}
 
 \end{document}
 
