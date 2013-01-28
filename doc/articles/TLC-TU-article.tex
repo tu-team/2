@@ -16,7 +16,7 @@ Fujitsu GDC Russia, Kazan, Russia}
 \maketitle
 
 \begin{abstract}
-IT maintenance domain is wide and contains a lot of tools that hels to solve a lot of every-day problems. IT maintenance also contains a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
+IT maintenance domain is wide and contains a lot of tools that helps to solve a lot of every-day problems. IT maintenance also contains a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
 
 \emph{Keywords}: AI, machine understanding, it outsourcing.
 
@@ -32,7 +32,7 @@ In 2006 year Marvin Minsky has published his book “The Emotion Machine” wher
 \end{enumerate}
 
 \subsection{Critic}
-Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In ITSM domain, for example, when auto generated incident comes to queue Auto Generated Incident critic will be activated. After activating critic returns Selector.
+Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In Infrastructure as a service domain, for example, when auto generated incident comes to queue Auto Generated Incident critic will be activated. After activating critic returns Selector.
 For example:
 
 \begin{enumerate}
@@ -99,7 +99,7 @@ This implementation based on triple Critic-Selector-Way to think. There are seve
  \item Self Conscious
 \end{enumerate}
 
-Implementation currently doesn’t include first instinctive level because there is no direct instinct or inborn reaction on ITSM incident. However, this level is planned for future use as acceleration of automatically generated incidents.
+Implementation currently doesn’t include first instinctive level because there is no direct instinct or inborn reaction on IS incident. However, this level is planned for future use as acceleration of automatically generated incidents.
 
 \section{Thinking life cycle}
 
@@ -109,9 +109,9 @@ Thinking lifecycle is a main component of current implementation. It holds contr
 One of the part of TLC is a data transfer component called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
 
 \subsection{Long Term Memory}
-Insted of Short Term Memory Long Term Memory stores data in database. After several cycles data from Short Term Memory merged with data in Long Term Memory. 
+Instead of Short Term Memory Long Term Memory stores data in database. After several cycles data from Short Term Memory merged with data in Long Term Memory.
 
-\subsection{Domain model}. Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, crititcs, way to think.\\
+\subsection{Domain model}. Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, critics, way to think.\\
 
 \subsection{Workflow}. TLC is also holds workflow for application activating specific critics and way to think according to requirements. Typical workflow can be described in following steps:
 
@@ -124,7 +124,7 @@ Insted of Short Term Memory Long Term Memory stores data in database. After seve
 \end{itemize}
 
 \subsection{Parallelism of Thinking Lifecycle}
-Thinking Lifecycle run different crittics over the Short Term Memory simultaneously like a human thinking. In words of hardware different threads are used in incident processing. 
+Thinking Lifecycle run different critics over the Short Term Memory simultaneously like a human thinking. In words of hardware different threads are used in incident processing.
 
 \section{Thinking Model}
 
@@ -148,14 +148,14 @@ On the deliberative level selects suitable analyzers from Knowledge Base for Lea
 
 On the reflective level system sets processing goals, performs time control, solution completeness manager.
 
-\emph{Goal manager}. Processing goals required to increase performance of incident pro-cessing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
+\emph{Goal manager}. Processing goals required to increase performance of incident processing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
 \begin{itemize}
  \item Resolve incident
  \item Understand incident type
  \item Model Direct Instruction
 \end{itemize}
 
-\emph{Time control}. Time control watches across the thinking levels for time of incident processing. (SLA\footnote{SLA-Service Layer Agreement, the time for which incident should be processed} in terms of ITSM)
+\emph{Time control}. Time control watches across the thinking levels for time of incident processing. (SLA\footnote{SLA-Service Layer Agreement, the time for which incident should be processed} in terms of IS domain)
 
 \emph{Solution completeness manager}. This manager finds how-to and solution for current incident.
 
