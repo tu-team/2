@@ -1,0 +1,46 @@
+tense is kind of concept.
+pos is kind of concept.
+system is kind of object.
+user is kind of subject.
+computer is kind of object.
+device is kind of object.
+sofware is kind of object.
+version is kind of object.
+Adobe Photoshop is kind of software.
+Browser is kind of software.
+Mozilla Firefox is kind of browser.
+Microsoft Internet Explorer is kind of browser.
+network is kind of object.
+address is kind of object.
+internet is kind of network.
+sharedResources is kind of object.
+sharedDisk is kind of sharedResources.
+account is kind of object.
+formOfPoliteness is kind of concept.
+action is kind of concept.
+install is kind of action.
+remove is kind of action.
+clean is kind of action.
+problem is kind of object.
+lack is kind of problem.
+desire is kind of concept.
+should is kind of desire.
+shouldHave is kind of should.
+word "hasComputer" is a kind of link "has" from user to computer.
+word "hasSoftware" is a kind of link "has" from computer to software.
+word "hasAccount" is a kind of link "has" from user to account.
+word "hasVersion" is a kind of link "has" from software to version.
+word "isUsedFor" is a link from subject to object.
+word "browserIsUsedForInternet" is a kind of link "isUsedFor" from browser to internet.
+word "applied" is a link from subject to object.
+word "miss" is a link from user to object.
+word "hasNo" is a link from subject to object.
+word "hasProblemWith" is a link from subject to object.
+word "tense" is a link from subject to object.
+word "pos" is a link from subject to object.
+word "actionLink" is a link from subject to object.
+word "install" is a kind of link "actionLink" from subject to software.
+word "remove" is a kind of link "actionLink" from subject to software.
+word "clean" is a kind of link "actionLink" from subject to device.
+please is kind of concept.
+word "lackLink" is a link from lack to internetExplorer.
