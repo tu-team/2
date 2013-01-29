@@ -1,24 +1,41 @@
-\documentclass{llncs}
+\documentclass[runningheads,a4paper]{llncs}
 
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{url}
+
+
+\urldef{\mailalex}\path|{alexander.toschev@gmail.com}|
+\urldef{\mailmax}\path|{max.talanov@gmail.com}|
+\urldef{\mailand}\path|{andrey.krekhov@ts.fujitsu.com}|
+
+\begin{document}
+
+\mainmatter  
 
 \title{Thinking Lifecycle as an implementation of machine understanding in software maintenance domain}
 
-\author{Alexander Toschev\inst{1}, Maxim Talanov\inst{2}, Andrey Krekhov\inst{2}}
-\institute{Kazan State University, Kazan, Russia
+\author{Alexander Toschev\inst{1} \and Maxim Talanov\inst{2} \and Andrey Krekhov\inst{3}}
+\institute{Kazan State University, Chebotarev Research Institute of Mathematics and Mechanics\\
+Universitetskaya 17, 420008 Kazan, Russia\\
+\mailalex\\
 \and
-Fujitsu GDC Russia, Kazan, Russia}
+Fujitsu GDC Russia, Kazan, Russia\\
+\mailmax\\
+\and
+Fujitsu GDC Russia,\\
+Sibirskii trakt 34, 420029 Kazan, Russia\\
+\mailand\\
+}
 
-
-\date{\today}
-
-\begin{document}
 
 \maketitle
 
 \begin{abstract}
 IT maintenance domain is wide and contains a lot of tools that helps to solve a lot of every-day problems. IT maintenance also contains a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
 
-\emph{Keywords}: AI, machine understanding, it outsourcing.
+\keywords{AI, machine understanding, it outsourcing}
 
 \end{abstract}
 
@@ -103,7 +120,7 @@ Implementation currently doesn’t include first instinctive level because there
 
 \section{Thinking life cycle}
 
-Thinking lifecycle is a main component of current implementation. It holds control and workflow functionality of prototype. 
+Thinking lifecycle is a main component of current implementation. It holds control and workflow functionality of prototype.
 
 \subsection{Short Term Memory}
 One of the part of TLC is a data transfer component called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
@@ -130,7 +147,7 @@ Thinking Lifecycle run different critics over the Short Term Memory simultaneous
 
 \subsection{Learned}
 
-\emph{Preprocess manager}. This manager activates several Way To Think to perform initial incident processing. The goal on this critic is to prepare and formalize incident description. There are several Way To Think:
+\subsubsection{Preprocess manager.} This manager activates several Way To Think to perform initial incident processing. The goal on this critic is to prepare and formalize incident description. There are several Way To Think:
 \begin{itemize}
  \item Auto Correction of spelling
  \item Synonymic search
@@ -141,33 +158,36 @@ Thinking Lifecycle run different critics over the Short Term Memory simultaneous
 
 On the deliberative level selects suitable analyzers from Knowledge Base for Learned level, searches solutions.
 
-\emph{Direct Instruction Analyzer}. This Critic activates when direct instruction detected in incoming request. For example, “Please install MS Office 2012” is a direct instruction for system.
-\emph{Problem With Desired State Analyzer}. Critic activates when problem with desired state detected by the system. For example, “I have Internet Explorer 8 installed, but finance software required Internet Explorer 7”.
+\subsubsection{Direct Instruction Analyzer.} This Critic activates when direct instruction detected in incoming request. For example, “Please install MS Office 2012” is a direct instruction for system.
+\subsubsection{Problem With Desired State Analyzer.} Critic activates when problem with desired state detected by the system. For example, “I have Internet Explorer 8 installed, but finance software required Internet Explorer 7”.
 
 \subsection{Reflective}
 
 On the reflective level system sets processing goals, performs time control, solution completeness manager.
 
-\emph{Goal manager}. Processing goals required to increase performance of incident processing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
+\subsubsection{Goal manager.} Processing goals required to increase performance of incident processing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
 \begin{itemize}
  \item Resolve incident
  \item Understand incident type
  \item Model Direct Instruction
 \end{itemize}
 
-\emph{Time control}. Time control watches across the thinking levels for time of incident processing. (SLA\footnote{SLA-Service Layer Agreement, the time for which incident should be processed} in terms of IS domain)
+\subsubsection{Time control.} Time control watches across the thinking levels for time of incident processing. (SLA\footnote{SLA-Service Layer Agreement, the time for which incident should be processed} in terms of IS domain)
 
-\emph{Solution completeness manager}. This manager finds how-to and solution for current incident.
+\subsubsection{Solution completeness manager.} This manager finds how-to and solution for current incident.
 
 \subsection{Self-reflective}
-On this level system controls parts on lower levels like init context or start time control. All communication of user is also regulated on this level by Do Not Understand Manager and communication with end user.
-\emph{End user communication}. \emph{TBD}
+On this level system controls parts on lower levels like init context or start time control. All communication of user is also regulated on this level by Do Not Understand Manager and communication with end user.\\
+Practical example. System doesn't know concept "Opera software". Using the clarification request system learns new concept.
+
+\subsubsection{End user communication.} 
+One of the important part of prototype implementation is an ability of communication with human specialist. When system faces with unknown concept it solves this issue with help from human specialist.  
 
 \subsection{Self-conscious}
 This level is a top in hierarchy. On this level system watches its Emotional State. By reacting for long incident processing system changes emotional state to allocate resources for processing.
 
 \subsection{Training}
-During the work system can be trained with new data. When system faces with not-known incident. It raises clarification request to human-specialist. In this workflow processed data will be used to solve new incidents and incident that raised this clarification request. 
+During the work system can be trained with new data. When system faces with not-known incident. It raises clarification request to human-specialist. In this workflow processed data will be used to solve new incidents and incident that raised this clarification request.
 
 \section{Initial processing results}
 
@@ -175,23 +195,21 @@ During the work system can be trained with new data. When system faces with not-
 
 \section{Conclusions}
 
-\emph{TBD}
+The main goal of described prototype was to demonstrate application of "Emotion Machine" \cite{minsk} in IT Maintenance Domain covering the cycle from incident in natural language and end with understated request. (In future applied solution). Using the training ability prototype can evolute during the operation.
 
-\section{References}
+\begin{thebibliography}{4}
 
-\begin{thebibliography}{[MT1]}
-
-\bibitem[MI1]{minsk}
+\bibitem{minsk}
 Minsky M.:
 The Emotion Machine.
 Simon \& Schuster Paperbacks  (2006).
 
-\bibitem[LL1]{lili}
+\bibitem{lili}
 Liu H., Lieberman H.:
 Metafor: Visualizing Stories as Code.
 Cambridge, MIT Media Laboratory  (2005).
 
-\bibitem[RN1]{runo}
+\bibitem{runo}
 Russel S., Norvig P.:
 Artificial Intelligence. A Modern approach.
 Pearson (2010).
