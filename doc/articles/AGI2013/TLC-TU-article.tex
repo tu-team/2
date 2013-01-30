@@ -12,9 +12,11 @@
 
 \begin{document}
 
-\mainmatter  
+\mainmatter
 
 \title{Thinking Lifecycle as an implementation of machine understanding in software maintenance domain}
+
+\titlerunning{Thinking Lifecycle implementation in ITSM}
 
 \author{Alexander Toschev\inst{1} \and Maxim Talanov\inst{2} \and Andrey Krekhov\inst{3}}
 \institute{Kazan State University, Chebotarev Research Institute of Mathematics and Mechanics\\
@@ -33,14 +35,15 @@ Sibirskii trakt 34, 420029 Kazan, Russia\\
 \maketitle
 
 \begin{abstract}
-IT maintenance domain is wide and contains a lot of tools that helps to solve a lot of every-day problems. IT maintenance also contains a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
+IT maintenance domain is wide and contains a lot of tools that helps to solve a lot of every-day problems. IT maintenance also has a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
 
 \keywords{AI, machine understanding, it outsourcing}
 
 \end{abstract}
 
 \section{Introduction}
-In 2006 year Marvin Minsky has published his book “The Emotion Machine” where he provides model of human thinking dividing all actions into 3 categories:
+This implementation contains machine understanding model based on thinking model because human understanding is also based on human thinking. \\
+In 2006 year Marvin Minsky has published his book “The Emotion Machine” where he describes model of human thinking dividing all actions into 3 categories:
 
 \begin{enumerate}
  \item Critic
@@ -49,7 +52,7 @@ In 2006 year Marvin Minsky has published his book “The Emotion Machine” wher
 \end{enumerate}
 
 \subsection{Critic}
-Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In Infrastructure as a service domain, for example, when auto generated incident comes to queue Auto Generated Incident critic will be activated. After activating critic returns Selector.
+Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In ITSM model\footnote{ITSM - IT Service Management - model of IT services} there is Direct Instruction Critic (will be described below) which activates when direct instruction incident has been received. After activating critic returns Selector.
 For example:
 
 \begin{enumerate}
@@ -61,7 +64,7 @@ For example:
 \end{enumerate}
 
 \subsection{Selector}
-Selector is capable to retrieve Resources (Critic or Way to think) from memory.
+Selector is capable of retrieving Resources (Critic or Way to think) from memory.
 
 \subsection{Way to think}
 
@@ -74,12 +77,12 @@ For example:
  \item …
 \end{itemize}
 
-Practical example 1, “If incident is an automatically generated, process it using instruction book A”.
-Practical example 2, “If I now the problem, use analogy to solve it”. In current implementation Way To Think is a worker that modifies short term memory.
+Practical example 1, “If incident is an automatically generated system should process it using instruction book A”.
+Practical example 2, “If I system knows the problem, use analogy to solve it”.Way To Think in current implementation is a worker that modifies short term memory.
 
 \subsection{Thinking levels}
 
-Minsky indicates six thinking level. Every thinking level has its own functionality. Every next level is a more complex than previous.
+Minsky indicates six thinking level. Every thinking level has its own functionality. Every next level is a more complex than previous and controls previous.
 
 \begin{enumerate}
  \item Instinctive
@@ -92,7 +95,7 @@ Minsky indicates six thinking level. Every thinking level has its own functional
 On the first level there are inborn instincts and there are highest ideals and personal goals on the top level.
 
 \subsection{Facts and statistics}
-One of the inspirations for this work is the study of Incident Dump of Fujitsu GDC Russia Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com} . Study indicates that there are a lot of “typical” incidents that can be automated.
+One of the inspirations for this work is the study of Incident Dump of Fujitsu GDC Russia  Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com}. Study indicates that there are at lest 60\% of typical incidents that can be automated.
 
 \section{Emotion machine prototype}
 This implementation based on triple Critic-Selector-Way to think. There are several critics, way-to-think and selector has been created:
@@ -116,21 +119,11 @@ This implementation based on triple Critic-Selector-Way to think. There are seve
  \item Self Conscious
 \end{enumerate}
 
-Implementation currently doesn’t include first instinctive level because there is no direct instinct or inborn reaction on IS incident. However, this level is planned for future use as acceleration of automatically generated incidents.
+  Instinctive level is planned for future use as acceleration of automatically generated incidents.
 
 \section{Thinking life cycle}
 
-Thinking lifecycle is a main component of current implementation. It holds control and workflow functionality of prototype.
-
-\subsection{Short Term Memory}
-One of the part of TLC is a data transfer component called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
-
-\subsection{Long Term Memory}
-Instead of Short Term Memory Long Term Memory stores data in database. After several cycles data from Short Term Memory merged with data in Long Term Memory.
-
-\subsection{Domain model}. Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, critics, way to think.\\
-
-\subsection{Workflow}. TLC is also holds workflow for application activating specific critics and way to think according to requirements. Typical workflow can be described in following steps:
+Thinking lifecycle is a main component of current implementation. It controls thinking levels, Short Term Memory, Long Term Memory prototype. Typical workflow can be described in following steps:
 
 \begin{itemize}
  \item Incident processing starts
@@ -140,8 +133,16 @@ Instead of Short Term Memory Long Term Memory stores data in database. After sev
  \item Process repeats until all the goals are satisfied
 \end{itemize}
 
-\subsection{Parallelism of Thinking Lifecycle}
-Thinking Lifecycle run different critics over the Short Term Memory simultaneously like a human thinking. In words of hardware different threads are used in incident processing.
+Thinking Lifecycle run different components simultaneously like a human thinking. So, different thinking levels is activated simultaneously.
+
+\subsection{Short Term Memory}
+One of the part of TLC is context called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
+
+\subsection{Long Term Memory}
+Instead of Short Term Memory Long Term Memory persists data in electricity independent storage. After several thinking cycles data from Short Term Memory merged with data in Long Term Memory.
+
+\subsection{Domain model}
+Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, critics, way to think.\\
 
 \section{Thinking Model}
 
@@ -165,29 +166,30 @@ On the deliberative level selects suitable analyzers from Knowledge Base for Lea
 
 On the reflective level system sets processing goals, performs time control, solution completeness manager.
 
-\subsubsection{Goal manager.} Processing goals required to increase performance of incident processing. They have linked critics, way to think Main goal is a “Help User”. There are other goals, that derived from it, for example:
+\subsubsection{Goal manager.} Processing goals required to increase performance of incident processing. They have linked critics, way to think Main goal is a Help User. There are other goals, that derived from it, for example:
 \begin{itemize}
  \item Resolve incident
  \item Understand incident type
  \item Model Direct Instruction
 \end{itemize}
+Goal manager links way to think with actions and finds required for selected goal processing way to think.
 
 \subsubsection{Time control.} Time control watches across the thinking levels for time of incident processing. (SLA\footnote{SLA-Service Layer Agreement, the time for which incident should be processed} in terms of IS domain)
 
-\subsubsection{Solution completeness manager.} This manager finds how-to and solution for current incident.
+\subsubsection{Solution completeness manager.} This manager runs solution analysis to check if solution is completed.
 
 \subsection{Self-reflective}
-On this level system controls parts on lower levels like init context or start time control. All communication of user is also regulated on this level by Do Not Understand Manager and communication with end user.\\
-Practical example. System doesn't know concept "Opera software". Using the clarification request system learns new concept.
+On this level system controls actions on lower levels like initialize Short Term Memory Context or starts time control. All communication of user is also regulated on this level by Do Not Understand Manager and communication with end user.\\
+Practical example: System doesn't know concept "Opera software". Using the clarification request system learns new concept.
 
-\subsubsection{End user communication.} 
-One of the important part of prototype implementation is an ability of communication with human specialist. When system faces with unknown concept it solves this issue with help from human specialist.  
+\subsubsection{Dialog mode.}
+Important part of prototype implementation is an ability to work in Dialog mode with end user. When system faces with problem (e.g. unknown concept) it solves this issue asking help from human specialist.
 
 \subsection{Self-conscious}
 This level is a top in hierarchy. On this level system watches its Emotional State. By reacting for long incident processing system changes emotional state to allocate resources for processing.
 
 \subsection{Training}
-During the work system can be trained with new data. When system faces with not-known incident. It raises clarification request to human-specialist. In this workflow processed data will be used to solve new incidents and incident that raised this clarification request.
+System trains while operation through the communication with human specialist. However, current prototype can work in separate training mode. In which system perceives all input data as training requests.
 
 \section{Initial processing results}
 
@@ -195,7 +197,7 @@ During the work system can be trained with new data. When system faces with not-
 
 \section{Conclusions}
 
-The main goal of described prototype was to demonstrate application of "Emotion Machine" \cite{minsk} in IT Maintenance Domain covering the cycle from incident in natural language and end with understated request. (In future applied solution). Using the training ability prototype can evolute during the operation.
+The main goal of described prototype is to demonstrate application of "Emotion Machine" \cite{minsk} in IT Maintenance Domain covering the cycle from incident in natural language end with understated request. (In future applied solution). Using the training ability prototype can evolute during the operation.
 
 \begin{thebibliography}{4}
 
