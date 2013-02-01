@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2010.10.13)  30 JAN 2013 19:40
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=latex 2010.10.13)  1 FEB 2013 16:34
 entering extended mode
 **TLC-TU-article.tex
 (D:\projects\menta-v-0-3-gh\2\doc\articles\AGI2013\TLC-TU-article.tex
@@ -162,11 +162,10 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (D:\LaTeX\_Full_Tex\texmf\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 91.
 
-(D:\LaTeX\_Full_Tex\texmf\tex\latex\pdftex-def\pdftex.def
-File: pdftex.def 2010/09/14 v0.05b Graphics/color for pdfTeX
-\Gread@gobject=\count115
+(D:\LaTeX\_Full_Tex\texmf\tex\latex\graphics\dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
@@ -175,38 +174,30 @@ File: pdftex.def 2010/09/14 v0.05b Graphics/color for pdfTeX
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(D:\projects\menta-v-0-3-gh\2\doc\articles\AGI2013\TLC-TU-article.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-
-(D:\LaTeX\_Full_Tex\texmf\tex\context\base\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen126
-\scratchbox=\box54
-\nofMPsegments=\count117
-\nofMParguments=\count118
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen127
-\MPnumerator=\count120
-\everyMPtoPDFconversion=\toks21
+(D:\LaTeX\_Full_Tex\texmf\tex\latex\graphics\epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen126
+\epsfysize=\dimen127
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
- (D:\LaTeX\_Full_Tex\texmf\tex\latex\amsfonts\umsa.fd
+(D:\projects\menta-v-0-3-gh\2\doc\articles\AGI2013\TLC-TU-article.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+
+(D:\LaTeX\_Full_Tex\texmf\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
 (D:\LaTeX\_Full_Tex\texmf\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -220,7 +211,7 @@ Missing character: There is no ù in font cmr10!
  [1
 
 
-{D:/LaTeX/_Full_Tex/texmf/pdftex/config/pdftex.map}]
+]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ¶ in font cmr10!
@@ -237,13 +228,16 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
  [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
+File: tuactivity5.eps Graphic file (type eps)
+<tuactivity5.eps>
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
+ [4]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -256,28 +250,15 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
-[4] [5] [6]
+ [5] [6]
 (D:\projects\menta-v-0-3-gh\2\doc\articles\AGI2013\TLC-TU-article.aux) ) 
 Here is how much of TeX's memory you used:
- 1733 strings out of 494019
- 21178 string characters out of 3150490
- 80110 words of memory out of 3000000
- 5031 multiletter control sequences out of 15000+200000
+ 1347 strings out of 494020
+ 16009 string characters out of 3150513
+ 72187 words of memory out of 3000000
+ 4647 multiletter control sequences out of 15000+200000
  10780 words of font info for 42 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  29i,9n,24p,707b,345s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/LaT
-eX/_Full_Tex/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/LaTeX/_Full_Te
-x/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/LaTeX/_Full_Tex/texmf/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb><D:/LaTeX/_Full_Tex/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><D:/LaTeX/_Full_Tex/texmf/fonts/type1/public/amsfonts
-/cm/cmr6.pfb><D:/LaTeX/_Full_Tex/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-<D:/LaTeX/_Full_Tex/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/LaTeX/_Fu
-ll_Tex/texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/LaTeX/_Full_Tex/texm
-f/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on TLC-TU-article.pdf (6 pages, 137756 bytes).
-PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+Output written on TLC-TU-article.dvi (6 pages, 19772 bytes).
