@@ -53,7 +53,7 @@ In 2006 year Marvin Minsky has published his book “The Emotion Machine” wher
 \end{enumerate}
 
 \subsection{Critic}
-Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In ITSM model\footnote{ITSM - IT Service Management - model of IT services} there is Direct Instruction Critic (will be described below) which activates when direct instruction incident has been received. After activating critic returns Selector.
+Critic could be understood as probabilistic predicate. In real world when human faces the problem several critics are activated. In ITSM model\footnote{ITSM - IT Service Management - model of IT services} there is Direct Instruction Critic (described below) which activates when direct instruction incident has been received. After activating critic returns Selector.
 For example:
 
 \begin{enumerate}
@@ -120,11 +120,11 @@ This implementation based on triple Critic-Selector-Way to think. There are seve
  \item Self Conscious
 \end{enumerate}
 
-  Instinctive level is planned for future use as acceleration of automatically generated incidents.
+Instinctive level is planned for future use as acceleration of automatically generated incidents.
 
 \section{Thinking life cycle}
 
-Thinking lifecycle is a main component of current implementation. It controls thinking levels, Short Term Memory, Long Term Memory prototype. Typical workflow can be described in following steps:
+Thinking lifecycle is a main component of current implementation. It controls prototype thinking levels, Short Term Memory, Long Term Memory. Typical workflow described in following steps:
 
 \begin{itemize}
  \item Incident processing starts
@@ -134,7 +134,7 @@ Thinking lifecycle is a main component of current implementation. It controls th
  \item Process repeats until all the goals are satisfied
 \end{itemize}
 
-Thinking Lifecycle run different components simultaneously like a human thinking. So, different thinking levels is activated simultaneously.
+Thinking Lifecycle run different components simultaneously like a human thinking. This way, different thinking levels are activated simultaneously.
 
 \subsection{Short Term Memory}
 One of the part of TLC is context called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
