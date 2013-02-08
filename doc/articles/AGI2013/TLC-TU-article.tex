@@ -53,8 +53,9 @@ In 2006 year Marvin Minsky has published his book “The Emotion Machine” wher
 \end{enumerate}
 
 \subsection{Critic}
-Critic could be understood as probabilistic predicate. In real world when human faces the problem several critics are activated. In ITSM model\footnote{ITSM - IT Service Management - model of IT services} there is Direct Instruction Critic (described below) which activates when direct instruction incident has been received. After activating critic returns Selector.
-For example:
+Critic could be understood as probabilistic predicate. In real world when human faces the problem several critics are activated. In ITSM model\footnote{ITSM - IT Service Management - model of IT services} there is Direct Instruction Critic (described below) that activates when direct instruction incident has been received. After activating critic returns Selector request.
+
+Critic examples:
 
 \begin{enumerate}
  \item Learned Reactive Critics.
@@ -65,11 +66,13 @@ For example:
 \end{enumerate}
 
 \subsection{Selector}
-Selector is capable of retrieving Resources (Critic or Way to think) from memory.
+Selector is capable of retrieving Resources (Critic or Way to think) from memory. Is the main component for memory(see below) processing.
 
 \subsection{Way to think}
 
-For example:
+Worker components that actually changes the contents of short term memory(see below).
+
+Way to think examples:
 \begin{itemize}
  \item Simulation
  \item Correlation
@@ -78,12 +81,12 @@ For example:
  \item …
 \end{itemize}
 
-Practical example 1, “If incident is an automatically generated system should process it using instruction book A”.
-Practical example 2, “If I system knows the problem, use analogy to solve it”.Way To Think in current implementation is a worker that modifies short term memory.
+\emph{Practical example 1}, “If incident is an automatically generated system should process it using instruction book A”.
+\emph{Practical example 2}, “If I system knows the problem, use analogy to solve it”.Way To Think in current implementation is a worker that modifies short term memory.
 
 \subsection{Thinking levels}
 
-Minsky indicates six thinking level. Every thinking level has its own functionality. Every next level is a more complex than previous and controls previous.
+Minsky indicates six thinking level. Every thinking level has its own major functionality. Every next level is a more complex than previous.
 
 \begin{enumerate}
  \item Instinctive
@@ -93,13 +96,13 @@ Minsky indicates six thinking level. Every thinking level has its own functional
  \item Self-Reflective
  \item Self-Conscious
 \end{enumerate}
-On the first level there are inborn instincts and there are highest ideals and personal goals on the top level.
+First level is for inborn instincts and there are highest ideals and personal goals on the top level.
 
 \subsection{Facts and statistics}
-One of the inspirations for this work is the study of Incident Dump of Fujitsu GDC Russia  Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com}. Study indicates that there are at lest 60\% of typical incidents that can be automated.
+We have been inspired by the study of Incident Dump of Fujitsu GDC Russia  Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com}. Study indicates that there are at lest 60\% of typical incidents that can be automated.
 
 \section{Emotion machine prototype}
-This implementation based on triple Critic-Selector-Way to think. There are several critics, way-to-think and selector has been created:
+This implementation based on triple \emph{Critic-Selector-Way to think}. There are several critics, way-to-think and selector has been created:
 
 \begin{enumerate}
  \item Natural language processing based on RelEx.
@@ -124,23 +127,25 @@ Instinctive level is planned for future use as acceleration of automatically gen
 
 \section{Thinking life cycle}
 
-Thinking lifecycle is a main component of current implementation. It controls prototype thinking levels, Short Term Memory, Long Term Memory. Typical workflow described in following steps:
+Thinking lifecycle is a main and central component of current implementation. It controls prototype thinking levels, short term memory, long term memory.
+
+Typical workflow described in following steps:
 
 \begin{itemize}
  \item Incident processing starts
  \item Suitable critic activates and returns selector request
  \item According to selector request Selector retrieves suitable Way to think
  \item Way To Think modifies data in Short term memory
- \item Process repeats until all the goals are satisfied
+ \item Process repeats until all the goals(see below) are satisfied
 \end{itemize}
 
-Thinking Lifecycle run different components simultaneously like a human thinking. This way, different thinking levels are activated simultaneously.
+Thinking Lifecycle(TLC) run different components simultaneously like a human thinking. This way, different thinking levels are activated in parallel.
 
 \subsection{Short Term Memory}
-One of the part of TLC is context called short term memory. Short term memory contains a set of current processing data required for other components: domain model, last processing result e.t.c.
+Ways to think actively operate with common data that are stored in short term memory or a context. Short term memory contains a set of current processing data required for every component of the Selector -> Cricit -> Way to think triple: domain model, last processing result e.t.c.
 
 \subsection{Long Term Memory}
-Instead of Short Term Memory Long Term Memory persists data in electricity independent storage. After several thinking cycles data from Short Term Memory merged with data in Long Term Memory.
+In contrast of Short Term Memory Long Term Memory persists data in electrically independent storage. After several thinking cycles data from short term memory is merged with data in long term memory.
 
 \subsection{Domain model}
 Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, critics, way to think.\\
@@ -157,7 +162,7 @@ The picture below shows Thinking Model diagram
 
 \subsection{Learned}
 
-\subsubsection{Preprocess manager.} This manager activates several Way To Think to perform initial incident processing. The goal on this critic is to prepare and formalize incident description. There are several Way To Think:
+\subsubsection{Process manager.} This manager activates several Way To Think to perform initial incident processing. The goal of this critic is to produce semantic network of the incident. There are several Way To Think:
 \begin{itemize}
  \item Auto Correction of spelling
  \item Synonymic search
@@ -166,39 +171,39 @@ The picture below shows Thinking Model diagram
 
 \subsection{Deliberative}
 
-On the deliberative level selects suitable analyzers from Knowledge Base for Learned level, searches solutions.
+Incident processing on the deliberative level main activities: select suitable analyzers from memory for learned level and search proper solutions.
 
 \subsubsection{Direct Instruction Analyzer.} This Critic activates when direct instruction detected in incoming request. For example, “Please install MS Office 2012” is a direct instruction for system.
-\subsubsection{Problem With Desired State Analyzer.} Critic activates when problem with desired state detected by the system. For example, “I have Internet Explorer 8 installed, but finance software required Internet Explorer 7”.
+\subsubsection{Problem With Desired State Analyzer.} Critic activates when problem with desired state detected by the system. For example, “I have Internet Explorer 8 installed, but finance department requested Internet Explorer 7”.
 
 \subsection{Reflective}
 
-On the reflective level system sets processing goals, performs time control, solution completeness manager.
+System sets processing goals, performs time control, runs solution completeness manager.
 
-\subsubsection{Goal manager.} Processing goals required to increase performance of incident processing. They have linked critics, way to think Main goal is a Help User. There are other goals, that derived from it, for example:
+\subsubsection{Goal manager.} Processing goals mechanism is used to increase performance of incident processing. Goals are links between critics and way to think. Main goal is to Help User. Other goals, that derived from it, for example:
 \begin{itemize}
  \item Resolve incident
  \item Understand incident type
  \item Model Direct Instruction
 \end{itemize}
-Goal manager links way to think with actions and finds required for selected goal processing way to think.
+Goal manager links way to think with actions(critics or way to think) and finds required for current goal processing way to think.
 
-\subsubsection{Time control.} Time control watches across the thinking levels for time of incident processing. (SLA\footnote{SLA-Service Layer Agreement, the time for which incident should be processed} in terms of IS domain)
+\subsubsection{Time control.} Time control tracks time of a incident processing. (SLA\footnote{SLA-Service Layer Agreement, the period of time while incident should be processed} in terms of IS domain)
 
-\subsubsection{Solution completeness manager.} This manager runs solution analysis to check if solution is completed.
+\subsubsection{Solution completeness manager.} This manager runs solution analysis to check if solution found is complete.
 
 \subsection{Self-reflective}
-On this level system controls actions on lower levels like initialize Short Term Memory Context or starts time control. All communication of user is also regulated on this level by Do Not Understand Manager and communication with end user.\\
+System controls actions of lower levels like: initialize short term memory or start time control. All communication with user is also managed on this level, for example by Do Not Understand Manager.\\
 Practical example: System doesn't know concept "Opera software". Using the clarification request system learns new concept.
 
 \subsubsection{Dialog mode.}
 Important part of prototype implementation is an ability to work in Dialog mode with end user. When system faces with problem (e.g. unknown concept) it solves this issue asking help from human specialist.
 
 \subsection{Self-conscious}
-This level is a top in hierarchy. On this level system watches its Emotional State. By reacting for long incident processing system changes emotional state to allocate resources for processing.
+This level is a top in hierarchy. On this level system tracks and sets the Emotional State. For example reacting for long incident processing system changes emotional state to anxious to allocate more resources for processing.
 
 \subsection{Training}
-System trains while operation through the communication with human specialist. However, current prototype can work in separate training mode. In which system perceives all input data as training requests.
+System trains during operation via communication with human specialist. However, current prototype works in separate training mode. System perceives all input data as training requests in it.
 
 \section{Initial processing results}
 
@@ -206,7 +211,7 @@ System trains while operation through the communication with human specialist. H
 
 \section{Conclusions}
 
-The main goal of described prototype is to demonstrate application of "Emotion Machine" \cite{minsk} in IT Maintenance Domain covering the cycle from incident in natural language end with understated request. (In future applied solution). Using the training ability prototype can evolute during the operation.
+The main goal of described prototype is feasibility study of application of "Emotion Machine" \cite{minsk} in IT Maintenance Domain in boundaries of the cycle from processing incident in natural language(English) up to machine understood request. In future: found and applied solution. Prototype is capable of evolving during the operation via training option.
 
 \begin{thebibliography}{4}
 
