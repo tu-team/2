@@ -1,0 +1,27 @@
+<map version="0.9.0">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1360782280641" ID="ID_939508481" MODIFIED="1360783155447" TEXT="Goal">
+<node CREATED="1360782655739" HGAP="25" ID="ID_1579518363" MODIFIED="1360784155591" POSITION="right" TEXT="exit criteria: predicate" VSHIFT="9">
+<icon BUILTIN="full-3"/>
+</node>
+<node CREATED="1360782667365" HGAP="-57" ID="ID_831973499" MODIFIED="1360783208791" POSITION="left" TEXT="Parent Goal" VSHIFT="-55"/>
+<node CREATED="1360782679368" HGAP="104" ID="ID_1109822751" MODIFIED="1360784157919" POSITION="right" TEXT="postcondition (assumed)" VSHIFT="38">
+<icon BUILTIN="full-4"/>
+</node>
+<node CREATED="1360782840335" HGAP="96" ID="ID_996270101" MODIFIED="1360784149904" POSITION="left" TEXT="precondition(assumed)" VSHIFT="-39">
+<icon BUILTIN="full-1"/>
+</node>
+<node CREATED="1360782896488" HGAP="4" ID="ID_742355349" MODIFIED="1360784344545" POSITION="right" TEXT="HowTo0:Narrative" VSHIFT="123">
+<icon BUILTIN="messagebox_warning"/>
+<node CREATED="1360782959872" ID="ID_500320239" MODIFIED="1360783017672" TEXT="Way2Think0"/>
+<node CREATED="1360783023031" ID="ID_1210423070" MODIFIED="1360783028119" TEXT="Critic0"/>
+<node CREATED="1360783028881" ID="ID_261353401" MODIFIED="1360783034238" TEXT="Way2Think1"/>
+</node>
+<node CREATED="1360782920116" HGAP="-40" ID="ID_937077741" MODIFIED="1360784320175" POSITION="right" TEXT="HowTo1: Narrative" VSHIFT="4">
+<icon BUILTIN="messagebox_warning"/>
+</node>
+<node CREATED="1360783156474" HGAP="36" ID="ID_568304879" MODIFIED="1360784152695" POSITION="left" TEXT="entry criteria: predicate" VSHIFT="3">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+</map>
