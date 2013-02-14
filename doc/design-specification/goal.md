@@ -12,8 +12,25 @@ Goals has same additional extra Concepts that defines four important predicates:
  1. Exit criteria.
  1. Postcondition - could be assumed or even empty.
 
+## Predicates
 
-# Class description
+### Logical operations:
+
+ 1. and
+ 1. or
+ 1. not
+
+### Concept addressing operations:
+
+ 1. (linkName) - defines link between concept
+ 1. *ancestorName - defines descendants according to their - ancestor name
+
+
+### HowTo narrative
+
+TBD
+
+# Class diagram
 
 Class Goal is a SemanticNode that represent goal of current learning node.
 
