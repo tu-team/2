@@ -6,7 +6,7 @@ Goal is a part of TrainingAlgorithm. Actually represent concrete goal in resolvi
 
 # Description
 
-[Goal mind map](https://github.com/development-team/2/blob/master/doc/design-specification/mm/goal.png)
+![Goal mind map](https://github.com/development-team/2/blob/master/doc/design-specification/mm/goal.png)
 
 # Class description
 
