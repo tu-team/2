@@ -25,7 +25,6 @@ Goals has same additional extra Concepts that defines four important predicates:
  1. (linkName) - defines link between concept
  1. *ancestorName - defines descendants according to their - ancestor name
 
-
 Examples:
 
 Concept0(HasA)Concept1 = Concept0 with a link HasA to Concept1.
@@ -37,7 +36,7 @@ Concept0(HasA)*Concept1 = Concept0 with a link HasA to any of descendants to Con
 
 ### HowTo narrative
 
-TBD
+![Goal class](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/HowToNarrativeActivity.png)
 
 # Class diagram
 
