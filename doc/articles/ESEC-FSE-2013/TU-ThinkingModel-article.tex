@@ -49,7 +49,7 @@ We used thinking model described in Marvin Minsky book \href{http://en.wikipedia
 
 \href{http://web.media.mit.edu/~minsky/E5/eb5.html}{Marvin Minsky} introduces the thinking as layered model that contains 6 layers:
 
-\includegraphics{model_6.png}
+\includegraphics[scale=0.9]{model_6.png}
 
 \begin{itemize}
  \item \emph{Instinctive Reactions}:  Joan hears a sound and turns her head. All animals are born equipped with ‘instincts’ that help them to survive.
@@ -75,17 +75,89 @@ On the left are resources that we shall call Critics, each of which can recogniz
 Critic -> Selector -> Way to think are main components that implements all the machine understanding process. Critics could be understood as probabilistic predicates that does analysis of current context in memory. Selector retrieves resources from memory. Way to think is main worker that updates current context in memory.
 
 \section{Implementation of thinking model}
+
+We have implemented thinking model described above over the infrastructure as service domain. Main unit of information to be processed is incident: the issue with description.
+
 \subsection{Thinking levels control}
+
+6 thinking levels are implemented by ThinkingLifeCycle component. It starts and controls and implements collaboration of actions: critics or ways to think that are assigned to different thinking layers. ThinkingLifeCycle also controls context of current incident processing in short term memory. It also controls goals orientation: to make whole machine understanding process oriented to the main goal: help user.\\
+
+\begin{itemize}
+  \item Critics are implemented as functions that returns selector request with probability and confidence.
+  \item Selector runs requests and retrieves resources from memory(first from short term then from long term).
+  \item Way to think are implemented as components that actually changes the contents of short term memory.
+\end{itemize}
+
 \subsection{Memory: short term, long term}
 
+Memory is something that are associated with structures and objects in RAM and stored in Knowledge Base(KB) information.
+There are two types of memory: Short term and Long term.
+
+\subsubsection{Short term memory}
+
+It stores the current context of incident processing. Eventually all objects from Short term memory should be stored in Long term memory. This is done via confirmation process and then machine learning (training). 
+Training is based mainly on three mechanisms:
+\begin{itemize}
+  \item Deduction(Reasoning from generalised rules to specific)
+  \item Induction(Generalisation)
+  \item Abduction
+\end{itemize}
+
+\subsubsection{Long term memory}
+
+Stores persistent information mainly in the KB, this information has following main structures:
+
+\begin{itemize}
+  \item Narrative
+  \item Semantic network (mainly: Semantic network of concepts)
+  \item Knowledge line: list of references, that addresses concepts in different domains.
+\end{itemize}
 
 \section{IS domain application of the thinking model}
+
+Infrastructure as service domain contains 60 percent (according to our estimates) of incidents: issues that are mainly simple or primitive issues related to connectivity or software problems on a customer machine. 
+
 \subsection{Critics and ways to think for incident processing}
 
-\section{Practical results}
+All the mechanisms described above introduces main mechanisms of the thinking model. Simplified incident understanding process(only three layers) is described below.
+
+\subsection{Preliminary processing}
+
+First of all, on the Learned layer: textual description should be translated in to the form Semantic network this structure is stored in Short term memory, in following steps:
+
+\begin{itemize}
+  \item Preliminary splitting
+  \item Knowledge base annotation
+  \item Lexical parsing
+\end{itemize}
+
+Goal manager selects next goal: Classify incident.
+
+\subsection{Incident classification}
+
+On the Learned layer: three critics are invoked: 
+\begin{itemize}
+  \item Direct instruction analyser
+  \item Problem description without desired state analyser
+  \item Problem description with desired state analyser
+\end{itemize}
+
+All those critics returns probability of each case (selector request) that are processed by Get most probable action analyser. Most probable selector request is been processed immediately all the rest are stored in short term memory. Then goal manager select next goal: generate the solution.
+
 \subsection{Direct instruction processing}
+
+Solution search mechanism searches for the solution based on direct instruction semantic network, fist in short term memory then in long term memory.
+
 \subsection{Problem description processing}
 
+Problem description should be reformulated in form:
+\begin{itemize}
+  \item What's wrong
+  \item Problem source
+  \item Problem location references
+\end{itemize}
+
+Then solution search mechanism is started and returns solution with probability of match. If no proper solution found system rises Cry for help(way to think) and is reported to human operator.
 
 \subsection{References}
 

@@ -5,7 +5,7 @@ import tu.model.knowledge.communication.ShortTermMemory
 
 /**
  * 
- * @author: Alexander Toschev
+ * @author Alexander Toschev
  * Date: 12/10/12
  * Time: 12:23 AM
  *

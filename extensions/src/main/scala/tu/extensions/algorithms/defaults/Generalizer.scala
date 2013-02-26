@@ -6,7 +6,7 @@ import tu.extensions.interfaces.Generalizer
 
 /**
  * 
- * @author: Alexander Toschev
+ * @author Alexander Toschev
  * Date: 12/10/12
  * Time: 12:37 AM
  * 
