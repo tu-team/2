@@ -35,10 +35,10 @@
 \begin{abstract}
 
 Construction of machine understanding is definitely the challenge. There are several technologies used widely.
-Currently mainstream applications uses machine operatable knowledge bases, for example \href{http://www.wolframalpha.com}{Wolfram Alpha} to support simple dialog and operate devices.
+Currently mainstream applications uses machine operatable knowledge bases, for example \href{http://www.wolframalpha.com}{Wolfram Alpha}\cite{wolfram_alpha} to support simple dialog and operate devices.
 Newer the less those approaches do not create machine understanding of even primitive incidents.
 We tried new approach based on assumption that human understanding is tightly coupled with human thinking itself.
-We used thinking model described in Marvin Minsky book \href{http://en.wikipedia.org/wiki/The_Emotion_Machine}{"The emotion machine"}.
+We used thinking model described in Marvin Minsky book \href{http://en.wikipedia.org/wiki/The_Emotion_Machine}{"The emotion machine"}\cite{minsk}.
 
 \keywords{AI, machine understanding, it outsourcing}
 
@@ -49,10 +49,14 @@ We used thinking model described in Marvin Minsky book \href{http://en.wikipedia
 
 \href{http://web.media.mit.edu/~minsky/E5/eb5.html}{Marvin Minsky} introduces the thinking as layered model that contains 6 layers:
 
+%\begin{figure}
+%\centering
 \includegraphics[scale=0.9]{model_6.png}
+%\caption{6 thinking layers model}
+%\end{figure}
 
 \begin{itemize}
- \item \emph{Instinctive Reactions}:  Joan hears a sound and turns her head. All animals are born equipped with ‘instincts’ that help them to survive.
+ \item \emph{Instinctive Reactions}:  Joan hears a sound and turns her head. All animals are born equipped with "instincts" that help them to survive.
  \item \emph{Learned Reactions}: She sees a quickly oncoming car. Joan had to learn that conditions like this demand specific ways to react.
  \item \emph{Deliberative Thinking}: To decide what to say at the meeting, she considers several alternatives, and tries to decide which would be best.
  \item \emph{Reflective Thinking}: Joan reflects upon what she has done. She reacts, not just to things in things in the world, but also to recent events in her brain.
@@ -64,17 +68,26 @@ Each upper layer controls lower layers, and is based on constructs and uses sign
 
 \subsection{Selector, Critic, Way to think triple}
 
-\includegraphics{critic_selector_model.png}
-
+%\begin{figure}
+%\centering
+\psfig{file=critic_selector_model.png}
+%\caption{Critic->Selector model}
+%\end{figure}
 
 Marvin Minsky defines Critics - Selector behaviour as following:\\
-On the left are resources that we shall call Critics, each of which can recognize a certain species of "Problem-Type". When a Critic sees enough evidence that you now are facing its type of problem, then that Critic will try to activate a "Way to Think" that may be useful in this situation.
-
-\includegraphics{critic_selector.png}
+On the left are resources that we shall call Critics, each of which can recognize a certain species of "Problem-Type". When a Critic sees enough evidence that you now are facing its type of problem, then that Critic will try to activate a "Way to Think" that may be useful in current situation.
 
 Critic -> Selector -> Way to think are main components that implements all the machine understanding process. Critics could be understood as probabilistic predicates that does analysis of current context in memory. Selector retrieves resources from memory. Way to think is main worker that updates current context in memory.
 
-\section{Implementation of thinking model}
+%\begin{figure}
+%\centering
+\psfig{file=critic_selector.png}
+%\caption{Critic with Selector that retrieves resources}
+%\end{figure}
+
+\section{Implementation of thinking\\ model}
+
+Liu H. and Lieberman H.\cite{stories} described approach to generate Python classes from shallow English descriptions, like: \emph{James Bond is an agent.}
 
 We have implemented thinking model described above over the infrastructure as service domain. Main unit of information to be processed is incident: the issue with description.
 
@@ -159,6 +172,26 @@ Problem description should be reformulated in form:
 
 Then solution search mechanism is started and returns solution with probability of match. If no proper solution found system rises Cry for help(way to think) and is reported to human operator.
 
-\subsection{References}
+\begin{thebibliography}{4}
+
+\bibitem{minsk}
+Minsky M.:
+The Emotion Machine.
+Simon \& Schuster Paperbacks  (2006).
+
+\bibitem{stories}
+Liu H., Lieberman H.:
+Metafor: Visualizing Stories as Code.
+Cambridge, MIT Media Laboratory  (2005).
+
+\bibitem{runo}
+Russel S., Norvig P.:
+Artificial Intelligence. A Modern approach.
+Pearson (2010).
+
+\bibitem{wolfram_alpha}
+\href{http://www.wolframalpha.com}{http://www.wolframalpha.com}.
+
+\end{thebibliography}
 
 \end{document}
