@@ -152,10 +152,10 @@ class ThinkingLifeCycleTest extends FunSuite {
     assert(res != null)
     assert(res.notUnderstoodConcepts == Nil)
     assert(res.notUnderstoodPhrases == Nil)
-    assert(res.simulationResult match {
+    assert(res.simulationModel match {
       case Some(x: ConceptNetwork)
       => {
-        x.nodes.find((k: Concept) => k.toString.startsWith("BrowserConcept")) match {
+        x.nodes.find((k: Concept) => k.toString.startsWith("Browser")) match {
           case None => false
           case Some(c: Concept) => true
         }
