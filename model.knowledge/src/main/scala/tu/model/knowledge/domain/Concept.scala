@@ -293,12 +293,13 @@ object Concept {
    * @return created Concept instance.
    */
   def createInstanceConcept(parent: Concept): Concept = {
-    val name = parent.uri.name + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val name = parent.uri.name
+    val uID = Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name + Constant.conceptSuffix))
+      KnowledgeURI(name + Constant.conceptSuffix, uID.toString))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
@@ -310,12 +311,13 @@ object Concept {
    * @return created Concept instance.
    */
   def createInstanceConcept(parent: Concept, content: String): Concept = {
-    val name = parent.uri.name + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val name = parent.uri.name
+    val uID = Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations", parent), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("sentences"),
       KnowledgeString(content, content),
       List[ConceptLink](),
-      KnowledgeURI(name + Constant.conceptSuffix))
+      KnowledgeURI(name + Constant.conceptSuffix, uID.toString))
     parent.specialisations = parent.specialisations + (it.uri -> it)
     it
   }
@@ -350,19 +352,19 @@ object Concept {
       KnowledgeURI(name))
     it
   }
-
-  /**
+                                                /**
    * Creates instance of the concept based on specified phrase.
    * @param phrase the phrase to be used in Concept.
    * @return created Concept instance.
    */
   def createInstanceConcept(phrase: AnnotatedPhrase): Concept = {
-    val name =   Concept.prepareName(phrase.text) + Constant.conceptSuffix + Constant.UID_INSTANCE_DELIMITER + Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
+    val name = Concept.prepareName(phrase.text)
+    val uID = Random.nextInt(Constant.INSTANCE_ID_RANDOM_SEED)
     val it = new Concept(TypedKLine[Concept]("generalisations"), TypedKLine[Concept]("specialisations"),
       TypedKLine[AnnotatedPhrase]("phrases", phrase),
       KnowledgeString(name, name),
       List[ConceptLink](),
-      KnowledgeURI(name))
+      KnowledgeURI(name, uID.toString))
     it
   }
 

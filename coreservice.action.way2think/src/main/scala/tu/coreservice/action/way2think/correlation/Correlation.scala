@@ -128,6 +128,11 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
+  /**
+   * Creates parent concepts of instances specified.
+   * @param mappingConceptsInstances specified instances.
+   * @return List of parent concepts.
+   */
   def createDomainConcepts(mappingConceptsInstances: List[Concept]): List[Concept] = {
     val parents = mappingConceptsInstances.map {
       c: Concept => {
@@ -138,6 +143,11 @@ class Correlation extends SimulationReformulationAbstract {
           } else {
             c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
           }
+          val parentConcept = Concept(parentName)
+          c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
+          parentConcept
+        } else if (c.uri.uid != ""){
+          val parentName = c.uri.name
           val parentConcept = Concept(parentName)
           c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
           parentConcept
