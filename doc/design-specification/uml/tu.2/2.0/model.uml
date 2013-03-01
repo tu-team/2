@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_VfUpwIJuEeKI7dY6Q4xy9g" name="model">
+  <ownedComment xmi:id="_4py2oIJyEeKI7dY6Q4xy9g" annotatedElement="_-vZqUIJvEeKI7dY6Q4xy9g">
+    <body> Theory</body>
+  </ownedComment>
+  <ownedComment xmi:id="_SwoAIIJ0EeKI7dY6Q4xy9g" annotatedElement="_El0rIIJwEeKI7dY6Q4xy9g">
+    <body>Observation</body>
+  </ownedComment>
+  <ownedComment xmi:id="_Uuh3QIJ0EeKI7dY6Q4xy9g">
+    <body>Explanation</body>
+  </ownedComment>
+  <packageImport xmi:id="_pWWHcIKCEeKI7dY6Q4xy9g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_qHJSQIKCEeKI7dY6Q4xy9g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://SysML_LIBRARIES/SysMLPrimitiveTypes.uml#_AnZiYLXmEduHWpAaWjM62w"/>
+  </packageImport>
+  <packageImport xmi:id="_qcGOkIKCEeKI7dY6Q4xy9g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_q2RpIIKCEeKI7dY6Q4xy9g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_VgUvUIJuEeKI7dY6Q4xy9g" name="Activity1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_VkL7oIJuEeKI7dY6Q4xy9g" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_VlaDoIJuEeKI7dY6Q4xy9g" name="Interaction2"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_VmY7EIJuEeKI7dY6Q4xy9g" name="StateMachine0">
+    <region xmi:id="_VmeaoIJuEeKI7dY6Q4xy9g" name="Region0"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KP7jsIJvEeKI7dY6Q4xy9g" name="Goal" clientDependency="_5fgeAIJvEeKI7dY6Q4xy9g _eJL2AIKDEeKI7dY6Q4xy9g _o2ma8IKDEeKI7dY6Q4xy9g">
+    <ownedAttribute xmi:id="_0C4ioIKCEeKI7dY6Q4xy9g" name="precondition" type="_gJxqMIKCEeKI7dY6Q4xy9g"/>
+    <ownedAttribute xmi:id="_7vwuwIKCEeKI7dY6Q4xy9g" name="postcondition" type="_gJxqMIKCEeKI7dY6Q4xy9g"/>
+    <ownedAttribute xmi:id="_-G-dwIKCEeKI7dY6Q4xy9g" name="criteria" type="_AhNEgIKDEeKI7dY6Q4xy9g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vWauIIJvEeKI7dY6Q4xy9g" name="HowTo"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5fgeAIJvEeKI7dY6Q4xy9g" name="Contains" supplier="_vWauIIJvEeKI7dY6Q4xy9g" client="_KP7jsIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_-vZqUIJvEeKI7dY6Q4xy9g" name="Goal0" clientDependency="_dqSYsIJxEeKI7dY6Q4xy9g" classifier="_KP7jsIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_El0rIIJwEeKI7dY6Q4xy9g" name="Goal1" clientDependency="_eaIhQIJxEeKI7dY6Q4xy9g _K_0BIIJyEeKI7dY6Q4xy9g" classifier="_KP7jsIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_NAaR0IJwEeKI7dY6Q4xy9g" name="HowTo0" classifier="_vWauIIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_OyZz4IJwEeKI7dY6Q4xy9g" name="HowTo1" clientDependency="_AjRw0IJyEeKI7dY6Q4xy9g _QWoU0IJyEeKI7dY6Q4xy9g" classifier="_vWauIIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dqSYsIJxEeKI7dY6Q4xy9g" name="Usage1" supplier="_NAaR0IJwEeKI7dY6Q4xy9g" client="_-vZqUIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eaIhQIJxEeKI7dY6Q4xy9g" name="Usage2" supplier="_OyZz4IJwEeKI7dY6Q4xy9g" client="_El0rIIJwEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_AjRw0IJyEeKI7dY6Q4xy9g" name="Generalisation?" supplier="_NAaR0IJwEeKI7dY6Q4xy9g" client="_OyZz4IJwEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Abstraction" xmi:id="_K_0BIIJyEeKI7dY6Q4xy9g" name="Generalisation" supplier="_-vZqUIJvEeKI7dY6Q4xy9g" client="_El0rIIJwEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Abstraction" xmi:id="_QWoU0IJyEeKI7dY6Q4xy9g" name="Generalisation?" supplier="_NAaR0IJwEeKI7dY6Q4xy9g" client="_OyZz4IJwEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gJxqMIKCEeKI7dY6Q4xy9g" name="Predicate"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AhNEgIKDEeKI7dY6Q4xy9g" name="Criteria" clientDependency="_jMeJsIKDEeKI7dY6Q4xy9g _lxww8IKDEeKI7dY6Q4xy9g">
+    <ownedAttribute xmi:id="_C1cYAIKDEeKI7dY6Q4xy9g" name="entryCriteria" type="_gJxqMIKCEeKI7dY6Q4xy9g"/>
+    <ownedAttribute xmi:id="_FSqBUIKDEeKI7dY6Q4xy9g" name="exitCriteria" type="_gJxqMIKCEeKI7dY6Q4xy9g"/>
+    <ownedAttribute xmi:id="_JQskMIKDEeKI7dY6Q4xy9g" name="howTos" type="_vWauIIJvEeKI7dY6Q4xy9g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eJL2AIKDEeKI7dY6Q4xy9g" name="Criteria" supplier="_AhNEgIKDEeKI7dY6Q4xy9g" client="_KP7jsIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jMeJsIKDEeKI7dY6Q4xy9g" name="HowTo" supplier="_vWauIIJvEeKI7dY6Q4xy9g" client="_AhNEgIKDEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lxww8IKDEeKI7dY6Q4xy9g" name="Predicate" supplier="_gJxqMIKCEeKI7dY6Q4xy9g" client="_AhNEgIKDEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_o2ma8IKDEeKI7dY6Q4xy9g" name="Predicate" supplier="_gJxqMIKCEeKI7dY6Q4xy9g" client="_KP7jsIJvEeKI7dY6Q4xy9g"/>
+</uml:Model>
