@@ -18,8 +18,8 @@ Holds script execution
 1. OutputParameters - pbfuscate output data from script
 
 ## Mapping mechanism
-Array of actions is a solution. Solution maps to set of problems using [Training](training.md)
 
+Solution actioally is sequence (Narrative) of HowTo-s. Solution is mapped to set of problems via [Training](training.md)
 
 ## <a name="ExecutionState">Execution State</a>
 1. Success
@@ -27,7 +27,7 @@ Array of actions is a solution. Solution maps to set of problems using [Training
 
 ## Samples
 
-Each how-to represent a automated script called by executor module. For example we have a reciept to fix the Problem:
+Each solution is used by Applicator. For example request to fix the Problem:
 
 ```
 1.  Login to Domain\Server 

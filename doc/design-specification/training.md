@@ -28,9 +28,6 @@ See [example](training-example.md#Domain).
 
 ## HowTo-s training
 
- 1. Explicitly from HowTo functional description
- 1. Implicitly appended from Goals parameter of Incident handling training
-
 See [example](training-example.md#Incident).
 
 ## Train Incident handling process
@@ -40,28 +37,22 @@ Training activity diagram example: (incident handling of the Problem with desire
 
 ![Incident handling training example](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/TrainingActivity.png)
 
-_Please note that all data linked via Goal's KLine_
-
- 1. Process Goals parameter
-   2. Create Narrative of the Critics, Way2Think sequence.
-   2. Connect all intermediate knowledge: SemanticNetWorkWithKLines, ProblemDescription with DesiredState, Model, Solution
-   with KLine(context = Request)
-   2. Connect all matching terms and concepts of intermediate knowledge with KLine-s
-     3. Connect each parameter of Solution HowTo with Formal Model (of previous step)
-     3. Set Formal Model as context of KLine and store Solution in frames parameter of KLine.
-
+ 1. [Process Goal's parameters](goal.md): Parameters, Precondition, Entry criteria, Exit criteria, Postcondition
+   2. Create [Narrative of the Critics, Way2Think sequence](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/HowToNarrativeActivity.png).
+   2. Correlate all intermediate knowledge: ProblemDescription with DesiredState, DirectInstruction with domain model via SemanticNetworkLinks. 
+   2. Correlate all solution terms with domain model via KLine-s
+     3. Correlate each parameter of Solution HowTo with domain model.
+     3. Set domain model as context of KLine and store Solution in frames parameter of KLine.
+ 1. Iduction and Abuction reasoning over the set relative HowTo-s
+   2. Induction creates new generalised concepts creating parameters of parent Goal, comparing several similar Goals(Precondition, Entry criteria, Exit criteria, Postcondition, HowTo-s).
+   2. Abduction creates generalisation links based on gerenalibility of the (HowTo sequences, Precondition, Entry criteria, Exit criteria, Postcondition) of inbound incident processing [Goal](goal.md) to domain model goal.
+   2. Similar Goals (same: Parameters, Entry criteria, Exit criteria) combines HowTo-s, during application different Preconditions are processed by [Critics](critic.md).
+      
 See [example](training-example.md#Incident).
 
-## Train Goals
+## Incident processing goal hierarchy
 
 See [Training tree document](training-tree.md)
-
-## Training Class diagram
-
-![Goal](https://github.com/development-team/2/blob/master/doc/design-specification/uml/images/Training.png?raw=true)
-
- 1. Goal - link to goal associated with this training node
- 1. ParentNode -reference to Parent Training Node
 
 ## Training workflow
 

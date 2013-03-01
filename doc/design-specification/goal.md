@@ -36,7 +36,7 @@ Concept0(HasA)*Concept1 = Concept0 with a link HasA to any of descendants to Con
 
 ### HowTo narrative
 
-![Goal class](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/HowToNarrativeActivity.png)
+![HowTo narrative](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/HowToNarrativeActivity.png)
 
 # Class diagram
 
