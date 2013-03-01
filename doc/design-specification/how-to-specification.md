@@ -2,6 +2,8 @@
 ![Knowledge structure](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/HowTo.png)
 
 # Idea
+
+HowTo is the part of [Goal](goal.md)
 There are 2 types of HowTo:
 
 1. ValueHowTo

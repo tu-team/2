@@ -14,7 +14,7 @@ Please assist
     2. Software.
     2. Installation(install).
  1. Meta concepts, that operate over Domain concepts, ex.: 'instead', 'but', 'action negation indicates erroneous situation', ...
- 1. HowTo-s the incident solution algorithms = Comes from Project workbooks.
+ 1. HowTo-s the incident solution algorithms = from Project workbooks.
  1. Incident handling process, see [Goals data example](training.md#Goals_data_example) = Specified by Knowledge engineer.
     2. Goals structure, could be defined explicitly or inferred during Incident handling training = Specified by Knowledge engineer and Project induction.
     2. Solution training.
