@@ -13,6 +13,8 @@ import tu.model.knowledge.helper.URIGenerator
 
 class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
+  val log = LoggerFactory.getLogger(this.getClass)
+
   def this(map: Map[String, String]) = {
     this(
       map.get("namespace") match {
@@ -38,7 +40,6 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
     )
   }
 
-  private val delimiter = "#"
   private var _uRI: Option[URI] = None
   private var _uID: String = ""
 
@@ -46,27 +47,28 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
   def name = _name
 
-  def name_=(value: String) = _name = value
+  def name_=(value: String): KnowledgeURI = {
+    _name = value
+    this
+  }
 
   def revision(): String = _revision
 
   def uid = _uID
 
-  def uid_=(in: String) = _uID=in
+  def uid_=(in: String): KnowledgeURI = {
+    _uID = in
+    this
+  }
 
 
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s%6$s%7$s",namespace,Constant.DELIMITER, name.replace(" ","-"),Constant.REVISION_DELIMITER,revision,Constant.UID_DELIMITER,_uID   )))
-
-
-        if (name.length >200)
-        {
-          System.out.println ("greater than 200")
-
+        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s%6$s%7$s", namespace, Constant.DELIMITER, name.replace(" ", "-"), Constant.REVISION_DELIMITER, revision, Constant.UID_DELIMITER, _uID)))
+        if (name.length > 200) {
+          log.debug("greater than 200")
         }
-
         this._uRI
       }
       case Some(_) => {
@@ -95,7 +97,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   /**
    * Compares specified uri and current uri, via name, namespace, revision.
    * @param aUri
-   * @return
+   * @return true if name equals specified name and namespace equals specified uri namespace and revision equals specified revision.
    */
   def equals(aUri: KnowledgeURI): Boolean = {
     name.equals(aUri.name) && namespace.eq(aUri.namespace) && revision().equals(aUri.revision())
@@ -120,24 +122,26 @@ object KnowledgeURI {
     new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
   }
 
-  private def checkIfThisIsRawString(input:String):Boolean={
-    return input.contains(Constant.DELIMITER) &&
-      input.contains(Constant.REVISION_DELIMITER)  &&
+  def apply(name: String, uID: String): KnowledgeURI = {
+    val uri = new KnowledgeURI(Constant.defaultNamespace, name, Constant.defaultRevision)
+    uri.uid = uID
+  }
+
+  private def checkIfThisIsRawString(input: String): Boolean = {
+    input.contains(Constant.DELIMITER) &&
+      input.contains(Constant.REVISION_DELIMITER) &&
       input.contains(Constant.UID_DELIMITER)
   }
 
-  def apply(raw: String,uri:Boolean): KnowledgeURI = {
+  def apply(raw: String, uri: Boolean): KnowledgeURI = {
     if (!checkIfThisIsRawString(raw)) return KnowledgeURI(raw)
     // Some(new URI(namespace + Constant.DELIMITER + name + Constant.REVISION_DELIMITER + revision + Constant.UID_DELIMITER + _uID))
     val namespace = raw.substring(0, raw.indexOf(Constant.DELIMITER))
-    val name =  raw.substring(raw.indexOf(Constant.DELIMITER)+1, raw.indexOf(Constant.REVISION_DELIMITER )).replace("-"," ")
-    val revision =      raw.substring(raw.indexOf(Constant.REVISION_DELIMITER)+1, raw.indexOf(Constant.UID_DELIMITER ))
-    val uID=   raw.substring(raw.indexOf(Constant.UID_DELIMITER)+1)
-
-    var kURI =new KnowledgeURI(namespace, name, revision )
-
-    kURI.uid=uID
-
-    return kURI
+    val name = raw.substring(raw.indexOf(Constant.DELIMITER) + 1, raw.indexOf(Constant.REVISION_DELIMITER)).replace("-", " ")
+    val revision = raw.substring(raw.indexOf(Constant.REVISION_DELIMITER) + 1, raw.indexOf(Constant.UID_DELIMITER))
+    val uID = raw.substring(raw.indexOf(Constant.UID_DELIMITER) + 1)
+    val kURI = new KnowledgeURI(namespace, name, revision)
+    kURI.uid = uID
+    kURI
   }
 }
