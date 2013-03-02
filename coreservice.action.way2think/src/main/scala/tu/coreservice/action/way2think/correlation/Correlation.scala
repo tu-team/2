@@ -90,7 +90,7 @@ class Correlation extends SimulationReformulationAbstract {
       }
     }
     val notUnderstood = this.checkShortestMaps(clarifiedConcepts, shortestMaps, targetModel)
-    val domainConcepts = createDomainConcepts(shortestMaps.flatten)
+    val domainConcepts = createDomainConcepts(clarifiedTargetConcepts)
     log.info("found maps={}, ", shortestMaps)
     log.info("created domain concepts={},", domainConcepts)
     log.info("not understood concepts={}", notUnderstood)
@@ -136,18 +136,29 @@ class Correlation extends SimulationReformulationAbstract {
   def createDomainConcepts(mappingConceptsInstances: List[Concept]): List[Concept] = {
     val parents = mappingConceptsInstances.map {
       c: Concept => {
-        if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
+        if (c.uri.uid != "") {
+          val parentName = c.uri.name
+          val parentConcept = Concept(parentName)
+          c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
+          parentConcept.links = c.links
+          val objLinks: List[ConceptLink] = parentConcept.links.filter {
+            l: ConceptLink => {
+              l.uri.name.startsWith(Constant.objectLinkName)
+            }
+          }
+          parentConcept.generalisations = objLinks.map {
+            l: ConceptLink => {
+              l.destination
+            }
+          }
+          parentConcept
+        } else if (c.uri.name.contains(Constant.UID_INSTANCE_DELIMITER)) {
           val parentName = if (c.uri.name.indexOf(Constant.conceptSuffix) != -1
             && c.uri.name.indexOf(Constant.conceptSuffix) < c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER)) {
             c.uri.name.substring(0, c.uri.name.indexOf(Constant.conceptSuffix))
           } else {
             c.uri.name.substring(0, c.uri.name.indexOf(Constant.UID_INSTANCE_DELIMITER))
           }
-          val parentConcept = Concept(parentName)
-          c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
-          parentConcept
-        } else if (c.uri.uid != ""){
-          val parentName = c.uri.name
           val parentConcept = Concept(parentName)
           c.generalisations = c.generalisations + (parentConcept.uri -> parentConcept)
           parentConcept

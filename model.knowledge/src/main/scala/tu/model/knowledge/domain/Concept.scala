@@ -65,7 +65,6 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   def generalisations: TypedKLine[Concept] = _generalisations
 
-
   def generalisationsList: List[Concept] = {
     _generalisations.frames.values.toList
   }
@@ -78,6 +77,20 @@ case class Concept(var _generalisations: TypedKLine[Concept],
    */
   def generalisations_=(conceptKline: TypedKLine[Concept]): Concept = {
     _generalisations = conceptKline
+    this
+  }
+
+  /**
+   * Assigns generalisation list to specified.
+   * @param concepts List of concepts to assign
+   * @return this
+   */
+  def generalisations_=(concepts: List[Concept]): Concept = {
+    _generalisations.frames = concepts.map {
+      c: Concept => {
+        (c.uri -> c)
+      }
+    }.toMap
     this
   }
 
@@ -153,9 +166,9 @@ case class Concept(var _generalisations: TypedKLine[Concept],
 
   override def toString: String = {
     this.uri.name +
-      "[generalisations=" + _generalisations.toString  +
+      "[generalisations=" + _generalisations.toString +
       ";specialisations=" + _specialisations.toString +
-      ";links=" + _conceptLinks.map (l=>l.toString ).mkString (",") +
+      ";links=" + _conceptLinks.map(l => l.toString).mkString(",") +
       ";phrase=" + _phrases +
       "]"
   }
@@ -352,7 +365,8 @@ object Concept {
       KnowledgeURI(name))
     it
   }
-                                                /**
+
+  /**
    * Creates instance of the concept based on specified phrase.
    * @param phrase the phrase to be used in Concept.
    * @return created Concept instance.
