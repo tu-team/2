@@ -43,9 +43,9 @@ Training activity diagram example: (incident handling of the Problem with desire
    2. Correlate all solution terms with domain model via KLine-s
      3. Correlate each parameter of Solution HowTo with domain model.
      3. Set domain model as context of KLine and store Solution in frames parameter of KLine.
- 1. Iduction and Abuction reasoning over the set relative HowTo-s
+ 1. Iduction and [Abuction](abduction.md) reasoning over the set relative HowTo-s
    2. Induction creates new generalised concepts creating parameters of parent Goal, comparing several similar Goals(Precondition, Entry criteria, Exit criteria, Postcondition, HowTo-s).
-   2. Abduction creates generalisation links based on gerenalibility of the (HowTo sequences, Precondition, Entry criteria, Exit criteria, Postcondition) of inbound incident processing [Goal](goal.md) to domain model goal.
+   2. (Abduction](abduction.md) creates generalisation links based on gerenalibility of the (HowTo sequences, Precondition, Entry criteria, Exit criteria, Postcondition) of inbound incident processing [Goal](goal.md) to domain model goal.
    2. Similar Goals (same: Parameters, Entry criteria, Exit criteria) combines HowTo-s, during application different Preconditions are processed by [Critics](critic.md).
       
 See [example](training-example.md#Incident).
