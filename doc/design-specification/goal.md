@@ -5,12 +5,14 @@ Goals and HowTo-s are tightly linked one with each other.
 
 ![Goal mind map](https://github.com/development-team/2/raw/master/doc/design-specification/mm/goal.png)
 
-Goals has same additional extra Concepts that defines four important predicates:
+Goals has several Concepts that defines four important predicates:
 
+ 1. Parameters: Named variables used in precondition, postcondition, entry, exit criteria and HowTo.
  1. Precondition - could be assumed or even empty.
  1. Entry criteria.
  1. Exit criteria.
  1. Postcondition - could be assumed or even empty.
+ 1. HowTo - grouped with entry and exit criteria.
 
 ## Predicates
 
@@ -42,7 +44,7 @@ Concept0(HasA)*Concept1 = Concept0 with a link HasA to any of descendants to Con
 
 Class Goal is a SemanticNode that represent goal of current learning node.
 
-![Goal class](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/Training.png)
+![Goal class](https://github.com/development-team/2/raw/master/doc/design-specification/uml/tu.2/2.0/2_0_GoalHowToConcept.png)
 
 1.  Resources - is a KLine that contains suitable Critics to be activated
 

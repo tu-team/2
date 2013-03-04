@@ -43,7 +43,7 @@ object Configurator {
       case ex: Exception => log.debug("Porxy: use DIRECT connection")
     }
 
-    res.useProxy = false// useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
+    res.useProxy = true// useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
     return res
   }
 
