@@ -11,7 +11,7 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import org.slf4j.LoggerFactory
 import scala.actors.Actor
-import tu.model.knowledge.communication.{TrainingRequest, Request}
+import tu.model.knowledge.communication.{ShortTermMemory, TrainingRequest, Request}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
@@ -87,7 +87,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     res
   }
 
-  private def InstallTraining {
+  private def InstallTraining: ShortTermMemory = {
     val requestText = "Install is an action."
     val r = new TrainingRequest(KnowledgeString(requestText, Constant.INPUT_TEXT), KnowledgeURI("installTrainingRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
@@ -156,6 +156,26 @@ class ThinkingLifeCycleTest extends FunSuite {
       case Some(x: ConceptNetwork)
       => {
         x.nodes.find((k: Concept) => k.toString.startsWith("Browser")) match {
+          case None => false
+          case Some(c: Concept) => true
+        }
+      }
+      case None =>
+        false
+    }
+    )
+    log debug res.toString
+  }
+
+  test("Training: install is an action") {
+    val res = InstallTraining
+    assert(res != null)
+    assert(res.notUnderstoodConcepts == Nil)
+    assert(res.notUnderstoodPhrases == Nil)
+    assert(res.simulationModel match {
+      case Some(x: ConceptNetwork)
+      => {
+        x.nodes.find((k: Concept) => k.toString.startsWith("install")) match {
           case None => false
           case Some(c: Concept) => true
         }

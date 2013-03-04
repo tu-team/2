@@ -27,10 +27,11 @@
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_VmY7EIJuEeKI7dY6Q4xy9g" name="StateMachine0">
     <region xmi:id="_VmeaoIJuEeKI7dY6Q4xy9g" name="Region0"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_KP7jsIJvEeKI7dY6Q4xy9g" name="Goal" clientDependency="_5fgeAIJvEeKI7dY6Q4xy9g _eJL2AIKDEeKI7dY6Q4xy9g _o2ma8IKDEeKI7dY6Q4xy9g">
+  <packagedElement xmi:type="uml:Class" xmi:id="_KP7jsIJvEeKI7dY6Q4xy9g" name="Goal" clientDependency="_5fgeAIJvEeKI7dY6Q4xy9g _eJL2AIKDEeKI7dY6Q4xy9g _o2ma8IKDEeKI7dY6Q4xy9g __OhDUYSgEeKTkJ8PrTMaAg">
     <ownedAttribute xmi:id="_0C4ioIKCEeKI7dY6Q4xy9g" name="precondition" type="_gJxqMIKCEeKI7dY6Q4xy9g"/>
     <ownedAttribute xmi:id="_7vwuwIKCEeKI7dY6Q4xy9g" name="postcondition" type="_gJxqMIKCEeKI7dY6Q4xy9g"/>
     <ownedAttribute xmi:id="_-G-dwIKCEeKI7dY6Q4xy9g" name="criteria" type="_AhNEgIKDEeKI7dY6Q4xy9g"/>
+    <ownedAttribute xmi:id="_VHVboYSfEeKORZch2MrZSg" name="parameters" type="_XmiB8ISfEeKORZch2MrZSg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_vWauIIJvEeKI7dY6Q4xy9g" name="HowTo"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_5fgeAIJvEeKI7dY6Q4xy9g" name="Contains" supplier="_vWauIIJvEeKI7dY6Q4xy9g" client="_KP7jsIJvEeKI7dY6Q4xy9g"/>
@@ -53,4 +54,6 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_jMeJsIKDEeKI7dY6Q4xy9g" name="HowTo" supplier="_vWauIIJvEeKI7dY6Q4xy9g" client="_AhNEgIKDEeKI7dY6Q4xy9g"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_lxww8IKDEeKI7dY6Q4xy9g" name="Predicate" supplier="_gJxqMIKCEeKI7dY6Q4xy9g" client="_AhNEgIKDEeKI7dY6Q4xy9g"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_o2ma8IKDEeKI7dY6Q4xy9g" name="Predicate" supplier="_gJxqMIKCEeKI7dY6Q4xy9g" client="_KP7jsIJvEeKI7dY6Q4xy9g"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_XmiB8ISfEeKORZch2MrZSg" name="NamedVariable"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__OhDUYSgEeKTkJ8PrTMaAg" name="Usage3" supplier="_XmiB8ISfEeKORZch2MrZSg" client="_KP7jsIJvEeKI7dY6Q4xy9g"/>
 </uml:Model>
