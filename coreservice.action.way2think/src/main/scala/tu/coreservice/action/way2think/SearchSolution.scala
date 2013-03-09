@@ -27,19 +27,16 @@ class SearchSolution extends Way2Think {
 object SearchSolution {
 
   val log = LoggerFactory.getLogger(this.getClass)
-
   val searcher = new Solutions
 
   def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     searcher.solutions = inputContext.solutions
-
     val res = inputContext.lastResult match {
-      case Some(cn: ConceptNetwork) =>
-        {
-          if (cn.rootNodes.size<=0)
-            return inputContext
-          searcher.search(cn, Nil)
-        }
+      case Some(cn: ConceptNetwork) => {
+        if (cn.rootNodes.size <= 0)
+          return inputContext
+        searcher.search(cn, Nil)
+      }
       case _ => None
     }
     log info("search solution result={}", res)

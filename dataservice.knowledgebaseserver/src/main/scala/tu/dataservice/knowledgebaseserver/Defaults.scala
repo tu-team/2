@@ -66,7 +66,7 @@ object Defaults {
   val conceptLinks: List[ConceptLink] = List(CONCEPT_LINK, has, beLink, generalisationLink)
   val phrases: List[AnnotatedPhrase] = List(conceptPhrase, wordPhrase, subjectPhrase, objectPhrase, hasPhrase, isPhrase, isAPhrase, kindOfPhrase, missPhrase, formOfPolitenessPhrase)
 
-  val softwareConcept = Concept.createSubConcept(objectConcept, "sofware")
+  val softwareConcept = Concept.createSubConcept(objectConcept, "software")
   val browserConcept = Concept.createSubConcept(softwareConcept, "Browser")
   val internetExplorerConcept = Concept.createSubConcept(browserConcept, "Microsoft Internet Explorer")
   val versionConcept = Concept.createSubConcept(objectConcept, "version")

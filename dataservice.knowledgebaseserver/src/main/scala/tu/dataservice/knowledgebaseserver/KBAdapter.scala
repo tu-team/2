@@ -180,22 +180,24 @@ object KBAdapter {
 
   private def getDefaultSolutions: List[SolvedIssue] = {
     val in_uri = new KnowledgeURI("namespace", "name", "revision")
-    def getTestSolvedIssue2: SolvedIssue = {
+    val uri = new KnowledgeURI("namespace", "name", "revision")
 
-      val s = new Solution(List(Defaults.generateReinstallIE8HowTo), in_uri)
-      new SolvedIssue(Defaults.iHaveProblemWithIE8Simulation, s, in_uri, probability)
+    def getTestSolvedIssue1: SolvedIssue = {
+      val s = new Solution(List(Defaults.generateInstallFirefoxHowTo), new KnowledgeURI("solutions", "InstallFirefoxSolution", "0.1"))
+      new SolvedIssue(Defaults.pleaseInstallFFSimulation, s, new KnowledgeURI("solutions", "InstallFirefoxSolvedIssue", "0.1"), new Probability)
+    }
+
+    def getTestSolvedIssue2: SolvedIssue = {
+      val s = new Solution(List(Defaults.generateReinstallIE8HowTo), new KnowledgeURI("solutions", "ReinstallIESolution", "0.1"))
+      new SolvedIssue(Defaults.iHaveProblemWithIE8Simulation, s, new KnowledgeURI("solutions", "ReinstallIESolvedIssue", "0.1"), probability)
     }
 
     def getTestSolvedIssue3: SolvedIssue = {
-
-      val s = new Solution(List(Defaults.generateReinstallIE8HowTo), in_uri)
-      new SolvedIssue(Defaults.iHaveProblemWithIE8Reformulation, s, in_uri, probability)
+      val s = new Solution(List(Defaults.generateReinstallIE8HowTo), new KnowledgeURI("solutions", "ReinstallIESolution", "0.1"))
+      new SolvedIssue(Defaults.iHaveProblemWithIE8Reformulation, s, new KnowledgeURI("solutions", "ReinstallIESolvedIssue", "0.1"), probability)
     }
 
-    val uri = new KnowledgeURI("namespace", "name", "revision")
-
-    val s = new Solution(List(Defaults.generateInstallFirefoxHowTo), uri)
-    List(new SolvedIssue(Defaults.pleaseInstallFFSimulation, s, uri, new Probability), getTestSolvedIssue2, getTestSolvedIssue3)
+    List(getTestSolvedIssue1, getTestSolvedIssue2, getTestSolvedIssue3)
   }
 
   /** *

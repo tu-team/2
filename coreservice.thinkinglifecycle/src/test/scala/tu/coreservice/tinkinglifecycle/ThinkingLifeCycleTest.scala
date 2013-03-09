@@ -61,7 +61,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     PleaseTraining
     FirefoxTraining
 
-    log info ("Trainig is over")
+    log info ("Training is over")
 
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))

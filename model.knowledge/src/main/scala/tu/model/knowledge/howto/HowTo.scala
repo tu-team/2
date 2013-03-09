@@ -1,12 +1,10 @@
 package tu.model.knowledge.howto
 
-import tu.model.knowledge.annotator.AnnotatedPhrase
 import util.Random
 import tu.exception.UnexpectedException
-import scala.Some
 import org.slf4j.LoggerFactory
 import tu.model.knowledge._
-import domain.{ConceptLink, ConceptTag, Concept}
+import domain.{ConceptTag, Concept}
 import frame.Frame
 import tu.model.knowledge.KBMap._
 
