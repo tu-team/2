@@ -8,6 +8,10 @@ package tu.model.knowledge
 
 object Constant {
 
+  val IssueMissingFactor: Double = 0.1
+  val DomainMissingFactor: Double = 1.0
+  val DistanceThreadHold: Double = 1.0
+
   val RelexFeatures: List[String] = List("_subj", "_obj", "_iobj", "_advmod", "of")
   val RelexFeaturesPhrases: List[String] = List("of")
 

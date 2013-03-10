@@ -1,13 +1,12 @@
 package tu.coreservice.action.way2think
 
-import tu.model.knowledge.SolvedIssue
+import tu.model.knowledge.{Constant, SolvedIssue}
 import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.dataservice.knowledgebaseserver.KBAdapter
 import org.slf4j.LoggerFactory
 
-
 /**
- * @author adel chepkunov
+ * @author adel chepkunov, max talanov
  *         Date: 10.07.12
  *         Time: 7:21
  */
@@ -52,8 +51,9 @@ class Solutions {
   private def searchNotEffective(issue: ConceptNetwork, badSolutions: List[ConceptNetwork], errors: Int): List[SolvedIssue] = {
     var found_solutions: List[SolvedIssue] = Nil
     for (s <- solutions) {
-      if (distance(issue, s.issue, 0) == 0)
+      if (relevance(issue, s.issue) < Constant.DistanceThreadHold) {
         found_solutions = s :: found_solutions
+      }
     }
     //If not found, then return None else - return SolvedIssue with minimal size
     val res: List[SolvedIssue] = if (errors == 0 || !found_solutions.isEmpty) {
@@ -66,6 +66,11 @@ class Solutions {
     res
   }
 
+  /**
+   * Creates list of ConceptNetworks reduced by one concept of specified issue ConceptNetwork.
+   * @param issue ConceptNetwork to create reduced ConceptNetworks List.
+   * @return reduced ConceptNetworks List.
+   */
   private def CNMinusList(issue: ConceptNetwork): List[ConceptNetwork] = {
     def issueWithoutNode(n: Concept): ConceptNetwork = {
       val nodes = issue.rootNodes.filter(p => p != n)
@@ -80,7 +85,7 @@ class Solutions {
    * @param issue ConceptNetwork to calculate distance.
    * @param master ConceptNetwork to compare with.
    * @param errors Int number of errors to be ok, currently not used.
-   * @return
+   * @return Int distance of specified issue to master ConceptNetwork-s.
    */
   def distance(issue: ConceptNetwork, master: ConceptNetwork, errors: Int): Int = {
     //find first node
@@ -95,6 +100,58 @@ class Solutions {
     0
   }
 
+
+  /**
+   * Calculates relevance of specified issue and master ConceptNetworks, each missing issue Concept add 0.1 each master missing concept adds 1.
+   * @param issue ConceptNetwork to compare with master.
+   * @param master ConceptNetwork to be compared with.
+   * @return Double relevance calculated according to missing concepts of issue and master.
+   */
+  def relevance(issue: ConceptNetwork, master: ConceptNetwork): Double = {
+    val missingLists = findMissing(issue, master)
+    val sum: Double = missingLists._1.size * Constant.IssueMissingFactor + missingLists._2.size * Constant.DomainMissingFactor
+    sum
+  }
+
+  /**
+   * Searches for missing Concept-s of issue ConceptNetwork and master ConceptNetwork, comparing list of concepts according to generalisation of issue Concept-s to master Concept-s.
+   * @param issue ConceptNetwork to search generalisations in master.
+   * @param master ConceptNetwork to search in generalisations.
+   * @return Pair of issue concepts missing and master concept missing .
+   */
+  def findMissing(issue: ConceptNetwork, master: ConceptNetwork): Pair[List[Concept], List[Concept]] = {
+    val issueNodes = issue.nodes
+    val masterNodes = master.nodes
+    val issueMissing = issueNodes.filter {
+      iC: Concept => {
+        masterNodes.filter {
+          mC: Concept => {
+            iC.hasExactGeneralisationRec(mC)
+          }
+        }.size > 0
+      }
+    }
+    val masterMissing = masterNodes.filter {
+      mC: Concept => {
+        issueNodes.filter {
+          iC: Concept => {
+            iC.hasExactGeneralisationRec(mC)
+          }
+        }.size > 0
+      }
+    }
+    (issueMissing, masterMissing)
+  }
+
+  /**
+   * Checks if masterConcept has same ConceptLinks as has all the links of specified issueConcept.
+   * @param issueConcept to check with master.
+   * @param issue
+   * @param masterConcept
+   * @param master
+   * @param depth
+   * @return
+   */
   def masterHasAllLinks(issueConcept: Concept, issue: ConceptNetwork, masterConcept: Concept, master: ConceptNetwork, depth: Int): Boolean = {
     if (depth == 0) return true
 

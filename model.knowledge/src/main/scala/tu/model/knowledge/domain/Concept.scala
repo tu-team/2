@@ -180,10 +180,29 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     res ::: this.generalisations.frames.values.toList
   }
 
+  /**
+   * Checks if current concept could be generalised to specified parent Concept, according to: name, namespace, revision.
+   * @param parent Concept to check generalisation.
+   * @return true if current Concept could be generalised to specified.
+   */
   def hasGeneralisationRec(parent: Concept): Boolean = {
     val res: List[Concept] = getGeneralisationsRec.filter {
       c: Concept => {
         c.uri.equals(parent.uri)
+      }
+    }
+    res.size > 0
+  }
+
+  /**
+   * Checks if current concept could be generalised exactly to specified parent Concept, according to: name, namespace, revision, uid.
+   * @param parent Concept to check generalisation.
+   * @return true if current Concept could be generalised to specified.
+   */
+  def hasExactGeneralisationRec(parent: Concept): Boolean = {
+    val res: List[Concept] = getGeneralisationsRec.filter {
+      c: Concept => {
+        c.uri.exactEquals(parent.uri)
       }
     }
     res.size > 0
@@ -494,5 +513,24 @@ object Concept {
     destination.phrases = source.phrases
     destination.links = source.links
     destination
+  }
+
+  /**
+   * Searches for missing needles Concepts in heap List of Concepts, missing is triggered when needle concept could not be generalised to heap Concept.
+   * @param needles List[Concept] to find generalisations in heap
+   * @param heap List[Concept] to look for generalisations.
+   * @return List[Concept] missing.
+   */
+  def findMissing(needles: List[Concept], heap: List[Concept]): List[Concept] = {
+    val missing = needles.filter {
+      iC: Concept => {
+        heap.filter {
+          mC: Concept => {
+            iC.hasExactGeneralisationRec(mC)
+          }
+        }.size > 0
+      }
+    }
+    missing
   }
 }
