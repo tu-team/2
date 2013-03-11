@@ -5,6 +5,7 @@ import tu.model.knowledge.communication.{TrainingRequest, Request}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
+import tu.dataservice.knowledgebaseserver.KBAdapter
 
 
 /**
@@ -60,6 +61,10 @@ object AppMain {
              }
           }
 
+        }
+        else if (command == "clean") {
+
+            KBAdapter.cleanDatabase()
         }
         else if (command == "request") {
 

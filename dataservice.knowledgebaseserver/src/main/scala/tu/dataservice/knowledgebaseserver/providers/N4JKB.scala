@@ -10,6 +10,8 @@ import collection.mutable
 import collection.immutable.HashMap
 import org.neo4j.graphdb.index.Index
 import org.neo4j.cypher.commands.Return
+import java.io.File
+import tools.nsc.io.Directory
 
 /**
  *
@@ -210,6 +212,33 @@ object N4JKB extends KB {
         LoggerFactory.getLogger(this.getClass).error("Cann't create database: {}", e.toString)
       }
       false
+    }
+  }
+
+  /**
+   * Clean database . Use only for testing purpose.
+   */
+  def clean() {
+    if (_GraphDb==null)   N4JKB.apply()
+    _GraphDb.shutdown()
+    log.debug("Cleaning directory: "+defaultFilename)
+    deleteFileOrDirectory(new File(defaultFilename))
+    log.debug("Reinit database: "+defaultFilename)
+    new File(defaultFilename).mkdirs()
+    N4JKB.apply()
+
+  }
+
+
+ def deleteFileOrDirectory(  file:File ) {
+    if ( file.exists() ) {
+      if ( file.isDirectory() ) {
+        file.listFiles().foreach (f=>{
+          deleteFileOrDirectory (f)
+        })
+
+      }
+      file.delete();
     }
   }
 

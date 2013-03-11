@@ -118,6 +118,14 @@ object KBAdapter {
   }
 
 
+  /**
+   * Clean the whole database and reinit
+   */
+  def cleanDatabase()
+  {
+    kb.clean()
+  }
+
   def annotations: Map[String, AnnotatedPhrase] = Defaults.phrases.map(
     (phrase: AnnotatedPhrase) => {
       phrase.text -> phrase
