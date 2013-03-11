@@ -32,7 +32,7 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
 
     //provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
     //provider.showInformation(inputContext.lastError.toString)
-    if (inputContext.notUnderstoodConcepts.size > 0) {
+    if (inputContext.notUnderstoodConcepts.size > 0 || inputContext.notUnderstoodPhrases.size >0) {
       val unkConceptStr=(inputContext.notUnderstoodConcepts.map {
         c: Concept => {
           c.toString
