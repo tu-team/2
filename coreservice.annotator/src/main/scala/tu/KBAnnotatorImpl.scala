@@ -6,6 +6,7 @@ import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.providers.AnnotatorRegistry
 import tu.model.knowledge.annotator.{AnnotatedNarrative, AnnotatedPhrase}
 import tu.coreservice.utilities.URIHelper
+import tu.model.knowledge.domain.Concept
 
 /**
  * Simple KBAnnotator implementation.
@@ -34,18 +35,28 @@ class KBAnnotatorImpl extends Way2Think {
     //trying to annotate sentences
     //val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
-    def checkLocalKB(phrase: String): Option[AnnotatedPhrase] = {
-      //we should check in local context
-      //inputContext.domainModel.
-      //val localAnnotated = localAnnotator.apply(phrase)
-      val phrases = inputContext.domainModel.get.nodes.filter(n => n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase))
-      if (phrases.size > 0) {
-        Some(phrases.head.phrases.frames.head._2)
-      } else {
+    def checkLocalKB(phrase: String): Option[Concept] = {
+      //check in local context
+      //check content and speciliazation
+      val dmModel= inputContext.domainModel.get.nodes
+      def checkList(lst:List[Concept]): Option[Concept]={
+        if (lst.isEmpty ) None
+        lst.foreach (n=>{
+           log debug "Check " + n.toString
+           if ( n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase) || n.content.toString.toLowerCase.equals(phrase.toLowerCase))
+             return Some (n)
+           else if (n.specialisations!=null && n.specialisations.frames.size>0)
+           {
+             val lstRes= checkList(n.specialisations.frames.map(s=>s._2 ).toList)
+             if (!lstRes.isEmpty) return lstRes
+           }
+
+
+        })
         None
       }
+     checkList (dmModel)
 
-      //localAnnotated
     }
 
 
@@ -53,8 +64,8 @@ class KBAnnotatorImpl extends Way2Think {
       var result = false
       var annotationFound = checkLocalKB(ph.phrase)
       log info("found annatations={}", annotationFound)
-      def appendAnnotation(ref: AnnotatedPhrase, src: AnnotatedPhrase) {
-        ref.concepts = src.concepts
+      def appendAnnotation(ref: AnnotatedPhrase, ctp: Concept ) {
+        ref.concepts = List(ctp)
         //ref.phrases = src.phrases
       }
       if (annotationFound.isEmpty) {

@@ -16,6 +16,7 @@ import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.{Constant, KnowledgeURI}
+import tu.dataservice.memory.LongTermMemory
 
 @RunWith(classOf[JUnitRunner])
 class ThinkingLifeCycleTest extends FunSuite {
@@ -119,6 +120,20 @@ class ThinkingLifeCycleTest extends FunSuite {
     val res = t.apply(r)
     assert(res != null)
     log debug res.toString
+  }
+
+  test("List all phrases from KBServer"){
+    val dmModel = LongTermMemory.domainModel(KnowledgeURI(Constant.defaultDomainName))
+    log debug  "Concept with phrases"
+    dmModel.nodes.foreach(m=>{
+       log.debug( m.phrases.frames.map(p => p._2).toString() )
+    })
+
+    log debug  "All concepts"
+    dmModel.nodes.foreach(m=>{
+      log.debug( m.toString() )
+    })
+
   }
 
   test("Training please is a form of politeness") {
