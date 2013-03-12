@@ -15,6 +15,12 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
+  def this(_namespace: String,  _name: String, _revision: String, uIDRaw:String)=
+  {
+      this(_namespace,_name,_revision)
+      uid=uIDRaw
+  }
+
   def this(map: Map[String, String]) = {
     this(
       map.get("namespace") match {
@@ -36,6 +42,10 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
       map.get("revision") match {
         case Some(x) => x
         case None => Constant.defaultRevision
+      },
+      map.get("KB_ID") match {
+        case Some(x) => x
+        case None => ""
       }
     )
   }
