@@ -216,9 +216,9 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, this, this.uri)) return true
 
     var res = kb.saveResource(this, parent, key, linkType)
-    //saved.append(key)
-    //var savedLocal = List[String](key)
-    //if (saved!=null) savedLocal::=savedLocal
+
+    ModelHelper.appendToSave(this.uri,saved)
+
     for (x: Resource <- generalisations.frames.values.iterator) {
       //if (!savedLocal.contains(x.uri.toString))
       //{

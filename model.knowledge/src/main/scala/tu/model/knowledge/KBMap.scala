@@ -50,43 +50,46 @@ object KBMap {
   var id2object = HashMap[Long, Resource]()
 
   def register(r: Resource, id: Long) {
-    // r.uri.uid=id.toString
-    val uri = r.uri.toString
-    uri2id(uri) = id
+     r.uri.uid=id.toString
+    //val uri = r.uri.toString
+    //uri2id(uri) = id
     id2object(id) = r
   }
 
 
+  @deprecated
   def register(r: Resource) {
 
     val uri = r.uri.toString
-    if (uri2id.get(uri) == None)
-      uri2id(uri) = Constant.NO_KB_NODE
+    //if (uri2id.get(uri) == None)
+    //  uri2id(uri) = Constant.NO_KB_NODE
   }
 
   def get(r: Resource): Long = {
-    val uri = r.uri.toString
-    uri2id.get(uri) match {
-      case Some(x) => x
-      case None => Constant.NO_KB_NODE
-    }
+    if (r.uri.uid=="") return Constant.NO_KB_NODE
+    return java.lang.Long.parseLong(  r.uri.uid)
+    //val uri = r.uri.toString
+    //uri2id.get(uri) match {
+    //  case Some(x) => x
+    //  case None => Constant.NO_KB_NODE
+    //}
 
   }
 
   def loadFromCache(uri: KnowledgeURI): Resource = {
     val uriS = uri.toString
-    uri2id.get(uriS) match {
-      case Some(x) => {
-        id2object.get(x) match {
+    //uri2id.get(uriS) match {
+    //  case Some(x) => {
+        id2object.get( java.lang.Long.parseLong(uri.uid)) match {
           case Some(z) => {
-            log.debug("Resource " + uriS + " has been loaded already and obtained from cache")
+            log.debug("Resource " + uriS + " ID:"+uri.uid +" has been loaded already and obtained from cache")
             z
           }
           case None => null
         }
-      }
-      case None => null
-    }
+    //  }
+    //  case None => null
+    //}
   }
 
 }

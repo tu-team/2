@@ -196,12 +196,9 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
 
     if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, KBNodeId(this), this.uri)) return true
 
-    //{
-
-    //  return true
-    //}
     var res = kb.saveResource(this, parent, key, linkType)
-    //saved.append(key)
+
+    ModelHelper.appendToSave(this.uri,saved)
 
     for (x: Resource <- nodes) {
       res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME, saved)
