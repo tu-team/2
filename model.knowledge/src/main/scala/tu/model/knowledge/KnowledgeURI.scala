@@ -11,14 +11,15 @@ import tu.model.knowledge.helper.URIGenerator
  *         Time: 11:20 PM
  */
 
-class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
+class KnowledgeURI(_namespace: String, var _name: String, _revision:String, var  _uID: String  ) {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  def this(_namespace: String,  _name: String, _revision: String, uIDRaw:String)=
+
+  def this(_namespace: String,  _name: String, _revision: String)=
   {
-      this(_namespace,_name,_revision)
-      uid=uIDRaw
+      this(_namespace,_name,_revision,"")
+
   }
 
   def this(map: Map[String, String]) = {
@@ -42,7 +43,8 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
       map.get("revision") match {
         case Some(x) => x
         case None => Constant.defaultRevision
-      },
+      }
+      ,
       map.get("KB_ID") match {
         case Some(x) => x
         case None => ""
@@ -51,7 +53,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   }
 
   private var _uRI: Option[URI] = None
-  private var _uID: String = ""
+  //private var _uID: String = ""
 
   def namespace(): String = _namespace
 
@@ -75,10 +77,8 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String) {
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s%6$s%7$s", namespace, Constant.DELIMITER, name.replace(" ", "-"), Constant.REVISION_DELIMITER, revision, Constant.UID_DELIMITER, _uID)))
-        if (name.length > 200) {
-          log.debug("greater than 200")
-        }
+        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s", namespace, Constant.DELIMITER, name.replace(" ", "-"), Constant.REVISION_DELIMITER, revision, Constant.UID_DELIMITER, _uID)))
+
         this._uRI
       }
       case Some(_) => {

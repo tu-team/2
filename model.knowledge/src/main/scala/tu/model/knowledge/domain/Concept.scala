@@ -165,6 +165,8 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   override def toString: String = {
+    if (_generalisations ==null)
+      log debug  "null generalizations"
     this.uri.name +
       "[generalisations=" + _generalisations.toString +
       ";specialisations=" + _specialisations.toString +
@@ -479,7 +481,8 @@ object Concept {
     res.phrases = phrases
     res.links = conceptLinkList
 
-
+    if (res.content.toString  =="concept")
+      log debug "detected"
 
 
     /*val res = new Concept(generalisation,
