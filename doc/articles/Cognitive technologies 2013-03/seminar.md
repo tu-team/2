@@ -59,9 +59,12 @@ This is really good in searching for synonyms.
 
 ## Voice recognition
 
-### [Siri](http://en.wikipedia.org/wiki/Iris_(software))
+ 1. [Siri](http://en.wikipedia.org/wiki/Siri_(software))
+ 1. [Iris](http://en.wikipedia.org/wiki/Iris_(software))
 
-### [Iris](http://en.wikipedia.org/wiki/Iris_(software))
+This is widely known and could be found in [internet](http://www.youtube.com/watch?v=md5yuksHyxI).
+
+
 
 
 
