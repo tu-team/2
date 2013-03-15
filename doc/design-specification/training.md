@@ -1,5 +1,7 @@
 # Training mode design specification.
 
+Based on http://web.media.mit.edu/~minsky/E8/eb8.html#_Toc465796531
+
 ## Training incident description example
 ```
 User had received wrong application.
