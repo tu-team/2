@@ -433,6 +433,8 @@ object Concept {
       new Probability(selfMap)
     )
 
+    if (res.uri.name=="Browser")
+      log debug  "Load Browser"
     //register primary object
     KBMap.register(res, ID.ID)
 
