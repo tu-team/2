@@ -1,5 +1,7 @@
 # Training mode design specification.
 
+Based on http://web.media.mit.edu/~minsky/E8/eb8.html#_Toc465796531
+
 ## Training incident description example
 ```
 User had received wrong application.
@@ -7,7 +9,32 @@ User has ordered Wordfinder Business Economical.
 However she received wrong version, she received Wordfinder Tehcnical instead of Business Economical.
 Please assist
 ```
+
+## Traninig strategy
+
+Training is based on "inborn" abilities Critic and Way2Think-s of the system:
+ 
+ 1. Read the document (Lexical parsing)
+ 1. Simulate
+ 1. Reformulate
+ 1. Correlate
+ 1. Logical Reasoning: 
+   2. Inductive reasoninig
+   2. Abductive reasoning
+   2. Deductive reasoning
+   2. Reasoning by analogy
+ 1. Does it get new useful information? Critic
+
+Combining and recombining those abilities system is capable of constructing(training) the Training HowTo. This is self-learninig capability to train simple HowTo.
+Recombining Critic and Way2Think is done automatically as part of Curiosity ability.
+
+## Curiosity
+
+Makes system try first single abilities, then pairs then triplets. All successive: according to Does it get new useful information? Critic are memorized via Inductive reasoninig and Abductive reasoning mechanisms.
+
 ## Information to be trained
+
+This shold be estimated based on the domain incident content, and training strategy document should be created. Then traing cource should be created and tested over the prototype.
 
  1. Domain concepts dictionary = Comes from TSS training courses + WordNet + Other KBs. Ex.:
     2. User.

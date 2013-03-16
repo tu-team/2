@@ -3,7 +3,6 @@
 Mainly cognitive technologies are based on:
 
  1. Program operatable knowledge bases
- 1. Computer vision
  1. Voice recognition
  1. Machine understanding
 
@@ -59,9 +58,25 @@ This is really good in searching for synonyms.
 
 ## Voice recognition
 
-### [Siri](http://en.wikipedia.org/wiki/Iris_(software))
+ 1. Siri http://en.wikipedia.org/wiki/Siri_(software)
+ 1. Iris http://en.wikipedia.org/wiki/Iris_(software)
 
-### [Iris](http://en.wikipedia.org/wiki/Iris_(software))
+This is widely known and could be found in [internet](http://www.youtube.com/watch?v=md5yuksHyxI).
+
+## Machine learning
+
+### RapidMiner
+
+http://en.wikipedia.org/wiki/RapidMiner
+
+## Machine understanding
+
+### openCog
+
+## Sikuli
+
+http://en.wikipedia.org/wiki/Sikuli
+
 
 
 
