@@ -228,9 +228,16 @@ object ConceptNetwork {
 
     //try to load from cache
     val cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
-    if (cached != null) return cached.asInstanceOf[ConceptNetwork]
+    if (!cached.isEmpty) return cached.get.asInstanceOf[ConceptNetwork]
 
     val ID = new KBNodeId(selfMap)
+
+    val res=new ConceptNetwork(null,
+      null,
+      new KnowledgeURI(selfMap),
+      new Probability(selfMap)
+    )
+    KBMap.register(res,ID.ID)
 
     def oneList(items: Map[String, Map[String, String]], linkName: String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
@@ -252,11 +259,9 @@ object ConceptNetwork {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
       }
 
-    new ConceptNetwork(concepts,
-      conceptLinkList,
-      new KnowledgeURI(selfMap),
-      new Probability(selfMap)
-    )
+    res._nodes=concepts
+    res._links=conceptLinkList
+        res
   }
 
   def apply(notKnownConcept: List[AnnotatedPhrase]):ConceptNetwork  = {

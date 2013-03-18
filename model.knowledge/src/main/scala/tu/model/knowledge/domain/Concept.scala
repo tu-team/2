@@ -414,7 +414,7 @@ object Concept {
     }
     //try to load from cache
     val cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
-    if (cached != null) return cached.asInstanceOf[Concept]
+    if (!cached.isEmpty  ) return cached.get.asInstanceOf[Concept]
     val ID = new KBNodeId(selfMap)
     val name = selfMap.get("content") match {
       case Some(x) => x
@@ -433,8 +433,8 @@ object Concept {
       new Probability(selfMap)
     )
 
-    if (res.uri.name=="Browser")
-      log debug  "Load Browser"
+    if (res.uri.name=="word")
+      log debug  "Load word"
     //register primary object
     KBMap.register(res, ID.ID)
 
@@ -483,8 +483,8 @@ object Concept {
     res.phrases = phrases
     res.links = conceptLinkList
 
-    if (res.content.toString  =="concept")
-      log debug "detected"
+    if (res.generalisations   ==null)
+      log debug "NULL GEN WHEN LOAD"
 
 
     /*val res = new Concept(generalisation,

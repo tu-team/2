@@ -11,6 +11,7 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.KnowledgeURI
+import tu.dataservice.knowledgebaseserver.Defaults
 
 @RunWith(classOf[JUnitRunner])
 class LongTermMemoryTest extends FunSuite {
@@ -46,6 +47,13 @@ class LongTermMemoryTest extends FunSuite {
   test ("load domain model") {
     val dm = LongTermMemory.domainModel(testURI)
     assert(dm.nodes.size > 1)
+
+
+  }
+  test ("save domain model") {
+    val dm = LongTermMemory.saveModel(testURI,Defaults.domainModelConceptNetwork)
+
+
 
   }
 

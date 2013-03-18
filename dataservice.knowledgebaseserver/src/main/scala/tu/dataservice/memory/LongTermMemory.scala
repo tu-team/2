@@ -65,16 +65,16 @@ object LongTermMemory {
   def reformulationModel(domain: KnowledgeURI): ConceptNetwork = someModel(domain)
 
   private def someModel(modelName: KnowledgeURI): ConceptNetwork = {
-    try {
+//    try {
       ConceptNetwork.load(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
-    }
-    catch {
+  //  }
+  /*  catch {
       case e: Exception =>
         log.error(e.toString)
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
         res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)
         someModel(modelName)
-    }
+    }*/
   }
 
 

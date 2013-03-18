@@ -76,16 +76,26 @@ object KBMap {
 
   }
 
-  def loadFromCache(uri: KnowledgeURI): Resource = {
+  def loadFromCache(uid:String):Option[Resource] ={
+    id2object.get( java.lang.Long.parseLong(uid)) match {
+      case Some(z) => {
+        log.debug("Resource with ID:"+uid +" has been loaded already and obtained from cache")
+        Some(z)
+      }
+      case None => None
+    }
+  }
+
+  def loadFromCache(uri: KnowledgeURI): Option[Resource] = {
     val uriS = uri.toString
     //uri2id.get(uriS) match {
     //  case Some(x) => {
         id2object.get( java.lang.Long.parseLong(uri.uid)) match {
           case Some(z) => {
             log.debug("Resource " + uriS + " ID:"+uri.uid +" has been loaded already and obtained from cache")
-            z
+           Some( z)
           }
-          case None => null
+          case None => None
         }
     //  }
     //  case None => null

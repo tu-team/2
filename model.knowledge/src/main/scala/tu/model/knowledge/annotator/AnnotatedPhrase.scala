@@ -6,6 +6,7 @@ import scala.Some
 import tu.exception.UnexpectedException
 import tu.model.knowledge.KBMap._
 import collection.mutable.ListBuffer
+import tu.model.knowledge.helper.ModelHelper
 
 
 /**
@@ -136,15 +137,12 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
   }
 
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
-    val uri = this.uri.toString
-    if (saved.contains(uri)) {
-      //only create link
-      kb.createLink(parent, this, linkType, key)
-      return true
-    }
-    saved.append(uri)
+    if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, this, this.uri)) return true
 
     var res = kb.saveResource(this, parent, key, linkType)
+
+    ModelHelper.appendToSave(this.uri,saved)
+
     for (x: Resource <- _phrases)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, saved)
     for (x: Resource <- _concepts)
