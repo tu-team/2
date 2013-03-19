@@ -19,14 +19,22 @@ This is really widely known example of voice recognition + knowledge base + mobi
 
 ![Siri architecture](http://www.oneaccordpartners.com/Portals/124640/images/siri%20how%20it%20works-resized-600.png)
 
+### How does it work?
 
+ 1. Voice recognition on the phone converts vice to text
+ 1. Text is sent to Siri server
+   2. NLP
+   2. Siri server app runs requests to different KBs, Search engines
+   2. Siri server returns the response
+ 1. Speech synthesizer pronounces response on the phone.
 
+### References
 
- 1. Siri http://en.wikipedia.org/wiki/Siri_(software)
+ 1. Siri http://www.oneaccordpartners.com/blog/bid/97586/Siri-Apple-s-Digital-Assistant-The-Technology
  1. Iris http://en.wikipedia.org/wiki/Iris_(software)
 
 
-Mainly cognitive technologies are based on:
+## Mainly cognitive technologies are based on:
 
  1. Program operatable knowledge bases
  1. Voice recognition
