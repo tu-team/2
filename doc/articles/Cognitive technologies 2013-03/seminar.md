@@ -113,6 +113,10 @@ Visual scripting apparatus. It does:
 
 ![Sikuli script example](http://www.sikuli.org/uploads/1/3/6/8/13689586/_6891947_orig.jpg)
 
+### Live examaple:
+
+![Sikuli script google search automation](http://www.youtube.com/watch?feature=player_embedded&v=pWLa1kxakOs)
+
 http://www.sikuli.org/
 http://en.wikipedia.org/wiki/Sikuli
 
