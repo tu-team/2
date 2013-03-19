@@ -1,5 +1,31 @@
 #Cognitive technologies overview.
 
+## Plan
+ 1.	Intro
+ 1.	Real life example with Siri + Overall architecture
+ 1. Knowledge bases
+ 1. Sikuli
+ 1. Machine learning
+ 1. openCog
+
+## Smart is trendy word.
+This is not really just a word. World is waiting for new intelligent applications, according to [FIONA](http://www.sparkingtogether.com/who-is-behind-fiona)
+by 2020, 85% of company to client interactions will be done without human intervention.
+Even now it is quite obvious:
+
+## Siri.
+
+This is really widely known example of voice recognition + knowledge base + mobile automation application.
+
+![Siri architecture](http://www.oneaccordpartners.com/Portals/124640/images/siri%20how%20it%20works-resized-600.png)
+
+
+
+
+ 1. Siri http://en.wikipedia.org/wiki/Siri_(software)
+ 1. Iris http://en.wikipedia.org/wiki/Iris_(software)
+
+
 Mainly cognitive technologies are based on:
 
  1. Program operatable knowledge bases
@@ -56,12 +82,6 @@ Let's try some words:
 
 This is really good in searching for synonyms.
 
-## Voice recognition
-
- 1. Siri http://en.wikipedia.org/wiki/Siri_(software)
- 1. Iris http://en.wikipedia.org/wiki/Iris_(software)
-
-This is widely known and could be found in [internet](http://www.youtube.com/watch?v=md5yuksHyxI).
 
 ## Machine learning
 
