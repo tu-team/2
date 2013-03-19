@@ -33,14 +33,16 @@ This is really widely known example of voice recognition + knowledge base + mobi
  1. Siri http://www.oneaccordpartners.com/blog/bid/97586/Siri-Apple-s-Digital-Assistant-The-Technology
  1. Iris http://en.wikipedia.org/wiki/Iris_(software)
 
-
 ## Mainly cognitive technologies are based on:
 
- 1. Program operatable knowledge bases
  1. Voice recognition
- 1. Speech synthesis
  1. Machine understanding
-
+   2. NLP
+   2. Natural language generation
+   2. Machine learning
+ 1. Program operatable knowledge bases
+ 1. Speech synthesis
+ 
 ## Knowledge bases
 
 Mainly those KB-s are:
@@ -58,13 +60,14 @@ WolframAlpha is most popular at the moment and is used in [Siri](http://en.wikip
 We can spend some time to experiment with WolframAlpha:
 
  1. Ultimate Question of Life, the Universe, and Everything
+ 1. What is the meaining of life?
  1. first American to orbit the Earth
  1. first Russian to orbit the Earth
  1. current weather in kazan
  1. what is Firefox?
  1. to get Rid of
 
-This is main magical force of Siri and similar.
+This is main magical force of Siri.
 
 ### [Evi](http://www.evi.com)
 
@@ -83,19 +86,34 @@ This is really good in searching for synonyms.
 
 Complete list could be found on this [wiki page](http://en.wikipedia.org/wiki/Commonsense_knowledge_bases).
 
-
-## Machine learning
-
-### RapidMiner
-
+## Machine learning: RapidMiner
 http://en.wikipedia.org/wiki/RapidMiner
 
-## Machine understanding
+## Machine understanding: openCog
 
-### openCog
+Is the framework, like a sandbox that collects some technologies to build machine understanding.
+ 1. AtomSpace - Hypergraph storage.
+ 1. PLN - probabilistic logic network. No boolean logic is good for machine understanding
+ 1. MOSES – Evolutionary Search.
+ 1. Embodiment – Modules to allow OpenCog to reason about being embodied within an avatar
+ 1. RelEx and Linkgrammar – Extract grammatical parses and semantic knowledge from natural language (in English).
+ 1. NLGen and NLGen2 – Convert semantic relationships to natural language.
 
-## Sikuli
+### References 
+http://opencog.org/projects/
 
+
+## Sikuli: the automation basics
+
+Visual scripting apparatus. It does:
+
+ 1. Automate simple on screen actions in Jython scrpt
+ 1. Emulate keyboard and mouse actions over the controls
+ 1. Uses image recognition to position mouse cursor.
+
+![Sikuli script example](http://www.sikuli.org/uploads/1/3/6/8/13689586/_6891947_orig.jpg)
+
+http://www.sikuli.org/
 http://en.wikipedia.org/wiki/Sikuli
 
 
