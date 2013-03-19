@@ -38,19 +38,10 @@ This is really widely known example of voice recognition + knowledge base + mobi
 
  1. Program operatable knowledge bases
  1. Voice recognition
+ 1. Speech synthesis
  1. Machine understanding
 
-Overall, it is the set of technologies that helps or creates machine understanding.
-Main focus of current seminar are technologies that could be useful in our AS department everyday life.
-
-## Goal
-
-Imagine we want to do something clever, all the repetitive actions that we do automation.
-We do reporting, we do some forms every day filling in, for example business trip reporting and forms, all this could be done by our machines.
-
 ## Knowledge bases
-
-Complete list could be found on this [wiki page](http://en.wikipedia.org/wiki/Commonsense_knowledge_bases).
 
 Mainly those KB-s are:
 
@@ -89,6 +80,8 @@ Let's try some words:
  1. browser
 
 This is really good in searching for synonyms.
+
+Complete list could be found on this [wiki page](http://en.wikipedia.org/wiki/Commonsense_knowledge_bases).
 
 
 ## Machine learning
