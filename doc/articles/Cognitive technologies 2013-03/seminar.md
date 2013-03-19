@@ -113,9 +113,9 @@ Visual scripting apparatus. It does:
 
 ![Sikuli script example](http://www.sikuli.org/uploads/1/3/6/8/13689586/_6891947_orig.jpg)
 
-### Live examaple:
+### Sikuli google test automation
 
-![Sikuli script google search automation](http://www.youtube.com/watch?feature=player_embedded&v=pWLa1kxakOs)
+<iframe width="640" height="360" src="http://www.youtube.com/embed/pWLa1kxakOs?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
 
 http://www.sikuli.org/
 http://en.wikipedia.org/wiki/Sikuli
