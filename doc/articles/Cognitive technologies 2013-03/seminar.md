@@ -3,10 +3,10 @@
 ## Plan
  1.	Intro
  1.	Real life example with Siri + Overall architecture
+ 1. NLP (Stanford parser)
  1. Knowledge bases
- 1. Sikuli
- 1. Machine learning
  1. openCog
+ 1. Sikuli
 
 ## Smart is trendy word.
 This is not really just a word. World is waiting for new intelligent applications, according to [FIONA](http://www.sparkingtogether.com/who-is-behind-fiona)
@@ -36,13 +36,25 @@ This is really widely known example of voice recognition + knowledge base + mobi
 ## Mainly cognitive technologies are based on:
 
  1. Voice recognition
- 1. Machine understanding
+ 1. Machine understanding:
    2. NLP
    2. Natural language generation
    2. Machine learning
  1. Program operatable knowledge bases
  1. Speech synthesis
- 
+
+## NLP
+
+[Stanford parser](http://nlp.stanford.edu:8080/parser/)
+Does the magic of crating links (phrases) from text.
+
+ 1. Firefox is a browser.
+ 1. what is Firefox?
+ 1. Ultimate Question of Life, the Universe, and Everything
+ 1. What is the meaning of life?
+
+It is not ideal but does the work, I guess if we adjust it's dictionaries the results could be better.
+
 ## Knowledge bases
 
 Mainly those KB-s are:
@@ -86,9 +98,6 @@ This is really good in searching for synonyms.
 
 Complete list could be found on this [wiki page](http://en.wikipedia.org/wiki/Commonsense_knowledge_bases).
 
-## Machine learning: RapidMiner
-http://en.wikipedia.org/wiki/RapidMiner
-
 ## Machine understanding: openCog
 
 Is the framework, like a sandbox that collects some technologies to build machine understanding.
@@ -119,6 +128,13 @@ http://www.youtube.com/embed/pWLa1kxakOs?feature=player_embedded
 ### References
 http://www.sikuli.org/
 http://en.wikipedia.org/wiki/Sikuli
+
+## What's left
+
+ 1. Machine learning
+ 1. Reasoning
+ 1. Dialog support
+ 1. ...
 
 
 
