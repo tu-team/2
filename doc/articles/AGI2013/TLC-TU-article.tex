@@ -36,7 +36,7 @@ Sibirskii trakt 34, 420029 Kazan, Russia\\
 \maketitle
 
 \begin{abstract}
-IT Infrastructure maintenance domain is a labour intensive process and contains many tools that help to solve a lot of every-day problems to support business operations. IT Infrastructure maintenance domain has a lot of primitive incidents that seems to be easy to automate. However there is still the gap to run business, operating support is provided by human specialists understanding and making decision how to implement even primitive incidents. One of the key factors in automation and in entire process is to understand input request consigned by human support specialist with cover functions this thinking processes:  correlation, simulation, reformulation. Using this model in 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
+IT Infrastructure maintenance domain is a labour intensive process and contains many tools that help to solve a lot of every-day problems to support business operations. IT Infrastructure maintenance domain has a lot of primitive incidents that seems to be easy to automate. However there is still the gap to run business, operating support is provided by human specialists understanding and making decision how to implement even primitive incidents. One of the key factors in automation and in entire process is to understand input request consigned by human support specialist with cover functions this thinking processes:  correlation, simulation, reformulation. Using this model in 2006 Marvin Minsky has published his book "Emotion Machine" \cite{mmem} which was our inspiration and the base of implementation described below.
 
 \keywords{AI, machine understanding, it outsourcing}
 
@@ -78,7 +78,7 @@ In our approach, a commonsense reasoning involves indirect mechanism for inferen
  \item Reformulation — When previous methods are fail, system tries to find a new way to describe the problem.
  \item Correlation — Matches inbound concepts with already known.
  \item Cry for Help — If none of  methods do not give a pass result, address for helping hand.
-\end
+\end{enumerate}
 Our architecture is designed to keep updating multiple representations of knowledge in parallel. This enables it to quickly switch between different ways-to-think. This means that the system will not get stuck because those alternate ways-to-think will be ready to take over when the present one runs into trouble. This is related to Minsky’s idea, where many views of an object are linked by their common parts to together form a more realistic or complete model than any individual view could form.
 
 \emph{Practical example 1}, If incident is an automatically generated, system should process it using instruction book A.
@@ -165,7 +165,7 @@ Thinking Lifecycle(TLC) run different resources simultaneously like a human spec
 
 \subsection{Short Term Memory}
 We present a general cognitive design based on reflective and deliberative level that uses distributed associative memories. The type of architecture we present is based on the interaction between an "attribute-object selector" and an "critic filter” of successive evoked objects, with the intermediation of a working (short-term) memory.
-Ways to think actively operates with common data that are stored in short term memory or a context. Short term memory contains a set of current processing data required for every component of the Selector -\> Critic -\> Way to think triple: domain model, last processing result e.t.c.
+Ways to think actively operates with common data that are stored in short term memory or a context. Short term memory contains a set of current processing data required for every component of the Selector -> Critic -> Way to think triple: domain model, last processing result e.t.c.
 
 \subsection{Long Term Memory}
 In contrast of Short Term Memories, Long Term Memories are viewed as I/O units responsible for translating data of short term memory processed result and reflected into previously remembered states, and vice-versa. After several thinking cycles data from short term memory is merged with data in long term memory.
@@ -174,8 +174,6 @@ In contrast of Short Term Memories, Long Term Memories are viewed as I/O units r
 Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, critics, way to think.\\
 
 \section{Thinking Model}
-In our view human-level learning requires a not standard architectural approach that is tightly connected to the rest of thinking. Beside resolution problem as a functional goal of the system it also is focused on the ‘credit assignment problem’ — system could decide how to improve itself, especially as problems for resolution gets more complicated.  As the system grows, that requires a more and more elaborate self-model implementation, so that the reflective layers of the system can try to predict the effects of changes it might make to itself. Powerful learning is enabled by a powerful ability to reflect.
-
 The picture below shows Thinking process example
 
 \begin{figure}
@@ -184,6 +182,8 @@ The picture below shows Thinking process example
 
 \caption{Thinking process example}
 \end{figure}
+In our view human-level learning requires a not standard architectural approach that is tightly connected to the rest of thinking. Beside resolution problem as a functional goal of the system it also is focused on the ‘credit assignment problem’ — system could decide how to improve itself, especially as problems for resolution gets more complicated.  As the system grows, that requires a more and more elaborate self-model implementation, so that the reflective layers of the system can try to predict the effects of changes it might make to itself. Powerful learning is enabled by a powerful ability to reflect.
+
 
 \subsection{Learned}
 
@@ -236,14 +236,9 @@ According to initial processing results approx. 61\% of incidents can be underst
 
 \section{Conclusions}
 
-The main goal of described prototype is feasibility study of application of "Emotion Machine" \cite{minsk} in IT Maintenance Domain in boundaries of the cycle from processing incident in natural language(English) up to machine understood request. In future: found and applied solution. Prototype is capable of evolving during the operation via training option.
+The main goal of described prototype is feasibility study of application of "Emotion Machine" \cite{mmem} in IT Maintenance Domain in boundaries of the cycle from processing incident in natural language(English) up to machine understood request. In future: found and applied solution. Prototype is capable of evolving during the operation via training option.
 
 \begin{thebibliography}{4}
-
-\bibitem{minsk}
-Minsky M.:
-The Emotion Machine.
-Simon \& Schuster Paperbacks  (2006).
 
 \bibitem{lili}
 Liu H., Lieberman H.:
@@ -254,6 +249,11 @@ Cambridge, MIT Media Laboratory  (2005).
 Russel S., Norvig P.:
 Artificial Intelligence. A Modern approach.
 Pearson (2010).
+
+\bibitem{mmem}
+Minsky M.:
+The Emotion Machine.
+Simon \& Schuster Paperbacks  (2006).
 
 \end{thebibliography}
 
