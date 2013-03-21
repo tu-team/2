@@ -17,7 +17,7 @@
 
 \title{Thinking Lifecycle as an implementation of machine understanding in software maintenance domain}
 
-\titlerunning{Thinking Lifecycle implementation in ITSM}
+\titlerunning{Thinking Lifecycle implementation in IT DID}
 
 \author{Alexander Toschev\inst{1} \and Maxim Talanov\inst{2} \and Andrey Krekhov\inst{3}}
 \institute{Kazan State University, Chebotarev Research Institute of Mathematics and Mechanics\\
@@ -36,13 +36,15 @@ Sibirskii trakt 34, 420029 Kazan, Russia\\
 \maketitle
 
 \begin{abstract}
-IT maintenance domain is wide and contains a lot of tools that helps to solve a lot of every-day problems. IT maintenance also has a lot of primitive incidents that seems to be easy to automate. However there is still the gap occupied by human specialist understanding and decision making as well as implementation even primitive incidents. But one of the key to understanding input request is the human being thinking processes: correlation, simulation, annotation. Using this model it is much easy to parse incoming request in natural language. In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
+IT Infrastructure maintenance domain is a labour intensive process and contains itself as many of tools that helps to solve a lot of every-day problem to support business operations. IT Infrastructure maintenance also has a lot of primitive incidents that seems to be easy to automate. However there is still the gap to run business, operating support needed to be provided by human specialists understanding and making decision how to implement even primitive incidents. But one of the key factors in automation and in  entire process is to understand input request consigned to the human support specialist with cover functions such thinking processes: correlation, simulation, annotation. Using this model In 2006 Marvin Minsky has published his book \cite{minsk} which was our inspiration and the base of implementation described below.
 
 \keywords{AI, machine understanding, it outsourcing}
 
 \end{abstract}
 
 \section{Introduction}
+We have been translated an ontology of the types of reflections that a system mind might make of itself. Our focus in particular on the negative—what are the ways that system criticizes its own activities.  We have implemented a ‘mental critics’ that we envision as populating the upper reflective levels of the system. 
+
 This implementation contains machine understanding model based on thinking model because human understanding is also based on human thinking. \\
 In 2006 year Marvin Minsky has published his book “The Emotion Machine” where he describes model of human thinking dividing all actions into 3 categories:
 
@@ -53,7 +55,7 @@ In 2006 year Marvin Minsky has published his book “The Emotion Machine” wher
 \end{enumerate}
 
 \subsection{Critic}
-Critic could be understood as probabilistic predicate. In real world when human faces the problem several critics are activated. In ITSM model\footnote{ITSM - IT Service Management - model of IT services} there is Direct Instruction Critic (described below) that activates when direct instruction incident has been received. After activating critic returns Selector request.
+Critic could be understood as probabilistic predicate. In real world when human faces the problem several critics are activated. In IT DID model\footnote{IT DID - IT Dynamic Infrastructure Domain - domain of IT services like remote Infrastructure support} there is Direct Instruction Critic (described below) that activates when direct instruction incident has been received. After activating critic returns Selector request.
 
 Critic examples:
 
@@ -69,6 +71,20 @@ Critic examples:
 Selector is capable of retrieving Resources (Critic or Way to think) from memory. Is the main component for memory(see below) processing.
 
 \subsection{Way to think}
+In our approach, a commonsense reasoning involves not a  direct  mechanism for inferencing, but a vast of  specialized ways-to-think and  suited for certain problem-types in IT Infrastructure domain problem solving strategies, such as:
+\begin{enumerate}
+ \item Knowing How— System doesn’t see most problems as problems at all, because it’s already known how to solve them (by calling to domain Knowledge Base).
+ \item Analogy—Adapt a method have been used before (taken from work instructions, reports  and etc).
+ \item Reformulation—When previous  methods are fail, system trying  to find a new way to describe the problem.
+ \item Correlation— Matches inbound concepts with already known.
+ \item Cry for Help — If none of  methods do not give a pass result, has ability to use less trustful  resources and pass test.
+\end
+Our architecture is designed to keep updating multiple representations of knowledge in parallel or and with spiral  loops. This enables it to quickly switch between different ways-to-think. This means that the system will not get stuck because those alternate ways-to-think will be ready to take over when the present one runs into trouble. This is related to Minsky’s frame array idea, where many views of an object are linked by their common parts to together form a
+more realistic or complete model than any individual view could form.
+
+\emph{Practical example 1}, If incident is an automatically generated, system should process it using instruction book A.
+\emph{Practical example 2}, If the problem symptoms already stored in the system knowledge base, use analogy to solve it.Way To Think in current implementation is a worker that modifies short term memory.
+
 
 Worker components that actually changes the contents of short term memory(see below).
 
@@ -125,12 +141,22 @@ This implementation based on triple \emph{Critic-Selector-Way to think}. There a
 
 Instinctive level is planned for future use as acceleration of automatically generated incidents.
 
-\section{Thinking life cycle}
+\section{Thinking life cycle (TLC)}
 
-Thinking lifecycle is a main and central component of current implementation. It controls prototype thinking levels, short term memory, long term memory.
+The central idea behind our architecture is using one method of solution, system can rapidly elevate to another. Thus, at the top level, our architecture is organized as follows. When the system encounters a problem, it first uses some knowledge about ‘problem-types’ to select some ‘way-to-think’ that might work. 
+The system TLC processes for noticing problems in their own activities, knowledge about how to debug those problems and—when that fails—knowledge about how to transition to different, alternative ways of thinking. 
+Our architectural design presently also  includes reflective levels beyond the deliberative level
+Each reflective level responding to problems in the levels beneath and includes:
+\begin{itemize}
+ \item Reflective—Thinks about the recent deliberations of deliberative level, such as whether a subgoal has gotten the
+ \item system closer with possibility factor  to establish criteria level to a supergoal or further away for processing.
+ \item Self-Reflective—Thinks about its activities with respect to large-scale thinking models of its abilities and limits, for example, what kinds of  IT domain objectives  the system knows, how it typically behaves in similar situations, and so forth.
+ \item Self-Conscious—Thinks about itself in relation to others entities, for example, to compare its own skills what based on trained domain KB and experiences with those of others.
+\end{itemize}
+
+TLC controls prototype thinking levels, short term memory, long term memory.
 
 Typical workflow described in following steps:
-
 \begin{itemize}
  \item Incident processing starts
  \item Suitable critic activates and returns selector request
@@ -142,22 +168,25 @@ Typical workflow described in following steps:
 Thinking Lifecycle(TLC) run different components simultaneously like a human thinking. This way, different thinking levels are activated in parallel.
 
 \subsection{Short Term Memory}
-Ways to think actively operate with common data that are stored in short term memory or a context. Short term memory contains a set of current processing data required for every component of the Selector -> Critic -> Way to think triple: domain model, last processing result e.t.c.
+We present a general cognitive design based on reflective and deliberative level that solves Minsky's problem of  that uses distributed associative memories. The type of architecture we present is based on the interaction between an "attribute-object selector" and an "critic filter” of successive evoked objects, with the intermediation of a working (short-term) memory.
+Ways to think actively operates with common data that are stored in short term memory or a context. Short term memory contains a set of current processing data required for every component of the Selector -\> Critic -\> Way to think triple: domain model, last processing result e.t.c.
 
 \subsection{Long Term Memory}
-In contrast of Short Term Memory Long Term Memory persists data in electrically independent storage. After several thinking cycles data from short term memory is merged with data in long term memory.
+In contrast of Short Term Memories, Long Term Memories are viewed as I/O units responsible for translating data on the short term memory data processed result and interfaced into previously remembered states, and vice-versa. After several thinking cycles data from short term memory is merged with data in long term memory.
 
 \subsection{Domain model}
 Domain model is a set of current knowledge for specific scope: known problems, solutions, existing concepts, existing how-tos, critics, way to think.\\
 
 \section{Thinking Model}
-The picture below shows Thinking Model diagram
+In our view human-level learning requires a not standard architectural approach that is intimately connected to the rest of thinking. Beside resolution problem as a functional goal of the system it’s have been also focused on the ‘credit assignment problem’—how can a system decide how to improve itself, especially as problems  for resolution gets more complicated.  As the system grows, that  requires a more and more elaborate self-model implementation, so that the reflective layers of the system can try to predict the effects of changes it might make to itself. Powerful learning is enabled by a powerful ability to reflect.
+
+The picture below shows Thinking process example
 
 \begin{figure}
 
 \epsfig{file=tuactivity5.eps, height=150px, width=340px}
 
-\caption{Thinking Model Diagram}
+\caption{Thinking process example}
 \end{figure}
 
 \subsection{Learned}
@@ -207,7 +236,7 @@ System trains during operation via communication with human specialist. However,
 
 \section{Initial processing results}
 
-\emph{TBD}
+According to initial processing results approx. 61\% of incidents can be understood.
 
 \section{Conclusions}
 
