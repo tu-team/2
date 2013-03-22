@@ -85,7 +85,7 @@ This is main magical force of Siri.
 
 Same game with questions and answers. WolframAlpha wins, but Firefox example is most important for us and it fails.
 
-### [WordNet](http://wordnet.princeton.edu/)
+### [WordNet](http://wordnetweb.princeton.edu/perl/webwn)
 
 This is mainly the dictionary of english words with synonyms and morphology.
 
