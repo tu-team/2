@@ -1,0 +1,197 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\begin{document}
+
+\title{Thinking model and machine understanding of English primitive texts and it's application in Infrastructure as Service domain.}
+
+\author{\IEEEauthorblockN{Alexander Toschev}
+\IEEEauthorblockA{Chebotarev Research Institute of Mathematics and Mechanics\\
+Kazan State University\\
+Universitetskaya 17, 420008 Kazan, Russia\\
+Email: alexander.toschev@gmail.com}
+\and
+\IEEEauthorblockN{Maxim Talanov}
+\IEEEauthorblockA{Higher Institute for Information Technology\\
+Kazan State University\\
+Universitetskaya 17, 420008 Kazan, Russia\\
+Email: max.talanov@gmail.com}
+}
+
+\date{22 March 2013}
+
+\maketitle
+
+\begin{abstract}
+
+Construction of machine understanding is definitely the challenge. There are several technologies used widely.
+Currently mainstream applications uses machine operatable knowledge bases, for example \href{http://www.wolframalpha.com}{Wolfram Alpha}\cite{wolfram_alpha} to support simple dialog and operate devices.
+Newer the less those approaches do not create machine understanding of even primitive incidents.
+We tried new approach based on assumption that human understanding is tightly coupled with human thinking itself.
+We used thinking model described in Marvin Minsky book \href{http://en.wikipedia.org/wiki/The_Emotion_Machine}{"The emotion machine"}\cite{minsk}.
+
+
+\end{abstract}
+
+\section{The emotion machine thinking model}
+\subsection{6 thinking levels}
+
+\href{http://web.media.mit.edu/~minsky/E5/eb5.html}{Marvin Minsky} introduces the thinking as layered model that contains 6 layers:
+
+%\begin{figure}
+%\centering
+\includegraphics[scale=0.9]{model_6.png}
+%\caption{6 thinking layers model}
+%\end{figure}
+
+\begin{itemize}
+ \item \emph{Instinctive Reactions}:  Joan hears a sound and turns her head. All animals are born equipped with "instincts" that help them to survive.
+ \item \emph{Learned Reactions}: She sees a quickly oncoming car. Joan had to learn that conditions like this demand specific ways to react.
+ \item \emph{Deliberative Thinking}: To decide what to say at the meeting, she considers several alternatives, and tries to decide which would be best.
+ \item \emph{Reflective Thinking}: Joan reflects upon what she has done. She reacts, not just to things in things in the world, but also to recent events in her brain.
+ \item \emph{Self-Reflective Thinking}: Being "uneasy about arriving late" requires her to keep track of the plans that she's made for herself.
+ \item \emph{Self-Conscious Thinking}: When asking what her friends think of her, she also asks how her actions concord with ideals she has set for herself.
+\end{itemize}
+
+Each upper layer controls lower layers, and is based on constructs and uses signals of lower layers as input. In other words the top level \emph{Self-Conscious Thinking} controls \emph{Self-Reflective Thinking}, \emph{Reflective}, e.t.c. 
+In our implementation currently we do not use \emph{Instinctive Reactions}, but using of it is planned for future.
+
+\subsection{Selector, Critic, Way to think triple}
+
+%\begin{figure}
+%\centering
+\includegraphics{critic_selector_model.png}
+%\caption{Critic->Selector model}
+%\end{figure}
+
+Marvin Minsky defines Critics - Selector behavior as following:\\
+On the left are resources that we shall call Critics, each of which can recognize a certain species of "Problem-Type". When a Critic sees enough evidence that you now are facing its type of problem, then that Critic will try to activate a "Way to Think" that may be useful in current situation.
+
+Critic -> Selector -> Way to think are main components that implements all the machine understanding process. Critics could be understood as probabilistic predicates that does analysis of current context in memory. Selector retrieves resources from memory. Way to think is main worker that updates current context in memory.
+
+%\begin{figure}
+%\centering
+\includegraphics{critic_selector.png}
+%\caption{Critic with Selector that retrieves resources}
+%\end{figure}
+
+\section{Implementation of thinking\\ model}
+
+Liu H. and Lieberman H.\cite{stories} described approach to generate Python classes from shallow English descriptions, like: \emph{James Bond is an agent} which was our inspiration.
+
+We have implemented thinking model described above over the ID DID \footnote{IT DID - IT Dynamic Infrastructure Domain - domain of IT services like remote Infrastructure support}. Main unit of information to be processed is incident: the issue with description.
+
+\subsection{Thinking levels control}
+
+6 thinking levels are implemented by ThinkingLifeCycle component. It starts and controls and implements collaboration of actions: critics or ways to think that are assigned to different thinking layers. ThinkingLifeCycle also controls context of current incident processing in short term memory. It also controls goals orientation: to make whole machine understanding process oriented to the main goal: help user.\\
+
+\begin{itemize}
+  \item Critics are implemented as functions that returns selector request with probability and confidence.
+  \item Selector runs requests and retrieves resources from memory(first from short term then from long term).
+  \item Way to think are implemented as components that actually changes the contents of short term memory.
+\end{itemize}
+
+\subsection{Memory}
+
+Memory is something that are associated with structures and objects in computer memory and stored in Knowledge Base(KB) information.
+There are two types of memory: Short term and Long term. 
+
+\subsection{Short term memory}
+
+Short term memory stores the current context of incident processing in "quick" memory (for example, RAM). Eventually all objects from Short term memory should be transformed and stored in Long term memory, which is a some kind of I/O or another words HDD\footnote{HDD - Hard Disk Drive}. This is done via confirmation process and then machine learning (training).
+Training is based mainly on three mechanisms:
+\begin{itemize}
+  \item Deduction(Reasoning from generalised rules to specific)
+  \item Induction(Generalisation)
+  \item Abduction
+\end{itemize}
+
+\subsection{Long term memory}
+Long term memory stores persistent information mainly in the KB, this information has following structures:
+
+\begin{itemize}
+  \item Narrative - some kind of container, which other entities, for example concept
+  \item Semantic network (mainly: Semantic network of concepts) - network, that connect concepts using the semantic links. 
+  \item Knowledge line - list of references, that addresses concepts in different domains.
+\end{itemize}
+
+\section{IT DID application of the thinking model}
+
+IT Infrastructure maintenance domain is a labour intensive process and contains many tools that help to solve a lot of every-day problems to support business operations. IT Infrastructure maintenance domain has a lot of primitive incidents that seems to be easy to automate. However there is still the gap to run business, operating support is provided by human specialists understanding and making decision how to implement even primitive incidents. One of the key factors in automation and in entire process is to understand input request.
+
+IT DID contains at least 60\% according to our analysis \footnote{Analysis based on statistic of Fujitsu Russia GDC Ltd. Kazan, Russia } of incidents: issues that are mainly simple or primitive issues related to connectivity or software problems on a customer machine. Goal is to automate such kind of incidents
+
+\subsection{Critics and ways to think for incident processing}
+Using the Critics and Ways to think for incident processing system tries to understand the incidents.  
+All the mechanisms described above introduces main mechanisms of the thinking model. Simplified incident understanding process(only three layers) is described below.
+
+\subsection{Preliminary processing}
+
+First of all, on the Learned layer: textual description should be translated in to the form Semantic network this structure is stored in Short term memory, in following steps:
+
+\begin{itemize}
+  \item Preliminary splitting - finds sentences and words in the input. Check semantic and spelling of the input using the external tools like Google, After The Deadline \footnote{See \url{See http://afterthedeadline.com/ for more information}}
+  \item Knowledge base annotation - finds match in Knowledge Base
+  \item Lexical parsing - using the natural language processing Relex to parse input text \footnote{We using RelEx, See \url{http://wiki.opencog.org/w/RelEx_Dependency_Relationship_Extractor}}
+\end{itemize}
+
+Goal manager selects next goal: Classify incident.
+
+\subsection{Incident classification}
+
+On the Learned layer: three critics are invoked:
+\begin{itemize}
+  \item Direct instruction analyser - detects direct instructions such us "Please install Firefox" 
+  \item Problem description without desired state analyser - detects problem like "I have problem with Office 2010" 
+  \item Problem description with desired state analyser - detects problem like "I have Office 2007 installed, but Office 2010 required"
+\end{itemize}
+
+All those critics returns probability of each case (selector request) that are processed by Get most probable action analyser. Most probable selector request is been processed immediately all the rest are stored in short term memory. Then goal manager select next goal: generate the solution.
+
+\subsection{Direct instruction processing}
+
+Solution search mechanism searches for the solution based on direct instruction semantic network, fist in short term memory then in long term memory.
+
+\subsection{Problem description processing}
+
+Problem description should be reformulated in form:
+\begin{itemize}
+  \item What's wrong
+  \item Problem source
+  \item Problem location references
+\end{itemize}
+
+Then solution search mechanism is started and returns solution with probability of match. If no proper solution found system rises Cry for help(way to think) and is reported to human operator.
+Cry for help opens dialog with human specialist to acquire missing information or clarify uncertain results.
+
+\section{Conclusion}
+
+According to initial testing on the large amount of incidents - system can understand approx 61-65\% of incidents. However, during the initial processing we highlight some bottle necks and ideas for further optimizations and improvements. So, this percent will be improved.
+
+\section*{Acknowledgment}
+The authors would like to thank Marvin Minsky for his great book "Emotion Machine" \cite{minsk}
+
+\begin{thebibliography}{4}
+
+\bibitem{minsk}
+Minsky M.:
+The Emotion Machine.
+Simon \& Schuster Paperbacks  (2006).
+
+\bibitem{stories}
+Liu H., Lieberman H.:
+Metafor: Visualizing Stories as Code.
+Cambridge, MIT Media Laboratory  (2005).
+
+\bibitem{runo}
+Russel S., Norvig P.:
+Artificial Intelligence. A Modern approach.
+Pearson (2010).
+
+\bibitem{wolfram_alpha}
+\href{http://www.wolframalpha.com}{http://www.wolframalpha.com}.
+
+\end{thebibliography}
+
+\end{document} 
