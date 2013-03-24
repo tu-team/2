@@ -8,7 +8,7 @@
  1. openCog
  1. Sikuli
 
-## Smart is trendy word.
+## Smart is a trendy word.
 This is not really just a word. World is waiting for new intelligent applications, according to [FIONA](http://www.sparkingtogether.com/who-is-behind-fiona)
 by 2020, 85% of company to client interactions will be done without human intervention.
 Even now it is quite obvious:
