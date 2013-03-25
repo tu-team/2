@@ -36,10 +36,8 @@ This is really widely known example of voice recognition + knowledge base + mobi
 ## Mainly cognitive technologies are based on:
 
  1. Voice recognition
- 1. Machine understanding:
-   2. NLP
-   2. Natural language generation
-   2. Machine learning
+ 1. NLP
+ 1. Machine learning
  1. Program operatable knowledge bases
  1. Speech synthesis
 
