@@ -8,7 +8,7 @@
  1. openCog
  1. Sikuli
 
-## Smart is trendy word.
+## Smart is a trendy word.
 This is not really just a word. World is waiting for new intelligent applications, according to [FIONA](http://www.sparkingtogether.com/who-is-behind-fiona)
 by 2020, 85% of company to client interactions will be done without human intervention.
 Even now it is quite obvious:
@@ -36,10 +36,8 @@ This is really widely known example of voice recognition + knowledge base + mobi
 ## Mainly cognitive technologies are based on:
 
  1. Voice recognition
- 1. Machine understanding:
-   2. NLP
-   2. Natural language generation
-   2. Machine learning
+ 1. NLP
+ 1. Machine learning
  1. Program operatable knowledge bases
  1. Speech synthesis
 
