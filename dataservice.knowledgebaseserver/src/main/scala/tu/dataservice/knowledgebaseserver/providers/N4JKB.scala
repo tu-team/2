@@ -15,7 +15,7 @@ import tools.nsc.io.Directory
 
 /**
  *
- * @author: Alexander Toschev
+ * @author Alexander Toschev
  *          Date: 10/30/12
  *          Time: 5:51 AM
  *
