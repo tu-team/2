@@ -10,11 +10,9 @@ import tu.model.knowledge.domain.Concept
 
 /**
  * Simple KBAnnotator implementation.
- * @author toschev alex
- * @author talanov max
+ * @author toschev alex, talanov max
  *         Date: 15.06.12
  *         Time: 18:26
- *
  */
 
 class KBAnnotatorImpl extends Way2Think {
@@ -35,28 +33,29 @@ class KBAnnotatorImpl extends Way2Think {
     //trying to annotate sentences
     //val localAnnotator = AnnotatorRegistry.getLocalAnnotator()
 
+    /**
+     * Check KB for the phrase concept.
+     * @param phrase to search.
+     * @return Concept of the phrase.
+     */
     def checkLocalKB(phrase: String): Option[Concept] = {
       //check in local context
-      //check content and speciliazation
-      val dmModel= inputContext.domainModel.get.nodes
-      def checkList(lst:List[Concept]): Option[Concept]={
-        if (lst.isEmpty ) None
-        lst.foreach (n=>{
-           log debug "Check " + n.toString
-           if ( n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase) || n.content.toString.toLowerCase.equals(phrase.toLowerCase))
-             return Some (n)
-           else if (n.specialisations!=null && n.specialisations.frames.size>0)
-           {
-             val lstRes= checkList(n.specialisations.frames.map(s=>s._2 ).toList)
-             if (!lstRes.isEmpty) return lstRes
-           }
-
-
+      //check content and specialisation
+      val dmModel = inputContext.domainModel.get.nodes
+      def checkList(lst: List[Concept]): Option[Concept] = {
+        if (lst == null || lst.isEmpty) return None
+        lst.foreach(n => {
+          log debug "Check " + n.toString
+          if (n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase) || n.content.toString.toLowerCase.equals(phrase.toLowerCase))
+            return Some(n)
+          else if (n.specialisations != null && n.specialisations.frames.size > 0) {
+            val lstRes = checkList(n.specialisations.frames.map(s => s._2).toList)
+            if (!lstRes.isEmpty) return lstRes
+          }
         })
         None
       }
-     checkList (dmModel)
-
+      checkList(dmModel)
     }
 
 
@@ -64,7 +63,7 @@ class KBAnnotatorImpl extends Way2Think {
       var result = false
       var annotationFound = checkLocalKB(ph.phrase)
       log info("found annatations={}", annotationFound)
-      def appendAnnotation(ref: AnnotatedPhrase, ctp: Concept ) {
+      def appendAnnotation(ref: AnnotatedPhrase, ctp: Concept) {
         ref.concepts = List(ctp)
         //ref.phrases = src.phrases
       }

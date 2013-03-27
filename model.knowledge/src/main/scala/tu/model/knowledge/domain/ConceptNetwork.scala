@@ -36,11 +36,11 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
     this(List[Concept](), List[ConceptLink](), uri)
   }
 
-  private var _notKnownPhrases:List[AnnotatedPhrase]=List[AnnotatedPhrase ]()
+  private var _notKnownPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
 
-  def notKnownPhrases=_notKnownPhrases
+  def notKnownPhrases = _notKnownPhrases
 
-  def notKnownPhrases_=(aVal:List[AnnotatedPhrase])=_notKnownPhrases =aVal
+  def notKnownPhrases_=(aVal: List[AnnotatedPhrase]) = _notKnownPhrases = aVal
 
   def nodes = _nodes
 
@@ -58,10 +58,14 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
    * @return List[Concept] that has uri-s with specified name.
    */
   def getNodeByName(name: String): List[Concept] = {
-    _nodes.filter {
-      concept: Concept => {
-        reduceInstanceIdentifier(concept.uri.name) == reduceInstanceIdentifier(name)
+    if (_nodes != null) {
+      _nodes.filter {
+        concept: Concept => {
+          reduceInstanceIdentifier(concept.uri.name) == reduceInstanceIdentifier(name)
+        }
       }
+    } else {
+      List[Concept]()
     }
   }
 
@@ -131,17 +135,21 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
    * @return List[Concepts] that has generalisations uri-s with specified name.
    */
   def getNodeByPhrase(aPhrase: AnnotatedPhrase): List[Concept] = {
-    val res = this.nodes.filter {
-      concept: Concept => {
-        val phrases: Map[KnowledgeURI, AnnotatedPhrase] = concept.phrases.frames.filter {
-          uriPhrase: Pair[KnowledgeURI, AnnotatedPhrase] => {
-            uriPhrase._2.text.trim == aPhrase.text.trim
+    if (this.nodes != null) {
+      val res = this.nodes.filter {
+        concept: Concept => {
+          val phrases: Map[KnowledgeURI, AnnotatedPhrase] = concept.phrases.frames.filter {
+            uriPhrase: Pair[KnowledgeURI, AnnotatedPhrase] => {
+              uriPhrase._2.text.trim == aPhrase.text.trim
+            }
           }
+          phrases.size > 0
         }
-        phrases.size > 0
       }
+      res
+    } else {
+      List[Concept]()
     }
-    res
   }
 
   override def toString = {
@@ -198,7 +206,7 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
 
     var res = kb.saveResource(this, parent, key, linkType)
 
-    ModelHelper.appendToSave(this.uri,saved)
+    ModelHelper.appendToSave(this.uri, saved)
 
     for (x: Resource <- nodes) {
       res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME, saved)
@@ -232,12 +240,12 @@ object ConceptNetwork {
 
     val ID = new KBNodeId(selfMap)
 
-    val res=new ConceptNetwork(null,
+    val res = new ConceptNetwork(null,
       null,
       new KnowledgeURI(selfMap),
       new Probability(selfMap)
     )
-    KBMap.register(res,ID.ID)
+    KBMap.register(res, ID.ID)
 
     def oneList(items: Map[String, Map[String, String]], linkName: String): Map[KnowledgeURI, Concept] = {
       items.keys.foldLeft(Map[KnowledgeURI, Concept]()) {
@@ -259,15 +267,15 @@ object ConceptNetwork {
         (acc, uri) => ConceptLink(new Concept(linksSourceMap(uri)), new Concept(linksDestinationMap(uri)), uri) :: acc
       }
 
-    res._nodes=concepts
-    res._links=conceptLinkList
-        res
+    res._nodes = concepts
+    res._links = conceptLinkList
+    res
   }
 
-  def apply(notKnownConcept: List[AnnotatedPhrase]):ConceptNetwork  = {
+  def apply(notKnownConcept: List[AnnotatedPhrase]): ConceptNetwork = {
     val uri = KnowledgeURI("NotKnownConceptsHolder")
-    val re= new ConceptNetwork(List(), List(), uri)
-    re.notKnownPhrases=notKnownConcept
+    val re = new ConceptNetwork(List(), List(), uri)
+    re.notKnownPhrases = notKnownConcept
     re
   }
 

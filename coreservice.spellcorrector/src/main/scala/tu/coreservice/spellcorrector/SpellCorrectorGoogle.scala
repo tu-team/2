@@ -17,31 +17,31 @@ class SpellCorrectorGoogle extends SpellCorrector {
   val log = LoggerFactory.getLogger(this.getClass)
 
   /**
-   * correct sentence
+   * Correct sentence
    * @param inputSentence sentence that should be corrected
    */
   def correctSentence(inputSentence: String): String = {
 
-    var corrected = new StringBuffer(inputSentence)
+    val corrected = new StringBuffer(inputSentence)
 
-    var config = new Configuration();
+    val config = new Configuration()
 
     if (Configurator.proxyAddress().useProxy)
-      config.setProxy(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort, Configurator.proxyAddress().proxyType);
+      config.setProxy(Configurator.proxyAddress().proxyHost, Configurator.proxyAddress().proxyPort, Configurator.proxyAddress().proxyType)
 
-    var checker = new SpellChecker(config);
-    checker.setOverHttps(true); // Use https (default true from v1.1)
-    checker.setLanguage(Language.ENGLISH); // Use English (default)
+    val checker = new SpellChecker(config)
+    checker.setOverHttps(true) // Use https (default true from v1.1)
+    checker.setLanguage(Language.ENGLISH) // Use English (default)
 
-    var request = new SpellRequest();
-    request.setText(inputSentence);
-    request.setIgnoreDuplicates(true); // Ignore duplicates
+    val request = new SpellRequest()
+    request.setText(inputSentence)
+    request.setIgnoreDuplicates(true) // Ignore duplicates
 
     try {
 
-      var spellResponse = checker.check(request);
+      val spellResponse = checker.check(request)
 
-      var offsetDelta = 0;
+      var offsetDelta = 0
 
       if (spellResponse.getCorrections != null) {
 
@@ -54,7 +54,7 @@ class SpellCorrectorGoogle extends SpellCorrector {
 
             if (!ifWordIsReserved(word)) {
               // get words seems to be do not working correctly, replace functionality with \t separating
-              val toReplace = c.getValue.split("\t").head;
+              val toReplace = c.getValue.split("\t").head
 
               //clean up wrong word and replace by proper
               corrected.replace(c.getOffset() + offsetDelta, c.getOffset + offsetDelta + c.getLength, toReplace)
@@ -68,7 +68,7 @@ class SpellCorrectorGoogle extends SpellCorrector {
         log error e.getMessage
       }
     }
-    return corrected.toString
+    corrected.toString
   }
 
   def start() = false

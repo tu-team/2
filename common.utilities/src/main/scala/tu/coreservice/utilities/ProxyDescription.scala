@@ -1,7 +1,7 @@
 package tu.coreservice.utilities
 
 /**
- * @author toscheva
+ * @author toschev alex
  * Date: 28.05.12
  * Time: 20:41
  */
