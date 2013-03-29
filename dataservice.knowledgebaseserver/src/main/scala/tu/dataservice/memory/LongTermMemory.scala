@@ -70,6 +70,9 @@ object LongTermMemory {
     }
     catch {
       case e: Exception =>
+        //catch only if model doesn't exist at all
+        if (!e.toString.contains("/defaultLink")) throw  e
+
         log.error(e.toString)
         val res: ConceptNetwork = Defaults.domainModelConceptNetwork
         res.save(kb, KBNodeId(0), modelName.uri().get.toString, Constant.DEFAULT_LINK_NAME)

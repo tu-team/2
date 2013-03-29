@@ -433,8 +433,6 @@ object Concept {
       new Probability(selfMap)
     )
 
-    if (res.uri.name=="word")
-      log debug  "Load word"
     //register primary object
     KBMap.register(res, ID.ID)
 
@@ -448,7 +446,7 @@ object Concept {
 
     def oneListPhrases(items: Map[String, Map[String, String]]): Map[KnowledgeURI, AnnotatedPhrase] = {
       items.keys.foldLeft(Map[KnowledgeURI, AnnotatedPhrase]()) {
-        (acc, uri) => acc + Pair(KnowledgeURI(uri, true), AnnotatedPhrase.load(kb, ID, uri, Constant.SENTENCES_LINK_NAME))
+        (acc, uri) => acc + Pair(KnowledgeURI(uri, true), AnnotatedPhrase.load(kb, ID, uri, Constant.PHRASES_LINK_NAME))
       }
     }
 

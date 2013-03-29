@@ -47,6 +47,6 @@ object Configurator {
    * COMPOUND - spell checker from GOOGLE and grammar checker from After The Deadline
    */
 
-  def spellCheckerEngine(): String = "COMPOUND"
+  def spellCheckerEngine(): String = "GOOGLE"
 
 }

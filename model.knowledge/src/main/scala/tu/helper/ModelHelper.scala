@@ -28,7 +28,6 @@ object ModelHelper {
     val uriC =uri.uid
     if (saved.contains(uriC)) {
       //only create link
-
       kb.createLink(parent, refObject, linkType, key)
       return true
     }

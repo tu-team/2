@@ -45,7 +45,7 @@ class KBAnnotatorImpl extends Way2Think {
       def checkList(lst: List[Concept]): Option[Concept] = {
         if (lst == null || lst.isEmpty) return None
         lst.foreach(n => {
-          log debug "Check " + n.toString
+          log debug "Check " + n.uri.name
           if (n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase) || n.content.toString.toLowerCase.equals(phrase.toLowerCase))
             return Some(n)
           else if (n.specialisations != null && n.specialisations.frames.size > 0) {

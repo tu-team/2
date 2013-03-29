@@ -244,34 +244,25 @@ object AnnotatedPhrase {
    * @return loaded AnnotatedPhrase
    */
   def load(kb: KB, selfMap: Map[String, String]): AnnotatedPhrase = {
-    val ID = new KBNodeId(selfMap)
-    subload(kb, selfMap, ID)
+    throw  new Exception("Operation is not supported")
   }
 
 
-  private def subload(kb: KB, selfMap: Map[String, String], ID: KBNodeId): AnnotatedPhrase = {
+  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): AnnotatedPhrase = {
+
+    val selfMap = kb.loadChild(parent, key, linkType)
+    if (selfMap.isEmpty) {
+      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
+      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
+    }
 
 
-    val loadedConcepts: List[Concept] = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
-    val loadedLinks: List[ConceptLink] = loadedConcepts.map {
-      c: Concept => {
-        c.links
-      }
-    }.flatten
+    //try to load from cache
+    val cached = KBMap.loadFromCache(new KnowledgeURI(selfMap))
+    if (!cached.isEmpty) return cached.get.asInstanceOf[AnnotatedPhrase]
+    val ID = new KBNodeId(selfMap)
 
-    val subPhrases = kb.loadChildrenList(ID, Constant.PHRASES_LINK_NAME).map(load(kb, _))
-    /*
-    val subPhrases =
-      if (subPhrasesRaw.size == 1)
-        subPhrasesRaw.map(new AnnotatedPhrase(_))
-      else
-        subPhrasesRaw.map(load(kb, _))
-        */
-    val res = new AnnotatedPhrase(
-      subPhrases,
-      loadedConcepts,
-      loadedLinks,
-      new KnowledgeURI(selfMap),
+    var res = new AnnotatedPhrase(null,null,null,  new KnowledgeURI(selfMap),
       new Probability(selfMap),
       selfMap.get("text") match {
         case Some(text) => text
@@ -280,26 +271,22 @@ object AnnotatedPhrase {
       selfMap.get("index") match {
         case Some(text) => text.toDouble
         case None => 0
-      }
-    )
-
+      })
     KBMap.register(res, ID.ID)
 
+    //load children
+    res.concepts = kb.loadChildrenList(ID, Constant.CONCEPT_LINK_NAME).map(new Concept(_))
+    res._links = res.concepts.map {
+      c: Concept => {
+        c.links
+      }
+    }.flatten
+
+    //TODO: make the test with recurrent phrases
+    res.phrases = kb.loadChildrenMap(ID, Constant.PHRASES_LINK_NAME).map(chd=>load(kb,ID, chd._1, Constant.PHRASES_LINK_NAME)).toList
+
     res
-  }
 
-
-  def load(kb: KB, parent: KBNodeId, key: String, linkType: String): AnnotatedPhrase = {
-    //    apply("dummy phrase from ID-parent")
-
-    val selfMap = kb.loadChild(parent, key, linkType)
-    if (selfMap.isEmpty) {
-      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parentId.toString))
-      throw new UnexpectedException("Concept not loaded for link " + key + "/" + linkType + " for " + parent.toString)
-    }
-
-    val ID = new KBNodeId(selfMap)
-    subload(kb, selfMap, ID)
   }
 
 
