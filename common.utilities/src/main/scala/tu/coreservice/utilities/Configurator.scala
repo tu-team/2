@@ -2,18 +2,18 @@ package tu.coreservice.utilities
 
 import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.{Logger, LoggerFactory}
+import tu.model.knowledge.Constant
 
 /**
+ * Contains configuration for whole solution.
+ * Use file tu.properties with string useProxy = true.
+ * Put tu.properties in classpath.
  * @author toschev alex
  *         Date: 28.05.12
  *         Time: 20:35
  */
 
-/*
-  Hold configuration for whole solution
- */
 object Configurator {
-
 
   val log: Logger = LoggerFactory.getLogger(this.getClass)
 
@@ -24,18 +24,17 @@ object Configurator {
     val res = new ProxyDescription
 
     try {
-      val proxyCfg: Config = ConfigFactory.load()
+      val proxyCfg: Config = ConfigFactory.load(Constant.tuIniAddress)
       res.proxyHost = proxyCfg.getString("proxyHost")
       res.proxyPort = proxyCfg.getInt("proxyPort")
-      res.useProxy = proxyCfg.getBoolean("useProxy") // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
+      res.useProxy = proxyCfg.getBoolean("useProxy")
       log.debug("Use proxy settings from config host {}:{} use: {}", List(res.proxyHost, res.proxyPort.toString, res.useProxy))
       return res
     }
     catch {
       case ex: Exception => log.debug(ex.getMessage)
     }
-
-    res.useProxy = true // useProxy  // use file $HOME/tu.ini with string "useProxy = yes", please
+    res.useProxy = true
     res
   }
 
@@ -46,7 +45,6 @@ object Configurator {
    * ATD - after the deadline
    * COMPOUND - spell checker from GOOGLE and grammar checker from After The Deadline
    */
-
   def spellCheckerEngine(): String = "GOOGLE"
 
 }

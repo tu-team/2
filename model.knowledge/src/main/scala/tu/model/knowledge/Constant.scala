@@ -8,6 +8,7 @@ package tu.model.knowledge
 
 object Constant {
 
+  val tuIniAddress = "tu.properties"
   val IssueMissingFactor: Double = 0.1
   val DomainMissingFactor: Double = 1.0
   val DistanceThreadHold: Double = 1.0
