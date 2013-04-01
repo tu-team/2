@@ -1,7 +1,5 @@
 package tu.model.knowledge
 
-import tu.exception.UnexpectedException
-
 /**
  * Stores typed KLine
  * @author talanov max
@@ -36,11 +34,42 @@ case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _u
     this
   }
 
-  override def toString: String =
-  {
+  /**
+   * Returns Iterable of values of Type.
+   * @return Iterable of values of Type.
+   */
+  def values: Iterable[Type] = frames.values
 
-     frames.map (f=>f._1.toString()).mkString("(",",",")")
+  /**
+   * Returns Some[Type] if frames contains Resource with specified KnowledgeURI.
+   * @param uri to search resource with.
+   * @return Option[Type] with specified KnowledgeURI.
+   */
+  def get(uri: KnowledgeURI): Option[Type] = {
+    _frames.get(uri)
+  }
 
+  /**
+   * Searches for Resource with KnowledgeURI with specified UID.
+   * @param uid UID to search with.
+   * @return Option[Type] with specified UID in KnowledgeURI.
+   */
+  def get(uid: String): List[Option[Type]] = {
+    val keys = _frames.keys
+    val uris = keys.filter{
+      uri: KnowledgeURI => {
+        uri.uid.eq(uid)
+      }
+    }
+    uris.map {
+      uri: KnowledgeURI => {
+        _frames.get(uri)
+      }
+    }.toList
+  }
+
+  override def toString: String = {
+    frames.map(f => f._1.toString()).mkString("(", ",", ")")
   }
 
   //TODO correct this

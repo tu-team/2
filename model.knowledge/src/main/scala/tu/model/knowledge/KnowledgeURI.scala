@@ -11,14 +11,13 @@ import tu.model.knowledge.helper.URIGenerator
  *         Time: 11:20 PM
  */
 
-class KnowledgeURI(_namespace: String, var _name: String, _revision:String, var  _uID: String  ) {
+class KnowledgeURI(_namespace: String, var _name: String, _revision: String, var _uID: String) {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
 
-  def this(_namespace: String,  _name: String, _revision: String)=
-  {
-      this(_namespace,_name,_revision,"")
+  def this(_namespace: String, _name: String, _revision: String) = {
+    this(_namespace, _name, _revision, "")
 
   }
 
