@@ -1,7 +1,7 @@
 package tu.knowledge
 
 /**
- * @author max
+ * @author max talanov
  *         date 2012-06-08
  *         time: 10:56 PM
  */
@@ -38,6 +38,7 @@ class TypedKLineTest extends FunSuite {
   test("TypedKLine should contain several resources") {
     val kl = new TypedKLine[TypedFrame[Resource]](Map(f1.uri -> f1), uri)
     expect(kl.frames.get(f1.uri).get)(f1)
+    expect(kl.get(f1.uri).get)(f1)
   }
 
 }
