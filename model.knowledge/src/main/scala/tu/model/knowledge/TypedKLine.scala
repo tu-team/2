@@ -54,17 +54,13 @@ case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _u
    * @param uid UID to search with.
    * @return Option[Type] with specified UID in KnowledgeURI.
    */
-  def get(uid: String): List[Option[Type]] = {
-    val keys = _frames.keys
-    val uris = keys.filter{
-      uri: KnowledgeURI => {
-        uri.uid.eq(uid)
+  def get(uid: String): List[Type] = {
+    _frames.filter {
+      keyValue: Pair[KnowledgeURI, Type] => {
+        keyValue._1.uid.equals(uid)
       }
-    }
-    uris.map {
-      uri: KnowledgeURI => {
-        _frames.get(uri)
-      }
+    }.map {
+      keyValue: Pair[KnowledgeURI, Type] => keyValue._2
     }.toList
   }
 

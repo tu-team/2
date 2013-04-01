@@ -19,6 +19,32 @@ case class KLine(var _frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _
 
   def frames_=(value:Map[KnowledgeURI, Resource])=_frames=value
 
+  def values = _frames.values
+
+  /**
+   * Returns Some[Resource] if frames contains Resource with specified KnowledgeURI.
+   * @param uri to search resource with.
+   * @return Option[Resource] with specified KnowledgeURI.
+   */
+  def get(uri: KnowledgeURI): Option[Resource] = {
+    _frames.get(uri)
+  }
+
+  /**
+   * Searches for Resource with KnowledgeURI with specified UID.
+   * @param uid UID to search with.
+   * @return Option[Resource] with specified UID in KnowledgeURI.
+   */
+  def get(uid: String): List[Resource] = {
+    _frames.filter {
+      keyValue: Pair[KnowledgeURI, Resource] => {
+        keyValue._1.uid.equals(uid)
+      }
+    }.map {
+      keyValue: Pair[KnowledgeURI, Resource] => keyValue._2
+    }.toList
+  }
+
 }
 
 object KLine {
