@@ -283,6 +283,12 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
+  /**
+   * Checks if specified mappingConcept is target model, returns Some[Concept] if targetModel contains Concept with mappingConcept.phrase, None otherwise.
+   * @param mappingConcept Concept to check in targetModel.
+   * @param targetModel model to search mappingConcept.
+   * @return Some[Concept] if targetModel contains Concept with mappingConcept.phrase, None otherwise.
+   */
   def findInTarget(mappingConcept: Concept, targetModel: ConceptNetwork): Option[Concept] = {
     if (mappingConcept.phrases.size > 0) {
       val res = mappingConcept.phrases.frames.filter {
@@ -300,6 +306,13 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
+  /**
+   * Searches path though mappingConcepts links to Concept in targetModel.
+   * @param mappingConcept to search path.
+   * @param targetModel the model to check destination Concept.
+   * @param processedConcepts already processed concepts list.
+   * @return List[Concept] path from mappingConcept to one of targetModel Concepts.
+   */
   def findMapToTarget(mappingConcept: Concept, targetModel: ConceptNetwork, processedConcepts: List[Concept]): List[Concept] = {
     findInTarget(mappingConcept, targetModel) match {
       case Some(c: Concept) => {
