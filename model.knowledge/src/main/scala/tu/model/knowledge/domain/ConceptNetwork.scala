@@ -70,6 +70,24 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   }
 
   /**
+   * Returns nodes with specified uri.
+   * @param aUri to search node with.
+   * @return List of found Concepts with specified aUri, if no nodes found empty list is returened.
+   */
+  def getNodeByURI(aUri: KnowledgeURI): List[Concept] = {
+    if (_nodes != null) {
+      _nodes.filter {
+        concept: Concept => {
+          concept.uri == aUri
+        }
+      }
+    } else {
+      List[Concept]()
+    }
+  }
+
+
+  /**
    * Returns instance identifier reduced concept name
    */
   def reduceInstanceIdentifier(name: String): String = {

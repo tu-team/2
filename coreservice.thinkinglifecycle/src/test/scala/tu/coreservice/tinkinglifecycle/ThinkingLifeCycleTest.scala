@@ -36,7 +36,7 @@ class ThinkingLifeCycleTest extends FunSuite {
     log debug res.toString
   }
 
-  test("run comelete lifecycle with dummy way2think") {
+  test("run complete lifecycle with dummy way2think") {
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
