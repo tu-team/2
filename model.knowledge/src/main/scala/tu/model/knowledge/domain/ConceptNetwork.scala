@@ -221,21 +221,25 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   override def save(kb: KB, parent: KBNodeId, key: String, linkType: String, saved: ListBuffer[String] = new ListBuffer[String]()): Boolean = {
 
     if (ModelHelper.checkIfSaved(kb, parent, key, linkType, saved, KBNodeId(this), this.uri)) return true
-
     var res = kb.saveResource(this, parent, key, linkType)
-
     ModelHelper.appendToSave(this.uri, saved)
 
-    for (x: Resource <- nodes) {
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME, saved)
+    if (nodes != null) {
+      for (x: Resource <- nodes) {
+        res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.NODES_LINK_NAME, saved)
+      }
     }
 
-    for (x: Resource <- _rootNodes) {
-      res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.ROOT_NODES_LINK_NAME, saved)
+    if (_rootNodes != null) {
+      for (x: Resource <- _rootNodes) {
+        res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.ROOT_NODES_LINK_NAME, saved)
+      }
     }
 
-    for (y: Resource <- links) {
-      res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME, saved)
+    if (links != null) {
+      for (y: Resource <- links) {
+        res &= y.save(kb, KBNodeId(this), y.uri.toString, Constant.LINKS_LINK_NAME, saved)
+      }
     }
     res
   }
