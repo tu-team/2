@@ -78,7 +78,7 @@ class Correlation extends SimulationReformulationAbstract {
   def processClarifiedConcepts(clarifiedConcepts: List[Concept], targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
-        findInTargetAccordingToPhrase(c, targetModel) match {
+        findInTarget (c, targetModel) match {
           case Some(c: Concept) => false
           case None => true
         }
@@ -91,9 +91,9 @@ class Correlation extends SimulationReformulationAbstract {
     }
     val notUnderstood = this.checkShortestMaps(clarifiedConcepts, shortestMaps, targetModel)
     val domainConcepts = createDomainConcepts(clarifiedTargetConcepts)
-    log.info("found maps={}, ", shortestMaps)
-    log.info("created domain concepts={},", domainConcepts)
-    log.info("not understood concepts={}", notUnderstood)
+    log.debug("found maps={}, ", shortestMaps)
+    log.debug("created domain concepts={},", domainConcepts)
+    log.debug("not understood concepts={}", notUnderstood)
     (shortestMaps.flatten, domainConcepts, notUnderstood)
   }
 
@@ -334,7 +334,7 @@ class Correlation extends SimulationReformulationAbstract {
    * @return List[Concept] path from mappingConcept to one of targetModel Concepts.
    */
   def findMapToTarget(mappingConcept: Concept, targetModel: ConceptNetwork, processedConcepts: List[Concept]): List[Concept] = {
-    findInTargetAccordingToPhrase(mappingConcept, targetModel) match {
+    findInTarget(mappingConcept, targetModel) match {
       case Some(c: Concept) => {
         List(c)
       }
@@ -366,6 +366,13 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
+  /**
+   * Returns List of Link.source or Link.destination if it does not contain in processedLinks list.
+   * @param links to check filter.
+   * @param currentConcept Concept to match.
+   * @param processedLinks Concept[List] to check in.
+   * @return List of Link.source or Link.destination if it does not contain in processedLinks list.
+   */
   def filterLinks(links: List[ConceptLink], currentConcept: Concept, processedLinks: List[Concept]): List[ConceptLink] = {
     links.filter {
       link: ConceptLink => {
@@ -380,6 +387,12 @@ class Correlation extends SimulationReformulationAbstract {
     }
   }
 
+  /**
+   * Returns Link.source or Link.destination if it does not match specified currentConcept.
+   * @param links List[Concept] to filter.
+   * @param currentConcept current concept to match.
+   * @return Link.source or Link.destination if it does not match specified currentConcept.
+   */
   def filterLinksConcepts(links: List[ConceptLink], currentConcept: Concept): List[Concept] = {
     links.map {
       link: ConceptLink => {

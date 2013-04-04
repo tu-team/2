@@ -49,7 +49,7 @@ class MorphyKB(var _sentences: List[AnnotatedSentence]) extends MorphyJWNL {
     val res: Morphed = super.morph(word)
     val foundPhrases: List[AnnotatedPhrase] = searchWord(word, _sentences)
     if (foundPhrases.size < 1) {
-      log info ("res ={}", res)
+      log debug ("res ={}", res)
       res
     } else if (foundPhrases.size == 1) {
       //unambiguous case

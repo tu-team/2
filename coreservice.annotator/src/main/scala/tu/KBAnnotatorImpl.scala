@@ -45,7 +45,7 @@ class KBAnnotatorImpl extends Way2Think {
       def checkList(lst: List[Concept]): Option[Concept] = {
         if (lst == null || lst.isEmpty) return None
         lst.foreach(n => {
-          log debug "Check " + n.uri.name
+          log trace "Check " + n.uri.name
           if (n.phrases.frames.map(p => p._2).toString().toLowerCase.equals(phrase.toLowerCase) || n.content.toString.toLowerCase.equals(phrase.toLowerCase))
             return Some(n)
           else if (n.specialisations != null && n.specialisations.frames.size > 0) {
@@ -62,7 +62,7 @@ class KBAnnotatorImpl extends Way2Think {
     def annotatePhrase(ph: AnnotatedPhrase): Boolean = {
       var result = false
       var annotationFound = checkLocalKB(ph.phrase)
-      log info("found annatations={}", annotationFound)
+      log trace ("found annatations={}", annotationFound)
       def appendAnnotation(ref: AnnotatedPhrase, ctp: Concept) {
         ref.concepts = List(ctp)
         //ref.phrases = src.phrases
@@ -75,7 +75,7 @@ class KBAnnotatorImpl extends Way2Think {
             annotationFound = checkLocalKB(syn)
             if (!annotationFound.isEmpty) {
               appendAnnotation(ph, annotationFound.get)
-              log info("appended annotation={} to phrase={}", annotationFound, ph)
+              log trace ("appended annotation={} to phrase={}", annotationFound, ph)
               result = true
               scala.util.control.Breaks.break()
             }
@@ -84,7 +84,7 @@ class KBAnnotatorImpl extends Way2Think {
       }
       else {
         appendAnnotation(ph, annotationFound.get)
-        log info("appended annotation={} to phrase={}", annotationFound, ph)
+        log trace ("appended annotation={} to phrase={}", annotationFound, ph)
         result = true
       }
       result

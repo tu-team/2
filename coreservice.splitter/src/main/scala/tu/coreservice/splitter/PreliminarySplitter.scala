@@ -46,7 +46,7 @@ class PreliminarySplitter extends Way2Think {
    */
   def apply(inputContext: ShortTermMemory): ShortTermMemory = {
 
-    log debug "apply(" + inputContext + ": ShortTermMemory)"
+    log trace "apply(" + inputContext + ": ShortTermMemory)"
 
     val textFrames = inputContext.frames.filter(p =>
       p._1.name == "inputtext"
@@ -79,7 +79,7 @@ class PreliminarySplitter extends Way2Think {
       //check sentence using auto-corrector
       //append extracted sentence to context and increase counter for sentence
       val relexSentence = relexServer.processSentence(sentence)
-      log info ("relexSentence={}", relexSentence)
+      log debug ("relexSentence={}", relexSentence)
       val parse = relexSentence.getParses.get(0)
 
       var phrases = processNodeRec(parse.getLeft.get("head"))
@@ -95,14 +95,14 @@ class PreliminarySplitter extends Way2Think {
         new KnowledgeURI(URIHelper.uriProjectName, sentenceURI.name + "-" + sntOrder, URIHelper.version()))
       sntOrder = sntOrder + 1
       annotatedSentences ::= annotatedSentence
-      log info ("created phrases={}", phrases)
-      log info ("created sentences={}", annotatedSentences)
+      log trace ("created phrases={}", phrases)
+      log trace ("created sentences={}", annotatedSentences)
     })
 
     val annotatedNarrative = AnnotatedNarrative(annotatedSentences, KnowledgeURI(this.getClass.getName + " result"))
-    log info ("created narrative={}", annotatedNarrative)
+    log debug ("created narrative={}", annotatedNarrative)
     outputContext.lastResult = Some(annotatedNarrative)
-    log debug ("apply()= {}", outputContext.toString)
+    log trace ("apply()= {}", outputContext.toString)
     outputContext
   }
 
@@ -111,11 +111,11 @@ class PreliminarySplitter extends Way2Think {
 
     if (feature.get("name") != null) {
       val name = feature.get("name").getValue
-      log debug "name=" + feature.get("name").getValue
+      log trace "name=" + feature.get("name").getValue
       name
     } else if (feature.get("orig_str") != null) {
       val origStr = feature.get("orig_str").getValue
-      log debug "orig_str" + feature.get("orig_str").getValue
+      log trace "orig_str" + feature.get("orig_str").getValue
       origStr
     } else {
       throw new UnexpectedException("$No_name_specified")
@@ -174,7 +174,7 @@ class PreliminarySplitter extends Way2Think {
 
       val next = feature.get("NEXT")
       if (next != null) {
-        log debug "=>"
+        log trace "=>"
         phrases :::= processNodeRec(next)
       }
       phrases
