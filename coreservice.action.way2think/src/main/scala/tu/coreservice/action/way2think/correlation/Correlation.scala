@@ -78,7 +78,7 @@ class Correlation extends SimulationReformulationAbstract {
   def processClarifiedConcepts(clarifiedConcepts: List[Concept], targetModel: ConceptNetwork): Triple[List[Concept], List[Concept], List[Concept]] = {
     val clarifiedTargetConcepts = clarifiedConcepts.filter {
       c: Concept => {
-        findInTarget (c, targetModel) match {
+        findInTarget(c, targetModel) match {
           case Some(c: Concept) => false
           case None => true
         }
@@ -86,7 +86,7 @@ class Correlation extends SimulationReformulationAbstract {
     }
     val shortestMaps: List[List[Concept]] = clarifiedTargetConcepts.map {
       c: Concept => {
-        findMapToTarget(c, targetModel, List[Concept]())
+        findPathToTarget(c, targetModel, List[Concept]())
       }
     }
     val notUnderstood = this.checkShortestMaps(clarifiedConcepts, shortestMaps, targetModel)
@@ -367,11 +367,57 @@ class Correlation extends SimulationReformulationAbstract {
   }
 
   /**
+   * Searches path though mappingConcepts links to Concept in targetModel.
+   * @param mappingConcept to search path.
+   * @param targetModel the model to check destination Concept.
+   * @param processedConcepts already processed concepts list.
+   * @return List[Concept] path from mappingConcept to one of targetModel Concepts.
+   */
+  def findPathToTarget(mappingConcept: Concept, targetModel: ConceptNetwork, processedConcepts: List[Concept]): List[Concept] = {
+    findInTarget(mappingConcept, targetModel) match {
+      case Some(c: Concept) => {
+        List(c)
+      }
+      case None => {
+        if (mappingConcept.links.size > 0) {
+          val linkedConcepts = filterLinksMapConcepts(mappingConcept.links, mappingConcept, processedConcepts)
+          val res: List[List[Concept]] = linkedConcepts.map {
+            c: Concept => {
+              findPathToTarget(c, targetModel, processedConcepts ::: List(mappingConcept))
+            }
+          }
+          val foundMappings: List[List[Concept]] = res.filter {
+            lC: List[Concept] => lC.size > 0
+          }
+          if (foundMappings.size > 0) {
+            // in case if mappingConcept is intermediate concept (be -object-> object, be -subject-> Browser)
+            val leaves = linkedConcepts filter {
+              c: Concept => {
+                !foundMappings.flatten.contains(c)
+              }
+            }
+            val shortestMapping: List[Concept] = foundMappings.reduceLeft((s1, s2) =>
+              if (s2.size > s1.size) s1
+              else s2
+            )
+            leaves ::: List(mappingConcept) ::: shortestMapping
+
+          } else {
+            List[Concept]()
+          }
+        } else {
+          List[Concept]()
+        }
+      }
+    }
+  }
+
+  /**
    * Returns List of Link.source or Link.destination if it does not contain in processedLinks list.
    * @param links to check filter.
    * @param currentConcept Concept to match.
    * @param processedLinks Concept[List] to check in.
-   * @return List of Link.source or Link.destination if it does not contain in processedLinks list.
+   * @return List of Link if it does not contain in processedLinks list.
    */
   def filterLinks(links: List[ConceptLink], currentConcept: Concept, processedLinks: List[Concept]): List[ConceptLink] = {
     links.filter {
@@ -395,6 +441,36 @@ class Correlation extends SimulationReformulationAbstract {
    */
   def filterLinksConcepts(links: List[ConceptLink], currentConcept: Concept): List[Concept] = {
     links.map {
+      link: ConceptLink => {
+        if (link.source == currentConcept) {
+          link.destination
+
+        } else {
+          link.source
+        }
+      }
+    }
+  }
+
+  /**
+   * Returns List of Link.source or Link.destination if it does not contain in processedLinks list.
+   * @param links to check filter.
+   * @param currentConcept Concept to match.
+   * @param processedLinks Concept[List] to check in.
+   * @return List of Link.source or Link.destination if it does not contain in processedLinks list.
+   */
+  def filterLinksMapConcepts(links: List[ConceptLink], currentConcept: Concept, processedLinks: List[Concept]): List[Concept] = {
+    links.filter {
+      link: ConceptLink => {
+        if (link.source == currentConcept) {
+          val destination = link.destination
+          !processedLinks.contains(destination)
+        } else {
+          val source = link.source
+          !processedLinks.contains(source)
+        }
+      }
+    } map {
       link: ConceptLink => {
         if (link.source == currentConcept) {
           link.destination
