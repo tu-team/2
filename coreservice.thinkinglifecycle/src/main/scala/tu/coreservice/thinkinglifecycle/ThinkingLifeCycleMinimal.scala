@@ -150,7 +150,7 @@ class ThinkingLifeCycleMinimal
    * @return List of Contexts results of processing.
    */
   def processResources(resources: List[Resource], reflectiveFlag: Boolean = false): List[ShortTermMemory] = {
-    log info "processResources(" + resources + ": List[Resource] " + reflectiveFlag + " Boolean ): List[ShortTermMemory]"
+    log trace "processResources(" + resources + ": List[Resource] " + reflectiveFlag + " Boolean ): List[ShortTermMemory]"
     val contexts: List[List[ShortTermMemory]] = for (r <- resources) yield {
       val resContext = translate(r, this.globalContext)
       if (resContext != null) {

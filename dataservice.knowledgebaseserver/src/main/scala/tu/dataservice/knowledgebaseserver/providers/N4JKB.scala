@@ -42,7 +42,7 @@ object N4JKB extends KB {
     if (!inited) {
 
       _GraphDb = new EmbeddedGraphDatabase(defaultFilename)
-      log.info("Neo4j database initialized. Location "+defaultFilename)
+      log.trace("Neo4j database initialized. Location "+defaultFilename)
       ShutdownHook(_GraphDb.shutdown())
       //TODO: _nodeIndex = _GraphDb.index().forNodes( "nodes" );
       inited = true
@@ -78,7 +78,7 @@ object N4JKB extends KB {
       return N4JKB().getNodeById(Id)
     }
     catch {
-      case _ => LoggerFactory.getLogger(this.getClass).error("try to get not existed node with ID {}", Id.toString)
+      case _ => LoggerFactory.getLogger(this.getClass).error("Attempt to get not existing node with ID {}", Id.toString)
     }
     N4JKB().getReferenceNode
   }
@@ -87,8 +87,8 @@ object N4JKB extends KB {
     var ok = false
     val tx: Transaction = N4JKB().beginTx()
     try {
-    var parentNode =   N4JKB().getNodeById(parent.ID)
-    var childNode =  N4JKB().getNodeById(child.ID)
+    val parentNode = N4JKB().getNodeById(parent.ID)
+    val childNode = N4JKB().getNodeById(child.ID)
     val relationship = parentNode.createRelationshipTo(childNode,new RelationType(linkType))
     relationship.setProperty("key", key)
 
@@ -250,24 +250,24 @@ object N4JKB extends KB {
   private def addIndexedNode(resource: Resource, key: String, index: Index[Node]): Option[Node] = {
     val tx: Transaction = _GraphDb.beginTx()
     try {
-      var node: Node = _GraphDb.createNode()
+      val node: Node = _GraphDb.createNode()
       node.setProperty("type", resource.getClass.getName)
       node.setProperty("name", resource.uri.name)
-      index.add(node, "key", key);
+      index.add(node, "key", key)
       tx.success()
       return Option(node)
     }
     finally {
       tx.finish()
     }
-    return None
+    None
   }
 
   def addIndexedNode(key: String): Node = {
-    var node: Node = _GraphDb.createNode();
-    node.setProperty(keyField, key);
+    val node: Node = _GraphDb.createNode()
+    node.setProperty(keyField, key)
     //TODO: _nodeIndex.add( node, keyField , key );
-    node;
+    node
   }
 
 }

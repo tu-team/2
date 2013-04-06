@@ -6,6 +6,7 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
 import tu.dataservice.knowledgebaseserver.KBAdapter
+import org.slf4j.LoggerFactory
 
 
 /**
@@ -15,6 +16,7 @@ import tu.dataservice.knowledgebaseserver.KBAdapter
 object AppMain {
 
   val annotator = new KBAnnotatorImpl()
+  val log = LoggerFactory.getLogger(this.getClass)
 
   def main(args: Array[String]) {
 
@@ -27,20 +29,20 @@ object AppMain {
       train(lines)
     }
 
-    Console.println("Starting test... ")
+    Console.println("Starting... ")
     if (args.length <= 0) {
       while (!exitConsole) {
-        Console.println("Please type: 'exit' to quit, 'request' to enter ")
-        Console.println("request mode, 'train' to enter training mode")
-        Console.println("==================================================================")
-        Console.println(" :>")
+        log.info("Please type: 'exit' to quit, 'request' to enter ")
+        log.info("request mode, 'train' to enter training mode")
+        log.info("==================================================================")
+        log.info(" :>")
 
         val command: String = Console.readLine()
 
         exitConsole = command == "exit" || command == "'exit'"
 
         if (exitConsole) {
-          Console.println("Exiting...")
+          log.info("Exiting...")
           exitConsole = true
 
         }
@@ -49,7 +51,7 @@ object AppMain {
           var exitTraining =false
           while (!exitTraining)
           {
-            Console.println("Entering training mode, please type train phrase or exit for exit->")
+            log.info("Training mode: please type train phrase or exit to terminate->")
              val cmd = Console.readLine()
              if (cmd=="exit")
              {
@@ -73,7 +75,7 @@ object AppMain {
 
           while (!exitRequest)
           {
-            Console.println("Entering request mode, please type request phrase or exit for exit ->")
+            log.info("Request mode: please type request phrase or exit to terminate ->")
             val cmd = Console.readLine()
             if (cmd=="exit")
             {
@@ -82,7 +84,7 @@ object AppMain {
             else
             {
               val requestText = cmd
-              Console.println("Running thinking lifecycle:" + command)
+              log.debug("Running thinking lifecycle:" + command)
               val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
               val t = new ThinkingLifeCycleMinimal()
               val res = t(r)
@@ -97,7 +99,7 @@ object AppMain {
     def train(st: String) {
       val command = "train"
       val requestText =st
-      Console.println("Running thinking lifecycle:" + command)
+      log.debug("Running thinking lifecycle:" + command)
       val r = new TrainingRequest(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
       val t = new ThinkingLifeCycleMinimal()
       val res = t(r)
