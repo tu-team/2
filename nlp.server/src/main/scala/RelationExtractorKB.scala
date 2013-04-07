@@ -1,4 +1,4 @@
-package  tu.nlp.server
+package tu.nlp.server
 
 import scala.collection.JavaConversions._
 import java.util.ArrayList
@@ -30,55 +30,56 @@ import tu.model.knowledge.annotator.AnnotatedSentence
  */
 
 
-class RelationExtractorKB(useSocket: Boolean,var sentences: List[AnnotatedSentence]) {
+class RelationExtractorKB(useSocket: Boolean, var sentences: List[AnnotatedSentence]) {
 
   val log = LoggerFactory.getLogger(this.getClass)
-  /**Syntax processing */
-  private val parser: LGParser = new LocalLGParser /* (useSocket) {
-    new RemoteLGParser()
-  } else {
-    new LocalLGParser()
-  }                                                  */
+  /** Syntax processing */
+  private val parser: LGParser = new LocalLGParser
+  /* (useSocket) {
+     new RemoteLGParser()
+   } else {
+     new LocalLGParser()
+   }                                                  */
 
 
   /**
    * Set sentences to processor
    * @param snts
    */
-  def setSentences(snts:List[AnnotatedSentence]){
-    sentences=snts
+  def setSentences(snts: List[AnnotatedSentence]) {
+    sentences = snts
   }
 
   parser.getConfig.setStoreConstituentString(true)
   parser.getConfig.setLoadSense(true)
-  /**The LinkParserClient to be used - this class isn't thread safe! */
+  /** The LinkParserClient to be used - this class isn't thread safe! */
   val morphy: MorphyKB = MorphyFactory.getImplementation("tu.nlp.server.MorphyKB").asInstanceOf[MorphyKB]
   // val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
   // morphy.sentences = sentences
   private var context: RelexContext = new RelexContext(parser, morphy)
-  /**Dependency processing */
+  /** Dependency processing */
   private var sentenceAlgorithmApplier: SentenceAlgorithmApplier = new SentenceAlgorithmApplier()
-  /**Penn tree-bank style phrase structure markup. */
+  /** Penn tree-bank style phrase structure markup. */
   private var phraseMarkup: PhraseMarkup = new PhraseMarkup()
   var do_tree_markup: Boolean = false
-  /**Anaphora resolution */
+  /** Anaphora resolution */
   var antecedents: Antecedents = new Antecedents()
   private var hobbs: Hobbs = new Hobbs(antecedents)
   var do_anaphora_resolution: Boolean = false
-  /**Document - holder of sentences */
+  /** Document - holder of sentences */
   private var doco: Document = new Document()
-  /**Stanford parser compatibility mode */
+  /** Stanford parser compatibility mode */
   var do_stanford: Boolean = false
-  /**Penn tagset compatibility mode */
+  /** Penn tagset compatibility mode */
   var do_penn_tagging: Boolean = false
-  /**Expand preposition markup to two dependencies. */
+  /** Expand preposition markup to two dependencies. */
   var do_expand_preps: Boolean = false
-  /**Perform entity substitution before parsing */
+  /** Perform entity substitution before parsing */
   var do_pre_entity_tagging: Boolean = false
-  /**Perform entity tagging after parse */
+  /** Perform entity tagging after parse */
   var do_post_entity_tagging: Boolean = false
   var tagger: EntityTagger = null
-  /**Statistics */
+  /** Statistics */
   private var stats: ParseStats = new ParseStats()
   var _starttime: Long = System.currentTimeMillis
   private var sumtime: TreeMap[String, Long] = new TreeMap[String, Long]()
@@ -94,9 +95,9 @@ class RelationExtractorKB(useSocket: Boolean,var sentences: List[AnnotatedSenten
 
   private def prt_chunks(chunks: List[Nothing]) {
     for (ch <- chunks) {
-      System.out.println(ch.toString)
+      log.debug(ch.toString)
     }
-    System.out.println("\n======\n")
+    log.debug("\n======\n")
   }
 
   private def discriminate(ranker: ChunkRanker) {
@@ -123,12 +124,11 @@ class RelationExtractorKB(useSocket: Boolean,var sentences: List[AnnotatedSenten
   private def init(useSocket: Boolean) {
 
 
-
     parser.getConfig.setStoreConstituentString(true)
     parser.getConfig.setLoadSense(true)
 
     //val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
-    // val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+    //val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
     //morphy.sentences = sentences
     context = new RelexContext(parser, morphy)
 
@@ -202,7 +202,6 @@ class RelationExtractorKB(useSocket: Boolean,var sentences: List[AnnotatedSenten
    * @return processed Sentence
    */
   def processSentence(sentence: String, _entityMaintainer: EntityMaintainer): Sentence = {
-    //todo repeatable work as LinkParserTest
     _starttime = System.currentTimeMillis
     var entityMaintainer = _entityMaintainer
     if (entityMaintainer == null) {
@@ -271,7 +270,7 @@ class RelationExtractorKB(useSocket: Boolean,var sentences: List[AnnotatedSenten
       sent = parser.parse(sentence)
     }
     else {
-      System.err.println("Sentence too long!: " + sentence)
+      log.error("Sentence too long!: " + sentence)
       sent = new Sentence()
     }
     sent.setSentence(orig_sentence)
@@ -284,16 +283,12 @@ class RelationExtractorKB(useSocket: Boolean,var sentences: List[AnnotatedSenten
     _starttime = now
     var sum: Long = sumtime.get(msg)
     var cnt: Long = cnttime.get(msg)
-    if (sum == null) {
-      sum = 0L
-      cnt = 0L
-    }
     cnt += 1
     sum += elapsed
     sumtime.put(msg, sum)
     cnttime.put(msg, cnt)
     val avg: Long = sum / cnt
-    System.err.println(msg + elapsed + " milliseconds (avg=" + avg + " millisecs, cnt=" + cnt + ")")
+    log.debug("KB " + msg + elapsed + " milliseconds (avg=" + avg + " milliseconds, cnt=" + cnt + ")")
   }
 
 }

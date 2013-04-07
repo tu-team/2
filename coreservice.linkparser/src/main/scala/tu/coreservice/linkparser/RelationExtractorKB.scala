@@ -86,9 +86,9 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
 
   private def prt_chunks(chunks: List[Nothing]) {
     for (ch <- chunks) {
-      System.out.println(ch.toString)
+      log.debug(ch.toString)
     }
-    System.out.println("\n======\n")
+    log.debug("\n======\n")
   }
 
   private def discriminate(ranker: ChunkRanker) {
@@ -263,7 +263,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
       sent = parser.parse(sentence)
     }
     else {
-      System.err.println("Sentence too long!: " + sentence)
+      log.error("Sentence too long!: " + sentence)
       sent = new Sentence()
     }
     sent.setSentence(orig_sentence)
@@ -285,7 +285,7 @@ class RelationExtractorKB(useSocket: Boolean, sentences: List[AnnotatedSentence]
     sumtime.put(msg, sum)
     cnttime.put(msg, cnt)
     val avg: Long = sum / cnt
-    System.err.println(msg + elapsed + " milliseconds (avg=" + avg + " millisecs, cnt=" + cnt + ")")
+    log.debug("KB " + msg + elapsed + " milliseconds (avg=" + avg + " millisecs, cnt=" + cnt + ")")
   }
 
 }

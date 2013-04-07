@@ -1,5 +1,5 @@
-
 package  tu.nlp.server
+
 import org.slf4j.LoggerFactory
 import relex.corpus.{DocSplitterFactory, DocSplitter}
 import relex.entity.EntityMaintainer
@@ -10,19 +10,18 @@ import collection.JavaConversions._
 
 /**
  *
- * @author: Alexander Toschev
+ * @author Alexander Toschev
  *          Date: 12/1/12
  *          Time: 1:09 PM
- * TODO: use apache common pool
  */
-
+//TODO: use apache common pool
 object RelexNLPProcessor extends NLPProcessor {
   val log = LoggerFactory.getLogger(this.getClass)
   val em: EntityMaintainer = new EntityMaintainer()
 
   val ds: DocSplitter = DocSplitterFactory.create()
 
-  private var extractorDefault: RelationExtractor = {
+  private val extractorDefault: RelationExtractor = {
      log.debug("SETUP Default extractor")
     // relex.RelationExtractor -n 4 -l -t -f -r -a
     val re = new RelationExtractor(false)
@@ -41,7 +40,7 @@ object RelexNLPProcessor extends NLPProcessor {
     re
   }
 
-  private var extractorWithCorrection: RelationExtractorKB = {
+  private val extractorWithCorrection: RelationExtractorKB = {
     log.debug("SETUP Correction extractor")
     val re = new RelationExtractorKB(false, List())
     // -n 4

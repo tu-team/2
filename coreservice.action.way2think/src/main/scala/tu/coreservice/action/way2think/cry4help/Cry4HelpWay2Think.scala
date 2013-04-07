@@ -30,27 +30,30 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
     this._inputContext = inputContext
     val provider = Cry4HelpProviders.GetProvider()
 
-    //provider.showInformation(LocalizedResources.GetString("ErrorOccured"))
+    //provider.showInformation(LocalizedResources.GetString("$ErrorOccurred"))
     //provider.showInformation(inputContext.lastError.toString)
-    if (inputContext.notUnderstoodConcepts.size > 0 || inputContext.notUnderstoodPhrases.size >0) {
-      val unkConceptStr=(inputContext.notUnderstoodConcepts.map {
-        c: Concept => {
-          c.toString
-        }
-      }.union (inputContext.notUnderstoodPhrases.map {
-        c: AnnotatedPhrase  => {
-          c.toString
-        }
-      })).mkString (",")
+    if (inputContext.notUnderstoodConcepts.size > 0 || inputContext.notUnderstoodPhrases.size > 0) {
+      if (inputContext.notUnderstoodConcepts.size > 0) {
+        val unkConceptStr = inputContext.notUnderstoodConcepts.map {
+          c: Concept => {
+            c.uri.name.toString
+          }
+        }.mkString(", ")
+        provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString("$ClarifyConcepts"), unkConceptStr))
+      }
 
-
-      provider.showInformation(String.format ("%1$s %2$s ?", LocalizedResources.GetString("$ClarifyPhrases"),unkConceptStr ))
+      if (inputContext.notUnderstoodPhrases.size > 0) {
+        val unkPhraseStr = inputContext.notUnderstoodPhrases.map {
+          c: AnnotatedPhrase => {
+            c.toString
+          }
+        }.mkString(", ")
+        provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString("$ClarifyPhrases"), unkPhraseStr))
+      }
     }
-    else
-    {
+    else {
       //old way approach
-      inputContext.frames.foreach(f=>
-      {
+      inputContext.frames.foreach(f => {
         provider.showInformation(LocalizedResources.GetString(f._2.toString))
       })
     }
