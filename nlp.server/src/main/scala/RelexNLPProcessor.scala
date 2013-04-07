@@ -1,4 +1,4 @@
-package  tu.nlp.server
+package tu.nlp.server
 
 import org.slf4j.LoggerFactory
 import relex.corpus.{DocSplitterFactory, DocSplitter}
@@ -11,8 +11,8 @@ import collection.JavaConversions._
 /**
  *
  * @author Alexander Toschev
- *          Date: 12/1/12
- *          Time: 1:09 PM
+ *         Date: 12/1/12
+ *         Time: 1:09 PM
  */
 //TODO: use apache common pool
 object RelexNLPProcessor extends NLPProcessor {
@@ -21,10 +21,10 @@ object RelexNLPProcessor extends NLPProcessor {
 
   val ds: DocSplitter = DocSplitterFactory.create()
 
-  private val extractorDefault: RelationExtractor = {
-     log.debug("SETUP Default extractor")
+  private val extractorDefault: RelationExtractorKB = {
+    log.debug("SETUP Default extractor")
     // relex.RelationExtractor -n 4 -l -t -f -r -a
-    val re = new RelationExtractor(false)
+    val re = new RelationExtractorKB(false, List(), false)
     // -n 4
     re.setMaxParses(1)
     // -l -f -a
@@ -42,7 +42,7 @@ object RelexNLPProcessor extends NLPProcessor {
 
   private val extractorWithCorrection: RelationExtractorKB = {
     log.debug("SETUP Correction extractor")
-    val re = new RelationExtractorKB(false, List())
+    val re = new RelationExtractorKB(false, List(), true)
     // -n 4
     re.setMaxParses(1)
     // -l -f -a
@@ -59,8 +59,7 @@ object RelexNLPProcessor extends NLPProcessor {
   }
 
   /**
-   * process sentence using default processing
-   * withour correction
+   * Process sentence using default processing without correction
    * @param sent sentence string
    * @return relex.Sentence
    */
@@ -68,7 +67,6 @@ object RelexNLPProcessor extends NLPProcessor {
     extractorDefault.synchronized {
       extractorDefault.processSentence(sent, em)
     }
-
   }
 
   /**
@@ -78,13 +76,10 @@ object RelexNLPProcessor extends NLPProcessor {
    * @return
    */
   def processSentence(sent: String, sentences: List[AnnotatedSentence]) = {
-
     extractorWithCorrection.synchronized {
       extractorWithCorrection.setSentences(sentences)
       extractorWithCorrection.processSentence(sent, em)
     }
-
-
   }
 
   /**

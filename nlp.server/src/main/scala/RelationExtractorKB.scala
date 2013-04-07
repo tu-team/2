@@ -11,9 +11,8 @@ import relex.chunk.LexChunk
 import relex.concurrent.RelexContext
 import relex.entity.EntityMaintainer
 import relex.entity.EntityTagger
-import relex.morphy.MorphyFactory
-import relex.parser.LGParser
-import relex.parser.LocalLGParser
+import relex.morphy.{Morphy, MorphyFactory}
+import relex.parser.{RemoteLGParser, LGParser, LocalLGParser}
 import relex.stats.TruthValue
 import relex.stats.SimpleTruthValue
 import relex.tree.{PhraseTree, PhraseMarkup}
@@ -30,21 +29,20 @@ import tu.model.knowledge.annotator.AnnotatedSentence
  */
 
 
-class RelationExtractorKB(useSocket: Boolean, var sentences: List[AnnotatedSentence]) {
+class RelationExtractorKB(useSocket: Boolean, var sentences: List[AnnotatedSentence], useKB: Boolean = true) {
 
   val log = LoggerFactory.getLogger(this.getClass)
   /** Syntax processing */
-  private val parser: LGParser = new LocalLGParser
-  /* (useSocket) {
-     new RemoteLGParser()
-   } else {
-     new LocalLGParser()
-   }                                                  */
+  private val parser: LGParser = if (useSocket) {
+    new RemoteLGParser()
+  } else {
+    new LocalLGParser()
+  }
 
 
   /**
    * Set sentences to processor
-   * @param snts
+   * @param snts List of AnnotatedSentences to set.
    */
   def setSentences(snts: List[AnnotatedSentence]) {
     sentences = snts
@@ -53,10 +51,15 @@ class RelationExtractorKB(useSocket: Boolean, var sentences: List[AnnotatedSente
   parser.getConfig.setStoreConstituentString(true)
   parser.getConfig.setLoadSense(true)
   /** The LinkParserClient to be used - this class isn't thread safe! */
-  val morphy: MorphyKB = MorphyFactory.getImplementation("tu.nlp.server.MorphyKB").asInstanceOf[MorphyKB]
-  // val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
-  // morphy.sentences = sentences
-  private var context: RelexContext = new RelexContext(parser, morphy)
+
+  private var context: RelexContext = if (useKB) {
+    val morphy: MorphyKB = MorphyFactory.getImplementation("tu.nlp.server.MorphyKB").asInstanceOf[MorphyKB]
+    morphy.sentences = sentences
+    new RelexContext(parser, morphy)
+  } else {
+    val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+    new RelexContext(parser, morphy)
+  }
   /** Dependency processing */
   private var sentenceAlgorithmApplier: SentenceAlgorithmApplier = new SentenceAlgorithmApplier()
   /** Penn tree-bank style phrase structure markup. */
@@ -86,8 +89,6 @@ class RelationExtractorKB(useSocket: Boolean, var sentences: List[AnnotatedSente
   private var cnttime: TreeMap[String, Long] = new TreeMap[String, Long]()
 
   def startime = _starttime
-
-  //init(useSocket)
 
   def this() {
     this(false, List[AnnotatedSentence]())
@@ -121,16 +122,19 @@ class RelationExtractorKB(useSocket: Boolean, var sentences: List[AnnotatedSente
   final val DEFAULT_MAX_PARSE_SECONDS: Int = 30
   final val DEFAULT_MAX_PARSE_COST: Int = 1000
 
-  private def init(useSocket: Boolean) {
-
+  private def init(useSocket: Boolean, useKB: Boolean = true) {
 
     parser.getConfig.setStoreConstituentString(true)
     parser.getConfig.setLoadSense(true)
 
-    //val morphy: MorphyKB = MorphyFactory.getImplementation("tu.coreservice.linkparser.MorphyKB").asInstanceOf[MorphyKB]
-    //val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
-    //morphy.sentences = sentences
-    context = new RelexContext(parser, morphy)
+    context = if (useKB) {
+      val morphy: MorphyKB = MorphyFactory.getImplementation("tu.nlp.server.MorphyKB").asInstanceOf[MorphyKB]
+      morphy.sentences = sentences
+      new RelexContext(parser, morphy)
+    } else {
+      val morphy: Morphy = MorphyFactory.getImplementation(MorphyFactory.DEFAULT_SINGLE_THREAD_IMPLEMENTATION)
+      new RelexContext(parser, morphy)
+    }
 
     sentenceAlgorithmApplier = new SentenceAlgorithmApplier()
     setMaxParses(DEFAULT_MAX_PARSES)
