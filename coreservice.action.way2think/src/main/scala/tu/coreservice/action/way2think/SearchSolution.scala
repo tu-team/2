@@ -39,7 +39,7 @@ object SearchSolution {
       }
       case _ => None
     }
-    log info("search solution result={}", res)
+    log debug("search solution result={}", res)
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
     outputContext.lastResult = res
     outputContext

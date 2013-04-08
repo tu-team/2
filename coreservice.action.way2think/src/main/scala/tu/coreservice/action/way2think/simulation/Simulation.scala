@@ -75,11 +75,11 @@ class Simulation extends SimulationReformulationAbstract {
         filteredPhrases
       }
     }.flatten
-    log info("exact matches={}, matches={}", exactMatch, hasMatches)
-    log info("ambiguous={}", ambiguous)
-    log info("not known={}", notKnown)
+    log debug("exact matches={}, matches={}", exactMatch, hasMatches)
+    log debug("ambiguous={}", ambiguous)
+    log debug("not known={}", notKnown)
     val unAmbiguous = processAmbiguousBackReferences(ambiguous, in)
-    log info("processed ambiguous={}", unAmbiguous)
+    log debug("processed ambiguous={}", unAmbiguous)
 
     if (notKnown.size > 0) {
       return Some(ConceptNetwork.apply (notKnown))
