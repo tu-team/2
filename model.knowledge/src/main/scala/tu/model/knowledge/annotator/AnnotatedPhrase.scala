@@ -21,7 +21,9 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
                            _uri: KnowledgeURI,
                            _probability: Probability = new Probability(),
                            var _text: String = "",
-                           _index: Double = 0)
+                           _index: Double = 0,
+                           var _pos: String = "",
+                           var _tense: String = "")
   extends Resource(_uri, _probability) {
 
   def this(_phrases: List[AnnotatedPhrase], _uri: KnowledgeURI) = {
@@ -111,6 +113,20 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
     _phrases = in
   }
 
+  def pos = _pos
+
+  def pos_=(aPos: String) = {
+    this._pos = aPos
+    this
+  }
+
+  def tense = _tense
+
+  def tense_=(aTense: String) = {
+    this._tense = aTense
+    this
+  }
+
   /**
    * Recursively searches for the textual representation of the AnnotatedPhrase according to specified word.
    * @param word String to find.
@@ -141,7 +157,7 @@ case class AnnotatedPhrase(var _phrases: List[AnnotatedPhrase],
 
     var res = kb.saveResource(this, parent, key, linkType)
 
-    ModelHelper.appendToSave(this.uri,saved)
+    ModelHelper.appendToSave(this.uri, saved)
 
     for (x: Resource <- _phrases)
       res &= x.save(kb, this, x.uri.toString, Constant.PHRASES_LINK_NAME, saved)
@@ -244,7 +260,7 @@ object AnnotatedPhrase {
    * @return loaded AnnotatedPhrase
    */
   def load(kb: KB, selfMap: Map[String, String]): AnnotatedPhrase = {
-    throw  new Exception("Operation is not supported")
+    throw new Exception("Operation is not supported")
   }
 
 
@@ -262,7 +278,7 @@ object AnnotatedPhrase {
     if (!cached.isEmpty) return cached.get.asInstanceOf[AnnotatedPhrase]
     val ID = new KBNodeId(selfMap)
 
-    var res = new AnnotatedPhrase(null,null,null,  new KnowledgeURI(selfMap),
+    var res = new AnnotatedPhrase(null, null, null, new KnowledgeURI(selfMap),
       new Probability(selfMap),
       selfMap.get("text") match {
         case Some(text) => text
@@ -283,7 +299,7 @@ object AnnotatedPhrase {
     }.flatten
 
     //TODO: make the test with recurrent phrases
-    res.phrases = kb.loadChildrenMap(ID, Constant.PHRASES_LINK_NAME).map(chd=>load(kb,ID, chd._1, Constant.PHRASES_LINK_NAME)).toList
+    res.phrases = kb.loadChildrenMap(ID, Constant.PHRASES_LINK_NAME).map(chd => load(kb, ID, chd._1, Constant.PHRASES_LINK_NAME)).toList
 
     res
 

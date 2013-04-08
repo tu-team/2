@@ -168,6 +168,14 @@ case class Concept(var _generalisations: TypedKLine[Concept],
     if (_generalisations ==null)
       log debug  "null generalizations"
     this.uri.name +
+      "[phrase=" + _phrases +
+      "]"
+  }
+
+  def toStringComplete: String = {
+    if (_generalisations ==null)
+      log debug  "null generalizations"
+    this.uri.name +
       "[generalisations=" + _generalisations.toString +
       ";specialisations=" + _specialisations.toString +
       ";links=" + _conceptLinks.map(l => l.toString).mkString(",") +

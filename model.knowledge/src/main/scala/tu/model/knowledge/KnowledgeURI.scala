@@ -77,7 +77,6 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String, var
     _uRI match {
       case None => {
         this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s", namespace, Constant.DELIMITER, name.replace(" ", "-"), Constant.REVISION_DELIMITER, revision, Constant.UID_DELIMITER, _uID)))
-
         this._uRI
       }
       case Some(_) => {

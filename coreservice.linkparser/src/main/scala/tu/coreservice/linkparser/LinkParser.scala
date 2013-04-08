@@ -74,7 +74,7 @@ class LinkParser extends Way2Think {
     sentences.map {
       sentence: AnnotatedSentence => {
         val parse: ParsedSentence = processSentenceRelex(sentence, sentences)
-        log debug ("parse = {}", parse.toString)
+        log debug("parse = {}", parse.toString)
         val node: FeatureNode = new FeatureNode()
         node.set("head", parse.getLeft.get("head"))
         node.set("background", parse.getLeft.get("background"))
@@ -107,7 +107,7 @@ class LinkParser extends Way2Think {
    */
   def processSentenceRelex(sentence: AnnotatedSentence, sentences: List[AnnotatedSentence]): ParsedSentence = {
     val relexSentence = relexServer.processSentence(sentence.text, sentences)
-    log debug ("relexSentence ={}", relexSentence)
+    log debug("relexSentence ={}", relexSentence)
     val parsesNum = relexSentence.getNumParses
     if (parsesNum < 1) {
       throw new UnexpectedException("$No_parses_produced")
@@ -124,7 +124,7 @@ class LinkParser extends Way2Think {
    * @return Pair of Concept and Error
    */
   def processNode(feature: FeatureNode, sentence: AnnotatedSentence): Pair[Option[Concept], Option[Error]] = {
-    log trace ("processNode(feature={})", feature)
+    log trace("processNode(feature={})", feature)
     try {
       val nameOrigString: Pair[Option[String], Option[String]] = getNameOrigString(feature)
       val name: String = nameOrigString match {
@@ -134,18 +134,18 @@ class LinkParser extends Way2Think {
       }
       val phraseConceptError: Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = getConcept(name, sentence)
       phraseConceptError match {
-        case Triple(a: AnnotatedPhrase, Some(concept: Concept), None) => {
-          val updatedConcept = addLinks(feature, concept, sentence)
-          log debug ("updated concept={}, it was={}", updatedConcept, concept)
+        case Triple(annotatedPhrase: AnnotatedPhrase, Some(concept: Concept), None) => {
+          val updatedConcept = addLinks(feature, concept, annotatedPhrase, sentence)
+          log debug("updated concept={}, it was={}", updatedConcept, concept)
           (Some(updatedConcept), None)
         }
-        case Triple(a: AnnotatedPhrase, Some(concept: Concept), Some(e: Error)) => {
-          val updatedConcept = addLinks(feature, concept, sentence)
-          log debug ("updated concept={}, it was={}", updatedConcept.toString, concept.toString)
+        case Triple(annotatedPhrase: AnnotatedPhrase, Some(concept: Concept), Some(e: Error)) => {
+          val updatedConcept = addLinks(feature, concept, annotatedPhrase, sentence)
+          log debug("updated concept={}, it was={}", updatedConcept.toString, concept.toString)
           (Some(updatedConcept), None)
         }
-        case Triple(a: AnnotatedPhrase, None, Some(e: Error)) => {
-          log debug ("produced parsing error={}", e)
+        case Triple(annotatedPhrase: AnnotatedPhrase, None, Some(e: Error)) => {
+          log debug("produced parsing error={}", e)
           (None, Some(e))
         }
       }
@@ -161,23 +161,20 @@ class LinkParser extends Way2Think {
    * Updates ConceptLink-s of tense and pos adding links.
    * @param feature based on it the Concept's ConceptLink-s are updated.
    * @param concept Concept to update ConceptLink-s
+   * @param annotatedPhrase AnnotatedPhrase to add POS and tense.
    * @param sentence to recursively process FeatureNode-s and ConceptLink-s.
    * @return updated Concept.
    */
-  private def addLinks(feature: FeatureNode, concept: Concept, sentence: AnnotatedSentence): Concept = {
+  private def addLinks(feature: FeatureNode, concept: Concept, annotatedPhrase: AnnotatedPhrase, sentence: AnnotatedSentence): Concept = {
     if (feature.get("tense") != null) {
       log trace "tense=" + feature.get("tense").getValue
-      val tense = Concept.createInstanceConcept(Defaults.tenseConcept, feature.get("tense").getValue)
-      val tenseLink = ConceptLink.createInstanceConceptLink(Defaults.tenseLink, concept, tense)
-      log debug ("added link={} to concept={}", tenseLink, concept)
-      concept.links = concept.links ::: List(tenseLink)
+      annotatedPhrase.tense = feature.get("tense").getValue
+      log debug("added tense={} to phrase={}", feature.get("tense").getValue, annotatedPhrase)
     }
     if (feature.get("pos") != null) {
       log trace "pos=" + feature.get("pos").getValue
-      val pos = Concept.createInstanceConcept(Defaults.posConcept, feature.get("pos").getValue)
-      val posLink = ConceptLink.createInstanceConceptLink(Defaults.posLink, concept, pos)
-      log debug ("added link={} to concept={}", posLink, concept)
-      concept.links = concept.links ::: List(posLink)
+      annotatedPhrase.pos = feature.get("pos").getValue
+      log debug("added pos={} to phrase={}", feature.get("pos").getValue, annotatedPhrase)
     }
 
     if (feature.get("links") != null) {
@@ -256,21 +253,21 @@ class LinkParser extends Way2Think {
    * @return Concept and Error pair.
    */
   def getConcept(name: String, sentence: AnnotatedSentence): Triple[AnnotatedPhrase, Option[Concept], Option[Error]] = {
-    log trace ("getConcept(name = {})", name)
+    log trace("getConcept(name = {})", name)
     val phrases = findPhrase(name, sentence)
     if (phrases.size == 1) {
       val phrase = phrases.head
       val concepts = phrase.concepts
       if (concepts.size == 1) {
         val concept = concepts.head
-        log trace  ("returned concept={}", concept)
+        log trace("returned concept={}", concept)
         (phrase, Some(concept), None)
       } else if (concepts.size < 1) {
         val concept = Concept.createInstanceConcept(phrase)
         phrase.conceptsAdd(concept)
         concept.phrasesAdd(phrase)
-        log trace ("created new concept={}", concept)
-        log trace ("added it to phrase={}", phrase)
+        log trace("created new concept={}", concept)
+        log trace("added it to phrase={}", phrase)
         (phrase, Some(concept), Some(new Error("$No_concepts_found_for_phrase: " + phrase)))
       } else {
         log info ("concepts were ambiguous")
@@ -338,13 +335,13 @@ class LinkParser extends Way2Think {
   }
 
   def processLink(feature: FeatureNode, source: Concept, sentence: AnnotatedSentence): List[ConceptLink] = {
-    log trace ("processLink(feature: {}", feature.get("name"))
-    log trace ("feature names={}", feature.getFeatureNames)
+    log trace("processLink(feature: {}", feature.get("name"))
+    log trace("feature names={}", feature.getFeatureNames)
     try {
       val filteredFeatures = feature.getFeatureNames.filter {
         name: String => Constant.RelexFeatures.contains(name)
       }
-      log trace ("filteredFeatures ={}", filteredFeatures)
+      log trace("filteredFeatures ={}", filteredFeatures)
       if (filteredFeatures.size > 0) {
         val filteredDestinationFeatures = filteredFeatures.toList.filter {
           (name: String) => {

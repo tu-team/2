@@ -106,21 +106,15 @@ class Correlation extends SimulationReformulationAbstract {
   List[Concept] = {
     val notUnderstood = shortestMaps.filter {
       c: List[Concept] => {
-        c.size > 0 && targetModel.getNodeByName(c.last.uri.name).size > 0
+        c.size > 0 && !(targetModel.getNodeByURI(c.last.uri).size > 0)
       }
     }
-    val notMapped = clarifiedTargetConcepts.filter {
-      c: Concept => {
-        shortestMaps.flatten.filter {
-          cSM: Concept => cSM.uri.name.equals(c.uri.name)
-        }.size > 0
-      }
-    }
+    val notMapped = clarifiedTargetConcepts.filter {c: Concept => shortestMaps.contains(c)}
     val compoundNotUnderstood = notMapped ::: notUnderstood
     if (compoundNotUnderstood.size > 0) {
       notUnderstood.map {
         c: List[Concept] => {
-          c.last
+          c.head
         }
       }
     } else {
