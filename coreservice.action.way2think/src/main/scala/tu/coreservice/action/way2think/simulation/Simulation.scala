@@ -82,7 +82,7 @@ class Simulation extends SimulationReformulationAbstract {
     log debug("processed ambiguous={}", unAmbiguous)
 
     if (notKnown.size > 0) {
-      return Some(ConceptNetwork.apply (notKnown))
+      return Some(ConceptNetwork.apply(notKnown))
     }
 
     if (exactMatch.size > 0) {
@@ -92,7 +92,7 @@ class Simulation extends SimulationReformulationAbstract {
   }
 
   private def filterPhrase(phrase: AnnotatedPhrase, simulationModel: ConceptNetwork): List[Concept] = {
-    val modelConcepts: List[Concept] = this.filterConceptList(phrase.concepts, simulationModel)
+    val modelConcepts: List[Concept] = simulationModel.getNodeByPhrase(phrase)
     modelConcepts
   }
 
@@ -120,7 +120,7 @@ class Simulation extends SimulationReformulationAbstract {
 
   private def processNotKnown(in: List[AnnotatedPhrase]): ShortTermMemory = {
     var res: List[Resource] = in
-    res =  List[Resource](KnowledgeString("$ClarifyPhrases", "Please.clarify.sentences"))   ++ res
+    res = List[Resource](KnowledgeString("$ClarifyPhrases", "Please.clarify.sentences")) ++ res
     val context = ContextHelper.apply(res, "notKnown")
     val cry4helpWay2Think = new Cry4HelpWay2Think()
     cry4helpWay2Think.apply(context)
@@ -150,7 +150,7 @@ class Simulation extends SimulationReformulationAbstract {
       }
     }
     val res = instantiateConcepts(concepts, name, simulationModel)
-    log info ("processed matches={}", res.toString)
+    log info("processed matches={}", res.toString)
     res
   }
 }

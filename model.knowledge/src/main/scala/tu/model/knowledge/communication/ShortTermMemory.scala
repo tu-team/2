@@ -292,7 +292,7 @@ object ContextHelper {
    */
   def merge(first: ShortTermMemory, second: ShortTermMemory): ShortTermMemory = {
     val res = ContextHelper.createContext(first.frames ++ second.frames, mergeList(first.classificationResults, second.classificationResults),
-      String.format ("CtxMerged%1$tH%1$tM%1$tS",new Date()))
+      String.format("CtxMerged%1$tH%1$tM%1$tS", new Date()))
     res.checkedClassificationResults = mergeList(first.checkedClassificationResults, second.checkedClassificationResults)
     res
   }
@@ -408,9 +408,9 @@ object ContextHelper {
       res.userResponse = contexts.head.userResponse
       res.solutions = contexts.head.solutions
 
-      //collect all not undestand
-      res.notUnderstoodPhrases=contexts.map(c=>c.notUnderstoodPhrases ).flatten
-      res.notUnderstoodConcepts =contexts.map(c=>c.notUnderstoodConcepts ).flatten
+      //collect all not understood stuff and filter repeating
+      res.notUnderstoodPhrases = contexts.map(c => c.notUnderstoodPhrases).flatten.toSet.toList
+      res.notUnderstoodConcepts = contexts.map(c => c.notUnderstoodConcepts).flatten.toSet.toList
 
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
