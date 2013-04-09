@@ -24,12 +24,12 @@ object AppMain {
 
     if (args.size > 0 && args(0) == "trainfile") {
       val file = args(1)
-      Console.println("Loading train data from file " + file)
+      log.info("Loading train data from file " + file)
       val lines = scala.io.Source.fromFile(file).mkString
       train(lines)
     }
 
-    Console.println("Starting... ")
+    log.info("Starting... ")
     if (args.length <= 0) {
       while (!exitConsole) {
         log.info("Please type: 'exit' to quit, 'request' to enter ")
@@ -48,47 +48,38 @@ object AppMain {
         }
         else if (command == "train") {
 
-          var exitTraining =false
-          while (!exitTraining)
-          {
+          var exitTraining = false
+          while (!exitTraining) {
             log.info("Training mode: please type train phrase or exit to terminate->")
-             val cmd = Console.readLine()
-             if (cmd=="exit")
-             {
-               exitTraining=true
-             }
-             else
-             {
-               train(cmd)
-             }
+            val cmd = Console.readLine()
+            if (cmd == "exit") {
+              exitTraining = true
+            }
+            else {
+              train(cmd)
+            }
           }
 
         }
         else if (command == "clean") {
-
-            KBAdapter.cleanDatabase()
+          KBAdapter.cleanDatabase()
         }
         else if (command == "request") {
-
           //extract sentence
           var exitRequest = false
-
-          while (!exitRequest)
-          {
+          while (!exitRequest) {
             log.info("Request mode: please type request phrase or exit to terminate ->")
             val cmd = Console.readLine()
-            if (cmd=="exit")
-            {
-              exitRequest=true
+            if (cmd == "exit") {
+              exitRequest = true
             }
-            else
-            {
+            else {
               val requestText = cmd
               log.debug("Running thinking lifecycle:" + command)
               val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
               val t = new ThinkingLifeCycleMinimal()
               val res = t(r)
-              Console.println("End")
+              log.info("End")
             }
           }
 
@@ -98,12 +89,12 @@ object AppMain {
 
     def train(st: String) {
       val command = "train"
-      val requestText =st
+      val requestText = st
       log.debug("Running thinking lifecycle:" + command)
       val r = new TrainingRequest(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
       val t = new ThinkingLifeCycleMinimal()
       val res = t(r)
-      Console.println("End")
+      log.info("End")
     }
   }
 }
