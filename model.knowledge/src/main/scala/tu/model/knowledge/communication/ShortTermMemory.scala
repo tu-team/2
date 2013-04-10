@@ -6,6 +6,7 @@ import domain.{Concept, ConceptNetwork}
 import selector.SelectorRequest
 import training.Goal
 import java.util.Date
+import tu.model.knowledge.narrative.Narrative
 
 /**
  * Stores contexts parameters.
@@ -35,7 +36,15 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _notUnderstoodConcepts: List[Concept] = List[Concept]()
   var _notUnderstoodPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
   var _lastReflectiveResult: Option[Resource] = None
+  var _resultToReport: TypedKLine[Narrative[Concept]] = TypedKLine[Narrative[Concept]]("result to report")
 
+
+  def resultToReport = _resultToReport
+
+  def resultToReport_=(in: TypedKLine[Narrative[Concept]]): ShortTermMemory = {
+    _resultToReport = in
+    this
+  }
 
   def lastReflectiveResult = _lastReflectiveResult
 
