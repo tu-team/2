@@ -32,6 +32,12 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
 
     //provider.showInformation(LocalizedResources.GetString("$ErrorOccurred"))
     //provider.showInformation(inputContext.lastError.toString)
+
+    if (inputContext.resultToReport.size > 0) {
+      val understoodConcepts = this.processReporting(_inputContext)
+      provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString(Constant.understoodConcepts), understoodConcepts))
+    }
+
     if (inputContext.notUnderstoodConcepts.size > 0 || inputContext.notUnderstoodPhrases.size > 0) {
       if (inputContext.notUnderstoodConcepts.size > 0) {
         val unkConceptStr = inputContext.notUnderstoodConcepts.map {
@@ -61,6 +67,21 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
     val outputContext: ShortTermMemory = ContextHelper(List[Resource](), this.getClass.getName)
     outputContext.userResponse = Some(new Response(KnowledgeString(userResponseText, "responsetext"), KnowledgeURI("Response")))
     outputContext
+  }
+
+  def processReporting(memory: ShortTermMemory): String = {
+    if (memory.resultToReport.size > 0) {
+      for (narrative <- memory.resultToReport.values) {
+        val accumulator = if (narrative.uri.name.contains(Constant.understoodConcepts)) {
+          LocalizedResources.GetString(Constant.understoodConcepts)
+        } else {
+          LocalizedResources.GetString(Constant.notUnderstoodConcepts)
+        } +
+          narrative.resources.foldLeft("")((accum: String, c1: Concept) => accum + " " + c1.uri.name.toString).mkString(", ")
+        accumulator
+      }
+    }
+    ""
   }
 
   def start() = false

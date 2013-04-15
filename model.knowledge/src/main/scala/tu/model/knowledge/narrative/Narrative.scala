@@ -19,6 +19,8 @@ case class Narrative[Type <: Resource](_resources: List[Type], _uri: KnowledgeUR
 
   def resources = _resources
 
+  def size = _resources.size
+
 }
 
 object Narrative {

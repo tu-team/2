@@ -35,6 +35,7 @@ object Constant {
   val defaultNamespace = "tu-project.com"
   val defaultConceptsNamespace = "concepts/"
   val defaultRevision = "1.0"
+  val coma = ","
   val INSTANCE_ID_RANDOM_SEED = 900
 
   val SELECTOR_REQUEST_DIRECT_INSTRUCTION_URI_NAME = "DirectInstructionRequest"
@@ -99,7 +100,7 @@ object Constant {
   val conceptSuffix = "Concept"
   val objectLinkName = "obj"
 
-  val understoodConcepts = "UnderstoodConcepts"
-  val notUnderstoodConcepts = "NotUnderstoodConcepts"
+  val understoodConcepts = "$UnderstoodConcepts"
+  val notUnderstoodConcepts = "$NotUnderstoodConcepts"
 
 }
