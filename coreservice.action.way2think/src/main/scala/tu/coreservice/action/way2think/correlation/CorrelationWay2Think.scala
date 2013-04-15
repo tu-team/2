@@ -6,6 +6,7 @@ import tu.model.knowledge.{Resource, Constant}
 import tu.model.knowledge.annotator.AnnotatedNarrative
 import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.exception.UnexpectedException
+import tu.model.knowledge.narrative.Narrative
 
 /**
  * @author max talanov
@@ -34,6 +35,7 @@ class CorrelationWay2Think extends Way2Think {
                       if (tr._2.size > 0) {
                         val updatedSimulationModel = ConceptNetwork(model.nodes ::: tr._2, this.getClass.getName + "Model" + Constant.RESULT)
                         context.simulationModel = Some(updatedSimulationModel)
+                        this.setResultsToReport(context, tr._2)
                       }
                       if (tr._3.size > 0) {
                         context.notUnderstoodConcepts = tr._3
@@ -54,6 +56,7 @@ class CorrelationWay2Think extends Way2Think {
                       if (tr._2.size > 0) {
                         val updatedSimulationModel = ConceptNetwork(model.nodes ::: tr._2, this.getClass.getName + "Model" + Constant.RESULT)
                         context.simulationModel = Some(updatedSimulationModel)
+                        this.setResultsToReport(context, tr._2)
                       }
                       if (tr._3.size > 0) {
                         context.notUnderstoodConcepts = tr._3
@@ -81,6 +84,18 @@ class CorrelationWay2Think extends Way2Think {
         throw new UnexpectedException("$Context_lastResult_is_not_expectedType " + e.getMessage)
       }
     }
+  }
+
+  /**
+   * Sets concepts to result to report.
+   * @param context ShortTermMemory to set understood Concepts to report.
+   * @param concepts understood concepts to set in ShortTermMemory.
+   * @return updated ShortTermMemory
+   */
+  private def setResultsToReport(context: ShortTermMemory, concepts: List[Concept]): ShortTermMemory = {
+    val understoodConcepts = Narrative[Concept](Constant.understoodConcepts, concepts)
+    context.resultToReport = context.resultToReport + understoodConcepts
+    context
   }
 
   /**

@@ -1,6 +1,6 @@
 package tu.model.knowledge.narrative
 
-import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
+import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 
 
 /**
@@ -19,5 +19,15 @@ case class Narrative[Type <: Resource](_resources: List[Type], _uri: KnowledgeUR
 
   def resources = _resources
 
+}
+
+object Narrative {
+  def applyResource(name: String, resources: List[Resource]): Narrative[Resource] = {
+    new Narrative(resources, KnowledgeURI(name))
+  }
+
+  def apply[Type <: Resource](name: String, resources: List[Type]): Narrative[Type] = {
+    new Narrative(resources, KnowledgeURI(name), new Probability())
+  }
 }
 
