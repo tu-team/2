@@ -124,7 +124,6 @@ class ThinkingLifeCycleMinimal
         }
         case None => //End
       }
-
       goalManager.nextGoal(globalContext)
     }
     log debug "apply()"

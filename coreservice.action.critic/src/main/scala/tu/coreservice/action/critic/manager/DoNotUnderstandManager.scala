@@ -1,6 +1,6 @@
 package tu.coreservice.action.critic.manager
 
-import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
+import tu.model.knowledge.{Constant, Resource, Probability, KnowledgeURI}
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.helper.URIGenerator
 import tu.coreservice.action.critic.{CriticLink, Critic}
@@ -38,7 +38,9 @@ class DoNotUnderstandManager(_exclude: List[CriticLink], _include: List[CriticLi
         } else if (inputContext.notUnderstoodPhrases.size > 0) {
           val d = new DoNotUnderstand()
           ContextHelper.createReflectiveContext(d(), this.getClass.getName + " result")
-
+        } else if (inputContext.resultToReport.size > 0) {
+          val d = new DoNotUnderstand()
+          ContextHelper.createReflectiveContext(d(inputContext.resultToReport), this.getClass.getName + " " + Constant.resultToReport)
         } else {
           ContextHelper(List[Resource](), this.getClass.getName + " result")
         }
