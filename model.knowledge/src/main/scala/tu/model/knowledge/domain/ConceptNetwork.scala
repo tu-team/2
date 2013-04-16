@@ -294,6 +294,11 @@ object ConceptNetwork {
     res
   }
 
+  /**
+   * Create not known concept holder (fill not known phrases)
+   * @param notKnownConcept
+   * @return
+   */
   def apply(notKnownConcept: List[AnnotatedPhrase]): ConceptNetwork = {
     val uri = KnowledgeURI("NotKnownConceptsHolder")
     val re = new ConceptNetwork(List(), List(), uri)

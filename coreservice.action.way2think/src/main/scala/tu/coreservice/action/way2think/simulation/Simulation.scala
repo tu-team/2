@@ -5,7 +5,6 @@ import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase, Annotat
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.Resource
 import tu.model.knowledge.primitive.KnowledgeString
-import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import java.rmi.UnexpectedException
 import tu.coreservice.action.way2think.SimulationReformulationAbstract
 import org.slf4j.LoggerFactory
@@ -116,14 +115,6 @@ class Simulation extends SimulationReformulationAbstract {
 
   private def countLinks(concept: Concept, text: AnnotatedNarrative): Int = {
     this.countLinks(concept, text.concepts)
-  }
-
-  private def processNotKnown(in: List[AnnotatedPhrase]): ShortTermMemory = {
-    var res: List[Resource] = in
-    res = List[Resource](KnowledgeString("$ClarifyPhrases", "Please.clarify.sentences")) ++ res
-    val context = ContextHelper.apply(res, "notKnown")
-    val cry4helpWay2Think = new Cry4HelpWay2Think()
-    cry4helpWay2Think.apply(context)
   }
 
   private def processMatches(matches: List[AnnotatedPhrase],
