@@ -82,6 +82,16 @@ case class TypedKLine[Type <: Resource](var _frames: Map[KnowledgeURI, Type], _u
     }
     this(Map[KnowledgeURI, Resource](), new KnowledgeURI(map), new Probability(map))
   }*/
+
+  /**
+   * Merges the frames of current TypedKLine with specified TypedKLine of the same Type.
+   * @param in KLine to merge.
+   * @return current TypedKLine with merged _frames.
+   */
+  def merge(in: TypedKLine[Type]): TypedKLine[Type] = {
+    _frames = frames ++ in.frames
+    this
+  }
 }
 
 object TypedKLine {

@@ -420,6 +420,7 @@ object ContextHelper {
       //collect all not understood stuff and filter repeating
       res.notUnderstoodPhrases = contexts.map(c => c.notUnderstoodPhrases).flatten.toSet.toList
       res.notUnderstoodConcepts = contexts.map(c => c.notUnderstoodConcepts).flatten.toSet.toList
+      res.resultToReport = contexts.foldLeft(TypedKLine[Narrative[Concept]](Constant.understoodConcepts))((accum: TypedKLine[Narrative[Concept]], c: ShortTermMemory) => accum.merge(c.resultToReport))
 
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
