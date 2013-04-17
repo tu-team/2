@@ -57,12 +57,6 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
         provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString("$ClarifyPhrases"), unkPhraseStr))
       }
     }
-    else {
-      //old way approach
-      inputContext.frames.foreach(f => {
-        provider.showInformation(LocalizedResources.GetString(f._2.toString))
-      })
-    }
     val userResponseText = provider.askQuestion("")
     val outputContext: ShortTermMemory = ContextHelper(List[Resource](), this.getClass.getName)
     outputContext.userResponse = Some(new Response(KnowledgeString(userResponseText, "responsetext"), KnowledgeURI("Response")))
@@ -71,17 +65,13 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
 
   def processReporting(memory: ShortTermMemory): String = {
     if (memory.resultToReport.size > 0) {
-      for (narrative <- memory.resultToReport.values) {
-        val accumulator = if (narrative.uri.name.contains(Constant.understoodConcepts)) {
-          LocalizedResources.GetString(Constant.understoodConcepts)
-        } else {
-          LocalizedResources.GetString(Constant.notUnderstoodConcepts)
-        } +
-          narrative.resources.foldLeft("")((accum: String, c1: Concept) => accum + " " + c1.uri.name.toString).mkString(", ")
-        accumulator
+      val res: Iterable[String] = for (narrative <- memory.resultToReport.values) yield {
+        narrative.resources.map((c1: Concept) => c1.uri.name.toString).mkString(", ")
       }
+      res.mkString(", ")
+    } else {
+      ""
     }
-    ""
   }
 
   def start() = false
