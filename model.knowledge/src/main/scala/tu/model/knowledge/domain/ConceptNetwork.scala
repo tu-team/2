@@ -156,12 +156,13 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
     if (this.nodes != null) {
       val res = this.nodes.filter {
         concept: Concept => {
-          val phrases: Map[KnowledgeURI, AnnotatedPhrase] = concept.phrases.frames.filter {
+          concept.content.toString.toLowerCase==aPhrase.text.toLowerCase
+          /*val phrases: Map[KnowledgeURI, AnnotatedPhrase] = concept.phrases.frames.filter {
             uriPhrase: Pair[KnowledgeURI, AnnotatedPhrase] => {
               uriPhrase._2.text.trim == aPhrase.text.trim
             }
           }
-          phrases.size > 0
+          phrases.size > 0 */
         }
       }
       res

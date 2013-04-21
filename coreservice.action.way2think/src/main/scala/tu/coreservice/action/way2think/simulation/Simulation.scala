@@ -95,6 +95,8 @@ class Simulation extends SimulationReformulationAbstract {
     modelConcepts
   }
 
+
+
   /**
    * Returns map of AnnotatedPhrase to most referenced concept of the AnnotatedPhrase
    * @param in List[AnnotatedPhrase] sentences to be processed.
