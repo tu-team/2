@@ -2,7 +2,7 @@ package tu.coreservice.action.way2think.cry4help
 
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{Response, ContextHelper, ShortTermMemory}
-import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
+import tu.model.knowledge.{SolvedIssue, Constant, KnowledgeURI, Resource}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.coreservice.utilities.LocalizedResources
 import tu.model.knowledge.domain.Concept
@@ -67,6 +67,17 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
     if (memory.resultToReport.size > 0) {
       val res: Iterable[String] = for (narrative <- memory.resultToReport.values) yield {
         narrative.resources.map((c1: Concept) => c1.uri.name.toString).mkString(", ")
+      }
+      res.mkString(", ")
+    } else {
+      ""
+    }
+  }
+
+  def processSolutions(memory: ShortTermMemory): String = {
+    if (memory.solutionsToReport.size > 0) {
+      val res: Iterable[String] = for (narrative <- memory.solutionsToReport.values) yield {
+        narrative.resources.map((i: SolvedIssue) => i.solution.uri.name.toString).mkString(", ")
       }
       res.mkString(", ")
     } else {
