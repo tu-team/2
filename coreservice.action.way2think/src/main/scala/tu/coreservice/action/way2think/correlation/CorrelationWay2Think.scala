@@ -87,18 +87,6 @@ class CorrelationWay2Think extends Way2Think {
   }
 
   /**
-   * Sets concepts to result to report.
-   * @param context ShortTermMemory to set understood Concepts to report.
-   * @param concepts understood concepts to set in ShortTermMemory.
-   * @return updated ShortTermMemory
-   */
-  private def setResultsToReport(context: ShortTermMemory, concepts: List[Concept]): ShortTermMemory = {
-    val understoodConcepts = Narrative[Concept](Constant.understoodConcepts, concepts)
-    context.resultToReport = context.resultToReport + understoodConcepts
-    context
-  }
-
-  /**
    * Searches for mapping paths from simulation result to domainModel via clarification.
    * @param clarification AnnotatedNarrative of clarification
    * @param simulationResult description of current situation as ConceptNetwork

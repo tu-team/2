@@ -36,8 +36,16 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _notUnderstoodConcepts: List[Concept] = List[Concept]()
   var _notUnderstoodPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
   var _lastReflectiveResult: Option[Resource] = None
-  var _resultToReport: TypedKLine[Narrative[Concept]] = TypedKLine[Narrative[Concept]]("result to report")
+  var _resultToReport: TypedKLine[Narrative[Concept]] = TypedKLine[Narrative[Concept]](Constant.resultToReport)
+  var _solutionsToReport: TypedKLine[Narrative[SolvedIssue]] = TypedKLine[Narrative[SolvedIssue]](Constant.FOUND_SOLUTIONS)
 
+
+  def solutionsToReport = _solutionsToReport
+
+  def solutionsToReport_=(in: TypedKLine[Narrative[SolvedIssue]]): ShortTermMemory = {
+    _solutionsToReport = in
+    this
+  }
 
   def resultToReport = _resultToReport
 

@@ -102,6 +102,7 @@ object Constant {
 
   val understoodConcepts = "$UnderstoodConcepts"
   val notUnderstoodConcepts = "$NotUnderstoodConcepts"
+  val FOUND_SOLUTIONS = "$FoundSolution"
   val resultToReport = "$resultToReport"
 
 }

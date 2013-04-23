@@ -1,10 +1,12 @@
 package tu.coreservice.action.way2think
 
 import tu.model.knowledge.communication.ShortTermMemory
-import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.model.knowledge.{Constant, Probability, KnowledgeURI}
 import tu.coreservice.action.{Action}
 
 import tu.model.knowledge.helper.URIGenerator
+import tu.model.knowledge.domain.Concept
+import tu.model.knowledge.narrative.Narrative
 
 
 /**
@@ -26,4 +28,15 @@ abstract class Way2Think(_uri: KnowledgeURI, _probability: Probability = new Pro
 
   def this() = this(URIGenerator.generateURI("Way2Think"))
 
+  /**
+   * Sets concepts to result to report.
+   * @param context ShortTermMemory to set understood Concepts to report.
+   * @param concepts understood concepts to set in ShortTermMemory.
+   * @return updated ShortTermMemory
+   */
+  def setResultsToReport(context: ShortTermMemory, concepts: List[Concept]): ShortTermMemory = {
+    val understoodConcepts = Narrative[Concept](Constant.understoodConcepts, concepts)
+    context.resultToReport = context.resultToReport + understoodConcepts
+    context
+  }
 }
