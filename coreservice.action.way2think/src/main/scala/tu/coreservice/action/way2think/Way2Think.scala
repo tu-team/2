@@ -35,7 +35,7 @@ abstract class Way2Think(_uri: KnowledgeURI, _probability: Probability = new Pro
    * @return updated ShortTermMemory
    */
   def setResultsToReport(context: ShortTermMemory, concepts: List[Concept]): ShortTermMemory = {
-    val understoodConcepts = Narrative[Concept](Constant.understoodConcepts, concepts)
+    val understoodConcepts = Narrative[Concept](Constant.UNDERSTOOD_CONCEPTS, concepts)
     context.resultToReport = context.resultToReport + understoodConcepts
     context
   }

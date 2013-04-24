@@ -35,7 +35,12 @@ class Cry4HelpWay2Think(var _inputContext: ShortTermMemory, _uri: KnowledgeURI)
 
     if (inputContext.resultToReport.size > 0) {
       val understoodConcepts = this.processReporting(_inputContext)
-      provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString(Constant.understoodConcepts), understoodConcepts))
+      provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString(Constant.UNDERSTOOD_CONCEPTS), understoodConcepts))
+    }
+
+    if (inputContext.solutionsToReport.size > 0) {
+      val processedIssues = this.processSolutions(_inputContext)
+      provider.showInformation(String.format("%1$s %2$s .", LocalizedResources.GetString(Constant.FOUND_SOLUTIONS), processedIssues))
     }
 
     if (inputContext.notUnderstoodConcepts.size > 0 || inputContext.notUnderstoodPhrases.size > 0) {

@@ -100,9 +100,9 @@ object Constant {
   val conceptSuffix = "Concept"
   val objectLinkName = "obj"
 
-  val understoodConcepts = "$UnderstoodConcepts"
-  val notUnderstoodConcepts = "$NotUnderstoodConcepts"
+  val UNDERSTOOD_CONCEPTS = "$UnderstoodConcepts"
+  val NOT_UNDERSTOOD_CONCEPTS = "$NotUnderstoodConcepts"
   val FOUND_SOLUTIONS = "$FoundSolution"
-  val resultToReport = "$resultToReport"
+  val RESULT_TO_REPORT = "$resultToReport"
 
 }

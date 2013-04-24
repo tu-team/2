@@ -14,8 +14,9 @@ object LocalizedResources {
     "$ProvideAdditionalInfo" -> "Please provide additional information",
     "$ClarifyPhrases" -> "Sorry, i can't understand next phrases: ",
     "$ClarifyConcepts" -> "Sorry, i can't understand next concepts: ",
-    Constant.understoodConcepts -> "Understood concepts: ",
-    Constant.notUnderstoodConcepts -> "Not understood concepts: "
+    Constant.UNDERSTOOD_CONCEPTS -> "Understood concepts: ",
+    Constant.NOT_UNDERSTOOD_CONCEPTS -> "Not understood concepts: ",
+    Constant.FOUND_SOLUTIONS -> "Found solutions: "
   )
 
   /**

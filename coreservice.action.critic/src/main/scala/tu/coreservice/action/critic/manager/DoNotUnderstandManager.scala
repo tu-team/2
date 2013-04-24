@@ -40,8 +40,11 @@ class DoNotUnderstandManager(_exclude: List[CriticLink], _include: List[CriticLi
           ContextHelper.createReflectiveContext(d(), this.getClass.getName + " result")
         } else if (inputContext.resultToReport.size > 0) {
           val d = new DoNotUnderstand()
-          ContextHelper.createReflectiveContext(d(inputContext.resultToReport), this.getClass.getName + " " + Constant.resultToReport)
-        } else {
+          ContextHelper.createReflectiveContext(d(inputContext.resultToReport), this.getClass.getName + " " + Constant.RESULT_TO_REPORT)
+        } else if (inputContext.solutionsToReport.size > 0) {
+          val d = new DoNotUnderstand()
+          ContextHelper.createReflectiveContext(d(inputContext.resultToReport), this.getClass.getName + " " + Constant.FOUND_SOLUTIONS)
+        }else {
           ContextHelper(List[Resource](), this.getClass.getName + " result")
         }
       }

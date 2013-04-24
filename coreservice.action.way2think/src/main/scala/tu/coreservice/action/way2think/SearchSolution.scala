@@ -44,6 +44,7 @@ object SearchSolution {
     log debug("search solution result={}", res)
     val outputContext = ContextHelper(List[Resource](), this.getClass.getName + " result")
     outputContext.lastResult = res
+    this.setReport(res, outputContext)
     outputContext
 
   }

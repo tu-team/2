@@ -36,7 +36,7 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _
   var _notUnderstoodConcepts: List[Concept] = List[Concept]()
   var _notUnderstoodPhrases: List[AnnotatedPhrase] = List[AnnotatedPhrase]()
   var _lastReflectiveResult: Option[Resource] = None
-  var _resultToReport: TypedKLine[Narrative[Concept]] = TypedKLine[Narrative[Concept]](Constant.resultToReport)
+  var _resultToReport: TypedKLine[Narrative[Concept]] = TypedKLine[Narrative[Concept]](Constant.RESULT_TO_REPORT)
   var _solutionsToReport: TypedKLine[Narrative[SolvedIssue]] = TypedKLine[Narrative[SolvedIssue]](Constant.FOUND_SOLUTIONS)
 
 
@@ -428,7 +428,8 @@ object ContextHelper {
       //collect all not understood stuff and filter repeating
       res.notUnderstoodPhrases = contexts.map(c => c.notUnderstoodPhrases).flatten.toSet.toList
       res.notUnderstoodConcepts = contexts.map(c => c.notUnderstoodConcepts).flatten.toSet.toList
-      res.resultToReport = contexts.foldLeft(TypedKLine[Narrative[Concept]](Constant.understoodConcepts))((accum: TypedKLine[Narrative[Concept]], c: ShortTermMemory) => accum.merge(c.resultToReport))
+      res.resultToReport = contexts.foldLeft(TypedKLine[Narrative[Concept]](Constant.UNDERSTOOD_CONCEPTS))((accum: TypedKLine[Narrative[Concept]], c: ShortTermMemory) => accum.merge(c.resultToReport))
+      res.solutionsToReport = contexts.foldLeft(TypedKLine[Narrative[SolvedIssue]](Constant.FOUND_SOLUTIONS))((accum: TypedKLine[Narrative[SolvedIssue]], c: ShortTermMemory) => accum.merge(c.solutionsToReport))
       res
     } else {
       ContextHelper.apply(List[Resource](), "AnonymousContext")
