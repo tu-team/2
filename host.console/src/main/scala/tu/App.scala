@@ -30,7 +30,7 @@ object AppMain {
     }
 
     log.info("Starting... ")
-    if (args.length <= 0) {
+   // if (args.length <= 0) {
       while (!exitConsole) {
         log.info("Please type: 'exit' to quit, 'request' to enter ")
         log.info("request mode, 'train' to enter training mode")
@@ -84,7 +84,7 @@ object AppMain {
           }
 
         }
-      }
+     // }
     }
 
     def train(st: String) {
