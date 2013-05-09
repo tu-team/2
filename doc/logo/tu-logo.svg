@@ -13,7 +13,7 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="tu-logo.svg">
   <defs
      id="defs4">
@@ -32,16 +32,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="30.236942"
-     inkscape:cy="954.54566"
+     inkscape:zoom="0.087500001"
+     inkscape:cx="1102.4766"
+     inkscape:cy="1294.5392"
      inkscape:document-units="px"
      inkscape:current-layer="g4102"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1064"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -296,7 +296,10 @@
      id="g4020">
     <g
        id="g4022"
-       transform="matrix(1.25,0,0,-1.25,-20.455669,758.28389)">
+       transform="matrix(1.25,0,0,-1.25,-20.455669,758.28389)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          transform="translate(340.8115,547.8477)"
          id="g4024" />
@@ -359,7 +362,10 @@
     <g
        transform="matrix(1.25,0,0,-1.25,-20.455669,758.28389)"
        id="g4048"
-       style="display:inline">
+       style="display:inline"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4050"
          transform="translate(340.8115,547.8477)" />
@@ -424,9 +430,22 @@
      id="g4074"
      inkscape:groupmode="layer"
      inkscape:label="4">
+    <rect
+       style="fill:#030303;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       id="rect3373"
+       width="233.85031"
+       height="233.85031"
+       x="-23.75889"
+       y="-19.429966"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <g
        transform="matrix(1.25,0,0,-1.25,-20.455669,758.28389)"
-       id="g4076">
+       id="g4076"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g4078"
          transform="translate(340.8115,547.8477)" />
@@ -495,59 +514,92 @@
          id="g4104" />
       <path
          id="path4106"
-         style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#5a5a5a;fill-opacity:1;fill-rule:evenodd;stroke:none"
          d="m 99.994,516.231 -30.374,0 0,-30.374 30.374,0 0,30.374 z"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 66.084,518.6543 -31.742,1.435 -1.432,-31.747 31.741,-1.43 1.433,31.742 z"
-         style="fill:#787878;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4108" />
+         style="fill:#828282;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4108"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          id="path4110"
-         style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#5a5a5a;fill-opacity:1;fill-rule:evenodd;stroke:none"
          d="m 102.78,519.014 30.376,0 0,30.376 -30.376,0 0,-30.376 z"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 66.2041,521.3652 31.751,-1.161 1.159,31.751 -31.751,1.159 -1.159,-31.749 z"
-         style="fill:#787878;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4112" />
+         style="fill:#828282;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4112"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 132.2861,585.1079 -31.752,1.178 -1.181,-31.751 31.754,-1.18 1.179,31.753 z"
-         style="fill:#787878;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4114" />
+         style="fill:#828282;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4114"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 25.9326,528.4717 31.392,-4.901 4.906,31.393 -31.396,4.902 -4.902,-31.394 z"
-         style="fill:#a0a0a0;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4116" />
+         style="fill:#aaaaaa;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4116"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 94.8574,589.3931 -31.478,4.318 -4.32,-31.477 31.48,-4.319 4.318,31.478 z"
-         style="fill:#a0a0a0;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4118" />
+         style="fill:#aaaaaa;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4118"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 54.4067,601.2188 -32.718,5.405 -5.406,-32.718 32.719,-5.405 5.405,32.718 z"
-         style="fill:#dcdcdc;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4120" />
+         style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4120"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          id="path4122"
-         style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#5a5a5a;fill-opacity:1;fill-rule:evenodd;stroke:none"
          d="m 167.017,583.819 -31.771,0 0,-31.771 31.771,0 0,31.771 z"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          inkscape:connector-curvature="0"
          d="m 102.084,516.9268 0,-33.162 -33.159,0 0,-31.771 32.464,0 33.162,0 32.466,0 0,22.304 0,10.163 0,65.628 -31.771,0 0,-33.162 -33.162,0 z"
-         style="fill:#282828;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path4124" />
+         style="fill:#323232;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path4124"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
       <path
          id="path4126"
-         style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         style="fill:#5a5a5a;fill-opacity:1;fill-rule:evenodd;stroke:none"
          d="m 66.964,483.765 -31.768,0 0,-31.771 31.768,0 0,31.771 z"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/max/Projects/2/2/doc/logo/tu-logo-small_bw.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
     </g>
   </g>
 </svg>
