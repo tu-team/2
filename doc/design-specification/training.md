@@ -19,22 +19,24 @@ Training is based on "inborn" abilities Critic and Way2Think-s of the system:
  1. Reformulate
  1. Correlate
  1. Logical Reasoning: 
-   2. Inductive reasoninig
+   2. Inductive reasoning
    2. Abductive reasoning
    2. Deductive reasoning
    2. Reasoning by analogy
  1. Does it get new useful information? Critic
 
-Combining and recombining those abilities system is capable of constructing(training) the Training HowTo. This is self-learninig capability to train simple HowTo.
+Combining and recombining those abilities system is capable of constructing(training) the Training HowTo. This is self-learning capability to train simple HowTo.
 Recombining Critic and Way2Think is done automatically as part of Curiosity ability.
 
 ## Curiosity
 
-Makes system try first single abilities, then pairs then triplets. All successive: according to Does it get new useful information? Critic are memorized via Inductive reasoninig and Abductive reasoning mechanisms.
+Main mechanism is: failed - try other way.
+Makes system try first single abilities, then pairs then triplets.
+All successive: according to Does it get new useful information? Critic are memorized via Inductive reasoning and Abductive reasoning mechanisms.
 
 ## Information to be trained
 
-This shold be estimated based on the domain incident content, and training strategy document should be created. Then traing cource should be created and tested over the prototype.
+This should be estimated based on the domain incident content, and training strategy document should be created. Then training course should be created and tested over the prototype.
 
  1. Domain concepts dictionary = Comes from TSS training courses + WordNet + Other KBs. Ex.:
     2. User.
@@ -70,14 +72,14 @@ Training activity diagram example: (incident handling of the Problem with desire
    2. Correlate all solution terms with domain model via KLine-s
      3. Correlate each parameter of Solution HowTo with domain model.
      3. Set domain model as context of KLine and store Solution in frames parameter of KLine.
- 1. Iduction and [Abuction](abduction.md) reasoning over the set relative HowTo-s
+ 1. Induction and [Abduction](abduction.md) reasoning over the set relative HowTo-s
    2. Induction creates new generalised concepts creating parameters of parent Goal, comparing several similar Goals(Precondition, Entry criteria, Exit criteria, Postcondition, HowTo-s).
    2. (Abduction](abduction.md) creates generalisation links based on gerenalibility of the (HowTo sequences, Precondition, Entry criteria, Exit criteria, Postcondition) of inbound incident processing [Goal](goal.md) to domain model goal.
    2. Similar Goals (same: Parameters, Entry criteria, Exit criteria) combines HowTo-s, during application different Preconditions are processed by [Critics](critic.md).
       
 See [example](training-example.md#Incident).
 
-## Incident processing goal hierarchy
+## Goal training
 
 See [Training tree document](training-tree.md)
 
