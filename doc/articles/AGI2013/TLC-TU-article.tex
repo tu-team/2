@@ -9,17 +9,16 @@
 
 \urldef{\mailalex}\path|{alexander.toschev@gmail.com}|
 \urldef{\mailmax}\path|{max.talanov@gmail.com}|
-\urldef{\mailand}\path|{andrey.krekhov@ts.fujitsu.com}|
 
 \begin{document}
 
 \mainmatter
 
-\title{Thinking Lifecycle as an implementation of machine understanding in software maintenance domain}
+\title{Thinking Life Cycle as an implementation of machine understanding in IT maintenance domain}
 
 \titlerunning{Thinking Lifecycle implementation in IT DID}
 
-\author{Alexander Toschev\inst{1} \and Maxim Talanov\inst{2} \and Andrey Krekhov\inst{3}}
+\author{Alexander Toschev\inst{1} \and Maxim Talanov\inst{2}}
 \institute{Kazan State University, Chebotarev Research Institute of Mathematics and Mechanics\\
 Universitetskaya 17, 420008 Kazan, Russia\\
 \mailalex\\
@@ -27,24 +26,20 @@ Universitetskaya 17, 420008 Kazan, Russia\\
 Kazan State University, Higher Institute for Information Technology\\
 Universitetskaya 17, 420008 Kazan, Russia\\
 \mailmax\\
-\and
-Fujitsu GDC Russia,\\
-Sibirskii trakt 34, 420029 Kazan, Russia\\
-\mailand\\
 }
 
 
 \maketitle
 
 \begin{abstract}
-IT Infrastructure maintenance domain is a labour intensive process and contains many tools that help to solve a lot of every-day problems to support business operations. IT Infrastructure maintenance domain has a lot of primitive incidents that seems to be easy to automate. However there is still the gap to run business, operating support is provided by human specialists understanding and making decision how to implement even primitive incidents. One of the key factors in automation and in entire process is to understand input request consigned by human support specialist with cover functions this thinking processes:  correlation, simulation, reformulation. Using this model in 2006 Marvin Minsky has published his book "Emotion Machine" \cite{mmem} which was our inspiration and the base of implementation described below.
+IT Infrastructure maintenance domain is a labor intensive process and contains many tools that help to solve a lot of every-day problems to support business operations. IT Infrastructure maintenance domain has a lot of primitive incidents that seems to be easy to automate. However there is still the gap to run business, operating support is provided by human specialists understanding and making decision how to implement even primitive incidents. One of the key factors in automation and in entire process is to understand input request consigned by human support specialist with cover functions this thinking processes:  correlation, simulation, reformulation. Using this model in 2006 Marvin Minsky has published his book "Emotion Machine" \cite{mmem} which was our inspiration and the base of implementation described below.
 
 \keywords{AI, machine understanding, it outsourcing}
 
 \end{abstract}
 
 \section{Introduction}
-We have been translated an ontology of the types of reflections that a system mind might make of itself. Our focus in particular on the negative—what are the ways that system criticizes its own activities.  We have implemented a ‘mental critics’ that we envision as populating the upper reflective levels of the system. 
+We have been translated an ontology of the types of reflections that a system mind might make of itself. Our focus in particular on the negative—what are the ways that system criticizes its own activities.  We have implemented a ‘mental critics’ that we envision as populating the upper reflective levels of the system.
 
 This implementation contains machine understanding model based on thinking model because human understanding is also based on human thinking. \\
 In 2006 year Marvin Minsky has published his book “The Emotion Machine” where he describes model of human thinking dividing all actions into 3 categories:
@@ -97,7 +92,7 @@ Way to think examples:
 \end{itemize}
 
 \emph{Practical example 1}, “If incident is an automatically generated system should process it using instruction book A”.
-\emph{Practical example 2}, “If the problem symptoms already stored in the system knowledge base, use analogy to solve it”. 
+\emph{Practical example 2}, “If the problem symptoms already stored in the system knowledge base, use analogy to solve it”.
 
 \subsection{Thinking levels}
 
@@ -115,7 +110,15 @@ Minsky proposes six thinking level. Every thinking level has its own major funct
 First level contains inborn instincts and there are highest ideals and personal goals on the top level.
 
 \subsection{Facts and statistics}
-We have been inspired by the study of Incident Dump of Fujitsu GDC Russia Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com}. Study indicates that there are at lest 60\% of typical incidents that can be automated.
+We have been inspired by the study of Incident Dump of Fujitsu GDC Russia Company\footnote{Russia, Kazan, Fujitsu GDC Russia, http://ru.fujitsu.com}. Study indicates that there are at lest 60\% of typical incidents that can be automated. Results of the analysis have been divided into 4 sub-domains:
+\begin{enumerate}
+ \item WINTEL (Microsoft Windows Operating System Management)
+ \item Microsoft Active Directory Management.
+ \item *NIX management (Linux, Unix operating systems).
+ \item Storage Management.
+\end{enumerate}
+
+Every sub-domain has probability with which can be covered and \% of Tasks that can be covered. For example sub-domain WINTEL and task monitoring has 100\% covering with probability 1\footnote{Additional information and full report of results can be found on http://tu-project.com/for-business/}. On the other hand Operating tasks has covered with 96,875\% only. 
 
 \section{Emotion machine prototype}
 This implementation based on triple \emph{Critic-Selector-Way to think}. There are several critics, way-to-think and selector has been created:
@@ -143,7 +146,7 @@ Instinctive level is planned for future use as acceleration of automatically gen
 
 \section{Thinking life cycle (TLC)}
 
-The central idea behind our architecture is: using one method of solution, system can rapidly elevate to another. Thus, at the top level, our architecture is organized as follows. When the system encounters a problem, it first uses some knowledge about ‘problem-types’ to select some ‘way-to-think’ that might work. 
+The central idea behind our architecture is: using one method of solution, system can rapidly elevate to another. Thus, at the top level, our architecture is organized as follows. When the system encounters a problem, it first uses some knowledge about ‘problem-types’ to select some ‘way-to-think’ that might work.
 The system TLC is capable of noticing problems in it's own activities. Our current architectural design also includes reflective levels beyond the deliberative level. Each reflective level(Reflective, Self Reflective, Self Concious) responding to problems in the levels beneath and includes:
 \begin{itemize}
  \item Reflective — Reasoning about the recent deliberations of deliberative level, such as whether a subgoal has gotten the system closer to a supergoal or further away for processing.
@@ -229,11 +232,18 @@ Important part of prototype implementation is an ability to work in Dialog mode 
 This level is a top in hierarchy. On this level system tracks and sets the Emotional State. For example reacting for long incident processing system changes emotional state to anxious to allocate more resources for processing.
 
 \subsection{Training}
-System trains during operation via communication with human specialist. However, current prototype works in separate training mode. System perceives all input data as training requests in it.
+System trains during operation via communication with human specialist. However, current prototype also works in separate training mode. System perceives all input data as training requests in it. On the initial stage system filled with base concepts:
+\begin{itemize}
+ \item Concept
+ \item Action
+ \item Form of politeness
+\end{itemize}
+
+For example, let's take "Please install Firefox Incident". One of the possible learning curve for this incident is: "Firefox is a browser. Install is an action. Please is a form of politeness." After learning it system cans process incident\footnote{Additional information available here http://tu-project.com/student-book/}. Current version of project is 1.1 "Nemesis"\footnote{Full roadmap here http://tu-project.com/roadmap/}
 
 \section{Initial processing results}
 
-According to initial processing results approx. 61\% of incidents can be understood.
+According to initial processing results approx. 61\% of incidents can be understood. 
 
 \section{Conclusions}
 
