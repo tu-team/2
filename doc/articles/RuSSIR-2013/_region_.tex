@@ -1,0 +1,102 @@
+\message{ !name(TLC-TU-article.tex)}\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+
+\title{Thinking Lifecycle as an implementation of machine understanding in software maintenance domain}
+\author{Alexander Toschev}
+\author{Max Talanov}
+\author{Andrei Krekhov}
+\date{\today}
+
+\begin{document}
+
+\message{ !name(TLC-TU-article.tex) !offset(-3) }
+
+
+\maketitle
+
+\section{Introduction}
+In 2006 year Marvin Minsky has published his book “The Emotion Machine” where he provides model of human thinking dividing all actions into 3 categories:
+
+\begin{enumerate}
+ \item Critic
+ \item Selector
+ \item Way To Think
+\end{enumerate}
+
+\subsection{Critic}
+Critic could be understood as probabilistic predicate. In real world when human faces with the problem several critics are activated. In ITSM domain, for example, when auto generated incident comes to queue Auto Generated Incident critic will be activated. After activating critic becomes Selector. From another point of view activated Critic is a Selector
+For example:
+
+\begin{enumerate}
+ \item Learned Reactive Critics.
+ \item Deliberative Critics.
+ \item Reflective Critics.
+ \item Self-Reflective Critics.
+ \item Self-Conscious Critics.
+\end{enumerate}
+
+\subsection{Selector}
+Selector is capable to retrieve Resources (Critic or Way to think) from memory.
+
+\subsection{Way to think}
+
+For example:
+•	Simulation
+•	Correlation
+•	Reformulation
+•	Thinking by analogy
+•	…
+
+Practical example 1, “If incident is an automatically generated, process it using instruction book A”.
+Practical example 2, “If I now the problem, use analogy to solve it”. In current implementation Way To Think is a worker that modifies short term memory.
+
+\subsection{Thinking levels}
+
+Minsky indicates six thinking level. Every thinking level has its own functionality. Every next level is a more complex than previous.
+
+\begin{enumerate}
+ \item Instinctive
+ \item Learned
+ \item Deliberative
+ \item Reflective
+ \item Self-Reflective
+ \item Self-Conscious
+\end{enumerate}
+On the first level there are inborn instincts and there are highest ideals and personal goals on the top level.
+
+\subsection{Facts and statistics}
+One of the inspirations for this work is the study of Incident Dump of Fujitsu GDC Russia Company . Study indicates that there are a lot of “typical” incidents that can be automated.
+
+\subsection{Emotion machine prototype}
+This implementation based on triple Critic-Selector-Way to think. There are several critics, way-to-think and selector has been created:
+
+\begin{enumerate}
+ \item Natural language processing based on RelEx.
+ \item Incident classification critics.
+ \item Simulation.
+ \item Reformulation.
+ \item Correlation.
+ \item Solution search.
+\end{enumerate}
+
+\subsection{Implemented thinking levels}
+
+\begin{enumerate}
+ \item Learned
+ \item Deliberative
+ \item Reflective
+ \item Self Reflective
+ \item Self Conscious
+\end{enumerate}
+
+Implementation currently doesn’t include first instinctive level because there is no direct instinct or inborn reaction on ITSM incident. However, this level is planned for future use as acceleration of automatically generated incidents.
+
+
+
+\end{document}
+
+
+\message{ !name(TLC-TU-article.tex) !offset(-102) }
