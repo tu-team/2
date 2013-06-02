@@ -1,3 +1,3 @@
 # Emotional behavior
 
-!(Sentic axis)[sentic axis Plutchik-wheel.png]
+![Sentic axis](sentic axis Plutchik-wheel.png)
