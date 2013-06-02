@@ -1,6 +1,6 @@
 # Training tree specification
 
-## Tree is based on Goals-Subgoals structure
+## Tree is based on [Goals-Subgoals](goal.md) structure
 
 ![Goal](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/GoalConceptClass.png)
 
@@ -12,13 +12,13 @@ Goals could be inferred from:
 ## Training multiple goals on the same level
 
 ### Training:
-But if Training process finds several goals on the same level, when adds new subgoal, it should try to add classification as previous step.
+But if Training process find several goals on the same level, when adds new subgoal, it should try to add classification as previous step.
 Classification is delta data based. If there is no option to find delta(same data triggers two goals) then use MostProbableWay2Think.
 
 ### Production:
 MostProbableWay2Think Critics returns most probable Way to think, all the rest are stored in MostProbableWay2Think: Frame according to probability. If on further steps of production process Reflective/SelfReflective Critics hits the failure of the choice, it should use MostProbableWay2Think: Frame to use less probable and recalculate probability of the goal.
 
-## <a name="Example">Example</a>
+##Example
 
 ```
  1. SubGoal = Resolve incident
