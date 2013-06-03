@@ -15,6 +15,6 @@ A = - 1/(sigma * sqrt(2 * pi));
     c = sin(theta)^2/2/sigma_x^2 + cos(theta)^2/2/sigma_y^2;
  
     [X, Y] = meshgrid(x_limit_neg:.1:x_limit_pos, y_limit_neg:.1:y_limit_pos);
-    Z = A*exp( - (a*(X-x0).^2 + 2*b*(X-x0).*(Y-y0) + c*(Y-y0).^2)) ;
+    Z = -exp( - (a*(X-x0).^2 + 2*b*(X-x0).*(Y-y0) + c*(Y-y0).^2)) + 1 ;
     surf(X,Y,Z);shading interp;view(-36,36);axis equal;drawnow
 #end
