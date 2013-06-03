@@ -41,3 +41,4 @@ Emotional highlight is two dimensional: Pleasantness to Aptitude.
 Each training act, such as: domain concept explanation, feedback and so on is highlighted in two dimensions according to current positive impression (pleasantness) and future benefit expectations(aptitude).
 
 
+
