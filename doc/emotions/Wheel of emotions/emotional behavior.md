@@ -2,7 +2,7 @@
 
 ![Sentic axis](sentic axis Plutchik-wheel.png)
 
-According to [Sentic computing](http://sentic.net/senticcomputing.pdf) Plutchik´s wheel of emotions could be represented in 4 sentic axis:
+According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik´s wheel of emotions could be represented in 4 sentic axis:
 
  1. Sensitivity
  1. Attention
@@ -11,7 +11,7 @@ According to [Sentic computing](http://sentic.net/senticcomputing.pdf) Plutchik�
 
 On each axis lies 2 emotions with 3 sentic levels, see diagram above.
 
-According to [3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) there are 6 emotional states on each axis:
+According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) there are 6 emotional states on each axis:
 
  1. Sensitivity: rage, anger, annoyance, apprehension, fear, terror.
  1. Attention: vigilance, anticipation, interest, distraction, surprise, amazement.
