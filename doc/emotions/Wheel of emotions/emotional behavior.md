@@ -29,10 +29,10 @@ According to behavior influence over the system axis could be grouped as followi
 
 ## Resource distribution
 
-Is managed in 2 dimensions: Sensitivity manages speed of processes and Attention manges number of resources, for example thinking threads.
-Rage makes system act as quick as possible taking in account as less variants as possible.
-Terror makes system struck almost stopping all current computations.
-Vigilance makes system concentrate all computational resources on current task. All available threads should be distributed to current process.
-Amazement releases as much computational resources as possible leaving current process with minimum threads.
+Resource distribution is managed in 2 dimensions: Sensitivity manages speed of processes and Attention manges number of resources, for example thinking threads.
+ * Rage makes system act as quick as possible taking in account as less variants as possible.
+ * Terror makes system struck almost stopping all current computations.
+ * Vigilance makes system concentrate all computational resources on current task. All available threads should be distributed to current process.
+ * Amazement releases as much computational resources as possible leaving current process with minimum threads.
 
 
