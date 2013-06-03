@@ -7,7 +7,7 @@
  * Fear - Anger
  * Surprise - Anticipation
 
-According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik´s wheel could be represented in 4 sentic dimensions:
+According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
  1. Sensitivity
  1. Attention
@@ -18,10 +18,16 @@ According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.n
 
 On each axis lies 2 basic emotions with 3 sentic levels, there are 6 emotional states on each axis:
 
- 1. _Sensitivity_: rage, anger, annoyance, apprehension, fear, terror.
- 1. _Attention_: vigilance, anticipation, interest, distraction, surprise, amazement.
- 1. _Pleasantness_: ecstasy, joy, serenity, pensiveness, sadness, grief.
- 1. _Aptitude_: admiration, trust, acceptance, boredom, disgust, loathing.
+ 1. **Sensitivity**: rage, anger, annoyance, apprehension, fear, terror.
+ 1. **Attention**: vigilance, anticipation, interest, distraction, surprise, amazement.
+ 1. **Pleasantness**: ecstasy, joy, serenity, pensiveness, sadness, grief.
+ 1. **Aptitude**: admiration, trust, acceptance, boredom, disgust, loathing.
+
+Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function:
+
+![Gauss 3D](Gauss 3D.png)
+
+...
 
 Emotions on one axis has same nature that determines the way they affect the system.
 According to the way emotions affect the system behaviour sentic axises are grouped in a following way:
