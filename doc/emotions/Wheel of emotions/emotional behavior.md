@@ -19,7 +19,7 @@ According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.n
  1. Aptitude: admiration, trust, acceptance, boredom, disgust, loathing.
 
 Emotions on one axis has same nature that determines the way they affect the system.
-According ot the way emotions affect the system behaviour sentic axises are grouped in a following way:
+According to the way emotions affect the system behaviour sentic axises are grouped in a following way:
 
  1. Resource distribution is affected by:
    2. Sensitivity
