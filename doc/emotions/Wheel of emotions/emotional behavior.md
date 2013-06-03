@@ -1,5 +1,14 @@
 # Emotional behavior
 
+[Plutchik´s wheel of emotions](http://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions) contains 8 basic emotions grouped in pairs:
+
+ * Joy	Sadness
+ * Trust	Disgust
+ * Fear	Anger
+ * Surprise	Anticipation
+
+
+
 ![Sentic axis](sentic axis Plutchik-wheel.png)
 
 According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik´s wheel of emotions could be represented in 4 sentic axis:
