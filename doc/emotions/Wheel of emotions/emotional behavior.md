@@ -18,7 +18,7 @@ According to [3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing
  1. Pleasantness: ecstasy, joy, serenity, pensiveness, sadness, grief.
  1. Aptitude: admiration, trust, acceptance, boredom, disgust, loathing.
 
-According to behavior influence over the system axis could be grouped as following:
+According to emotion's influence over the system axises could be grouped as following:
 
  1. Resource distribution:
    2. Sensitivity
@@ -34,5 +34,10 @@ Resource distribution is managed in 2 dimensions: Sensitivity manages speed of p
  * Terror makes system struck almost stopping all current computations.
  * Vigilance makes system concentrate all computational resources on current task. All available threads should be distributed to current process.
  * Amazement releases as much computational resources as possible leaving current process with minimum threads.
+
+##Emotional highlight
+
+Emotional highlight is two dimensional: Pleasantness to Aptitude.
+Each training act, such as: domain concept explanation, feedback and so on is highlighted in two dimensions according to current positive impression (pleasantness) and future benefit expectations(aptitude).
 
 
