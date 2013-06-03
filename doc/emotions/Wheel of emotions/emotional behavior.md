@@ -18,22 +18,24 @@ According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.n
  1. Pleasantness: ecstasy, joy, serenity, pensiveness, sadness, grief.
  1. Aptitude: admiration, trust, acceptance, boredom, disgust, loathing.
 
-According to emotion's influence over the system axises could be grouped as following:
+Emotions on one axis has same nature that determines the way they affect the system.
+According ot the way emotions affect the system behaviour sentic axises are grouped in a following way:
 
- 1. Resource distribution:
+ 1. Resource distribution is affected by:
    2. Sensitivity
    2. Attention
- 1. Emotional highlight:
+ 1. Emotional highlight is affected by:
   2. Pleasantness
   2. Aptitude
 
+
 ## Resource distribution
 
-Resource distribution is managed in 2 dimensions: Sensitivity manages speed of processes and Attention manges number of resources, for example thinking threads.
- * Rage makes system act as quick as possible taking in account as less variants as possible.
- * Terror makes system struck almost stopping all current computations.
- * Vigilance makes system concentrate all computational resources on current task. All available threads should be distributed to current process.
- * Amazement releases as much computational resources as possible leaving current process with minimum threads.
+Resource distribution is influenced in 2 dimensions: Sensitivity manages speed of processes and Attention manges number of resources, for example thinking threads.
+ * Sensitivity:Rage makes system act as quick as possible taking in account as less variants as possible.
+ * Sensitivity:Terror makes system struck almost stopping all current computations.
+ * Attention:Vigilance makes system concentrate all computational resources on current task. All available threads should be distributed to current process.
+ * Attention:Amazement releases as much computational resources as possible leaving current process with minimum threads.
 
 ##Emotional highlight
 
