@@ -2,27 +2,25 @@
 
 [Plutchik´s wheel of emotions](http://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions) contains 8 basic emotions grouped in pairs:
 
- * Joy	Sadness
- * Trust	Disgust
- * Fear	Anger
- * Surprise	Anticipation
+ * Joy - Sadness
+ * Trust - Disgust
+ * Fear - Anger
+ * Surprise - Anticipation
 
-
-
-![Sentic axis](sentic axis Plutchik-wheel.png)
-
-According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik´s wheel of emotions could be represented in 4 sentic axis:
+According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik´s wheel could be represented in 4 sentic dimensions:
 
  1. Sensitivity
  1. Attention
  1. Pleasantness
  1. Aptitude
 
+![Sentic axis](sentic axis Plutchik-wheel.png)
+
 On each axis lies 2 emotions with 3 sentic levels, see diagram above.
 
 According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) there are 6 emotional states on each axis:
 
- 1. Sensitivity: rage, anger, annoyance, apprehension, fear, terror.
+ 1. *Sensitivity*: rage, anger, annoyance, apprehension, fear, terror.
  1. Attention: vigilance, anticipation, interest, distraction, surprise, amazement.
  1. Pleasantness: ecstasy, joy, serenity, pensiveness, sadness, grief.
  1. Aptitude: admiration, trust, acceptance, boredom, disgust, loathing.
