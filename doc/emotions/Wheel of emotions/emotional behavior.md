@@ -7,7 +7,7 @@
  * Fear - Anger
  * Surprise - Anticipation
 
-![Plutchik's wheel of emotions](Plutchik's wheel 3D.gif)
+![Plutchik's wheel of emotions](Plutchik wheel 3D.gif)
 
 According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
@@ -25,7 +25,8 @@ On each axis lies 2 basic emotions with 3 sentic levels, there are 6 emotional s
  1. **Pleasantness**: ecstasy, joy, serenity, pensiveness, sadness, grief.
  1. **Aptitude**: admiration, trust, acceptance, boredom, disgust, loathing.
 
-Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function:
+Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
+G(x) = -1*e^((-x^2)/(2*sigma^2)):
 
 ![Gauss 3D](Gauss 3D.png)
 
