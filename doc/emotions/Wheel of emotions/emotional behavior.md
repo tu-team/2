@@ -7,12 +7,14 @@
  * Fear - Anger
  * Surprise - Anticipation
 
+![Plutchik's wheel of emotions](Plutchik's wheel 3D.gif)
+
 According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
  1. **Sensitivity**: Fear - Anger: the user is comfortable with interaction dynamics 
  1. **Attention**: Surprise - Anticipation: the user is interested in interaction contents
  1. **Pleasantness**: Joy - Sadness: the user is amused by interaction modalities
- 1. **Aptitude**: Trust - Disgust: the user is conﬁdent in interaction beneﬁts
+ 1. **Aptitude**: Trust - Disgust: the user is confident in interaction benefits
 
 ![Sentic axis](sentic axis Plutchik-wheel.png)
 
