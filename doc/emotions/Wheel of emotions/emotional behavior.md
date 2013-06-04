@@ -11,8 +11,12 @@ According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.n
 
  1. Sensitivity
  1. Attention
- 1. Pleasantness
+ 1. Pleasantness ()
  1. Aptitude
+
+the user is amused by interaction modalities
+(Pleasantness), the user is interested in interaction contents (Attention), the user is
+comfortable with interaction dynamics (Sensitivity), the user is conﬁdent in interaction beneﬁts (Aptitude).
 
 ![Sentic axis](sentic axis Plutchik-wheel.png)
 
@@ -38,7 +42,6 @@ According to the way emotions affect the system behaviour sentic axises are grou
  1. Emotional highlight is affected by:
   2. Pleasantness
   2. Aptitude
-
 
 ## Resource distribution
 
