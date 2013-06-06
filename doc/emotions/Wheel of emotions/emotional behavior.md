@@ -28,11 +28,9 @@ On each axis lies 2 basic emotions with 3 sentic levels, there are 6 emotional s
 Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
 G(x) = -1*e^((-x^2)/(2*sigma^2)):
 
-![Gauss 3D](Gauss 3D.png)
+![Gauss 3D](Gauss 3D axis.png)
 
-...
-
-Emotions on one axis has same nature that determines the way they affect the system.
+Emotions of one axis has same nature that determines the way they affect the system.
 According to the way emotions affect the system behaviour sentic axises are grouped in a following way:
 
  1. Resource distribution is affected by:
@@ -40,7 +38,7 @@ According to the way emotions affect the system behaviour sentic axises are grou
    2. Attention
  1. Emotional highlight is affected by:
   2. Pleasantness
-  2. Aptitude
+  2. Aptitude 
 
 ## Resource distribution
 
