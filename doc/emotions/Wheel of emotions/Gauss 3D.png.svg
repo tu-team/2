@@ -12,7 +12,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg3036"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    width="505"
    height="258"
    sodipodi:docname="Gauss 3D.png.svg"
@@ -30,7 +30,34 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs3040" />
+     id="defs3040">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3825"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3822"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -40,17 +67,18 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
+     inkscape:window-width="1920"
+     inkscape:window-height="1064"
      id="namedview3038"
      showgrid="false"
-     inkscape:zoom="1.1686047"
-     inkscape:cx="205.58995"
-     inkscape:cy="120.97644"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:zoom="0.82632831"
+     inkscape:cx="81.397497"
+     inkscape:cy="-30.791954"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2" />
+     inkscape:current-layer="layer2"
+     inkscape:snap-bbox="true" />
   <image
      width="505"
      height="258"
@@ -67,34 +95,30 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="1">
-    <rect
-       style="fill:#323232;fill-opacity:1"
-       id="rect2986"
-       width="1"
-       height="253.29353"
-       x="220.34827"
-       y="0.85572112" />
-    <rect
-       style="fill:#323232;fill-opacity:1"
-       id="rect2986-8-1"
-       width="1"
-       height="427.00497"
-       x="162.51494"
-       y="-469.79105"
-       transform="matrix(0,1,-1,0,0,0)" />
-    <rect
-       style="fill:#323232;fill-opacity:1"
-       id="rect2986-8-1-4"
-       width="1"
-       height="253.29353"
-       x="264.77362"
-       y="2.1393042" />
-    <rect
-       style="fill:#323232;fill-opacity:1"
-       id="rect2986-8-1-4-4"
-       width="1"
-       height="253.29353"
-       x="172.35573"
-       y="-2.9950242" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="M 41.074625,161.73135 468.07958,175.42289"
+       id="path5360"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="M 131.35323,185.26369 380.36814,153.602"
+       id="path5546"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="m 163.44278,145.04479 180.12935,46.20895"
+       id="path5916"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:none"
+       d="m 221.63183,207.51244 35.51244,-38.50747"
+       id="path6472"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
