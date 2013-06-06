@@ -4,6 +4,10 @@
 
 _TBD_
 
+## Plutchik´s wheel of emotions
+
+
+
 [Plutchik´s wheel of emotions](http://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions) contains 8 basic emotions grouped in pairs:
 
  * Joy - Sadness
