@@ -12,7 +12,16 @@ _TBD_
 
 According to Marvin Minsky the emotions are inseparable part of human thinking. Even human is bored with some task or talk it is very important for him or her to switch to another task. He exploits evolutionary approach to emotion development and supposes that emotions evolved for one reason human intellect could not exist in form and power as it is now without emotions.
 
-Marvin Minsky
+Marvin Minsky suggested human thinking model based on [six levels](http://web.media.mit.edu/~minsky/E5/eb5.html):
+
+ 1. Instinctive reactions
+ 1. Learned reactions
+ 1. Deliberative thinking
+ 1. Reflective thinking
+ 1. Self-reflective thinking
+ 1. Self-conscious reflection
+
+
 
 ## Plutchik´s wheel of emotions
 
