@@ -1,14 +1,18 @@
 # Emotional behavior
 
+## Abstract
+
 ## Background
 
-_TBD_
-
-## Hourglass of emotions
+Our model is based mainly on three approaches: thinking model described in Marvin Minsky book [The emotion machine](http://en.wikipedia.org/wiki/The_Emotion_Machine), Plutchik's [Wheel of emotions](http://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions) and [Hourglass of emotions](http://link.springer.com/chapter/10.1007%2F978-3-642-34584-5_11#page-1) by Erik Cambria, Andrew Livingstone, Amir Hussain.
 
 _TBD_
 
-### Limitations
+## The emotion machine.
+
+According to Marvin Minsky the emotions are inseparable part of human thinking. Even human is bored with some task or talk it is very important for him or her to switch to another task. He exploits evolutionary approach to emotion development and supposes that emotions evolved for one reason human intellect could not exist in form and power as it is now without emotions.
+
+Marvin Minsky
 
 ## Plutchik´s wheel of emotions
 
@@ -20,6 +24,15 @@ _TBD_
  * Surprise - Anticipation
 
 ![Plutchik's wheel of emotions](Plutchik wheel 3D.gif)
+
+
+
+## Hourglass of emotions
+
+_TBD_
+
+### Limitations
+
 
 According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
@@ -38,7 +51,7 @@ On each axis lies 2 basic emotions with 3 sentic levels, there are 6 emotional s
  1. **Aptitude**: admiration, trust, acceptance, boredom, disgust, loathing.
 
 Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
-G(x) = -1*e^((-x^2)/(2*sigma^2)):
+G(x) = -1*e^((-x^2)/(2*σ^2)):
 
 ![Gauss 3D](Gauss 3D axis.png)
 
