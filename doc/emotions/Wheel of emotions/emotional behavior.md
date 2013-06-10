@@ -34,8 +34,6 @@ Marvin Minsky suggested human thinking model based on [six levels](http://web.me
 
 ![Plutchik's wheel of emotions](Plutchik wheel 3D.gif)
 
-
-
 ## Hourglass of emotions
 
 _TBD_
@@ -52,6 +50,13 @@ There are 4 sentic dimensions where 2 basic emotions and 4 supplemental are situ
  1. **Aptitude** - the user is confident in interaction benefits: admiration, _trust_, acceptance, boredom, _disgust_, loathing. 
 
 ![Sentic axis](sentic axis Plutchik-wheel.png)
+
+### Emotions influence on computational processes
+
+Each emotional state on one axis has similar nature but strength of emotion changes from center to peripherial areas.
+According to assumption above there are 4 methods emotions could influence computational processes in intelligent system. Above this each emotional state defines highlight that is memorized during training. For example: joy experienced by intelligent system while reading positive feedback from human user for system's solution highlights solution and makes system choose this solution more probably.
+
+
 
 Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
 G(x) = -1*e^((-x^2)/(2*σ^2)):
