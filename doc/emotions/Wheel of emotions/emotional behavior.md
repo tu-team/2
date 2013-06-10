@@ -42,10 +42,10 @@ _TBD_
 
 There are 4 sentic dimensions where 2 basic emotions and 4 supplemental are situated.According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
- 1. **Sensitivity** - the user is comfortable with interaction dynamics: rage, _anger_, annoyance, apprehension, _fear_, terror.  
- 1. **Attention** - the user is interested in interaction contents: vigilance, _anticipation_, interest, distraction, _surprise_, amazement.
- 1. **Pleasantness** - the user is amused by interaction modalities: ecstasy, _joy_, serenity, pensiveness, _sadness_, grief.
- 1. **Aptitude** - the user is confident in interaction benefits: admiration, _trust_, acceptance, boredom, _disgust_, loathing. 
+ 1. **Sensitivity** - the user is comfortable with interaction dynamics: rage, *anger*, annoyance, apprehension, *fear*, terror.  
+ 1. **Attention** - the user is interested in interaction contents: vigilance, *anticipation*, interest, distraction, *surprise*, amazement.
+ 1. **Pleasantness** - the user is amused by interaction modalities: ecstasy, *joy*, serenity, pensiveness, *sadness*, grief.
+ 1. **Aptitude** - the user is confident in interaction benefits: admiration, *trust*, acceptance, boredom, *disgust*, loathing. 
 
 ![Sentic axis](sentic axis Plutchik-wheel.png)
 
@@ -56,8 +56,8 @@ According to assumption above there are 4 methods emotions could influence compu
 
 Extending example above to whole 4 axis:
 
- 1. Sensitivity makes system act reckless: as quick as possible, taking in account less variants. This way in state of *rage* deliberative thinking should take in account only 1 possible most probable variant, in state of *anger*: 20-30 percent most probable variants, *annoyance* slightly reduces number of variants processed by deliberative thinking processes for 10-20 percents, *apprehension*: makes system take in account all passible variants and 10-20 less probable variants, *fear*: makes system take in account almost impossible variants 20-30 percent, *terror*: stuck system with +100 percent all impossible variants taken in account. 
- 1. Attention makes system allocate as much resources as possible to current process. 
+ 1. Sensitivity makes system act reckless: as quick as possible, taking in account less variants. This way in state of *rage* deliberative thinking should take in account only 1 possible most probable variant, in state of *anger*: 20%-30% most probable variants, *annoyance* slightly reduces number of variants processed by deliberative thinking processes for 10%-20%, *apprehension*: makes system take in account all passible variants and 10%-20% less probable variants, *fear*: makes system take in account almost impossible variants 20%-30%, *terror*: stops system for a while with +100% all impossible variants taken in account. 
+ 1. Attention makes system allocate as much resources as possible to current process: *vigilance* makes system allocate 100% of available computation threads, *anticipation*: 50% of available processes, *interest*: 30% , *distraction*: 10, *surprise*: 5% , *amazement* stops system for a while with 0 computation threads.
 
 also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
 G(x) = -1*e^((-x^2)/(2*σ^2)):
