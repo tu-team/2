@@ -42,22 +42,16 @@ _TBD_
 
 ### Limitations
 
+## Emotional behavior and emotions influence on computational processes
 
-According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
+There are 4 sentic dimensions where 2 basic emotions and 4 supplemental are situated.According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
- 1. **Sensitivity**: Fear - Anger: the user is comfortable with interaction dynamics 
- 1. **Attention**: Surprise - Anticipation: the user is interested in interaction contents
- 1. **Pleasantness**: Joy - Sadness: the user is amused by interaction modalities
- 1. **Aptitude**: Trust - Disgust: the user is confident in interaction benefits
+ 1. **Sensitivity** - the user is comfortable with interaction dynamics: rage, _anger_, annoyance, apprehension, _fear_, terror.  
+ 1. **Attention** - the user is interested in interaction contents: vigilance, _anticipation_, interest, distraction, _surprise_, amazement.
+ 1. **Pleasantness** - the user is amused by interaction modalities: ecstasy, _joy_, serenity, pensiveness, _sadness_, grief.
+ 1. **Aptitude** - the user is confident in interaction benefits: admiration, _trust_, acceptance, boredom, _disgust_, loathing. 
 
 ![Sentic axis](sentic axis Plutchik-wheel.png)
-
-On each axis lies 2 basic emotions with 3 sentic levels, there are 6 emotional states on each axis:
-
- 1. **Sensitivity**: rage, anger, annoyance, apprehension, fear, terror.
- 1. **Attention**: vigilance, anticipation, interest, distraction, surprise, amazement.
- 1. **Pleasantness**: ecstasy, joy, serenity, pensiveness, sadness, grief.
- 1. **Aptitude**: admiration, trust, acceptance, boredom, disgust, loathing.
 
 Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
 G(x) = -1*e^((-x^2)/(2*σ^2)):
