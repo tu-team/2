@@ -21,8 +21,6 @@ Marvin Minsky suggested human thinking model based on [six levels](http://web.me
  1. Self-reflective thinking
  1. Self-conscious reflection
 
-
-
 ## Plutchik´s wheel of emotions
 
 [Plutchik´s wheel of emotions](http://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions) contains 8 basic emotions grouped in pairs:
@@ -53,12 +51,15 @@ There are 4 sentic dimensions where 2 basic emotions and 4 supplemental are situ
 
 ### Emotions influence on computational processes
 
-Each emotional state on one axis has similar nature but strength of emotion changes from center to peripherial areas.
+Each emotional state on one axis has similar nature but strength of emotion changes from center to periphery.
 According to assumption above there are 4 methods emotions could influence computational processes in intelligent system. Above this each emotional state defines highlight that is memorized during training. For example: joy experienced by intelligent system while reading positive feedback from human user for system's solution highlights solution and makes system choose this solution more probably.
 
+Extending example above to whole 4 axis:
 
+ 1. Sensitivity makes system act reckless: as quick as possible, taking in account less variants. This way in state of *rage* deliberative thinking should take in account only 1 possible most probable variant, in state of *anger*: 20-30 percent most probable variants, *annoyance* slightly reduces number of variants processed by deliberative thinking processes for 10-20 percents, *apprehension*: makes system take in account all passible variants and 10-20 less probable variants, *fear*: makes system take in account almost impossible variants 20-30 percent, *terror*: stuck system with +100 percent all impossible variants taken in account. 
+ 1. Attention makes system allocate as much resources as possible to current process. 
 
-Also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
+also according to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) emotion strength is determined by Gaussian function
 G(x) = -1*e^((-x^2)/(2*σ^2)):
 
 ![Gauss 3D](Gauss 3D axis.png)
