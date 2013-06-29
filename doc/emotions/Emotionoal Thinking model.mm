@@ -1,0 +1,27 @@
+<map version="0.9.0">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1372484245986" ID="ID_436530364" MODIFIED="1372485334190" TEXT="Thinking model">
+<font NAME="SansSerif" SIZE="10"/>
+<attribute NAME="6" VALUE="levels"/>
+<node CREATED="1372484267242" ID="ID_894969243" MODIFIED="1372485381304" POSITION="right" TEXT="Feedback loops algorithm">
+<font NAME="SansSerif" SIZE="10"/>
+<attribute NAME="6" VALUE="steps"/>
+<node CREATED="1372485168570" ID="ID_348867965" MODIFIED="1372485394527" TEXT="feeling state">
+<font NAME="SansSerif" SIZE="10"/>
+<node CREATED="1372485297313" ID="ID_17358430" MODIFIED="1372485414193" TEXT="wheel of emotions"/>
+</node>
+<node CREATED="1372485282080" ID="ID_1782955808" MODIFIED="1372485486975" TEXT="physical arousal">
+<node CREATED="1372485941670" ID="ID_838561876" MODIFIED="1372486121251" TEXT="neuromodulation">
+<cloud/>
+<node CREATED="1372485956120" ID="ID_15945492" MODIFIED="1372485959159" TEXT="Serotonin"/>
+<node CREATED="1372485960712" ID="ID_1446282819" MODIFIED="1372485964727" TEXT="Dopomine"/>
+<node CREATED="1372485965648" ID="ID_296864072" MODIFIED="1372485970632" TEXT="Opioid"/>
+<node CREATED="1372485971436" ID="ID_691178541" MODIFIED="1372485984212" TEXT="Noradrenaline"/>
+<node CREATED="1372486020907" ID="ID_1119060461" MODIFIED="1372486036272" TEXT="Cube of emotion">
+<node CREATED="1372486041541" ID="ID_186491329" MODIFIED="1372486044424" TEXT="Gauss?"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+</map>
