@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:AadlSpec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http:///AADL/core" xmlns:property="http:///AADL/property" name="AADL_Project">
+  <propertySet name="AADL_Project">
+    <comment>******************************************************</comment>
+    <comment>   AADL Standard AADL_V1.0</comment>
+    <comment>  Appendix A (normative)</comment>
+    <comment>  Predeclared Property Sets</comment>
+    <comment>  03Nov04</comment>
+    <comment>  Revised 14May06</comment>
+    <comment>******************************************************</comment>
+    <propertyConstant name="Default_Active_Thread_Handling_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Active_Thread_Handling_Protocols]">
+      <constantValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Active_Thread_Handling_Protocols]/enumLiteral[@name=abort]"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Aadlinteger">
+      <comment> The following are example software source languages.</comment>
+      <comment> ( Ada95, C, Simulink_6_5 )</comment>
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="2#1#e32" value="4294967296" base="2"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Base_Address">
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="2#1#e32" value="4294967296" base="2"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Memory_Size">
+      <propertyType xsi:type="property:Aadlinteger" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]"/>
+      <constantValue xsi:type="property:IntegerValue" unitLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=B]" valueString="2#1#e32" value="4294967296" base="2"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Queue_Size">
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="512" value="512" base="10"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Thread_Limit">
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="32" value="32" base="10"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Time">
+      <propertyType xsi:type="property:Aadlinteger" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]"/>
+      <constantValue xsi:type="property:IntegerValue" unitLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=Hr]" valueString="1000" value="1000" base="10"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Urgency">
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="12" value="12" base="10"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Word_Count">
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="2#1#e32" value="4294967296" base="2"/>
+    </propertyConstant>
+    <propertyConstant name="Max_Word_Space">
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <constantValue xsi:type="property:IntegerValue" valueString="64" value="64" base="10"/>
+    </propertyConstant>
+    <propertyType xsi:type="property:EnumType" name="Supported_Active_Thread_Handling_Protocols">
+      <comment> one of the choices of Supported_Active_Thread_Handling_Protocols.</comment>
+      <enumLiteral name="abort"/>
+      <enumLiteral name="complete_one_flush_queue"/>
+      <enumLiteral name="complete_one_transfer_queue"/>
+      <enumLiteral name="complete_one_preserve_queue"/>
+      <enumLiteral name="complete_all"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Connection_Protocols">
+      <comment> a subset may be supported.</comment>
+      <enumLiteral name="HTTP"/>
+      <enumLiteral name="HTTPS"/>
+      <enumLiteral name="UDP"/>
+      <enumLiteral name="IP_TCP"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Concurrency_Control_Protocols">
+      <comment> The following are example protocols.</comment>
+      <comment> (HTTP, HTTPS, UDP, IP_TPC);</comment>
+      <enumLiteral name="NoneSpecified"/>
+      <enumLiteral name="Interrupt_Masking"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Dispatch_Protocols">
+      <comment> phf : NoneSpecified instead of None</comment>
+      <comment> The following are example concurrency control protocols.</comment>
+      <comment> (Interrupt_Masking, Maximum_Priority, Priority_Inheritance, Priority_Ceiling)</comment>
+      <enumLiteral name="Periodic"/>
+      <enumLiteral name="Aperiodic"/>
+      <enumLiteral name="Sporadic"/>
+      <enumLiteral name="Background"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Hardware_Source_Languages">
+      <comment> The following are protocols for which the semantics are defined.</comment>
+      <comment> (Periodic, Sporadic, Aperiodic, Background);</comment>
+      <enumLiteral name="VHDL"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Queue_Processing_Protocols">
+      <comment> The following is an example hardware description language.</comment>
+      <comment> (VHDL)</comment>
+      <comment> phf A26: added</comment>
+      <enumLiteral name="FIFO"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Scheduling_Protocols">
+      <comment> The Supported_Queue_Processing_Protocols property enumeration type specifies the set of queue processing protocols that are supported.</comment>
+      <enumLiteral name="RMS"/>
+      <enumLiteral name="EDF"/>
+      <enumLiteral name="Sporadicserver"/>
+      <enumLiteral name="SlackServer"/>
+      <enumLiteral name="ARINC653"/>
+    </propertyType>
+    <propertyType xsi:type="property:EnumType" name="Supported_Source_Languages">
+      <comment> The following are example scheduling protocols.</comment>
+      <comment> (RMS, EDF, Sporadicserver, SlackServer, ARINC653)</comment>
+      <enumLiteral name="Ada95"/>
+      <enumLiteral name="C"/>
+      <enumLiteral name="Simulink_6_5"/>
+    </propertyType>
+    <propertyType xsi:type="property:UnitsType" name="Size_Units">
+      <unitLiteral name="Bits"/>
+      <unitLiteral name="B" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=Bits]">
+        <factor xsi:type="property:IntegerValue" valueString="8" value="8" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="KB" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=B]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="MB" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=KB]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="GB" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=MB]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+    </propertyType>
+    <propertyType xsi:type="property:UnitsType" name="Time_Units">
+      <unitLiteral name="ps"/>
+      <unitLiteral name="Ns" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=ps]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="Us" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=Ns]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="Ms" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=Us]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="Sec" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=Ms]">
+        <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="Min" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=Sec]">
+        <factor xsi:type="property:IntegerValue" valueString="60" value="60" base="10"/>
+      </unitLiteral>
+      <unitLiteral name="Hr" baseunit="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=Min]">
+        <factor xsi:type="property:IntegerValue" valueString="60" value="60" base="10"/>
+      </unitLiteral>
+    </propertyType>
+  </propertySet>
+</core:AadlSpec>

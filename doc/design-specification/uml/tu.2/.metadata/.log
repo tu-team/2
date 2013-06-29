@@ -547,3 +547,1138 @@ org.eclipse.papyrus.core.services.ServiceNotFoundException: Can't get the curren
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SESSION 2013-06-29 12:21:55.604 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_27
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  org.eclipse.platform
+Command-line arguments:  -os linux -ws gtk -arch x86 org.eclipse.platform
+
+!ENTRY org.eclipse.ui 2 0 2013-06-29 12:22:09.462
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-06-29 12:22:09.462
+!MESSAGE Commands should really have a category: plug-in='org.eclipse.papyrus.stereotypeapplicationwithvsl.editor.xtext.ui', id='org.eclipse.papyrus.stereotypeapplicationwithvsl.editor.xtext.ui.OpenTextualEditorForStereotypeApplicationsCommand', categoryId='org.eclipse.papyrus.core.papyrusEditor'
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.778
+!MESSAGE NLS unused message: ModelPackageableElementCompartmentEditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.779
+!MESSAGE NLS unused message: ComponentAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.779
+!MESSAGE NLS unused message: ComponentOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.779
+!MESSAGE NLS unused message: ComponentNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.779
+!MESSAGE NLS unused message: SignalAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.779
+!MESSAGE NLS unused message: InterfaceAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.779
+!MESSAGE NLS unused message: InterfaceOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.780
+!MESSAGE NLS unused message: InterfaceNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.780
+!MESSAGE NLS unused message: ModelPackageableElementCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.780
+!MESSAGE NLS unused message: EnumerationEnumerationLiteralCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.780
+!MESSAGE NLS unused message: DataTypeAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.780
+!MESSAGE NLS unused message: DataTypeOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.780
+!MESSAGE NLS unused message: PackagePackageableElementCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.781
+!MESSAGE NLS unused message: ClassAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.781
+!MESSAGE NLS unused message: ClassOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:21.781
+!MESSAGE NLS unused message: ClassNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.393
+!MESSAGE NLS unused message: createCommentCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.393
+!MESSAGE NLS unused message: createCommentCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.393
+!MESSAGE NLS unused message: createActivityPartition18CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.393
+!MESSAGE NLS unused message: createActivityPartition18CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.394
+!MESSAGE NLS unused message: createInterruptibleActivityRegion19CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.394
+!MESSAGE NLS unused message: createInterruptibleActivityRegion19CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.394
+!MESSAGE NLS unused message: createStructuredActivityNode20CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.394
+!MESSAGE NLS unused message: createStructuredActivityNode20CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.394
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint32CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.395
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint32CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.395
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint33CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.395
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint33CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.395
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint34CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.395
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint34CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.396
+!MESSAGE NLS unused message: createLocalPostconditionConstraint35CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.396
+!MESSAGE NLS unused message: createLocalPostconditionConstraint35CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.396
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint36CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.396
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint36CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.396
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint37CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.396
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint37CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.397
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint38CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.397
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint38CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.397
+!MESSAGE NLS unused message: createReadSelfActionCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.397
+!MESSAGE NLS unused message: createReadSelfActionCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.397
+!MESSAGE NLS unused message: createActivity40CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.397
+!MESSAGE NLS unused message: createActivity40CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: NavigatorGroupName_CreateObjectAction_3088_outgoinglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: NavigatorGroupName_CreateObjectAction_3088_incominglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: NavigatorGroupName_OutputPin_3089_incominglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: NavigatorGroupName_OutputPin_3089_outgoinglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: createCreateObjectAction15CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: createCreateObjectAction15CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.398
+!MESSAGE NLS unused message: createAcceptEventAction16CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.399
+!MESSAGE NLS unused message: createAcceptEventAction16CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.399
+!MESSAGE NLS unused message: createValueSpecificationAction17CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.399
+!MESSAGE NLS unused message: createValueSpecificationAction17CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.399
+!MESSAGE NLS unused message: createReadSelfAction21CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.400
+!MESSAGE NLS unused message: createReadSelfAction21CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.400
+!MESSAGE NLS unused message: createConditionalNode22CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.400
+!MESSAGE NLS unused message: createConditionalNode22CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.400
+!MESSAGE NLS unused message: createExpansionRegion23CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.400
+!MESSAGE NLS unused message: createExpansionRegion23CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.400
+!MESSAGE NLS unused message: createLoopNode24CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createLoopNode24CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createSequenceNode25CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createSequenceNode25CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createOutputPin26CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createOutputPin26CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createInputPin27CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.401
+!MESSAGE NLS unused message: createInputPin27CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.402
+!MESSAGE NLS unused message: createActionInputPin28CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.402
+!MESSAGE NLS unused message: createActionInputPin28CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.402
+!MESSAGE NLS unused message: createValuePin29CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.402
+!MESSAGE NLS unused message: createValuePin29CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.402
+!MESSAGE NLS unused message: createInputExpansionNode30CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.402
+!MESSAGE NLS unused message: createInputExpansionNode30CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.403
+!MESSAGE NLS unused message: createOutputExpansionNode31CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.403
+!MESSAGE NLS unused message: createOutputExpansionNode31CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.403
+!MESSAGE NLS unused message: createLocalPreconditionInteractionConstraint33CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.403
+!MESSAGE NLS unused message: createLocalPreconditionInteractionConstraint33CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.403
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint34CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.403
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint34CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.404
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint35CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.404
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint35CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.404
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint36CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.404
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint36CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.404
+!MESSAGE NLS unused message: createLocalPostconditionInteractionConstraint38CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.404
+!MESSAGE NLS unused message: createLocalPostconditionInteractionConstraint38CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.405
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint39CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.405
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint39CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.405
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint40CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.405
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint40CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.405
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint41CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.405
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint41CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.406
+!MESSAGE NLS unused message: createComment42CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.406
+!MESSAGE NLS unused message: createComment42CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.406
+!MESSAGE NLS unused message: createActivity43CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:26.406
+!MESSAGE NLS unused message: createActivity43CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:28.874
+!MESSAGE NLS unused message: createGeneralizationCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 12:22:28.875
+!MESSAGE NLS unused message: createGeneralizationCreationTool_desc in: messages
+
+!ENTRY org.eclipse.ui.workbench 4 0 2013-06-29 12:30:20.082
+!MESSAGE An unexpected exception was thrown.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.papyrus.diagram.menu.selection.SelectByTypeHandler.verifySameTypeOfSelectedElements(SelectByTypeHandler.java:153)
+	at org.eclipse.papyrus.diagram.menu.selection.SelectByTypePropertyTester.test(SelectByTypePropertyTester.java:28)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:189)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.ui.internal.services.EvaluationResultCache.evaluate(EvaluationResultCache.java:74)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.evaluate(ExpressionAuthority.java:165)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.refsWithSameExpression(EvaluationAuthority.java:155)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:129)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:302)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:80)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.selectionChanged(WorkbenchSourceProvider.java:177)
+	at org.eclipse.ui.internal.AbstractSelectionService.fireSelection(AbstractSelectionService.java:156)
+	at org.eclipse.ui.internal.AbstractSelectionService$1.selectionChanged(AbstractSelectionService.java:62)
+	at org.eclipse.papyrus.sasheditor.internal.eclipsecopy.MultiPageSelectionProvider$1.run(MultiPageSelectionProvider.java:116)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.papyrus.sasheditor.internal.eclipsecopy.MultiPageSelectionProvider.fireEventChange(MultiPageSelectionProvider.java:113)
+	at org.eclipse.papyrus.sasheditor.internal.eclipsecopy.MultiPageSelectionProvider.fireSelectionChanged(MultiPageSelectionProvider.java:94)
+	at org.eclipse.papyrus.sasheditor.internal.eclipsecopy.MultiPageEditorSite.handleSelectionChanged(MultiPageEditorSite.java:471)
+	at org.eclipse.papyrus.sasheditor.internal.eclipsecopy.MultiPageEditorSite$3.selectionChanged(MultiPageEditorSite.java:391)
+	at org.eclipse.gmf.runtime.diagram.ui.parts.DiagramGraphicalViewer.flushSelectionEvents(DiagramGraphicalViewer.java:256)
+	at org.eclipse.gmf.runtime.diagram.ui.parts.DiagramGraphicalViewer$1.run(DiagramGraphicalViewer.java:234)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3563)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3212)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui.workbench 4 0 2013-06-29 12:39:37.782
+!MESSAGE org.eclipse.ui.views.contentoutline.ContentOutline cannot be cast to org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
+!STACK 0
+java.lang.ClassCastException: org.eclipse.ui.views.contentoutline.ContentOutline cannot be cast to org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
+	at org.eclipse.papyrus.properties.xwt.XWTTabDescriptorProvider.getTabDescriptors(XWTTabDescriptorProvider.java:108)
+	at org.eclipse.ui.internal.views.properties.tabbed.view.TabbedPropertyRegistry.getTabDescriptors(TabbedPropertyRegistry.java:287)
+	at org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage.setInput(TabbedPropertySheetPage.java:718)
+	at org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage.selectionChanged(TabbedPropertySheetPage.java:555)
+	at org.eclipse.ui.views.properties.PropertySheet.selectionChanged(PropertySheet.java:363)
+	at org.eclipse.ui.internal.AbstractSelectionService.firePostSelection(AbstractSelectionService.java:179)
+	at org.eclipse.ui.internal.AbstractSelectionService.setActivePart(AbstractSelectionService.java:289)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:60)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.presentations.PresentablePart.setFocus(PresentablePart.java:192)
+	at org.eclipse.ui.internal.presentations.util.TabbedStackPresentation$1.handleEvent(TabbedStackPresentation.java:94)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:269)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.fireEvent(AbstractTabFolder.java:274)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder.handleMouseDown(AbstractTabFolder.java:344)
+	at org.eclipse.ui.internal.presentations.util.AbstractTabFolder$3.mouseDown(AbstractTabFolder.java:78)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:191)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui.workbench 4 0 2013-06-29 12:39:46.262
+!MESSAGE org.eclipse.ui.views.contentoutline.ContentOutline cannot be cast to org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
+!STACK 0
+java.lang.ClassCastException: org.eclipse.ui.views.contentoutline.ContentOutline cannot be cast to org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor
+	at org.eclipse.papyrus.properties.xwt.XWTTabDescriptorProvider.getTabDescriptors(XWTTabDescriptorProvider.java:108)
+	at org.eclipse.ui.internal.views.properties.tabbed.view.TabbedPropertyRegistry.getTabDescriptors(TabbedPropertyRegistry.java:287)
+	at org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage.setInput(TabbedPropertySheetPage.java:718)
+	at org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage.selectionChanged(TabbedPropertySheetPage.java:555)
+	at org.eclipse.ui.views.properties.PropertySheet.selectionChanged(PropertySheet.java:363)
+	at org.eclipse.ui.internal.AbstractSelectionService.firePostSelection(AbstractSelectionService.java:179)
+	at org.eclipse.ui.internal.AbstractSelectionService.setActivePart(AbstractSelectionService.java:289)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:60)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.setFocus(PartPane.java:325)
+	at org.eclipse.ui.internal.FastViewPane.showView(FastViewPane.java:500)
+	at org.eclipse.ui.internal.Perspective.showFastView(Perspective.java:2193)
+	at org.eclipse.ui.internal.Perspective.setActiveFastView(Perspective.java:1939)
+	at org.eclipse.ui.internal.Perspective.setActiveFastView(Perspective.java:1952)
+	at org.eclipse.ui.internal.Perspective.toggleFastView(Perspective.java:2367)
+	at org.eclipse.ui.internal.WorkbenchPage.toggleFastView(WorkbenchPage.java:3972)
+	at org.eclipse.ui.internal.ShowFastViewContribution.showView(ShowFastViewContribution.java:157)
+	at org.eclipse.ui.internal.ShowFastViewContribution.access$1(ShowFastViewContribution.java:155)
+	at org.eclipse.ui.internal.ShowFastViewContribution$3.widgetSelected(ShowFastViewContribution.java:138)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 0 2013-06-29 13:48:30.289
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.accessibility.AccessibleObject.addRelation(AccessibleObject.java:3514)
+	at org.eclipse.swt.accessibility.Accessible.addRelations(Accessible.java:423)
+	at org.eclipse.swt.accessibility.AccessibleFactory.atkObjectFactory_create_accessible(AccessibleFactory.java:342)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.dialogs.AboutDialog$5.widgetSelected(AboutDialog.java:464)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.about.AboutHandler.execute(AboutHandler.java:32)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 0 2013-06-29 13:48:35.225
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.accessibility.AccessibleObject.addRelation(AccessibleObject.java:3514)
+	at org.eclipse.swt.accessibility.Accessible.addRelations(Accessible.java:423)
+	at org.eclipse.swt.accessibility.AccessibleFactory.atkObjectFactory_create_accessible(AccessibleFactory.java:342)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.dialogs.AboutDialog$5.widgetSelected(AboutDialog.java:464)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.internal.about.AboutHandler.execute(AboutHandler.java:32)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SESSION 2013-06-29 13:50:20.506 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_27
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  org.eclipse.platform
+Command-line arguments:  -os linux -ws gtk -arch x86 org.eclipse.platform
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-06-29 13:50:27.922
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2013-06-29 13:50:29.253
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-06-29 13:50:29.253
+!MESSAGE Commands should really have a category: plug-in='org.eclipse.papyrus.stereotypeapplicationwithvsl.editor.xtext.ui', id='org.eclipse.papyrus.stereotypeapplicationwithvsl.editor.xtext.ui.OpenTextualEditorForStereotypeApplicationsCommand', categoryId='org.eclipse.papyrus.core.papyrusEditor'
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.944
+!MESSAGE NLS unused message: ModelPackageableElementCompartmentEditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.950
+!MESSAGE NLS unused message: ComponentAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.956
+!MESSAGE NLS unused message: ComponentOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.960
+!MESSAGE NLS unused message: ComponentNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.964
+!MESSAGE NLS unused message: SignalAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.968
+!MESSAGE NLS unused message: InterfaceAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.972
+!MESSAGE NLS unused message: InterfaceOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.976
+!MESSAGE NLS unused message: InterfaceNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.980
+!MESSAGE NLS unused message: ModelPackageableElementCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.983
+!MESSAGE NLS unused message: EnumerationEnumerationLiteralCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.986
+!MESSAGE NLS unused message: DataTypeAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.989
+!MESSAGE NLS unused message: DataTypeOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.992
+!MESSAGE NLS unused message: PackagePackageableElementCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.994
+!MESSAGE NLS unused message: ClassAttributeCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:38.997
+!MESSAGE NLS unused message: ClassOperationCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:39.000
+!MESSAGE NLS unused message: ClassNestedClassifierCompartment2EditPart_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.568
+!MESSAGE NLS unused message: createCommentCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.572
+!MESSAGE NLS unused message: createCommentCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.575
+!MESSAGE NLS unused message: createActivityPartition18CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.578
+!MESSAGE NLS unused message: createActivityPartition18CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.581
+!MESSAGE NLS unused message: createInterruptibleActivityRegion19CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.583
+!MESSAGE NLS unused message: createInterruptibleActivityRegion19CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.586
+!MESSAGE NLS unused message: createStructuredActivityNode20CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.588
+!MESSAGE NLS unused message: createStructuredActivityNode20CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.590
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint32CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.593
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint32CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.596
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint33CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.598
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint33CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.601
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint34CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.603
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint34CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.606
+!MESSAGE NLS unused message: createLocalPostconditionConstraint35CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.608
+!MESSAGE NLS unused message: createLocalPostconditionConstraint35CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.611
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint36CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.614
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint36CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.616
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint37CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.618
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint37CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.621
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint38CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.623
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint38CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.626
+!MESSAGE NLS unused message: createReadSelfActionCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.628
+!MESSAGE NLS unused message: createReadSelfActionCreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.630
+!MESSAGE NLS unused message: createActivity40CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.633
+!MESSAGE NLS unused message: createActivity40CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.635
+!MESSAGE NLS unused message: NavigatorGroupName_CreateObjectAction_3088_outgoinglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.637
+!MESSAGE NLS unused message: NavigatorGroupName_CreateObjectAction_3088_incominglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.640
+!MESSAGE NLS unused message: NavigatorGroupName_OutputPin_3089_incominglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.642
+!MESSAGE NLS unused message: NavigatorGroupName_OutputPin_3089_outgoinglinks in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.644
+!MESSAGE NLS unused message: createCreateObjectAction15CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.647
+!MESSAGE NLS unused message: createCreateObjectAction15CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.649
+!MESSAGE NLS unused message: createAcceptEventAction16CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.651
+!MESSAGE NLS unused message: createAcceptEventAction16CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.654
+!MESSAGE NLS unused message: createValueSpecificationAction17CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.656
+!MESSAGE NLS unused message: createValueSpecificationAction17CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.658
+!MESSAGE NLS unused message: createReadSelfAction21CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.661
+!MESSAGE NLS unused message: createReadSelfAction21CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.663
+!MESSAGE NLS unused message: createConditionalNode22CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.666
+!MESSAGE NLS unused message: createConditionalNode22CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.668
+!MESSAGE NLS unused message: createExpansionRegion23CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.670
+!MESSAGE NLS unused message: createExpansionRegion23CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.673
+!MESSAGE NLS unused message: createLoopNode24CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.675
+!MESSAGE NLS unused message: createLoopNode24CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.678
+!MESSAGE NLS unused message: createSequenceNode25CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.680
+!MESSAGE NLS unused message: createSequenceNode25CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.682
+!MESSAGE NLS unused message: createOutputPin26CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.685
+!MESSAGE NLS unused message: createOutputPin26CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.687
+!MESSAGE NLS unused message: createInputPin27CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.689
+!MESSAGE NLS unused message: createInputPin27CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.692
+!MESSAGE NLS unused message: createActionInputPin28CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.694
+!MESSAGE NLS unused message: createActionInputPin28CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.696
+!MESSAGE NLS unused message: createValuePin29CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.699
+!MESSAGE NLS unused message: createValuePin29CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.701
+!MESSAGE NLS unused message: createInputExpansionNode30CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.703
+!MESSAGE NLS unused message: createInputExpansionNode30CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.706
+!MESSAGE NLS unused message: createOutputExpansionNode31CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.708
+!MESSAGE NLS unused message: createOutputExpansionNode31CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.710
+!MESSAGE NLS unused message: createLocalPreconditionInteractionConstraint33CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.713
+!MESSAGE NLS unused message: createLocalPreconditionInteractionConstraint33CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.716
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint34CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.718
+!MESSAGE NLS unused message: createLocalPreconditionIntervalConstraint34CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.720
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint35CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.723
+!MESSAGE NLS unused message: createLocalPreconditionDurationConstraint35CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.725
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint36CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.728
+!MESSAGE NLS unused message: createLocalPreconditionTimeConstraint36CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.730
+!MESSAGE NLS unused message: createLocalPostconditionInteractionConstraint38CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.733
+!MESSAGE NLS unused message: createLocalPostconditionInteractionConstraint38CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.735
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint39CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.738
+!MESSAGE NLS unused message: createLocalPostconditionIntervalConstraint39CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.740
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint40CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.742
+!MESSAGE NLS unused message: createLocalPostconditionDurationConstraint40CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.745
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint41CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.747
+!MESSAGE NLS unused message: createLocalPostconditionTimeConstraint41CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.749
+!MESSAGE NLS unused message: createComment42CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.752
+!MESSAGE NLS unused message: createComment42CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.754
+!MESSAGE NLS unused message: createActivity43CreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:43.757
+!MESSAGE NLS unused message: createActivity43CreationTool_desc in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:46.546
+!MESSAGE NLS unused message: createGeneralizationCreationTool_title in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 13:50:46.566
+!MESSAGE NLS unused message: createGeneralizationCreationTool_desc in: messages
+
+!ENTRY org.eclipse.papyrus.diagram.common 4 0 2013-06-29 14:02:47.082
+!MESSAGE Unexpected Error
+!STACK 0
+org.eclipse.papyrus.core.services.ServiceNotFoundException: Can't get the current Eclipse Active Editor. No ServiceRegistry found.
+	at org.eclipse.papyrus.core.utils.ServiceUtilsForActionHandlers.getServiceRegistry(ServiceUtilsForActionHandlers.java:67)
+	at org.eclipse.papyrus.core.utils.ServiceUtilsForActionHandlers.getTransactionalEditingDomain(ServiceUtilsForActionHandlers.java:88)
+	at org.eclipse.papyrus.diagram.common.handlers.GraphicalCommandHandler.getEditingDomain(GraphicalCommandHandler.java:135)
+	at org.eclipse.papyrus.diagram.common.handlers.LoadHandler.getCommand(LoadHandler.java:49)
+	at org.eclipse.papyrus.diagram.common.handlers.GraphicalCommandHandler.isEnabled(GraphicalCommandHandler.java:107)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.isEnabled(HandlerProxy.java:320)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:965)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:457)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.deactivateHandler(HandlerAuthority.java:312)
+	at org.eclipse.ui.internal.handlers.HandlerService.deactivateHandler(HandlerService.java:148)
+	at org.eclipse.ui.internal.handlers.HandlerService.deactivateHandlers(HandlerService.java:157)
+	at org.eclipse.ui.internal.handlers.HandlerPersistence.clearActivations(HandlerPersistence.java:104)
+	at org.eclipse.ui.internal.handlers.HandlerPersistence.dispose(HandlerPersistence.java:125)
+	at org.eclipse.ui.internal.handlers.HandlerService.dispose(HandlerService.java:163)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:142)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3052)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1118)
+	at org.eclipse.ui.internal.Workbench.access$15(Workbench.java:1035)
+	at org.eclipse.ui.internal.Workbench$25.run(Workbench.java:1279)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1277)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1249)
+	at org.eclipse.ui.internal.handlers.QuitHandler.execute(QuitHandler.java:41)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.WorkbenchWindow.canHandleShellCloseEvent(WorkbenchWindow.java:845)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:686)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1267)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1189)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1735)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.ui.internal.WorkbenchWindow.canHandleShellCloseEvent(WorkbenchWindow.java:845)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:686)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1267)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1189)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1735)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.papyrus.diagram.common 4 0 2013-06-29 14:02:47.094
+!MESSAGE Unexpected Error
+!STACK 0
+org.eclipse.papyrus.core.services.ServiceNotFoundException: Can't get the current Eclipse Active Editor. No ServiceRegistry found.
+	at org.eclipse.papyrus.core.utils.ServiceUtilsForActionHandlers.getServiceRegistry(ServiceUtilsForActionHandlers.java:67)
+	at org.eclipse.papyrus.core.utils.ServiceUtilsForActionHandlers.getTransactionalEditingDomain(ServiceUtilsForActionHandlers.java:88)
+	at org.eclipse.papyrus.diagram.common.handlers.GraphicalCommandHandler.getEditingDomain(GraphicalCommandHandler.java:135)
+	at org.eclipse.papyrus.diagram.common.handlers.UnloadHandler.getCommand(UnloadHandler.java:49)
+	at org.eclipse.papyrus.diagram.common.handlers.GraphicalCommandHandler.isEnabled(GraphicalCommandHandler.java:107)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.isEnabled(HandlerProxy.java:320)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:965)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:457)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.deactivateHandler(HandlerAuthority.java:312)
+	at org.eclipse.ui.internal.handlers.HandlerService.deactivateHandler(HandlerService.java:148)
+	at org.eclipse.ui.internal.handlers.HandlerService.deactivateHandlers(HandlerService.java:157)
+	at org.eclipse.ui.internal.handlers.HandlerPersistence.clearActivations(HandlerPersistence.java:104)
+	at org.eclipse.ui.internal.handlers.HandlerPersistence.dispose(HandlerPersistence.java:125)
+	at org.eclipse.ui.internal.handlers.HandlerService.dispose(HandlerService.java:163)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:142)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3052)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1118)
+	at org.eclipse.ui.internal.Workbench.access$15(Workbench.java:1035)
+	at org.eclipse.ui.internal.Workbench$25.run(Workbench.java:1279)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1277)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1249)
+	at org.eclipse.ui.internal.handlers.QuitHandler.execute(QuitHandler.java:41)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:293)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:476)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.WorkbenchWindow.canHandleShellCloseEvent(WorkbenchWindow.java:845)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:686)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1267)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1189)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1735)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.ui.internal.WorkbenchWindow.canHandleShellCloseEvent(WorkbenchWindow.java:845)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:686)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1267)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1189)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1735)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.ui 4 0 2013-06-29 14:02:47.530
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.internal.WorkbenchWindow.hardClose(WorkbenchWindow.java:1708)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:730)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:715)
+	at org.eclipse.ui.internal.WorkbenchWindow$5.run(WorkbenchWindow.java:860)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:858)
+	at org.eclipse.jface.window.Window.handleShellCloseEvent(Window.java:741)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:687)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1267)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1189)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1735)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.ui.internal.WorkbenchWindow.canHandleShellCloseEvent(WorkbenchWindow.java:845)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:686)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1267)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1189)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1735)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2276)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3207)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)

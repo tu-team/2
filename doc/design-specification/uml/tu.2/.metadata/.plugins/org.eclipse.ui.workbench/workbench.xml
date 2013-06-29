@@ -8,23 +8,23 @@
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="31"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="0" y="30"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="48" y="31"/>
-<coolItem id="org.eclipse.emf.facet.common.editor.actionSet" itemType="typeToolBarContribution" x="40" y="31"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="48" y="31"/>
-<coolItem id="org.topcased.requirement.core.mainToolbar" itemType="typeToolBarContribution" x="40" y="31"/>
-<coolItem id="org.eclipse.papyrus.readonly.toolbar" itemType="typeToolBarContribution" x="40" y="31"/>
-<coolItem id="org.eclipse.papyrus.navigation.toolbars.navigationToolbar" itemType="typeToolBarContribution" x="124" y="31"/>
-<coolItem id="org.eclipse.papyrus.layouttool.toolbarlayout" itemType="typeToolBarContribution" x="48" y="31"/>
-<coolItem id="org.eclipse.papyrus.diagram.ui.toolbar" itemType="typeToolBarContribution" x="728" y="31"/>
-<coolItem id="org.eclipes.papyrus.menu.toolbar" itemType="typeToolBarContribution" x="589" y="31"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.eclipse.emf.facet.common.editor.actionSet" itemType="typeToolBarContribution" x="0" y="31"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.topcased.requirement.core.mainToolbar" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.eclipse.papyrus.readonly.toolbar" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.eclipse.papyrus.navigation.toolbars.navigationToolbar" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.eclipse.papyrus.layouttool.toolbarlayout" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.eclipse.papyrus.diagram.ui.toolbar" itemType="typeToolBarContribution" x="0" y="30"/>
+<coolItem id="org.eclipes.papyrus.menu.toolbar" itemType="typeToolBarContribution" x="0" y="30"/>
 <coolItem id="org.eclipse.emf.facet.widgets.nattable.workbench.editor.NatTableEditor.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.papyrus.table.ui.toolbar" itemType="typeToolBarContribution" x="40" y="31"/>
+<coolItem id="org.eclipse.papyrus.table.ui.toolbar" itemType="typeToolBarContribution" x="0" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="31"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="0" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.papyrus.core.papyrusEditor" itemType="typeToolBarContribution" x="434" y="31"/>
+<coolItem id="org.eclipse.papyrus.core.papyrusEditor" itemType="typeToolBarContribution" x="434" y="30"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -99,9 +99,17 @@
 <perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars>
+<fastViewBar fastViewLocation="16384" id="bottomLeft" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="16384" id="topLeft" orientation="512" selectedTabId="org.eclipse.ui.navigator.ProjectExplorer" style="0">
+<fastViews>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
 <fastViewBar fastViewLocation="1024" id="bottomRight" orientation="256" selectedTabId="org.eclipse.ui.views.TaskList" style="0">
 <fastViews>
 <view id="org.eclipse.ui.views.TaskList" ratio="0.3"/>
@@ -111,14 +119,12 @@
 <layout>
 <mainWindow>
 <info folder="true" part="topLeft">
-<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1673d71" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
@@ -131,7 +137,7 @@
 </info>
 <info part="org.eclipse.gef.ui.palette_view" ratio="0.13210332" ratioLeft="179" ratioRight="1176" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottomRight" ratio="0.65967745" ratioLeft="409" ratioRight="211" relationship="4" relative="org.eclipse.gef.ui.palette_view">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
@@ -139,12 +145,10 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.1590909" ratioLeft="119" ratioRight="629" relationship="2" relative="org.eclipse.gef.ui.palette_view"/>
 <info folder="true" part="bottomLeft" ratio="0.5" ratioLeft="310" ratioRight="310" relationship="4" relative="topLeft">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </mainWindow>
@@ -163,14 +167,16 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="128">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+<trimItem IMemento.internal.id="bottomLeft"/>
 </trimArea>
 <trimArea IMemento.internal.id="1024">
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
 <trimItem IMemento.internal.id="bottomRight"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
 </trimArea>
 </trimLayout>
 </window>

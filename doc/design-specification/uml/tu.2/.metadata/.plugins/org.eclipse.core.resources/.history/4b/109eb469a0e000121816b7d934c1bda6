@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_DDGT0OCZEeKNhN9zw4IQrw" name="model">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_DMKwQOCZEeKNhN9zw4IQrw" name="Feedback loop">
+    <node xmi:type="uml:InitialNode" xmi:id="_pLQ9sOCZEeKNhN9zw4IQrw" name="InitialNode1" outgoing="_jIl3UOCeEeK9TtB0mux8OA _yzg4EOCeEeK9TtB0mux8OA" inPartition="_-I08wOCZEeKNhN9zw4IQrw"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_R3N2IOCeEeK9TtB0mux8OA" name="stimulus event" incoming="_jIl3UOCeEeK9TtB0mux8OA" inPartition="_-I08wOCZEeKNhN9zw4IQrw"/>
+    <node xmi:type="uml:AcceptEventAction" xmi:id="_vwqyIOCeEeK9TtB0mux8OA" name="stimulus event" outgoing="_QaLa8OCfEeK9TtB0mux8OA _JmPzkOCgEeK9TtB0mux8OA" incoming="_yzg4EOCeEeK9TtB0mux8OA" inPartition="_-I08wOCZEeKNhN9zw4IQrw"/>
+    <node xmi:type="uml:ConditionalNode" xmi:id="_HmeJoOCfEeK9TtB0mux8OA" name="ConditionalNode1"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_CQTgwOCgEeK9TtB0mux8OA" name="inferred cognition" outgoing="_DRDScOCoEeK9TtB0mux8OA" incoming="_JmPzkOCgEeK9TtB0mux8OA"/>
+    <node xmi:type="uml:ValueSpecificationAction" xmi:id="_rA_IMOCkEeK9TtB0mux8OA" name="feeling state" incoming="_DRDScOCoEeK9TtB0mux8OA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_J06oEOCoEeK9TtB0mux8OA" name="physiological arousal" inPartition="_-I08wOCZEeKNhN9zw4IQrw"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_jIl3UOCeEeK9TtB0mux8OA" name="ControlFlow1" source="_pLQ9sOCZEeKNhN9zw4IQrw" target="_R3N2IOCeEeK9TtB0mux8OA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_jIr98OCeEeK9TtB0mux8OA" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_jItMEOCeEeK9TtB0mux8OA"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yzg4EOCeEeK9TtB0mux8OA" name="ControlFlow2" source="_pLQ9sOCZEeKNhN9zw4IQrw" target="_vwqyIOCeEeK9TtB0mux8OA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_yzhfIOCeEeK9TtB0mux8OA" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_yziGMOCeEeK9TtB0mux8OA"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_QaLa8OCfEeK9TtB0mux8OA" name="ControlFlow3" source="_vwqyIOCeEeK9TtB0mux8OA" target="_OvT0kOCfEeK9TtB0mux8OA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_QaMpEOCfEeK9TtB0mux8OA" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_QaNQIOCfEeK9TtB0mux8OA"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_JmPzkOCgEeK9TtB0mux8OA" name="ControlFlow4" source="_vwqyIOCeEeK9TtB0mux8OA" target="_CQTgwOCgEeK9TtB0mux8OA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_JmRBsOCgEeK9TtB0mux8OA" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_JmRowOCgEeK9TtB0mux8OA"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_DRDScOCoEeK9TtB0mux8OA" name="ControlFlow5" source="_CQTgwOCgEeK9TtB0mux8OA" target="_rA_IMOCkEeK9TtB0mux8OA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_DREgkOCoEeK9TtB0mux8OA" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_DREgkeCoEeK9TtB0mux8OA"/>
+    </edge>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_-I08wOCZEeKNhN9zw4IQrw" name="Instinctive" node="_pLQ9sOCZEeKNhN9zw4IQrw _R3N2IOCeEeK9TtB0mux8OA _vwqyIOCeEeK9TtB0mux8OA _J06oEOCoEeK9TtB0mux8OA"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_MQgpIOCaEeKNhN9zw4IQrw" name="Learned"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_5goFweCdEeK9TtB0mux8OA" name="Learned"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_5EREcOCeEeK9TtB0mux8OA" name="Deliberative"/>
+    <group xmi:type="uml:SequenceNode" xmi:id="_OvT0kOCfEeK9TtB0mux8OA" name="SequenceNode1" incoming="_QaLa8OCfEeK9TtB0mux8OA">
+      <executableNode xmi:type="uml:OpaqueAction" xmi:id="_TU44kOCfEeK9TtB0mux8OA" name="ininferred cognition"/>
+    </group>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_XzzXEOCjEeK9TtB0mux8OA" name="Reflective"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_nSpqsOCjEeK9TtB0mux8OA" name="Self-Reflective"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_wcvmQOCkEeK9TtB0mux8OA" name=""/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_Jv0NAOClEeK9TtB0mux8OA" name="Self-Conscious"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_DXf2gOCZEeKNhN9zw4IQrw" name="Interaction0"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_DZVCgOCZEeKNhN9zw4IQrw" name="Interaction1"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_DaHFoOCZEeKNhN9zw4IQrw" name="StateMachine0">
+    <region xmi:id="_DaYycOCZEeKNhN9zw4IQrw" name="Region0"/>
+  </packagedElement>
+</uml:Model>

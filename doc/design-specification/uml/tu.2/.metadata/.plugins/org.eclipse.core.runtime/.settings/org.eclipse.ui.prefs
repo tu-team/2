@@ -1,4 +1,5 @@
-#Sat Jun 29 12:03:14 MSK 2013
+#Sat Jun 29 13:53:25 MSK 2013
+SHOW_MEMORY_MONITOR=true
 SHOW_TEXT_ON_PERSPECTIVE_BAR=false
 eclipse.preferences.version=1
 showIntro=false
