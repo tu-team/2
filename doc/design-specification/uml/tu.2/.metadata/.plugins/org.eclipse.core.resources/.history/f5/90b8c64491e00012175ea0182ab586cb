@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <notation:Diagram xmi:id="_DVrRkOCZEeKNhN9zw4IQrw" type="PapyrusUMLActivityDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_DVrRkeCZEeKNhN9zw4IQrw" type="2001" fontName="Ubuntu" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DVrRkuCZEeKNhN9zw4IQrw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DVrRk-CZEeKNhN9zw4IQrw" type="5002"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DVrRlOCZEeKNhN9zw4IQrw" type="7001">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_DVrRleCZEeKNhN9zw4IQrw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_DVrRluCZEeKNhN9zw4IQrw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DVrRl-CZEeKNhN9zw4IQrw"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DVrRmOCZEeKNhN9zw4IQrw" type="7002">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_DVrRmeCZEeKNhN9zw4IQrw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_DVrRmuCZEeKNhN9zw4IQrw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DVrRm-CZEeKNhN9zw4IQrw"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DVrRnOCZEeKNhN9zw4IQrw" type="7003">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_DVrRneCZEeKNhN9zw4IQrw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_DVrRnuCZEeKNhN9zw4IQrw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DVrRn-CZEeKNhN9zw4IQrw"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DVrRoOCZEeKNhN9zw4IQrw" type="7004">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DVrRoeCZEeKNhN9zw4IQrw"/>
+      </children>
+      <element xmi:type="uml:Activity" href="model.uml#_DMKwQOCZEeKNhN9zw4IQrw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DVrRouCZEeKNhN9zw4IQrw" width="1189"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DVrRo-CZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Activity" href="model.uml#_DMKwQOCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DXP-4OCZEeKNhN9zw4IQrw" type="PapyrusUMLClassDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DXP-4eCZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Model" href="model.uml#_DDGT0OCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DXw8QOCZEeKNhN9zw4IQrw" type="PapyrusUMLCommunicationDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_DXw8QeCZEeKNhN9zw4IQrw" type="8002" fontName="Ubuntu" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DXw8QuCZEeKNhN9zw4IQrw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DXxjUOCZEeKNhN9zw4IQrw" type="7001">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXxjUeCZEeKNhN9zw4IQrw"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="model.uml#_DXf2gOCZEeKNhN9zw4IQrw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXxjUuCZEeKNhN9zw4IQrw"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DXxjU-CZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Interaction" href="model.uml#_DXf2gOCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DYIvsOCZEeKNhN9zw4IQrw" type="PapyrusUMLComponentDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DYIvseCZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Model" href="model.uml#_DDGT0OCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DYoe8OCZEeKNhN9zw4IQrw" type="CompositeStructure" name="Feedback loop" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DYoe8eCZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Model" href="model.uml#_DDGT0OCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DY0FIOCZEeKNhN9zw4IQrw" type="PapyrusUMLDeploymentDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DY0FIeCZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Model" href="model.uml#_DDGT0OCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DZFK4OCZEeKNhN9zw4IQrw" type="Package" name="Feedback loop" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DZFK4eCZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Model" href="model.uml#_DDGT0OCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DZtdAOCZEeKNhN9zw4IQrw" type="PapyrusUMLSequenceDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_DZtdAeCZEeKNhN9zw4IQrw" type="2001" fontName="Ubuntu" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DZtdAuCZEeKNhN9zw4IQrw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DZuEEOCZEeKNhN9zw4IQrw" type="7001">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DZuEEeCZEeKNhN9zw4IQrw"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="model.uml#_DZVCgOCZEeKNhN9zw4IQrw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DZuEEuCZEeKNhN9zw4IQrw"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DZuEE-CZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Interaction" href="model.uml#_DZVCgOCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DcMwUOCZEeKNhN9zw4IQrw" type="PapyrusUMLStateMachineDiagram" name="Feedback loop" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_DcMwUeCZEeKNhN9zw4IQrw" type="2000" fontName="Ubuntu" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DcMwUuCZEeKNhN9zw4IQrw" type="2001">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DcMwU-CZEeKNhN9zw4IQrw" width="700" height="14"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_DcMwVOCZEeKNhN9zw4IQrw" type="2002">
+        <children xmi:type="notation:Shape" xmi:id="_DcMwVeCZEeKNhN9zw4IQrw" type="3000" fontName="Ubuntu" fontHeight="11" lineColor="0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DcNXYOCZEeKNhN9zw4IQrw" source="RegionAnnotationKey">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DcNXYeCZEeKNhN9zw4IQrw" key="RegionZoneKey" value=""/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_DcNXYuCZEeKNhN9zw4IQrw" type="3002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DcNXY-CZEeKNhN9zw4IQrw"/>
+          </children>
+          <element xmi:type="uml:Region" href="model.uml#_DaYycOCZEeKNhN9zw4IQrw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DcNXZOCZEeKNhN9zw4IQrw" width="700" height="287"/>
+        </children>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DcNXZeCZEeKNhN9zw4IQrw" y="14" width="700" height="287"/>
+      </children>
+      <element xmi:type="uml:StateMachine" href="model.uml#_DaHFoOCZEeKNhN9zw4IQrw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DcNXZuCZEeKNhN9zw4IQrw" x="30" y="30" width="700" height="301"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DcNXZ-CZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:StateMachine" href="model.uml#_DaHFoOCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_Dccn8OCZEeKNhN9zw4IQrw" type="UseCase" name="Feedback loop" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DcdPAOCZEeKNhN9zw4IQrw"/>
+    <element xmi:type="uml:Model" href="model.uml#_DDGT0OCZEeKNhN9zw4IQrw"/>
+  </notation:Diagram>
+</xmi:XMI>

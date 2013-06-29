@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewModelWizard">
+		<item value="true" key="RememberCurrentSelection"/>
+		<item value="null," key="DiagramTemplatesFor_uml"/>
+		<item value="org.eclipse.papyrus.diagram.activity.CreateActivityDiagramCommand,org.eclipse.papyrus.diagram.clazz.CreateClassDiagramCommand,org.eclipse.papyrus.diagram.communication.CreateCommunicationDiagramCommand,org.eclipse.papyrus.diagram.component.CreateComponentDiagramCommand,org.eclipse.papyrus.diagram.composite.createCompositeDiagram,org.eclipse.papyrus.diagram.deployment.CreateDeploymentDiagramCommand,org.eclipse.papyrus.uml.diagram.pkg.CreateCommand,org.eclipse.papyrus.diagram.sequence.CreateSequenceDiagramCommand,org.eclipse.papyrus.diagram.statemachine.CreationCommand,org.eclipse.papyrus.diagram.usecase.CreateUseCaseDiagramCommand," key="DiagramKindsFor_uml"/>
+		<list key="diagramCategory">
+			<item value="uml"/>
+		</list>
+	</section>
+</section>
