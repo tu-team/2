@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_BqA30eDXEeKpoZ02LLSl4g" name="model">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_Br1cwODXEeKpoZ02LLSl4g" name="General feedback loop">
+    <group xmi:type="uml:ActivityPartition" xmi:id="_TgpzUOEFEeKpoZ02LLSl4g" name="Unconscious"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_mqaHceF-EeKHf-c_OZQIqw" name="Instinctive"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_z2E3gOF-EeKHf-c_OZQIqw" name="Learned"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_62vd4OF-EeKHf-c_OZQIqw" name="Deliberative"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_82PQcOF-EeKHf-c_OZQIqw" name="Reflective"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="__V6X4OF-EeKHf-c_OZQIqw" name="Self-Reflective"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_B3qi8OF_EeKHf-c_OZQIqw" name="Self-conscious"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_B4q-4ODXEeKpoZ02LLSl4g" name="Interaction0"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_B5qdYODXEeKpoZ02LLSl4g" name="Interaction1"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_B6PFIODXEeKpoZ02LLSl4g" name="StateMachine0">
+    <region xmi:id="_B6inIODXEeKpoZ02LLSl4g" name="Region0"/>
+  </packagedElement>
+</uml:Model>

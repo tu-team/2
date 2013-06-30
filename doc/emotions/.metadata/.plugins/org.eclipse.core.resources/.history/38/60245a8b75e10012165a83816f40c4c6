@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:AadlSpec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http:///AADL/core" xmlns:property="http:///AADL/property" name="AADL_Properties">
+  <propertySet name="AADL_Properties">
+    <comment>******************************************************</comment>
+    <comment>   AADL Standard AADL_V1.0</comment>
+    <comment>  Appendix A (normative)</comment>
+    <comment>  Predeclared Property Sets</comment>
+    <comment>  03Nov04</comment>
+    <comment>  Updated to reflect current standard &amp; Errata 28Jun06</comment>
+    <comment>******************************************************</comment>
+    <comment>--------------------------------------------------</comment>
+    <comment>--------------------------------------------------</comment>
+    <propertyDefinition name="Activate_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Activate_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Activate_Entrypoint">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Active_Thread_Handling_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Active_Thread_Handling_Protocols]" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <defaultpropertyValue xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Default_Active_Thread_Handling_Protocol]"/>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Active_Thread_Queue_Handling_Protocol" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="flush"/>
+        <enumLiteral name="hold"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Active_Thread_Queue_Handling_Protocol]/propertyType/enumLiteral[@name=flush]"/>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Connection_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>bus</category>
+        <category>processor</category>
+        <category>device</category>
+      </propertyType>
+      <appliesto>port connections</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Latency" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>flow</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Memory_Binding" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>memory</category>
+      </propertyType>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>data port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>port group</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Processor_Binding" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>processor</category>
+      </propertyType>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Subprogram_Call">
+      <comment>---------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>server subprogram</category>
+      </propertyType>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Subprogram_Call_Binding" inherit="true" list="true">
+      <comment>---------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>bus</category>
+        <category>processor</category>
+        <category>memory</category>
+        <category>device</category>
+      </propertyType>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Actual_Throughput" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]">
+      <comment>---------------------------------------------------</comment>
+      <appliesto>flow</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Aggregate_Data_Port">
+      <comment>---------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlboolean"/>
+      <defaultpropertyValue xsi:type="property:FALSE"/>
+      <appliesto>port group</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Access_Protocol" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="Memory_Access"/>
+        <enumLiteral name="Device_Access"/>
+      </propertyType>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Connection_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>bus</category>
+        <category>processor</category>
+        <category>device</category>
+      </propertyType>
+      <appliesto>port connections</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Connection_Binding_Class" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ClassifierType">
+        <category>processor</category>
+        <category>bus</category>
+        <category>device</category>
+      </propertyType>
+      <appliesto>port connections</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Connection_Protocol" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="Data_Connection"/>
+        <enumLiteral name="Event_Connection"/>
+        <enumLiteral name="Event_Data_Connection"/>
+        <enumLiteral name="Data_Access_Connection"/>
+        <enumLiteral name="Server_Subprogram_Call"/>
+      </propertyType>
+      <appliesto>bus</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Dispatch_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Dispatch_Protocols]" list="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Memory_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>memory</category>
+        <category>system</category>
+        <category>processor</category>
+      </propertyType>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>data port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>processor</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Memory_Binding_Class" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ClassifierType">
+        <category>memory</category>
+        <category>system</category>
+        <category>processor</category>
+      </propertyType>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>data port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>processor</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Message_Size" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Period" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]" list="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Processor_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>processor</category>
+        <category>system</category>
+      </propertyType>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Processor_Binding_Class" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ClassifierType">
+        <category>processor</category>
+        <category>system</category>
+      </propertyType>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Subprogram_Call" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>server subprogram</category>
+      </propertyType>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Allowed_Subprogram_Call_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>bus</category>
+        <category>processor</category>
+        <category>device</category>
+      </propertyType>
+      <appliesto>subprogram</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Assign_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Assign_Byte_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Assign_Fixed_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Available_Memory_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>memory</category>
+        <category>system</category>
+      </propertyType>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Available_Processor_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>processor</category>
+        <category>system</category>
+      </propertyType>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Base_Address">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger">
+        <lower xsi:type="property:IntegerValue" valueString="0" base="10"/>
+        <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Base_Address]"/>
+      </propertyType>
+      <appliesto>data</appliesto>
+      <appliesto>memory</appliesto>
+      <appliesto>port</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Client_Subprogram_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Clock_Jitter" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Clock_Period" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Clock_Period_Range" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Compute_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Compute_Entrypoint">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>thread</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Compute_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Concurrency_Control_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Concurrency_Control_Protocols]">
+      <comment>--------------------------------------------------</comment>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Concurrency_Control_Protocols]/enumLiteral[@name=NoneSpecified]"/>
+      <appliesto>data</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Connection_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Connection_Protocols]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>connections</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Deactivate_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Deactivate_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Deactivate_Entrypoint">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <defaultpropertyValue xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Period]"/>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Dequeue_Protocol">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="OneItem"/>
+        <enumLiteral name="AllItems"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Dequeue_Protocol]/propertyType/enumLiteral[@name=OneItem]"/>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Device_Dispatch_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Dispatch_Protocols]">
+      <comment>--------------------------------------------------</comment>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Dispatch_Protocols]/enumLiteral[@name=Aperiodic]"/>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Device_Register_Address">
+      <comment>--------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger"/>
+      <appliesto>port</appliesto>
+      <appliesto>port group</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Dispatch_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Dispatch_Protocols]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Expected_Latency" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>flow</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Expected_Throughput" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>flow</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Finalize_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Finalize_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Finalize_Entrypoint">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Hardware_Description_Source_Text" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>memory</appliesto>
+      <appliesto>bus</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Hardware_Source_Language" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Hardware_Source_Languages]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>memory</appliesto>
+      <appliesto>bus</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Initialize_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Initialize_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Initialize_Entrypoint">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Latency" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>flow</appliesto>
+      <appliesto>connections</appliesto>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Load_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Load_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Memory_Protocol">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="read_only"/>
+        <enumLiteral name="write_only"/>
+        <enumLiteral name="read_write"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Memory_Protocol]/propertyType/enumLiteral[@name=read_write]"/>
+      <appliesto>memory</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Not_Collocated" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>data</category>
+        <category>thread</category>
+        <category>process</category>
+        <category>system</category>
+        <category>connections</category>
+      </propertyType>
+      <appliesto>data</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>connections</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Overflow_Handling_Protocol">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="DropOldest"/>
+        <enumLiteral name="DropNewest"/>
+        <enumLiteral name="Error"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Overflow_Handling_Protocol]/propertyType/enumLiteral[@name=DropOldest]"/>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Period" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Process_Swap_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Propagation_Delay" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Provided_Access" access="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="read_only"/>
+        <enumLiteral name="write_only"/>
+        <enumLiteral name="read_write"/>
+        <enumLiteral name="by_method"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Provided_Access]/propertyType/enumLiteral[@name=read_write]"/>
+      <appliesto>data</appliesto>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Queue_Processing_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Queue_Processing_Protocols]">
+      <comment>--------------------------------------------------</comment>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Queue_Processing_Protocols]/enumLiteral[@name=FIFO]"/>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Queue_Size">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger">
+        <lower xsi:type="property:IntegerValue" valueString="0" base="10"/>
+        <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Queue_Size]"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:IntegerValue" valueString="0" base="10"/>
+      <appliesto>event port</appliesto>
+      <appliesto>event data port</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Read_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]" list="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>memory</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Recover_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>server subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Recover_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>server subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Recover_Entrypoint">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>thread</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Required_Access" access="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:EnumType">
+        <enumLiteral name="read_only"/>
+        <enumLiteral name="write_only"/>
+        <enumLiteral name="read_write"/>
+        <enumLiteral name="by_method"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:EnumValue" enumLiteral="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyDefinition[@name=Required_Access]/propertyType/enumLiteral[@name=read_write]"/>
+      <appliesto>data</appliesto>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Required_Connection">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlboolean"/>
+      <defaultpropertyValue xsi:type="property:TRUE" value="true"/>
+      <appliesto>port</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Runtime_Protection" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlboolean"/>
+      <defaultpropertyValue xsi:type="property:TRUE" value="true"/>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Scheduling_Protocol" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Scheduling_Protocols]" list="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Server_Subprogram_Call_Binding" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:ReferenceType">
+        <category>thread</category>
+        <category>processor</category>
+      </propertyType>
+      <appliesto>subprogram</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Code_Size" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size]">
+      <comment>--------------------------------------------------</comment>
+      <comment>--------------------------------------------------</comment>
+      <appliesto>data</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Data_Size" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>data</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>port</appliesto>
+      <appliesto>port group</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Heap_Size" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Language" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Source_Languages]" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>subprogram</appliesto>
+      <appliesto>data</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>bus</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Name">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>data</appliesto>
+      <appliesto>port</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>parameter</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Stack_Size" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>thread</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>device</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Source_Text" inherit="true" list="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>data</appliesto>
+      <appliesto>port</appliesto>
+      <appliesto>subprogram</appliesto>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+      <appliesto>memory</appliesto>
+      <appliesto>bus</appliesto>
+      <appliesto>device</appliesto>
+      <appliesto>processor</appliesto>
+      <appliesto>parameter</appliesto>
+      <appliesto>port group</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Startup_Deadline" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Subprogram_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Supported_Source_Language" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Supported_Source_Languages]" list="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Synchronized_Component" inherit="true">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlboolean"/>
+      <defaultpropertyValue xsi:type="property:TRUE" value="true"/>
+      <appliesto>thread</appliesto>
+      <appliesto>thread group</appliesto>
+      <appliesto>process</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Thread_Limit">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger">
+        <lower xsi:type="property:IntegerValue" valueString="0" base="10"/>
+        <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Thread_Limit]"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Thread_Limit]"/>
+      <appliesto>processor</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Thread_Swap_Execution_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>processor</appliesto>
+      <appliesto>system</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Throughput" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>flow</appliesto>
+      <appliesto>connections</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Transmission_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]" list="true">
+      <comment>----------------------------------------------------</comment>
+      <comment>----------------------------------------------------</comment>
+      <appliesto>bus</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Type_Source_Name">
+      <comment>----------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlstring"/>
+      <appliesto>data</appliesto>
+      <appliesto>port</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Urgency">
+      <comment>----------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger">
+        <lower xsi:type="property:IntegerValue" valueString="0" base="10"/>
+        <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Urgency]"/>
+      </propertyType>
+      <appliesto>port</appliesto>
+      <appliesto>subprogram</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Word_Count">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger">
+        <lower xsi:type="property:IntegerValue" valueString="0" base="10"/>
+        <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Word_Count]"/>
+      </propertyType>
+      <appliesto>memory</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Word_Size" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size]">
+      <comment>--------------------------------------------------</comment>
+      <defaultpropertyValue xsi:type="property:IntegerValue" unitLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=Bits]" valueString="8" value="8" base="10"/>
+      <appliesto>memory</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Word_Space">
+      <comment>--------------------------------------------------</comment>
+      <propertyType xsi:type="property:Aadlinteger">
+        <lower xsi:type="property:IntegerValue" valueString="1" value="1" base="10"/>
+        <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Word_Space]"/>
+      </propertyType>
+      <defaultpropertyValue xsi:type="property:IntegerValue" valueString="1" value="1" base="10"/>
+      <appliesto>memory</appliesto>
+    </propertyDefinition>
+    <propertyDefinition name="Write_Time" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time_Range]" list="true">
+      <comment>--------------------------------------------------</comment>
+      <appliesto>memory</appliesto>
+    </propertyDefinition>
+    <propertyType xsi:type="property:Aadlinteger" name="Data_Volume">
+      <comment>--------------------------------------------------</comment>
+      <comment> 0 bitsps .. value(Max_Aadlinteger)</comment>
+      <propertyType>
+        <unitLiteral name="bitsps"/>
+        <unitLiteral name="Bps" baseunit="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]/propertyType/unitLiteral[@name=bitsps]">
+          <factor xsi:type="property:IntegerValue" valueString="8" value="8" base="10"/>
+        </unitLiteral>
+        <unitLiteral name="Kbps" baseunit="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]/propertyType/unitLiteral[@name=Bps]">
+          <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+        </unitLiteral>
+        <unitLiteral name="Mbps" baseunit="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]/propertyType/unitLiteral[@name=Kbps]">
+          <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+        </unitLiteral>
+        <unitLiteral name="Gbps" baseunit="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Data_Volume]/propertyType/unitLiteral[@name=Mbps]">
+          <factor xsi:type="property:IntegerValue" valueString="1000" value="1000" base="10"/>
+        </unitLiteral>
+      </propertyType>
+    </propertyType>
+    <propertyType xsi:type="property:Aadlinteger" name="Size" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]">
+      <comment>--------------------------------------------------</comment>
+      <lower xsi:type="property:IntegerValue" unitLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Size_Units]/unitLiteral[@name=B]" valueString="0" base="10"/>
+      <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Memory_Size]"/>
+    </propertyType>
+    <propertyType xsi:type="property:RangeType" name="Size_Range" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Size]"/>
+    <propertyType xsi:type="property:Aadlinteger" name="Time" propertyTypeReference="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]">
+      <comment>--------------------------------------------------</comment>
+      <lower xsi:type="property:IntegerValue" unitLiteral="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyType[@name=Time_Units]/unitLiteral[@name=ps]" valueString="0" base="10"/>
+      <upper xsi:type="property:PropertyReference" referencedProperty="/aadlSpec[@name=AADL_Project]/propertySet[@name=AADL_Project]/propertyConstant[@name=Max_Time]"/>
+    </propertyType>
+    <propertyType xsi:type="property:RangeType" name="Time_Range" propertyTypeReference="/aadlSpec[@name=AADL_Properties]/propertySet[@name=AADL_Properties]/propertyType[@name=Time]"/>
+  </propertySet>
+</core:AadlSpec>
