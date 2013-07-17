@@ -14,9 +14,39 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="six levels of emotions.svg">
+   sodipodi:docname="six levels of emotions.svg"
+   inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/six levels of emotions.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
-     id="defs4" />
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;">
+      <path
+         id="path3924"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3900"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,16 +55,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="372.40597"
-     inkscape:cy="739.48353"
+     inkscape:cx="372.41947"
+     inkscape:cy="733.50352"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="744"
      inkscape:window-x="0"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:connector-spacing="3" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -51,16 +84,18 @@
      inkscape:label="1"
      inkscape:groupmode="layer"
      id="layer1"
+     style="opacity:0.98000004"
      sodipodi:insensitive="true">
     <g
-       id="g3780">
+       id="g3780"
+       transform="translate(-57.152288,0)">
       <rect
          y="41.199482"
          x="73.761444"
          height="84.852829"
-         width="602.0509"
+         width="712.88141"
          id="rect2985"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1" />
+         style="fill:none;stroke:#000000;stroke-width:0.99999994;stroke-opacity:1" />
       <text
          transform="matrix(0,-1,1,0,0,0)"
          sodipodi:linespacing="125%"
@@ -82,11 +117,11 @@
     </g>
     <g
        id="g3786"
-       transform="translate(0,86.873119)">
+       transform="translate(-57.152288,86.873119)">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
          id="rect3788"
-         width="602.0509"
+         width="712.88141"
          height="84.852829"
          x="73.761444"
          y="41.199482" />
@@ -105,13 +140,13 @@
            id="tspan3794">Self-Reflection</tspan></text>
     </g>
     <g
-       transform="translate(0,173.74624)"
+       transform="translate(-57.152288,173.74624)"
        id="g3806">
       <rect
          y="41.199482"
          x="73.761444"
          height="84.852829"
-         width="602.0509"
+         width="712.88141"
          id="rect3808"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1" />
       <text
@@ -135,11 +170,11 @@
     </g>
     <g
        id="g3816"
-       transform="translate(0,260.8891)">
+       transform="translate(-57.152288,260.8891)">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
          id="rect3818"
-         width="602.0509"
+         width="712.88141"
          height="84.852829"
          x="73.761444"
          y="41.199482" />
@@ -158,13 +193,13 @@
            id="tspan3824">Deliberation</tspan></text>
     </g>
     <g
-       transform="translate(0,348.03196)"
+       transform="translate(-57.152288,348.03196)"
        id="g3826">
       <rect
          y="41.199482"
          x="73.761444"
          height="84.852829"
-         width="602.0509"
+         width="712.88141"
          id="rect3828"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1" />
       <text
@@ -188,30 +223,30 @@
     </g>
     <g
        id="g3836"
-       transform="translate(0,435.17482)">
+       transform="translate(-42,435.17482)">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
          id="rect3838"
-         width="602.0509"
+         width="712.88141"
          height="84.852829"
-         x="73.761444"
+         x="58.609158"
          y="41.199482" />
       <text
          xml:space="preserve"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          x="-83.988449"
-         y="91.26162"
+         y="76.109329"
          id="text3840"
          sodipodi:linespacing="125%"
          transform="matrix(0,-1,1,0,0,0)"><tspan
            sodipodi:role="line"
            x="-82.237473"
-           y="91.26162"
+           y="76.109329"
            style="font-size:11px;text-align:center;text-anchor:middle"
            id="tspan3844"> Instinctive </tspan><tspan
            sodipodi:role="line"
            x="-83.988449"
-           y="105.01162"
+           y="89.859329"
            style="font-size:11px;text-align:center;text-anchor:middle"
            id="tspan3848">Reactions</tspan></text>
     </g>
@@ -219,25 +254,538 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="2">
+     inkscape:label="2"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <g
+       transform="matrix(1.1008638,0,0,1,-59.819431,22.223356)"
+       id="g4745"
+       inkscape:connector-avoid="true">
+      <rect
+         y="24.331432"
+         x="223.92499"
+         height="510.12704"
+         width="460.12448"
+         id="rect4747"
+         style="opacity:0.8;fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.95308834;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4749"
+         y="527.7746"
+         x="265.55392"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="527.7746"
+           x="265.55392"
+           sodipodi:role="line"
+           id="tspan4757">feeling state</tspan></text>
+    </g>
+    <g
+       id="g4541"
+       transform="translate(-54.58086,0)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3865"
+         y="514.61151"
+         x="160.48457"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3869"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="514.61151"
+           x="162.39473"
+           sodipodi:role="line">stimulus </tspan><tspan
+           id="tspan3881"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="529.61151"
+           x="160.48457"
+           sodipodi:role="line">appraisal</tspan></text>
+      <rect
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-opacity:1"
+         id="rect4527"
+         width="72.73098"
+         height="31.314728"
+         x="123.91987"
+         y="503.14362"
+         ry="10.859139"
+         rx="10.859139" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="160.48457"
+         y="514.61151"
+         id="text4529"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="162.39473"
+           y="514.61151"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan4531">stimulus </tspan><tspan
+           sodipodi:role="line"
+           x="160.48457"
+           y="529.61151"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan4533">appraisal</tspan></text>
+    </g>
+    <g
+       id="g3853"
+       transform="translate(61.195452,0)">
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="165.26347"
+         y="514.61151"
+         id="text3855"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="167.17363"
+           y="514.61151"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan3857">stimulus </tspan><tspan
+           sodipodi:role="line"
+           x="165.26347"
+           y="529.61151"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan3859">appraisal</tspan></text>
+      <rect
+         ry="10.859139"
+         y="503.14362"
+         x="133.70357"
+         height="31.314728"
+         width="96.469566"
+         id="rect3861"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-opacity:1"
+         rx="10.859139" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3863"
+         y="514.57635"
+         x="181.90906"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3867"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="514.57635"
+           x="181.90906"
+           sodipodi:role="line">neuro-</tspan><tspan
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="529.57635"
+           x="181.90906"
+           sodipodi:role="line"
+           id="tspan3872">modulation</tspan></text>
+    </g>
+    <g
+       id="g3874"
+       transform="translate(63.642132,-108.96377)">
+      <rect
+         rx="10.859139"
+         ry="10.859139"
+         y="523.31897"
+         x="129.63416"
+         height="31.314728"
+         width="228.03854"
+         id="rect3882"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999988;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3884"
+         y="542.28687"
+         x="243.84386"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3888"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="542.28687"
+           x="243.84386"
+           sodipodi:role="line">stimulus cognition</tspan></text>
+    </g>
+    <g
+       transform="translate(191.00005,0)"
+       id="g3890">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3892"
+         y="514.61151"
+         x="165.26347"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3894"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="514.61151"
+           x="167.17363"
+           sodipodi:role="line">stimulus </tspan><tspan
+           id="tspan3896"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="529.61151"
+           x="165.26347"
+           sodipodi:role="line">appraisal</tspan></text>
+      <rect
+         rx="10.859139"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-opacity:1"
+         id="rect3898"
+         width="96.469566"
+         height="31.314728"
+         x="133.70357"
+         y="503.14362"
+         ry="10.859139" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="181.90906"
+         y="514.57635"
+         id="text3900"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="181.90906"
+           y="514.57635"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan3908">instinctive</tspan><tspan
+           sodipodi:role="line"
+           x="181.90906"
+           y="529.57635"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan4286">behavior</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 291.36859,518.80098 33.33503,0"
+       id="path3910"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g3853"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#g3890"
+       inkscape:connection-end-point="d4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00000012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 168.49856,518.80098 26.40045,0"
+       id="path3914"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <g
+       transform="translate(87.888762,-154.64586)"
+       id="g4290">
+      <rect
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999988;stroke-opacity:1"
+         id="rect4298"
+         width="135.36044"
+         height="31.314728"
+         x="150.58846"
+         y="483.23373"
+         ry="10.859139"
+         rx="10.859139" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="218.45911"
+         y="503.36475"
+         id="text4300"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="218.45911"
+           y="503.36475"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan4302">stimulus deliberation</tspan></text>
+    </g>
+    <g
+       id="g4306"
+       transform="translate(109.52713,-243.2096)">
+      <rect
+         rx="10.859139"
+         ry="10.859139"
+         y="483.23373"
+         x="128.9501"
+         height="31.314728"
+         width="242.94191"
+         id="rect4308"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999982;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4310"
+         y="503.36475"
+         x="250.61148"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan4312"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="503.36475"
+           x="250.61148"
+           sodipodi:role="line">stimulus cognition reflection</tspan></text>
+    </g>
+    <g
+       transform="translate(67.213552,-328.08272)"
+       id="g5436">
+      <rect
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999982;stroke-opacity:1"
+         id="rect5438"
+         width="242.94191"
+         height="31.314728"
+         x="171.26369"
+         y="483.23373"
+         ry="10.859139"
+         rx="10.859139" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="292.92505"
+         y="503.36475"
+         id="text5440"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="292.92505"
+           y="503.36475"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan5442">stimulus cognition self-reflection</tspan></text>
+    </g>
+    <g
+       id="g5444"
+       transform="translate(109.52714,-652.51713)">
+      <rect
+         rx="10.859139"
+         ry="10.859139"
+         y="723.5802"
+         x="128.95009"
+         height="31.314728"
+         width="242.94191"
+         id="rect5446"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999982;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text5448"
+         y="736.21118"
+         x="250.61148"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan5450"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="736.21118"
+           x="252.52164"
+           sodipodi:role="line">stimulus cognition </tspan><tspan
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="751.21118"
+           x="250.61148"
+           sodipodi:role="line"
+           id="tspan6596">self-conscious reflection</tspan></text>
+    </g>
     <rect
-       style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="rect3863"
-       width="133.34013"
-       height="31.314728"
-       x="134.02139"
-       y="505.86972" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="147.37701"
-       y="524.83765"
-       id="text3865"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3867"
-         x="147.37701"
-         y="524.83765"
-         style="font-size:12px">appraise stimulus</tspan></text>
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect5452"
+       width="4.0406103"
+       height="492.88147"
+       x="164.73608"
+       y="58.098419"
+       rx="0"
+       ry="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 165.062,429.00504 28.21428,0"
+       id="path5454"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path5640"
+       d="m 142.42712,518.80098 21.7576,0"
+       style="fill:none;stroke:#000000;stroke-width:1.00000012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path5642"
+       d="m 238.17979,414.49319 0,-62.18433"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 373.87485,351.12734 0,62.18433"
+       id="path5644"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <g
+       transform="translate(256.5707,60.464803)"
+       id="g5646">
+      <rect
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999988;stroke-opacity:1"
+         id="rect5648"
+         width="58.752831"
+         height="31.314728"
+         x="165.55595"
+         y="523.31897"
+         ry="0"
+         rx="10.859139" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="194.7478"
+         y="542.28687"
+         id="text5650"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="194.7478"
+           y="542.28687"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan5652">effect</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 422.12665,599.44114 -316.42215,0 0,-64.9828"
+       id="path6214"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g5646"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#g4541"
+       inkscape:connection-end-point="d4" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path6592"
+       d="m 421.25624,525.05591 0,57.60026"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 165.06198,256.28926 71.96084,0"
+       id="path6600"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path6602"
+       d="m 165.06198,169.92122 71.96084,0"
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 165.06198,86.583635 71.96084,0"
+       id="path6604"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <rect
+       ry="0"
+       rx="0"
+       y="58.098419"
+       x="540.51282"
+       height="492.88147"
+       width="4.0406103"
+       id="rect6606"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path6608"
+       d="m 481.41914,256.28926 57.97888,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 481.41914,169.92122 57.97888,0"
+       id="path6610"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path6612"
+       d="m 481.41914,86.583635 57.97888,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path6614"
+       d="m 421.64074,431.00504 117.62145,0"
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <g
+       id="g6616"
+       transform="translate(440.21458,-88.620581)">
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="165.26347"
+         y="514.61151"
+         id="text6618"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="167.17363"
+           y="514.61151"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan6620">stimulus </tspan><tspan
+           sodipodi:role="line"
+           x="165.26347"
+           y="529.61151"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan6622">appraisal</tspan></text>
+      <rect
+         ry="10.859139"
+         y="503.14362"
+         x="133.70357"
+         height="31.314728"
+         width="96.469566"
+         id="rect6624"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-opacity:1"
+         rx="10.859139" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text6626"
+         y="514.57635"
+         x="181.90906"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan6630"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="514.57635"
+           x="181.90906"
+           sodipodi:role="line">conscious</tspan><tspan
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="529.57635"
+           x="181.90906"
+           sodipodi:role="line"
+           id="tspan6634">behavior</tspan></text>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="polyline"
+       id="path6636"
+       d="m 544.37428,431.02534 28.21428,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <g
+       id="g6638"
+       transform="translate(505.28499,106.4648)">
+      <rect
+         rx="10.859139"
+         ry="0"
+         y="523.31897"
+         x="165.55595"
+         height="31.314728"
+         width="58.752831"
+         id="rect6640"
+         style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999988;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text6642"
+         y="542.28687"
+         x="194.7478"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan6644"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           y="542.28687"
+           x="194.7478"
+           sodipodi:role="line">effect</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 670.32767,432.19874 0,195.66656"
+       id="path6646"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="orthogonal"
+       id="path6648"
+       d="m 670.84094,645.44113 -565.13644,0 0,-110.98279"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend);display:inline"
+       inkscape:connection-start="#g6638"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#g4541"
+       inkscape:connection-end-point="d4" />
   </g>
 </svg>

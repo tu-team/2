@@ -42,7 +42,7 @@ _TBD_
 
 There are 4 sentic dimensions where 2 basic emotions and 4 supplemental are situated.According to [Sentic computing: 3.2.2 The Hourglass of Emotions](http://sentic.net/senticcomputing.pdf) Plutchik's wheel could be represented in 4 sentic dimensions:
 
- 1. **Sensitivity** - the user is comfortable with interaction dynamics: rage, *anger*, annoyance, apprehension, *fear*, terror.  
+ 1. **Sensitivity** - the user is comfortable with interaction dynamics: rage, *anger*, annoyance, apprehension, *fear*, terror.
  1. **Attention** - the user is interested in interaction contents: vigilance, *anticipation*, interest, distraction, *surprise*, amazement.
  1. **Pleasantness** - the user is amused by interaction modalities: ecstasy, *joy*, serenity, pensiveness, *sadness*, grief.
  1. **Aptitude** - the user is confident in interaction benefits: admiration, *trust*, acceptance, boredom, *disgust*, loathing. 
@@ -66,7 +66,7 @@ G(x) = -1*e^((-x^2)/(2*σ^2)):
 ![Gauss 3D](Gauss 3D axis.png)
 
 Emotions of one axis has same nature that determines the way they affect the system.
-According to the way emotions affect the system behaviour sentic axises are grouped in a following way:
+According to the way emotions affect the system behavior sentic axises are grouped in a following way:
 
  1. Resource distribution is affected by:
    2. Sensitivity
