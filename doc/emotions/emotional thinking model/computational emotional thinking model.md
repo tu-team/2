@@ -8,21 +8,29 @@ _TBD_
 
 _TBD_
 
-## Emotional thinking model
+### Emotional thinking model
+
+#### Minsky's Thinking model
+
+#### Evolutionary psychology
+
+#### Neuromodulation
+
+#### Emotions in six thinking levels
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
 
-## Stimulus appraisal and stimulus cognition
+### Stimulus appraisal and stimulus cognition
 
-## Feeling the state
+### Feeling the state
 
-## Neuromodulation
+### Neuromodulation
 
-## Effect
+### Effect
 
-## Higher emotions
+### Higher emotions
 
-## Conformity with Picard criteria
+### Conformity with Picard criteria
 
 ## Conclusion
 
