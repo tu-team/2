@@ -10,6 +10,8 @@ _TBD_
 
 ## Emotional thinking model
 
+![Emotions in model of six thinking levels](six levels of emotions.png)
+
 ## Stimulus appraisal and stimulus cognition
 
 ## Feeling the state
