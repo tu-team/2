@@ -31,6 +31,7 @@ All thinking processes are developed in levels listed above. Our assumption: emo
 #### Evolutionary psychology
 
 The other perspective is psychology.  We use Plutchik approach[nature_of_emotion] as main psychological model. Plutchik indicated 8 basic emotions grouped in 4 pairs:
+
 1. Joy - sorrow
 1. Anger - fear
 1. Acceptance - disgust
@@ -48,7 +49,9 @@ Emotions are organised in three dimensional circumplex model where third dimensi
 1. Optimism
 
 More complex emotions based on three could be combined in similar way, see Cambria [sentic_computing].
-Cambria [hourglass_of_emotions] used Gauss function to describe passage from a sentic level to another. We interpreted it as
+Cambria [hourglass_of_emotions] used Gauss function to describe passage from a sentic level to another. We interpreted it as: Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[Neural_Correlates_of_Hate] describes neural activities correlation to emotion: hate as Gaussian.
+
+![Gaussian 3D](Gauss 3D.png)
 
 
 #### Neuromodulation
