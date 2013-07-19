@@ -49,12 +49,40 @@ Emotions are organised in three dimensional circumplex model where third dimensi
 1. Optimism
 
 More complex emotions based on three could be combined in similar way, see Cambria [sentic_computing].
-Cambria [hourglass_of_emotions] used Gauss function to describe passage from a sentic level to another. We interpreted it as: Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[Neural_Correlates_of_Hate] describes neural activities correlation to emotion: hate as Gaussian.
+Cambria [hourglass_of_emotions] used Gauss function to describe passage from a sentic level to another. We interpreted it as: Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[Neural_Correlates_of_Hate] describes neural activities correlation to emotion(hate) as Gaussian.
 
 ![Gaussian 3D](Gauss 3D.png)
 
 
 #### Neuromodulation
+
+Third basis of emotional thinking model is neuroscience. Objective brain work is described as neuromodulation process in Fellous
+[The_Neuromodulatory_Basis_of_Emotion] and Arbib[Emotions_from_brain_to_robot] with base of four neuromodulatory systems:
+
+1. Dopamine
+1. Serotonin
+1. Opioids
+
+Close to their work is model based on monoamine neurotransmitters called "Cube of emotions" of Hugo Lövheim[Cube_of_emotions].
+Author describes emotions and correlation to neurotransmitters concentration. Using only three main neurotransmitters:
+
+1. Nor-adrenaline
+1. Dopamine
+1. Serotonin
+
+Lövheim uses three dimensional model-cube and assumes that all emotional states could be described as mixture of main affective states that are inherited from affect theory of Tomkins[85-88]:
+
+Positive:
+ 1. Enjoyment/Joy
+ 1. Interest/Excitement
+ 1. Surprise
+ 1. Anger/Rage
+ 1. Disgust
+ 1. Distress/Anguish
+ 1. Fear/Terror
+ 1. Shame/Humiliation
+
+This group of affects does match the basic Plutchik's emotions except for humiliation that could be interpreted as contempt.
 
 #### Emotions in six thinking levels
 
@@ -75,3 +103,12 @@ Cambria [hourglass_of_emotions] used Gauss function to describe passage from a s
 ## Conclusion
 
 ## References
+
+[85] Tomkins S. Affect imagery consciousness volume I the positive affects. New
+York: Springer Publishing Company; 1962.
+[86] Tomkins S. Affect imagery consciousness volume II the negative affects. New
+York: Springer Publishing Company; 1963.
+[87] Tomkins S. Affect imagery consciousness volume III the negative affects anger
+and fear. New York: Springer Publishing Company; 1991.
+[88] Tomkins S. The quest for primary motives: biography and autobiography of
+an idea. J Pers Soc Psychol 1981;41:306–29.
