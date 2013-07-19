@@ -7,9 +7,9 @@ _TBD_
 Marvin Minsky in his book "The emotion machine"[emotion_machine] described human thinking model.
 He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[challenges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion."
 
-## Method
-
 _TBD_
+
+## Method
 
 ### Emotional thinking model
 
@@ -82,11 +82,15 @@ Positive:
  1. Fear/Terror
  1. Shame/Humiliation
 
-This group of affects does match the basic Plutchik's emotions except for humiliation that could be interpreted as contempt.
+This group of affects does match the basic Plutchik's emotions except for humiliation that could be interpreted as contempt. Complete mapping description is presented below.
 
 #### Emotions in six thinking levels
 
+This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[nature_of_emotion] in Minsky's six thinking levels.
+
 ![Emotions in model of six thinking levels](six levels of emotions.png)
+
+First stimulus is apprised: _TBD_
 
 ### Stimulus appraisal and stimulus cognition
 
