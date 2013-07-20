@@ -9,9 +9,9 @@ He demonstrated that emotions are inseparable parts of thinking. There are sever
 
 _TBD_
 
-## Method
+## Emotional thinking model
 
-### Emotional thinking model
+### Model basis
 
 #### Minsky's Thinking model
 
@@ -54,10 +54,9 @@ Cambria [hourglass_of_emotions] used Gauss function to describe passage from a s
 ![Gaussian 3D](Gauss 3D.png)
 
 
-#### Neuromodulation
+#### Neuromodulation theory
 
-Third basis of emotional thinking model is neuroscience. Objective brain work is described as neuromodulation process in Fellous
-[The_Neuromodulatory_Basis_of_Emotion] and Arbib[Emotions_from_brain_to_robot] with base of four neuromodulatory systems:
+Third basis of emotional thinking model is neuroscience. Objective brain work is described as neuromodulation process in Fellous(1999) and Arbib & Fellous (2004) with base of four neuromodulatory systems:
 
 1. Dopamine
 1. Serotonin
@@ -70,7 +69,7 @@ Author describes emotions and correlation to neurotransmitters concentration. Us
 1. Dopamine
 1. Serotonin
 
-Lövheim uses three dimensional model-cube and assumes that all emotional states could be described as mixture of main affective states that are inherited from affect theory of Tomkins (Tomkins (1962); Tomkins (1963); Tomkins (1991); Tomkins (1981) ):
+Lövheim uses three dimensional model-cube and assumes that all emotional states could be described as mixture of main affective states that are inherited from affect theory of Tomkins (Tomkins (1962); Tomkins (1963); Tomkins (1991); Tomkins (1981)):
 
 Positive:
  1. Enjoyment/Joy
@@ -84,7 +83,16 @@ Positive:
 
 This group of affects does match the basic Plutchik's emotions except for humiliation that could be interpreted as contempt. Complete mapping description is presented below.
 
-#### Emotions in six thinking levels
+According to Arbib et al(2004) there are four following neuronal systems involved in to emotional processing:
+
+1. Spinal cord
+1. Hypothalamus
+1. Amygdala
+1. Orbitofrontal cortex
+
+We correspond roughly spinal cord, hypothalamus and amygdala with instinctive layer of Minsky's thinking model. This mapping is done in the assumption that reflexes, drives and instincts could be placed in instinctive reactions layer responsible for most primitive actions that do not involve conscious reactions or more complex processes like learned reactions or deliberations.
+
+### Emotions in six thinking levels
 
 This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[nature_of_emotion] in Minsky's six thinking levels.
 
@@ -92,19 +100,32 @@ This is attempt to synthesize theory based on three approaches. First of all we 
 
 Figure 1. [Emotions in model of six thinking levels].
 
-1. Inbound stimulus is apprised first on
+1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdala and all these neuronal systems take part in neuromodulation.
+1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin.
+1. Instinctive behavior is processed on lover
+1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state.
 
-### Stimulus appraisal and stimulus cognition
 
-### Feeling the state
+#### Stimulus appraisal and stimulus cognition
 
-### Neuromodulation
+_TBD_
 
-### Effect
+1. Inbound stimulus is apprised first on instinctive level.
+2.
 
-### Higher emotions
+#### Feeling the state
 
-### Conformity with Picard criteria
+#### Neuromodulation
+
+#### Instinctive and conscious behavior
+
+#### Effect
+
+#### Higher emotions
+
+#### Neuromodulation to computer system management mapping
+
+#### Conformity with Picard criteria
 
 ## Conclusion
 
@@ -112,7 +133,9 @@ Figure 1. [Emotions in model of six thinking levels].
 
 Author, A. A. (2005). Title of work. Location/City, State: Publisher.
 
+Arbib, M.A., & Fellous J. M. (2004). Emotions: from brain to robot. Trends in Cognitive Sciences, 8(12), 554-559
+Fellous, J.M. (1999) Neuromodulatory basis of emotion. The Neuro-scientist 5, 283–294
 Tomkins, S. (1962). Affect imagery consciousness volume I the positive affects. New York: Springer Publishing Company.
 Tomkins, S. (1963). Affect imagery consciousness volume II the negative affects. New York: Springer Publishing Company.
 Tomkins, S. (1991). Affect imagery consciousness volume III the negative affects anger and fear. New York: Springer Publishing Company.
-Tomkins, S. (1981). The quest for primary motives: biography and autobiography of an idea. J Pers Soc Psychol, 41, 306–29.
+Tomkins, S. (1981). The quest for primary motives: biography and autobiography of an idea. J Pers Soc Psychol, 41, 306–335.
