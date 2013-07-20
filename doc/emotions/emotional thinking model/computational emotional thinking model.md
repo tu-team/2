@@ -70,7 +70,7 @@ Author describes emotions and correlation to neurotransmitters concentration. Us
 1. Dopamine
 1. Serotonin
 
-Lövheim uses three dimensional model-cube and assumes that all emotional states could be described as mixture of main affective states that are inherited from affect theory of Tomkins[85-88]:
+Lövheim uses three dimensional model-cube and assumes that all emotional states could be described as mixture of main affective states that are inherited from affect theory of Tomkins (Tomkins (1962); Tomkins (1963); Tomkins (1991); Tomkins (1981) ):
 
 Positive:
  1. Enjoyment/Joy
@@ -90,7 +90,9 @@ This is attempt to synthesize theory based on three approaches. First of all we 
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
 
-First stimulus is apprised: _TBD_
+Figure 1. [Emotions in model of six thinking levels].
+
+1. Inbound stimulus is apprised first on
 
 ### Stimulus appraisal and stimulus cognition
 
@@ -108,11 +110,9 @@ First stimulus is apprised: _TBD_
 
 ## References
 
-[85] Tomkins S. Affect imagery consciousness volume I the positive affects. New
-York: Springer Publishing Company; 1962.
-[86] Tomkins S. Affect imagery consciousness volume II the negative affects. New
-York: Springer Publishing Company; 1963.
-[87] Tomkins S. Affect imagery consciousness volume III the negative affects anger
-and fear. New York: Springer Publishing Company; 1991.
-[88] Tomkins S. The quest for primary motives: biography and autobiography of
-an idea. J Pers Soc Psychol 1981;41:306–29.
+Author, A. A. (2005). Title of work. Location/City, State: Publisher.
+
+Tomkins, S. (1962). Affect imagery consciousness volume I the positive affects. New York: Springer Publishing Company.
+Tomkins, S. (1963). Affect imagery consciousness volume II the negative affects. New York: Springer Publishing Company.
+Tomkins, S. (1991). Affect imagery consciousness volume III the negative affects anger and fear. New York: Springer Publishing Company.
+Tomkins, S. (1981). The quest for primary motives: biography and autobiography of an idea. J Pers Soc Psychol, 41, 306–29.
