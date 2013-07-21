@@ -98,7 +98,7 @@ We correspond spinal cord, hypothalamus and amygdala with instinctive layer of M
 This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[nature_of_emotion] in Minsky's six thinking levels.
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
-                                                                             [emotion_machine]
+
 Figure 1. [Emotions in model of six thinking levels].
 
 1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdala and all these neuronal systems take part in neuromodulation.
@@ -116,8 +116,6 @@ Cognitions also include self-conscious reflections over complex emotions like lo
 #### Feeling the state and neuromodulation
 
 Feeling the emotional state is closely related to neuromodulation the physiological arousal processes in brain. The result of stimulus appraisal is subjective emotional state one of 8 basic Plutchik emotions that are used as dimensions and strength of emotion. This way subjective emotional state is been expressed via two coordinates: emotional state nature and strength of emotion. Emotional state nature and emotional strength are in range from 0 to 1. Subjective strength of emotion corresponds to objective brain activities via Gaussian function see Cambria et al(2012)[hourglass_of_emotions]. Objective brain activities are expressed via neuromodulation, see Arbib et al(2004) that is expressed in terms of neurotransmitters concentration. Neurotransmitters  concentration is expressed in range from 0 to 1 in cube of emotions, see Lövheim[Cube_of_emotions]. This way inbound stimulus[emotion_machine]lus is been apprised and triggers subjective emotional state switch and then objective brain functions as result of neurotransmitters concentration variation. For example the system is scared. System switched it's state to terror with maximum strength 1. This subjective terror strength is mapped to objective dopamine(neurotransmitter) concentration, in our case this is maximum 1. Under the influence of maximum concentration of dopamine all further actions is been performed: decisions over instinctive behavior, stimulus cognitions, selection of conscious behavior. All higher thinking processes control and influence lower actions. For example: if human is scared during watching the film he/she usually does not jump and run away. Some kind of reflection(reflection thinking level) is been used: "This is just a movie, nothing terrible is going to happen to me". This is done by switching emotional state on reflection thinking level.
-
-#### Higher emotions
 
 #### Neuromodulation to computing system management mapping
 
@@ -151,6 +149,10 @@ Rosalind Picard in her article "What does it mean for a computer to "have" emoti
 1. Mind-body interactions
 
 Emotional appearance is not discussed in this work. Multi-level emotion cognition and behavior generation was demonstrated in "Emotions in six thinking levels" and "Feeling the state and neuromodulation" chapters. Emotional experience is complex that consists of:  "cognitive or semantic label; physiological changes; subjective feeling, intuition" we have scratch the surface and suggested psychological changes mechanism according to Plutchik model and subjective emotions perceptions in this work. Mind-body interactions consists of: "conscious and non-conscious events; regulatory and signaling mechanisms; biasing mechanisms, intuition; physiological and biochemical changes; sentic modulation, lying impacts pressure; waveform of love; smiles induce joy..." this partly could be implemented by presented model. Conscious and non-conscious mechanisms of stimulus processing was presented in "Stimulus appraisal and stimulus cognition" section. Psychological and biochemical changes where presented in "Feeling the state and neuromodulationFeeling the state and neuromodulation" and "Neuromodulation to computing system management mapping".
+
+#### Higher emotions
+
+Plutchik[nature_of_emotion] suggested "primary dyads", see "Evolutionary psychology" section above, could be produced as mixture of primary colors of basic emotions. For example: joy(yellow) plus trust(green) produces love(lemon), anger(red) plus disgust(lilac) produces contempt(violet). Higher or complex emotions requires higher levels of thinking and self-awareness to be involved, this way they are mainly triggered on self-conscious and self-reflective thinking levels. Triads could be produced in similar way to dyads: joy + trust + anger = jealousy, see [sentic_computing].
 
 ## Conclusion
 
