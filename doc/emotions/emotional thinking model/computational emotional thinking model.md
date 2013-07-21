@@ -98,7 +98,7 @@ We correspond spinal cord, hypothalamus and amygdala with instinctive layer of M
 This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[nature_of_emotion] in Minsky's six thinking levels.
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
-
+                                                                             [emotion_machine]
 Figure 1. [Emotions in model of six thinking levels].
 
 1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdala and all these neuronal systems take part in neuromodulation.
@@ -115,11 +115,41 @@ Cognitions also include self-conscious reflections over complex emotions like lo
 
 #### Feeling the state and neuromodulation
 
-Feeling the emotional state is closely related to neuromodulation the physiological arousal processes in brain. The result of stimulus appraisal is subjective emotional state one of 8 basic Plutchik emotions that are used as dimensions and strength of emotion. This way subjective emotional state is been expressed via two coordinates: emotional state nature and strength of emotion. Emotional state nature and emotional strength are in range from 0 to 1. Subjective strength of emotion corresponds to objective brain activities via Gaussian function see Cambria et al(2012)[hourglass_of_emotions]. Objective brain activities are expressed via neuromodulation, see Arbib et al(2004) that is expressed in terms of neurotransmitters concentration. Neurotransmitters  concentration is expressed in range from 0 to 1 in cube of emotions, see Lövheim[Cube_of_emotions]. This way inbound stimulus is been apprised and triggers subjective emotional state switch and then objective brain functions as result of neurotransmitters concentration variation. For example the system is scared. System switched it's state to terror with maximum strength 1. This subjective terror strength is mapped to objective dopamine(neurotransmitter) concentration, in our case this is maximum 1. Under the influence of maximum concentration of dopamine all further actions is been performed: decisions over instinctive behavior, stimulus cognitions, selection of conscious behavior. All higher thinking processes control and influence lower actions. For example: if human is scared during watching the film he/she usually does not jump and run away. Some kind of reflection(reflection thinking level) is been used: "This is just a movie, nothing terrible is going to happen to me". This is done by switching emotional state on reflection thinking level.
+Feeling the emotional state is closely related to neuromodulation the physiological arousal processes in brain. The result of stimulus appraisal is subjective emotional state one of 8 basic Plutchik emotions that are used as dimensions and strength of emotion. This way subjective emotional state is been expressed via two coordinates: emotional state nature and strength of emotion. Emotional state nature and emotional strength are in range from 0 to 1. Subjective strength of emotion corresponds to objective brain activities via Gaussian function see Cambria et al(2012)[hourglass_of_emotions]. Objective brain activities are expressed via neuromodulation, see Arbib et al(2004) that is expressed in terms of neurotransmitters concentration. Neurotransmitters  concentration is expressed in range from 0 to 1 in cube of emotions, see Lövheim[Cube_of_emotions]. This way inbound stimulus[emotion_machine]lus is been apprised and triggers subjective emotional state switch and then objective brain functions as result of neurotransmitters concentration variation. For example the system is scared. System switched it's state to terror with maximum strength 1. This subjective terror strength is mapped to objective dopamine(neurotransmitter) concentration, in our case this is maximum 1. Under the influence of maximum concentration of dopamine all further actions is been performed: decisions over instinctive behavior, stimulus cognitions, selection of conscious behavior. All higher thinking processes control and influence lower actions. For example: if human is scared during watching the film he/she usually does not jump and run away. Some kind of reflection(reflection thinking level) is been used: "This is just a movie, nothing terrible is going to happen to me". This is done by switching emotional state on reflection thinking level.
 
 #### Higher emotions
 
 #### Neuromodulation to computer system management mapping
+
+All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to computer science was done to Marvin Minsky "The emotion machine book"[emotion_machine]. Result of neuromodulation is neurotransmitters secretion.To map neurotransmitters influence to computing system first we created the list of computing system management parameters:
+
+ 1. Generic:
+   2. CPU power
+   2. Memory
+     3. Pattern generation
+     3. Pattern activation
+     3. Learning
+   2. Storage
+ 1. Decision making/reward processing:
+   2. Confidence
+   2. Satisfaction
+   2. Motivation and wanting
+   2. Goal processing
+   2. Number of option to process
+   2. Risky choices inclination
+
+
+
+cpu: noradrenaline
+memory: Dopamine,  Serotonin
+storage: Dopamine, Serotonin
+anticipatory reward: Dopamine
+number of options to analyse: noradrenaline
+risky choices: Dopamine
+incentive motivation wanting: Dopamine
+goal processing: Dopamine
+pattern generation: Serotonin
+learning: Serotonin
 
 #### Conformity with Picard criteria
 
@@ -131,6 +161,7 @@ Author, A. A. (2005). Title of work. Location/City, State: Publisher.
 
 Arbib, M.A., & Fellous J. M. (2004). Emotions: from brain to robot. Trends in Cognitive Sciences, 8(12), 554-559
 Fellous, J.M. (1999) Neuromodulatory basis of emotion. The Neuro-scientist 5, 283–294
+Lövheim, H (),
 Tomkins, S. (1962). Affect imagery consciousness volume I the positive affects. New York: Springer Publishing Company.
 Tomkins, S. (1963). Affect imagery consciousness volume II the negative affects. New York: Springer Publishing Company.
 Tomkins, S. (1991). Affect imagery consciousness volume III the negative affects anger and fear. New York: Springer Publishing Company.
