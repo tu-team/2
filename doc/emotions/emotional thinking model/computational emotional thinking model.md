@@ -55,7 +55,7 @@ Cambria [hourglass_of_emotions] used Gauss function to describe passage from a s
 ![Gaussian 3D](Gauss 3D.png)
 
 
-#### Neuromodulation theory
+#### Neuromodulation and neurotransmission theory
 
 Third basis of emotional thinking model is neuroscience. Objective brain work is described as neuromodulation process in Fellous(1999) and Arbib & Fellous (2004) with base of four neuromodulatory systems:
 
@@ -102,7 +102,7 @@ This is attempt to synthesize theory based on three approaches. First of all we 
 Figure 1. [Emotions in model of six thinking levels].
 
 1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdala and all these neuronal systems take part in neuromodulation.
-1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin.
+1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin. Nor-adrenaline, dopamine, serotonin are neurotransmitters.
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
 1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state under influence of neuromodulation and hormons. Stimulus cognition could involve deliberation, further reflection, sef-reflection self-conscious processing (higher emotions) and  emotional state switch.
@@ -113,11 +113,9 @@ Figure 1. [Emotions in model of six thinking levels].
 There are two main ways of inbound stimulus processing: appraisal is done on the instinctive reactions level and usually is processed as unconscious action, cognition could involve all the rest thinking levels and could consist of complex deliberations and reflections.
 Cognitions also include self-conscious reflections over complex emotions like love, awe and aggression. For example startle is been apprised on instinctive reactions layer (spinal cord, hypothalamus, amygdala) where unconscious decision is made and instinctive behaviour is chosen (it could be even reflex). In case of startle this could be run or jump aside. Only after those instinctive actions are performed human could realise what had happen to him (in the state of effect). In contrast to appraisal cognitions could are performed on higher levels could take some significant time and could include complex reasoning and reflections. For example fear could be triggered not only by inbound stimulus but by long time perception during some horror movie or deliberation over some facts regarding the world. In contrast to startle fear triggers complex conscious behaviour that could in it's turn become panic and trigger less intelligent behaviour like shouting and running from side to side. Both instinctive and conscious behaviour produces effect state. Effect is an environmental state that was altered from previous state via behaviour. Running in case of startle places human in safe place that produces effect which influence stimulus event and it's appraisal and as consequence emotional/affective state.
 
-#### Neuromodulation
+#### Feeling the state and neuromodulation
 
-
-
-#### Feeling the state
+Feeling the emotional state is closely related to neuromodulation the physiological arousal processes in brain. The result of stimulus appraisal is subjective emotional state one of 8 basic Plutchik emotions that are used as dimensions and strength of emotion. This way subjective emotional state is been expressed via two coordinates: emotional state nature and strength of emotion. Emotional state nature and emotional strength are in range [0-1]. Subjective strength of emotion corresponds to objective brain activities via Gaussian function see Cambria et al(2012)[hourglass_of_emotions]. Objective brain activities are expressed via neuromodulation, see Arbib et al(2004) that is expressed in terms of neurotransmitters concentration. Neurotransmitters  concentration is expressed in range [0-1] in cube of emotions, see Lövheim[Cube_of_emotions]. This way inbound stimulus is been apprised and triggers subjective emotional state switch and then objective brain functions as result of neurotransmitters concentration variation. For example the system is scared. System switched it's state to terror with maximum strength 1. This subjective terror strength is mapped to objective dopamine(neurotransmitter) concentration, in our case this is maximum 1. Under the influence of maximum concentration of dopamine all further actions is been performed: decisions over instinctive behavior, stimulus cognitions, selection of conscious behavior. All higher thinking processes control and influence lower actions. For example: if human is scared during watching the film he/she usually does not jump and run away. Some kind of reflection(reflection thinking level) is been used: "This is just a movie, nothing terrible is going to happen to me".
 
 #### Higher emotions
 
