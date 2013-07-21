@@ -121,7 +121,7 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 #### Neuromodulation to computing system management mapping
 
-All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to computer science was done to Marvin Minsky "The emotion machine book"[emotion_machine]. Result of neuromodulation is neurotransmitters secretion.To map neurotransmitters influence to computing system first we created the list of computing system management parameters:
+All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to computer science was done to Marvin Minsky "The emotion machine book"[emotion_machine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influence overall speed of thinking process, dopamine and serotonin reward processing and learning.To map neurotransmitters influence to computing system first we created the list of computing system management parameters:
 
  1. Generic:
    2. CPU power: noradrenaline, dopamine
@@ -133,23 +133,13 @@ All that was presented above was the description of human thinking process and h
  1. Decision making/reward processing:
    2. Confidence: serotonin
    2. Satisfaction: serotonin
-   2. Motivation and wanting: dopamine
-   2. Goal processing: dopamine
-   2. Number of option to process: noradrenaline
+   2. Motivation, wanting: dopamine
    2. Risky choices inclination: dopamine
+   2. Number of option to process: noradrenaline
 
-Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be threads distribution or load balancing; memory -
+Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be threads distribution or load balancing; memory - is working memory(short term memory) distribution between threads or computing processes, where previously remembered patters are activated under influence of dopamine and generated under influence of serotonin, learning is impacted by serotonin though pattern activation is impacted by dopamine that is the part of learning too; storage - long term memory management is influenced both by serotonin and dopamine, more concentrations of both neurotransmitters the better it is remembered(less probability to forget). Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers. Parameters confidence, satisfaction, risky are used to highlight actions stored(remembered). Confidence of the system and as result option stored is directly influenced by serotonin; satisfaction by the reward is influenced by serotonin; motivation is heavily impacted by dopamine; system tends to choose not risky/safe actions under impact of dopamine; number of options in width and depth to be processed is heavily influenced by noradrenaline.
 
-cpu: noradrenaline
-memory: Dopamine,  Serotonin
-storage: Dopamine, Serotonin
-anticipatory reward: Dopamine
-number of options to analyse: noradrenaline
-risky choices: Dopamine
-incentive motivation wanting: Dopamine
-goal processing: Dopamine
-pattern generation: Serotonin
-learning: Serotonin
+
 
 #### Conformity with Picard criteria
 
