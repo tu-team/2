@@ -15,8 +15,9 @@ _TBD_
 
 #### Minsky's Thinking model
 
-First perspective that is used in this work is  computer science. We used Marvin Minsky emotional thinking approach.
+First basis that is used in this work is  computer science. We used Marvin Minsky emotional thinking approach.
 Marvin Minsky in his book "The emotion machine"[emotion_machine] described human thinking model. Main structural idea that we used and adopted is "Model of six".
+
 Model of six thinking levels:
 
 1. Instinctive reactions
@@ -26,7 +27,7 @@ Model of six thinking levels:
 1. Self-reflective thinking
 1. Self-conscious reflections
 
-All thinking processes are developed in levels listed above. Our assumption: emotions as part of thinking, at least conscious part, should fit thinking model. This way all emotional processed should be expressed in terms of thinking model(levels). This could be understood as base of computational emotional thinking approach.
+All thinking processes are developed in levels listed above. We use following assumption: emotions as part of thinking, at least conscious processes take , should fit thinking model. This way all emotional processed should be expressed in terms of thinking model(levels). This could be understood as base of computational emotional thinking approach.
 
 #### Evolutionary psychology
 
@@ -69,7 +70,7 @@ Author describes emotions and correlation to neurotransmitters concentration. Us
 1. Dopamine
 1. Serotonin
 
-Lövheim uses three dimensional model-cube and assumes that all emotional states could be described as mixture of main affective states that are inherited from affect theory of Tomkins (Tomkins (1962); Tomkins (1963); Tomkins (1991); Tomkins (1981)):
+Lövheim uses three dimensional model-cube and assumes that all emotional states could be placed in the three dimensional cube with neurotransmitters as axes and eight basic emotions ordered in ordered in an orthogonal coordinate system that are affective states that are inherited from affect theory of Tomkins (Tomkins (1962); Tomkins (1963); Tomkins (1991); Tomkins (1981)):
 
 Positive:
  1. Enjoyment/Joy
@@ -107,13 +108,10 @@ Figure 1. [Emotions in model of six thinking levels].
 1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state under influence of neuromodulation and hormons. Stimulus cognition could involve deliberation, further reflection, sef-reflection self-conscious processing (higher emotions) and  emotional state switch.
 1. Conscious behavior is activated as the result of stimulus cognition.
 
-
 #### Stimulus appraisal and stimulus cognition
 
-_TBD_
-
-1. Inbound stimulus is apprised first on instinctive level.
-2. Instinctive reactions layer corresponds to all unconscious actions over inbound stimulus.
+There are two main ways of inbound stimulus processing: appraisal is done on the instinctive reactions level and usually is processed as unconscious action, cognition could involve all the rest thinking levels and could consist of complex deliberations and reflections.
+Cognitions also include self-conscious reflections over complex emotions like love, awe and aggression. For example startle is been apprised on instinctive reactions layer (spinal cord, hypothalamus, amygdala) where unconscious decision is made and instinctive behaviour is chosen (it could be even reflex). In case of startle this could be run or jump aside. Only after those instinctive actions are performed human could realise what had happen to him (in the state of effect). In contrast to appraisal cognitions could are performed on higher levels could take some significant time and could include complex reasoning and reflections. For example fear could be triggered not only by inbound stimulus but by long time perception during some horror movie or deliberation over some facts regarding the world. In contrast to startle fear triggers complex conscious behaviour that could in it's turn become panic and trigger less intelligent behaviour like shouting and running from side to side.
 
 #### Feeling the state
 
