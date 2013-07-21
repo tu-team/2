@@ -119,26 +119,26 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 #### Higher emotions
 
-#### Neuromodulation to computer system management mapping
+#### Neuromodulation to computing system management mapping
 
 All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to computer science was done to Marvin Minsky "The emotion machine book"[emotion_machine]. Result of neuromodulation is neurotransmitters secretion.To map neurotransmitters influence to computing system first we created the list of computing system management parameters:
 
  1. Generic:
-   2. CPU power
+   2. CPU power: noradrenaline, dopamine
    2. Memory
-     3. Pattern generation
-     3. Pattern activation
-     3. Learning
-   2. Storage
+     3. Pattern generation: serotonin
+     3. Pattern activation: dopamine
+     3. Learning: serotonin
+   2. Storage: serotonin, dopamine
  1. Decision making/reward processing:
-   2. Confidence
-   2. Satisfaction
-   2. Motivation and wanting
-   2. Goal processing
-   2. Number of option to process
-   2. Risky choices inclination
+   2. Confidence: serotonin
+   2. Satisfaction: serotonin
+   2. Motivation and wanting: dopamine
+   2. Goal processing: dopamine
+   2. Number of option to process: noradrenaline
+   2. Risky choices inclination: dopamine
 
-
+Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be threads distribution or load balancing; memory -
 
 cpu: noradrenaline
 memory: Dopamine,  Serotonin
