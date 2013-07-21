@@ -143,6 +143,15 @@ For example: system is in fear state. Dopamine impacts system at half strength. 
 
 #### Conformity with Picard criteria
 
+Rosalind Picard in her article "What does it mean for a computer to "have" emotions?"[what] suggested following criteria to measure emotional capabilities of a computing system:
+
+1. Emotional appearance
+1. Multi-level emotion generation
+1. Emotional experience
+1. Mind-body interactions
+
+Emotional appearance is not discussed in this work. Multi-level emotion cognition and behavior generation was demonstrated in "Emotions in six thinking levels" and "Feeling the state and neuromodulation" chapters. Emotional experience
+
 ## Conclusion
 
 ## References
