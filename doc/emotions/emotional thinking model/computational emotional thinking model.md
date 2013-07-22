@@ -2,7 +2,6 @@
 
 ## Introduction
 
-_TBD_
 
 Marvin Minsky in his book "The emotion machine"[emotion_machine] described human thinking model.
 He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[challenges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion."
@@ -72,7 +71,6 @@ Author describes emotions and correlation to neurotransmitters concentration. Us
 
 Lövheim uses three dimensional model-cube and assumes that all emotional states could be placed in the three dimensional cube with neurotransmitters as axes and eight basic emotions ordered in ordered in an orthogonal coordinate system that are affective states that are inherited from affect theory of Tomkins (Tomkins (1962); Tomkins (1963); Tomkins (1991); Tomkins (1981)):
 
-Positive:
  1. Enjoyment/Joy
  1. Interest/Excitement
  1. Surprise
