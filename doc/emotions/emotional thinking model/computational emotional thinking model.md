@@ -139,6 +139,8 @@ Parameters are grouped in two folders: most obvious computing system parameters:
 
 For example: system is in fear state. Dopamine impacts system at half strength. This makes system choose actions highlighted with high rewards(safest in case of fear). High noradrenaline in rage state cause system to think as quick as possible taking in account as less as possible options implementing first action(usually not really safe) selected "fight or flight" reaction.
 
+It's worth to note that duration of each neurotransmitter impact is highly individual and requires further development from computing system development perspective. Currently we suppose that each neurotransmitter is terminated right after it impacts the system.
+
 #### Conformity with Picard criteria
 
 Rosalind Picard in her article "What does it mean for a computer to "have" emotions?"[what] suggested following criteria to measure emotional capabilities of a computing system:
@@ -150,6 +152,16 @@ Rosalind Picard in her article "What does it mean for a computer to "have" emoti
 
 Emotional appearance is not discussed in this work. Multi-level emotion cognition and behavior generation was demonstrated in "Emotions in six thinking levels" and "Feeling the state and neuromodulation" chapters. Emotional experience is complex that consists of:  "cognitive or semantic label; physiological changes; subjective feeling, intuition" we have scratch the surface and suggested psychological changes mechanism according to Plutchik model and subjective emotions perceptions in this work. Mind-body interactions consists of: "conscious and non-conscious events; regulatory and signaling mechanisms; biasing mechanisms, intuition; physiological and biochemical changes; sentic modulation, lying impacts pressure; waveform of love; smiles induce joy..." this partly could be implemented by presented model. Conscious and non-conscious mechanisms of stimulus processing was presented in "Stimulus appraisal and stimulus cognition" section. Psychological and biochemical changes where presented in "Feeling the state and neuromodulation" and "Neuromodulation to computing system management mapping".
 
+We propose this approach as framework for emotional thinking processes. This could be starting point of further research and development of emotional thinking. From our perspective this kind of approach could be widely used in following domains:
+
+ 1. Intellectual assistant capable of emotional dialogs and thinking
+ 1. Help desk automation
+ 1. Call centre automation
+ 1. Software and hardware support automation
+ 1. Virtual friends
+ 1. Nursing software
+ 1. Applications in emotional robots
+
 #### Higher emotions
 
 Plutchik[nature_of_emotion] suggested "primary dyads", see "Evolutionary psychology" section above, could be produced as mixture of primary colors of basic emotions. For example: joy(yellow) plus trust(green) produces love(lemon), anger(red) plus disgust(lilac) produces contempt(violet). Higher or complex emotions requires higher levels of thinking and self-awareness to be involved, this way they are mainly triggered on self-conscious and self-reflective thinking levels. Triads could be produced in similar way to dyads: joy + trust + anger = jealousy, see [sentic_computing].
@@ -157,7 +169,24 @@ Plutchik[nature_of_emotion] suggested "primary dyads", see "Evolutionary psychol
 ## Conclusion
 
 Emotions are part of human thinking. Role of emotions could not be underestimated and they could not be ignored in human thinking modelling.
-There are three bases of presented computational emotions model. First computer science Marvin Minsky "The emotion machine"[emotion_machine] thinking model(model of six). Evolutionary psychological model: "wheel of emotions" by Plutchik[nature_of_emotion]. Plutchik indicated 8 basic emotions grouped in pairs. We used "wheel of emotions" as subjective emotional state model. Objective emotional brain activity is modeled by "cube of emotions" the monoamine neurotransmitters emotions model.
+There are three bases of presented computational emotions model. First computer science Marvin Minsky "The emotion machine"[emotion_machine] thinking model(model of six). We presented emotion processing workflow . Evolutionary psychological model: "wheel of emotions" by Plutchik[nature_of_emotion]. Plutchik proposed 8 basic emotions grouped in pairs:joy - sorrow, anger - fear, acceptance - disgust, surprise - expectancy. We used "wheel of emotions" as subjective emotional state model. Objective emotional brain activity is modeled by "cube of emotions" the monoamine neurotransmitters emotions model. We present following parameters of computing system management with mapping to monoamine neurotransmitters
+ that impact this parameter.
+
+ 1. Generic:
+   2. CPU power: noradrenaline, dopamine
+   2. Memory
+     3. Pattern generation: serotonin
+     3. Pattern activation: dopamine
+     3. Learning: serotonin
+   2. Storage: serotonin, dopamine
+ 1. Decision making/reward processing:
+   2. Confidence: serotonin
+   2. Satisfaction: serotonin
+   2. Motivation, wanting: dopamine
+   2. Risky choices inclination: dopamine
+   2. Number of option to process: noradrenaline
+
+This could be base for further implementation as emotional thinking process used as base framework for general AI applications.
 
 ## References
 
