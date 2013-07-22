@@ -101,7 +101,7 @@ This is attempt to synthesize theory based on three approaches. First of all we 
 
 Figure 1. [Emotions in model of six thinking levels].
 
-1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdala and all these neuronal systems take part in neuromodulation.
+1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdathis modella and all these neuronal systems take part in neuromodulation.
 1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin. Nor-adrenaline, dopamine, serotonin are neurotransmitters.
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
@@ -155,6 +155,9 @@ Emotional appearance is not discussed in this work. Multi-level emotion cognitio
 Plutchik[nature_of_emotion] suggested "primary dyads", see "Evolutionary psychology" section above, could be produced as mixture of primary colors of basic emotions. For example: joy(yellow) plus trust(green) produces love(lemon), anger(red) plus disgust(lilac) produces contempt(violet). Higher or complex emotions requires higher levels of thinking and self-awareness to be involved, this way they are mainly triggered on self-conscious and self-reflective thinking levels. Triads could be produced in similar way to dyads: joy + trust + anger = jealousy, see [sentic_computing].
 
 ## Conclusion
+
+Emotions are part of human thinking. Role of emotions could not be underestimated and they could not be ignored in human thinking modelling.
+There are three bases of presented computational emotions model. First computer science Marvin Minsky "The emotion machine"[emotion_machine] thinking model(model of six). Evolutionary psychological model: "wheel of emotions" by Plutchik[nature_of_emotion]. Plutchik indicated 8 basic emotions grouped in pairs. We used "wheel of emotions" as subjective emotional state model. Objective emotional brain activity is modeled by "cube of emotions" the monoamine neurotransmitters emotions model.
 
 ## References
 
