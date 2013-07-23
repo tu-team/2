@@ -2,11 +2,10 @@
 
 ## Introduction
 
+Now, when emotions are in focus of a lot of researchers from neuro-scientists [], to computer science specialists[], when emotional (intelligence)[http://en.wikipedia.org/wiki/Emotional_intelligence] (EQ) becomes more important(at least not less) than IQ.
+There were only several computational emotions models created[computational_emotion, ...] and none computational emotion thinking model created.
 
-Marvin Minsky in his book "The emotion machine"[emotion_machine] described human thinking model.
-He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[challenges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion."
-
-_TBD_
+Marvin Minsky in his book "The emotion machine"[emotion_machine] described human thinking model, and proposed promising base and framework for emotional thinking implementation in computing system. He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[challenges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion."  Hence there is no good example of unemotional intelligence and emotions are inseparable part of thinking we face the problem of emotional thinking model implementation as soon as we attempt to construct more or less comparable to human intelligence. We demonstrate below framework based on synthesis of AI, psychology and neuro-science theories and frameworks of emotions. We propose mapping and influence mechanism of neurotransmitters to computing system management parameters.
 
 ## Emotional thinking model
 
@@ -14,7 +13,7 @@ _TBD_
 
 #### Minsky's Thinking model
 
-First basis that is used in this work is  computer science. We used Marvin Minsky emotional thinking approach.
+First basis that is used in this work is  AI. We used Marvin Minsky emotional thinking approach.
 Marvin Minsky in his book "The emotion machine"[emotion_machine] described human thinking model. Main structural idea that we used and adopted is "Model of six".
 
 Model of six thinking levels:
@@ -117,7 +116,7 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 #### Neuromodulation to computing system management mapping
 
-All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to computer science was done to Marvin Minsky "The emotion machine book"[emotion_machine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influence overall speed of thinking process, dopamine and serotonin reward processing and learning.To map neurotransmitters influence to computing system first we created the list of computing system management parameters:
+All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine book"[emotion_machine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influence overall speed of thinking process, dopamine and serotonin reward processing and learning.To map neurotransmitters influence to computing system first we created the list of computing system management parameters:
 
  1. Generic:
    2. CPU power: noradrenaline, dopamine
@@ -167,7 +166,7 @@ Plutchik[nature_of_emotion] suggested "primary dyads", see "Evolutionary psychol
 ## Conclusion
 
 Emotions are part of human thinking. Role of emotions could not be underestimated and they could not be ignored in human thinking modelling.
-There are three bases of presented computational emotions model. First computer science Marvin Minsky "The emotion machine"[emotion_machine] thinking model(model of six). We presented emotion processing workflow . Evolutionary psychological model: "wheel of emotions" by Plutchik[nature_of_emotion]. Plutchik proposed 8 basic emotions grouped in pairs:joy - sorrow, anger - fear, acceptance - disgust, surprise - expectancy. We used "wheel of emotions" as subjective emotional state model. Objective emotional brain activity is modeled by "cube of emotions" the monoamine neurotransmitters emotions model. We present following parameters of computing system management with mapping to monoamine neurotransmitters
+There are three bases of presented computational emotions model. First AI, Marvin Minsky "The emotion machine"[emotion_machine] thinking model(model of six). We presented emotion processing workflow . Evolutionary psychological model: "wheel of emotions" by Plutchik[nature_of_emotion]. Plutchik proposed 8 basic emotions grouped in pairs:joy - sorrow, anger - fear, acceptance - disgust, surprise - expectancy. We used "wheel of emotions" as subjective emotional state model. Objective emotional brain activity is modeled by "cube of emotions" the monoamine neurotransmitters emotions model. We present following parameters of computing system management with mapping to monoamine neurotransmitters
  that impact this parameter.
 
  1. Generic:
