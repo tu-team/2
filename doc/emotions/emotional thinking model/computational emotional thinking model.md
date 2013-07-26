@@ -5,7 +5,15 @@
 Emotions are in focus of a lot of researchers from neuro-scientists [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science specialists[emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing], and emotional intelligence(EQ) becomes important, at least not less than IQ.
 There were only some computational emotions models created[computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and we failed to find computational emotion thinking model already created.
 
-Marvin Minsky in his book "The emotion machine"[emotionmachine] described human thinking model, and proposed promising base and framework for emotional thinking implementation in computing system. He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[affectivecomputingchallanges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion."  Hence there is no good example of unemotional intelligence and emotions are inseparable part of thinking we face the problem of emotional thinking model implementation as soon as we attempt to construct more or less comparable to human intelligence. We demonstrate below framework based on synthesis of AI, psychology and neuro-science theories and frameworks of emotions. We propose mapping and influence mechanism of neurotransmitters to computing system management parameters.
+Marvin Minsky in his book "The emotion machine"[emotionmachine] described human thinking model, and proposed promising base and framework for emotional thinking implementation in computing system. He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[affectivecomputingchallanges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion." Hence there is no good example of unemotional intelligence and emotions are inseparable part of thinking we face the problem of emotional thinking model implementation as soon as we attempt to construct more or less comparable to human intelligence. This is interdisciplinary work that we have ran to create theoretical basis for computational emotional thinking to be used further for modelling and implementing as code and possible embodiment in social robot. There could be selected several domains for future use:
+
+1. Computer - human social collaboration
+1. Human emotional behavior assessment
+1. Computer games and simulations
+1. Automation of primitive service tasks
+1. Nursing
+
+We demonstrate below framework based on synthesis of AI, psychology and neuro-science theories and frameworks of emotions. We propose mapping and influence mechanism of neurotransmitters to computing system management parameters.
 
 ## Emotional thinking model
 
@@ -102,7 +110,7 @@ Figure 2. [Emotions in model of six thinking levels].
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
 1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state under influence of neuromodulation. Stimulus cognition could involve deliberation, further reflection, sef-reflection self-conscious processing (higher emotions) and  emotional state switch.
-1. Conscious behavior is activated as the result of stimulus cognition.
+1. Conscious behavior is activated as the result of stimulus cognitiinterdisciplinaryon.
 
 #### Stimulus appraisal and stimulus cognition
 
@@ -190,7 +198,7 @@ We suppose this framework and it's implementation could be useful in many differ
 1. Computer games
 1. Intellectual assistant capable of emotional dialogs and thinking
 1. Automatic interviewers
-1. Estimating human responses in the interest of manipulating it.
+1. Estimating human responses in the interest of manipulating it
 1. Simulations of large social groups
 1. Call centre automation
 1. Software and hardware support automation
