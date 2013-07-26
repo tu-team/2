@@ -16,8 +16,8 @@
    inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="six levels of emotions.svg"
    inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/six levels of emotions.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-xdpi="180"
+   inkscape:export-ydpi="180">
   <defs
      id="defs4">
     <marker
@@ -55,10 +55,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="314.99275"
+     inkscape:cx="195.79475"
      inkscape:cy="693.09742"
      inkscape:document-units="px"
-     inkscape:current-layer="g3836"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="744"
@@ -76,7 +76,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
