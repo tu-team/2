@@ -2,10 +2,18 @@
 
 ## Introduction
 
-Emotions are in focus of a lot of researchers from neuro-scientists [], to computer science specialists[], and emotional intelligence(EQ) becomes important, at least not less than IQ.
-There were only some computational emotions models created[computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel] and we failed to find computational emotion thinking model already created.
+Emotions are in focus of a lot of researchers from neuro-scientists [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science specialists[emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing], and emotional intelligence(EQ) becomes important, at least not less than IQ.
+There were only some computational emotions models created[computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and we failed to find computational emotion thinking model already created.
 
-Marvin Minsky in his book "The emotion machine"[emotionmachine] described human thinking model, and proposed promising base and framework for emotional thinking implementation in computing system. He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[affectivecomputingchallanges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion."  Hence there is no good example of unemotional intelligence and emotions are inseparable part of thinking we face the problem of emotional thinking model implementation as soon as we attempt to construct more or less comparable to human intelligence. We demonstrate below framework based on synthesis of AI, psychology and neuro-science theories and frameworks of emotions. We propose mapping and influence mechanism of neurotransmitters to computing system management parameters.
+Marvin Minsky in his book "The emotion machine"[emotionmachine] described human thinking model, and proposed promising base and framework for emotional thinking implementation in computing system. He demonstrated that emotions are inseparable parts of thinking. There are several number of researchers that share this point of view on emotions. Rosalind Picard in her article[affectivecomputingchallanges] "Challenges of affective programming" states: "Although people are the most intelligent systems we know, and people’s emotion appears to play a vital role in regulating and guiding intelligence, it does not mean there might not be a better way to implement some of these goals in machines. It may be possible that there is something like the wheel, which has no precise human or animal equivalent, but which provides for some of the same locomotion goals. There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its intelligence without having anything like emotion.". It was demonstrated that emotions plays vital role in learning and decision making [roleofemotions]. Robert Plutchik in his article "The nature of emotions" [natureofemotions] states that emotions evolved through years and became important part of cognitions, behavior and mind - "What we call cognition - the activity of knowing, learning and thinking, of which emotion is a part—evolved over millions of years. Charles Darwin recognized that the process of evolution by natural selection applied not only to anatomic structures but also to an animal’s "mind" and expressive behavior-a conclusion that led him to write a book on emotional expression.". Hence there is no example of unemotional intelligence and emotions are inseparable part of thinking we face the problem of emotional thinking model implementation as soon as we attempt to construct more or less comparable to human intelligence. This is interdisciplinary work that we have ran to create theoretical basis for computational emotional thinking to be used further for modelling and implementing as code and possible embodiment in social robot. There could be selected several domains for future use:
+
+1. Computer - human social collaboration
+1. Human emotional behavior assessment
+1. Computer games and simulations
+1. Automation of primitive service tasks
+1. Nursing
+
+We demonstrate below framework based on synthesis of AI, psychology and neuro-science theories and frameworks of emotions. We propose mapping and influence mechanism of neurotransmitters to computing system management parameters.
 
 ## Emotional thinking model
 
@@ -102,7 +110,7 @@ Figure 2. [Emotions in model of six thinking levels].
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
 1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state under influence of neuromodulation. Stimulus cognition could involve deliberation, further reflection, sef-reflection self-conscious processing (higher emotions) and  emotional state switch.
-1. Conscious behavior is activated as the result of stimulus cognition.
+1. Conscious behavior is activated as the result of stimulus cognitiinterdisciplinaryon.
 
 #### Stimulus appraisal and stimulus cognition
 
@@ -115,7 +123,7 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 #### Neuromodulation to computing system management mapping
 
-All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning. To map neurotransmitters influence to computing system management we created the list of computing system management parameters:
+All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning. To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
 
  1. Generic:
    2. CPU power: noradrenaline, dopamine
@@ -131,7 +139,7 @@ All that was presented above was the description of human thinking process and h
    2. Risky choices inclination: dopamine
    2. Number of option to process: noradrenaline
 
-Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be threads distribution or load balancing; memory - is working memory(short term memory) distribution between threads or computing processes, where previously remembered patters are activated under influence of dopamine and generated under influence of serotonin, learning is impacted by serotonin though pattern activation is impacted by dopamine that is the part of learning too; storage - long term memory management is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget). Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers. Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered). Confidence of the system in option is directly influenced by serotonin; satisfaction by a reward is influenced by serotonin; motivation is heavily impacted by dopamine; system tends to choose not risky/safe actions under impact of dopamine; number of options in width and depth to be processed is heavily influenced by noradrenaline.
+Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be computing processes distribution or load balancing; memory - is working memory(short term memory) distribution between computing processes, where previously remembered patters are activated under influence of dopamine and generated under influence of serotonin, learning is impacted by serotonin though pattern activation is impacted by dopamine that is the part of learning too; storage - long term memory management is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget). Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers. Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered). Confidence of the system in option is directly influenced by serotonin; satisfaction by a reward is influenced by serotonin; motivation is heavily impacted by dopamine; system tends to choose not risky/safe actions under impact of dopamine; number of options in width and depth to be processed is heavily influenced by noradrenaline.
 
 For example: system is in fear state. Dopamine impacts system at half strength. This makes system choose actions highlighted with high rewards(safest in case of fear). High noradrenaline in rage state causes system to think as quick as possible taking in account as less as possible number of options, implementing first action(usually not really safe) selected "fight or flight" reaction.
 
@@ -182,3 +190,18 @@ There are three bases of presented computational emotions model. First AI, Marvi
    2. Number of option to process: noradrenaline
 
 This could be base for further implementation as emotional thinking process used as base framework for general AI applications.
+
+We suppose that this model worth to be tested as computing system build on base of six levels. With some practical tasks to be solved in it. For example it could be automation of help desk. More than that we could run interesting experiment switching on and off emotions mechanisms, for example neurotransmitters in the system and monitoring efficiency of cognition and training processes.
+
+We suppose this framework and it's implementation could be useful in many different domains:
+
+1. Computer games
+1. Intellectual assistant capable of emotional dialogs and thinking
+1. Automatic interviewers
+1. Estimating human responses in the interest of manipulating it
+1. Simulations of large social groups
+1. Call centre automation
+1. Software and hardware support automation
+1. Virtual friends
+1. Nursing software
+1. Applications in emotional robots
