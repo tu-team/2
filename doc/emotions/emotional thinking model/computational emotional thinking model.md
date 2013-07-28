@@ -110,7 +110,7 @@ Figure 2. [Emotions in model of six thinking levels].
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
 1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state under influence of neuromodulation. Stimulus cognition could involve deliberation, further reflection, sef-reflection self-conscious processing (higher emotions) and  emotional state switch.
-1. Conscious behavior is activated as the result of stimulus cognitiinterdisciplinaryon.
+1. Conscious behavior is activated as the result of stimulus cognition.
 
 #### Stimulus appraisal and stimulus cognition
 
