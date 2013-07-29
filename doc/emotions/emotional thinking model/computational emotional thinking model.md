@@ -123,7 +123,10 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 #### Neuromodulation to computing system management mapping
 
-All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning. To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
+All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning.
+Serotonin takes part in: "behavioral state regulation and arousal, motor pattern generation, sleep, learning and plasticity, food intake, mood and social behavior [anatomic].
+
+To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
 
  1. Generic:
    2. CPU power: noradrenaline, dopamine
