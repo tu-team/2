@@ -22,6 +22,18 @@
   <defs
      id="defs3">
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6247">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6249" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop6251" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient4789">
       <stop
          id="stop4791"
@@ -1048,6 +1060,15 @@
        id="radialGradient4738"
        xlink:href="#linearGradient4715"
        inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6247"
+       id="linearGradient6253"
+       x1="117.37413"
+       y1="126.47571"
+       x2="171.25597"
+       y2="126.47571"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      inkscape:document-units="mm"
@@ -1059,8 +1080,8 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.1592967"
      inkscape:cx="258.87826"
-     inkscape:cy="812.40733"
-     inkscape:current-layer="layer9"
+     inkscape:cy="846.91101"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="744"
@@ -1077,7 +1098,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1644,35 +1665,46 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="axes"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        style="opacity:0.8;fill:none;stroke:#0fff08;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#EmptyTriangleOutM)"
        d="M 105.71428,286.29075 279.269,286.58368"
        id="path7570"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
     <path
        inkscape:connector-curvature="0"
        inkscape:connector-type="polyline"
        id="path7762"
        d="M 106.02032,286.60377 13.609652,194.15898"
        style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:#163fff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#EmptyTriangleOutM)"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
     <path
-       style="opacity:0.8;fill:#000000;fill-opacity:1;stroke:#ff1616;stroke-width:0.99900001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#EmptyTriangleOutM)"
+       style="opacity:0.80000000000000004;fill:#000000;fill-opacity:1;stroke:#ff1616;stroke-width:0.99900001000000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#EmptyTriangleOutM)"
        d="M 106.14625,286.60272 107.1564,114.87679"
        id="path6465"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
     <text
        sodipodi:linespacing="125%"
        id="text9392"
        y="296.5423"
        x="229.08737"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#2fef33;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
-       xml:space="preserve"><tspan
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0eb212;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
          y="296.5423"
          x="229.08737"
          id="tspan9394"
@@ -1684,19 +1716,25 @@
        y="100.32881"
        id="text9402"
        sodipodi:linespacing="125%"
-       transform="matrix(0,-1,1,0,0,0)"><tspan
+       transform="matrix(0,-1,1,0,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
          sodipodi:role="line"
          id="tspan9404"
          x="-181.70198"
          y="100.32881">noradrenaline</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#173fff;fill-opacity:0.8;stroke:none;display:inline;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0021c3;fill-opacity:0.80000001;stroke:none;display:inline;font-family:Sans"
        x="156.18439"
        y="137.58342"
        id="text9412"
        sodipodi:linespacing="125%"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
          sodipodi:role="line"
          id="tspan9414"
          x="156.18439"
@@ -1991,35 +2029,30 @@
      inkscape:label="parameters">
     <text
        sodipodi:linespacing="125%"
-       id="text9446-4"
-       y="269.56958"
-       x="271.52661"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="269.56958"
-         x="232.30785"
-         id="tspan9448-9"
-         sodipodi:role="line"
-         style="text-anchor:end;text-align:end">surprise</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
        id="text9446-9"
-       y="124.83365"
-       x="112.98358"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="124.83365"
-         x="112.98358"
+       y="129.14661"
+       x="116.81261"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff1616;fill-opacity:1;stroke:none;font-family:Sans;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="129.14661"
+         x="116.81261"
          id="tspan9448-6"
-         sodipodi:role="line">CPU power</tspan></text>
+         sodipodi:role="line"
+         style="stroke:none;stroke-opacity:1;fill:#ff1616;fill-opacity:1">CPU power</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text9446-2"
        y="174.047"
        x="18.092304"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0021c3;fill-opacity:0.80000001;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="matrix(1,0.99999396,0,1,0,0)"><tspan
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
          y="174.047"
          x="18.092304"
          id="tspan9448-0"
@@ -2029,9 +2062,12 @@
        id="text9446-2-0"
        y="129.02655"
        x="18.458515"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0021c3;fill-opacity:0.80000001;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="matrix(1,0.99999396,0,1,0,0)"><tspan
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
          y="129.02655"
          x="18.458515"
          id="tspan9448-0-7"
@@ -2041,9 +2077,12 @@
        id="text9446-2-2"
        y="151.75406"
        x="18.058125"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0021c3;fill-opacity:0.80000001;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="matrix(1,0.99999396,0,1,0,0)"><tspan
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
          y="151.75406"
          x="18.058125"
          id="tspan9448-0-79"
@@ -2051,36 +2090,105 @@
     <text
        sodipodi:linespacing="125%"
        id="text9446-9-4"
-       y="138.09784"
-       x="130.07707"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="138.09784"
-         x="130.07707"
+       y="142.22322"
+       x="116.46593"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff1616;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="142.22322"
+         x="116.46593"
          id="tspan9448-6-6"
          sodipodi:role="line">memory distribution</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text9446-9-4-8"
-       y="151.9872"
-       x="160.31451"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="151.9872"
-         x="160.31451"
+       y="155.29982"
+       x="116.46593"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff1616;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="155.29982"
+         x="116.46593"
          id="tspan9448-6-6-7"
          sodipodi:role="line">risky choices</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text9446-9-4-8-0"
-       y="164.06348"
-       x="178.12625"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="164.06348"
-         x="178.12625"
+       y="168.37643"
+       x="116.46593"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff1616;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="168.37643"
+         x="116.46593"
          id="tspan9448-6-6-7-3"
          sodipodi:role="line">number of options</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text9446-2-4"
+       y="-16.378311"
+       x="217.77406"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0eb212;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="-16.378311"
+         x="217.77406"
+         id="tspan9448-0-9"
+         sodipodi:role="line">confidence</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text9446-2-0-7"
+       y="-75.35331"
+       x="234.55141"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0eb212;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="-75.35331"
+         x="234.55141"
+         id="tspan9448-0-7-3"
+         sodipodi:role="line">storage</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text9446-2-2-3"
+       y="-48.817921"
+       x="232.11488"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0eb212;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="-48.817921"
+         x="232.11488"
+         id="tspan9448-0-79-2"
+         sodipodi:role="line">learning</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text9446-2-4-5"
+       y="10.186372"
+       x="215.30824"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0eb212;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       transform="matrix(1,0.99999396,0,1,0,0)"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180"><tspan
+         y="10.186372"
+         x="215.30824"
+         id="tspan9448-0-9-4"
+         sodipodi:role="line">satisfaction</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

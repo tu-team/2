@@ -58,9 +58,6 @@ Emotions are organised in three dimensional circumplex model where third dimensi
 More complex emotions based on three could be combined in similar way, see Cambria [senticcomputing].
 Cambria [hourglass] used Gauss function to describe passage from one sentic level to another. We interpreted it as: Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian.
 
-![Gaussian 3D](Gauss 3D.png)
-Figure 1. [Gaussian function in three dimensions].
-
 #### Neuromodulation and neurotransmission theory
 
 Third basis of emotional thinking model is neuroscience. Objective brain work is described as neuromodulation process in [neuromodulatory] and [emotionsbraintorobot] with base of four neuromodulatory systems:
@@ -103,7 +100,7 @@ We correspond spinal cord, hypothalamus and amygdala with instinctive layer of M
 This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[natureofemotions] in Minsky's six thinking levels.
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
-Figure 2. [Emotions in model of six thinking levels].
+Figure 1. [Emotions in model of six thinking levels].
 
 1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdathis modella and all these neuronal systems take part in neuromodulation.
 1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin. 
@@ -125,6 +122,9 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning.
 To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
+
+![Computing system parameters mapping](parameters mapping.png)
+Figure 2. [Computing system parameters mapping].
 
  1. Generic:
    2. CPU power: noradrenaline
