@@ -136,7 +136,7 @@ To map neurotransmitters influence to computing system management we created the
    2. Satisfaction: serotonin
    2. Motivation, wanting: dopamine
    2. Risky choices inclination: noradrenaline
-   2. Number of option to process: noradrenaline
+   2. Number of options to process: noradrenaline
 
 
 Serotonin takes part in: behavioral state regulation and arousal, motor pattern generation, learning and plasticity, mood and social behavior [anatomic] also in self confidence, inner strength, satisfaction [cubeofemotions]. Dopamine plays a major role in motor activation, reward processing, reinforcement, motivation (wanting) [cubeofemotions, emotionsbraintorobot, roleofemotions]. Noradrenaline impacts attention, vigilance, activity[cubeofemotions].
