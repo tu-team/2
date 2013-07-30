@@ -191,18 +191,16 @@ Emotions are part of human thinking. Role of emotions could not be underestimate
 There are three bases of presented computational emotions model. First AI, Marvin Minsky "The emotion machine"[emotionmachine] thinking model(model of six). We presented emotion processing workflow. Evolutionary psychological model: "wheel of emotions" by Plutchik[natureofemotions]. Plutchik proposed 8 basic emotions grouped in pairs:joy - sorrow, anger - fear, acceptance - disgust, surprise - expectancy. We used "wheel of emotions" as subjective emotional state model. Objective emotional brain activity is modeled by "cube of emotions" the monoamine neurotransmitters emotions model. We presented following parameters of computing system management with mapping to monoamine neurotransmitters.
 
  1. Generic:
-   2. CPU power: noradrenaline, dopamine
-   2. Memory
-     3. Pattern generation: serotonin
-     3. Pattern activation: dopamine
-     3. Learning: serotonin
+   2. CPU power: noradrenaline
+   2. Memory distribution (attention): noradrenaline
+   2. Learning: serotonin, dopamine
    2. Storage: serotonin, dopamine
  1. Decision making/reward processing:
    2. Confidence: serotonin
    2. Satisfaction: serotonin
    2. Motivation, wanting: dopamine
-   2. Risky choices inclination: dopamine
-   2. Number of option to process: noradrenaline
+   2. Risky choices inclination: noradrenaline
+   2. Number of options to process: noradrenaline
 
 This could be base for further implementation as emotional thinking process used as base framework for general AI applications.
 
