@@ -124,25 +124,35 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 #### Neuromodulation to computing system management mapping
 
 All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning.
-Serotonin takes part in: "behavioral state regulation and arousal, motor pattern generation, sleep, learning and plasticity, food intake, mood and social behavior [anatomic].
-
 To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
 
  1. Generic:
-   2. CPU power: noradrenaline, dopamine
-   2. Memory
-     3. Pattern generation: serotonin
-     3. Pattern activation: dopamine
-     3. Learning: serotonin
+   2. CPU power: noradrenaline
+   2. Memory distribution (attention): noradrenaline
+   2. Learning: serotonin, dopamine
    2. Storage: serotonin, dopamine
  1. Decision making/reward processing:
    2. Confidence: serotonin
    2. Satisfaction: serotonin
    2. Motivation, wanting: dopamine
-   2. Risky choices inclination: dopamine
+   2. Risky choices inclination: noradrenaline
    2. Number of option to process: noradrenaline
 
-Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be computing processes distribution or load balancing; memory - is working memory(short term memory) distribution between computing processes, where previously remembered patters are activated under influence of dopamine and generated under influence of serotonin, learning is impacted by serotonin though pattern activation is impacted by dopamine that is the part of learning too; storage - long term memory management is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget). Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers. Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered). Confidence of the system in option is directly influenced by serotonin; satisfaction by a reward is influenced by serotonin; motivation is heavily impacted by dopamine; system tends to choose not risky/safe actions under impact of dopamine; number of options in width and depth to be processed is heavily influenced by noradrenaline.
+
+Serotonin takes part in: behavioral state regulation and arousal, motor pattern generation, learning and plasticity, mood and social behavior [anatomic] also in self confidence, inner strength, satisfaction [cubeofemotions]. Dopamine plays a major role in motor activation, reward processing, reinforcement, motivation (wanting) [cubeofemotions, emotionsbraintorobot, roleofemotions]. Noradrenaline impacts attention, vigilance, activity[cubeofemotions].
+
+Parameters are grouped in two folders: most obvious computing system parameters (generic):
+*CPU power*(computing processes distribution or load balancing) is influenced by noradrenaline the higher is noradrenaline more computing processes should be concentrated on current activity.
+*Working memory(short term)* distribution is influenced by noradrenaline as neurotransmitter regulating attention.
+*Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
+*Storage* management (long term memory) is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget).
+
+Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers.
+Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered).
+*Confidence and satisfaction* of the system is directly influenced by serotonin higher serotonin more confident is the system.
+System is more *motivated* under influence of dopamine.
+System tends to choose *risky* actions under impact of noradrenaline.
+Noradrenaline makes system use less *number of options* in width and depth to be processed during reasoning.
 
 For example: system is in fear state. Dopamine impacts system at half strength. This makes system choose actions highlighted with high rewards(safest in case of fear). High noradrenaline in rage state causes system to think as quick as possible taking in account as less as possible number of options, implementing first action(usually not really safe) selected "fight or flight" reaction.
 
