@@ -58,9 +58,6 @@ Emotions are organised in three dimensional circumplex model where third dimensi
 More complex emotions based on three could be combined in similar way, see Cambria [senticcomputing].
 Cambria [hourglass] used Gauss function to describe passage from one sentic level to another. We interpreted it as: Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian.
 
-![Gaussian 3D](Gauss 3D.png)
-Figure 1. [Gaussian function in three dimensions].
-
 #### Neuromodulation and neurotransmission theory
 
 Third basis of emotional thinking model is neuroscience. Objective brain work is described as neuromodulation process in [neuromodulatory] and [emotionsbraintorobot] with base of four neuromodulatory systems:
@@ -103,14 +100,15 @@ We correspond spinal cord, hypothalamus and amygdala with instinctive layer of M
 This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[natureofemotions] in Minsky's six thinking levels.
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
-Figure 2. [Emotions in model of six thinking levels].
+
+Figure 1. [Emotions in model of six thinking levels].
 
 1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdathis modella and all these neuronal systems take part in neuromodulation.
 1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin. 
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
 1. Stimulus cognition is processed in cingulate cortex, frontal cortex (working memory) that we correspond to rest 5 layers of thinking model. Stimulus cognition actions is done in the emotional state under influence of neuromodulation. Stimulus cognition could involve deliberation, further reflection, sef-reflection self-conscious processing (higher emotions) and  emotional state switch.
-1. Conscious behavior is activated as the result of stimulus cognitiinterdisciplinaryon.
+1. Conscious behavior is activated as the result of stimulus cognition.
 
 #### Stimulus appraisal and stimulus cognition
 
@@ -123,23 +121,40 @@ Feeling the emotional state is closely related to neuromodulation the physiologi
 
 #### Neuromodulation to computing system management mapping
 
-All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning. To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
+All that was presented above was the description of human thinking process and human emotions in terms of it. Only one reference to AI was done to Marvin Minsky "The emotion machine" [emotionmachine]. Result of neuromodulation is neurotransmitters secretion. Roughly we could state that noradrenaline influences overall speed of thinking process, dopamine and serotonin - reward processing and learning.
+To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
+
+![Computing system parameters mapping](parameters mapping.png)
+
+Figure 2. [Computing system parameters mapping].
 
  1. Generic:
-   2. CPU power: noradrenaline, dopamine
-   2. Memory
-     3. Pattern generation: serotonin
-     3. Pattern activation: dopamine
-     3. Learning: serotonin
+   2. CPU power: noradrenaline
+   2. Memory distribution (attention): noradrenaline
+   2. Learning: serotonin, dopamine
    2. Storage: serotonin, dopamine
  1. Decision making/reward processing:
    2. Confidence: serotonin
    2. Satisfaction: serotonin
    2. Motivation, wanting: dopamine
-   2. Risky choices inclination: dopamine
-   2. Number of option to process: noradrenaline
+   2. Risky choices inclination: noradrenaline
+   2. Number of options to process: noradrenaline
 
-Parameters are grouped in two folders: most obvious computing system parameters: CPU power management - could be computing processes distribution or load balancing; memory - is working memory(short term memory) distribution between computing processes, where previously remembered patters are activated under influence of dopamine and generated under influence of serotonin, learning is impacted by serotonin though pattern activation is impacted by dopamine that is the part of learning too; storage - long term memory management is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget). Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers. Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered). Confidence of the system in option is directly influenced by serotonin; satisfaction by a reward is influenced by serotonin; motivation is heavily impacted by dopamine; system tends to choose not risky/safe actions under impact of dopamine; number of options in width and depth to be processed is heavily influenced by noradrenaline.
+
+Serotonin takes part in: behavioral state regulation and arousal, motor pattern generation, learning and plasticity, mood and social behavior [anatomic] also in self confidence, inner strength, satisfaction [cubeofemotions]. Dopamine plays a major role in motor activation, reward processing, reinforcement, motivation (wanting) [cubeofemotions, emotionsbraintorobot, roleofemotions]. Noradrenaline impacts attention, vigilance, activity[cubeofemotions].
+
+Parameters are grouped in two folders: most obvious computing system parameters (generic):
+*CPU power*(computing processes distribution or load balancing) is influenced by noradrenaline the higher is noradrenaline more computing processes should be concentrated on current activity.
+*Working memory(short term)* distribution is influenced by noradrenaline as neurotransmitter regulating attention.
+*Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
+*Storage* management (long term memory) is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget).
+
+Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers.
+Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered).
+*Confidence and satisfaction* of the system is directly influenced by serotonin higher serotonin more confident is the system.
+System is more *motivated* under influence of dopamine.
+System tends to choose *risky* actions under impact of noradrenaline.
+Noradrenaline makes system use less *number of options* in width and depth to be processed during reasoning.
 
 For example: system is in fear state. Dopamine impacts system at half strength. This makes system choose actions highlighted with high rewards(safest in case of fear). High noradrenaline in rage state causes system to think as quick as possible taking in account as less as possible number of options, implementing first action(usually not really safe) selected "fight or flight" reaction.
 

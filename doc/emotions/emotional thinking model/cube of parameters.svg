@@ -1079,9 +1079,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1592967"
-     inkscape:cx="32.286345"
+     inkscape:cx="119.78541"
      inkscape:cy="852.06785"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer10"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="744"
@@ -1102,6 +1102,21 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer10"
+     inkscape:label="bkg">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="rect3395"
+       width="282.93018"
+       height="198.39615"
+       x="6.0381441"
+       y="106.09882"
+       inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
+  </g>
   <g
      inkscape:label="cube"
      inkscape:groupmode="layer"
