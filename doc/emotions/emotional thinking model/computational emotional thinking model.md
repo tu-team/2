@@ -100,6 +100,7 @@ We correspond spinal cord, hypothalamus and amygdala with instinctive layer of M
 This is attempt to synthesize theory based on three approaches. First of all we described Plutchik's feedback loops[natureofemotions] in Minsky's six thinking levels.
 
 ![Emotions in model of six thinking levels](six levels of emotions.png)
+
 Figure 1. [Emotions in model of six thinking levels].
 
 1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdathis modella and all these neuronal systems take part in neuromodulation.
@@ -124,6 +125,7 @@ All that was presented above was the description of human thinking process and h
 To map neurotransmitters influence to computing system management we created the list of abstract computing system management parameters:
 
 ![Computing system parameters mapping](parameters mapping.png)
+
 Figure 2. [Computing system parameters mapping].
 
  1. Generic:
