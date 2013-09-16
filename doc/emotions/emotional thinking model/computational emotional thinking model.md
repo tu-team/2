@@ -103,7 +103,7 @@ This is attempt to synthesize theory based on three approaches. First of all we 
 
 Figure 1. [Emotions in model of six thinking levels].
 
-1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdathis modella and all these neuronal systems take part in neuromodulation.
+1. Inbound stimulus is been processed(transmitted/apprised) via spinal cord, hypothalamus, amygdala and all these neuronal systems take part in neuromodulation.
 1. Neuromodulation actually triggers the emotional state of human and all the rest actions are done under the influence of neuromodulatory systems: nor-adrenaline, dopamine, serotonin. 
 1. Instinctive behavior is processed on instinctive reactions layer that usually is not involved in conscious actions.
 1. Result of behavior actions is effect state that influences the system again as stimulus. This second stimulus is been apprised on instinctive reactions layer and triggers neuromodulation again. Neuromodulation in it's turn switches emotional state second time. This way stimulus cognition actions started in first emotional state, at some point could continue in second emotional state.
