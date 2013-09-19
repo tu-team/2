@@ -1079,9 +1079,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="171.33587"
-     inkscape:cy="916.99262"
-     inkscape:current-layer="g9386"
+     inkscape:cx="198.48178"
+     inkscape:cy="858.13725"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1064"
@@ -1098,7 +1098,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1741,7 +1741,7 @@
          id="tspan9404"
          x="-205.70198"
          y="100.32881"
-         style="font-size:14px;fill:#000000;fill-opacity:1">noradrenaline</tspan></text>
+         style="font-size:14px;fill:#920000;fill-opacity:1">noradrenaline</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0.8;stroke:none;display:inline;font-family:Sans"
@@ -1757,7 +1757,7 @@
          id="tspan9414"
          x="153.35596"
          y="140.41185"
-         style="font-size:14.00000002px;fill:#000000;fill-opacity:1">dopamine</tspan></text>
+         style="font-size:14.00000002000000000px;fill:#001a92;fill-opacity:1">dopamine</tspan></text>
   </g>
   <g
      style="display:inline"
