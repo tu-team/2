@@ -14,9 +14,9 @@
    height="297mm"
    id="svg6409"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="cube of parameters.svg"
-   inkscape:export-filename="F:\Projects\2\2\doc\emotions\emotional thinking model\cube with wheel.png"
+   inkscape:export-filename="F:\Projects\2\2\doc\emotions\emotional thinking model\cube of parameters.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -1078,15 +1078,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1592967"
-     inkscape:cx="119.78541"
-     inkscape:cy="852.06785"
-     inkscape:current-layer="layer10"
+     inkscape:zoom="1"
+     inkscape:cx="258.05379"
+     inkscape:cy="654.63919"
+     inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-width="1920"
+     inkscape:window-height="1064"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:connector-spacing="0"
      units="mm" />
@@ -1713,22 +1713,22 @@
     <text
        sodipodi:linespacing="125%"
        id="text9392"
-       y="296.5423"
-       x="219.08737"
+       y="298.5423"
+       x="217.08737"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
        xml:space="preserve"
        inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
        inkscape:export-xdpi="180"
        inkscape:export-ydpi="180"><tspan
-         y="296.5423"
-         x="219.08737"
+         y="298.5423"
+         x="217.08737"
          id="tspan9394"
          sodipodi:role="line"
-         style="font-size:12px;fill:#000000;fill-opacity:1">serotonin</tspan></text>
+         style="font-size:14px;fill:#049200;fill-opacity:1">serotonin</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
-       x="-201.70198"
+       x="-203.70198"
        y="100.32881"
        id="text9402"
        sodipodi:linespacing="125%"
@@ -1738,9 +1738,9 @@
        inkscape:export-ydpi="180"><tspan
          sodipodi:role="line"
          id="tspan9404"
-         x="-201.70198"
+         x="-203.70198"
          y="100.32881"
-         style="font-size:12px;fill:#000000;fill-opacity:1">noradrenaline</tspan></text>
+         style="font-size:14px;fill:#920000;fill-opacity:1">noradrenaline</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0.80000001;stroke:none;display:inline;font-family:Sans"
@@ -1756,7 +1756,7 @@
          id="tspan9414"
          x="153.35596"
          y="140.41185"
-         style="font-size:12px;fill:#000000;fill-opacity:1">dopamine</tspan></text>
+         style="font-size:14.00000002000000000px;fill:#001a92;fill-opacity:1">dopamine</tspan></text>
   </g>
   <g
      style="display:none"
@@ -2290,14 +2290,14 @@
        inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="209.22604"
+       x="216.18307"
        y="262.05344"
        id="text3420"
        sodipodi:linespacing="125%"><tspan
          style="font-size:12px;fill:#000000;fill-opacity:1"
          sodipodi:role="line"
          id="tspan3422"
-         x="209.22604"
+         x="216.18307"
          y="262.05344">confidence</tspan></text>
     <text
        inkscape:export-ydpi="180"
@@ -2305,14 +2305,14 @@
        inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="229.35886"
+       x="234.20651"
        y="230.46124"
        id="text3424"
        sodipodi:linespacing="125%"><tspan
          style="font-size:12px;fill:#000000;fill-opacity:1"
          sodipodi:role="line"
          id="tspan3426"
-         x="229.35886"
+         x="234.20651"
          y="230.46124">storage</tspan></text>
     <text
        inkscape:export-ydpi="180"
@@ -2320,14 +2320,14 @@
        inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="226.43503"
+       x="231.81589"
        y="246.25734"
        id="text3428"
        sodipodi:linespacing="125%"><tspan
          style="font-size:12px;fill:#000000;fill-opacity:1"
          sodipodi:role="line"
          id="tspan3430"
-         x="226.43503"
+         x="231.81589"
          y="246.25734">learning</tspan></text>
     <text
        inkscape:export-ydpi="180"
@@ -2335,14 +2335,14 @@
        inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/parameters mapping180.png"
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="206.26706"
+       x="214.54245"
        y="277.84955"
        id="text3432"
        sodipodi:linespacing="125%"><tspan
          style="font-size:12px;fill:#000000;fill-opacity:1"
          sodipodi:role="line"
          id="tspan3434"
-         x="206.26706"
+         x="214.54245"
          y="277.84955">satisfaction</tspan></text>
     <text
        inkscape:export-ydpi="180"
