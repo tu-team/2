@@ -44,7 +44,7 @@
         <task id="0" name="Start project" color="#8cb6ce" meeting="true" start="2014-01-15" duration="0" complete="0" expand="true">
             <depend id="3" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="508" name="TU Instinctive" color="#8cb6ce" meeting="false" start="2014-01-15" duration="483" complete="0" expand="true">
+        <task id="508" name="TU Instinctive" color="#8cb6ce" meeting="false" start="2014-01-15" duration="500" complete="0" expand="true">
             <task id="3" name="Preliminary development" color="#8cb6ce" meeting="false" start="2014-01-15" duration="51" complete="0" expand="false">
                 <depend id="29" type="2" difference="0" hardness="Strong"/>
                 <task id="5" name="Version 1.0 bugs" color="#8cb6ce" meeting="false" start="2014-01-15" duration="15" complete="0" expand="true">
@@ -183,15 +183,23 @@
             </task>
             <task id="132" name="Common sense reasoning" color="#8cb6ce" meeting="false" start="2015-07-13" duration="75" complete="0" expand="false">
                 <depend id="139" type="2" difference="0" hardness="Strong"/>
+                <depend id="509" type="2" difference="0" hardness="Strong"/>
                 <task id="134" name="Design" color="#8cb6ce" meeting="false" start="2015-07-13" duration="15" complete="0" expand="true">
                     <depend id="136" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="136" name="Implementation and testing" color="#8cb6ce" meeting="false" start="2015-08-03" duration="60" complete="0" expand="true"/>
             </task>
-            <task id="139" name="Knowledge base creation and training" color="#8cb6ce" meeting="false" start="2015-10-26" duration="20" complete="0" expand="true">
+            <task id="509" name="Time control extension" color="#8cb6ce" meeting="false" start="2015-10-26" duration="17" complete="0" expand="false">
+                <depend id="139" type="2" difference="0" hardness="Strong"/>
+                <task id="510" name="Design time control critic" color="#8cb6ce" meeting="false" start="2015-10-26" duration="2" complete="0" expand="true">
+                    <depend id="511" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="511" name="Implement time control" color="#8cb6ce" meeting="false" start="2015-10-28" duration="15" complete="0" expand="true"/>
+            </task>
+            <task id="139" name="Knowledge base creation and training" color="#8cb6ce" meeting="false" start="2015-11-18" duration="20" complete="0" expand="true">
                 <depend id="142" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="142" name="TU Instinctive project end" color="#8cb6ce" meeting="true" start="2015-11-23" duration="0" complete="0" expand="true"/>
+            <task id="142" name="TU Instinctive project end" color="#8cb6ce" meeting="true" start="2015-12-16" duration="0" complete="0" expand="true"/>
         </task>
     </tasks>
     <resources/>
