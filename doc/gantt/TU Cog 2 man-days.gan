@@ -44,7 +44,7 @@
         <task id="0" name="Start project" color="#8cb6ce" meeting="true" start="2014-01-15" duration="0" complete="0" expand="true">
             <depend id="3" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="508" name="TU Cog" color="#8cb6ce" meeting="false" start="2014-01-15" duration="540" complete="0" expand="true">
+        <task id="508" name="TU Cog" color="#8cb6ce" meeting="false" start="2014-01-15" duration="561" complete="0" expand="true">
             <task id="3" name="Preliminary development" color="#8cb6ce" meeting="false" start="2014-01-15" duration="51" complete="0" expand="false">
                 <depend id="29" type="2" difference="0" hardness="Strong"/>
                 <task id="5" name="Version 1.0 bugs" color="#8cb6ce" meeting="false" start="2014-01-15" duration="15" complete="0" expand="true">
@@ -112,7 +112,7 @@
                 </task>
                 <task id="63" name="Thinking model end" color="#8cb6ce" meeting="true" start="2014-07-16" duration="0" complete="0" expand="true"/>
             </task>
-            <task id="67" name="Analyser" color="#8cb6ce" meeting="false" start="2014-07-16" duration="71" complete="0" expand="false">
+            <task id="67" name="Analyser" color="#8cb6ce" meeting="false" start="2014-07-16" duration="92" complete="0" expand="false">
                 <depend id="100" type="2" difference="0" hardness="Strong"/>
                 <task id="68" name="JNI PLN" color="#8cb6ce" meeting="false" start="2014-07-16" duration="15" complete="0" expand="true">
                     <depend id="70" type="2" difference="0" hardness="Strong"/>
@@ -140,79 +140,92 @@
                 </task>
                 <task id="89" name="Integration" color="#8cb6ce" meeting="false" start="2014-10-09" duration="7" complete="0" expand="true">
                     <depend id="93" type="2" difference="0" hardness="Strong"/>
+                    <depend id="522" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="93" name="Testing" color="#8cb6ce" meeting="false" start="2014-10-20" duration="3" complete="0" expand="true">
+                <task id="522" name="Knowledge to rules inferrer design" color="#8cb6ce" meeting="false" start="2014-10-20" duration="4" complete="0" expand="true">
+                    <depend id="524" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="524" name="Knowlege to rules inferrer" color="#8cb6ce" meeting="false" start="2014-10-24" duration="7" complete="0" expand="true">
+                    <depend id="526" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="526" name="Test and debug" color="#8cb6ce" meeting="false" start="2014-11-04" duration="7" complete="0" expand="true">
+                    <depend id="528" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="528" name="Integration" color="#8cb6ce" meeting="false" start="2014-11-13" duration="3" complete="0" expand="true">
+                    <depend id="93" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="93" name="Testing" color="#8cb6ce" meeting="false" start="2014-11-18" duration="3" complete="0" expand="true">
                     <depend id="96" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="96" name="Analyser end" color="#8cb6ce" meeting="true" start="2014-10-23" duration="0" complete="0" expand="true"/>
+                <task id="96" name="Analyser end" color="#8cb6ce" meeting="true" start="2014-11-21" duration="0" complete="0" expand="true"/>
             </task>
-            <task id="100" name="Actuator" color="#8cb6ce" meeting="false" start="2014-10-23" duration="77" complete="0" expand="false">
+            <task id="100" name="Actuator" color="#8cb6ce" meeting="false" start="2014-11-21" duration="77" complete="0" expand="false">
                 <depend id="122" type="2" difference="0" hardness="Strong"/>
-                <task id="102" name="Smart actuator" color="#8cb6ce" meeting="false" start="2014-10-23" duration="10" complete="0" expand="true">
+                <task id="102" name="Smart actuator" color="#8cb6ce" meeting="false" start="2014-11-21" duration="10" complete="0" expand="true">
                     <depend id="104" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="104" name="Test and debug" color="#8cb6ce" meeting="false" start="2014-11-06" duration="10" complete="0" expand="true">
+                <task id="104" name="Test and debug" color="#8cb6ce" meeting="false" start="2014-12-05" duration="10" complete="0" expand="true">
                     <depend id="107" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="107" name="Smart feedback analyser" color="#8cb6ce" meeting="false" start="2014-11-20" duration="15" complete="0" expand="true">
+                <task id="107" name="Smart feedback analyser" color="#8cb6ce" meeting="false" start="2014-12-19" duration="15" complete="0" expand="true">
                     <depend id="110" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="110" name="Test and debug" color="#8cb6ce" meeting="false" start="2014-12-11" duration="7" complete="0" expand="true">
+                <task id="110" name="Test and debug" color="#8cb6ce" meeting="false" start="2015-01-09" duration="7" complete="0" expand="true">
                     <depend id="112" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="112" name="Smart reporter" color="#8cb6ce" meeting="false" start="2014-12-22" duration="10" complete="0" expand="true">
+                <task id="112" name="Smart reporter" color="#8cb6ce" meeting="false" start="2015-01-20" duration="10" complete="0" expand="true">
                     <depend id="116" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="116" name="Test and debug" color="#8cb6ce" meeting="false" start="2015-01-05" duration="10" complete="0" expand="true">
+                <task id="116" name="Test and debug" color="#8cb6ce" meeting="false" start="2015-02-03" duration="10" complete="0" expand="true">
                     <depend id="119" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="119" name="Testing" color="#8cb6ce" meeting="false" start="2015-01-19" duration="15" complete="0" expand="true">
+                <task id="119" name="Testing" color="#8cb6ce" meeting="false" start="2015-02-17" duration="15" complete="0" expand="true">
                     <depend id="121" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="121" name="Smart actuator end" color="#8cb6ce" meeting="true" start="2015-02-09" duration="0" complete="0" expand="true"/>
+                <task id="121" name="Smart actuator end" color="#8cb6ce" meeting="true" start="2015-03-10" duration="0" complete="0" expand="true"/>
             </task>
-            <task id="122" name="Emotional thinking" color="#8cb6ce" meeting="false" start="2015-02-09" duration="110" complete="0" expand="false">
+            <task id="122" name="Emotional thinking" color="#8cb6ce" meeting="false" start="2015-03-10" duration="110" complete="0" expand="false">
                 <depend id="132" type="2" difference="0" hardness="Strong"/>
-                <task id="123" name="Apprisal theory analysis" color="#8cb6ce" meeting="false" start="2015-02-09" duration="10" complete="0" expand="true">
+                <task id="123" name="Apprisal theory analysis" color="#8cb6ce" meeting="false" start="2015-03-10" duration="10" complete="0" expand="true">
                     <depend id="125" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="125" name="Design" color="#8cb6ce" meeting="false" start="2015-02-23" duration="20" complete="0" expand="true">
+                <task id="125" name="Design" color="#8cb6ce" meeting="false" start="2015-03-24" duration="20" complete="0" expand="true">
                     <depend id="127" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="127" name="Implementation and testing" color="#8cb6ce" meeting="false" start="2015-03-23" duration="80" complete="0" expand="true"/>
+                <task id="127" name="Implementation and testing" color="#8cb6ce" meeting="false" start="2015-04-21" duration="80" complete="0" expand="true"/>
             </task>
-            <task id="132" name="Common sense reasoning" color="#8cb6ce" meeting="false" start="2015-07-13" duration="75" complete="0" expand="false">
+            <task id="132" name="Common sense reasoning" color="#8cb6ce" meeting="false" start="2015-08-11" duration="75" complete="0" expand="false">
                 <depend id="139" type="2" difference="0" hardness="Strong"/>
                 <depend id="509" type="2" difference="0" hardness="Strong"/>
-                <task id="134" name="Design" color="#8cb6ce" meeting="false" start="2015-07-13" duration="15" complete="0" expand="true">
+                <task id="134" name="Design" color="#8cb6ce" meeting="false" start="2015-08-11" duration="15" complete="0" expand="true">
                     <depend id="136" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="136" name="Implementation and testing" color="#8cb6ce" meeting="false" start="2015-08-03" duration="60" complete="0" expand="true"/>
+                <task id="136" name="Implementation and testing" color="#8cb6ce" meeting="false" start="2015-09-01" duration="60" complete="0" expand="true"/>
             </task>
-            <task id="509" name="Dialog extension" color="#8cb6ce" meeting="false" start="2015-10-26" duration="40" complete="0" expand="false">
+            <task id="509" name="Dialog extension" color="#8cb6ce" meeting="false" start="2015-11-24" duration="40" complete="0" expand="false">
                 <depend id="518" type="2" difference="0" hardness="Strong"/>
-                <task id="510" name="Merge training and request modes" color="#8cb6ce" meeting="false" start="2015-10-26" duration="5" complete="0" expand="true">
+                <task id="510" name="Merge training and request modes" color="#8cb6ce" meeting="false" start="2015-11-24" duration="5" complete="0" expand="true">
                     <depend id="511" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="511" name="Design external system collaboration mode" color="#8cb6ce" meeting="false" start="2015-11-02" duration="10" complete="0" expand="true">
+                <task id="511" name="Design external system collaboration mode" color="#8cb6ce" meeting="false" start="2015-12-01" duration="10" complete="0" expand="true">
                     <depend id="514" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="514" name="Implement external system collaboration mode" color="#8cb6ce" meeting="false" start="2015-11-16" duration="20" complete="0" expand="true">
+                <task id="514" name="Implement external system collaboration mode" color="#8cb6ce" meeting="false" start="2015-12-15" duration="20" complete="0" expand="true">
                     <depend id="516" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="516" name="Extend unknown phrases and concepts handling" color="#8cb6ce" meeting="false" start="2015-12-14" duration="5" complete="0" expand="true"/>
+                <task id="516" name="Extend unknown phrases and concepts handling" color="#8cb6ce" meeting="false" start="2016-01-12" duration="5" complete="0" expand="true"/>
             </task>
-            <task id="518" name="Time control extension" color="#8cb6ce" meeting="false" start="2015-12-21" duration="17" complete="0" expand="true">
+            <task id="518" name="Time control extension" color="#8cb6ce" meeting="false" start="2016-01-19" duration="17" complete="0" expand="false">
                 <depend id="139" type="2" difference="0" hardness="Strong"/>
-                <task id="520" name="Design time control critic" color="#8cb6ce" meeting="false" start="2015-12-21" duration="2" complete="0" expand="true">
+                <task id="520" name="Design time control critic" color="#8cb6ce" meeting="false" start="2016-01-19" duration="2" complete="0" expand="true">
                     <depend id="521" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="521" name="Implement and test time control critic" color="#8cb6ce" meeting="false" start="2015-12-23" duration="15" complete="0" expand="true"/>
+                <task id="521" name="Implement and test time control critic" color="#8cb6ce" meeting="false" start="2016-01-21" duration="15" complete="0" expand="true"/>
             </task>
-            <task id="139" name="Knowledge base creation and training" color="#8cb6ce" meeting="false" start="2016-01-13" duration="20" complete="0" expand="true">
+            <task id="139" name="Knowledge base creation and training" color="#8cb6ce" meeting="false" start="2016-02-11" duration="20" complete="0" expand="true">
                 <depend id="142" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="142" name="TU Cog project end2" color="#8cb6ce" meeting="true" start="2016-02-10" duration="0" complete="0" expand="true"/>
+            <task id="142" name="TU Cog project end2" color="#8cb6ce" meeting="true" start="2016-03-10" duration="0" complete="0" expand="true"/>
         </task>
     </tasks>
     <resources/>
