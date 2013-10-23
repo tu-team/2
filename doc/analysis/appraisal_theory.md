@@ -6,11 +6,9 @@
 3. Process 
 
 
-## Lazarus
+## Lazarus structure model 
 
 (Smith & Kirby, 2009)
-
-1. Structure model
 
 ### Primary appraisal
 
@@ -21,7 +19,5 @@
 
 
 ## Scherer
-
-he
 
 ## Aronson
