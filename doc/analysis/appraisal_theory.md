@@ -17,6 +17,7 @@
 
 ### Secondary appraisal
 
+resources and options for coping 
 
 ## Scherer
 
