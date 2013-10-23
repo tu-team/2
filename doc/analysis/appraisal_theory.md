@@ -17,7 +17,9 @@
 
 ### Secondary appraisal
 
-resources and options for coping 
+* resources and who should be held accountable
+* options for coping : Problem-focused coping , emotion-focused coping ,
+* Future expectancy
 
 ## Scherer
 
