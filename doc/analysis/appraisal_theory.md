@@ -6,7 +6,7 @@
 3. Process 
 
 
-## Lazarus structure model 
+## Lazarus (structure model) 
 
 (Smith & Kirby, 2009)
 
