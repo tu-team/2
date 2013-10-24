@@ -1,4 +1,4 @@
-# Appraisal theorise analysis
+# Appraisal theories analysis
 
 
 1. Compatibility with model of six
