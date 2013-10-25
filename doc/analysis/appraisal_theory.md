@@ -2,17 +2,24 @@
 
 ## Criteria list:
 
-1. Compatibility with model of six
+
+1. Compatible with model of six
+1. Compatibel with Plutchick theory 
+1. Compatible with Tomkins theory
 1. Structure
 1. Process 
-
+1. Continuous
 
 ## Structural model
 
 ### Criteria:
 
-1. Hardly compatibile with model of six (no levels of processing)
-1. Structure model
+1. Compatibile with model of six (no levels of processing) = 0.5
+1. Compatibel with Plutchick theory 
+1. Compatible with Tomkins theory
+1. Structure = 1
+1. Process = 0
+1. Continuous - 0 
 
 ### Lit
 
@@ -80,6 +87,14 @@ Two-process model of appraisal theory, associative processing and reasoning work
 While the two-process model involves processes occurring at the same time, parallel to one another, Scherer’s multi-level sequential check model is composed of processes that take place in a specific sequence.
 
 ## Roseman
+
+### Criteria
+
+1. Compatible with model of six - good
+1. Compatibel with Plutchick theory 
+1. Compatible with Tomkins theory
+1. Structure
+1. Process 
 
 ### Lit
 
