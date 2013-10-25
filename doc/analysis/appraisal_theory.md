@@ -83,6 +83,8 @@ While the two-process model involves processes occurring at the same time, paral
 
 ### Lit
 
+1. Roseman, Ira J. (1996). Appraisal Determinants of Emotions: Constructing a More Accurate and Comprehensive Theory. Cognition & Emotion, 10: 3, 241 -278.
+
 ### Components
 
 1. motive consistency
