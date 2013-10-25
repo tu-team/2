@@ -55,6 +55,7 @@
 
 ### Processes
 
+1. **Perceptual stimuli** are what the individual picks up from his or her surroundings, such as sensations of pain or pleasure, perception of facial expression
 1. **Associative processing** is a memory-based process that makes quick connections.
 1. **Reasoning** is a slower, more deliberate, and thorough process that involves logical, critical thinking.
 
