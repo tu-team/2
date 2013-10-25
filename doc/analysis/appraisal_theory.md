@@ -52,13 +52,23 @@ Two-process model of appraisal theory, associative processing and reasoning work
 
 ### Lit
 1. Scherer, K. R. (2001). Appraisal Considered as a Process of Multilevel Sequential Checking. In K. R. Scherer, A. Schorr & T. Johnstone (Eds.), Appraisal Processes in Emotion: Theory, Methods, Research (pp. 92-120): Oxford University Press.
+1.  Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: Don't worry, be happy. Paper presented at the Second International Joint Conference on Autonomous Agents and Multi-agent Systems, Melbourne, Australia.
 
-### Levels
+### Levels of processing
 
 1. innate (sensory-motor)
 1. learned (schema-based)
 1. deliberate (conceptual)
 
+
+### Sensory evaluation checks
+
+1. **relevance** (novelty and relevance to goals) check, 
+2. **implication check** (cause, goal conduciveness, and urgency)
+3. **coping potential** check (control and power)
+4. **normative significance** (compatibility with one’s standards) 
+
+While the two-process model involves processes occurring at the same time, parallel to one another, Scherer’s multi-level sequential check model is composed of processes that take place in a specific sequence.
 
 ## Roseman
 
