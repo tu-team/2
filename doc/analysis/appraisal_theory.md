@@ -48,7 +48,8 @@ Two-process model of appraisal theory, associative processing and reasoning work
 
 ##  Multi-level Sequential Check Model
 
-Scherer, K. R. (2001). Appraisal Considered as a Process of Multilevel Sequential Checking. In K. R. Scherer, A. Schorr & T. Johnstone (Eds.), Appraisal Processes in Emotion: Theory, Methods, Research (pp. 92-120): Oxford University Press.
+### Lit
+1. Scherer, K. R. (2001). Appraisal Considered as a Process of Multilevel Sequential Checking. In K. R. Scherer, A. Schorr & T. Johnstone (Eds.), Appraisal Processes in Emotion: Theory, Methods, Research (pp. 92-120): Oxford University Press.
 
 
 
