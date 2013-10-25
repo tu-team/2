@@ -81,6 +81,18 @@ While the two-process model involves processes occurring at the same time, paral
 
 ## Roseman
 
+### Lit
+
+### Components
+
+1. motive consistency
+1. evaluation of responsibility or accountability
+
+### Intencities
+
+1. certainty and the strength
+1. appetitive or aversive nature of motive consistency
+
 ## Aronson
 
 ## Marsella & Gratch
