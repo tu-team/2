@@ -9,7 +9,9 @@
 
 ## Structural model
 
-Lazarus, Richard S. (1991). Progress on a cognitive-motivational-relational theory of Emotion. American Psychologist, 46(8), 819-834.
+### Lit
+
+1. Lazarus, Richard S. (1991). Progress on a cognitive-motivational-relational theory of Emotion. American Psychologist, 46(8), 819-834.
 
 ### Criteria:
 
@@ -29,9 +31,9 @@ Lazarus, Richard S. (1991). Progress on a cognitive-motivational-relational theo
 
 ## Two process appraisal
 
-Smith, Craig A., & Kirby, Leslie D. (2009). Putting appraisal in context: Toward a relational model of appraisal and emotion. Cognition and Emotion, 23 (7), 1352-1372.
-
-Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: Don't worry, be happy. Paper presented at the Second International Joint Conference on Autonomous Agents and Multi-agent Systems, Melbourne, Australia.
+### Lit
+1. Smith, Craig A., & Kirby, Leslie D. (2009). Putting appraisal in context: Toward a relational model of appraisal and emotion. Cognition and Emotion, 23 (7), 1352-1372.
+1. Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: Don't worry, be happy. Paper presented at the Second International Joint Conference on Autonomous Agents and Multi-agent Systems, Melbourne, Australia.
 
 ### Criteria
 
@@ -51,6 +53,11 @@ Two-process model of appraisal theory, associative processing and reasoning work
 ### Lit
 1. Scherer, K. R. (2001). Appraisal Considered as a Process of Multilevel Sequential Checking. In K. R. Scherer, A. Schorr & T. Johnstone (Eds.), Appraisal Processes in Emotion: Theory, Methods, Research (pp. 92-120): Oxford University Press.
 
+### Levels
+
+1. innate (sensory-motor)
+1. learned (schema-based)
+1. deliberate (conceptual)
 
 
 ## Roseman
