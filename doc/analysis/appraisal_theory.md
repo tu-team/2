@@ -35,7 +35,7 @@ Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: D
 
 ### Criteria
 
-1. Compatibility with model of six
+1. Compatible with model of six
 1. Structure
 1. Process 
 
@@ -44,8 +44,9 @@ Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: D
 1. **Associative processing** is a memory-based process that makes quick connections.
 1. **Reasoning** is a slower, more deliberate, and thorough process that involves logical, critical thinking.
 
+Two-process model of appraisal theory, associative processing and reasoning work in parallel.
 
-## Scherer
+##  Multi-level Sequential Check Model
 
 ## Roseman
 
