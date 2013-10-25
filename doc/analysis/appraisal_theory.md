@@ -9,14 +9,14 @@
 
 ## Structural model
 
+### Criteria:
+
+1. Hardly compatibile with model of six (no levels of processing)
+1. Structure model
+
 ### Lit
 
 1. Lazarus, Richard S. (1991). Progress on a cognitive-motivational-relational theory of Emotion. American Psychologist, 46(8), 819-834.
-
-### Criteria:
-
-1. Compatibile with model of six
-1. Structure model
 
 ### Primary appraisal
 
@@ -31,15 +31,16 @@
 
 ## Two process appraisal
 
+### Criteria
+
+1. Compatible with model of six - average
+1. Structure
+1. Process 
+
 ### Lit
 1. Smith, Craig A., & Kirby, Leslie D. (2009). Putting appraisal in context: Toward a relational model of appraisal and emotion. Cognition and Emotion, 23 (7), 1352-1372.
 1. Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: Don't worry, be happy. Paper presented at the Second International Joint Conference on Autonomous Agents and Multi-agent Systems, Melbourne, Australia.
 
-### Criteria
-
-1. Compatible with model of six
-1. Structure
-1. Process 
 
 ### Processes
 
@@ -49,6 +50,14 @@
 Two-process model of appraisal theory, associative processing and reasoning work in parallel.
 
 ##  Multi-level Sequential Check Model
+
+
+### Criteria
+
+1. Compatible with model of six - good
+1. Structure
+1. Process 
+
 
 ### Lit
 1. Scherer, K. R. (2001). Appraisal Considered as a Process of Multilevel Sequential Checking. In K. R. Scherer, A. Schorr & T. Johnstone (Eds.), Appraisal Processes in Emotion: Theory, Methods, Research (pp. 92-120): Oxford University Press.
