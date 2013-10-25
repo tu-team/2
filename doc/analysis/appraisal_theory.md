@@ -1,14 +1,15 @@
 # Appraisal theories analysis
 
+## Criteria list:
 
 1. Compatibility with model of six
-2. Structure
-3. Process 
+1. Structure
+1. Process 
 
 
 ## Lazarus (structure model) 
 
-(Smith & Kirby, 2009)
+1. Structure model
 
 ### Primary appraisal
 
@@ -23,6 +24,9 @@
 
 ## Smith and Kirby: Two process appraisal
 
+
+(Smith & Kirby, 2009) 
+Smith, Craig A., & Kirby, Leslie D. (2009). Putting appraisal in context: Toward a relational model of appraisal and emotion. Cognition and Emotion, 23 (7), 1352-1372.
 
 
 ## Scherer
