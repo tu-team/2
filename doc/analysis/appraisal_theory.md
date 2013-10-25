@@ -40,11 +40,15 @@
 
 ### Criteria
 
-1. Compatible with model of six - average
-1. Structure
-1. Process 
+1. Compatibile with model of six (no levels of processing) = 1
+1. Compatibel with Plutchick theory 
+1. Compatible with Tomkins theory
+1. Structure = 1
+1. Process = 1
+1. Continuous - 1
 
 ### Lit
+
 1. Smith, Craig A., & Kirby, Leslie D. (2009). Putting appraisal in context: Toward a relational model of appraisal and emotion. Cognition and Emotion, 23 (7), 1352-1372.
 1. Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: Don't worry, be happy. Paper presented at the Second International Joint Conference on Autonomous Agents and Multi-agent Systems, Melbourne, Australia.
 
@@ -58,13 +62,14 @@ Two-process model of appraisal theory, associative processing and reasoning work
 
 ##  Multi-level Sequential Check Model
 
-
 ### Criteria
 
-1. Compatible with model of six - good
-1. Structure
-1. Process 
-
+1. Compatibile with model of six (no levels of processing) = 1
+1. Compatibel with Plutchick theory 
+1. Compatible with Tomkins theory
+1. Structure = 1
+1. Process = 1
+1. Continuous - 1
 
 ### Lit
 1. Scherer, K. R. (2001). Appraisal Considered as a Process of Multilevel Sequential Checking. In K. R. Scherer, A. Schorr & T. Johnstone (Eds.), Appraisal Processes in Emotion: Theory, Methods, Research (pp. 92-120): Oxford University Press.
@@ -90,11 +95,12 @@ While the two-process model involves processes occurring at the same time, paral
 
 ### Criteria
 
-1. Compatible with model of six - good
+1. Compatibile with model of six (no levels of processing) = 1
 1. Compatibel with Plutchick theory 
 1. Compatible with Tomkins theory
-1. Structure
-1. Process 
+1. Structure = 1
+1. Process = 1
+1. Continuous - 1
 
 ### Lit
 
