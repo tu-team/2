@@ -21,6 +21,10 @@
 * options for coping : Problem-focused coping , emotion-focused coping ,
 * Future expectancy
 
+## Smith and Kirby: Two process appraisal
+
+
+
 ## Scherer
 
 ## Roseman
