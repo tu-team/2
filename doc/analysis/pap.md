@@ -13,4 +13,5 @@
   1. Distress (negative)
   1. Anger (negative)
   1. Disgust (negative)
+  1. Dissmell (negative)
   1. Shame (negative)
