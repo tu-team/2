@@ -1,4 +1,8 @@
-# Primary affect theory analysis
+# Primary affect psychology analysis
+
+Analysis of http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf
+
+![Brain activity to time graph](brain_activity_2_time.png)
 
 1. Part of normal brain function evolved to reduce stimulus confusion. 
 1. Nothing becomes conscious unless an affect is triggered first. 
