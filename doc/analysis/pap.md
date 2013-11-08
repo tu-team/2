@@ -1,6 +1,6 @@
 # Primary affect psychology analysis
 
-Analysis of http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf
+Vernon C. Kelly, Jr., M.D.http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf
 
 ![Brain activity to time graph](brain_activity_2_time.png)
 
@@ -22,7 +22,6 @@ Analysis of http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf
 
 Tomkins article:
 http://www.amsciepub.com/doi/pdf/10.2466/pms.1964.18.1.119
-
 
 1. INTEREST-EXCITEMENT:  eyebrows down, eyes track,  look,  listen 
 2. ENJOYMENT-JOY:  smile, lips widened up and out, smiling eyes  (circular  wrinkles) 
