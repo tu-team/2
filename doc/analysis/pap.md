@@ -31,3 +31,10 @@ http://www.amsciepub.com/doi/pdf/10.2466/pms.1964.18.1.119
 6. SHAME-HUMILIATION:  eyes down, head down 
 7. CONTEMPT-DISGUST:  sneer, upper lip up 
 8. ANGER-RAGE:  frown, clenched jaw,  eyes  narrowed, red  face 
+
+These facial affective responses we assume are controlled by innate affect 
+programs which are inherited as  a sub-cortical scrucrure which can inscruct and 
+concrol a variety of muscles and glands to respond with unique patterns of rate 
+and duration of activity characteristic of a given affect.  These innate responses 
+are later  transformed  in  various ways through learning, but there is always a 
+continuing openness to activation of the innate pattern of responses. 
