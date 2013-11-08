@@ -20,7 +20,7 @@ Vernon C. Kelly, Jr., M.D.http://www.tomkins.org/uploads/Primer_of_Affect_Psycho
   1. Dissmell (negative)
   1. Shame (negative)
 
-Tomkins article:
+Tomkin's article:
 http://www.amsciepub.com/doi/pdf/10.2466/pms.1964.18.1.119
 
 1. INTEREST-EXCITEMENT:  eyebrows down, eyes track,  look,  listen 
