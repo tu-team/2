@@ -19,3 +19,16 @@ Analysis of http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf
   1. Disgust (negative)
   1. Dissmell (negative)
   1. Shame (negative)
+
+Tomkins article:
+http://www.amsciepub.com/doi/pdf/10.2466/pms.1964.18.1.119
+
+
+1. INTEREST-EXCITEMENT:  eyebrows down, eyes track,  look,  listen 
+2. ENJOYMENT-JOY:  smile, lips widened up and out, smiling eyes  (circular  wrinkles) 
+3. SURPRISE-STARTLE:  eyebrows up, eyes blink 
+4. DISTRESS-ANGUISH:  cry, arched  eyebrows, mouth down, tears, rhythmic sobbing 
+5. FEAR-TERROR:  eyes frozen open, pale,  cold, sweaty, facial  trembling,  with  hair erect 
+6. SHAME-HUMILIATION:  eyes down, head down 
+7. CONTEMPT-DISGUST:  sneer, upper lip up 
+8. ANGER-RAGE:  frown, clenched jaw,  eyes  narrowed, red  face 
