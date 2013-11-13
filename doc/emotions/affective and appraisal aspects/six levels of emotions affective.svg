@@ -13,9 +13,9 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="six levels of emotions.svg"
-   inkscape:export-filename="/home/max/Projects/2/2/doc/emotions/emotional thinking model/six levels of emotions 180.png"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="six levels of emotions affective.svg"
+   inkscape:export-filename="F:\Projects\2\2\doc\emotions\affective and appraisal aspects\six levels of emotions affective.png"
    inkscape:export-xdpi="180"
    inkscape:export-ydpi="180">
   <defs
@@ -46,6 +46,20 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
          transform="scale(0.8) rotate(180) translate(12.5,0)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-1"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3924-7"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -54,20 +68,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="195.79475"
-     inkscape:cy="693.09742"
+     inkscape:zoom="1.225"
+     inkscape:cx="363.34675"
+     inkscape:cy="734.57088"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-width="1920"
+     inkscape:window-height="1064"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:connector-spacing="3" />
+     inkscape:connector-spacing="3"
+     inkscape:snap-bbox="true" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -84,7 +99,7 @@
      inkscape:label="1"
      inkscape:groupmode="layer"
      id="layer1"
-     style="opacity:0.98000004"
+     style="opacity:0.98000004;display:inline"
      sodipodi:insensitive="true">
     <g
        id="g3780"
@@ -106,7 +121,7 @@
          xml:space="preserve"><tspan
            style="font-size:11px;text-align:center;text-anchor:middle"
            y="91.26162"
-           x="-82.237473"
+           x="-82.463058"
            id="tspan3776"
            sodipodi:role="line">Self-Conscious </tspan><tspan
            id="tspan3778"
@@ -160,7 +175,7 @@
            id="tspan3814"
            style="font-size:11px;text-align:center;text-anchor:middle"
            y="91.26162"
-           x="-82.237473"
+           x="-82.463058"
            sodipodi:role="line">Reflective </tspan><tspan
            style="font-size:11px;text-align:center;text-anchor:middle"
            y="105.01162"
@@ -213,7 +228,7 @@
            id="tspan3834"
            style="font-size:11px;text-align:center;text-anchor:middle"
            y="91.26162"
-           x="-82.237473"
+           x="-82.463058"
            sodipodi:role="line">Learned </tspan><tspan
            style="font-size:11px;text-align:center;text-anchor:middle"
            y="105.01162"
@@ -240,7 +255,7 @@
          sodipodi:linespacing="125%"
          transform="matrix(0,-1,1,0,0,0)"><tspan
            sodipodi:role="line"
-           x="-82.237473"
+           x="-82.463058"
            y="76.109329"
            style="font-size:11px;text-align:center;text-anchor:middle"
            id="tspan3844"> Instinctive </tspan><tspan
@@ -255,8 +270,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="2"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        transform="matrix(1.1008638,0,0,1,-59.819431,22.223356)"
        id="g4745"
@@ -283,7 +297,7 @@
     </g>
     <g
        id="g4541"
-       transform="translate(-54.58086,0)">
+       transform="translate(-54.580862,7.5039904)">
       <text
          sodipodi:linespacing="125%"
          id="text3865"
@@ -294,7 +308,7 @@
            id="tspan3869"
            style="font-size:12px;text-align:center;text-anchor:middle"
            y="514.61151"
-           x="162.39473"
+           x="162.14864"
            sodipodi:role="line">stimulus </tspan><tspan
            id="tspan3881"
            style="font-size:12px;text-align:center;text-anchor:middle"
@@ -304,27 +318,32 @@
       <rect
          style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-opacity:1"
          id="rect4527"
-         width="72.73098"
-         height="31.314728"
-         x="123.91987"
-         y="503.14362"
+         width="74.462669"
+         height="48.054356"
+         x="122.18818"
+         y="486.40393"
          ry="10.859139"
          rx="10.859139" />
       <text
          xml:space="preserve"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          x="160.48457"
-         y="514.61151"
+         y="498.44907"
          id="text4529"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
-           x="162.39473"
-           y="514.61151"
+           x="162.14864"
+           y="498.44907"
            style="font-size:12px;text-align:center;text-anchor:middle"
            id="tspan4531">stimulus </tspan><tspan
            sodipodi:role="line"
            x="160.48457"
-           y="529.61151"
+           y="513.4491"
+           style="font-size:12px;text-align:center;text-anchor:middle"
+           id="tspan3100">affective</tspan><tspan
+           sodipodi:role="line"
+           x="160.48457"
+           y="528.4491"
            style="font-size:12px;text-align:center;text-anchor:middle"
            id="tspan4533">appraisal</tspan></text>
     </g>
@@ -339,7 +358,7 @@
          id="text3855"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
-           x="167.17363"
+           x="166.92754"
            y="514.61151"
            style="font-size:12px;text-align:center;text-anchor:middle"
            id="tspan3857">stimulus </tspan><tspan
@@ -401,7 +420,7 @@
            sodipodi:role="line">stimulus cognition</tspan></text>
     </g>
     <g
-       transform="translate(191.00005,0)"
+       transform="translate(193.00005,0)"
        id="g3890">
       <text
          sodipodi:linespacing="125%"
@@ -413,7 +432,7 @@
            id="tspan3894"
            style="font-size:12px;text-align:center;text-anchor:middle"
            y="514.61151"
-           x="167.17363"
+           x="166.92754"
            sodipodi:role="line">stimulus </tspan><tspan
            id="tspan3896"
            style="font-size:12px;text-align:center;text-anchor:middle"
@@ -445,11 +464,11 @@
            x="181.90906"
            y="529.57635"
            style="font-size:12px;text-align:center;text-anchor:middle"
-           id="tspan4286">behavior</tspan></text>
+           id="tspan4286">coping</tspan></text>
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
-       d="m 291.36859,518.80098 33.33503,0"
+       d="m 291.36859,518.80098 35.33503,0"
        id="path3910"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -469,11 +488,11 @@
       <rect
          style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.99999988;stroke-opacity:1"
          id="rect4298"
-         width="135.36044"
-         height="31.314728"
-         x="150.58846"
+         width="163.11552"
+         height="31.314934"
+         x="134.83334"
          y="483.23373"
-         ry="10.859139"
+         ry="10.042813"
          rx="10.859139" />
       <text
          xml:space="preserve"
@@ -486,7 +505,7 @@
            x="218.45911"
            y="503.36475"
            style="font-size:12px;text-align:center;text-anchor:middle"
-           id="tspan4302">stimulus deliberation</tspan></text>
+           id="tspan4302">stimulus cognitive appraisal</tspan></text>
     </g>
     <g
        id="g4306"
@@ -560,7 +579,7 @@
            id="tspan5450"
            style="font-size:12px;text-align:center;text-anchor:middle"
            y="736.21118"
-           x="252.52164"
+           x="252.27554"
            sodipodi:role="line">stimulus cognition </tspan><tspan
            style="font-size:12px;text-align:center;text-anchor:middle"
            y="751.21118"
@@ -593,11 +612,11 @@
        inkscape:connector-curvature="0"
        inkscape:connector-type="polyline"
        id="path5642"
-       d="m 238.17979,414.49319 0,-62.18433"
+       d="m 222.17979,414.49319 0,-62.18433"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
-       d="m 373.87485,351.12734 0,62.18433"
+       d="m 385.87485,351.12734 0,62.18433"
        id="path5644"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
@@ -628,20 +647,14 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
-       d="m 422.12665,599.44114 -316.42215,0 0,-64.9828"
+       d="m 422.12665,599.44114 -317.288,0 0,-57.47886"
        id="path6214"
        inkscape:connector-type="orthogonal"
        inkscape:connector-curvature="0"
        inkscape:connection-start="#g5646"
        inkscape:connection-start-point="d4"
-       inkscape:connection-end="#g4541"
-       inkscape:connection-end-point="d4" />
-    <path
-       inkscape:connector-curvature="0"
-       inkscape:connector-type="polyline"
-       id="path6592"
-       d="m 421.25624,525.05591 0,57.60026"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+       inkscape:connection-end-point="d4"
+       inkscape:connection-end="#g4541" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
        d="m 165.06198,256.28926 71.96084,0"
@@ -704,7 +717,7 @@
          id="text6618"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
-           x="167.17363"
+           x="166.92754"
            y="514.61151"
            style="font-size:12px;text-align:center;text-anchor:middle"
            id="tspan6620">stimulus </tspan><tspan
@@ -738,7 +751,7 @@
            y="529.57635"
            x="181.90906"
            sodipodi:role="line"
-           id="tspan6634">behavior</tspan></text>
+           id="tspan6634">coping</tspan></text>
     </g>
     <path
        inkscape:connector-curvature="0"
@@ -781,11 +794,17 @@
        inkscape:connector-curvature="0"
        inkscape:connector-type="orthogonal"
        id="path6648"
-       d="m 670.84094,645.44113 -565.13644,0 0,-110.98279"
+       d="m 670.84094,645.44113 -566.00229,0 0,-103.47885"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend);display:inline"
        inkscape:connection-start="#g6638"
        inkscape:connection-start-point="d4"
-       inkscape:connection-end="#g4541"
-       inkscape:connection-end-point="d4" />
+       inkscape:connection-end-point="d4"
+       inkscape:connection-end="#g4541" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend);display:inline"
+       d="m 423.62304,520.85783 0,62.18433"
+       id="path5644-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
