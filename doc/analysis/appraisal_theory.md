@@ -2,7 +2,6 @@
 
 ## Criteria list:
 
-
 1. Compatible with model of six
 1. Compatibel with Plutchick theory 
 1. Compatible with Tomkins theory
@@ -117,6 +116,8 @@ While the two-process model involves processes occurring at the same time, paral
 1. certainty and the strength
 1. appetitive or aversive nature of motive consistency
 
-## Aronson
-
 ## Marsella & Gratch
+
+### Lit
+
+1. Marsella, S. & Gratch, J. (2003). Modeling coping behaviors in virtual humans: Don't worry, be happy. Paper presented at the Second International Joint Conference on Autonomous Agents and Multi-agent Systems, Melbourne, Australia.
