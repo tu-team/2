@@ -1,5 +1,7 @@
 # Appraisal theories analysis
 
+https://en.wikipedia.org/wiki/Appraisal_theory
+
 ## Criteria list:
 
 1. Compatible with model of six
