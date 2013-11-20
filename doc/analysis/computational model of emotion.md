@@ -3,6 +3,8 @@
 1. [Marsella, S. & Gratch, J. Computational Models of Emotion. Chapter to be published in Scherer, K.R., Bänziger, T., & Roesch, E. (Eds.) A blueprint for an affectively competent agent: Cross-fertilization between Emotion 
 Psychology, Affective Neuroscience, and Affective Computing. Oxford: Oxford University Press, in press](http://people.ict.usc.edu/~marsella/publications/MarGraPet_Review.pdf)
 
+## Appraisal theory
+
 Appraisal theorists typically view appraisal as the cause of emotion, or at least of the physiological, behavioral and cognitive changes associated with emotion. 
 
 Indeed, although appraisal theorists allow that the same situation may elicit multiple appraisals, theorists are relatively silent on how these individual appraisals would combine into an overall emotional state or if this state is best represented by discrete motor programs 
@@ -11,6 +13,8 @@ constraints underlying appraisal – to what extent is it parallel or sequential
 2001)? does it occur at multiple levels (Scherer, 2001, Smith and Kirby, 2000)? – and creating a better 
 understanding of the cognitive, situational and dispositional factors that influence appraisal judgments 
 (Smith and Kirby, 2009, Kuppens and Van Mechelen, 2007).
+
+## Dimensional Theories 
 
 Many computational dimensional models build on the three-dimensional “PAD” 
 model of Mehrabian and Russell (1974) where these dimensions correspond to pleasure (a measure of 
@@ -24,3 +28,23 @@ factors such as hormones and drugs (Schachter and Singer, 1962), but most import
 between any preceding intentional meaning and emotion is broken (as it is not represented within core 
 affect) and must be recovered after the fact, sometimes incorrectly (Clore and Plamer, 2009, Clore et al., 
 1994).
+
+Interestingly, we are not aware of any computational models that follow the 
+suggestion from Zajonc and Russell that appraisal is a post hoc explanation of core affect. Rather, many 
+computational models of emotion that incorporate core affect have viewed appraisal as the mechanism 
+that initiates changes to core affect. For example Gebhard’s (2005) ALMA model includes Ortony, Clore 
+and Collins (1988) inspired appraisal rules and WASABI (Becker-Asano and Wachsmuth, 2008) 
+incorporates appraisal processes inspired by Scherer’s sequential-checking theory into a PAD-based 
+model of core affect. Some computational models explore how core affect can influence cognitive 
+processes. For example, HOTCO 2 (Thagard, 2003) allow explanations to be biased by dimensional affect 
+(in this case, a one-dimensional model encoding valence) but this is more naturally seen as the 
+consequence of emotion on cognition (e.g., the modeling of an emotion-focused coping strategy in the 
+sense of Lazarus, 1991). 
+
+## Anatomic approaches:
+
+Computational models inspired by the anatomic tradition often focus on low-level 
+perceptual-motor tasks and encode a two-process view of emotion that argues for a fast, automatic, 
+undifferentiated emotional response and a slower, more differentiated response that relies on higherlevel reasoning processes (e.g., Armony et al., 1997). 
+
+## Rational approaches
