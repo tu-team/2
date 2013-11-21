@@ -48,3 +48,10 @@ perceptual-motor tasks and encode a two-process view of emotion that argues for 
 undifferentiated emotional response and a slower, more differentiated response that relies on higherlevel reasoning processes (e.g., Armony et al., 1997). 
 
 ## Rational approaches
+
+AI and logic based.
+
+## Component models
+
+Person environment relationship -> [Appraisal Derivation Model] -> Appraisal variables -> [Affect Derivation Model, Affect Intensity Model] -> Emotion/Affect
+             ^-------------------------------------[Affect Consequent Model: Behavioral, Cognitive]<--------------------------------------------------
