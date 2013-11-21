@@ -53,5 +53,5 @@ AI and logic based.
 
 ## Component models
 
-Person environment relationship -> [Appraisal Derivation Model] -> Appraisal variables -> [Affect Derivation Model, Affect Intensity Model] -> Emotion/Affect
-             ^-------------------------------------[Affect Consequent Model: Behavioral, Cognitive]<--------------------------------------------------
+   Person environment relationship -> [Appraisal Derivation Model] -> Appraisal variables -> [Affect Derivation Model, Affect Intensity Model] -> Emotion/Affect
+                ^-------------------------------------[Affect Consequent Model: Behavioral, Cognitive]<--------------------------------------------------
