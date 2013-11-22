@@ -55,5 +55,5 @@ AI and logic based.
 
 <pre><code>
    Person environment relationship -> [Appraisal Derivation Model] -> Appraisal variables -> [Affect Derivation Model, Affect Intensity Model] -> Emotion/Affect
-                ^-------------------------------------[Affect Consequent Model: Behavioral, Cognitive]--------------------------------------------------
+                ^-------------------------------------[Affect Consequent Model: Behavioral, Cognitive]--------------------------------------------------|
 </code></pre>
