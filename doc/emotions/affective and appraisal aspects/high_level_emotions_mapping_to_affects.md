@@ -1,4 +1,3 @@
-# High level emotions mapping to affects.
 # High level emotion influence over affects and neuromediators
 
 Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions)] high level emotions are produced as mixture of 2 or basic emotions(affects):
@@ -12,7 +11,7 @@ Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/P
 1. Contempt = Disgust + Anger
 1. Aggressiveness =	Anger + Anticipation
 
-[Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions". Lovheim demonstrated relations of neuromediators concentrations and emotional/affective states.
+[Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions". Lovheim demonstrated relations of neuromediators concentrations with emotional/affective states.
 
 ![Emotions in model of six with two neuromediatons](six levels of emotions affective.png)
 
@@ -27,4 +26,11 @@ We interpret affects as instinctive reactions that stands close to objective bra
 1. **Contempt** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **Aggressiveness** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
    
+## Stimulus affective appraisal
 
+Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators concentrations via Lovheim model. Neuromediation influences all conscious process including stimulus cognition. It could be imagined as affective orchestra plays, where each instrument is one affect that interfere and collaborate with whole picture of the cognition.
+
+## Cognitive processes
+
+Higher processes including stimulus cognition and cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms.
+And it their turn influence low level process via cognitive psychological coping and neuromodulation according to matrix above.
