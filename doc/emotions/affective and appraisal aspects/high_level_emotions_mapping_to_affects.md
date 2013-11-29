@@ -17,7 +17,7 @@ Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/P
 
 We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions".
 
-## High level emotions to neuromodulators mapping:
+## High level emotions to neuromodulators levels mapping:
 
 1. **Optimism** = 1.0 serotonin + 1.0 dopamine + 0.5 noradrenaline;
 1. **Love** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -40,7 +40,7 @@ And it their turn influence low level process via cognitive psychological coping
 We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian.
 Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, above matrix *High level emotions to neuromodulators mapping* should be represented as following:
 
-1. **G(Optimism Intensity)** => 1.0 serotonin + 1.0 dopamine + 0.5 noradrenaline;
+1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
 1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
 1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
