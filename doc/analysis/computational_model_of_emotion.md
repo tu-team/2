@@ -53,12 +53,11 @@ AI and logic based.
 
 ## Component models
 
-<pre><code>
-   Person environment relationship -> [Appraisal Derivation Model] -> Appraisal variables -> [Affect Derivation Model, Affect Intensity Model] -> Emotion/Affect
-                ^-------------------------------------[Affect Consequent Model: Behavioral, Cognitive]--------------------------------------------------|
-</code></pre>
+
 
 ## Processing Assumptions
+
+### Representational Specificity
 
 Sander and colleagues (2005) provide a detailed neural network model of how appraisals are derived from the 
 person-environment relationship, but the person-environment relationship itself is only abstractly 
