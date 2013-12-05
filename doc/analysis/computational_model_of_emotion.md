@@ -59,8 +59,7 @@ AI and logic based.
 
 ### Representational Specificity
 
-whereas others further decompose appraisal 
-checks into the representational details (e.g., domain propositions, actions, and the causal relationships 
+Some further decompose appraisal checks into the representational details (e.g., domain propositions, actions, and the causal relationships 
 between them) that are necessary for an agent to appraise its relationship to the environment (e.g., El 
 Nasr et al., 2000, Gratch and Marsella, 2004a, Neal Reilly, 1996, Si et al., 2008, Mao and Gratch, 2006, 
 Dias and Paiva, 2005, Becker-Asano, 2008).
@@ -76,3 +75,11 @@ Most systems incorporate domain-independent affect-derivation models (Marinier, 
 2008, Gratch and Marsella, 2004a, Gebhard, 2005, Neal Reilly, 1996, Bui, 2004). Fewer systems provide 
 domain-independent algorithms for appraisal-derivation (e.g., Gratch and Marsella, 2004a, Neal Reilly, 
 1996, Si et al., 2008, El Nasr et al., 2000).  
+
+
+# Example applications of this framework
+
+1. EMA = Richard Lazarus (Lazarus, 1991)
+1. ALMA is intended as a general programming tool to allow application developers to more easily construct 
+computational models of emotion for a variety of applications (Gebhard, 2005).
+

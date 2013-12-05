@@ -57,7 +57,7 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \rhead{\thepage}
-\fancypagestyle{titlepage}{\lhead{Running head: \MakeUppercase{\@shorttitle}}}
+\fancypagestyle{titlepage}{\lhead{\MakeUppercase{\@shorttitle}}}
 \fancypagestyle{otherpage}{\lhead{\MakeUppercase{\@shorttitle}}}
 \pagestyle{otherpage}
 \newcommand{\shorttitle}[1]{\def\@shorttitle{#1}}
