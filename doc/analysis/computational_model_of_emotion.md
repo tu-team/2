@@ -53,12 +53,26 @@ AI and logic based.
 
 ## Component models
 
-
+![Component model of computational appraisal](component_model_of_computational_appraisal_models.png)
 
 ## Processing Assumptions
 
 ### Representational Specificity
 
+whereas others further decompose appraisal 
+checks into the representational details (e.g., domain propositions, actions, and the causal relationships 
+between them) that are necessary for an agent to appraise its relationship to the environment (e.g., El 
+Nasr et al., 2000, Gratch and Marsella, 2004a, Neal Reilly, 1996, Si et al., 2008, Mao and Gratch, 2006, 
+Dias and Paiva, 2005, Becker-Asano, 2008).
+
 Sander and colleagues (2005) provide a detailed neural network model of how appraisals are derived from the 
 person-environment relationship, but the person-environment relationship itself is only abstractly 
 represented. 
+
+### Domain specific vs. Domain independent
+Computational appraisal models differ in terms 
+of how domain-specific knowledge is encoded and which components require domain-specific  input. 
+Most systems incorporate domain-independent affect-derivation models (Marinier, 2008, Becker-Asano, 
+2008, Gratch and Marsella, 2004a, Gebhard, 2005, Neal Reilly, 1996, Bui, 2004). Fewer systems provide 
+domain-independent algorithms for appraisal-derivation (e.g., Gratch and Marsella, 2004a, Neal Reilly, 
+1996, Si et al., 2008, El Nasr et al., 2000).  
