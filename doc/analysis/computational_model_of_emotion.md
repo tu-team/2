@@ -83,3 +83,4 @@ domain-independent algorithms for appraisal-derivation (e.g., Gratch and Marsell
 1. ALMA is intended as a general programming tool to allow application developers to more easily construct 
 computational models of emotion for a variety of applications (Gebhard, 2005).
 
+Other researchers have explored how emotions might improve the decisionmaking capabilities of general models of intelligence (Scheutz and Sloman, 2001, Ito et al., 2008) 
