@@ -7,48 +7,29 @@ Psychology, Affective Neuroscience, and Affective Computing. Oxford: Oxford Univ
 
 Appraisal theorists typically view appraisal as the cause of emotion, or at least of the physiological, behavioral and cognitive changes associated with emotion. 
 
-Indeed, although appraisal theorists allow that the same situation may elicit multiple appraisals, theorists are relatively silent on how these individual appraisals would combine into an overall emotional state or if this state is best represented by discrete motor programs or more dimensional representations. More recent work has begun to examine the processing constraints underlying appraisal – to what extent is it parallel or sequential (Moors et al., 2005, Scherer,2001)? does it occur at multiple levels (Scherer, 2001, Smith and Kirby, 2000)? – and creating a better 
-understanding of the cognitive, situational and dispositional factors that influence appraisal judgments 
-(Smith and Kirby, 2009, Kuppens and Van Mechelen, 2007).
-
 ## Dimensional Theories 
 
-Many computational dimensional models build on the three-dimensional “PAD” 
-model of Mehrabian and Russell (1974) where these dimensions correspond to pleasure (a measure of 
-valence), arousal (indicating the level of affective activation) and dominance (a measure of power or 
-control). 
+Interestingly, we are not aware of any computational models that follow the suggestion from Zajonc and Russell that appraisal is a post hoc explanation of core affect.
 
-Dimensional theorists conceive of core affect as a “non-intentional” state, meaning the affect 
-is not about some object (as in “I am angry at him). In such theories, many factors may contribute to a 
-change in core affect including symbolic intentional judgments (e.g., appraisal) but also sub-symbolic 
-factors such as hormones and drugs (Schachter and Singer, 1962), but most importantly, the link 
-between any preceding intentional meaning and emotion is broken (as it is not represented within core 
-affect) and must be recovered after the fact, sometimes incorrectly (Clore and Plamer, 2009, Clore et al., 
-1994).
-
-Interestingly, we are not aware of any computational models that follow the 
-suggestion from Zajonc and Russell that appraisal is a post hoc explanation of core affect. Rather, many 
-computational models of emotion that incorporate core affect have viewed appraisal as the mechanism 
-that initiates changes to core affect. For example Gebhard’s (2005) ALMA model includes Ortony, Clore 
-and Collins (1988) inspired appraisal rules and WASABI (Becker-Asano and Wachsmuth, 2008) 
-incorporates appraisal processes inspired by Scherer’s sequential-checking theory into a PAD-based 
-model of core affect. Some computational models explore how core affect can influence cognitive 
-processes. For example, HOTCO 2 (Thagard, 2003) allow explanations to be biased by dimensional affect 
-(in this case, a one-dimensional model encoding valence) but this is more naturally seen as the 
-consequence of emotion on cognition (e.g., the modeling of an emotion-focused coping strategy in the 
-sense of Lazarus, 1991). 
+ZAJONC, R. B. (1980) Feeling and thinking: Preferences need no inferences. American Psychologist, 35, 151-175.
 
 ## Anatomic approaches:
 
-Computational models inspired by the anatomic tradition often focus on low-level 
-perceptual-motor tasks and encode a two-process view of emotion that argues for a fast, automatic, 
-undifferentiated emotional response and a slower, more differentiated response that relies on higherlevel reasoning processes (e.g., Armony et al., 1997). 
+Computational models inspired by the anatomic tradition often focus on low-level, perceptual-motor tasks and encode a two-process view of emotion that argues for a **fast, automatic, undifferentiated emotional response** and a **slower, more differentiated response** that relies on higher level reasoning processes (e.g., Armony et al., 1997).
+
+ARMONY, J. L., SERVAN-SCHREIBER, D., COHEN, J. D. & LEDOUX, J. E. (1997) Computational modeling of 
+emotion: Explorations through the anatomy and physiology of fear conditioning. Trends in Cognitive Science, 1, 28-34.
 
 ## Rational approaches
 
 AI and logic based.
 
-## Component models
+## Communicative approaches
+
+Communicative theories of emotion argue that emotion processes 
+function as a communicative system; both as a mechanism for informing other individuals of one’s mental state –  and thereby facilitate social coordination  –  and as a mechanism for requesting/demanding changes in the behavior of others – as in threat displays (Keltner and Haidt, 1999, Parkinson, 2009). 
+
+## Component model
 
 ![Component model of computational appraisal](component_model_of_computational_appraisal_models.png)
 
