@@ -11,13 +11,13 @@ Appraisal theorists typically view appraisal as the cause of emotion, or at leas
 
 Interestingly, we are not aware of any computational models that follow the suggestion from Zajonc and Russell that appraisal is a post hoc explanation of core affect.
 
-*ZAJONC, R. B. (1980) Feeling and thinking: Preferences need no inferences. American Psychologist, 35, 151-175.*
+* *ZAJONC, R. B. (1980) Feeling and thinking: Preferences need no inferences. American Psychologist, 35, 151-175.*
 
 ## Anatomic approaches:
 
 Computational models inspired by the anatomic tradition often focus on low-level, perceptual-motor tasks and encode a two-process view of emotion that argues for a **fast, automatic, undifferentiated emotional response** and a **slower, more differentiated response** that relies on higher level reasoning processes (e.g., Armony et al., 1997).
 
-*ARMONY, J. L., SERVAN-SCHREIBER, D., COHEN, J. D. & LEDOUX, J. E. (1997) Computational modeling of emotion: Explorations through the anatomy and physiology of fear conditioning. Trends in Cognitive Science, 1, 28-34.*
+* *ARMONY, J. L., SERVAN-SCHREIBER, D., COHEN, J. D. & LEDOUX, J. E. (1997) Computational modeling of emotion: Explorations through the anatomy and physiology of fear conditioning. Trends in Cognitive Science, 1, 28-34.*
 
 ## Rational approaches
 
@@ -39,14 +39,14 @@ of the agent’s relationship with its environment. This representation should a
 to derive the relationship between external events (real or hypothetical) and the beliefs, desires and 
 intentions of the agent or other significant entities in the (real or hypothetical) social environment.
 
-*LAZARUS, R. (1991) Emotion and Adaptation, NY, Oxford University Press*
+* *LAZARUS, R. (1991) Emotion and Adaptation, NY, Oxford University Press*
 
 ### Appraisal-derivation model
   
 An appraisal-derivation model transforms some representation of the 
 person-environment relationship into a set of appraisal variables. Affect-derivation Model: An affect-derivation model maps between appraisal variables and an affective state, and specifies how an individual will react emotionally once a pattern of appraisals has been determined.
 
-*Smith and Kirby SMITH, C. A. & KIRBY, L. D. (2009) Putting appraisal in context: Toward a relational model of 
+* *Smith and Kirby SMITH, C. A. & KIRBY, L. D. (2009) Putting appraisal in context: Toward a relational model of 
 appraisal and emotion. Cognition and Emotion, 00.* 
 
 Propose the term relational model to refer to this mapping,building on Lazarus’ idea that appraisal is a relational construct relating the person and the environment. They introduced the term to draw attention to the fact that many appraisal theories emphasize the mapping from appraisal variable to emotion but neglect the situational and dispositional antecedents of appraisal. As “relation” and “relational” often has a very different meaning within computer science, we prefer a different term.
@@ -55,8 +55,8 @@ Propose the term relational model to refer to this mapping,building on Lazarus�
 
 Appraisal variables correspond to the set of specific judgments that the agent can use to produce different emotional responses and are generated as a result of an appraisal-derivation model. Different computational appraisal models adopt different sets of appraisal variables, depending on their favorite appraisal theorist. For example, many approaches utilize the set of variables proposed by Ortony, Clore and Collins (1988) including AR (Elliott, 1992), EM (Neal Reilly, 1996), FLAME (El Nasr et al., 2000) and ALMA (Gebhard, 2005). Others favor the variables proposed by Scherer (Scherer, 2001) including WASABI (Becker-Asano and Wachsmuth, 2008) and PEACTIDM (Marinier et al., 2009).
 
-*ORTONY, A., CLORE, G. & COLLINS, A. (1988) The Cognitive Structure of Emotions, Cambridge University Press.*
-* SCHERER, K. R. (2001) Appraisal Considered as a Process of Multilevel Sequential Checking. IN SCHERER, K. R., SCHORR, A. & JOHNSTONE, T. (Eds.) Appraisal Processes in Emotion: Theory, Methods, Research. Oxford University Press.*
+* *ORTONY, A., CLORE, G. & COLLINS, A. (1988) The Cognitive Structure of Emotions, Cambridge University Press.*
+* *SCHERER, K. R. (2001) Appraisal Considered as a Process of Multilevel Sequential Checking. IN SCHERER, K. R., SCHORR, A. & JOHNSTONE, T. (Eds.) Appraisal Processes in Emotion: Theory, Methods, Research. Oxford University Press.*
 
 ### Affect-derivation Model
  
@@ -64,7 +64,7 @@ An affect-derivation model maps between appraisal variables and an affective
 state, and specifies how an individual will react emotionally once a pattern of appraisals has been 
 determined.
 
-*Smith and Kirby Ibid. use the term structural model to refer to this mapping, drawing analogy to structural 
+* *Smith and Kirby Ibid. use the term structural model to refer to this mapping, drawing analogy to structural 
 equation modeling KLINE, R. B. (2005) Principles and Practice of Structural Equation Modeling, The Guilford Press.,*
 
 The statistical technique for estimating the causal relationships between variables that appraisal theorists often  use to derive these mappings. As the term “structural model” is often used to contrast with “process models” (a distinction we ourselves use later), we prefer the different term.
@@ -78,7 +78,7 @@ however it is useful to conceptualize these separately as they can be independen
 computational systems with the same affect-derivation model often have quite different intensity 
 equations (Gratch et al., 2009a)
 
-*GRATCH, J., MARSELLA, S. & PETTA, P. (2009a) Modeling the Antecedents and Consequences of Emotion. Journal of Cognitive Systems Research, 10, 1-5.*
+* *GRATCH, J., MARSELLA, S. & PETTA, P. (2009a) Modeling the Antecedents and Consequences of Emotion. Journal of Cognitive Systems Research, 10, 1-5.*
 
 ### Emotion/Affect
   
@@ -134,8 +134,8 @@ Most interesting cognitive architectures:
 
 Other researchers have explored how emotions might improve the decision making capabilities of general models of intelligence (Scheutz and Sloman, 2001, Ito et al., 2008)
 
-*LAZARUS, R. (1991) Emotion and Adaptation, NY, Oxford University Press.*
-*GEBHARD, P. (2005) ALMA - A Layered Model of Affect. Fourth International Joint Conference on Autonomous Agents and Multiagent Systems. Utrecht.*
-*DIAS, J. & PAIVA, A. (2005) Feeling and Reasoning: a Computational Model for Emotional Agents. Proceedings of 12th Portuguese Conference on Artificial Intelligence, EPIA 2005. Springer.*
-*SCHEUTZ, M. & SLOMAN, A. (2001) Affect and agent control: experiments with simple affective states. IAT. World Scientific Publisher.*
-*MAO, W. & GRATCH, J. (2006) Evaluating a computational model of social causality and responsibility. 5th International Joint Conference on Autonomous Agents and Multiagent Systems. Hakodate, Japan.*
+* *LAZARUS, R. (1991) Emotion and Adaptation, NY, Oxford University Press.*
+* *GEBHARD, P. (2005) ALMA - A Layered Model of Affect. Fourth International Joint Conference on Autonomous Agents and Multiagent Systems. Utrecht.*
+* *DIAS, J. & PAIVA, A. (2005) Feeling and Reasoning: a Computational Model for Emotional Agents. Proceedings of 12th Portuguese Conference on Artificial Intelligence, EPIA 2005. Springer.*
+* *SCHEUTZ, M. & SLOMAN, A. (2001) Affect and agent control: experiments with simple affective states. IAT. World Scientific Publisher.*
+* *MAO, W. & GRATCH, J. (2006) Evaluating a computational model of social causality and responsibility. 5th International Joint Conference on Autonomous Agents and Multiagent Systems. Hakodate, Japan.*
