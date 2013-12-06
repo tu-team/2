@@ -7,10 +7,7 @@ Psychology, Affective Neuroscience, and Affective Computing. Oxford: Oxford Univ
 
 Appraisal theorists typically view appraisal as the cause of emotion, or at least of the physiological, behavioral and cognitive changes associated with emotion. 
 
-Indeed, although appraisal theorists allow that the same situation may elicit multiple appraisals, theorists are relatively silent on how these individual appraisals would combine into an overall emotional state or if this state is best represented by discrete motor programs 
-or more dimensional representations. More recent work has begun to examine the processing 
-constraints underlying appraisal – to what extent is it parallel or sequential (Moors et al., 2005, Scherer, 
-2001)? does it occur at multiple levels (Scherer, 2001, Smith and Kirby, 2000)? – and creating a better 
+Indeed, although appraisal theorists allow that the same situation may elicit multiple appraisals, theorists are relatively silent on how these individual appraisals would combine into an overall emotional state or if this state is best represented by discrete motor programs or more dimensional representations. More recent work has begun to examine the processing constraints underlying appraisal – to what extent is it parallel or sequential (Moors et al., 2005, Scherer,2001)? does it occur at multiple levels (Scherer, 2001, Smith and Kirby, 2000)? – and creating a better 
 understanding of the cognitive, situational and dispositional factors that influence appraisal judgments 
 (Smith and Kirby, 2009, Kuppens and Van Mechelen, 2007).
 
