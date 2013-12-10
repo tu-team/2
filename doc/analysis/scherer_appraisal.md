@@ -29,4 +29,5 @@ SECs - stimulus evaluation checks.
 ## Coping potential determination
 
 1. Control check.
-1. Power check.
+1. Power check. (fight or flight).
+1. Adjustment check.
