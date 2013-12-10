@@ -31,3 +31,5 @@ SECs - stimulus evaluation checks.
 1. Control check.
 1. Power check. (fight or flight).
 1. Adjustment check.
+
+## Normative significance evaluation
