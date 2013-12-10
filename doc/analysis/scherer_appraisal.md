@@ -26,4 +26,7 @@ SECs - stimulus evaluation checks.
 1. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation.
 1. Urgency check.
 
+## Coping potential determination
 
+1. Control check.
+1. Power check.
