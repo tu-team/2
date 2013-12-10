@@ -20,3 +20,10 @@ SECs - stimulus evaluation checks.
 
 ## Implication assessment
 
+1. Causal Attribution check: *Weiner, 1985*
+1. Outcome probability check.
+1. Discrepancy from expectation check.
+1. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation.
+1. Urgency check.
+
+
