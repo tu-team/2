@@ -33,3 +33,7 @@ SECs - stimulus evaluation checks.
 1. Adjustment check.
 
 ## Normative significance evaluation
+
+1. Internal standards check.
+1. External standards check.
+
