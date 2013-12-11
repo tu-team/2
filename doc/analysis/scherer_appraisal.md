@@ -37,3 +37,4 @@ SECs - stimulus evaluation checks.
 1. Internal standards check.
 1. External standards check.
 
+## The appraisal process
