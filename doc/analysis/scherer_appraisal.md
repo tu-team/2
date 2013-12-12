@@ -38,3 +38,9 @@ SECs - stimulus evaluation checks.
 1. External standards check.
 
 ## The appraisal process
+
+![Afferent efferent links](afferent_efferent_links.png)
+
+## Levels of appraisal process
+
+![appraisal process architecture](appraisal_process_architecture.png)
