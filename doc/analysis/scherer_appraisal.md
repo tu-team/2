@@ -14,27 +14,27 @@ SECs - stimulus evaluation checks.
 
 ## Relevance detection
 
-1. Novelty check. 
-1. Intrinsic pleasantness check. 
-1. Goal relevance.
+1. Novelty check. (-> interest/surprise)
+1. Intrinsic pleasantness check. (joy -> sadness) 
+1. Goal relevance. (?)
 
 ## Implication assessment
 
-1. Causal Attribution check: *Weiner, 1985*
+1. Causal Attribution check: *Weiner, 1985* (originator attachment) 
 1. Outcome probability check.
 1. Discrepancy from expectation check.
-1. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation.
-1. Urgency check.
+1. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation. (love -> remorse)
+1. Urgency check. (-> anger/fear)
 
 ## Coping potential determination
 
 1. Control check.
-1. Power check. (fight or flight).
-1. Adjustment check.
+1. Power check. (fight or flight). (anger -> fear)
+1. Adjustment check. ()
 
 ## Normative significance evaluation
 
-1. Internal standards check.
+1. Internal standards check. (trust -> disgust)
 1. External standards check.
 
 ## The appraisal process
