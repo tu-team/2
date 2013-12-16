@@ -41,10 +41,6 @@ SECs - stimulus evaluation checks.
 
 ![Afferent efferent links](afferent_efferent_links.png)
 
-## Levels of appraisal process
-
-![appraisal process architecture](appraisal_process_architecture.png)
-
 ## Similarity analysis of emotional labels
 
 ![Predicted appraisal patterns 1](scherer_appraisal.md_table4_1.png)
