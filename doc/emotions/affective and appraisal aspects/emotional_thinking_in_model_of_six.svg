@@ -93,9 +93,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0310157"
-     inkscape:cx="370.99931"
-     inkscape:cy="548.29169"
+     inkscape:zoom="1.436145"
+     inkscape:cx="448.02378"
+     inkscape:cy="567.96249"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
@@ -1032,5 +1032,22 @@
        x="285.63251"
        y="286.19553"
        ry="24.618223" />
+    <rect
+       ry="60.068459"
+       y="40.997997"
+       x="357.25861"
+       height="120.13692"
+       width="225.50293"
+       id="rect4039"
+       style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       rx="63.515007" />
+    <rect
+       ry="24.618223"
+       y="286.19553"
+       x="23.300163"
+       height="50.221176"
+       width="59.083736"
+       id="rect4041"
+       style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
   </g>
 </svg>
