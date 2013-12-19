@@ -106,9 +106,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.88856939"
-     inkscape:cx="375.06046"
-     inkscape:cy="453.2472"
+     inkscape:zoom="1.5549964"
+     inkscape:cx="395.67631"
+     inkscape:cy="477.08692"
      inkscape:document-units="px"
      inkscape:current-layer="g4008"
      showgrid="false"
@@ -141,6 +141,10 @@
        orientation="1,0"
        position="478.29692,578.45792"
        id="guide4062" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="185.85252,409.00415"
+       id="guide3201" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -150,7 +154,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
