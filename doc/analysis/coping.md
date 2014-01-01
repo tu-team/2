@@ -13,7 +13,6 @@ and three problem-focused coping strategies: seeking social support and "taking 
 Lazarus "notes the connection between his idea of 'defensive reappraisals' or cognitive coping and Freud's concept of 'ego-defenses'",[10] coping strategies thus overlapping with a person's defense mechanisms.
 
 
-
-
+Hormones also play a part in stress management. Cortisol, a stress hormone, was found to be elevated in males during stressful situations. In females, however, cortisol levels were decreased in stressful situations, and instead, an increase in limbic activity was discovered. Many researchers believe that these results underlie the reasons why men administer a fight-or-flight reaction to stress; whereas, females have a tend-and-befriend reaction.[40] 
 
 
