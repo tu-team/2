@@ -1,0 +1,5 @@
+# Cognitive reappraisal analysis
+
+https://en.wikipedia.org/wiki/Cognitive_reappraisal
+
+The more convincing possibility involved emotional response as a product of two dissociable processes: emotional reactivity and emotion regulation. Emotional reactivity is the involuntary, intense reaction to an emotional stimulus, coupled with a feeling of being victimized by these emotions; emotion regulation refers to methods individuals can use to influence these initial emotions, as well as situational experiences and future emotional responses. Through the study, it became apparent that the differences in gender were due to biochemical influence on emotion regulation, rather than emotional reactivity. Based on observations of specific active regions in male and female brains, men were noted to process cognitive emotion regulation strategies with less difficulty than women. Rather than treating this as a case of women having more trouble with cognitive reappraisal, McRae explained that men may just respond more quickly and automatically when prompted to regulate their emotions.
