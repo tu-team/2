@@ -15,4 +15,4 @@ Lazarus "notes the connection between his idea of 'defensive reappraisals' or co
 
 Hormones also play a part in stress management. Cortisol, a stress hormone, was found to be elevated in males during stressful situations. In females, however, cortisol levels were decreased in stressful situations, and instead, an increase in limbic activity was discovered. Many researchers believe that these results underlie the reasons why men administer a fight-or-flight reaction to stress; whereas, females have a tend-and-befriend reaction.[40] 
 
-
+8. Brannon, Linda; Feist, Jess (2009). "Personal Coping Strategies". Health Psychology: An Introduction to Behavior and Health: An Introduction to Behavior and Health (7th ed.). Wadsworth Cengage Learning. pp. 121–3. ISBN 978-0-495-60132-6.
