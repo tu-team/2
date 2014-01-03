@@ -23,5 +23,32 @@ Tomkins affects:
 1. Fear/Terror
 1. Shame/Humiliation
 
-Plutchik basic emotions:
+We used Tomkins affective appraisal described in "A primer of affect psychology" by Vernon and Kelly [primer_affect_psychology]. The main factor that influence affective appraisal is brain activity that has three main behaviour trends: increase, decrease or stay stable.
+
+According to Kelly quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+
+Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
+It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
+
+Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
+
+"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating
+poisonous or rotten food."
+
+**Shame humiliation** "affect is neither inherently punishing nor
+rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever
+comes next.
+
+...
+
+Here is an example of the difference in these two situations: imagine you are waiting in your friend’s
+car while she is in the supermarket. Your interest is triggered by something you see and your attention
+(conscious awareness) is directed to the children in the playground across the street. You see that they are
+playing a game you have never seen before. The novelty of the game triggers more interest. After several
+minutes, you figure out the game they are playing. The children keep playing but repeat the same actions
+over and over again. The game, therefore, loses its novelty and your interest diminishes and soon there is
+a natural termination of the stimulus conditions for interest-excitement and that affect simply stops.
+Because the stimulus has ceased, you are no longer motivated to direct your attention to the game."
+
+
 
