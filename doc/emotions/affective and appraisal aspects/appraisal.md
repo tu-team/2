@@ -10,4 +10,18 @@ Firstly: stimulus is appraised non-consciously this could be interpreted like si
 ##Non-conscious appraisal
 
 We use Tomkins theory of affects that refer to innate emotions as appraisal base for non-conscious emotional reactions.
-Tomkins theory include following affects, that we roughly correspond with Plutchik basic emotions.
+Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] include following affects, that we roughly correspond with Plutchik basic emotions[natureofemotions].
+
+Tomkins affects:
+
+1. Enjoyment/Joy
+1. Interest/Excitement
+1. Surprise
+1. Anger/Rage
+1. Disgust
+1. Distress/Anguish
+1. Fear/Terror
+1. Shame/Humiliation
+
+Plutchik basic emotions:
+
