@@ -5,7 +5,7 @@ Overall appraisal process could be depicted like presented below
 
 ![appraisal in model of six](appraisal_in_model_of_six.png)
 
-Firstly: stimulus is appraised non-consciously this could be interpreted like signal processing in spinal cord, hypothalamus, amygdala, we correspond these subsystems with instinctive layer of Minsky's thinking model (model of six), see [emotionmachine]. This first affective appraisal starts neuromodulation [cubeofemotions] and cognitive appraisal that takes place in frontal cortex and cingulate cortex which in their turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes and emotional state.
+Firstly stimulus is appraised non-consciously this could be interpreted like signal processing in spinal cord, hypothalamus, amygdala secondly stimulus is processed  we correspond these subsystems with instinctive layer of Minsky's thinking model (model of six), see [emotionmachine]. This first affective appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal that takes place in frontal cortex and cingulate cortex which in their turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative assessment of the stimulus and the personality relation with it.
 
 ##Non-conscious appraisal
 
@@ -48,7 +48,10 @@ playing a game you have never seen before. The novelty of the game triggers more
 minutes, you figure out the game they are playing. The children keep playing but repeat the same actions
 over and over again. The game, therefore, loses its novelty and your interest diminishes and soon there is
 a natural termination of the stimulus conditions for interest-excitement and that affect simply stops.
-Because the stimulus has ceased, you are no longer motivated to direct your attention to the game."
+Because the stimulus has ceased, you are no longer motivated to direct your attention to the game.
+
+Without the innate affect shame-humiliation, we would not be motivated to take action when we are
+deprived of interesting and enjoyable things."
 
 
 
