@@ -1,6 +1,6 @@
 #Appraisal aspect
 
-Firs aspect that was not describe in previous article is: how actually inbound stimulus is appraised? There are several appraisal theories that were used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
+First aspect that was not describe in previous article is: how actually inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
 Overall appraisal process could be depicted like presented below
 
 ![appraisal in model of six](appraisal_in_model_of_six.png)
@@ -9,8 +9,7 @@ Firstly stimulus is appraised non-consciously via affective appraisal it could b
 
 ##Non-conscious appraisal
 
-We use Tomkins theory of affects that refer to innate emotions as appraisal base for non-conscious emotional reactions.
-Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] include following affects, that we roughly correspond with Plutchik basic emotions[natureofemotions].
+We use Tomkins theory of affects that refer to innate emotional reactions as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] includes following affects:
 
 Tomkins affects:
 
@@ -23,9 +22,9 @@ Tomkins affects:
 1. Fear/Terror
 1. Shame/Humiliation
 
-We used Tomkins affective appraisal described in "A primer of affect psychology" by Vernon and Kelly [primer_affect_psychology]. The main factor that influence affective appraisal is brain activity that has three main behaviour trends: increase, decrease or stay stable.
+We use Tomkins affective appraisal described in "A primer of affect psychology" [primer_affect_psychology]. The main factor that influences affective appraisal is brain activity that has three main behaviour trends: increase, decrease or stay stable.
 
-According to Kelly quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+According to Kelly: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 
 Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
 It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
@@ -53,5 +52,7 @@ Because the stimulus has ceased, you are no longer motivated to direct your atte
 Without the innate affect shame-humiliation, we would not be motivated to take action when we are
 deprived of interesting and enjoyable things."
 
+##Conscious appraisal
 
+Tomkins theory is based on innate affects that we roughly correspond with Plutchik basic emotions[natureofemotions]. Our main assumption was that conscious and non-conscious appraisal could use different rules. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflections. In contrast to affective appraisal, conscious cognitive appraisal done in frontal cortex and cingulate cortex and includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is education of personality to react in some specific way on some specific stimulus.
 
