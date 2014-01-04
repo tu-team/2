@@ -59,8 +59,8 @@ Tomkins theory is based on innate affects that we roughly correspond with Plutch
 
 1. Joy - sorrow
 1. Anger - fear
-1. Acceptance - disgust
 1. Surprise - expectancy
+1. Acceptance - disgust
 
 Scherer uses 14 emotions and 16 sequential emotional checks:
 
@@ -85,6 +85,34 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
   2. Internal standards check. 
   2. External standards check.
 
-Mapping :
+### Conscious appraisal predicates
 
-1. **Joy** 
+#### Joy
+
+*
+
+#### Anticipation
+
+
+
+#### Anger
+
+*
+
+#### Disgust
+
+*
+
+#### Sadness
+
+*
+
+#### Surprise
+
+
+
+#### Fear
+
+*
+
+#### Trust
