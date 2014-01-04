@@ -62,4 +62,29 @@ Tomkins theory is based on innate affects that we roughly correspond with Plutch
 1. Acceptance - disgust
 1. Surprise - expectancy
 
-Scherer uses 14 emotions and 16 
+Scherer uses 14 emotions and 16 sequential emotional checks:
+
+1. Relevance detection
+  2. Novelty check.
+    3. Suddenness.
+    3. Familiarity.
+    3. Predictability.
+  2. Intrinsic pleasantness check.
+  2. Goal relevance.
+1. Implication assessment
+  2. Causal Attribution check: Weiner, 1985 (originator attachment)
+  2. Outcome probability check.
+  2. Discrepancy from expectation check.
+  2. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation.
+  2. Urgency check.
+1. Coping potential determination
+  2. Control check.
+  2. Power check. (fight or flight).
+  2. Adjustment check.
+1. Normative significance evaluation
+  2. Internal standards check. 
+  2. External standards check.
+
+Mapping :
+
+1. **Joy** 
