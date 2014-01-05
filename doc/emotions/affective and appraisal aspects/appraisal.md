@@ -62,7 +62,7 @@ Tomkins theory is based on innate affects that we roughly correspond with Plutch
 1. Surprise - expectancy
 1. Acceptance - disgust
 
-Scherer uses 14 emotions and 16 sequential emotional checks:
+Scherer uses 14 emotions and 16 stimulus evaluation checks.
 
 1. Relevance detection
   2. Novelty check.
@@ -85,7 +85,7 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
   2. Internal standards check. 
   2. External standards check.
 
-Each of sequential emotional check has following set of levels:
+Each of stimulus evaluation checks has following set of possible values:
 
 1. very low (vl)
 1. low (l)
