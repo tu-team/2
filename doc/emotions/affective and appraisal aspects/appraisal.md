@@ -72,10 +72,10 @@ Scherer uses 14 emotions and 16 stimulus evaluation checks.
   2. Intrinsic pleasantness check.
   2. Goal relevance.
 1. Implication assessment
-  2. Causal Attribution check: Weiner, 1985 (originator attachment)
+  2. Causal Attribution check: Weiner, 1985 (originator attachment) = intentional/other/natural/negligence
   2. Outcome probability check.
-  2. Discrepancy from expectation check.
-  2. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation.
+  2. Discrepancy from expectation check. = consonant/dissonant
+  2. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation. = high or obstruct
   2. Urgency check.
 1. Coping potential determination
   2. Control check.
@@ -93,13 +93,9 @@ Each of stimulus evaluation checks has following set of possible values:
 1. high (h)
 1. very high (vh)
 1. open (o), check does not influences this specific emotion.
-1. intentional
-1. obstruct
-1. dissonant
-1. negligence
-1. other
-1. natural
-1. chance
+1. intentional(int)/other/natural(nat)/negligence(neg)/chance(ch)
+1. obstruct (ob)
+1. consonant(c)/dissonant(d)
 
 ### Conscious appraisal predicates
 
@@ -107,7 +103,7 @@ Each of stimulus evaluation checks has following set of possible values:
 
 1. Relevance detection:
   2. Novelty check:
-    3. Suddenness. = h-m
+    3. Suddenness. = m-h
     3. Familiarity. = o
     3. Predictability. = l
   2. Intrinsic pleasantness check. = o
@@ -115,7 +111,7 @@ Each of stimulus evaluation checks has following set of possible values:
 1. Implication assessment:
   2. Causal Attribution check.
     3. Cause: agent. = o
-    3. Cause: motive. = c
+    3. Cause: motive. = ch
   2. Outcome probability check. = vh
   2. Discrepancy from expectation check. = o
   2. Goal/need conduciveness check. = vh
@@ -146,8 +142,8 @@ Each of stimulus evaluation checks has following set of possible values:
     3. Cause: agent. = o, other
     3. Cause: motive. = int/neg
   2. Outcome probability check. = vh
-  2. Discrepancy from expectation check. = o, dissonant
-  2. Goal/need conduciveness check. = obstruct
+  2. Discrepancy from expectation check. = o, d
+  2. Goal/need conduciveness check. = ob
   2. Urgency check. = m,h
 1. Coping potential:
   2. Control check. = h
@@ -198,7 +194,7 @@ Each of stimulus evaluation checks has following set of possible values:
     3. Cause: motive. = cha/neg
   2. Outcome probability check. = vh
   2. Discrepancy from expectation check. = o
-  2. Goal/need conduciveness check. = obstruct
+  2. Goal/need conduciveness check. = ob
   2. Urgency check. = l
 1. Coping potential:
   2. Control check. = vl
@@ -210,7 +206,28 @@ Each of stimulus evaluation checks has following set of possible values:
 
 #### Surprise
 
-
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = m
+    3. Familiarity. = l
+    3. Predictability. = vl
+  2. Intrinsic pleasantness check. = vl
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = oth/nat
+    3. Cause: motive. = cha/neg
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = d
+  2. Goal/need conduciveness check. = ob
+  2. Urgency check. = m
+1. Coping potential:
+  2. Control check. = vl
+  2. Power check. = vl
+  2. Adjustment check. = m
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = o
 
 #### Fear
 
@@ -226,8 +243,8 @@ Each of stimulus evaluation checks has following set of possible values:
     3. Cause: agent. = oth/nat
     3. Cause: motive. = o
   2. Outcome probability check. = h
-  2. Discrepancy from expectation check. = dissonant
-  2. Goal/need conduciveness check. = obstruct
+  2. Discrepancy from expectation check. = d
+  2. Goal/need conduciveness check. = ob
   2. Urgency check. = vh
 1. Coping potential:
   2. Control check. = o
