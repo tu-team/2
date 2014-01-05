@@ -143,26 +143,25 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
 
 #### Disgust
 
-
 1. Relevance detection:
   2. Novelty check:
-    3. Suddenness. = h-m
-    3. Familiarity. = o
+    3. Suddenness. = o
+    3. Familiarity. = l
     3. Predictability. = l
-  2. Intrinsic pleasantness check. = o
-  2. Goal relevance. = h
+  2. Intrinsic pleasantness check. = vl
+  2. Goal relevance. = l
 1. Implication assessment:
   2. Causal Attribution check.
     3. Cause: agent. = o
-    3. Cause: motive. = c
+    3. Cause: motive. = o
   2. Outcome probability check. = vh
   2. Discrepancy from expectation check. = o
-  2. Goal/need conduciveness check. = vh
-  2. Urgency check. = l
+  2. Goal/need conduciveness check. = o
+  2. Urgency check. = m
 1. Coping potential:
   2. Control check. = o
   2. Power check. = o
-  2. Adjustment check. = m
+  2. Adjustment check. = o
 1. Normative significance evaluation:
   2. Internal standards check. = o
   2. External standards check. = o
@@ -170,7 +169,28 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
 
 #### Sadness
 
-*
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = l
+    3. Familiarity. = l
+    3. Predictability. = o
+  2. Intrinsic pleasantness check. = o
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = o
+    3. Cause: motive. = cha/neg
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = o
+  2. Goal/need conduciveness check. = obstruct
+  2. Urgency check. = l
+1. Coping potential:
+  2. Control check. = vl
+  2. Power check. = vl
+  2. Adjustment check. = m
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = o
 
 #### Surprise
 
@@ -178,6 +198,27 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
 
 #### Fear
 
-*
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = h
+    3. Familiarity. = l
+    3. Predictability. = l
+  2. Intrinsic pleasantness check. = l
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = oth/nat
+    3. Cause: motive. = o
+  2. Outcome probability check. = h
+  2. Discrepancy from expectation check. = dissonant
+  2. Goal/need conduciveness check. = obstruct
+  2. Urgency check. = vh
+1. Coping potential:
+  2. Control check. = o
+  2. Power check. = vl
+  2. Adjustment check. = l
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = o
 
 #### Trust
