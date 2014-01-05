@@ -126,7 +126,28 @@ Each of stimulus evaluation checks has following set of possible values:
 
 #### Anticipation
 
-
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = m
+    3. Familiarity. = o
+    3. Predictability. = l
+  2. Intrinsic pleasantness check. = o
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = o
+    3. Cause: motive. = int
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = d
+  2. Goal/need conduciveness check. = h
+  2. Urgency check. = m
+1. Coping potential:
+  2. Control check. = o
+  2. Power check. = o
+  2. Adjustment check. = o
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = l
 
 #### Anger
 
@@ -255,3 +276,26 @@ Each of stimulus evaluation checks has following set of possible values:
   2. External standards check. = o
 
 #### Trust
+
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = h
+    3. Familiarity. = vl
+    3. Predictability. = l
+  2. Intrinsic pleasantness check. = vl
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = oth/nat
+    3. Cause: motive. = ch
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = c
+  2. Goal/need conduciveness check. = vh
+  2. Urgency check. = m
+1. Coping potential:
+  2. Control check. = o
+  2. Power check. = vl
+  2. Adjustment check. = m
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = o
