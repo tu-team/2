@@ -89,7 +89,28 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
 
 #### Joy
 
-*
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = h-m
+    3. Familiarity. = o
+    3. Predictability. = l
+  2. Intrinsic pleasantness check. = o
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = o
+    3. Cause: motive. = c
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = o
+  2. Goal/need conduciveness check. = vh
+  2. Urgency check. = l
+1. Coping potential:
+  2. Control check. = o
+  2. Power check. = o
+  2. Adjustment check. = m
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = o
 
 #### Anticipation
 
@@ -97,11 +118,55 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
 
 #### Anger
 
-*
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = l,h
+    3. Familiarity. = o,l
+    3. Predictability. = m,l
+  2. Intrinsic pleasantness check. = o
+  2. Goal relevance. = m,h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = o, other
+    3. Cause: motive. = int/neg
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = o, dissonant
+  2. Goal/need conduciveness check. = obstruct
+  2. Urgency check. = m,h
+1. Coping potential:
+  2. Control check. = h
+  2. Power check. = m,h
+  2. Adjustment check. = h
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = l
 
 #### Disgust
 
-*
+
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness. = h-m
+    3. Familiarity. = o
+    3. Predictability. = l
+  2. Intrinsic pleasantness check. = o
+  2. Goal relevance. = h
+1. Implication assessment:
+  2. Causal Attribution check.
+    3. Cause: agent. = o
+    3. Cause: motive. = c
+  2. Outcome probability check. = vh
+  2. Discrepancy from expectation check. = o
+  2. Goal/need conduciveness check. = vh
+  2. Urgency check. = l
+1. Coping potential:
+  2. Control check. = o
+  2. Power check. = o
+  2. Adjustment check. = m
+1. Normative significance evaluation:
+  2. Internal standards check. = o
+  2. External standards check. = o
+
 
 #### Sadness
 
