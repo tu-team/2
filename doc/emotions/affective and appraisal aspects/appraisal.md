@@ -85,6 +85,22 @@ Scherer uses 14 emotions and 16 sequential emotional checks:
   2. Internal standards check. 
   2. External standards check.
 
+Each of sequential emotional check has following set of levels:
+
+1. very low (vl)
+1. low (l)
+1. medium (m)
+1. high (h)
+1. very high (vh)
+1. open (o), check does not influences this specific emotion.
+1. intentional
+1. obstruct
+1. dissonant
+1. negligence
+1. other
+1. natural
+1. chance
+
 ### Conscious appraisal predicates
 
 #### Joy
