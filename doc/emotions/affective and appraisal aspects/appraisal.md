@@ -97,13 +97,14 @@ Each of stimulus evaluation checks has following set of possible values:
 
 Except for causal attribution check that has following possible values: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch),  discrepancy from expectation check: consonant/dissonant values and goal/need conduciveness check: high/obstruct.
 
-Scherer uses 16 words to describe emotions in his analysis:
+Scherer uses 14 words to describe emotions in his analysis:
 
-1. Enjoyment/happyness
+1. Enjoyment/happiness
 1. Elation/joy
 1. Displeasure/disgust
 1. Contempt/scorn
 1. Sadness/dejection
+1. Dispair
 1. Anxiety/worry
 1. Fear
 1. Irritation/cold anger
@@ -113,7 +114,7 @@ Scherer uses 16 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-He discovered 
+He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain sunrise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions. 
 
 ## Appendix
 
