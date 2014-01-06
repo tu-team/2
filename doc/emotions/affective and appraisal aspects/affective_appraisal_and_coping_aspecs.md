@@ -10,6 +10,8 @@ Imagine the number of emotions we experience every day, starting from wake up in
 
 Each time any stimulus comes in view it is been appraised first non-consciously then consciously and could start high level reflective thinking.
 
+Fear 2 times.
+
 ##Appraisal aspect
 
 First aspect that was not describe in previous article is: how actually inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
