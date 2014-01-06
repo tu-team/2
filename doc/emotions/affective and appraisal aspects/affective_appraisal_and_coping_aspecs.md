@@ -11,7 +11,7 @@ Overall appraisal process could be depicted like presented below
 
 Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal  with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behaviour) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
 
-###Non-conscious appraisal
+### Non-conscious appraisal
 
 We use Tomkins theory of affects that refer to innate emotional reactions as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] includes following affects:
 
@@ -43,7 +43,7 @@ Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**
 
 Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
 
-##Conscious appraisal
+### Conscious appraisal
 
 Tomkins theory is based on innate affects that we roughly correspond with Plutchik basic emotions[natureofemotions]. Our main assumption was that conscious and non-conscious appraisal could use different rules. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflections. In contrast to affective appraisal, conscious cognitive appraisal done in frontal cortex and cingulate cortex and includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is education of personality to react in some specific way on some specific stimulus. We use Scherer's approach described in 
 "Appraisal considered as process of multilevel sequential checking"[appraisal_as_sequential_checking]. We use Plutchik [natureofemotion] as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
