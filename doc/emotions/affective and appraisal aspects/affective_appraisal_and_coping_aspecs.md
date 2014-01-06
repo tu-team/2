@@ -4,7 +4,11 @@
 
 ## Orchestra of emotions
 
+Imagine the number of emotions we experience every day, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From neuroscience perspective [...] we could identify two types of emotional reactions: low level - non-conscious and high level conscious reactions.
+
 ![orchestra of emotions](orchestra_of_emotions.png)
+
+Each time any stimulus comes in view it is been appraised first non-consciously then consciously and could start high level reflective thinking.
 
 ##Appraisal aspect
 

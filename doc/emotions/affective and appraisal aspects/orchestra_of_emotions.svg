@@ -145,11 +145,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.96210494"
+     inkscape:zoom="3.3673673"
      inkscape:cx="454.21746"
-     inkscape:cy="287.16021"
+     inkscape:cy="560.37068"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="g4701"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1064"
@@ -185,7 +185,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -585,7 +585,7 @@
            x="582.0174"
            sodipodi:role="line"
            style="font-size:20px;text-align:center;text-anchor:middle"
-           id="tspan4707">reflection</tspan></text>
+           id="tspan4707">reflective thinking</tspan></text>
     </g>
     <g
        transform="translate(350,4)"
