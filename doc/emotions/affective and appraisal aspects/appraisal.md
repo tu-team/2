@@ -62,7 +62,7 @@ Tomkins theory is based on innate affects that we roughly correspond with Plutch
 1. Surprise - expectancy
 1. Acceptance - disgust
 
-Scherer uses 14 emotions and 16 stimulus evaluation checks.
+Scherer uses 16 stimulus evaluation checks:
 
 1. Relevance detection
   2. Novelty check.
@@ -72,10 +72,10 @@ Scherer uses 14 emotions and 16 stimulus evaluation checks.
   2. Intrinsic pleasantness check.
   2. Goal relevance.
 1. Implication assessment
-  2. Causal Attribution check: Weiner, 1985 (originator attachment) = intentional/other/natural/negligence
+  2. Causal Attribution check: Weiner, 1985 (originator attachment) = intentional(int)/other/natural(nat)/negligence(neg)/chance(ch)
   2. Outcome probability check.
   2. Discrepancy from expectation check. = consonant/dissonant
-  2. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation. = high or obstruct
+  2. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation. = high/obstruct
   2. Urgency check.
 1. Coping potential determination
   2. Control check.
@@ -93,9 +93,29 @@ Each of stimulus evaluation checks has following set of possible values:
 1. high (h)
 1. very high (vh)
 1. open (o), check does not influences this specific emotion.
-1. intentional(int)/other/natural(nat)/negligence(neg)/chance(ch)
+1. 
 1. obstruct (ob)
 1. consonant(c)/dissonant(d)
+
+
+Emotions:
+
+1. Enjoyment/happyness
+1. Elation/joy
+1. Displeasure/disgust
+1. Contempt/scorn
+1. Sadness/dejection
+1. Anxiety/worry
+1. Fear
+1. Irritation/cold anger
+1. Rage/hot anger
+1. Boredom/indiferance
+1. Shame
+1. Guilt
+1. Pride
+
+
+## Appendix
 
 ### Conscious appraisal predicates
 
