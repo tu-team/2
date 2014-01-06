@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="orchestra_of_emotions.svg"
-   inkscape:export-filename="F:\Projects\2\2\doc\emotions\affective and appraisal aspects\appraisal_in_model_of_six.png"
+   inkscape:export-filename="F:\Projects\2\2\doc\emotions\affective and appraisal aspects\orchestra_of_emotions.png"
    inkscape:export-xdpi="180"
    inkscape:export-ydpi="180">
   <defs
@@ -145,9 +145,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.6968395"
-     inkscape:cx="634.3347"
-     inkscape:cy="439.45921"
+     inkscape:zoom="0.96210494"
+     inkscape:cx="454.21746"
+     inkscape:cy="287.16021"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
@@ -172,6 +172,10 @@
        orientation="1,0"
        position="1031.0726,641.80213"
        id="guide6627" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="268.03209,592.0612"
+       id="guide6052" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -565,20 +569,20 @@
          rx="26.175179"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4703"
-         width="507.69412"
-         height="42.612366"
-         x="388.21976"
+         width="627.88269"
+         height="42.61227"
+         x="268.0321"
          y="248.86697"
-         ry="21.306183" />
+         ry="21.306135" />
       <text
          sodipodi:linespacing="125%"
          id="text4705"
          y="275.23126"
-         x="642.11078"
+         x="582.0174"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            y="275.23126"
-           x="642.11078"
+           x="582.0174"
            sodipodi:role="line"
            style="font-size:20px;text-align:center;text-anchor:middle"
            id="tspan4707">reflection</tspan></text>
@@ -689,7 +693,7 @@
            id="tspan4760">behaviour</tspan></text>
     </g>
     <g
-       transform="translate(782,0)"
+       transform="translate(806,0)"
        id="g4774">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -736,7 +740,7 @@
            id="tspan4796"
            x="107.36983"
            y="439.13898"
-           style="font-size:20px;text-align:center;text-anchor:middle">stimulus</tspan></text>
+           style="font-size:20px;text-align:center;text-anchor:middle">effect</tspan></text>
     </g>
   </g>
   <g
@@ -822,7 +826,19 @@
        inkscape:connector-curvature="0"
        inkscape:connector-type="orthogonal"
        id="path6042"
-       d="m 618.23436,368.17805 0,-95.61521"
+       d="m 618.23436,344.68591 0,-72.18526"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline"
+       d="m 728.93513,424.71354 0,-72.18526"
+       id="path6044"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="orthogonal"
+       id="path6046"
+       d="m 857.39476,431.572 -27.51998,0"
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
   </g>
 </svg>
