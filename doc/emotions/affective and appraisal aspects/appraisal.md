@@ -62,7 +62,8 @@ Tomkins theory is based on innate affects that we roughly correspond with Plutch
 1. Surprise - expectancy
 1. Acceptance - disgust
 
-Scherer uses 16 stimulus evaluation checks:
+Scherer uses 16 stimulus evaluation checks, they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.
+See comprehensive SECs structure below: 
 
 1. Relevance detection
   2. Novelty check.
@@ -72,10 +73,10 @@ Scherer uses 16 stimulus evaluation checks:
   2. Intrinsic pleasantness check.
   2. Goal relevance.
 1. Implication assessment
-  2. Causal Attribution check: Weiner, 1985 (originator attachment) = intentional(int)/other/natural(nat)/negligence(neg)/chance(ch)
+  2. Causal Attribution check: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch)
   2. Outcome probability check.
   2. Discrepancy from expectation check. = consonant/dissonant
-  2. Goal/need conduciveness check. (frustration). Conduciveness is orthogonal to expectation. = high/obstruct
+  2. Goal/need conduciveness check. = high/obstruct
   2. Urgency check.
 1. Coping potential determination
   2. Control check.
@@ -93,12 +94,10 @@ Each of stimulus evaluation checks has following set of possible values:
 1. high (h)
 1. very high (vh)
 1. open (o), check does not influences this specific emotion.
-1. 
-1. obstruct (ob)
-1. consonant(c)/dissonant(d)
 
+Except for causal attribution check that has following possible values: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch),  discrepancy from expectation check: consonant/dissonant values and goal/need conduciveness check: high/obstruct.
 
-Emotions:
+Scherer uses 16 words to describe emotions in his analysis:
 
 1. Enjoyment/happyness
 1. Elation/joy
@@ -114,6 +113,7 @@ Emotions:
 1. Guilt
 1. Pride
 
+He discovered 
 
 ## Appendix
 
