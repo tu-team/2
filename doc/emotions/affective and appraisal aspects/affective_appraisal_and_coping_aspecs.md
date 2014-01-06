@@ -1,6 +1,10 @@
 # Appraisal and coping aspects of emotional thinking.
 
-##Introduction 
+## Introduction 
+
+## Orchestra of emotions
+
+![orchestra of emotions](orchestra_of_emotions.png)
 
 ##Appraisal aspect
 
