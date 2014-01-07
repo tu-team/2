@@ -2,14 +2,18 @@
 
 ## Introduction 
 
+1. Reference to previous article
+1. AI background (system)
+
 ## Orchestra of emotions
 
 Imagine the number of emotions we experience every day, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From neuroscience perspective [...] we could identify two types of emotional reactions: low level - non-conscious and high level conscious reactions.
 
 ![orchestra of emotions](orchestra_of_emotions.png)
 
-Each time any stimulus comes in view it is been appraised first non-consciously then consciously and then could start high level reflective thinking. First stimulus triggers affective appraisal which in its turn switches emotional state from neutral to fear and triggers cognitive appraisal and reflective thinking. Second stimulus triggers affective appraisal again and switches emotional state of the system to terror and triggers second cognitive appraisal. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and triggers cognitive coping behaviour and cognitive reappraisal.
+Each time any stimulus comes in view of the system it is been appraised first non-consciously then consciously and then initiates high level reflective thinking. First stimulus triggers affective appraisal which in its turn switches emotional state from neutral to fear and triggers cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and triggers second cognitive appraisal and instinctive coping behaviour. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and triggers conscious coping behaviour and cognitive reappraisal. Reflective thinking stops cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action is interpreted as third stimulus that triggers affective appraisal again.
 
+This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [Smith, Roseman, Scherer] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasise constant collaboration of low level (instinctive processes) usually quick with high level: learned reactions, deliberative thinking, reflective thinking etc. processes that usually takes much more time than low level reactions via switching emotional states and initiating/terminating thinking processes 
 
 
 ##Appraisal aspect
