@@ -8,7 +8,7 @@ Imagine the number of emotions we experience every day, starting from wake up in
 
 ![orchestra of emotions](orchestra_of_emotions.png)
 
-Each time any stimulus comes in view it is been appraised first non-consciously then consciously and then could start high level reflective thinking. First stimulus triggers affective appraisal that in its turn triggers switches emotional state from neutral to fear and triggers cognitive appraisal and reflective thinking. Second stimulus triggers affective appraisal again and switches emotional state of the system to terror and triggers second cognitive appraisal. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and triggers cognitive coping behaviour and cognitive reappraisal.
+Each time any stimulus comes in view it is been appraised first non-consciously then consciously and then could start high level reflective thinking. First stimulus triggers affective appraisal which in its turn switches emotional state from neutral to fear and triggers cognitive appraisal and reflective thinking. Second stimulus triggers affective appraisal again and switches emotional state of the system to terror and triggers second cognitive appraisal. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and triggers cognitive coping behaviour and cognitive reappraisal.
 
 
 
