@@ -13,7 +13,7 @@ Imagine the number of emotions we experience every day, starting from wake up in
 
 Each time any stimulus comes in view of the system it is been appraised first non-consciously then consciously and then initiates high level reflective thinking. First stimulus triggers affective appraisal which in its turn switches emotional state from neutral to fear and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behaviour. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behaviour and cognitive reappraisal. Reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
 
-This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [Smith, Roseman, Scherer] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking etc. processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.  
+This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking etc. processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.  
 
 
 ##Appraisal aspect
@@ -120,6 +120,10 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Pride
 
 He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain sunrise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions. 
+
+## Coping
+
+[dont_worry_be_happy]
 
 ## Appendix
 
