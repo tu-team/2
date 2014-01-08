@@ -127,7 +127,7 @@ Marsella and Gratchi in their article [dont_worry_be_happy] identified 2 types o
 
 ### Problem-focused coping
 
-Problem-focused coping could be implemented as planning or suppression  of  competing  activities. This type of coping is acting on the environment and mainly constructive type.
+Problem-focused coping could be implemented as planning or suppression  of  competing  activities. This type of coping is acting on the environment.
 
 ![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
 
@@ -135,7 +135,17 @@ Inbound stimulus triggers affective appraisal and it switches emotional state of
 
 ### Emotion-focused coping
 
-Marsella and Gratch identifies emotion-focused coping in contrast to problem-focused coping as "Emotion-focused coping works altering  one’s  interpretation  of  circumstances,  for  example, discounting  a  potential  threat  or  abandoning  a  cherished  goal." As the result of an emotion-focused coping system should change emotional state without any impact over environment.
+Marsella and Gratch identifies emotion-focused coping in contrast to problem-focused coping as "Emotion-focused coping works altering  one’s  interpretation  of  circumstances, for  example, discounting  a  potential  threat  or  abandoning  a  cherished  goal." As the result of an emotion-focused coping system should change emotional state without any impact over environment.
+
+
+Emotion coping strategies described in [dont_worry_be_happy]:
+
+1. Positive reinterpretation: look for silver lining;
+1. Acceptance: accept stressor as real. Live with it.
+1. Seeking  social  support  for  emotional  reasons: getting moral support, sympathy.
+1. Denial: denying the reality of event.
+1. Behavioral disengagement: Admit cannot deal.
+1. Mental  disengagement:  Use  other  activities  to take mind off problem: daydreaming, sleeping
 
 ![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
 
