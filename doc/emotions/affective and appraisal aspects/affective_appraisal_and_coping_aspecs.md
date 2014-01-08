@@ -125,6 +125,14 @@ He discovered 224 appraisal patterns that we used as the base for our appraisal 
 
 [dont_worry_be_happy]
 
+### Problem-focused coping
+
+![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
+
+### Emotion-focused coping
+
+![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
+
 # High level emotion influence over affects and neuromediators
 
 Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions)] high level emotions are produced as mixture of 2 or basic emotions(affects):
