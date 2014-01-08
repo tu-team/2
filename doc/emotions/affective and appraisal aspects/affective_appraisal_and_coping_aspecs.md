@@ -119,23 +119,15 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain surpise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions. 
+He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
 
 ## Coping
 
-Marsella and Gratchi in their article [dont_worry_be_happy] identified 2 types of coping as main response on emotional arousal and later appraisal.
-
-### Problem-focused coping
-
-Problem-focused coping could be implemented as planning or suppression  of  competing  activities. This type of coping is acting on the environment.
-
-![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
-
-Inbound stimulus triggers affective appraisal and it switches emotional state of the system from neutral to fear, then appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative and possibly reflective thinking  and self-reflective thinking levels. Result of the appraisal and supplemental thinking processes could be problem-focused coping strategy. It worth to note that decision to use emotion-focused or problem focused coping could be gender dependant [sex_differencies]. Then during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral as the result of effect evaluation.
+Marsella and Gratchi in their article [dont_worry_be_happy] identified 2 types of coping as main response on emotional arousal and later appraisal. Coping plays central part in causal interpretation and emotional thinking life cycle.
 
 ### Emotion-focused coping
 
-Marsella and Gratch identifies emotion-focused coping in contrast to problem-focused coping as "Emotion-focused coping works altering  one’s  interpretation  of  circumstances, for  example, discounting  a  potential  threat  or  abandoning  a  cherished  goal." As the result of an emotion-focused coping system should change emotional state without any impact over environment.
+Marsella and Gratch identify emotion-focused coping as "Emotion-focused coping works altering  one’s  interpretation  of  circumstances, for  example, discounting  a  potential  threat  or  abandoning  a  cherished  goal." As the result of an emotion-focused coping system should change emotional state without any impact over environment.
 
 
 Emotion coping strategies described in [dont_worry_be_happy]:
@@ -150,6 +142,15 @@ Emotion coping strategies described in [dont_worry_be_happy]:
 ![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
 
 Stimulus triggers affective appraisal.  Affective appraisal switches emotional state of the system from neutral to fear, initiates cognitive appraisal and instinctive behaviour. Cognitive appraisal initiates emotion-focused coping that in its turn switches fear state to neutral (evaluating current situation is not so frightening via positive reinterpretation). Meanwhile instinctive behaviour influences environment and effect of this influence is apprised as stimulus with second affective appraisal.
+
+### Problem-focused coping
+
+Marsella and Gratch defines problem-focused coping in contrast to emotion-focused coping as "acting  on  the  environment". Problem-focused coping includes: planning and suppression  of  competing  activities.
+
+![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
+
+Inbound stimulus triggers affective appraisal and it switches emotional state of the system from neutral to fear, then appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative and possibly reflective thinking  and self-reflective thinking levels. Result of the appraisal and supplemental thinking processes could be problem-focused coping strategy. It worth to note that decision to use emotion-focused or problem focused coping could be gender dependant [sex_differencies]. Then during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral as the result of effect evaluation.
+
 
 In this chapter we come close to questions of gender influence over decision making and coping strategy selection. One more aspect that was not explicitly described here but still has significant influence on appraisal and coping is temperament that could significantly influence selection of coping strategy and cognitive appraisal.
 
