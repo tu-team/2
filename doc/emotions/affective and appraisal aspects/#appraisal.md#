@@ -1,22 +1,4 @@
-# Appraisal and coping aspects of emotional thinking.
-
-## Introduction 
-
-1. Reference to previous article
-1. AI background (system)
-
-## Orchestra of emotions
-
-Imagine the number of emotions we experience every day, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From neuroscience perspective [...] we could identify two types of emotional reactions: low level - non-conscious and high level conscious reactions.
-
-![orchestra of emotions](orchestra_of_emotions.png)
-
-Each time any stimulus comes in view of the system it is been appraised first non-consciously then consciously and then initiates high level reflective thinking. First stimulus triggers affective appraisal which in its turn switches emotional state from neutral to fear and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behaviour. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behaviour and cognitive reappraisal. Reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
-
-This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking etc. processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.  
-
-
-##Appraisal aspect
+#Appraisal aspect
 
 First aspect that was not describe in previous article is: how actually inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
 Overall appraisal process could be depicted like presented below
@@ -25,7 +7,7 @@ Overall appraisal process could be depicted like presented below
 
 Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal  with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behaviour) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
 
-### Non-conscious appraisal
+##Non-conscious appraisal
 
 We use Tomkins theory of affects that refer to innate emotional reactions as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] includes following affects:
 
@@ -49,15 +31,28 @@ It worth to note that the higher distress CNS activity the easier is switch to a
 
 Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
 
-"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as indicator of unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
+"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating
+poisonous or rotten food."
 
-**Shame humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next.
+**Shame humiliation** "affect is neither inherently punishing nor
+rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever
+comes next.
 
 ...
 
-Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+			Here is an example of the difference in these two situations: imagine you are waiting in your friend’s
+car while she is in the supermarket. Your interest is triggered by something you see and your attention
+(conscious awareness) is directed to the children in the playground across the street. You see that they are
+playing a game you have never seen before. The novelty of the game triggers more interest. After several
+minutes, you figure out the game they are playing. The children keep playing but repeat the same actions
+over and over again. The game, therefore, loses its novelty and your interest diminishes and soon there is
+a natural termination of the stimulus conditions for interest-excitement and that affect simply stops.
+Because the stimulus has ceased, you are no longer motivated to direct your attention to the game.
 
-### Conscious appraisal
+Without the innate affect shame-humiliation, we would not be motivated to take action when we are
+deprived of interesting and enjoyable things."
+
+##Conscious appraisal
 
 Tomkins theory is based on innate affects that we roughly correspond with Plutchik basic emotions[natureofemotions]. Our main assumption was that conscious and non-conscious appraisal could use different rules. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflections. In contrast to affective appraisal, conscious cognitive appraisal done in frontal cortex and cingulate cortex and includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is education of personality to react in some specific way on some specific stimulus. We use Scherer's approach described in 
 "Appraisal considered as process of multilevel sequential checking"[appraisal_as_sequential_checking]. We use Plutchik [natureofemotion] as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
@@ -119,83 +114,7 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain surpise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions. 
-
-## Coping
-
-Marsella and Gratchi in their article [dont_worry_be_happy] identified 2 types of coping as main response on emotional arousal and later appraisal.
-
-### Problem-focused coping
-
-Problem-focused coping could be implemented as planning or suppression  of  competing  activities. This type of coping is acting on the environment and mainly constructive type.
-
-![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
-
-Inbound stimulus triggers affective appraisal, then appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative and possibly reflective thinking  and self-reflective thinking levels. Result of the appraisal and supplemental thinking processes could be problem-focused coping strategy. It worth to note that decision to use emotion-focused or problem focused coping could be gender dependant [sex_differencies]. Then during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral.
-
-### Emotion-focused coping
-
-Marsella and Gratch identifies emotion-focused coping in contrast to problem-focused coping as "Emotion-focused coping works altering  one’s  interpretation  of  circumstances,  for  example, discounting  a  potential  threat  or  abandoning  a  cherished  goal." As the result of an emotion-focused coping system should change emotional state without any impact over environment.
-
-![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
-
-
-
-# High level emotion influence over affects and neuromediators
-
-Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions)] high level emotions are produced as mixture of 2 or basic emotions(affects):
-
-1. Optimism =	Anticipation + Joy
-1. Love =	Joy + Trust
-1. Submission = Trust + Fear
-1. Awe = Fear + Surprise
-1. Disapproval = Surprise + Sadness
-1. Remorse = Sadness + Disgust
-1. Contempt = Disgust + Anger
-1. Aggressiveness =	Anger + Anticipation
-
-[Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions". Lovheim demonstrated relations of neuromediators concentrations with emotional/affective states.
-
-![Emotions in model of six with two neuromodulations](six levels of emotions affective.png)
-
-We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions".
-
-## High level emotions to neuromodulators levels mapping:
-
-1. **Optimism** = 1.0 serotonin + 1.0 dopamine + 0.5 noradrenaline;
-1. **Love** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **Submission** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **Awe** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **Disapproval** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
-1. **Remorse** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
-1. **Contempt** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **Aggressiveness** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
-   
-## Stimulus affective appraisal
-
-Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators concentrations via Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition. It could be imagined as affective orchestra plays, where each instrument is one affect that interfere and collaborate with whole picture of the cognition.
-
-## Cognitive processes
-
-Higher processes including stimulus cognition and cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms.
-And it their turn influence low level process via cognitive psychological coping and neuromodulation according to matrix above.
-
-We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian.
-Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, above matrix *High level emotions to neuromodulators mapping* should be represented as following:
-
-1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
-1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
-1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
-1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **G(Aggressiveness Intensity)** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
-
-## Conclusion
-
-1. Gender
-1. Temper
+He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain sunrise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions. 
 
 ## Appendix
 
