@@ -141,7 +141,7 @@ Marsella and Gratch identifies emotion-focused coping in contrast to problem-foc
 
 Stimulus triggers affective appraisal.  Affective appraisal switches emotional state of the system from neutral to fear, initiates cognitive appraisal and instinctive behaviour. Cognitive appraisal initiates emotion-focused coping that in its turn switches fear state to neutral (evaluating current situation is not so frightening via positive reinterpretation). Meanwhile instinctive behaviour influences environment and effect of this influence is apprised as stimulus with second affective appraisal.
 
-
+In this chapter we come close to questions of gender influence over decision making and coping strategy selection. One more aspect that was not explicitly described here but still has significant influence on appraisal and coping is temperament that could significantly influence selection of coping strategy and cognitive appraisal.
 
 # High level emotion influence over affects and neuromediators
 
