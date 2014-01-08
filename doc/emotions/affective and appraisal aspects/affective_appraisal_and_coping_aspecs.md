@@ -131,13 +131,15 @@ Problem-focused coping could be implemented as planning or suppression  of  comp
 
 ![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
 
-Inbound stimulus triggers affective appraisal, then appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative and possibly reflective thinking  and self-reflective thinking levels. Result of the appraisal and supplemental thinking processes could be problem-focused coping strategy. It worth to note that decision to use emotion-focused or problem focused coping could be gender dependant [sex_differencies]. Then during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral.
+Inbound stimulus triggers affective appraisal and it switches emotional state of the system from neutral to fear, then appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative and possibly reflective thinking  and self-reflective thinking levels. Result of the appraisal and supplemental thinking processes could be problem-focused coping strategy. It worth to note that decision to use emotion-focused or problem focused coping could be gender dependant [sex_differencies]. Then during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral as the result of effect evaluation.
 
 ### Emotion-focused coping
 
 Marsella and Gratch identifies emotion-focused coping in contrast to problem-focused coping as "Emotion-focused coping works altering  one’s  interpretation  of  circumstances,  for  example, discounting  a  potential  threat  or  abandoning  a  cherished  goal." As the result of an emotion-focused coping system should change emotional state without any impact over environment.
 
 ![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
+
+Stimulus triggers affective appraisal.  Affective appraisal switches emotional state of the system from neutral to fear, initiates cognitive appraisal and instinctive behaviour. Cognitive appraisal initiates emotion-focused coping that in its turn switches fear state to neutral (evaluating current situation is not so frightening via positive reinterpretation). Meanwhile instinctive behaviour influences environment and effect of this influence is apprised as stimulus with second affective appraisal.
 
 
 
