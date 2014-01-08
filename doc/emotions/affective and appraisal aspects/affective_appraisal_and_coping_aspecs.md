@@ -119,7 +119,19 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-He discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Scherer model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
+
+### Conscious appraisal algorithm
+
+Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal objectives as following:
+
+1. Relevance check including: novelty check.intrinsic pleasantness check, goal relevance included.
+1. Implication including: causal Attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check
+1. Coping potential including: control check, power check. adjustment check.
+1. Normative significance including: internal standards check, external standards check.
+
+All included checks are done in parallel during objectives checks, but objectives checks are done in sequental manner.
+Result values of checks are stored is so called registers that are updated each time new stimulus appraised.
 
 ## Coping
 
