@@ -178,22 +178,11 @@ Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/P
 1. Contempt = Disgust + Anger
 1. Aggressiveness =	Anger + Anticipation
 
-[Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions". Lovheim demonstrated relations of neuromediators concentrations with emotional/affective states.
+[Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions"[cubeofemotions]. Lovheim demonstrated relations of neuromediators levels and emotional/affective states.
 
 ![Emotions in model of six with two neuromodulations](six levels of emotions affective.png)
 
-We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions".
-
-## High level emotions to neuromodulators levels mapping:
-
-1. **Optimism** = 1.0 serotonin + 1.0 dopamine + 0.5 noradrenaline;
-1. **Love** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **Submission** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **Awe** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **Disapproval** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
-1. **Remorse** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
-1. **Contempt** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **Aggressiveness** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions"[cubeofemotions].
    
 ## Stimulus affective appraisal
 
