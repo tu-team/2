@@ -60,7 +60,7 @@ Without the innate affect shame-humiliation, we would not be motivated to take a
 ### Conscious appraisal
 
 We use Tomkins theory that is based on innate affects which we roughly correspond with Plutchik basic emotions[natureofemotions]. Our main assumption is: conscious and non-conscious appraisal could have different nature as one is based on innate evolved system of emotions(affects) the later is based on nurture and education of human and is learned during childhood. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflections. In contrast to affective appraisal, conscious cognitive appraisal done in frontal cortex and cingulate cortex and includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is education of personality to react in some specific way on some specific stimulus. We use Scherer's approach described in
-"Appraisal considered as process of multilevel sequential checking"[appraisal_as_sequential_checking]. We use Plutchik [natureofemotion] as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
+"Appraisal considered as process of multilevel sequential checking"[appraisal_as_sequential_checking]. We use Plutchik [natureofemotions] as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
 
 1. Joy - sorrow
 1. Anger - fear
@@ -119,7 +119,7 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 Scherer's emotions do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
 
 ### Conscious appraisal algorithm
 
@@ -165,9 +165,9 @@ Inbound stimulus triggers affective appraisal and it switches emotional state of
 
 In this chapter we come close to questions of gender influence over decision making and coping strategy selection. One more aspect that was not explicitly described here but still has significant influence on appraisal and coping is temperament that could significantly influence selection of coping strategy and cognitive appraisal.
 
-# High level emotion influence over affects and neuromediators
+## High level emotion influence over affects and neuromediators
 
-Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions)][natureofemotions] high level emotions are produced as mixture of 2 or basic emotions(affects):
+Plutchik identifies high level emotions [natureofemotions] as mixture of 2 or more basic emotions(affects). For examle:
 
 1. Optimism =	Anticipation + Joy
 1. Love =	Joy + Trust
@@ -178,23 +178,21 @@ Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/P
 1. Contempt = Disgust + Anger
 1. Aggressiveness =	Anger + Anticipation
 
-[Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions"[cubeofemotions]. Lovheim demonstrated relations of neuromediators levels and emotional/affective states.
+Plutchik uses color theory as main approach to combine basic emotions in to high level. Basic emotions of Plutchik theory are close to Tomkins affects that are innate emotional reactions. Lovheim recently presented neuromediators based approach called "Cube of emotions"[cubeofemotions]. Lovheim demonstrates relations of neuromediators levels and emotional/affective states. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions"[cubeofemotions].
 
-![High level emotions influnece example](high_level_emotions.png)
+![High level emotions influence example](high_level_emotions.png)
 
-We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions"[cubeofemotions].
+Reflective thinking switches emotional state to optimism. Optimism emotional state influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and then "optimistic" instinctive behaviour is triggered.
    
-## Stimulus affective appraisal
+### Stimulus affective appraisal
 
-Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators levels, defined by Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition. It could be imagined as affective interruptions and collaboration with whole picture of the cognition.
+Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators levels, defined by Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition.
 
-## Cognitive processes
+### Cognitive processes
 
-Higher processes including stimulus cognition and cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms.
-And it their turn influence low level process via cognitive emotion-focused coping and neuromodulation according to matrix below.
+Higher processes including cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms and in their turn influence low level process via cognitive emotion-focused coping and neuromodulation according to matrix below.
 
-We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian.
-Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, above matrix *High level emotions to neuromodulators mapping* should be represented as following:
+We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian. Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, *High level emotions to neuromodulators mapping* could be represented as following:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -204,6 +202,8 @@ Taking in account Gaussian nature of influence of subjective emotional state ove
 1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+
+This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mapping and mutual influences. Shortly the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level process(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes. High level emotions also triggers neuromodulation with neurotransmitters levels described above thus influence all thinking processes of the system.
 
 ## Conclusion
 
