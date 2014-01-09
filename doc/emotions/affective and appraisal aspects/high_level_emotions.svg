@@ -15,8 +15,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="orchestra_of_emotions.svg"
-   inkscape:export-filename="F:\Projects\2\2\doc\emotions\affective and appraisal aspects\orchestra_of_emotions.png"
+   sodipodi:docname="high_level_emotions.svg"
+   inkscape:export-filename="F:\Projects\2\2\doc\emotions\affective and appraisal aspects\high_level_emotions.png"
    inkscape:export-xdpi="180"
    inkscape:export-ydpi="180">
   <defs
@@ -145,15 +145,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1279365"
-     inkscape:cx="565.58336"
-     inkscape:cy="353.57679"
+     inkscape:zoom="0.98694444"
+     inkscape:cx="587.94784"
+     inkscape:cy="520.40548"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
-     inkscape:window-width="1920"
+     inkscape:window-width="1856"
      inkscape:window-height="1064"
-     inkscape:window-x="-4"
+     inkscape:window-x="1980"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      showguides="true"
@@ -165,25 +165,33 @@
        position="446.08222,1094.0339"
        id="guide4043" />
     <sodipodi:guide
-       orientation="0,1"
-       position="691.31993,641.802"
-       id="guide4440" />
-    <sodipodi:guide
        orientation="1,0"
-       position="1031.0726,641.80213"
+       position="1180.0106,251.47766"
        id="guide6627" />
-    <sodipodi:guide
-       orientation="1,0"
-       position="268.03209,592.0612"
-       id="guide6052" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="652.28278,469.41321"
-       id="guide3155" />
     <sodipodi:guide
        orientation="1,0"
        position="1017.062,641.802"
        id="guide4215" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="57.247397,312.07431"
+       id="guide3126" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="246.10421,570.1235"
+       id="guide3128" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="512.94681,469.6313"
+       id="guide4388" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="779.42584,469.12469"
+       id="guide4400" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="1142.4149,310.55446"
+       id="guide4402" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -211,7 +219,7 @@
          y="616.05591"
          x="20.149921"
          height="79.59359"
-         width="1010.3029"
+         width="1159.8607"
          id="rect3181"
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2395612;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <text
@@ -239,7 +247,7 @@
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2395612;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4094"
-         width="1010.3029"
+         width="1159.8607"
          height="79.59359"
          x="20.149921"
          y="616.05591" />
@@ -267,7 +275,7 @@
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.23936117;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4104"
-         width="1010.3031"
+         width="1159.8607"
          height="79.593788"
          x="20.149822"
          y="370.05579" />
@@ -295,7 +303,7 @@
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.24133575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3135"
-         width="1010.0929"
+         width="1159.7556"
          height="160.58072"
          x="20.254938"
          y="453.03076" />
@@ -337,13 +345,13 @@
          y="98.112289" /></text>
     <g
        id="g3972"
-       transform="translate(-44.796583,-0.4547321)">
+       transform="translate(55.648543,-0.4547321)">
       <rect
-         ry="23.519026"
+         ry="22.577517"
          y="76.964714"
          x="190.98717"
          height="50.221176"
-         width="121.03939"
+         width="895.77917"
          id="rect3162"
          style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          rx="23.519026" />
@@ -351,14 +359,14 @@
          sodipodi:linespacing="125%"
          id="text3968"
          y="109.53136"
-         x="251.53128"
+         x="576.52258"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            style="font-size:20px;text-align:center;text-anchor:middle"
            y="109.53136"
-           x="251.53128"
+           x="576.52258"
            id="tspan3970"
-           sodipodi:role="line">neutral</tspan></text>
+           sodipodi:role="line">optimism</tspan></text>
     </g>
     <g
        id="g4685"
@@ -367,317 +375,83 @@
          rx="26.175179"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4023"
-         width="349.6196"
+         width="244.2999"
          height="42.612366"
          x="268.21976"
          y="248.86697"
-         ry="21.306183" />
+         ry="20.612576" />
       <text
          sodipodi:linespacing="125%"
          id="text3977"
          y="275.23126"
-         x="443.01001"
+         x="390.40387"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            y="275.23126"
-           x="443.01001"
+           x="390.40387"
            sodipodi:role="line"
            style="font-size:20px;text-align:center;text-anchor:middle"
-           id="tspan4040">cognitive appraisal</tspan></text>
+           id="tspan4040">learned thinking</tspan></text>
     </g>
     <g
        id="g4690"
-       transform="translate(0,-45.999985)">
+       transform="translate(-120,-45.999985)">
       <rect
-         ry="21.306183"
+         ry="20.799568"
          y="248.86697"
-         x="388.21976"
+         x="388.55603"
          height="42.612366"
-         width="349.6196"
+         width="244.72705"
          id="rect4655"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          rx="26.175179" />
       <text
          xml:space="preserve"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="563.01001"
+         x="511.25159"
          y="275.23126"
          id="text4657"
          sodipodi:linespacing="125%"><tspan
            id="tspan4659"
            style="font-size:20px;text-align:center;text-anchor:middle"
            sodipodi:role="line"
-           x="563.01001"
-           y="275.23126">cognitive appraisal</tspan></text>
+           x="511.25159"
+           y="275.23126">deliberative thinking</tspan></text>
     </g>
     <g
-       id="g3999"
-       transform="translate(41.588535,-4)">
-      <rect
-         ry="29.612206"
-         y="322.63049"
-         x="116.03793"
-         height="59.224411"
-         width="110.28964"
-         id="rect4021"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         rx="25.110588" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text3986"
-         y="345.26028"
-         x="171.51479"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           y="345.26028"
-           x="171.51479"
-           id="tspan3988"
-           sodipodi:role="line">affective</tspan><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           y="370.26028"
-           x="171.51479"
-           sodipodi:role="line"
-           id="tspan4038">appraisal</tspan></text>
-    </g>
-    <g
-       id="g3994">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect4041"
-         width="100.23699"
-         height="50.221176"
-         x="57.300167"
-         y="406.57233"
-         ry="24.618223"
-         rx="24.618223" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text3990"
-         y="439.13898"
-         x="107.36983"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           y="439.13898"
-           x="107.36983"
-           id="tspan3992"
-           sodipodi:role="line">stimulus</tspan></text>
-    </g>
-    <g
-       transform="matrix(1.0021002,0,0,1,76.803419,-0.4547321)"
-       id="g4432">
-      <rect
-         rx="23.519026"
-         style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect4434"
-         width="229.60187"
-         height="50.221165"
-         x="310.26627"
-         y="76.964714"
-         ry="22.252268" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="424.84747"
-         y="109.53136"
-         id="text4436"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4438"
-           x="424.84747"
-           y="109.53136"
-           style="font-size:20px;text-align:center;text-anchor:middle">terror</tspan></text>
-    </g>
-    <g
-       transform="matrix(1.0042562,0,0,1,426.75398,-0.4547321)"
-       id="g6617">
-      <rect
-         rx="23.519026"
-         style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect6619"
-         width="276.18436"
-         height="50.221176"
-         x="190.98717"
-         y="76.964714"
-         ry="23.519026" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="328.85962"
-         y="109.53136"
-         id="text6621"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan6623"
-           x="328.85962"
-           y="109.53136"
-           style="font-size:20px;text-align:center;text-anchor:middle">fear</tspan></text>
-    </g>
-    <g
-       transform="translate(161.58853,-4)"
-       id="g4661">
-      <rect
-         rx="25.110588"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect4663"
-         width="110.28964"
-         height="59.224411"
-         x="116.03793"
-         y="322.63049"
-         ry="29.612206" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="171.51479"
-         y="345.26028"
-         id="text4665"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4667"
-           x="171.51479"
-           y="345.26028"
-           style="font-size:20px;text-align:center;text-anchor:middle">affective</tspan><tspan
-           id="tspan4669"
-           sodipodi:role="line"
-           x="171.51479"
-           y="370.26028"
-           style="font-size:20px;text-align:center;text-anchor:middle">appraisal</tspan></text>
-    </g>
-    <g
-       id="g4671"
-       transform="translate(120,0)">
-      <rect
-         rx="24.618223"
-         ry="24.618223"
-         y="406.57233"
-         x="57.300167"
-         height="50.221176"
-         width="100.23699"
-         id="rect4673"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="107.36983"
-         y="439.13898"
-         id="text4675"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4677"
-           x="107.36983"
-           y="439.13898"
-           style="font-size:20px;text-align:center;text-anchor:middle">stimulus</tspan></text>
-    </g>
-    <g
-       transform="translate(0,-96)"
+       transform="translate(-310.93507,-96)"
        id="g4701">
       <rect
          rx="26.175179"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4703"
-         width="627.88269"
+         width="188.14162"
          height="42.61227"
-         x="268.0321"
+         x="368.68246"
          y="248.86697"
          ry="21.306135" />
       <text
          sodipodi:linespacing="125%"
          id="text4705"
          y="275.23126"
-         x="582.0174"
+         x="462.77768"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            y="275.23126"
-           x="582.0174"
+           x="462.77768"
            sodipodi:role="line"
            style="font-size:20px;text-align:center;text-anchor:middle"
            id="tspan4707">reflective thinking</tspan></text>
     </g>
     <g
-       transform="translate(350,4)"
-       id="g4709">
-      <rect
-         ry="10.907149"
-         y="246.99646"
-         x="302.28278"
-         height="21.814299"
-         width="243.63106"
-         id="rect4711"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         rx="10.907149" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="424.41568"
-         y="262.95734"
-         id="text4713"
-         sodipodi:linespacing="125%"><tspan
-           id="tspan4715"
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           sodipodi:role="line"
-           x="424.41568"
-           y="262.95734">cognitive reappraisal</tspan></text>
-    </g>
-    <g
-       id="g4732"
-       transform="matrix(1.0021002,0,0,1,-49.196581,-0.4547321)">
-      <rect
-         ry="22.252268"
-         y="76.964714"
-         x="316.43015"
-         height="50.221165"
-         width="119.2225"
-         id="rect4734"
-         style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         rx="23.519026" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4736"
-         y="109.53136"
-         x="375.82169"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           y="109.53136"
-           x="375.82169"
-           id="tspan4738"
-           sodipodi:role="line">fear</tspan></text>
-    </g>
-    <g
-       transform="translate(704.99088,-0.4547321)"
-       id="g4740">
-      <rect
-         rx="23.519026"
-         style="fill:none;stroke:#000000;stroke-width:1.06299996;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect4742"
-         width="121.03939"
-         height="50.221176"
-         x="190.98717"
-         y="76.964714"
-         ry="23.519026" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="251.53128"
-         y="109.53136"
-         id="text4744"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4746"
-           x="251.53128"
-           y="109.53136"
-           style="font-size:20px;text-align:center;text-anchor:middle">neutral</tspan></text>
-    </g>
-    <g
        id="g4748"
-       transform="translate(305.58853,-4)">
+       transform="translate(561.58853,-4)">
       <rect
-         ry="29.361975"
+         ry="29.361984"
          y="322.88074"
-         x="115.26143"
-         height="58.723949"
-         width="250.42116"
+         x="218.28214"
+         height="58.723969"
+         width="127.18993"
          id="rect4750"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          rx="26.777256" />
@@ -685,22 +459,22 @@
          sodipodi:linespacing="125%"
          id="text4752"
          y="345.26028"
-         x="240.22787"
+         x="281.09586"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            style="font-size:20px;text-align:center;text-anchor:middle"
            y="345.26028"
-           x="240.22787"
+           x="281.09586"
            sodipodi:role="line"
            id="tspan4756">instinctive</tspan><tspan
            style="font-size:20px;text-align:center;text-anchor:middle"
            y="370.26028"
-           x="240.22787"
+           x="281.09586"
            sodipodi:role="line"
-           id="tspan4760">coping</tspan></text>
+           id="tspan4760">behaviour</tspan></text>
     </g>
     <g
-       transform="translate(748.64589,0)"
+       transform="translate(984.64589,0)"
        id="g4774">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -726,7 +500,7 @@
     </g>
     <g
        id="g4790"
-       transform="translate(614.64589,0)">
+       transform="translate(850.64589,0)">
       <rect
          rx="24.618223"
          ry="24.618223"
@@ -750,150 +524,70 @@
            style="font-size:20px;text-align:center;text-anchor:middle">effect</tspan></text>
     </g>
     <g
-       id="g3159"
-       transform="translate(350,30)">
+       transform="translate(161.49339,4)"
+       id="g4376">
       <rect
-         rx="10.907149"
+         ry="21.306177"
+         y="248.86697"
+         x="352.04565"
+         height="42.612354"
+         width="265.7937"
+         id="rect4378"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect3161"
-         width="243.63106"
-         height="21.814299"
-         x="302.28278"
-         y="246.99646"
-         ry="10.907149" />
+         rx="26.175179" />
       <text
-         sodipodi:linespacing="125%"
-         id="text3163"
-         y="262.95734"
-         x="424.41568"
+         xml:space="preserve"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           y="262.95734"
-           x="424.41568"
-           sodipodi:role="line"
+         x="485.22571"
+         y="275.23126"
+         id="text4380"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4382"
            style="font-size:20px;text-align:center;text-anchor:middle"
-           id="tspan3165">conscious coping</tspan></text>
+           sodipodi:role="line"
+           x="485.22571"
+           y="275.23126">cognitive coping</tspan></text>
     </g>
     <g
-       id="g4203"
-       transform="translate(790.23442,-4)">
+       transform="translate(124.89078,-45.999985)"
+       id="g4390">
       <rect
-         ry="29.612206"
-         y="322.63049"
-         x="116.03793"
-         height="59.224411"
-         width="110.28964"
-         id="rect4205"
+         rx="26.175179"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         rx="25.110588" />
+         id="rect4392"
+         width="265.97903"
+         height="42.612366"
+         x="388.55603"
+         y="248.86697"
+         ry="20.799568" />
       <text
          sodipodi:linespacing="125%"
-         id="text4207"
-         y="345.26028"
-         x="171.51479"
+         id="text4394"
+         y="275.23126"
+         x="521.87756"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           y="345.26028"
-           x="171.51479"
-           id="tspan4209"
-           sodipodi:role="line">affective</tspan><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           y="370.26028"
-           x="171.51479"
+           y="275.23126"
+           x="521.87756"
            sodipodi:role="line"
-           id="tspan4211">appraisal</tspan></text>
+           style="font-size:20px;text-align:center;text-anchor:middle"
+           id="tspan4396">deliberative thinking</tspan></text>
     </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="5"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-       d="m 157.58172,432.20756 0,-81.92868"
-       id="path4126"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
-    <g
-       style="display:inline"
-       id="g4428">
-      <path
-         sodipodi:nodetypes="cc"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-         d="m 267.7697,327.51191 0,-47.08686"
-         id="path4317"
-         inkscape:connector-type="polyline"
-         inkscape:connector-curvature="0" />
-      <path
-         inkscape:connector-curvature="0"
-         inkscape:connector-type="polyline"
-         id="path3164"
-         d="m 267.7697,345.72059 0,-239.01423"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-         sodipodi:nodetypes="cc" />
-      <path
-         inkscape:connector-curvature="0"
-         inkscape:connector-type="polyline"
-         id="path3125"
-         d="m 267.7697,227.51191 0,-47.08686"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-         sodipodi:nodetypes="cc" />
-    </g>
-    <path
-       inkscape:connector-curvature="0"
-       inkscape:connector-type="orthogonal"
-       id="path4653"
-       d="m 277.58172,432.20756 0,-81.92868"
-       style="fill:none;stroke:#000000;stroke-width:0.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-       d="m 618.04851,274.17925 0,-166.43628"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline"
+       d="m 268.04851,270.82523 0,-144.31714"
        id="path4728"
        inkscape:connector-type="orthogonal"
        inkscape:connector-curvature="0" />
-    <g
-       transform="translate(759.95616,0.85490242)"
-       id="g4784"
-       style="display:inline">
-      <path
-         sodipodi:nodetypes="cc"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-         d="m -372.2303,327.5251 0,-97.61453"
-         id="path4786"
-         inkscape:connector-type="polyline"
-         inkscape:connector-curvature="0" />
-      <path
-         inkscape:connector-curvature="0"
-         inkscape:connector-type="polyline"
-         id="path4788"
-         d="m -372.2303,343.85576 0,-237.18762"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-         sodipodi:nodetypes="cc" />
-    </g>
-    <path
-       inkscape:connector-curvature="0"
-       inkscape:connector-type="orthogonal"
-       id="path4800"
-       d="m 896.04851,173.75593 0,-68.962"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline"
-       d="m 896.04851,256.02061 0,-84.33836"
-       id="path4802"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
-    <path
-       inkscape:connector-curvature="0"
-       inkscape:connector-type="orthogonal"
-       id="path5646"
-       d="m 738.04851,221.35322 0,-25.54124"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline"
-       d="m 671.58102,424.71354 0,-72.18526"
+       d="m 907.58102,424.37645 0,-77.20557"
        id="path6044"
        inkscape:connector-type="orthogonal"
        inkscape:connector-curvature="0" />
@@ -901,39 +595,25 @@
        inkscape:connector-curvature="0"
        inkscape:connector-type="orthogonal"
        id="path6046"
-       d="m 800.04065,431.572 -27.51998,0"
+       d="m 1036.0407,431.572 -27.52,0"
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline"
-       d="m 415.39476,349.572 -27.51998,0"
-       id="path3151"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
     <path
        inkscape:connector-curvature="0"
        inkscape:connector-type="orthogonal"
        id="path3983"
-       d="m 896.04851,282.02061 0,-84.33836"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
+       d="m 267.8917,219.03383 0,-92.61692"
+       style="fill:none;stroke:#000000;stroke-width:1.04498053;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutL)"
-       d="M 617.71382,274.18127 652.64276,261.658"
-       id="path3985"
-       inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
-       d="m 906.22761,432.20756 0,-81.92868"
-       id="path4213"
        inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
+       id="path3130"
+       d="m 246.11082,174.17459 0,-64.55097"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline" />
     <path
-       sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
-       inkscape:connector-type="polyline"
-       id="path4217"
-       d="m 617.99529,275.1597 34.96404,11.45485"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL)" />
+       inkscape:connector-type="orthogonal"
+       id="path4386"
+       d="m 779.58102,344.98741 0,-69.83961"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
   </g>
 </svg>

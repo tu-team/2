@@ -167,7 +167,7 @@ In this chapter we come close to questions of gender influence over decision mak
 
 # High level emotion influence over affects and neuromediators
 
-Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions)] high level emotions are produced as mixture of 2 or basic emotions(affects):
+Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/Plutchik%27s_Wheel_of_Emotions#Plutchik.27s_wheel_of_emotions)][natureofemotions] high level emotions are produced as mixture of 2 or basic emotions(affects):
 
 1. Optimism =	Anticipation + Joy
 1. Love =	Joy + Trust
@@ -180,18 +180,18 @@ Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/P
 
 [Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions"[cubeofemotions]. Lovheim demonstrated relations of neuromediators levels and emotional/affective states.
 
-![Emotions in model of six with two neuromodulations](six levels of emotions affective.png)
+... picture here
 
 We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions"[cubeofemotions].
    
 ## Stimulus affective appraisal
 
-Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators concentrations via Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition. It could be imagined as affective orchestra plays, where each instrument is one affect that interfere and collaborate with whole picture of the cognition.
+Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators levels, defined by Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition. It could be imagined as affective interruptions and collaboration with whole picture of the cognition.
 
 ## Cognitive processes
 
 Higher processes including stimulus cognition and cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms.
-And it their turn influence low level process via cognitive psychological coping and neuromodulation according to matrix above.
+And it their turn influence low level process via cognitive emotion-focused coping and neuromodulation according to matrix below.
 
 We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian.
 Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, above matrix *High level emotions to neuromodulators mapping* should be represented as following:
