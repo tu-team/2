@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-There are three bases of computational emotions theory presented in this article: neuro-science: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
+There are three bases of computational emotions theory presented in this article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
 
 In last article [computational_emotional_thinking] we described artificial(computational) emotions framework. Our work was based on three theoretical bases:
 Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
@@ -11,22 +11,23 @@ Artificial intelligence: cognitive architecture: Minsky the emotion machine[emot
 
 Specifically we described psychological model of emotions via neurophysiological(neuromodulators) impact on brain[cubeofemotions] and via mapping to computational processes:
 
-Generic:
-CPU power: noradrenaline
-Memory distribution (attention): noradrenaline
-Learning: serotonin, dopamine
-Storage: serotonin, dopamine
-Decision making/reward processing:
-Confidence: serotonin
-Satisfaction: serotonin
-Motivation, wanting: dopamine
-Risky choices inclination: noradrenaline
-Number of options to process: noradrenaline
+ 1. Generic:
+   2. CPU power: noradrenaline
+   2. Memory distribution (attention): noradrenaline
+   2. Learning: serotonin, dopamine
+   2. Storage: serotonin, dopamine
+ 1. Decision making/reward processing:
+   2. Confidence: serotonin
+   2. Satisfaction: serotonin
+   2. Motivation, wanting: dopamine
+   2. Risky choices inclination: noradrenaline
+   2. Number of options to process: noradrenaline
+
 Thus we identified psychological phenomena of emotions influence on computational processes. This could be used as base for further computational emotional thinking framework. We also described emotions in model of six [emotionmachine]. This overall architecture of emotional processes and we left several aspects not described for further research. Current article is dedicated to cover those blank spots: emotional appraisal, coping and influence of high level emotions on computational processes.
 
 ## Orchestra of emotions
 
-Imagine the number of emotions we experience every day, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From neuroscience perspective [...] we could identify two types of emotional reactions: low level - non-conscious and high level conscious reactions.
+Imagine the number of emotions we experience every day, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From psychology and neuroscience perspective [emotionsbraintorobot, neuromodulatory, natureofemotions, primer_affect_psychology] we could identify two types of emotional reactions: low level - non-conscious and high level conscious reactions.
 
 ![orchestra of emotions](orchestra_of_emotions.png)
 
