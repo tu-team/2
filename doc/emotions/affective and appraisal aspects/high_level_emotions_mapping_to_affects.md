@@ -13,7 +13,7 @@ Plutchik "Wheel of emotions"[[wheel_of_emotions](https://en.wikipedia.org/wiki/P
 
 [Tomkins](https://en.wikipedia.org/wiki/Silvan_Tomkins) used to address basic emotions as affects and Lovheim recently presented neuromediators based work called "Cube of emotions". Lovheim demonstrated relations of neuromediators concentrations with emotional/affective states.
 
-![Emotions in model of six with two neuromediatons](six levels of emotions affective.png)
+![Emotions in model of six with two neuromodulations](six levels of emotions affective.png)
 
 We interpret affects as instinctive reactions that stands close to objective brain response to any stimulus. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions".
 

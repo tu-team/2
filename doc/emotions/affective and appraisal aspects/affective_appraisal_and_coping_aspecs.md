@@ -2,8 +2,27 @@
 
 ## Introduction 
 
-1. Reference to previous article
-1. AI background (system)
+There are three bases of computational emotions theory presented in this article: neuro-science: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
+
+In last article [computational_emotional_thinking] we described artificial(computational) emotions framework. Our work was based on three theoretical bases:
+Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
+Neuro-science: Lovheim cube of emotions [cubeofemotions].
+Artificial intelligence: cognitive architecture: Minsky the emotion machine[emotionmachine].
+
+Specifically we described psychological model of emotions via neurophysiological(neuromodulators) impact on brain[cubeofemotions] and via mapping to computational processes:
+
+Generic:
+CPU power: noradrenaline
+Memory distribution (attention): noradrenaline
+Learning: serotonin, dopamine
+Storage: serotonin, dopamine
+Decision making/reward processing:
+Confidence: serotonin
+Satisfaction: serotonin
+Motivation, wanting: dopamine
+Risky choices inclination: noradrenaline
+Number of options to process: noradrenaline
+Thus we identified psychological phenomena of emotions influence on computational processes. This could be used as base for further computational emotional thinking framework. We also described emotions in model of six [emotionmachine]. This overall architecture of emotional processes and we left several aspects not described for further research. Current article is dedicated to cover those blank spots: emotional appraisal, coping and influence of high level emotions on computational processes.
 
 ## Orchestra of emotions
 
