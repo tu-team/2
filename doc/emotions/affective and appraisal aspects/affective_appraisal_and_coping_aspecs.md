@@ -1,6 +1,6 @@
-# Appraisal and coping aspects of emotional thinking.
+#Appraisal and coping aspects of emotional thinking.
 
-## Introduction 
+##Introduction 
 
 There are three bases of computational emotions theory presented in this article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
 
@@ -25,7 +25,7 @@ Specifically we described psychological model of emotions via neurophysiological
 
 Thus we identified psychological phenomena of emotions influence on computational processes. This could be used as base for further computational emotional thinking framework. We also described emotions in model of six [emotionmachine]. This overall architecture of emotional processes and we left several aspects not described for further research. Current article is dedicated to cover those blank spots: emotional appraisal, coping and influence of high level emotions on computational processes.
 
-## Orchestra of emotions
+##Orchestra of emotions
 
 Imagine the number of emotions we experience every day, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From psychology and neuroscience perspective [emotionsbraintorobot, neuromodulatory, natureofemotions, primer_affect_psychology] we could identify two types of emotional reactions: low level - non-conscious and high level conscious reactions.
 
@@ -141,7 +141,7 @@ Scherer uses 14 words to describe emotions in his analysis:
 
 Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
 
-### Conscious appraisal algorithm
+###Conscious appraisal algorithm
 
 Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal objectives as following:
 
@@ -153,12 +153,12 @@ Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal obje
 All included checks are done in parallel during objectives checks, but objectives checks are done in sequental manner.
 Result values of checks are stored is so called registers that are updated each time new stimulus appraised.
 
-## Coping
+##Coping
 
 Second aspect that is not described in previous article: what is done as response to emotional arousal(switch of emotional state), or how humans cope with emotions?
 Marsella and Gratchi in their article [dont_worry_be_happy] identified 2 types of coping as main response on emotional arousal and appraisal. Coping plays central role in causal interpretation and emotional thinking life cycle.
 
-### Emotion-focused coping
+###Emotion-focused coping
 
 Emotion-focused coping is identified as: "Emotion-focused coping works altering one’s interpretation of circumstances, for example, discounting a potential threat or abandoning a cherished goal." As the result of an emotion-focused coping system should change emotional state without any or with minimal impact over environment.
 
@@ -225,16 +225,16 @@ We suppose that Gaussian function regulates influence of subjective human percep
 
 This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mapping and mutual influences. Shortly the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level process(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes. High level emotions also triggers neuromodulation with neurotransmitters levels described above thus influence all thinking processes of the system.
 
-## Conclusion
+##Conclusion
 
 1. Gender
 1. Temper
 
-## Appendix
+##Appendix
 
-### Conscious appraisal predicates
+###Conscious appraisal predicates
 
-#### Joy
+####Joy
 
 1. Relevance detection:
   2. Novelty check:
@@ -259,7 +259,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. Internal standards check. = o
   2. External standards check. = o
 
-#### Anticipation
+####Anticipation
 
 1. Relevance detection:
   2. Novelty check:
@@ -284,7 +284,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. Internal standards check. = o
   2. External standards check. = l
 
-#### Anger
+####Anger
 
 1. Relevance detection:
   2. Novelty check:
@@ -309,7 +309,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. Internal standards check. = o
   2. External standards check. = l
 
-#### Disgust
+####Disgust
 
 1. Relevance detection:
   2. Novelty check:
@@ -335,7 +335,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. External standards check. = o
 
 
-#### Sadness
+####Sadness
 
 1. Relevance detection:
   2. Novelty check:
@@ -360,7 +360,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. Internal standards check. = o
   2. External standards check. = o
 
-#### Surprise
+####Surprise
 
 1. Relevance detection:
   2. Novelty check:
@@ -385,7 +385,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. Internal standards check. = o
   2. External standards check. = o
 
-#### Fear
+####Fear
 
 1. Relevance detection:
   2. Novelty check:
@@ -410,7 +410,7 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
   2. Internal standards check. = o
   2. External standards check. = o
 
-#### Trust
+####Trust
 
 1. Relevance detection:
   2. Novelty check:
