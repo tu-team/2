@@ -5,9 +5,10 @@
 There are three bases of computational emotions theory presented in this article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
 
 In last article [computational_emotional_thinking] we described artificial(computational) emotions framework. Our work was based on three theoretical bases:
-Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
-Neuro-science: Lovheim cube of emotions [cubeofemotions].
-Artificial intelligence: cognitive architecture: Minsky the emotion machine[emotionmachine].
+
+1. Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
+1. Neuro-science: Lovheim cube of emotions [cubeofemotions].
+1. Artificial intelligence: cognitive architecture: Minsky the emotion machine[emotionmachine].
 
 Specifically we described psychological model of emotions via neurophysiological(neuromodulators) impact on brain[cubeofemotions] and via mapping to computational processes:
 
@@ -204,11 +205,11 @@ Plutchik uses color theory as main approach to combine basic emotions in to high
 
 Reflective thinking switches emotional state to optimism. Optimism emotional state influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and then "optimistic" instinctive behaviour is triggered.
    
-### Stimulus affective appraisal
+###Affective appraisal
 
 Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators levels, defined by Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition.
 
-### Cognitive processes
+###Cognitive processes
 
 Higher processes including cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms and in their turn influence low level process via cognitive emotion-focused coping and neuromodulation according to matrix below.
 
@@ -229,6 +230,27 @@ This high level emotions over neuromodulators levels mapping closes emotion - ne
 
 1. Gender
 1. Temper
+
+In previous article [computational_emotional_thinking] we described overall emotional process in Marvin Minsky [emotinmacine] cognitive architecture. We used three following bases:
+
+1. Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
+1. Neuro-science: Lovheim cube of emotions [cubeofemotions].
+1. Artificial intelligence: cognitive architecture: Minsky "The Emotion Machine" [emotionmachine].
+
+This article covers three aspects that was not covered in previous paper [computational_emotional_thinking]: appraisal, coping and influence of high-level emotions on computational system.
+Emotional appraisal process, is based  and Scherer approach [appraisal_as_sequential_checking]. We identified two types of appraisal: non-conscious affective appraisal and conscious cognitive appraisal. First is based on on affect theory of Tomkins [primer_affect_psychology]. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
+
+* Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+
+Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
+It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
+
+Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
+
+"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as indicator of unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
+
+**Shame humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next.
+
 
 ##Appendix
 
