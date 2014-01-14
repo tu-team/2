@@ -238,18 +238,15 @@ In previous article [computational_emotional_thinking] we described overall emot
 1. Artificial intelligence: cognitive architecture: Minsky "The Emotion Machine" [emotionmachine].
 
 This article covers three aspects that was not covered in previous paper [computational_emotional_thinking]: appraisal, coping and influence of high-level emotions on computational system.
-Emotional appraisal process, is based  and Scherer approach [appraisal_as_sequential_checking]. We identified two types of appraisal: non-conscious affective appraisal and conscious cognitive appraisal. First is based on on affect theory of Tomkins [primer_affect_psychology]. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
+Emotional appraisal process, is based  and Scherer approach [appraisal_as_sequential_checking]. We identified two types of appraisal: non-conscious affective appraisal and conscious cognitive appraisal. First is based on on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
 
 * Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+* Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
+* Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
+* Disgust - could be understood as low level hard-coded predicate to protect system.
+* Shame humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
-Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
-It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
-
-Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
-
-"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as indicator of unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
-
-**Shame humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next.
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking].
 
 
 ##Appendix
