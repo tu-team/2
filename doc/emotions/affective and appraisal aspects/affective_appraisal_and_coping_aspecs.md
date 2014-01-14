@@ -142,6 +142,8 @@ Scherer uses 14 words to describe emotions in his analysis:
 
 Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
 
+Strict predicates ...
+
 ###Conscious appraisal algorithm
 
 Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal objectives as following:
@@ -246,7 +248,7 @@ Emotional appraisal process, is based  and Scherer approach [appraisal_as_sequen
 * Disgust - could be understood as low level hard-coded predicate to protect system.
 * Shame humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
-Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking].
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's processes to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates could be found in appendix.
 
 
 ##Appendix
