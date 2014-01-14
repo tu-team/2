@@ -140,9 +140,7 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions.
-
-Strict predicates ...
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates that you could find in appendix. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions. Model does not contain surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for those three emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic. Each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
 
 ###Conscious appraisal algorithm
 
@@ -248,8 +246,16 @@ Emotional appraisal process, is based  and Scherer approach [appraisal_as_sequen
 * Disgust - could be understood as low level hard-coded predicate to protect system.
 * Shame humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
-Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's processes to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates could be found in appendix.
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's processes to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps:
 
+1. Relevance check including: novelty check.intrinsic pleasantness check, goal relevance included.
+1. Implication including: causal Attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check
+1. Coping potential including: control check, power check. adjustment check.
+1. Normative significance including: internal standards check, external standards check.
+
+All the sub-steps are processed in parallel.
+
+Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. ...
 
 ##Appendix
 
