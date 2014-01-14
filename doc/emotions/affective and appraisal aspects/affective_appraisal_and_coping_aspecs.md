@@ -36,7 +36,7 @@ Each time any stimulus comes in view of the system it is been appraised first no
 
 First stimulus triggers affective appraisal which in its turn switches  and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behaviour. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behaviour and cognitive reappraisal. Reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
 
-This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking etc. processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.  
+This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking etc. processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.
 
 
 ##Appraisal aspect
@@ -207,8 +207,6 @@ Plutchik uses color theory as main approach to combine basic emotions in to high
 
 Reflective thinking switches emotional state to optimism. Optimism emotional state influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and then "optimistic" instinctive behaviour is triggered.
 
-###Cognitive processes
-
 Higher processes including cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms and in their turn influence low level process via cognitive emotion-focused coping and neuromodulation according to matrix below.
 
 We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian. Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, *High level emotions to neuromodulators mapping* could be represented as following:
@@ -255,7 +253,36 @@ All the sub-steps are processed in parallel.
 
 Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. Coping is main emotional mechanism to process emotional state that was triggered during appraisal. Should be mentioned that decision to select specific coping strategy is considered to be done under influence of gender and temperament. Those are still open questions in our work.
 
-High-level emotions impact
+High-level emotions were described by Plutchik [natureofemotions] as mixture of 2 or more basic emotions(affects):
+
+1. Optimism =	Anticipation + Joy
+1. Love =	Joy + Trust
+1. Submission = Trust + Fear
+1. Awe = Fear + Surprise
+1. Disapproval = Surprise + Sadness
+1. Remorse = Sadness + Disgust
+1. Contempt = Disgust + Anger
+1. Aggressiveness =	Anger + Anticipation
+
+We suppose that high-level emotions influence neuromodulation via following matrix:
+
+1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
+1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
+1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
+1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+1. **G(Aggressiveness Intensity)** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+
+We suppose that this work could be used as base of emotional cognitive architecture and could have practical use especially taking in account artificial emotional profiles that could be used in several domains:
+
+1. Advertisement
+1. Emotional behavior simulations
+1. Robotics
+1. Intellectual assistants
+1. Estimating human behaviour
+1. Caring for humans software and robotics
 
 ##Appendix
 
