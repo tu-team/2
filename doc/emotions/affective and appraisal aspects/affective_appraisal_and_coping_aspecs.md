@@ -32,7 +32,9 @@ Imagine the number of emotions we experience every day, starting from wake up in
 
 ![orchestra of emotions](orchestra_of_emotions.png)
 
-Each time any stimulus comes in view of the system it is been appraised first non-consciously then consciously and then initiates high level reflective thinking. First stimulus triggers affective appraisal which in its turn switches emotional state from neutral to fear and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behaviour. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behaviour and cognitive reappraisal. Reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
+Each time any stimulus comes in view of the system it is been appraised first non-consciously (affective appraisal). Affective appraisal triggers neuromodulation, that actually switches emotional state of the system and influences all the further processes. Stimulus is appraised second time consciously (cognitive appraisal). Later the result of cognitive appraisal could trigger coping strategy that in its turn influences environment or emotional state.
+
+First stimulus triggers affective appraisal which in its turn switches  and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behaviour. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behaviour and cognitive reappraisal. Reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
 
 This is picture of the constant collaboration of thinking processes, see [emotionmachine] involved in emotional appraisal, coping and reflective thinking. We have tried to map appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking etc. processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.  
 
@@ -204,10 +206,6 @@ Plutchik uses color theory as main approach to combine basic emotions in to high
 ![High level emotions influence example](high_level_emotions.png)
 
 Reflective thinking switches emotional state to optimism. Optimism emotional state influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and then "optimistic" instinctive behaviour is triggered.
-   
-###Affective appraisal
-
-Firstly stimulus is appraised unconsciously and directly influences affective state and neuromediators levels, defined by Lovheim model[cubeofemotions]. Neuromodulation influences all conscious process including stimulus cognition.
 
 ###Cognitive processes
 
@@ -255,7 +253,9 @@ Conscious appraisal is more complex and includes learned rules. It is based no S
 
 All the sub-steps are processed in parallel.
 
-Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. ...
+Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. Coping is main emotional mechanism to process emotional state that was triggered during appraisal. Should be mentioned that decision to select specific coping strategy is considered to be done under influence of gender and temperament. Those are still open questions in our work.
+
+High-level emotions impact
 
 ##Appendix
 
