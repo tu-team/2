@@ -4,15 +4,14 @@
 
 There are three bases of computational emotions thinking theory presented in our previous[computational_emotional_thinking] and current article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
 
-We used neuromodulators to emotions(affects) mapping from Lovheim article [cubeofemotions]. Overall emotional process was described in our previous article [computational_emotional_thinking] ...
+Overall emotional process was described exhaustively in our previous article [computational_emotional_thinking] and looks like following:
+1. Inbound stimulus is appraised non-consciously (affective appraisal).
+1. Neuromodulation is triggered, it actually switches the emotional state of the system. System feels emotion.
+1. Conscious processes are triggered: stimulus cognition with stimulus deliberation, stimulus reflective thinking, stimulus cognition reflection, stimulus cognition self-reflection, stimulus cognition self-conscious reflection.
+1. Parallel to conscious processes the instinctive behaviour could be triggered, it influences the environment.
+1. Conscious processes described above triggers conscious behaviour and its turn it influences the environment again.
 
-In last article [computational_emotional_thinking] we described artificial(computational) emotions framework. Our work was based on three theoretical bases:
-
-1. Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
-1. Neuro-science: Lovheim cube of emotions [cubeofemotions].
-1. Artificial intelligence: cognitive architecture: Minsky the emotion machine[emotionmachine].
-
-Specifically we described psychological model of emotions via neurophysiological(neuromodulators) impact on brain[cubeofemotions] and via mapping to computational processes:
+Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" as base psychological model of emotions [natureofemotions] and adopted his emotional feedback loops processes to fit cognitive architecture "model of six" of Marvin Minksy [emotionmachine]. We developed mapping of neuromodulators impact over computational processes:
 
  1. Generic:
    2. CPU power: noradrenaline
@@ -26,7 +25,7 @@ Specifically we described psychological model of emotions via neurophysiological
    2. Risky choices inclination: noradrenaline
    2. Number of options to process: noradrenaline
 
-Thus we identified psychological phenomena of emotions influence on computational processes. This could be used as base for further computational emotional thinking framework. We also described emotions in model of six [emotionmachine]. This overall architecture of emotional processes and we left several aspects not described for further research. Current article is dedicated to cover those blank spots: emotional appraisal, coping and influence of high level emotions on computational processes.
+Thus we identified psychological phenomena of emotions influence on computational processes. This could be used as base for further computational emotional thinking framework. We defined overall architecture of emotional processes but we left several aspects not described for further research. Current article is dedicated to cover those blank spots: emotional appraisal (non-conscious and conscious), coping and influence of high level emotions on computational processes.
 
 ##Orchestra of emotions
 
