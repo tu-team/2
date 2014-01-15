@@ -42,12 +42,12 @@ This is picture of the constant collaboration of thinking processes [emotionmach
 
 ##Appraisal aspect
 
-First aspect that is not described in previous article: how inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
+First aspect that is not described in previous article [computational_emotional_thinking]: how inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
 Overall appraisal process could be depicted like presented below
 
 ![appraisal in model of six](appraisal_in_model_of_six.png)
 
-Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal  with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behaviour) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
+Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala, secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behavior) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
 
 ###Non-conscious appraisal
 
