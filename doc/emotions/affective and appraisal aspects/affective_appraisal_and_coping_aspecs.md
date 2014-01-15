@@ -4,6 +4,8 @@
 
 There are three bases of computational emotions thinking theory presented in our previous[computational_emotional_thinking] and current article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], to computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
 
+We used neuromodulators to emotions(affects) mapping from Lovheim article [cubeofemotions]. Overall emotional process was described in our previous article [computational_emotional_thinking] ...
+
 In last article [computational_emotional_thinking] we described artificial(computational) emotions framework. Our work was based on three theoretical bases:
 
 1. Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
