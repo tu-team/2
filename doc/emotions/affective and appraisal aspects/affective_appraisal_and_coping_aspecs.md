@@ -1,4 +1,4 @@
-#Appraisal and coping aspects of emotional thinking.
+#Appraisal, coping and high level emotions aspects of emotional thinking.
 
 ##Introduction 
 
