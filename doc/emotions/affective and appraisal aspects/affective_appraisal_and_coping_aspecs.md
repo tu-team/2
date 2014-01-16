@@ -136,24 +136,24 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates listed in appendix. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions, there no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic. Each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions, there no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic, each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
 
 ###Conscious appraisal algorithm
 
 Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal objectives as following:
 
-1. Relevance check including: novelty check.intrinsic pleasantness check, goal relevance included.
-1. Implication including: causal Attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check
-1. Coping potential including: control check, power check. adjustment check.
+1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance check.
+1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
+1. Coping potential including: control check, power check, adjustment check.
 1. Normative significance including: internal standards check, external standards check.
 
-All included checks are done in parallel during objectives checks, but objectives checks are done in sequental manner.
-Result values of checks are stored is so called registers that are updated each time new stimulus appraised.
+All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequental manner.
+Result values of checks are stored in so called registers that are updated each time new stimulus appraised.
 
 ##Coping
 
 Second aspect that is not described in previous article: what is done as response to emotional arousal(switch of emotional state), or how humans cope with emotions?
-Marsella and Gratchi in their article [dont_worry_be_happy] identified 2 types of coping as main response on emotional arousal and appraisal. Coping plays central role in causal interpretation and emotional thinking life cycle.
+Marsella and Gratch in their article [dont_worry_be_happy] identified 2 types of coping (emotion-focused coping and problem-focused coping) as main response on emotional arousal and appraisal and mentioned that coping plays central role in causal interpretation and emotional thinking life cycle.
 
 ###Emotion-focused coping
 
