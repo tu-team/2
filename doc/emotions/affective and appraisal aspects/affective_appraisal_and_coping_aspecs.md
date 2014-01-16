@@ -488,5 +488,4 @@ We suppose that this work could be used as base of emotional cognitive architect
   2. Internal standards check. = o
   2. External standards check. = o
 
-
-primer_affect_psychology: http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf "Primer Affect Psychology"
+[primer_affect_psychology]: http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf "Primer Affect Psychology"
