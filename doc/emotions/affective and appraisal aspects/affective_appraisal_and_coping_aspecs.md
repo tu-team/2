@@ -51,9 +51,7 @@ Firstly stimulus is appraised non-consciously via affective appraisal it could b
 
 ###Non-conscious appraisal
 
-We use Tomkins theory of affects that refer to innate emotional reactions as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] includes following affects:
-
-Tomkins affects:
+Lovheim uses Tomkins theory of affects that refer to innate emotional reactions we used it as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] includes following affects:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -64,7 +62,7 @@ Tomkins affects:
 1. Fear/Terror
 1. Shame/Humiliation
 
-We use Tomkins affective appraisal described in "A primer of affect psychology" [primer_affect_psychology]. The main factor that influences affective appraisal is brain activity that has three main behaviour trends: increase, decrease or stay stable.
+We use Tomkins affective appraisal described in ["A primer of affect psychology"][primer_affect_psychology]. The main factor that influences affective appraisal is brain activity that has three main behaviour trends: increase, decrease or stay stable.
 
 According to Kelly: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 
