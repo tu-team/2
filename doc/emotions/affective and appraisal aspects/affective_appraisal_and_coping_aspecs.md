@@ -62,22 +62,18 @@ Lovheim uses Tomkins theory of affects that refer to innate emotional reactions 
 1. Fear/Terror
 1. Shame/Humiliation
 
-We use affective appraisal described in ["A primer of affect psychology"][primer_affect_psychology]. The main factor that influences affective appraisal is brain activity that has three main behaviour trends: increase, decrease or stay stable.
+We use affective appraisal described in ["A primer of affect psychology"][primer_affect_psychology]. The main factor that influences affective appraisal is CNS activity that has three main behaviour trends: increase, decrease or stay stable.
 
-According to Kelly: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+According to ["A primer of affect psychology"][primer_affect_psychology]: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 
 Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
 It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
 
 Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
 
-"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as indicator of unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
+"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
 
-**Shame humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next.
-
-...
-
-Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+**Shame humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
 
 ###Conscious appraisal
 
