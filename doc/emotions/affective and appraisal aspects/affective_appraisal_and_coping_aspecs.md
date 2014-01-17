@@ -212,16 +212,11 @@ We suppose that Gaussian function regulates influence of subjective human percep
 1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
 1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **G(Aggressiveness Intensity)** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
 This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mutual influences. Shortly: the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level processes(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes.
 
-High level emotions also triggers neuromodulation with neurotransmitters levels described above thus influence all thinking processes of the system.
-
 ##Conclusion
-
-1. Gender
-1. Temper
 
 In previous article [computational_emotional_thinking] we described overall emotional process in Marvin Minsky [emotinmacine] cognitive architecture. We used three following bases:
 
