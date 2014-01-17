@@ -225,7 +225,7 @@ In previous article [computational_emotional_thinking] we described overall emot
 1. Artificial intelligence: cognitive architecture: Minsky "The Emotion Machine" [emotionmachine].
 
 This article covers three aspects that was not covered in previous paper [computational_emotional_thinking]: appraisal, coping and influence of high-level emotions on computational system.
-We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
+We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
 
 * Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 * Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**.
@@ -233,14 +233,14 @@ We identified two types of appraisal: non-conscious affective and conscious cogn
 * Disgust - is understood as low level hard-coded predicate to protect system.
 * Shame/humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
-Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's sequental checks to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's sequential checks to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
 
 1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance.
 1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
 1. Coping potential check including: control check, power check, adjustment check.
 1. Normative significance check including: internal standards check, external standards check.
 
-All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequental manner.
+All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequential manner.
 Result values of checks are stored in so called registers that are updated each time new stimulus appraised.
 
 Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. Coping is main mechanism to process emotional state that was triggered during appraisal. It should be mentioned that decision to select specific coping strategy is considered to be done under influence of gender and temperament. Those are still open questions in our work.
