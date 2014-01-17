@@ -43,7 +43,7 @@ This is picture of the constant collaboration of thinking processes [emotionmach
 ##Appraisal aspect
 
 First aspect that is not described in previous article [computational_emotional_thinking]: how inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
-Overall appraisal process could be depicted like presented below
+Overall appraisal process could be depicted like presented below:
 
 ![appraisal in model of six](appraisal_in_model_of_six.png)
 
@@ -136,7 +136,7 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates. 14 emotions described in Scherer's article do not mach 8 Plutchik basic emotions, there no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic, each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates. 14 emotions described in Scherer's article do not match 8 Plutchik basic emotions, there are no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic, each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
 
 ###Conscious appraisal algorithm
 
@@ -147,7 +147,7 @@ Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal obje
 1. Coping potential including: control check, power check, adjustment check.
 1. Normative significance including: internal standards check, external standards check.
 
-All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequental manner.
+All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequential manner.
 Result values of checks are stored in so called registers that are updated each time new stimulus appraised.
 
 ##Coping
@@ -161,12 +161,12 @@ Emotion-focused coping is identified as: "Emotion-focused coping works altering 
 
 Emotion coping strategies described in [dont_worry_be_happy]:
 
-1. Positive reinterpretation: look for silver lining;
+1. Positive reinterpretation: look for silver lining.
 1. Acceptance: accept stressor as real. Live with it.
 1. Seeking  social  support  for  emotional  reasons: getting moral support, sympathy.
 1. Denial: denying the reality of event.
 1. Behavioral disengagement: Admit cannot deal.
-1. Mental  disengagement:  Use  other  activities  to take mind off problem: daydreaming, sleeping
+1. Mental  disengagement:  Use  other  activities  to take mind off problem: daydreaming, sleeping.
 
 ![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
 
@@ -182,7 +182,7 @@ Inbound stimulus triggers affective appraisal and it switches emotional state of
 
 In this chapter we come close to questions of gender influence on decision making and coping strategy selection [sex_differencies]. One more aspect that was not explicitly described here but still has significant influence on appraisal and coping is temperament that could significantly influence selection of coping strategy and cognitive appraisal.
 
-##High level emotion influence over affects and neuromediators
+##High level emotion influence over affects and neuromodulators
 
 Plutchik identifies high level emotions [natureofemotions] as mixture of 2 or more basic emotions(affects). For examle:
 
@@ -195,7 +195,7 @@ Plutchik identifies high level emotions [natureofemotions] as mixture of 2 or mo
 1. Contempt = Disgust + Anger
 1. Aggressiveness =	Anger + Anticipation
 
-Plutchik uses color theory as main approach to combine basic emotions in to high level. Basic emotions of Plutchik theory are close to Tomkins affects that are innate emotional reactions. Lovheim recently presented neuromediators based approach called "Cube of emotions"[cubeofemotions]. Lovheim demonstrates relations of neuromodulators levels and emotional/affective states. High level emotions could be interpreted as intermediate levels of neuromodulators in "Cube of emotions"[cubeofemotions].
+Plutchik uses color theory as main approach to combine basic emotions in to high level. Basic emotions of Plutchik theory are close to Tomkins affects that are innate emotional reactions. Lovheim recently presented neuromodulators based approach called "Cube of emotions"[cubeofemotions]. Lovheim demonstrates relations of neuromodulators levels and emotional/affective states. High level emotions could be interpreted as intermediate levels of neuromodulators in "Cube of emotions"[cubeofemotions].
 
 ![High level emotions influence example](high_level_emotions.png)
 
