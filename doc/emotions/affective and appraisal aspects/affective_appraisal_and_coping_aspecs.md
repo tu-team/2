@@ -87,14 +87,14 @@ We use Tomkins theory that is based on innate affects which we correspond with P
 Scherer uses 16 stimulus evaluation checks(SEC), they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.
 Comprehensive SECs structure below: 
 
-1. Relevance detection
-  2. Novelty check.
+1. Relevance detection:
+  2. Novelty check:
     3. Suddenness.
     3. Familiarity.
     3. Predictability.
   2. Intrinsic pleasantness check.
   2. Goal relevance.
-1. Implication assessment
+1. Implication assessment:
   2. Causal Attribution check: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch).
   2. Outcome probability check.
   2. Discrepancy from expectation check: consonant/dissonant.
@@ -104,7 +104,7 @@ Comprehensive SECs structure below:
   2. Control check.
   2. Power check.
   2. Adjustment check.
-1. Normative significance evaluation
+1. Normative significance evaluation:
   2. Internal standards check. 
   2. External standards check.
 
@@ -126,12 +126,12 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Displeasure/disgust
 1. Contempt/scorn
 1. Sadness/dejection
-1. Dispair
+1. Despair
 1. Anxiety/worry
 1. Fear
 1. Irritation/cold anger
 1. Rage/hot anger
-1. Boredom/indiferance
+1. Boredom/indifference
 1. Shame
 1. Guilt
 1. Pride
