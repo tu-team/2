@@ -8,7 +8,7 @@ Overall emotional process was described exhaustively in our previous article [co
 
 1. Inbound stimulus is appraised non-consciously (affective appraisal).
 1. Neuromodulation is triggered, it actually switches the emotional state of the system. System feels emotion.
-1. Conscious processes are triggered: stimulus cognition with stimulus deliberation, stimulus reflective thinking, stimulus cognition reflection, stimulus cognition self-reflection, stimulus cognition self-conscious reflection.
+1. Conscious processes are triggered: stimulus cognition with stimulus deliberation, stimulus reflective thinking, stimulus cognition reflection, stimulus cognition self-reflection, stimulus cognition self-conscious reflection (cognitive appraisal).
 1. Parallel to conscious processes the instinctive behaviour could be triggered, it influences the environment.
 1. Conscious processes described above triggers conscious behaviour and its turn it influences the environment again.
 
@@ -38,7 +38,7 @@ Each time any stimulus comes in view of the system it is appraised firstly non-c
 
 First stimulus triggers affective appraisal which in its turn switches the emotional state of the system from neutral to fear and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behavior. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behavior and cognitive reappraisal. Then reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
 
-This is picture of the constant collaboration of thinking processes [emotionmachine], involved in emotional appraisal, coping and reflective thinking. We mapped appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy [emotionmachine]. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify all the time changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.
+This is picture of the constant collaboration of thinking processes [emotionmachine], involved in emotional appraisal, coping and reflective thinking. We mapped appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy [emotionmachine]. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify always changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.
 
 ##Appraisal aspect
 
@@ -170,7 +170,7 @@ Emotion coping strategies described in [dont_worry_be_happy]:
 
 ![Emotion-focused coping](emotion_focused_coping_in_model_of_six.png)
 
-Stimulus triggers affective appraisal then affective appraisal switches emotional state of the system from neutral to fear, initiates cognitive appraisal and instinctive behaviour. Cognitive appraisal initiates emotion-focused coping that in its turn switches fear state to neutral (evaluating current situation as not so frightening via positive reinterpretation). Meanwhile instinctive behaviour influences environment and effect of this influence is apprised as stimulus with second affective appraisal.
+Stimulus triggers affective appraisal then affective appraisal switches emotional state of the system from neutral to fear, initiates cognitive appraisal and instinctive behaviour. Cognitive appraisal initiates emotion-focused coping, that in its turn switches fear state to neutral (evaluating current situation as not so frightening via positive reinterpretation). Meanwhile instinctive behaviour influences environment and effect of this influence is apprised as stimulus with second affective appraisal.
 
 ###Problem-focused coping
 
@@ -178,7 +178,7 @@ Problem-focused coping is defined in contrast to emotion-focused coping as "... 
 
 ![Problem-focused coping](problem_focused_coping_in_model_of_six.png)
 
-Inbound stimulus triggers affective appraisal and it switches emotional state of the system from neutral to fear, then appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative, possibly reflective thinking  and self-reflective thinking levels. Result of cognitive appraisal and supplemental thinking processes could be problem-focused coping. It worth to note that decision to use specific coping strategy could be gender dependant [sex_differencies]. Later, during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral as the result of effect evaluation.
+Inbound stimulus triggers affective appraisal and it switches emotional state of the system from neutral to fear, then affective appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative, reflective thinking and possibly self-reflective thinking levels. Result of cognitive appraisal and supplemental thinking processes could be problem-focused coping. It worth to note that decision to use specific coping strategy could be gender dependant [sex_differencies]. Later, during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral as the result of effect evaluation.
 
 In this chapter we come close to questions of gender influence on decision making and coping strategy selection [sex_differencies]. One more aspect that was not explicitly described here but still has significant influence on appraisal and coping is temperament that could significantly influence selection of coping strategy and cognitive appraisal.
 
@@ -195,15 +195,15 @@ Plutchik identifies high level emotions [natureofemotions] as mixture of 2 or mo
 1. Contempt = Disgust + Anger
 1. Aggressiveness =	Anger + Anticipation
 
-Plutchik uses color theory as main approach to combine basic emotions in to high level. Basic emotions of Plutchik theory are close to Tomkins affects that are innate emotional reactions. Lovheim recently presented neuromediators based approach called "Cube of emotions"[cubeofemotions]. Lovheim demonstrates relations of neuromediators levels and emotional/affective states. High level emotions are mixtures of basic emotions/affects, they are interpreted as intermediate states in "Cube of emotions"[cubeofemotions].
+Plutchik uses color theory as main approach to combine basic emotions in to high level. Basic emotions of Plutchik theory are close to Tomkins affects that are innate emotional reactions. Lovheim recently presented neuromediators based approach called "Cube of emotions"[cubeofemotions]. Lovheim demonstrates relations of neuromodulators levels and emotional/affective states. High level emotions could be interpreted as intermediate levels of neuromodulators in "Cube of emotions"[cubeofemotions].
 
 ![High level emotions influence example](high_level_emotions.png)
 
-Reflective thinking switches emotional state to optimism. Optimism emotional state influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and then "optimistic" instinctive behaviour is triggered.
+Reflective thinking switches emotional state to optimism. Emotional state of optimism influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and later "optimistic" instinctive behaviour is triggered.
 
-Higher processes including cognitive appraisal all the time are influenced by affects via neuromodulation mechanisms and in their turn influence low level process via cognitive emotion-focused coping and neuromodulation according to matrix below.
+High level thinking processes including cognitive appraisal always are influenced by affects via neuromodulation and in their turn influence low level (and other) thinking processes via cognitive emotion-focused coping and neuromodulation according to matrix below.
 
-We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki[neuralcorrelatesofhate] describes to emotion(hate) correlation to neural activities as Gaussian. Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, *High level emotions to neuromodulators mapping* could be represented as following:
+We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki [neuralcorrelatesofhate] describes emotion (hate) correlation to neural activities as Gaussian. Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, *high level emotions to neuromodulators mapping* could be represented as following:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -214,7 +214,9 @@ We suppose that Gaussian function regulates influence of subjective human percep
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
-This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mapping and mutual influences. Shortly the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level process(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes. High level emotions also triggers neuromodulation with neurotransmitters levels described above thus influence all thinking processes of the system.
+This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mutual influences. Shortly: the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level processes(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes.
+
+High level emotions also triggers neuromodulation with neurotransmitters levels described above thus influence all thinking processes of the system.
 
 ##Conclusion
 
