@@ -69,11 +69,11 @@ According to ["A primer of affect psychology"][primer_affect_psychology]: quicke
 Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
 It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
 
-Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
+Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
 
 "**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
 
-**Shame humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+**Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
 
 ###Conscious appraisal
 
@@ -225,24 +225,25 @@ In previous article [computational_emotional_thinking] we described overall emot
 1. Artificial intelligence: cognitive architecture: Minsky "The Emotion Machine" [emotionmachine].
 
 This article covers three aspects that was not covered in previous paper [computational_emotional_thinking]: appraisal, coping and influence of high-level emotions on computational system.
-We use Scherer approach [appraisal_as_sequential_checking] as the base for appraisal process. We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
+We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
 
 * Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
-* Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
-* Decrease of CNS activity is interpreted as relief and triggers **enjoyment/joy**.
-* Disgust - could be understood as low level hard-coded predicate to protect system.
-* Shame humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
+* Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**.
+* Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
+* Disgust - is understood as low level hard-coded predicate to protect system.
+* Shame/humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
-Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's processes to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps:
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's sequental checks to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
 
-1. Relevance check including: novelty check.intrinsic pleasantness check, goal relevance included.
-1. Implication including: causal Attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check
-1. Coping potential including: control check, power check. adjustment check.
-1. Normative significance including: internal standards check, external standards check.
+1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance.
+1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
+1. Coping potential check including: control check, power check, adjustment check.
+1. Normative significance check including: internal standards check, external standards check.
 
-All the sub-steps are processed in parallel.
+All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequental manner.
+Result values of checks are stored in so called registers that are updated each time new stimulus appraised.
 
-Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. Coping is main emotional mechanism to process emotional state that was triggered during appraisal. Should be mentioned that decision to select specific coping strategy is considered to be done under influence of gender and temperament. Those are still open questions in our work.
+Coping is based on [dont_worry_be_happy] and includes two main groups: problem-focused and emotion-focused coping strategies. Coping is main mechanism to process emotional state that was triggered during appraisal. It should be mentioned that decision to select specific coping strategy is considered to be done under influence of gender and temperament. Those are still open questions in our work.
 
 High-level emotions were described by Plutchik [natureofemotions] as mixture of 2 or more basic emotions(affects):
 
@@ -255,7 +256,7 @@ High-level emotions were described by Plutchik [natureofemotions] as mixture of 
 1. Contempt = Disgust + Anger
 1. Aggressiveness =	Anger + Anticipation
 
-We suppose that high-level emotions influence neuromodulation via following matrix:
+We suppose that high-level emotions influence neuromodulators levels via following matrix:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -264,7 +265,7 @@ We suppose that high-level emotions influence neuromodulation via following matr
 1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
 1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **G(Aggressiveness Intensity)** =	0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
 We suppose that this work could be used as base of emotional cognitive architecture and could have practical use especially taking in account artificial emotional profiles that could be used in several domains:
 
