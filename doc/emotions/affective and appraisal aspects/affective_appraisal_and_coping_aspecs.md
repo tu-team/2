@@ -258,14 +258,14 @@ High-level emotions were described by Plutchik [natureofemotions] as mixture of 
 
 We suppose that high-level emotions influence neuromodulators levels via following matrix:
 
-1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
-1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
-1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
-1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
-1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
-1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline
+1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline
+1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline
+1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline
+1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline
+1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline
+1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline
+1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline
 
 We suppose that this work could be used as base of emotional cognitive architecture and could have practical use especially taking in account artificial emotional profiles that could be used in several domains:
 
@@ -274,7 +274,7 @@ We suppose that this work could be used as base of emotional cognitive architect
 1. Robotics
 1. Intellectual assistants
 1. Estimating human behaviour
-1. Caring for humans software and robotics
+1. Caring for humans software and robotics.
 
 ##Appendix
 
@@ -334,22 +334,22 @@ We suppose that this work could be used as base of emotional cognitive architect
 
 1. Relevance detection:
   2. Novelty check:
-    3. Suddenness. = l,h
-    3. Familiarity. = o,l
-    3. Predictability. = m,l
+    3. Suddenness. = l-h
+    3. Familiarity. = l
+    3. Predictability. = l-m
   2. Intrinsic pleasantness check. = o
-  2. Goal relevance. = m,h
+  2. Goal relevance. = m-h
 1. Implication assessment:
   2. Causal Attribution check.
     3. Cause: agent. = o, other
     3. Cause: motive. = int/neg
   2. Outcome probability check. = vh
-  2. Discrepancy from expectation check. = o, d
+  2. Discrepancy from expectation check. = d
   2. Goal/need conduciveness check. = ob
-  2. Urgency check. = m,h
+  2. Urgency check. = m-h
 1. Coping potential:
   2. Control check. = h
-  2. Power check. = m,h
+  2. Power check. = m-h
   2. Adjustment check. = h
 1. Normative significance evaluation:
   2. Internal standards check. = o
