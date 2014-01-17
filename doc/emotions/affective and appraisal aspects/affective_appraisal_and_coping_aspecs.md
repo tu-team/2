@@ -12,7 +12,7 @@ Overall emotional process was described exhaustively in our previous article [co
 1. Parallel to conscious processes the instinctive behaviour could be triggered, it influences the environment.
 1. Conscious processes described above triggers conscious behaviour and its turn it influences the environment again.
 
-Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" as base psychological model of emotions [natureofemotions] and adopted his emotional feedback loops processes to fit cognitive architecture "model of six" of Marvin Minksy [emotionmachine]. We developed mapping of neuromodulators impact over computational processes:
+Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" as base psychological model of emotions [natureofemotions] and adopted his emotional feedback loops processes to fit cognitive architecture "model of six" of Marvin Minksy [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes**:
 
  1. Generic:
    2. CPU power: noradrenaline
@@ -214,18 +214,18 @@ We suppose that Gaussian function regulates influence of subjective human percep
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
-This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mutual influences. Shortly: the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level processes(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes.
+This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mutual influences. Shortly: the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level processes(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes. Mapping presented above could influence computational processes by means of neuromodulators impact over computational processes presented in introduction. Thus high level emotions impact neuromodulation and neuromodulation in its turn impacts computational processes of the system.
 
 ##Conclusion
 
-In previous article [computational_emotional_thinking] we described overall emotional process in Marvin Minsky [emotinmacine] cognitive architecture. We used three following bases:
+In previous article [computational_emotional_thinking] we described overall emotional process in Marvin Minsky cognitive architecture [emotionmachine]. We used three following bases:
 
 1. Evolutionary psychology: Plutchik wheel of emotions[natureofemotions].
 1. Neuro-science: Lovheim cube of emotions [cubeofemotions].
 1. Artificial intelligence: cognitive architecture: Minsky "The Emotion Machine" [emotionmachine].
 
 This article covers three aspects that was not covered in previous paper [computational_emotional_thinking]: appraisal, coping and influence of high-level emotions on computational system.
-Emotional appraisal process, is based  and Scherer approach [appraisal_as_sequential_checking]. We identified two types of appraisal: non-conscious affective appraisal and conscious cognitive appraisal. First is based on on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
+We use Scherer approach [appraisal_as_sequential_checking] as the base for appraisal process. We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
 
 * Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 * Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
