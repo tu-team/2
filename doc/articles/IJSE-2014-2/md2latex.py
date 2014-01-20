@@ -59,8 +59,16 @@ def main(argv):
          # references
          if (not (lineStripped.startswith('![')) and not(lineStripped.startswith('Figure'))):
                  if(lineStripped.find('[') > 0 and lineStripped.find(']') > 0):
-                         lineOut = lineStripped.replace('[', '\cite{')
-                         lineOut = lineOut.replace(']', '}')
+                    #reference link case
+                    if (lineStripped.find('][') > 0):
+                       lineOut = lineOut.replace('[', '', 1)
+                       lineOut = lineOut.replace(']', '', 1)
+                       lineOut = lineOut.replace('[', '\cite{')
+                       lineOut = lineOut.replace(']', '}')
+                    else:
+                       #simple case
+                       lineOut = lineStripped.replace('[', '\cite{')
+                       lineOut = lineOut.replace(']', '}')
          # ignore title and pictures
          if (lineStripped.startswith('# ') or lineStripped.startswith('![')):
              lineOut = ''
