@@ -2,7 +2,6 @@
 import re
 import sys, getopt
 
-
 def main(argv):
     inputfile = ''
     try:
@@ -84,9 +83,10 @@ def main(argv):
                 lineOut = lineOut.replace('*','\emph{', 1)
                 lineOut = lineOut.replace('*','}', 1)
             # ignore title and pictures
-            if (lineStripped.startswith('# ') or lineStripped.startswith('![')):
+            if (lineStripped.startswith('![')):
                 lineOut = ''
-
+            if (lineOut.startswith('#')):
+                lineOut = '\\title{' + lineStripped.replace('#', '') + '}'
             print lineOut
     except IOError:
         print 'There is no file: ', inputfile
