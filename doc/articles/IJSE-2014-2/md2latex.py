@@ -16,7 +16,7 @@ def main(argv):
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
-    print 'Input file is ', inputfile
+    #print 'Input file is ', inputfile
     if (len(inputfile.strip()) == 0):
         print 'md2latex.py -i <inputfile> > <outputfile>'
         sys.exit(2)
@@ -76,6 +76,13 @@ def main(argv):
                         #simple case
                         lineOut = lineStripped.replace('[', '\cite{')
                         lineOut = lineOut.replace(']', '}')
+            # emphasize
+            if (lineOut.find('**') > -1):
+                lineOut = lineOut.replace('**','\emph{', 1)
+                lineOut = lineOut.replace('**','}', 1)
+            elif (lineOut.find('*') > -1):
+                lineOut = lineOut.replace('*','\emph{', 1)
+                lineOut = lineOut.replace('*','}', 1)
             # ignore title and pictures
             if (lineStripped.startswith('# ') or lineStripped.startswith('![')):
                 lineOut = ''
