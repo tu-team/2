@@ -59,17 +59,18 @@ def main(argv):
                 listLevel = 0
             # references
             if (not (lineStripped.startswith('![')) and not (lineStripped.startswith('Figure'))):
-                if (lineStripped.find('[') > 0 and lineStripped.find(']') > 0):
-                    print 'we are in link'
+                #print 'we are in !fugure'
+                if (lineStripped.find('[') > -1 and lineStripped.find(']') > 0):
+                    #print 'we are in link'
                     #reference link case
-                    if (lineStripped.find('][') > 0):
+                    if (lineStripped.find('][') > -1):
                         lineOut = lineStripped.replace('[', '', 1)
                         lineOut = lineOut.replace(']', '', 1)
                         lineOut = lineOut.replace('[', '\cite{')
                         lineOut = lineOut.replace(']', '}')
                     #replace links
-                    if (lineStripped.find(']:') > 0):
-                        print 'we are here', lineStripped
+                    if (lineStripped.find(']:') > -1):
+                        #print 'we are here', lineStripped
                         lineOut = ''
                     else:
                         #simple case
