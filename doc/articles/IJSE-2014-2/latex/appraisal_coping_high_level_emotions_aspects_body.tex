@@ -1,6 +1,6 @@
 \section{Introduction}
 
-There are three bases of computational emotions thinking theory presented in our previous\cite{computational_emotional_thinking} and current article: neuroscience: \cite{emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions}, to computer science: \cite{emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel} and evolutional psychology: \cite{natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, quest}.
+There are three bases of computational emotions thinking theory presented in our previous \cite{computational_emotional_thinking} and current article: neuroscience: \cite{emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions}, computer science: \cite{emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel} and evolutional psychology: \cite{natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, quest}.
 
 Overall emotional process was described exhaustively in our previous article \cite{computational_emotional_thinking} and looks like following:
 
@@ -34,3 +34,604 @@ Neuromodulators influence in emotional processes was described in Lovheim articl
 
 Thus we identified psychological phenomena of emotions influence on computational processes. This could be used as base for further computational emotional thinking framework. We defined overall architecture of emotional processes but we left several aspects not described for further research. Current article is dedicated to cover those blank spots: emotional appraisal (non-conscious and conscious), coping and influence of high level emotions on computational processes.
 
+\section{Orchestra of emotions}
+
+Imagine the number of emotions we experience every day, every minute, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From psychology and neuroscience perspective \cite{emotionsbraintorobot, neuromodulatory, natureofemotions, primer_affect_psychology} we could identify two types of emotional reactions: low level - non-conscious (affective appraisal) and high level conscious reactions (cognitive appraisal, cognitive reappraisal, reflective thinking, etc).
+
+
+
+Each time any stimulus comes in view of the system it is appraised firstly non-consciously (affective appraisal). Affective appraisal triggers neuromodulation, that actually switches emotional state of the system and influences all the further processes. Stimulus is appraised second time consciously (cognitive appraisal). Later the result of cognitive appraisal could trigger coping strategy that in its turn influences environment or emotional state of the system.
+
+First stimulus triggers affective appraisal which in its turn switches the emotional state of the system from neutral to fear and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behavior. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behavior and cognitive reappraisal. Then reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
+
+This is picture of the constant collaboration of thinking processes \cite{emotionmachine}, involved in emotional appraisal, coping and reflective thinking. We mapped appraisal processes described in \cite{putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process} over thinking model of six of Marvin Minksy \cite{emotionmachine}. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify always changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.
+
+\section{Appraisal aspect}
+
+Overall appraisal process could be depicted like presented below:
+
+
+Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala, secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal with instinctive layer of Minsky's thinking model (model of six) \cite{emotionmachine}. This non-conscious appraisal triggers neuromodulation \cite{cubeofemotions} and then cognitive appraisal which in its turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behavior) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
+
+\subsection{Non-conscious appraisal}
+
+Lovheim uses Tomkins theory of affects that refer to innate emotional reactions we uses it as appraisal base for non-conscious emotional reactions. Tomkins theory \cite{tomkins1, tomkins2, tomkins3, quest} includes following affects:
+
+\begin{enumerate}
+\item  Enjoyment/Joy
+\item  Interest/Excitement
+\item  Surprise
+\item  Anger/Rage
+\item  Disgust
+\item  Distress/Anguish
+\item  Fear/Terror
+\item  Shame/Humiliation
+\end{enumerate}
+
+We use affective appraisal described in "A primer of affect psychology" \cite{primer_affect_psychology}. The main factor that influences affective appraisal is CNS activity that has three main behaviour trends: increase, decrease or stay stable.
+
+
+Moderate steady CNS activity triggers \emph{distress/anguish}, while high steady activity triggers \emph{anger/rage}, both of them negative.
+It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
+
+Decrease of CNS activity is considered as relief and triggers \emph{enjoyment/joy}.
+
+"\emph{Disgust} NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
+
+\emph{Shame/humiliation} "affect is neither inherently punishing nor rewarding. It is like a computer's reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+
+\subsection{Conscious appraisal}
+
+We use Tomkins theory that is based on innate affects which we correspond with Plutchik basic emotions \cite{natureofemotions}. Our main assumption is: conscious and non-conscious appraisal could have different nature because one is based on innate evolved system of emotions(affects) the later is based on nurture and education of human and is learned during childhood. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflection thinking. In contrast to affective appraisal, conscious cognitive appraisal includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is nurture/education of personality to react in some specific way on some specific stimulus. We use Scherer's approach described in "Appraisal considered as process of multilevel sequential checking" \cite{appraisal_considered_as_a_process}. We use Plutchik \cite{natureofemotions} as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
+
+\begin{enumerate}
+	\item  Joy - sorrow
+	\item  Anger - fear
+	\item  Surprise - expectancy
+	\item  Acceptance - disgust
+\end{enumerate}
+
+Scherer uses 16 stimulus evaluation checks(SEC), they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.
+Comprehensive SECs structure below:
+
+\begin{enumerate}
+	\item  Relevance detection:
+	\begin{enumerate}
+		\item  Novelty check:
+		\begin{enumerate}
+			\item  Suddenness
+			\item  Familiarity
+			\item  Predictability
+		\end{enumerate}
+		\item  Intrinsic pleasantness check
+		\item  Goal relevance
+	\end{enumerate}
+	\item  Implication assessment:
+	\begin{enumerate}
+		\item  Causal Attribution check: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch)
+		\item  Outcome probability check
+		\item  Discrepancy from expectation check: consonant/dissonant
+		\item  Goal/need conduciveness check: high/obstruct
+		\item  Urgency check
+	\end{enumerate}
+	\item  Coping potential determination
+	\begin{enumerate}
+		\item  Control check
+		\item  Power check
+		\item  Adjustment check
+	\end{enumerate}
+	\item  Normative significance evaluation:
+	\begin{enumerate}
+		\item  Internal standards check
+		\item  External standards check
+	\end{enumerate}
+\end{enumerate}
+
+Each of stimulus evaluation checks has following set of possible values:
+
+\begin{enumerate}
+	\item  very low (vl)
+	\item  low (l)
+	\item  medium (m)
+	\item  high (h)
+	\item  very high (vh)
+	\item  open (o), check does not influences this specific emotion
+\end{enumerate}
+
+Except for causal attribution check that has following possible values: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch),  discrepancy from expectation check: consonant/dissonant values and goal/need conduciveness check: high/obstruct.
+
+Scherer uses 14 words to describe emotions in his analysis:
+
+\begin{enumerate}
+	\item  Enjoyment/happiness
+	\item  Elation/joy
+	\item  Displeasure/disgust
+	\item  Contempt/scorn
+	\item  Sadness/dejection
+	\item  Despair
+	\item  Anxiety/worry
+	\item  Fear
+	\item  Irritation/cold anger
+	\item  Rage/hot anger
+	\item  Boredom/indifference
+	\item  Shame
+	\item  Guilt
+	\item  Pride
+\end{enumerate}
+
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates. 14 emotions described in Scherer's article do not match 8 Plutchik basic emotions, there are no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic, each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
+
+\subsection{Conscious appraisal algorithm}
+
+Scherer identifies \cite{appraisal_considered_as_a_process} sequence of appraisal objectives as following:
+
+\begin{enumerate}
+	\item  Relevance check including: novelty check, intrinsic pleasantness check, goal relevance check
+	\item  Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check
+	\item  Coping potential including: control check, power check, adjustment check
+	\item  Normative significance including: internal standards check, external standards check
+\end{enumerate}
+
+All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequential manner.
+Result values of checks are stored in so called registers that are updated each time new stimulus appraised.
+
+\section{Coping}
+
+Second aspect that is not described in previous article: what is done as response to emotional arousal(switch of emotional state), or how humans cope with emotions?
+Marsella and Gratch in their article \cite{dont_worry_be_happy} identified 2 types of coping (emotion-focused coping and problem-focused coping) as main response on emotional arousal and appraisal and mentioned that coping plays central role in causal interpretation and emotional thinking life cycle.
+
+\subsection{Emotion-focused coping}
+
+Emotion-focused coping is identified as: "Emotion-focused coping works altering one’s interpretation of circumstances, for example, discounting a potential threat or abandoning a cherished goal." As the result of an emotion-focused coping system should change emotional state without any or with minimal impact over environment.
+
+
+
+\begin{enumerate}
+	\item  Positive reinterpretation: look for silver lining
+	\item  Acceptance: accept stressor as real. Live with it
+	\item  Seeking  social  support  for  emotional  reasons: getting moral support, sympathy
+	\item  Denial: denying the reality of event
+	\item  Behavioral disengagement: Admit cannot deal
+	\item  Mental  disengagement:  Use  other  activities  to take mind off problem: daydreaming, sleeping
+\end{enumerate}
+
+
+
+Stimulus triggers affective appraisal then affective appraisal switches emotional state of the system from neutral to fear, initiates cognitive appraisal and instinctive behaviour. Cognitive appraisal initiates emotion-focused coping, that in its turn switches fear state to neutral (evaluating current situation as not so frightening via positive reinterpretation). Meanwhile instinctive behaviour influences environment and effect of this influence is apprised as stimulus with second affective appraisal.
+
+\subsection{Problem-focused coping}
+
+Problem-focused coping is defined in contrast to emotion-focused coping as "... acting on the environment". Problem-focused coping includes: planning and suppression of competing activities.
+
+
+
+Inbound stimulus triggers affective appraisal and it switches emotional state of the system from neutral to fear, then affective appraisal initiates cognitive appraisal. This appraisal usually includes several processes on learned, deliberative, reflective thinking and possibly self-reflective thinking levels. Result of cognitive appraisal and supplemental thinking processes could be problem-focused coping. It worth to note that decision to use specific coping strategy could be gender dependant \cite{sex_differencies}. Later, during problem-focused coping some strategy is selected (for example planning) and used. Actions of the strategy changes environment and system now faces effect as new stimulus to be appraised. Second affective appraisal switches system emotional state to neutral as the result of effect evaluation.
+
+In this chapter we come close to questions of gender influence on decision making and coping strategy selection \cite{sex_differencies}. One more aspect that was not explicitly described here but still has significant influence on appraisal and coping is temperament that could significantly influence selection of coping strategy and cognitive appraisal.
+
+\section{High level emotion influence over affects and neuromodulators}
+
+Plutchik identifies high level emotions \cite{natureofemotions} as mixture of 2 or more basic emotions(affects). For examle:
+
+\begin{enumerate}
+	\item  Optimism =	Anticipation + Joy
+	\item  Love =	Joy + Trust
+	\item  Submission = Trust + Fear
+	\item  Awe = Fear + Surprise
+	\item  Disapproval = Surprise + Sadness
+	\item  Remorse = Sadness + Disgust
+	\item  Contempt = Disgust + Anger
+	\item  Aggressiveness =	Anger + Anticipation
+\end{enumerate}
+
+Plutchik uses color theory as main approach to combine basic emotions in to high level. Basic emotions of Plutchik theory are close to Tomkins affects that are innate emotional reactions. Lovheim recently presented neuromodulators based approach called "Cube of emotions"\cite{cubeofemotions}. Lovheim demonstrates relations of neuromodulators levels and emotional/affective states. High level emotions could be interpreted as intermediate levels of neuromodulators in "Cube of emotions"\cite{cubeofemotions}.
+
+
+
+Reflective thinking switches emotional state to optimism. Emotional state of optimism influences: deliberative thinking and learned thinking, second deliberative thinking and cognitive coping. Learned thinking under influence of optimism initiates "optimistic" cognitive coping and later "optimistic" instinctive behaviour is triggered.
+
+High level thinking processes including cognitive appraisal always are influenced by affects via neuromodulation and in their turn influence low level (and other) thinking processes via cognitive emotion-focused coping and neuromodulation according to matrix below.
+
+We suppose that Gaussian function regulates influence of subjective human perception of inbound stimulus over objective brain response. Semir Zeki \cite{neuralcorrelatesofhate} describes emotion (hate) correlation to neural activities as Gaussian. Taking in account Gaussian nature of influence of subjective emotional state over objective brain response, \emph{high level emotions to neuromodulators mapping} could be represented as following:
+
+\begin{enumerate}
+	\item  \emph{G(Optimism Intensity)} = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
+	\item  \emph{G(Love Intensity)} = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+	\item  \emph{G(Submission Intensity)} = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+	\item  \emph{G(Awe Intensity)} = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+	\item  \emph{G(Disapproval Intensity)} = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
+	\item  \emph{G(Remorse Intensity)} = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
+	\item  \emph{G(Contempt Intensity)} = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+	\item  \emph{G(Aggressiveness Intensity)} = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+\end{enumerate}
+
+This high level emotions over neuromodulators levels mapping closes emotion - neuromodulation mutual influences. Shortly: the affective appraisal switches emotional state via neuromodulation and switching emotional state via high level processes(reflective thinking, self-reflective thinking, self-conscious reflections) triggers neuromodulation and thus influences all other thinking processes. Mapping presented above could influence computational processes by means of neuromodulators impact over computational processes presented in introduction. Thus high level emotions impact neuromodulation and neuromodulation in its turn impacts computational processes of the system.
+
+\section{Conclusion}
+
+In previous article \cite{computational_emotional_thinking} we described overall emotional process in Marvin Minsky cognitive architecture \cite{emotionmachine}. We used three following bases:
+
+\begin{enumerate}
+	\item Evolutionary psychology: Plutchik wheel of emotions \cite{natureofemotions}.
+	\item Neuro-science: Lovheim cube of emotions \cite{cubeofemotions}.
+	\item Artificial intelligence: cognitive architecture: Minsky "The Emotion Machine" \cite{emotionmachine}.
+\end{enumerate}
+
+
+We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on affect theory of Tomkins \cite{primer_affect_psychology} and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
+
+\begin{enumerate}
+	\item Quickest increase of brain activity triggers \emph{surprise}, a bit slower increase - \emph{fear/terror}, and most moderate - \emph{interest/excitement}.
+	\item Moderate steady CNS activity triggers \emph{distress/anguish}, while high steady activity triggers \emph{anger/rage}.
+	\item Decrease of CNS activity is considered as relief and triggers \emph{enjoyment/joy}.
+	\item \emph{Disgust} - is understood as low level hard-coded predicate to protect system.
+	\item \emph{Shame/humiliation} this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
+\end{enumerate}
+
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach \cite{appraisal_considered_as_a_process}. We adopted Scherer's sequential checks to Plutchik "Wheel of emotion" \cite{natureofemotions} model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
+
+\begin{enumerate}
+	\item  Relevance check including: novelty check, intrinsic pleasantness check, goal relevance
+	\item  Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check
+	\item  Coping potential check including: control check, power check, adjustment check
+	\item  Normative significance check including: internal standards check, external standards check
+\end{enumerate}
+
+All included checks are done in parallel during appraisal objectives checks, but objectives checks are done in sequential manner.
+Result values of checks are stored in so called registers that are updated each time new stimulus appraised.
+
+Coping is based on \cite{dont_worry_be_happy} and includes two main groups: problem-focused and emotion-focused coping strategies. Coping is main mechanism to process emotional state that was triggered during appraisal. It should be mentioned that decision to select specific coping strategy is considered to be done under influence of gender and temperament. Those are still open questions in our work.
+
+High-level emotions were described by Plutchik \cite{natureofemotions} as mixture of 2 or more basic emotions(affects):
+
+\begin{enumerate}
+	\item  Optimism = Anticipation + Joy
+	\item  Love = Joy + Trust
+	\item  Submission = Trust + Fear
+	\item  Awe = Fear + Surprise
+	\item  Disapproval = Surprise + Sadness
+	\item  Remorse = Sadness + Disgust
+	\item  Contempt = Disgust + Anger
+	\item  Aggressiveness =	Anger + Anticipation
+\end{enumerate}
+
+We suppose that high-level emotions influence neuromodulators levels via following matrix:
+
+\begin{enumerate}
+	\item  \emph{G(Optimism Intensity)} = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline
+	\item  \emph{G(Love Intensity)} = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline
+	\item  \emph{G(Submission Intensity)} = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline
+	\item  \emph{G(Awe Intensity)} = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline
+	\item  \emph{G(Disapproval Intensity)} = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline
+	\item  \emph{G(Remorse Intensity)} = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline
+	\item  \emph{G(Contempt Intensity)} = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline
+	\item  \emph{G(Aggressiveness Intensity)} = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline
+\end{enumerate}
+
+We suppose that this work could be used as base of emotional cognitive architecture and could have practical use especially taking in account artificial emotional profiles that could be used in several domains:
+
+\begin{enumerate}
+	\item  Advertisement
+	\item  Emotional behavior simulations
+	\item  Robotics
+	\item  Intellectual assistants
+	\item  Estimating human behaviour
+	\item  Caring for humans software and robotics
+\end{enumerate}
+
+\section{Appendix}
+
+\subsection{Conscious appraisal predicates}
+
+\subsubsection{Joy}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = m-h
+\item  Familiarity. = o
+\item  Predictability. = l
+\end{enumerate}
+\item  Intrinsic pleasantness check. = o
+\item  Goal relevance. = h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = o
+\item  Cause: motive. = ch
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = o
+\item  Goal/need conduciveness check. = vh
+\item  Urgency check. = l
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = o
+\item  Power check. = o
+\item  Adjustment check. = m
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = o
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Anticipation}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = m
+\item  Familiarity. = o
+\item  Predictability. = l
+\end{enumerate}
+\item  Intrinsic pleasantness check. = o
+\item  Goal relevance. = h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = o
+\item  Cause: motive. = int
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = d
+\item  Goal/need conduciveness check. = h
+\item  Urgency check. = m
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = o
+\item  Power check. = o
+\item  Adjustment check. = o
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = l
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Anger}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = l-h
+\item  Familiarity. = l
+\item  Predictability. = l-m
+\end{enumerate}
+\item  Intrinsic pleasantness check. = o
+\item  Goal relevance. = m-h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = o, other
+\item  Cause: motive. = int/neg
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = d
+\item  Goal/need conduciveness check. = ob
+\item  Urgency check. = m-h
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = h
+\item  Power check. = m-h
+\item  Adjustment check. = h
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = l
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Disgust}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = o
+\item  Familiarity. = l
+\item  Predictability. = l
+\end{enumerate}
+\item  Intrinsic pleasantness check. = vl
+\item  Goal relevance. = l
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = o
+\item  Cause: motive. = o
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = o
+\item  Goal/need conduciveness check. = o
+\item  Urgency check. = m
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = o
+\item  Power check. = o
+\item  Adjustment check. = o
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = o
+\end{enumerate}
+\end{enumerate}
+
+
+\subsubsection{Sadness}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = l
+\item  Familiarity. = l
+\item  Predictability. = o
+\end{enumerate}
+\item  Intrinsic pleasantness check. = o
+\item  Goal relevance. = h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = o
+\item  Cause: motive. = cha/neg
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = o
+\item  Goal/need conduciveness check. = ob
+\item  Urgency check. = l
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = vl
+\item  Power check. = vl
+\item  Adjustment check. = m
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = o
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Surprise}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = m
+\item  Familiarity. = l
+\item  Predictability. = vl
+\end{enumerate}
+\item  Intrinsic pleasantness check. = vl
+\item  Goal relevance. = h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = oth/nat
+\item  Cause: motive. = cha/neg
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = d
+\item  Goal/need conduciveness check. = ob
+\item  Urgency check. = m
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = vl
+\item  Power check. = vl
+\item  Adjustment check. = m
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = o
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Fear}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = h
+\item  Familiarity. = l
+\item  Predictability. = l
+\end{enumerate}
+\item  Intrinsic pleasantness check. = l
+\item  Goal relevance. = h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = oth/nat
+\item  Cause: motive. = o
+\end{enumerate}
+\item  Outcome probability check. = h
+\item  Discrepancy from expectation check. = d
+\item  Goal/need conduciveness check. = ob
+\item  Urgency check. = vh
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = o
+\item  Power check. = vl
+\item  Adjustment check. = l
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = o
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Trust}
+
+\begin{enumerate}
+\item  Relevance detection:
+\begin{enumerate}
+\item  Novelty check:
+\begin{enumerate}
+\item  Suddenness. = h
+\item  Familiarity. = vl
+\item  Predictability. = l
+\end{enumerate}
+\item  Intrinsic pleasantness check. = vl
+\item  Goal relevance. = h
+\end{enumerate}
+\item  Implication assessment:
+\begin{enumerate}
+\item  Causal Attribution check
+\begin{enumerate}
+\item  Cause: agent. = oth/nat
+\item  Cause: motive. = ch
+\end{enumerate}
+\item  Outcome probability check. = vh
+\item  Discrepancy from expectation check. = c
+\item  Goal/need conduciveness check. = vh
+\item  Urgency check. = m
+\end{enumerate}
+\item  Coping potential:
+\begin{enumerate}
+\item  Control check. = o
+\item  Power check. = vl
+\item  Adjustment check. = m
+\end{enumerate}
+\item  Normative significance evaluation:
+\begin{enumerate}
+\item  Internal standards check. = o
+\item  External standards check. = o
+\end{enumerate}
+\end{enumerate}
