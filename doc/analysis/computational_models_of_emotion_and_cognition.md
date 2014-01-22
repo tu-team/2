@@ -4,7 +4,6 @@ http://www.cogsys.org/pdf/paper-3-2-39.pdf
 
 Model | Cognitive Representation | Cognition -> Emotion | Emotion Representation | Emotion -> Cognition
 ---   | ---:                     | ---:                 | ---:                   | ---:
-
 ACRES/WILL (Moffat,Frijda, & Phaf, 1993) |2|3|3|3 
 ActAffAct (Rank, 2009)                   |2|4|2|3
 
