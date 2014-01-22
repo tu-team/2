@@ -23,16 +23,16 @@ ACT-R extension(Belavkin, 2001)                  |4|2|2|3
 (Ahn, 2010)                                      |2|1|1|4
 ALEC (Gadanho & Custodio, 2003)                  |4|3|2|3
 EM (Reilly & Bates, 1992)                        |2|3|3|3
-EMA (Marsella & Gratch,2009)                     |
-Émile (Gratch, 2000)                             |
-EM-ONE (Singh, 2005)                             |
-FearNot!/FAtiMA (Dias,Mascarenhas, & Paiva,2011) |
-FLAME (El-Nasr, Yen, & Ioerger, 2000)            |
-(Gmytrasiewicz & Lisetti, 2002)                  |
-H-CogAff (Sloman, 2001)                          |
-MAMID (Hudlicka, 2007)                           |
-(Meyer, 2006)                                    |
-(Salichs & Malfaz)                               |
-Soar-Emote (Marinier, Laird, & Lewis, 2009)      |
-Tabasco (Petta, 2003)                            |
-WASABI (Becker-Asano & Wachsmuth, 2009)          |
+EMA (Marsella & Gratch,2009)                     |4|2|3|3
+Émile (Gratch, 2000)                             |2|3|3|3
+EM-ONE (Singh, 2005)                             |3|4|3|4
+FearNot!/FAtiMA (Dias,Mascarenhas, & Paiva,2011) |2|3|2|3
+FLAME (El-Nasr, Yen, & Ioerger, 2000)            |3|4|3|4
+(Gmytrasiewicz & Lisetti, 2002)                  |3|2|3|4
+H-CogAff (Sloman, 2001)                          |3|3|3|4
+MAMID (Hudlicka, 2007)                           |3|4|3|4
+(Meyer, 2006)                                    |3|4|3|4
+(Salichs & Malfaz)                               |2|2|2|3
+Soar-Emote (Marinier, Laird, & Lewis, 2009)      |4|3|3|3
+Tabasco (Petta, 2003)                            |4|4|3|3
+WASABI (Becker-Asano & Wachsmuth, 2009)          |2|3|3|3
