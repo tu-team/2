@@ -2,6 +2,10 @@
 
 http://www.cogsys.org/pdf/paper-3-2-39.pdf
 
+* Jerry Lin JERRYLIN@USC.EDU
+* Marc Spraragen SPRARAGE@USC.EDU
+* Michael Zyda ZYDA@USC.EDU
+
 * Affect Any information (emotion, feeling, mood) used to inform one or more cognitive processes
 * Appraisal The process of making judgments (appraisals) about the relationship between perceived
 events and one’s beliefs, desires, and intentions (Lazarus, 1991
