@@ -21,6 +21,7 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Perception/understanding
+   2. Memory
    2. Consciousness
 	  3. Awareness
 	  3. Learning
@@ -29,6 +30,7 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
   2. Intuition
   2. Creativity
   2. Dream/sleep
+1. Parallel processing
 
 
 ## CopyCat
