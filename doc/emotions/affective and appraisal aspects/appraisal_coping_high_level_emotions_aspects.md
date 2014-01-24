@@ -1,8 +1,8 @@
-#Appraisal, coping and high level emotions aspects of emotional thinking.
+#Appraisal, coping and high level emotions aspects of computational emotional thinking.
 
 ##Introduction 
 
-There are three bases of computational emotions thinking theory presented in our previous [computational_emotional_thinking] and current article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, tomkins4].
+There are three bases of computational emotions thinking theory presented in our previous [computational_emotional_thinking] and current article: neuroscience: [emotionsbraintorobot, parsingreward, neuromodulatory, cubeofemotions, natureofemotions], computer science: [emotionandsociable, senticcomputing, hourglass, affectivemodelofinterplay, affectivecomputing, computationalmodelsemotion, computationalmodelsemotionscognition, evaluatingcomutationalmodel, threelevel] and evolutional psychology: [natureofemotions, primer_affect_psychology, tomkins1, tomkins2, tomkins3, quest].
 
 Overall emotional process was described exhaustively in our previous article [computational_emotional_thinking] and looks like following:
 
@@ -12,7 +12,7 @@ Overall emotional process was described exhaustively in our previous article [co
 1. Parallel to conscious processes the instinctive behaviour could be triggered, it influencing the environment.
 1. Conscious processes described above triggers conscious behaviour and in its turn it influences the environment again.
 
-Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" [nature of emotions] as base psychological model of emotions and adopted his emotional feedback loop processes to fit cognitive architecture "model of six" of Marvin Minsky [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes**:
+Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" [natureofemotions] as base psychological model of emotions and adopted his emotional feedback loop processes to fit cognitive architecture "model of six" of Marvin Minsky [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes**:
 
  1. Generic:
    2. CPU power: noradrenaline
@@ -51,7 +51,7 @@ Firstly stimulus is appraised non-consciously via affective appraisal it could b
 
 ###Non-conscious appraisal
 
-Lovheim uses Tomkins theory of affects that refer to innate emotional reactions we uses it as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, tomkins4] includes following affects:
+Lovheim uses Tomkins theory of affects that refer to innate emotional reactions we uses it as appraisal base for non-conscious emotional reactions. Tomkins theory [tomkins1, tomkins2, tomkins3, quest] includes following affects:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -73,7 +73,7 @@ According to ["A primer of affect psychology"][primer_affect_psychology]: quicke
 
 ###Conscious appraisal
 
-We use Tomkins theory that is based on innate affects which we correspond with Plutchik [basic emotions][natureofemotions]. Our main assumption is: conscious and non-conscious appraisal could have different nature because one is based on innate evolved system of emotions(affects) the later is based on nurture and education of human and is learned during childhood. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflection thinking. In contrast to affective appraisal, conscious cognitive appraisal includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is nurture/education of personality to react in some specific way on some specific stimulus. We use Scherer's approach described in ["Appraisal considered as process of multilevel sequential checking"][appraisal_as_sequential_checking]. We use Plutchik [natureofemotions] as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
+We use Tomkins theory that is based on innate affects which we correspond with Plutchik [basic emotions][natureofemotions]. Our main assumption is: conscious and non-conscious appraisal could have different nature because one is based on innate evolved system of emotions(affects) the later is based on nurture and education of human and is learned during childhood. Innate and quick affective appraisal is processed in automatic way mostly insensibly for human, it does not include long term deliberations, learned reactions or reflection thinking. In contrast to affective appraisal, conscious cognitive appraisal includes learned reactions, deliberations and reflective thinking. It could take some significant time that could exceed affective appraisal a few tens of times. This factors, especially involvement of learned reactions mechanisms defines nature of conscious appraisal. We suppose that main mechanism defining the conscious appraisal is nurture/education of personality to react in some specific way on some specific stimulus. We use Scherer's approach described in "Appraisal considered as process of multilevel sequential checking" [appraisal_considered_as_a_process]. We use Plutchik [natureofemotions] as model for conscious emotions. This model consists of 8 basic emotions grouped in pairs.
 
 1. Joy - sorrow
 1. Anger - fear
@@ -136,7 +136,7 @@ Scherer discovered 224 appraisal patterns that we used as the base for our appra
 
 ###Conscious appraisal algorithm
 
-Scherer identifies [appraisal_as_sequential_checking] sequence of appraisal objectives as following:
+Scherer identifies [appraisal_considered_as_a_process] sequence of appraisal objectives as following:
 
 1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance check.
 1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
@@ -229,7 +229,7 @@ We identified two types of appraisal: non-conscious affective and conscious cogn
 1. Disgust - is understood as low level hard-coded predicate to protect system.
 1. Shame/humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
-Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's sequential checks to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
+Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_considered_as_a_process]. We adopted Scherer's sequential checks to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
 
 1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance.
 1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
@@ -484,4 +484,4 @@ Also, those kinds of emotions make people understand the weights of goals of oth
 
 [primer_affect_psychology]: http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf "Primer Affect Psychology"
 [natureofemotions]: http://google.com "Nature of emotions"
-[appraisal_as_sequential_checking]: http://google.com "Appraisal considered as process of multilevel sequential checking"
+[appraisal_considered_as_a_process]: http://google.com "Appraisal considered as process of multilevel sequential checking"

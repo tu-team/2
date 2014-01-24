@@ -2,8 +2,10 @@
 import re
 import sys, getopt
 
+
 def main(argv):
     inputfile = ''
+    figureNumber = 1
     try:
         opts, args = getopt.getopt(argv, "hi:", ["ifile="])
     except getopt.GetoptError:
@@ -15,7 +17,7 @@ def main(argv):
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
-    #print 'Input file is ', inputfile
+        #print 'Input file is ', inputfile
     if (len(inputfile.strip()) == 0):
         print 'md2latex.py -i <inputfile> > <outputfile>'
         sys.exit(2)
@@ -38,55 +40,73 @@ def main(argv):
             if lineStripped.startswith('####'):
                 sectionName = lineStripped.strip('####').strip()
                 lineOut = '\subsubsection{' + sectionName + '}'
-                # lists
+            # print 'lists'
             if (lineStripped.startswith('1.') or lineStripped.startswith('2.') or lineStripped.startswith('3.')):
                 currentListLevel = lineStripped[0]
                 lineOut = ''
-                # print str(listLevel) + ' ' + str(currentListLevel)
+                spaces = ''
+                # print str(listLevel) + ' ' + str(currentListLevel) + ' ' + str(currentListLevel > listLevel)
                 if currentListLevel > listLevel:
-                    lineOut = '\\begin{enumerate}\n'
+                    # print 'begin enumerate'
+                    for i in range(int(listLevel)):
+                        spaces += ' '
+                    lineOut = spaces + '\\begin{enumerate}\n'
+                    # print "lineout 0 " + lineOut
                 elif currentListLevel < listLevel:
-                    lineOut = '\end{enumerate}\n'
+                    for i in range(int(currentListLevel)):
+                        spaces += ' '
+                    lineOut = spaces + '\\end{enumerate}\n'
                 listLevel = currentListLevel
                 item = lineStripped.strip('1.').strip('2.').strip('3.')
-                lineOut = lineOut + '\item ' + item
+                spaces = ''
+                for i in range(int(currentListLevel)):
+                    spaces += ' '
+                lineOut = lineOut + spaces + '\item ' + item
             else:
                 if listLevel > 0:
-                    #print listLevel
+                    #print str(listLevel)
                     for i in range(int(listLevel)):
-                        lineOut = lineOut + '\end{enumerate}\n'
+                        #print str(int(listLevel) - i - 1)
+                        spaces = ''
+                        for j in range(int(listLevel) - i - 1):
+                            spaces += ' '
+                        lineOut = lineOut + spaces + '\end{enumerate}\n'
                 listLevel = 0
-            # references
-            if (not (lineStripped.startswith('![')) and not (lineStripped.startswith('Figure'))):
+                # references
+            #print "lineout 1 " + lineOut
+            if (not (lineOut.startswith('![')) and not (lineOut.startswith('Figure'))):
                 #print 'we are in !fugure'
-                if (lineStripped.find('[') > -1 and lineStripped.find(']') > 0):
+                if (lineOut.find('[') > -1 and lineOut.find(']') > 0):
                     #print 'we are in link'
                     #reference link case
-                    if (lineStripped.find('][') > -1):
-                        lineOut = lineStripped.replace('[', '', 1)
+                    if (lineOut.find('][') > -1):
+                        lineOut = lineOut.replace('[', '', 1)
                         lineOut = lineOut.replace(']', '', 1)
                         lineOut = lineOut.replace('[', '\cite{')
                         lineOut = lineOut.replace(']', '}')
-                    #replace links
-                    if (lineStripped.find(']:') > -1):
-                        #print 'we are here', lineStripped
+                        #replace links
+                    if (lineOut.find(']:') > -1):
+                        #print 'we are here', lineOut
                         lineOut = ''
                     else:
                         #simple case
-                        lineOut = lineStripped.replace('[', '\cite{')
+                        lineOut = lineOut.replace('[', '\cite{')
                         lineOut = lineOut.replace(']', '}')
-            # emphasize
-            if (lineOut.find('**') > -1):
-                lineOut = lineOut.replace('**','\emph{', 1)
-                lineOut = lineOut.replace('**','}', 1)
-            elif (lineOut.find('*') > -1):
-                lineOut = lineOut.replace('*','\emph{', 1)
-                lineOut = lineOut.replace('*','}', 1)
-            # ignore title and pictures
-            if (lineStripped.startswith('![')):
-                lineOut = ''
+                # emphasize
+            while (lineOut.find('**') > -1):
+                lineOut = lineOut.replace('**', '\emph{', 1)
+                lineOut = lineOut.replace('**', '}', 1)
+            while (lineOut.find('*') > -1):
+                lineOut = lineOut.replace('*', '\emph{', 1)
+                lineOut = lineOut.replace('*', '}', 1)
+                # ignore title and pictures
+            # print "lineout 2 " + lineOut
+            if (lineOut.startswith('![')):
+                lineOut = '\\begin{center}\nFigure ' + str(figureNumber) + '. ...\n\\end{center}'
+                figureNumber = figureNumber + 1
             if (lineOut.startswith('#')):
                 lineOut = '\\title{' + lineStripped.replace('#', '') + '}'
+
             print lineOut
     except IOError:
         print 'There is no file: ', inputfile
