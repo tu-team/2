@@ -276,6 +276,11 @@ We suppose that this work could be used as base of emotional cognitive architect
 1. Estimating human behaviour
 1. Caring for humans software and robotics.
 
+Social emotion is the core of making robotic agents seem more sympathetic, to make them less cold to interact with.
+Also, many of the more complex emotions humans exhibit can be traced to evolutionary origins, and human being a social animal.
+For example, feeling the pain of others is pretty well understood. It makes people help each other and thrive in cooperation.
+Also, those kinds of emotions make people understand the weights of goals of other people.
+
 ##Appendix
 
 ###Conscious appraisal predicates
