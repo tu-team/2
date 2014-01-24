@@ -66,14 +66,10 @@ We use affective appraisal described in ["A primer of affect psychology"][primer
 
 According to ["A primer of affect psychology"][primer_affect_psychology]: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 
-Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
-It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
-
-Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
-
-"**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
-
-**Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
+1. Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
+1. "**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
+1. **Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
 
 ###Conscious appraisal
 
@@ -227,11 +223,11 @@ In previous article [computational_emotional_thinking] we described overall emot
 This article covers three aspects that was not covered in previous paper [computational_emotional_thinking]: appraisal, coping and influence of high-level emotions on computational system.
 We identified two types of appraisal: non-conscious affective and conscious cognitive. First is based on affect theory of Tomkins [primer_affect_psychology] and takes in account only innate emotional reactions. Main parameter of non-conscious appraisal is CNS activity that influences appraisal as following:
 
-* Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
-* Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**.
-* Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
-* Disgust - is understood as low level hard-coded predicate to protect system.
-* Shame/humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
+1. Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**.
+1. Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
+1. Disgust - is understood as low level hard-coded predicate to protect system.
+1. Shame/humiliation this complex affect that appeared to be latest in evolutional process of humans is triggered when system is prevented from getting new interesting information.
 
 Conscious appraisal is more complex and includes learned rules. It is based no Scherer sequential appraisal approach [appraisal_as_sequential_checking]. We adopted Scherer's sequential checks to Plutchik "Wheel of emotion" [natureofemotions] model. Complete set of conscious appraisal predicates are listed in appendix. Conscious appraisal algorithm contains 4 steps of appraisal objective checks:
 
