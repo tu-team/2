@@ -9,10 +9,10 @@ Overall emotional process was described exhaustively in our previous article [co
 1. Inbound stimulus is appraised non-consciously (affective appraisal).
 1. Neuromodulation is triggered, it actually switches the emotional state of the system. System feels emotion.
 1. Conscious processes are triggered: stimulus cognition with stimulus deliberation, stimulus reflective thinking, stimulus cognition reflection, stimulus cognition self-reflection, stimulus cognition self-conscious reflection (cognitive appraisal).
-1. Parallel to conscious processes the instinctive behaviour could be triggered, it influences the environment.
-1. Conscious processes described above triggers conscious behaviour and its turn it influences the environment again.
+1. Parallel to conscious processes the instinctive behaviour could be triggered, it influencing the environment.
+1. Conscious processes described above triggers conscious behaviour and in its turn it influences the environment again.
 
-Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" as base psychological model of emotions [natureofemotions] and adopted his emotional feedback loops processes to fit cognitive architecture "model of six" of Marvin Minksy [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes**:
+Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" [nature of emotions] as base psychological model of emotions and adopted his emotional feedback loop processes to fit cognitive architecture "model of six" of Marvin Minsky [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes**:
 
  1. Generic:
    2. CPU power: noradrenaline
@@ -30,7 +30,7 @@ Thus we identified psychological phenomena of emotions influence on computationa
 
 ##Orchestra of emotions
 
-Imagine the number of emotions we experience every day, every minute, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and teeth wash was emotional scene. From psychology and neuroscience perspective [emotionsbraintorobot, neuromodulatory, natureofemotions, primer_affect_psychology] we could identify two types of emotional reactions: low level - non-conscious (affective appraisal) and high level conscious reactions (cognitive appraisal, cognitive reappraisal, reflective thinking, etc).
+Imagine the number of emotions we experience every day, every minute, starting from wake up in the morning till the late evening. Every action or significant change in environment is followed by emotional response. When we were kids and we could not control emotions expressions even wake up and washing the teeth was an emotional scene. From psychology and neuroscience perspective [emotionsbraintorobot, neuromodulatory, natureofemotions, primer_affect_psychology] we could identify two types of emotional reactions: low level non-conscious (affective appraisal) and high level conscious reactions (cognitive appraisal, cognitive reappraisal, reflective thinking, etc).
 
 ![orchestra of emotions](orchestra_of_emotions.png)
 
@@ -38,16 +38,16 @@ Each time any stimulus comes in view of the system it is appraised firstly non-c
 
 First stimulus triggers affective appraisal which in its turn switches the emotional state of the system from neutral to fear and initiates cognitive appraisal and reflective thinking. Second stimulus triggers second affective appraisal again and switches emotional state of the system from fear to terror and initiates second cognitive appraisal and instinctive coping behavior. Then first cognitive appraisal switches emotional state from terror to fear (system understood that stimulus is not so horrible as it seemed firstly) and initiates conscious coping behavior and cognitive reappraisal. Then reflective thinking terminates cognitive reappraisal and conscious coping and switches emotional state no neutral. Meanwhile instinctive coping acts over environment (for example system could run away from second stimulus that triggered terror) and effect of the action(system is in safe place) is interpreted as third stimulus that triggers affective appraisal again.
 
-This is picture of the constant collaboration of thinking processes [emotionmachine], involved in emotional appraisal, coping and reflective thinking. We mapped appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minksy [emotionmachine]. Orchestra of emotions is concept that emphasises constant collaboration of low level (instinctive processes) with high level: learned reactions, deliberative thinking, reflective thinking processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify always changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like parties of musical instruments combines in overall sound of orchestra.
+This is picture of the constant collaboration of thinking processes [emotionmachine], involved in emotional appraisal, coping and reflective thinking. We mapped appraisal processes described in [putting_appraisal_in_context, appraisal_determinants_of_emotions, appraisal_considered_as_a_process] over thinking model of six of Marvin Minsky [emotionmachine]. Orchestra of emotions is a concept that emphasises constant collaboration of low level instinctive processes with high level learned reactions, deliberative thinking and reflective thinking processes via switching emotional states and initiating/terminating thinking processes. We used orchestra analogy to identify always changing and intermittent nature of thinking processes and their  collaboration that eventually combines in emotional personality, like subassemblies of musical instruments combines in overall sound of orchestra.
 
 ##Appraisal aspect
 
 First aspect that is not described in previous article [computational_emotional_thinking]: how inbound stimulus is appraised to trigger proper emotion? There are several appraisal theories that we used to find proper answer to this question. We explored Scherer, Smith and Kirby, Roseman and Tomkins  approaches of synthesise appraisal framework.
-Overall appraisal process could be depicted like presented below:
+An overall appraisal process is depicted below:
 
 ![appraisal in model of six](appraisal_in_model_of_six.png)
 
-Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala, secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to: learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behavior) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
+Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala, secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behavior) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
 
 ###Non-conscious appraisal
 
@@ -67,7 +67,7 @@ We use affective appraisal described in ["A primer of affect psychology"][primer
 According to ["A primer of affect psychology"][primer_affect_psychology]: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 
 Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative.
-It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this like: the longer person is in distress state the easier he/she could be switched to anger state.
+It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
 
 Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
 
@@ -84,7 +84,7 @@ We use Tomkins theory that is based on innate affects which we correspond with P
 1. Surprise - expectancy
 1. Acceptance - disgust
 
-Scherer uses 16 stimulus evaluation checks(SEC), they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.
+Scherer uses 16 Stimulus Evaluation Checks(SEC), they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.
 Comprehensive SECs structure below: 
 
 1. Relevance detection:
@@ -136,7 +136,7 @@ Scherer uses 14 words to describe emotions in his analysis:
 1. Guilt
 1. Pride
 
-Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates. 14 emotions described in Scherer's article do not match 8 Plutchik basic emotions, there are no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic, each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers matching procedure, described in conscious appraisal algorithm section, the most close pattern triggers proper emotion.
+Scherer discovered 224 appraisal patterns that we used as the base for our appraisal predicates. 14 emotions described in Scherer's article do not match 8 Plutchik basic emotions, there are no: surprise, anticipation and trust. We used linear interpolation following Plutchik's idea to use color theory for representation of emotions to calculate values of SECs for these three basic emotions. Comprehensive list of conscious appraisal patterns/predicates is placed in appendix. Predicates should be considered probabilistic, each level: very low, low, medium, high, very high should be considered as range of the probabilities. Each time stimulus triggers a matching procedure, described in conscious appraisal algorithm section, the closest pattern triggers proper emotion.
 
 ###Conscious appraisal algorithm
 
