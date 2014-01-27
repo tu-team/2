@@ -123,7 +123,7 @@ There are two types of modules:
 
 **Total = 3**
 
-## CopyCat
+##CopyCat
 
 https://en.wikipedia.org/wiki/Copycat_(software)
 
@@ -167,3 +167,43 @@ Main features:
 1. Self-emergent/self-organized
 
 **Total = 4**
+
+##DUAL
+
+DUAL is a general cognitive architecture integrating the connectionist and symbolic approaches at the micro level. DUAL is based on decentralized representation and emergent computation. It was inspired by the Society of Mind idea proposed by Marvin Minsky but departs from the initial proposal in many ways. Computations in DUAL emerge from the interaction of many micro-agents each of which is hybrid symbolic/connectionist device. The agents exchange messages and activation via links that can be learnt and modified, they form coalitions which collectively represent concepts, episodes, and facts.
+Several models have been developed on the basis of DUAL. These include: AMBR (a model of analogy-making and memory), JUDGEMAP (a model of judgment), PEAN (a model of perception), etc.
+DUAL is developed by a team at the New Bulgarian University led by Boicho Kokinov. The second version was co-authored by Alexander Petrov. The third version is co-authored by Georgi Petkov and Ivan Vankov.
+
+1. Emotional criteria: = 0
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels: = 0
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding = 1
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness: = 1
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized = 1
+
+**Total = 6**
