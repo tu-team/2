@@ -20,8 +20,11 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
 1. AI components:
    2. Motivation(implying Emotions)
    2. Common sense logic
+   2. Reasoning
    2. Perception/understanding
-   2. Memory
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
    2. Consciousness:
 	  3. Awareness
 	  3. Learning
@@ -31,6 +34,18 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
   2. Creativity
   2. Dream/sleep
 1. Parallel processing
+1. Self-emergent/self-organized
+
+##4CAPS
+
+https://en.wikipedia.org/wiki/4CAPS
+
+Notably, 4CAPS differs from other architectures for its stress on the capacity constraints (that is, limited computational power), and the dynamic collaboration between different centers. In particular, according the Just and Varma,[1] 4CAPS is based on four characteristic assumptions:
+
+1. Each cortical area can perform multiple cognitive functions
+1. Each cortical area has a limited capacity of computational resources
+1. The cortical network of regions that is responsible for carrying out a particular task changes dynamically as the regions' capacity resources are saturated.
+1. Communications between cortical regions is also subject to specific constraints, similar to bandwidth limitations along information channels.
 
 
 ## CopyCat
@@ -57,11 +72,14 @@ Main features:
    2. Learned level
    2. Deliberative level
    2. Reflection level
-1. AI components: = 2
+1. AI components: = 3
    2. Motivation(implying Emotions)
-   2. Common sense logic = 1 (analogy)
+   2. Common sense logic
+   2. Reasoning = 1 (analogy)
    2. Perception/understanding = 1
    2. Memory = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
    2. Consciousness:
 	  3. Awareness
 	  3. Learning
@@ -71,5 +89,6 @@ Main features:
   2. Creativity
   2. Dream/sleep
 1. Parallel processing = 1
+1. Self-emergent/self-organized
 
-**Total = 3**
+**Total = 4**
