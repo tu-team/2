@@ -47,6 +47,42 @@ Notably, 4CAPS differs from other architectures for its stress on the capacity c
 1. The cortical network of regions that is responsible for carrying out a particular task changes dynamically as the regions' capacity resources are saturated.
 1. Communications between cortical regions is also subject to specific constraints, similar to bandwidth limitations along information channels.
 
+1. Emotional criteria: = 0
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels: = 0
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components: = 4.5
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 0.5
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized = 1
+
+**Total = 4.5**
+
+##ACT-R
+
 
 ## CopyCat
 
