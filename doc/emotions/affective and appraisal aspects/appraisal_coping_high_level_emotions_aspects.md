@@ -12,7 +12,7 @@ Overall emotional process was described exhaustively in our previous article [co
 1. Parallel to conscious processes the instinctive behaviour could be triggered, it influencing the environment.
 1. Conscious processes described above triggers conscious behaviour and in its turn it influences the environment again.
 
-Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" [natureofemotions] as base psychological model of emotions and adopted his emotional feedback loop processes to fit cognitive architecture "model of six" of Marvin Minsky [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes**:
+Neuromodulators influence in emotional processes was described in Lovheim article [cubeofemotions]. We used Plutchik "wheel of emotions" [natureofemotions] as base psychological model of emotions and adopted his emotional feedback loop processes to fit cognitive architecture "model of six" of Marvin Minsky [emotionmachine]. We developed mapping of **neuromodulators impact over computational processes** [computational_emotional_thinking]:
 
  1. Generic:
    2. CPU power: noradrenaline
@@ -47,7 +47,7 @@ An overall appraisal process is depicted below:
 
 ![appraisal in model of six](appraisal_in_model_of_six.png)
 
-Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala, secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behavior) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
+Firstly stimulus is appraised non-consciously via affective appraisal it could be interpreted like signal processing in spinal cord, hypothalamus and amygdala, secondly stimulus is processed via cognitive appraisal that takes place in frontal cortex and cingulate cortex. We correspond affective appraisal with instinctive layer of Minsky's thinking model (model of six) [emotionmachine]. This non-conscious appraisal triggers neuromodulation [cubeofemotions] and then cognitive appraisal which in its turn corresponds to learned reactions, deliberative, reflective thinking, self-reflective thinking, self-conscious reflections layers of Minsky's model of six [computational_emotional_thinking]. Cognitive appraisal usually is associated with much longer process than instinctive affective appraisals that could influence non-conscious processes(behavior) and emotional state. After this cognitive reappraisal could change the emotional state taking in account some deliberative thinking of the stimulus and the personality relation with it.
 
 ###Non-conscious appraisal
 
@@ -80,30 +80,7 @@ We use Tomkins theory that is based on innate affects which we correspond with P
 1. Surprise - expectancy
 1. Acceptance - disgust
 
-Scherer uses 16 Stimulus Evaluation Checks(SEC), they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.
-Comprehensive SECs structure below: 
-
-1. Relevance detection:
-  2. Novelty check:
-    3. Suddenness.
-    3. Familiarity.
-    3. Predictability.
-  2. Intrinsic pleasantness check.
-  2. Goal relevance.
-1. Implication assessment:
-  2. Causal Attribution check: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch).
-  2. Outcome probability check.
-  2. Discrepancy from expectation check: consonant/dissonant.
-  2. Goal/need conduciveness check: high/obstruct.
-  2. Urgency check.
-1. Coping potential determination
-  2. Control check.
-  2. Power check.
-  2. Adjustment check.
-1. Normative significance evaluation:
-  2. Internal standards check. 
-  2. External standards check.
-
+Scherer uses 16 Stimulus Evaluation Checks(SEC), they are organized in 4 groups: relevance detection, implication assessment, coping potential and normative significance.Comprehensive SECs structure, see appendix. 
 Each of stimulus evaluation checks has following set of possible values:
 
 1. very low (vl)
@@ -282,6 +259,29 @@ Also, those kinds of emotions make people understand the weights of goals of oth
 1. Tero Keski-Valkama (MSc).
 
 ##Appendix
+
+###Comprehensive SECs structure
+
+1. Relevance detection:
+  2. Novelty check:
+    3. Suddenness.
+    3. Familiarity.
+    3. Predictability.
+  2. Intrinsic pleasantness check.
+  2. Goal relevance.
+1. Implication assessment:
+  2. Causal Attribution check: intentional(int)/other/natural(nat)/negligence(neg)/chance(ch).
+  2. Outcome probability check.
+  2. Discrepancy from expectation check: consonant/dissonant.
+  2. Goal/need conduciveness check: high/obstruct.
+  2. Urgency check.
+1. Coping potential determination
+  2. Control check.
+  2. Power check.
+  2. Adjustment check.
+1. Normative significance evaluation:
+  2. Internal standards check. 
+  2. External standards check.
 
 ###Conscious appraisal predicates
 
