@@ -277,6 +277,10 @@ Also, many of the more complex emotions humans exhibit can be traced to evolutio
 For example, feeling the pain of others is pretty well understood. It makes people help each other and thrive in cooperation.
 Also, those kinds of emotions make people understand the weights of goals of other people.
 
+##Acknowledgment
+
+1. Tero Keski-Valkama (MSc).
+
 ##Appendix
 
 ###Conscious appraisal predicates
