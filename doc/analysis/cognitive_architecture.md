@@ -60,7 +60,7 @@ Notably, 4CAPS differs from other architectures for its stress on the capacity c
    2. Learned level
    2. Deliberative level
    2. Reflection level
-1. AI components: = 4.5
+1. AI components: = 2
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
@@ -70,7 +70,7 @@ Notably, 4CAPS differs from other architectures for its stress on the capacity c
 	  3. Reconstructive memory
    2. Consciousness:
 	  3. Awareness
-	  3. Learning = 0.5
+	  3. Learning
 	  3. Anticipation
 	  3. Subjective experience
   2. Intuition
@@ -79,10 +79,49 @@ Notably, 4CAPS differs from other architectures for its stress on the capacity c
 1. Parallel processing = 1
 1. Self-emergent/self-organized = 1
 
-**Total = 4.5**
+**Total = 4**
 
 ##ACT-R
 
+There are two types of modules:
+1. Perceptual-motor modules, which take care of the interface with the real world (i.e., with a simulation of the real world). The most well-developed perceptual-motor modules in ACT-R are the visual and the manual modules.
+1. Memory modules. There are two kinds of memory modules in ACT-R:
+  2. Declarative memory, consisting of facts such as Washington, D.C. is the capital of United States, France is a country in Europe, or 2+3=5
+  2. Procedural memory, made of productions. Productions represent knowledge about how we do things: for instance, knowledge about how to type the letter "Q" on a keyboard, about how to drive, or about how to perform addition.
+
+1. Emotional criteria: = 0
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components: = 2
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding = 1
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized
+
+**Total = 3**
 
 ## CopyCat
 
