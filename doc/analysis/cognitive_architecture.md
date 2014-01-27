@@ -102,12 +102,12 @@ There are two types of modules:
    2. Learned level
    2. Deliberative level
    2. Reflection level
-1. AI components: = 2
+1. AI components: = 3
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
    2. Perception/understanding = 1
-   2. Memory:
+   2. Memory: = 1
 	  3. Constructive memory
 	  3. Reconstructive memory
    2. Consciousness:
@@ -121,7 +121,7 @@ There are two types of modules:
 1. Parallel processing = 1
 1. Self-emergent/self-organized
 
-**Total = 3**
+**Total = 4**
 
 ## CopyCat
 
@@ -152,7 +152,7 @@ Main features:
    2. Common sense logic
    2. Reasoning = 1 (analogy)
    2. Perception/understanding = 1
-   2. Memory = 1
+   2. Memory = 0
 	  3. Constructive memory
 	  3. Reconstructive memory
    2. Consciousness:
@@ -166,4 +166,4 @@ Main features:
 1. Parallel processing = 1
 1. Self-emergent/self-organized
 
-**Total = 4**
+**Total = 3**
