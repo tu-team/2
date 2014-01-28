@@ -614,7 +614,7 @@ However, two main features of layered architectures are missing in H-CogAff. In 
 1. AI components: = 6
    2. Attention = 1
    2. Planning = 1
-   2. Motivation(implying Emotions)
+   2. Motivation(implying Emotions) = 1
    2. Common sense logic
    2. Reasoning
    2. Perception/understanding = 1
@@ -632,4 +632,4 @@ However, two main features of layered architectures are missing in H-CogAff. In 
 1. Parallel processing = 1 (emulated parallel http://www.dossier-andreas.net/software_architecture/emulatedparallel.html)
 1. Self-emergent/self-organized
 
-**Total = 15**
+**Total = 16**
