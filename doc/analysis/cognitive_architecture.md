@@ -123,6 +123,46 @@ There are two types of modules:
 
 **Total = 3**
 
+#ALifeE
+
+http://aihandbook.intsys.org.ru/index.php/ai-cogarcs/478-cogarc-35
+
+ALifeE (Artificial Life Environment) is a cognitive architecture, including virtual sensors and perception, learning methods to approximate behavioral and cognitive models for Autonomous Virtual Agents (AVA), developed by Toni Conde in the Virtual Reality Laboratory (VRLab), (founder and director - Professor Daniel Thalmann), at the Swiss Federal Institute of Technology (Ecole Polytechnique Fédérale de Lausanne - EPFL) in Lausanne, Switzerland.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding = 1
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
+
+**Total = 3**
+
 ##CopyCat
 
 https://en.wikipedia.org/wiki/Copycat_(software)
