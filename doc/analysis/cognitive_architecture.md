@@ -19,6 +19,7 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
    2. Reflection level
 1. AI components:
    2. Attention
+   2. Planning
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning
@@ -574,3 +575,61 @@ http://www.slideshare.net/sevakprime/gaius-tutorial
 1. Self-emergent/self-organized = 1
 
 **Total = 3**
+
+##H-Cogaff
+
+http://www.cs.bham.ac.uk/research/projects/cogaff/
+
+http://www.cs.bham.ac.uk/research/projects/cogaff/misc/cogaff-cosy-poster.pdf
+
+http://www.garfixia.nl/h-cogaff
+
+http://www.cs.bham.ac.uk/research/projects/cogaff/sloman-aisb01.pdf
+
+http://www.cs.bham.ac.uk/research/projects/cogaff/links/ruebenstrunk-presentation4.pdf
+
+http://www.cs.bham.ac.uk/research/projects/cogaff/talks/consciousness-sem.pdf
+
+http://www.cs.bham.ac.uk/research/projects/cogaff/sloman-aisb01.pdf
+
+The main idea behind this architecture is that the mind is essentially two-dimensional. On the first dimension (displayed horizontally) information flows from perception, via processing/reasoning, to action. On the second dimension (vertically) information flows from reactive processes, via deliberate processes, to reflective processes. The information flows are bidirectional. Next to this tidy organization, it poses an alarm system, used for quick all-out responses of the entire system.
+
+![general architecture](http://www.garfixia.nl/l/library/download/urn:uuid:32853997-e225-4ede-8d67-fd7ebe258120/H-CogAff.jpg?height=877&width=600&ext=.jpg)
+
+However, two main features of layered architectures are missing in H-CogAff. In such an architecture two layers may only communicate to with each other if they directly adjoin. In H-CogAff all layers communicate directly with one another. Also, in a layered architecture, the upper layer is a more abstract version of the lower level. In H-CogAff the "upper" functions are not more abstract versions of the "lower" functions, they are very different from each other. Furthermore, besides the three layers, several other modules are used as well, and these are positioned next to the main layers, making it unclear to which layer, if any they belong.
+
+1. Emotional criteria: = 4
+   2. Cognitive Representation = 1
+   2. Cognition -> Emotion = 1
+   2. Emotion Representation = 1
+   2. Emotion -> Cognition = 1
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels: = 3
+   2. Instinctive level = 1
+   2. Learned level
+   2. Deliberative level = 1
+   2. Reflection level = 1
+1. AI components: = 6
+   2. Attention = 1
+   2. Planning = 1
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding = 1
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness = 1
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition = 1
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1 (emulated parallel http://www.dossier-andreas.net/software_architecture/emulatedparallel.html)
+1. Self-emergent/self-organized
+
+**Total = 15**
