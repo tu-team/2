@@ -295,6 +295,53 @@ CHREST (Chunk Hierarchy and REtrieval STructures) is a symbolic cognitive archit
 
 **Total = 5**
 
+##CLARION
+
+https://en.wikipedia.org/wiki/CLARION_(cognitive_architecture)
+https://github.com/development-team/2/blob/master/doc/analysis/artificial_consciousness.md#ron-suns-cognitive-architecture-clarion
+
+CLARION is an integrative architecture, consisting of a number of distinct subsystems, with a dual representational structure in each subsystem (implicit versus explicit representations). Its subsystems include the action-centered subsystem, the non-action-centered subsystem, the motivational subsystem, and the meta-cognitive subsystem.
+
+1. The role of the action-centered subsystem is to control actions;
+1. The role of the non-action-centered subsystem is to maintain general knowledge;
+1. The role of the motivational subsystem is to provide underlying motivations for perception, action, and cognition;
+1. The role of the meta-cognitive subsystem is to monitor, direct, and modify the operations of all the other subsystems.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Motivation = 1
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness: = 2
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity = 1
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized = 1
+
+**Total = 6**
+
 ##CopyCat
 
 https://en.wikipedia.org/wiki/Copycat_(software)
