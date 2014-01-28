@@ -252,6 +252,49 @@ To support self-modification capabilities in a self-modifying robot, I have been
 
 **Total = 8**
 
+##CHREST
+
+https://en.wikipedia.org/wiki/CHREST_(cognitive_architecture)
+
+http://chrest.info/design.html
+
+CHREST (Chunk Hierarchy and REtrieval STructures) is a symbolic cognitive architecture based on the concepts of limited attention, limited short-term memories, and chunking. Learning, which is essential in the architecture, is modelled as the development of a network of nodes (chunks) which are connected in various ways. This can be contrasted with Soar and ACT-R, two other cognitive architectures, which use productions for representing knowledge. CHREST has often been used to model learning using large corpora of stimuli representative of the domain, such as chess games for the simulation of chess expertise or child-directed speech for the simulation of children’s development of language. In this respect, the simulations carried out with CHREST have a flavor closer to those carried out with connectionist models than with traditional symbolic models.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention = 1
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding = 1
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized = 1 (memory network)
+
+**Total = 5**
+
 ##CopyCat
 
 https://en.wikipedia.org/wiki/Copycat_(software)
