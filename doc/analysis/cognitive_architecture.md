@@ -556,6 +556,7 @@ http://www.slideshare.net/sevakprime/gaius-tutorial
    2. Reflection level
 1. AI components:
    2. Attention
+   2. Planning
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
@@ -633,3 +634,53 @@ However, two main features of layered architectures are missing in H-CogAff. In 
 1. Self-emergent/self-organized
 
 **Total = 16**
+
+##CoJack
+
+https://en.wikipedia.org/wiki/JACK_Intelligent_Agents
+
+Jack Intelligent Agent JACK is a framework in Java for multi-agent system development. JACK Intelligent Agents was built by Agent Oriented Software Pty. Ltd. (AOS) and is a third generation agent platform building on the experiences of the Procedural Reasoning System (PRS) and Distributed Multi-Agent Reasoning System (dMARS). JACK is one of the few multi-agent systems that uses the BDI software model and provides its own Java-based plan language and graphical planning tools.
+
+JACK Intelligent Agents is a mature commercial multi-agent platform that has been under active research, development, and domain-specific application for more than 10 years. The following provides a listing of the platforms key differentiating features.
+Agent Run-time: The core of the platform is an extensible multi-agent run-time. Once domain specific agents, plans, events, capabilities, etc. are specified the JACK kernel manages the execution the system including message passing, reasoning, and meta-reasoning.
+JACK Plan Language (JPL): JACK provides an agent-specific plan language for writing JACK plans (the discrete reasoning executed by agents). The plan language is an extension to the Java and offers commands such as @send and @post for inter-agent messaging, as well as the management of actions, sub-tasks and maintenance of conditions. Plans are compiled into Java classes for execution in the JACK run-time offering speed and correctness of execution.
+Belief-Desire-Intention Model: In addition to a classical (non-BDI) agent model, the platform realizes the BDI software model, where beliefs are managed by beliefsets encapsulated within agents, desires are the goal states an agent is aspiring to achieve, and intentions are the meta-reasoning and plan-based reasoning the JACK agents use to achieve the current goal.
+Capabilities: The platform provides capabilities which are abstractions of common behaviors manifest as a complex of plans and events. Capabilities provide a way of conceptually bundling common behaviors and actions and re-using them between agents.[1]
+JACK Development Environment (JDE): Multi-agent systems can be written in Java code and the JACK plan language in a standard IDE, although the platform provides an agent-centric IDE called the JACK Development Environment or JDE. The JDE provides graphical tools for writing plans, connecting plans to agents, managing inter-agent communication, as well as compiling and running. The JDE also provides graphical tools for debugging and tracing the execution of plans and inter-agent message passing [1].
+Graphical Plans: A key feature of the JDE is the facility to write and manage Graphical Plans. These are the discrete reasoning performed by an agent represented graphically as a flow chart, allowing a programmer to manage the code performed in each step of the reasoning graph, and the subject matter expert to manage the logical flow of the reasoning based on the human-readable documentation on each node [2].
+JACK Object Modeller (JACOB): An object serialization technology used by the JACK run-time for object initialization and inter-process communication. Java objects are serialized to human-readable ASCII text, not too dissimilar to YAML and XML [3].
+Platform Independence: The JACK platform is written in Java, allowing the deployment of JACK multi-agent systems onto the wide array of platforms that support the Java Virtual Machine. Currently JACK can be installed on Microsoft Windows operating systems only using a 32-bit Java Virtual Machine but works also on a 64-bit Java Virtual Machine. On the most recent versions of Mac OS X operating systems (starting from Mac OS X Lion) JACK can be installed only using a console installer.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
