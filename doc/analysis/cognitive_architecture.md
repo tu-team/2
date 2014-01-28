@@ -163,6 +163,48 @@ ALifeE (Artificial Life Environment) is a cognitive architecture, including virt
 
 **Total = 3**
 
+##Apex
+
+http://www.hf.faa.gov/workbenchtools/default.aspx?rPage=Tooldetails&subCatId=30&toolID=301
+
+http://www.anpac.it/ARC_DOC/PUB/Documenti/Area%20Pubblica/TECH/Pilot%20Fatigue-FTL/Letteratura/2001-Human%20Performance%20Models%20for%20the%20Prediction%20of%20Human%20Error.pdf
+
+Apex is a software architecture for modeling human performance in complex, dynamic environments. It consists of a suite of software tools for creating, simulating and analyzing human performance models, plus a methodology for using those tools effectively for a variety of modeling goals.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding = 1
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
+
+**Total = 2**
+
 ##CopyCat
 
 https://en.wikipedia.org/wiki/Copycat_(software)
