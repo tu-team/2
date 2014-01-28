@@ -18,6 +18,7 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
    2. Deliberative level
    2. Reflection level
 1. AI components:
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning
@@ -61,6 +62,7 @@ Notably, 4CAPS differs from other architectures for its stress on the capacity c
    2. Deliberative level
    2. Reflection level
 1. AI components: = 2
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
@@ -103,6 +105,7 @@ There are two types of modules:
    2. Deliberative level
    2. Reflection level
 1. AI components: = 2
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
@@ -143,6 +146,7 @@ ALifeE (Artificial Life Environment) is a cognitive architecture, including virt
    2. Deliberative level
    2. Reflection level
 1. AI components:
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
@@ -185,11 +189,12 @@ Apex is a software architecture for modeling human performance in complex, dynam
    2. Deliberative level
    2. Reflection level
 1. AI components:
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
    2. Perception/understanding = 1
-   2. Memory:
+   2. Memory: = 1
 	  3. Constructive memory
 	  3. Reconstructive memory
    2. Consciousness:
@@ -200,10 +205,52 @@ Apex is a software architecture for modeling human performance in complex, dynam
   2. Intuition
   2. Creativity
   2. Dream/sleep
-1. Parallel processing
+1. Parallel processing = 1
 1. Self-emergent/self-organized
 
-**Total = 2**
+**Total = 4**
+
+##ASMO
+
+http://cfsites1.uts.edu.au/feit/it/students/profiles/detail.cfm?ItemId=25175
+http://www.ronynovianto.com/publications/the_role_of_attention_in_robot_self-awareness.pdf
+
+To support self-modification capabilities in a self-modifying robot, I have been developing a robot architecture called ASMO. This enables the use of multiple representations and allows the robot to perform complex tasks. ASMO has been implemented in a few different robots including Smokey and Nao. Smokey is a robot bear that was designed for social robot interaction. The challenge is to bring Smokey to life, including giving him emotions and self-awareness. Smokey’s emotional response is developed in ASMO. For example, he can now recognise his favourite colour and gets excited when he sees a red coloured object.
+
+1. Emotional criteria: = 4
+   2. Cognitive Representation = 1
+   2. Cognition -> Emotion = 1
+   2. Emotion Representation = 1
+   2. Emotion -> Cognition = 1
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention = 1
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding = 1
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness = 1
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized = 1
+
+**Total = 8**
 
 ##CopyCat
 
@@ -230,6 +277,7 @@ Main features:
    2. Deliberative level
    2. Reflection level
 1. AI components: = 3
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1 (analogy)
@@ -270,6 +318,7 @@ DUAL is developed by a team at the New Bulgarian University led by Boicho Kokino
    2. Deliberative level
    2. Reflection level
 1. AI components:
+   2. Attention
    2. Motivation(implying Emotions)
    2. Common sense logic
    2. Reasoning = 1
