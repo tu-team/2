@@ -342,6 +342,55 @@ CLARION is an integrative architecture, consisting of a number of distinct subsy
 
 **Total = 6**
 
+##EPIC
+
+https://en.wikipedia.org/wiki/EPIC_(cognitive_architecture)
+
+http://web.eecs.umich.edu/~kieras/epic.html
+
+http://web.eecs.umich.edu/~kieras/EpicDiagramColor.pdf
+
+http://www.anpac.it/ARC_DOC/PUB/Documenti/Area%20Pubblica/TECH/Pilot%20Fatigue-FTL/Letteratura/2001-Human%20Performance%20Models%20for%20the%20Prediction%20of%20Human%20Error.pdf
+
+EPIC (Executive-Process/Interactive Control) is a cognitive architecture developed by Professors David E. Kieras and David E. Meyer at the University of Michigan.[1][2]
+EPIC has components that emulate various parts of the human-information processing system. Among these components are tools for perceptual, cognitive, and motor processing. It has been especially useful for building cognitive models in the domain of Human computer interaction.[3]
+Many features of EPIC's perceptual/motor capabilities have been later incorporated into the ACT-R, CLARION, and other cognitive architectures.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized
+
+**Total = 3**
+
 ##CopyCat
 
 https://en.wikipedia.org/wiki/Copycat_(software)
