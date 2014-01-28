@@ -477,3 +477,60 @@ Many features of EPIC's perceptual/motor capabilities have been later incorporat
 1. Self-emergent/self-organized
 
 **Total = 3**
+
+## FORR
+
+https://en.wikipedia.org/wiki/FORR
+
+A FORR architecture has three components: a set of descriptives that describe the state of the problem, a tiered set of Advisors that are consulted in order to decide what action to perform, and a behavioral script that queries the Advisors and performs the action that they suggest.[2]
+
+###Advisors
+
+The Advisors are the set of rationales or heuristics for making a decision. They can be considered the procedural memory component of the architecture. Upon each new decision, Advisors are queried in order to decide which action to perform. Advisors never communicate with each other or learn on their own: they simply ask for information about the state of the problem stored in the form of descriptives, and make a suggestion based on that information. The Advisors are divided into three tiers, which are queried in the following order:
+
+1. Tier 1: these Advisors are always right. If these suggest an action, that action is carried out immediately and the query ends. If they forbid an action, that action is removed from consideration. Otherwise, move to the next tier.
+1. Tier 2: if one of these Advisors is triggered, it proposes a sub-problem, or an ordered set of actions, achieving a sub-goal in solving the overall problem (such as moving around one obstacle in a maze). If no tier 2 advisor is triggered, move to last tier.
+1. Tier 3: these are all other rationales. They are not always right, but compete with each other. They vote on an action, and the highest-voted suggestion is performed. Different problem classes in the same domain will have different weights for the same Advisors, and the weights are developed from experience through learning algorithms.
+
+###Descriptives
+
+The declarative memory component of the architecture, the descriptives represent the state of the problem and are available to any Advisor.
+
+###Behavioral script
+
+The behavioral script queries each tier of Advisors sequentially. If a tier 1 Advisor suggests an action, the script performs the action. Otherwise, if a tier 2 Advisor is triggered, it means that a sub-problem has been encountered. A tier 1 Advisor guarantees that only one tier 2 Advisor is active at any time. If no tier 1 Advisor comments and no tier 2 Advisor is triggered, the behavioral script asks for suggestions or comments from all tier 3 Advisors and lets them vote. The script performs the action with the highest vote among all tier 3 advisors.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
+
+**Total = 2**
