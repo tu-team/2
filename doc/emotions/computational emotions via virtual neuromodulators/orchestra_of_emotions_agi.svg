@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="orchestra_of_emotions.svg"
+   sodipodi:docname="orchestra_of_emotions_agi.svg"
    inkscape:export-filename="F:\Projects\2\2\doc\emotions\affective and appraisal aspects\orchestra_of_emotions.png"
    inkscape:export-xdpi="180"
    inkscape:export-ydpi="180">
@@ -145,15 +145,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98694444"
-     inkscape:cx="578.91775"
-     inkscape:cy="284.23545"
+     inkscape:zoom="6.9086111"
+     inkscape:cx="917.9025"
+     inkscape:cy="726.95794"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="1856"
+     inkscape:window-width="1920"
      inkscape:window-height="1064"
-     inkscape:window-x="1980"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      showguides="true"
@@ -184,6 +184,29 @@
        orientation="1,0"
        position="1017.062,641.802"
        id="guide4215" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="411.04367,719.73582"
+       id="guide3945" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="387.29812,641.802"
+       id="guide3947" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="618.20312,641.802"
+       id="guide3949" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="895.78042,641.802"
+       id="guide3951" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="201.01837,701.31255"
+       id="guide3953" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid3976" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -193,7 +216,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -235,7 +258,7 @@
     </g>
     <g
        id="g4092"
-       transform="translate(0,84.000005)">
+       transform="translate(0,198)">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.2395612;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4094"
@@ -321,9 +344,140 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="6"
+     style="display:inline;opacity:0.5">
+    <g
+       id="g3978">
+      <rect
+         ry="25.431112"
+         rx="23.540848"
+         y="24.8892"
+         x="133.4969"
+         height="374.4549"
+         width="134.50465"
+         id="rect3127"
+         style="fill:#ffdd7f;fill-opacity:0.94117647;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+         x="200.79807"
+         y="49.41354"
+         id="text3968-1"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3970-7"
+           x="200.79807"
+           y="49.41354"
+           style="font-size:20px;text-align:center;text-anchor:middle">serenity</tspan></text>
+    </g>
+    <g
+       id="g3983"
+       transform="translate(135.03519,-0.03053779)">
+      <rect
+         style="fill:#2eb67f;fill-opacity:0.94117647;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3985"
+         width="118.76603"
+         height="374.4549"
+         x="133.4969"
+         y="24.8892"
+         rx="23.540848"
+         ry="25.431112" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3987"
+         y="49.41354"
+         x="192.66019"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;text-align:center;text-anchor:middle"
+           y="49.41354"
+           x="192.66019"
+           id="tspan3989"
+           sodipodi:role="line">fear</tspan></text>
+    </g>
+    <g
+       id="g3991"
+       transform="translate(254.30122,-0.03053779)">
+      <rect
+         style="fill:#00a65f;fill-opacity:0.94117647;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3993"
+         width="230.405"
+         height="374.4549"
+         x="133.4969"
+         y="24.8892"
+         rx="23.540848"
+         ry="25.431112" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3995"
+         y="49.41354"
+         x="248.39667"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;text-align:center;text-anchor:middle"
+           y="49.41354"
+           x="248.39667"
+           id="tspan3997"
+           sodipodi:role="line">terror</tspan></text>
+    </g>
+    <g
+       transform="translate(485.03519,-0.03053779)"
+       id="g4009">
+      <rect
+         ry="25.431112"
+         rx="23.540848"
+         y="24.8892"
+         x="133.4969"
+         height="374.4549"
+         width="277.24832"
+         id="rect4011"
+         style="fill:#2eb67f;fill-opacity:0.94117647;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+         x="271.90134"
+         y="49.41354"
+         id="text4013"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4015"
+           x="271.90134"
+           y="49.41354"
+           style="font-size:20px;text-align:center;text-anchor:middle">fear</tspan></text>
+    </g>
+    <g
+       id="g4017"
+       transform="translate(762.78352,-0.03053779)">
+      <rect
+         style="fill:#ffdd7f;fill-opacity:0.94117647;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect4019"
+         width="134.50465"
+         height="374.4549"
+         x="133.4969"
+         y="24.8892"
+         rx="23.540848"
+         ry="25.431112" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4021"
+         y="49.41354"
+         x="200.79807"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;text-align:center;text-anchor:middle"
+           y="49.41354"
+           x="200.79807"
+           id="tspan4023"
+           sodipodi:role="line">serenity</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="4"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
