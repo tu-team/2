@@ -687,3 +687,49 @@ JACK Intelligent Agents is a mature commercial multi-agent platform that has bee
 1. Self-emergent/self-organized = 1
 
 **Total = 5**
+
+##LIDA
+
+https://en.wikipedia.org/wiki/LIDA_(cognitive_architecture)
+
+Two hypotheses underlie the LIDA architecture and its corresponding conceptual model: 1) Much of human cognition functions by means of frequently iterated (~10 Hz) interactions, called cognitive cycles, between conscious contents, the various memory systems and action selection. 2) These cognitive cycles, serve as the “atoms” of cognition of which higher-level cognitive processes are composed.
+
+### Psychological and neurobiological underpinnings
+As a comprehensive, conceptual and computational cognitive architecture the LIDA architecture is intended to model a large portion of human cognition.[10][11] Comprising a broad array of cognitive modules and processes, the LIDA architecture attempts to implement and flesh out a number of psychological and neuropsychological theories including Global Workspace Theory,[12] Situated Cognition,[13] perceptual symbol systems,[14] Working Memory,[15] memory by affordances,[16] long-term working memory,[17] and the H-CogAff architecture.[18]
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention = 1
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding = 1
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized
+
+**Total = 6**
+
