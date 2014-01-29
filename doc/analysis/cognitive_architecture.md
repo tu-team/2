@@ -1008,3 +1008,45 @@ Soar is a cognitive architecture, created by John Laird, Allen Newell, and Paul 
 1. Self-emergent/self-organized
 
 **Total = 6**
+
+##Society of mind
+
+https://en.wikipedia.org/wiki/Society_of_mind
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness: = 1
+	  3. Awareness = 1
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing 
+1. Self-emergent/self-organized = 1
+
+**Total = 6** Possibly underestimated
+
+
