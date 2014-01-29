@@ -881,3 +881,46 @@ SRI's PRS was developed for embedded application in dynamic and real-time enviro
 1. Self-emergent/self-organized
 
 **Total = 4**
+
+##Psi-Theory
+
+https://en.wikipedia.org/wiki/Psi-Theory
+
+While the concepts of the Psi-theory are distributed over many individual publications, they may be reduced to a set of basic assumptions.[3] The Psi-theory describes a cognitive system as a structure consisting of relationships and dependencies that is designed to maintain a homeostatic balance in the face of a dynamic environment.
+
+1. Emotional criteria: = 1
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning = 1
+   2. Motivation(implying Emotions) = 1
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding = 1
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness: = 1
+	  3. Awareness = 1
+	  3. Learning = 1
+	  3. Anticipation = 1
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized = 1
+1. Neural network use = 1
+
+**Total = 11**
