@@ -813,4 +813,71 @@ Planning is a complex reasoning task that is well suited for the study of improv
 1. Parallel processing
 1. Self-emergent/self-organized
 
-**Total = 3**
+**Total = 3** Possibly underestimated
+
+##PRS
+
+https://en.wikipedia.org/wiki/Procedural_Reasoning_System
+
+###Architecture
+
+The system architecture of SRI's PRS includes the following components:
+* '''Database''' for beliefs about the world, represented using first order predicate calculus.
+* '''Goals''' to be realized by the system as conditions over an interval of time on internal and external state descriptions (desires).
+* '''Knowledge areas''' (KAs) or plans that define sequences of low-level actions toward achieving a goal in specific situations.
+* '''Intentions''' that include those KAs that have been selected for current and eventual execution.
+* '''Interpreter''' or inference mechanism that manages the system.
+
+###Features
+
+SRI's PRS was developed for embedded application in dynamic and real-time environments. As such it specifically addressed the limitations of other contemporary control and reasoning architectures like [[expert system]]s and the [[blackboard system]]. The following define the general requirements for the development of their PRS:
+
+* asynchronous event handling
+* guaranteed reaction and response types
+* procedural representation of knowledge
+* handling of multiple problems
+* reactive and goal-directed behavior
+* focus of attention
+* reflective reasoning capabilities
+* continuous embedded operation
+* handling of incomplete or inaccurate data
+* handling of transients
+* modeling delayed feedback
+* operator control
+
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention = 1
+   2. Planning = 1
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized
+
+**Total = 4**
