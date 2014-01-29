@@ -773,3 +773,44 @@ https://en.wikipedia.org/wiki/PreAct
 
 **Total = 4**
 
+##PRODIGY
+
+http://www.isi.edu/~blythe/papers/jetai95.html
+
+Planning is a complex reasoning task that is well suited for the study of improving performance and knowledge by learning, i.e. by accumulation and interpretation of planning experience. Prodigy is an architecture that integrates planning with multiple learning mechanisms. Learning occurs at the planner's decision points and integration in Prodigy is achieved via mutually interpretable knowledge structures. This article describes the Prodigy planner, briefly reports on several learning modules developed earlier along the project, and presents in more detail two recently explored methods to learn to generate plans of better quality. We introduce the techniques, illustrate them with comprehensive examples, and show prelimary empirical results. The article also includes a retrospective discussion of the characteristics of the overall Prodigy architecture and discusses their evolution within the goal of the project of building a large and robust integrated planning and learning system.
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning = 1
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
+
+**Total = 3**
