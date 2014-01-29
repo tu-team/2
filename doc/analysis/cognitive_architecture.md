@@ -967,3 +967,44 @@ R-CAST is a group decision support system based on research on naturalistic deci
 
 **Total = 2**
 
+##Soar
+
+https://en.wikipedia.org/wiki/Soar_(cognitive_architecture)
+
+Soar is a cognitive architecture, created by John Laird, Allen Newell, and Paul Rosenbloom at Carnegie Mellon University, now maintained by John Laird's research group at the University of Michigan. It is both a view of what cognition is and an implementation of that view through a computer programming architecture for Artificial Intelligence (AI). Since its beginnings in 1983 and its presentation in a paper in 1987, it has been widely used by AI researchers to model different aspects of human behavior.
+
+1. Emotional criteria: (Soar-Emote)
+   2. Cognitive Representation = 1
+   2. Cognition -> Emotion = 1
+   2. Emotion Representation = 1
+   2. Emotion -> Cognition = 1
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
+
+**Total = 6**
