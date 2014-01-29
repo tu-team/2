@@ -1049,4 +1049,51 @@ https://en.wikipedia.org/wiki/Society_of_mind
 
 **Total = 6** Possibly underestimated
 
+##Subsumption architecture
+
+https://en.wikipedia.org/wiki/Subsumption_architecture
+
+Subsumption architecture is a control architecture that was proposed in opposition to traditional AI, or GOFAI. Instead of guiding behavior by symbolic mental representations of the world, subsumption architecture couples sensory information to action selection in an intimate and bottom-up fashion.[4]
+It does this by decomposing the complete behavior into sub-behaviors. These sub-behaviors are organized into a hierarchy of layers. Each layer implements a particular level of behavioral competence, and higher levels are able to subsume lower levels in order to create viable behavior. For example, a robot's lowest layer could be "avoid an object". The second layer would be "wander around", which runs beneath the third layer "explore the world". Because a robot must have the ability to "avoid objects" in order to "wander around" effectively, the subsumption architecture creates a system in which the higher layers utilize the lower-level competencies. The layers, which all receive sensor-information, work in parallel and generate outputs. These outputs can be commands to actuators, or signals that suppress or inhibit other layers.[5]
+
+*Situateness– A major idea of [[situated AI]] is that a robot should be able to react to its environment within a human-like time-frame.  Brooks argues that situated mobile robot should not represent the world via an internal set of symbols and then act on this model.  Instead, he claims that "the world is its own best model," which means that proper perception-to-action setups can be used to directly interact with the world as opposed to modelling it.
+*Embodiment– Brooks argues building an [[embodied agent]] accomplishes two things. The first is that it forces the designer to test and create an integrated physical [[control system]], not theoretic models or simulated robots that might not work in the physical world.  The second is that it can solve the [[symbol grounding]] problem, a philosophical issue many traditional AIs encounter, by directly coupling sense-data to meaningful actions.  "The world grounds regress," and the internal relation of the behavioral layers are directly grounded in the world the robot perceives.
+*Intelligence– Looking at evolutionary progress, Brooks argues that developing perceptual and mobility skills are a necessary foundation for human-like intelligence.  Also, by rejecting [[top-down and bottom-up design|top-down]] representations as a viable starting point for AI, it seems that "intelligence is determined by the dynamics of interaction with the world."
+*[[Emergence]]– Conventionally, individual modules are not considered intelligent by themselves. It is the interaction of such modules, evaluated by observing the agent and its environment, that is usually deemed intelligent (or not).  "Intelligence," therefore, "is in the eye of the observer."<ref>{{cite book|last=Brooks|first=Rodney|title=Cambrian Intelligence: The Early History of the New AI|year=1999|publisher=The MIT Press|location=Cambridge, Massachusetts|isbn=0-262-02468-3|pages=165-170}}</ref>
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized = 1
+
+**Total = 2**
 
