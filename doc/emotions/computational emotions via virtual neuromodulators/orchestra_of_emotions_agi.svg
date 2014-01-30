@@ -145,16 +145,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2212814"
-     inkscape:cx="534.61209"
-     inkscape:cy="401.31281"
+     inkscape:zoom="1.109884"
+     inkscape:cx="526.18109"
+     inkscape:cy="438.91436"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
-     inkscape:window-width="1856"
-     inkscape:window-height="1064"
-     inkscape:window-x="1980"
-     inkscape:window-y="-4"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      showguides="false"
      inkscape:guide-bbox="true"
@@ -247,7 +247,7 @@
          xml:space="preserve"><tspan
            style="font-size:10px;text-align:center;text-anchor:middle"
            y="30.63715"
-           x="-654.84686"
+           x="-654.64178"
            id="tspan4004"
            sodipodi:role="line">Non-conscious </tspan><tspan
            id="tspan4006"
@@ -303,7 +303,7 @@
          sodipodi:linespacing="125%"
          transform="matrix(0,-1,1,0,0,0)"><tspan
            sodipodi:role="line"
-           x="-408.84686"
+           x="-408.64178"
            y="30.63715"
            style="font-size:10px;text-align:center;text-anchor:middle"
            id="tspan4110">Emotional </tspan><tspan
@@ -333,7 +333,7 @@
            id="tspan3128"
            style="font-size:10px;text-align:center;text-anchor:middle"
            y="30.63715"
-           x="-532.3299"
+           x="-532.12482"
            sodipodi:role="line">Conscious </tspan><tspan
            id="tspan3130"
            style="font-size:10px;text-align:center;text-anchor:middle"
@@ -583,7 +583,7 @@
          id="text4713"
          sodipodi:linespacing="125%"><tspan
            id="tspan4715"
-           style="font-size:20px;text-align:center;text-anchor:middle"
+           style="font-size:16px;text-align:center;text-anchor:middle"
            sodipodi:role="line"
            x="424.41568"
            y="262.95734">cognitive reappraisal</tspan></text>
@@ -690,12 +690,12 @@
            y="262.95734"
            x="424.41568"
            sodipodi:role="line"
-           style="font-size:20px;text-align:center;text-anchor:middle"
+           style="font-size:16px;text-align:center;text-anchor:middle"
            id="tspan3165">conscious coping</tspan></text>
     </g>
     <g
        id="g4203"
-       transform="translate(790.23442,-4)">
+       transform="translate(722.23442,-4)">
       <rect
          ry="29.612206"
          y="322.63049"
@@ -712,122 +712,70 @@
          x="171.51479"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
+           style="font-size:16px;text-align:center;text-anchor:middle"
            y="345.26028"
            x="171.51479"
            id="tspan4209"
-           sodipodi:role="line">affective</tspan><tspan
-           style="font-size:20px;text-align:center;text-anchor:middle"
+           sodipodi:role="line">neuro</tspan><tspan
+           style="font-size:16px;text-align:center;text-anchor:middle"
            y="370.26028"
            x="171.51479"
            sodipodi:role="line"
-           id="tspan4211">appraisal</tspan></text>
+           id="tspan4211">modulation</tspan></text>
     </g>
     <g
-       id="g4000"
-       transform="translate(28,0)">
+       id="g4173">
       <rect
          rx="25.110588"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect3163"
-         width="80.403"
-         height="69.868942"
-         x="180.80168"
-         y="313.10352"
-         ry="28.793394" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="242.06873"
-         y="353.96927"
-         id="text3165"
-         sodipodi:linespacing="125%"><tspan
-           id="tspan3169"
-           sodipodi:role="line"
-           x="242.06873"
-           y="353.96927"
-           style="font-size:16px;text-align:center;text-anchor:middle">NM</tspan></text>
-      <rect
-         ry="28.793394"
-         y="318.63049"
-         x="148.8017"
-         height="59.224411"
-         width="79.993591"
-         id="rect4021"
-         style="fill:#ffefc3;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         rx="25.110588" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text3986"
-         y="341.26028"
-         x="189.07584"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           style="font-size:16px;text-align:center;text-anchor:middle"
-           y="341.26028"
-           x="189.07584"
-           id="tspan3988"
-           sodipodi:role="line">affective</tspan><tspan
-           style="font-size:16px;text-align:center;text-anchor:middle"
-           y="361.26028"
-           x="189.07584"
-           sodipodi:role="line"
-           id="tspan4038">appraisal</tspan></text>
-    </g>
-    <g
-       transform="translate(148,0)"
-       id="g4010">
-      <rect
-         ry="28.793394"
-         y="313.10352"
-         x="180.80168"
-         height="69.868942"
-         width="80.403"
-         id="rect4012"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         rx="25.110588" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4014"
-         y="353.96927"
-         x="242.06873"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         xml:space="preserve"><tspan
-           style="font-size:16px;text-align:center;text-anchor:middle"
-           y="353.96927"
-           x="242.06873"
-           sodipodi:role="line"
-           id="tspan4016">NM</tspan></text>
-      <rect
-         rx="25.110588"
-         style="fill:#ffefc3;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect4018"
+         id="rect4163"
          width="79.993591"
          height="59.224411"
-         x="148.8017"
+         x="296.8017"
          y="318.63049"
          ry="28.793394" />
-      <text
-         xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="189.07584"
-         y="341.26028"
-         id="text4020"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4022"
-           x="189.07584"
+      <g
+         id="g4010"
+         transform="translate(148,0)">
+        <path
+           id="rect4012"
+           transform="translate(-148,0)"
+           d="M 353.90625 313.09375 C 348.35385 313.09375 343.24244 315.15227 339.09375 318.625 L 351.6875 318.625 C 365.59877 318.625 376.78125 331.48596 376.78125 347.4375 L 376.78125 349.0625 C 376.78125 365.01404 365.59877 377.84375 351.6875 377.84375 L 339.5625 377.84375 C 343.62373 381.07906 348.56508 382.96875 353.90625 382.96875 L 384.09375 382.96875 C 398.00502 382.96875 409.21875 370.13904 409.21875 354.1875 L 409.21875 341.90625 C 409.21875 325.95471 398.00502 313.09375 384.09375 313.09375 L 353.90625 313.09375 z "
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="242.06873"
+           y="353.96927"
+           id="text4014"
+           sodipodi:linespacing="125%"><tspan
+             id="tspan4016"
+             sodipodi:role="line"
+             x="242.06873"
+             y="353.96927"
+             style="font-size:16px;text-align:center;text-anchor:middle">NM</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text4020"
            y="341.26028"
-           style="font-size:16px;text-align:center;text-anchor:middle">affective</tspan><tspan
-           id="tspan4024"
-           sodipodi:role="line"
            x="189.07584"
-           y="361.26028"
-           style="font-size:16px;text-align:center;text-anchor:middle">appraisal</tspan></text>
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-size:16px;text-align:center;text-anchor:middle"
+             y="341.26028"
+             x="189.07584"
+             id="tspan4022"
+             sodipodi:role="line">affective</tspan><tspan
+             style="font-size:16px;text-align:center;text-anchor:middle"
+             y="361.26028"
+             x="189.07584"
+             sodipodi:role="line"
+             id="tspan4024">appraisal</tspan></text>
+      </g>
     </g>
     <g
        id="g4026"
-       transform="translate(-25.015946,17.100994)">
+       transform="translate(-35.015946,21.100994)">
       <rect
          rx="10.907149"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -847,12 +795,12 @@
            y="262.95734"
            x="424.41568"
            sodipodi:role="line"
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           id="tspan4032">cognitive reappraisal</tspan></text>
+           style="font-size:16px;text-align:center;text-anchor:middle"
+           id="tspan4032">cognitive appraisal</tspan></text>
     </g>
     <g
        id="g4034"
-       transform="translate(86.342501,-24.658424)">
+       transform="translate(86.342501,-6.658424)">
       <rect
          rx="10.907149"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -872,15 +820,67 @@
            y="262.95734"
            x="424.41568"
            sodipodi:role="line"
-           style="font-size:20px;text-align:center;text-anchor:middle"
-           id="tspan4040">cognitive reappraisal</tspan></text>
+           style="font-size:16px;text-align:center;text-anchor:middle"
+           id="tspan4040">cognitive appraisal</tspan></text>
+    </g>
+    <g
+       id="g4183"
+       transform="translate(-120,0)">
+      <rect
+         ry="28.793394"
+         y="318.63049"
+         x="296.8017"
+         height="59.224411"
+         width="79.993591"
+         id="rect4185"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         rx="25.110588" />
+      <g
+         transform="translate(148,0)"
+         id="g4187">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 353.90625,313.09375 c -5.5524,0 -10.66381,2.05852 -14.8125,5.53125 l 12.59375,0 c 13.91127,0 25.09375,12.86096 25.09375,28.8125 l 0,1.625 c 0,15.95154 -11.18248,28.78125 -25.09375,28.78125 l -12.125,0 c 4.06123,3.23531 9.00258,5.125 14.34375,5.125 l 30.1875,0 c 13.91127,0 25.125,-12.82971 25.125,-28.78125 l 0,-12.28125 c 0,-15.95154 -11.21373,-28.8125 -25.125,-28.8125 l -30.1875,0 z"
+           transform="translate(-148,0)"
+           id="path4189"
+           inkscape:connector-curvature="0" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4191"
+           y="353.96927"
+           x="242.06873"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"><tspan
+             style="font-size:16px;text-align:center;text-anchor:middle"
+             y="353.96927"
+             x="242.06873"
+             sodipodi:role="line"
+             id="tspan4193">NM</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="189.07584"
+           y="341.26028"
+           id="text4195"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4197"
+             x="189.07584"
+             y="341.26028"
+             style="font-size:16px;text-align:center;text-anchor:middle">affective</tspan><tspan
+             id="tspan4199"
+             sodipodi:role="line"
+             x="189.07584"
+             y="361.26028"
+             style="font-size:16px;text-align:center;text-anchor:middle">appraisal</tspan></text>
+      </g>
     </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="arrows"
-     style="display:none"
+     style="display:inline"
      sodipodi:insensitive="true">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
