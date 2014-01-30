@@ -33,7 +33,7 @@ See [Computational Models of Emotion and Cognition](https://github.com/developme
 	  3. Anticipation
 	  3. Subjective experience
   2. Intuition
-  2. Creativity
+  2. Creativity(imagination)
   2. Dream/sleep
 1. Parallel processing
 1. Self-emergent/self-organized
@@ -1178,4 +1178,61 @@ http://people.ict.usc.edu/~gratch/N_Emcsr_Marsella.pdf
 
 **Total = 9**
 
+##Haikonen's cognitive architecture
 
+https://github.com/development-team/2/blob/master/doc/analysis/artificial_consciousness.md#haikonens-cognitive-architecture
+
+http://www.theassc.org/files/assc/2604.pdf
+
+Emotional states are supposed to result from combinations of
+multiple simultaneously occurring system reactions. For example, horror is the
+combination of the systems reactions bad, novelty, and withdrawal; curiosity, novelty and
+approach; and, fear, pain, bad and withdrawal.
+The proposed artificial system
+instantiates machine emotions as combinations of primitive system reactions, which
+occupy the same functional role in the machine as basic reactions in biological
+organisms, together with the cognitive evaluation of those reactions and their perceived
+causes. This is a clearly stated hypothesis; moreover, the engineering detail is spot on.
+There is, however, a methodological complexity here. Suppose the basics of the model
+are correct: How should we individuate, identify and measure the basic systems
+reactions? Similarly, how should we establish which combinations produce which
+emotions? Armchair answers seem ruled out. Hence, these questions must be open to
+empirical study. If so, Haikonen owes us at least a first pass at how such study will occur.
+This is not provided. This failure is indicative of the problem with the engineering
+approach generally.
+
+1. Emotional criteria:
+   2. Cognitive Representation = 1
+   2. Cognition -> Emotion = 1
+   2. Emotion Representation = 1
+   2. Emotion -> Cognition = 1
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention = 1
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning = 1
+   2. Perception/understanding = 1
+   2. Memory: = 1
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness: 1
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation
+	  3. Subjective experience = 1
+  2. Intuition
+  2. Creativity(imagination)
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized = 1
+
+**Total = 13**
