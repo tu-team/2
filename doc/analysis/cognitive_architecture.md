@@ -1236,3 +1236,45 @@ approach generally.
 1. Self-emergent/self-organized = 1
 
 **Total = 13**
+
+##Shanahan's cognitive architecture
+
+https://github.com/development-team/2/blob/master/doc/analysis/artificial_consciousness.md#shanahans-cognitive-architecture
+
+http://ac.els-cdn.com/S1053810005001510/1-s2.0-S1053810005001510-main.pdf?_tid=4e3700b0-89a1-11e3-89c5-00000aab0f26&acdnat=1391081344_a4b79990e0cccb04f8604ad39416350e
+
+1. Emotional criteria:
+   2. Cognitive Representation = 1
+   2. Cognition -> Emotion = 1
+   2. Emotion Representation = 1
+   2. Emotion -> Cognition = 1
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning = 1
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning = 1
+	  3. Anticipation = 1
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity(imagination) = 1
+  2. Dream/sleep
+1. Parallel processing = 1
+1. Self-emergent/self-organized
+
+**Total = 9**
