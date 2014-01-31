@@ -1008,7 +1008,7 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.1601898"
+     inkscape:zoom="1"
      inkscape:cx="253.36983"
      inkscape:cy="865.52513"
      inkscape:current-layer="layer2"
@@ -1030,7 +1030,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2121,7 +2121,7 @@
          x="151.58276"
          id="tspan9394"
          sodipodi:role="line"
-         style="font-size:14px;fill:#05e800;fill-opacity:1">serotonin</tspan></text>
+         style="font-size:14px;fill:#32ff2d;fill-opacity:1">serotonin</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
