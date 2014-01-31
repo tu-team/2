@@ -4,7 +4,7 @@
 
 ## Bases 
 
-Put 4 bases picture here.
+![3 bases of theory](3_bases.png)
 
 ## Emotional feedback loops
 
