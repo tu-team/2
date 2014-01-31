@@ -921,9 +921,8 @@ While the concepts of the Psi-theory are distributed over many individual public
   2. Dream/sleep
 1. Parallel processing
 1. Self-emergent/self-organized = 1
-1. Neural network use = 1
 
-**Total = 11**
+**Total = 10**
 
 ##R-CAST
 
@@ -1044,10 +1043,10 @@ https://en.wikipedia.org/wiki/Society_of_mind
   2. Intuition
   2. Creativity
   2. Dream/sleep
-1. Parallel processing 
+1. Parallel processing = 1
 1. Self-emergent/self-organized = 1
 
-**Total = 6** Possibly underestimated
+**Total = 7** Possibly underestimated
 
 ##Subsumption architecture
 
@@ -1278,3 +1277,38 @@ http://ac.els-cdn.com/S1053810005001510/1-s2.0-S1053810005001510-main.pdf?_tid=4
 1. Self-emergent/self-organized
 
 **Total = 9**
+
+##Cumulative table
+
+Cognitive architecture | Score
+:----------------------|-----:
+4CAPS                  | 4
+ACT-R                  | 3
+ALifeE                 | 3
+Apex                   | 4
+**ASMO**               | 8
+CHREST                 | 5
+**CLARION**            | 6
+CopyCat                | 4
+**DUAL**               | 6
+EPIC                   | 3
+FORR                   | 2
+GAIuS                  | 3
+**H-CogAff**           | 16
+CoJack                 | 5
+**LIDA**               | 6
+PreAct                 | 4
+PRODIGY(*)             | 3
+PRS                    | 4
+**Psi-Theory**         | 10
+R-CAST                 | 2
+**Soar**               | 6
+**Society of mind** (*)| 6
+Subsumption            | 2
+**WASABI**             | 9
+**EMA**                | 9
+**Hikonen**            | 13
+**Shanahan**           | 9
+
+(*) - possibly underestimated.
+
