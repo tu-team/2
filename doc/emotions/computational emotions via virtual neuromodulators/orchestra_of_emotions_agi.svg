@@ -145,18 +145,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.109884"
-     inkscape:cx="526.18109"
-     inkscape:cy="438.91436"
+     inkscape:zoom="2.3545397"
+     inkscape:cx="260.62765"
+     inkscape:cy="514.3409"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-width="1920"
+     inkscape:window-height="1064"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
      inkscape:connector-spacing="3"
      inkscape:snap-bbox="true">
@@ -207,6 +207,10 @@
     <inkscape:grid
        type="xygrid"
        id="grid3976" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="201.96061,512.86527"
+       id="guide3156" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -247,9 +251,9 @@
          xml:space="preserve"><tspan
            style="font-size:10px;text-align:center;text-anchor:middle"
            y="30.63715"
-           x="-654.64178"
+           x="-654.84686"
            id="tspan4004"
-           sodipodi:role="line">Non-conscious </tspan><tspan
+           sodipodi:role="line">instinctive </tspan><tspan
            id="tspan4006"
            style="font-size:10px;text-align:center;text-anchor:middle"
            y="43.13715"
@@ -286,7 +290,8 @@
            id="tspan4118">state/stimulus</tspan></text>
     </g>
     <g
-       id="g3139">
+       id="g3139"
+       transform="translate(0,7.6293943e-6)">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.23936117;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4104"
@@ -303,43 +308,78 @@
          sodipodi:linespacing="125%"
          transform="matrix(0,-1,1,0,0,0)"><tspan
            sodipodi:role="line"
-           x="-408.64178"
+           x="-410.23358"
            y="30.63715"
            style="font-size:10px;text-align:center;text-anchor:middle"
-           id="tspan4110">Emotional </tspan><tspan
+           id="tspan4114">reflictive/</tspan><tspan
            sodipodi:role="line"
            x="-410.23358"
            y="43.13715"
            style="font-size:10px;text-align:center;text-anchor:middle"
-           id="tspan4114">state</tspan></text>
+           id="tspan3170">self-reflective</tspan><tspan
+           sodipodi:role="line"
+           x="-410.23358"
+           y="55.63715"
+           style="font-size:10px;text-align:center;text-anchor:middle"
+           id="tspan3172">thinking</tspan></text>
     </g>
     <g
-       id="g3145">
+       id="g3145"
+       transform="translate(0,10.461449)">
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.24133575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect3135"
          width="1010.0929"
-         height="160.58072"
+         height="74.11441"
          x="20.254938"
-         y="453.03076" />
+         y="526.95862" />
       <text
          transform="matrix(0,-1,1,0,0,0)"
          sodipodi:linespacing="125%"
          id="text3126"
          y="30.63715"
-         x="-533.71661"
+         x="-564.14764"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           id="tspan3128"
-           style="font-size:10px;text-align:center;text-anchor:middle"
-           y="30.63715"
-           x="-532.12482"
-           sodipodi:role="line">Conscious </tspan><tspan
            id="tspan3130"
            style="font-size:10px;text-align:center;text-anchor:middle"
+           y="30.63715"
+           x="-564.14764"
+           sodipodi:role="line">learned</tspan><tspan
+           style="font-size:10px;text-align:center;text-anchor:middle"
            y="43.13715"
-           x="-533.71661"
-           sodipodi:role="line">cognition</tspan></text>
+           x="-564.14764"
+           sodipodi:role="line"
+           id="tspan3152">reactions</tspan></text>
+    </g>
+    <g
+       id="g3158"
+       transform="translate(0,-71.850845)">
+      <rect
+         y="526.95862"
+         x="20.254938"
+         height="74.11441"
+         width="1010.0929"
+         id="rect3160"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.24133575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-564.14764"
+         y="30.63715"
+         id="text3162"
+         sodipodi:linespacing="125%"
+         transform="matrix(0,-1,1,0,0,0)"><tspan
+           sodipodi:role="line"
+           x="-564.14764"
+           y="30.63715"
+           style="font-size:10px;text-align:center;text-anchor:middle"
+           id="tspan3164">deliberative</tspan><tspan
+           id="tspan3166"
+           sodipodi:role="line"
+           x="-564.14764"
+           y="43.13715"
+           style="font-size:10px;text-align:center;text-anchor:middle">thinking</tspan></text>
     </g>
   </g>
   <g
@@ -539,7 +579,7 @@
            style="font-size:20px;text-align:center;text-anchor:middle">stimulus</tspan></text>
     </g>
     <g
-       transform="translate(0,-96)"
+       transform="translate(0,-168)"
        id="g4701">
       <rect
          rx="26.175179"
@@ -718,7 +758,7 @@
            id="tspan4209"
            sodipodi:role="line">neuro</tspan><tspan
            style="font-size:16px;text-align:center;text-anchor:middle"
-           y="370.26028"
+           y="365.26028"
            x="171.51479"
            sodipodi:role="line"
            id="tspan4211">modulation</tspan></text>
@@ -740,8 +780,9 @@
         <path
            id="rect4012"
            transform="translate(-148,0)"
-           d="M 353.90625 313.09375 C 348.35385 313.09375 343.24244 315.15227 339.09375 318.625 L 351.6875 318.625 C 365.59877 318.625 376.78125 331.48596 376.78125 347.4375 L 376.78125 349.0625 C 376.78125 365.01404 365.59877 377.84375 351.6875 377.84375 L 339.5625 377.84375 C 343.62373 381.07906 348.56508 382.96875 353.90625 382.96875 L 384.09375 382.96875 C 398.00502 382.96875 409.21875 370.13904 409.21875 354.1875 L 409.21875 341.90625 C 409.21875 325.95471 398.00502 313.09375 384.09375 313.09375 L 353.90625 313.09375 z "
-           style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+           d="m 353.90625,313.09375 c -5.5524,0 -10.66381,2.05852 -14.8125,5.53125 l 12.59375,0 c 13.91127,0 25.09375,12.86096 25.09375,28.8125 l 0,1.625 c 0,15.95154 -11.18248,28.78125 -25.09375,28.78125 l -12.125,0 c 4.06123,3.23531 9.00258,5.125 14.34375,5.125 l 30.1875,0 c 13.91127,0 25.125,-12.82971 25.125,-28.78125 l 0,-12.28125 c 0,-15.95154 -11.21373,-28.8125 -25.125,-28.8125 l -30.1875,0 z"
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           inkscape:connector-curvature="0" />
         <text
            xml:space="preserve"
            style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -880,7 +921,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="arrows"
-     style="display:inline"
+     style="display:none"
      sodipodi:insensitive="true">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
