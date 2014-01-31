@@ -8,7 +8,7 @@ Put 4 bases picture here.
 
 ## Emotional feedback loops
 
-Put overall emotional process pic here.
+![orchestra of emotions](orchestra_of_emotions_agi.png)
 
 ## Neuromodulators to computing parameters mapping 
 
@@ -16,7 +16,7 @@ Redraw Parameter mapping here.
 
 ## Appraisal and coping 
 
-??? Pic here
+Picture on base of emotinal feedback(orchestra of emotions).
 
 ## High level and low level emotions
 
