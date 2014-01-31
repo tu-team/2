@@ -12,7 +12,7 @@ Put 4 bases picture here.
 
 ## Neuromodulators to computing parameters mapping 
 
-Redraw Parameter mapping here.
+![parameter mapping](cube_of_parameters_agi.png)
 
 ## Appraisal and coping 
 
