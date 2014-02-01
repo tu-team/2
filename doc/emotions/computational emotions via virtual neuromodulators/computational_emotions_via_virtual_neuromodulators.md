@@ -2,6 +2,9 @@
 
 ## Introduction
 
+Biggest problem of artificial intelligence is that we don't know what is natural intelligence. The only example of intelligence that we observe today is human intelligence. Unfortunately there are not aliens that would be able to demonstrate the other way (non-human) intelligence could evolve through the years.
+There are several domains that still remains unclear: creativity, intuition, insight that prevents us from answer how David Lynch could create Malholland Drive or Picasso could create Gernica.
+
 ## Bases 
 
 ![3 bases of theory](3_bases.png)
