@@ -1,4 +1,4 @@
-# Computational emotions via virtual neuromodulators
+# Artificial emotions via virtual neuromodulators
 
 ## Introduction
 
