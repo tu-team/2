@@ -1,4 +1,4 @@
-# Artificial emotions via virtual neuromodulators
+
 
 ## Introduction
 
@@ -19,10 +19,11 @@ This article is dedicated to emotional aspects of human thinking and influence o
 
 ## Bases
 
-We used 4 bases for our synthetic theory of artificialal 
-
+We used 4 bases for our synthetic theory of artificial emotions:
 
 ![3 bases of theory](3_bases.png)
+
+First base is evolutionary psychology theory of Plutchik [natureofemotions]. We used main emotional process (feedback loops) from it and adopted it to Model of six [emotionmachine] (6 thinking levels of Marvin Minsky cognitive architecture. 
 
 ## Emotional feedback loops
 
