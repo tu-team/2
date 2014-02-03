@@ -14,11 +14,12 @@ This article is dedicated to emotional aspects of human thinking and influence o
 1. Robotics
 1. Intellectual assistants
 1. Estimating human behaviour
-1. Caring for humans software and robotics.
+1. Nursing software and robotics.
 
 
 ## Bases
 
+We used 4 bases for our synthetic theory of artificialal 
 
 
 ![3 bases of theory](3_bases.png)
