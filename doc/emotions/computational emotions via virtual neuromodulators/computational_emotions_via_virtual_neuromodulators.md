@@ -23,7 +23,7 @@ We used 4 bases for our synthetic theory of artificial emotions:
 
 ![3 bases of theory](3_bases.png)
 
-First base is evolutionary psychology theory of Plutchik [natureofemotions]. We used main emotional process (feedback loops) from it and adopted it to Model of six [emotionmachine] (6 thinking levels of Marvin Minsky cognitive architecture. We used "Wheel of emotions" [natureofemotions] as model for subjective conscious emotions and high level emotions.
+First base is evolutionary psychology theory of Plutchik [natureofemotions]. We used main emotional process (feedback loops) from it and adopted it to Model of six [emotionmachine] 6 thinking levels of Marvin Minsky cognitive architecture. We used "Wheel of emotions" [natureofemotions] as model for subjective conscious emotions and high level emotions.
 Second base is theory of affects by Tomkins [primer_affect_psychology, tomkins1, tomkins2, tomkins3], we used it as the base for low level non-conscious emotions and low level appraisal.
 Neuro-physiological base is Lovheim theory of neuromodulatory base of emotions [cubeofemotions]. We used "Cube of emotions" as main low level ("hardware") mechanism of emotional processes.
 
