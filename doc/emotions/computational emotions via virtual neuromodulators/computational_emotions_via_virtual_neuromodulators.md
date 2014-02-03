@@ -6,7 +6,20 @@ Biggest problem of artificial intelligence is that we don't know what is natural
 There are several domains that still remains unclear: creativity, intuition, insight that prevents us from answer how David Lynch could create  Mulholland Drive or Picasso could create Guernica.
 
 Turing stated in his [intelligent_machinery] that idea of intelligent machines "cannot be wholly ignored, because the idea of 'intelligence' is itself emotional rather than mathematical".
-## Bases 
+
+This article is dedicated to emotional aspects of human thinking and influence of emotions on computational processes in Marvin Minsky cognitive architecture [emotionmachine]. It could be considered as base of computational emotional thinking framework. This kind of framework could be used in several domains like:
+
+1. Advertisement
+1. Emotional behavior simulations
+1. Robotics
+1. Intellectual assistants
+1. Estimating human behaviour
+1. Caring for humans software and robotics.
+
+
+## Bases
+
+
 
 ![3 bases of theory](3_bases.png)
 
@@ -21,6 +34,7 @@ Turing stated in his [intelligent_machinery] that idea of intelligent machines "
 ## Appraisal and coping 
 
 Picture on base of emotinal feedback(orchestra of emotions).
+
 
 ## High level and low level emotions
 
