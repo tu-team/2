@@ -48,9 +48,7 @@ We interpret these basic emotions as low level emotional conscious reactions tha
 1. Fear/Terror
 1. Shame/Humiliation
 
-We suppose that innate non-conscious affects and their appraisals could use different much more quick and simple mechanisms than developed, trained during life time conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. 
-
-High level emotions:
+We suppose that innate non-conscious affects and their appraisals could use different much more quick and simple mechanisms than developed, trained during life time conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
 
 1. Love
 1. Submission
@@ -61,6 +59,7 @@ High level emotions:
 1. Aggressiveness
 1. Optimism
 
+This could be understood as base for subjective picture of emotions.
 
 ![orchestra of emotions](orchestra_of_emotions_agi.png)
 
@@ -97,6 +96,7 @@ According to [emotionsbraintorobot] there are four following neuronal systems in
 1. Amygdala
 1. Frontal cortex, cingulate cortex
 
+We roughly correspond non-conscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. 
 
 ##Neuromodulators to computing parameters mapping 
 
