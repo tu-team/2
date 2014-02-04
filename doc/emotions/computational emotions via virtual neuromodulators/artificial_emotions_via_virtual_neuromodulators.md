@@ -65,14 +65,16 @@ This could be understood as base for subjective picture of emotions.
 
 ![orchestra of emotions](orchestra_of_emotions_agi.png)
 
+This is an example of emotional feedback loops [natureofemotions] represented in 4 layers of Marvin Minsky "model of six", that contains following layers:
+
 1. Instinctive reactions
 1. Learned reactions
 1. Deliberative
 1. Reflective thinking
 1. Self-reflective thinking
-1. Self-conscious reflections
+1. Self-conscious reflections (is not shown).
 
-...
+
 
 ##Neuromodulatory basis of artificial emotions
 
