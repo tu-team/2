@@ -30,7 +30,7 @@ All theories described above were mapped to Marvin Minsky's cognitive architectu
 
 ##Emotional feedback loops
 
-Plutchik created the three dimensional model of emotions 
+Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions" He used 
 
 1. Joy - sorrow
 1. Anger - fear
