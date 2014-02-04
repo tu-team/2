@@ -59,7 +59,9 @@ We suppose that innate non-conscious affects and their appraisals could use diff
 1. Aggressiveness
 1. Optimism
 
-This could be understood as base for subjective picture of emotions.
+For example joy + acceptance = love; acceptance + fear = submission; anger + expectancy = aggressiveness.
+
+This could be understood as base for subjective picture of emotions. 
 
 ![orchestra of emotions](orchestra_of_emotions_agi.png)
 
@@ -69,6 +71,8 @@ This could be understood as base for subjective picture of emotions.
 1. Reflective thinking
 1. Self-reflective thinking
 1. Self-conscious reflections
+
+...
 
 ##Neuromodulatory basis of artificial emotions
 
