@@ -72,9 +72,9 @@ This is an example of emotional feedback loops [natureofemotions] represented in
 1. Deliberative
 1. Reflective thinking
 1. Self-reflective thinking
-1. Self-conscious reflections (is not shown).
+1. Self-conscious reflections (is not shown on diagram).
 
-
+We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed firstly non-consciously, this is shown as affective appraisal rectangle. Affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala. 
 
 ##Neuromodulatory basis of artificial emotions
 
