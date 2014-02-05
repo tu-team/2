@@ -64,7 +64,9 @@ In parallel to all cognitive and reflective process second affective appraisal i
 
 ##Neuromodulatory basis of artificial emotions
 
-We interpret these basic emotions as low level emotional conscious reactions that are close to innate non-conscious affects described by Tomkins[primer_affect_psychology]:
+Hugo Lovheim in 2012 published his article "A new three-dimensional model for emotions and monoamine neurotransmitters". He described thee dimensional model of emotions. Axis of the model are neuromodulators(monoamines): serotonin, dopamine, noradrenaline. Vertices are affects from Tomkins affect theory [primer_affect_psychology]... 
+
+We interpret these basic emotions as low level emotional conscious reactions that are close to innate non-conscious affects described by Tomkins:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -74,12 +76,6 @@ We interpret these basic emotions as low level emotional conscious reactions tha
 1. Distress/Anguish
 1. Fear/Terror
 1. Shame/Humiliation
-
-...
-
-1. Nor-adrenaline
-1. Dopamine
-1. Serotonin
 
 ...
 
