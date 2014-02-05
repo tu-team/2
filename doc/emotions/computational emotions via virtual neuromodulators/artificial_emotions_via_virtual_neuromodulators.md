@@ -64,9 +64,7 @@ In parallel to all cognitive and reflective process second affective appraisal i
 
 ##Neuromodulatory basis of artificial emotions
 
-Hugo Lovheim in 2012 published his article "A new three-dimensional model for emotions and monoamine neurotransmitters". He described thee dimensional model of emotions. Axis of the model are neuromodulators(monoamines): serotonin, dopamine, noradrenaline. Vertices are affects from Tomkins affect theory [primer_affect_psychology]... 
-
-We interpret these basic emotions as low level emotional conscious reactions that are close to innate non-conscious affects described by Tomkins:
+Hugo Lovheim in 2012 published his article "A new three-dimensional model for emotions and monoamine neurotransmitters". He described thee dimensional model of emotions. Axis of the model are neuromodulators(monoamines): serotonin, dopamine, noradrenaline. Vertexes are affects from Tomkins affect theory [primer_affect_psychology]:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -77,45 +75,52 @@ We interpret these basic emotions as low level emotional conscious reactions tha
 1. Fear/Terror
 1. Shame/Humiliation
 
-...
-
-According to [emotionsbraintorobot] there are four following neuronal systems involved in to emotional processing:
+From our perspective this is the base of objective non-conscious emotional brain reaction to stimulus. On the other hand according to [emotionsbraintorobot] there are four following neuronal systems involved in to emotional processing:
 
 1. Spinal cord
 1. Hypothalamus
 1. Amygdala
 1. Frontal cortex, cingulate cortex
 
-We roughly correspond non-conscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. 
+We roughly correspond non-conscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction bridge. This is fundamental for representation of emotional processes on computational system parameters.
 
 ##Neuromodulators to computing parameters mapping 
+
+Having neuromodulation mechanisms understanding, mainly the roles of neuromodulators [cubeofemotions, emotionsbraintorobot] we proposed following mapping of neuromodulators to computing system parameters.
 
 ![parameter mapping](cube_of_parameters_agi.png)
 
 1. Generic:
-   2. CPU power: noradrenaline
-   2. Memory distribution (attention): noradrenaline
-   2. Learning: serotonin, dopamine
-   2. Storage: serotonin, dopamine
+  2. CPU power: noradrenaline
+  2. Memory distribution (attention): noradrenaline
+  2. Learning: serotonin, dopamine
+  2. Storage: serotonin, dopamine
 1. Decision making/reward processing:
-   2. Confidence: serotonin
-   2. Satisfaction: serotonin
-   2. Motivation, wanting: dopamine
-   2. Risky choices inclination: noradrenaline
-   2. Number of options to process: noradrenaline
+  2. Confidence: serotonin
+  2. Satisfaction: serotonin
+  2. Motivation, wanting: dopamine
+  2. Risky choices inclination: noradrenaline
+  2. Number of options to process: noradrenaline
 
-Parameters are grouped in two folders: most obvious computing system parameters (generic):
-*CPU power*(computing processes distribution or load balancing) is influenced by noradrenaline the higher is noradrenaline more computing processes should be concentrated on current activity.
-*Working memory(short term)* distribution is influenced by noradrenaline as neurotransmitter regulating attention.
+There are two groups of parameters:
+
+###Generic
+
+*CPU power*: distribution and priority of parallel process or load balancing, is impacted by noradrenaline: the higher is noradrenaline more computing power must be concentrated on current activity (neuromodulator regulating attention).
+*Working memory(short term)* distribution and concentration is impacted by noradrenaline (attention).
 *Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
-*Storage* management (long term memory) is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget).
+*Storage* management (long term memory) is impacted by both by serotonin and dopamine, higher concentrations of both neuromodulators makes system better remember stimulus.
 
-Second group contains parameters that influence decision making in probabilistic reasoning system. This reasoning is done mainly in deliberation and learned reaction layers.
+###Decision making
+
+This decision making is done mainly in deliberation and learned reaction layers of model of six.
 Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered).
 *Confidence and satisfaction* of the system is directly influenced by serotonin higher serotonin more confident is the system.
 System is more *motivated* under influence of dopamine.
 System tends to choose *risky* actions under impact of noradrenaline.
 Noradrenaline makes system use less *number of options* in width and depth to be processed during reasoning.
+
+This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level("hard-coded") model of emotional processes implemented in the model of spiking neuron used to build the self-emergent neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
 
 ##Appraisal and coping 
