@@ -145,15 +145,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.121754"
-     inkscape:cx="656.92478"
+     inkscape:zoom="1.0938609"
+     inkscape:cx="670.43555"
      inkscape:cy="488.91436"
      inkscape:document-units="px"
-     inkscape:current-layer="g4092"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
+     inkscape:window-width="1856"
      inkscape:window-height="1064"
-     inkscape:window-x="-4"
+     inkscape:window-x="1980"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      showguides="true"
@@ -204,7 +204,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -213,7 +213,8 @@
      style="display:inline"
      id="g3131"
      inkscape:groupmode="layer"
-     inkscape:label="layers">
+     inkscape:label="layers"
+     sodipodi:insensitive="true">
     <g
        id="g4045"
        transform="translate(0,0.93685435)">
@@ -406,13 +407,13 @@
       <text
          xml:space="preserve"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
-         x="96.596344"
+         x="264.69644"
          y="49.41354"
          id="text4013"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
            id="tspan4015"
-           x="96.596344"
+           x="264.69644"
            y="49.41354"
            style="font-size:20px;text-align:center;text-anchor:middle">fear</tspan></text>
     </g>
@@ -446,8 +447,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="actions"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -491,7 +491,7 @@
          rx="26.175179"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          id="rect4703"
-         width="627.05481"
+         width="963.20636"
          height="42.61227"
          x="268.86002"
          y="248.86697"
@@ -500,11 +500,11 @@
          sodipodi:linespacing="125%"
          id="text4705"
          y="275.23126"
-         x="582.0174"
+         x="750.48761"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
            y="275.23126"
-           x="582.0174"
+           x="750.48761"
            sodipodi:role="line"
            style="font-size:20px;text-align:center;text-anchor:middle"
            id="tspan4707">reflective thinking</tspan></text>
@@ -840,5 +840,12 @@
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       inkscape:connector-type="orthogonal"
+       id="path3120"
+       d="m 507.44538,241.05777 0,-117.54869"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInL);marker-end:none;display:inline" />
   </g>
 </svg>
