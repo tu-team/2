@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Biggest problem of artificial intelligence is that we don't know what is natural intelligence. The only example of intelligence that we observe today is human intelligence. Unfortunately there are not aliens that would be able to demonstrate the other way (non-human) intelligence could evolve through the years.
+Biggest problem of artificial intelligence is that we don't know what is natural intelligence. The only example of intelligence that we observe today is human intelligence. Unfortunately there are not aliens that would be able to demonstrate the other way (non-human) intelligence could evolve through the years. Rosalind Picard in her article indicated: "There  may  exist  a  kind  of  alien  intelligent  living  system,  something we’ve  never  encountered,  which  achieves  its  intelligence  without  having  anything  like emotion.      Although  humans  are  the  most  marvellous  example  of  intelligence  we  have, and  we  wish  to  build  systems  that  are  natural  for  humans  to  understand,  these  reasons
+for building human-like systems should not limit us to thinking only of human abilities." [affectivecomputingchallanges]
 
 There are several domains that still remains unclear: creativity, intuition, insight and consciousness that prevents us from answering the question: "How David Lynch could create Mulholland Drive or Picasso could create Guernica?".
-
-We started from possibly first emerged during evolution and most low level component of intelligence: the emotions.
+We have started from possibly first emerged during evolution and most low level component of intelligence: the emotions.
 
 Turing stated in his [intelligent_machinery] that idea of intelligent machines "cannot be wholly ignored, because the idea of 'intelligence' is itself emotional rather than mathematical".
 Marvin Minsky in his book "The emotion machine" proposed that emotions are inseparable from thinking "Emotional thinking: A flash of impatience or anger can cut through what seems like a hopelessly tangled knot. Each such ‘emotional way to think' is a different way to deal with things, and some can increase your persistence or courage, while others can help you simplify things. In any case, after each such change, you may still want to pursue some similar goals, but now you'll see them from new points of view — because each switch to a new Way to Think may initiate a large-scale cascade. Then, depending on how long those changes persist, you (or your friends) might recognize this as a change in your emotional state".
