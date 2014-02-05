@@ -129,8 +129,9 @@ Noradrenaline makes system use less *number of options* in width and depth to be
 
 This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level("hard-coded") model of emotional processes implemented in the model of spiking neuron used to build the self-emergent neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
-
 ##Appraisal and coping 
+
+
 
 Picture on base of emotinal feedback(orchestra of emotions).
 
