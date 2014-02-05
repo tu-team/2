@@ -33,23 +33,12 @@ All theories described above were mapped to Marvin Minsky's cognitive architectu
 
 ##Emotional feedback loops
 
-Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions" He used 8 basic emotions grouped in pairs:
+Robert Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions", that we used as subjective conscious model of emotions. He used 8 basic emotions grouped in pairs:
 
 1. Joy - sorrow
 1. Anger - fear
 1. Acceptance - disgust
 1. Surprise - expectancy
-
-We interpret these basic emotions as low level emotional conscious reactions that are close to innate non-conscious affects described by Tomkins[primer_affect_psychology]:
-
-1. Enjoyment/Joy
-1. Interest/Excitement
-1. Surprise
-1. Anger/Rage
-1. Disgust
-1. Distress/Anguish
-1. Fear/Terror
-1. Shame/Humiliation
 
 We suppose that innate non-conscious affects and their appraisals could use different much more quick and simple mechanisms than developed, trained during life time conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
 
@@ -81,11 +70,7 @@ We correspond instinctive reactions layer with non-conscious, innate, affective 
 
 ##Neuromodulatory basis of artificial emotions
 
-1. Nor-adrenaline
-1. Dopamine
-1. Serotonin
-
-...
+We interpret these basic emotions as low level emotional conscious reactions that are close to innate non-conscious affects described by Tomkins[primer_affect_psychology]:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -95,6 +80,12 @@ We correspond instinctive reactions layer with non-conscious, innate, affective 
 1. Distress/Anguish
 1. Fear/Terror
 1. Shame/Humiliation
+
+...
+
+1. Nor-adrenaline
+1. Dopamine
+1. Serotonin
 
 ...
 
