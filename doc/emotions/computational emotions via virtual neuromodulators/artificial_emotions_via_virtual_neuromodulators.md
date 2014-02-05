@@ -119,12 +119,13 @@ There are two groups of parameters:
 This decision making is done mainly in deliberation and learned reaction layers of model of six.
 Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered).
 
-*Confidence and satisfaction* of the system is directly influenced by serotonin higher serotonin more confident is the system.
+*Confidence and satisfaction* of the system is directly influenced by serotonin.
+
 System is more *motivated* under influence of dopamine.
 
 System tends to choose *risky* actions under impact of noradrenaline.
 
-Noradrenaline makes system use less *number of options* in width and depth to be processed during reasoning.
+Noradrenaline makes system use less *number of options* in width and depth to be processed during deliberation.
 
 This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level("hard-coded") model of emotional processes implemented in the model of spiking neuron used to build the self-emergent neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
