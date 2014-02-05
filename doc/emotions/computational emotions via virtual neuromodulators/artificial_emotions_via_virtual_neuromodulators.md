@@ -42,31 +42,25 @@ Robert Plutchik created the three dimensional model of emotions [natureofemotion
 
 We suppose that innate non-conscious affects and their appraisals could use different much more quick and simple mechanisms than developed, trained during life time conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
 
-1. Love
-1. Submission
-1. Awe
-1. Disapproval
-1. Remorse
-1. Contempt
-1. Aggressiveness
-1. Optimism
+1. Love = joy + acceptance
+1. Submission = acceptance + fear
+1. Awe = fear + surprise
+1. Disapproval = surprise + sorrow
+1. Remorse = sorrow + disgust
+1. Contempt = disgust + anger
+1. Aggressiveness = anger + expectancy
+1. Optimism = expectancy + joy
 
-For example joy + acceptance = love; acceptance + fear = submission; anger + expectancy = aggressiveness.
+This could be understood as base for subjective picture of emotions.
 
-This could be understood as base for subjective picture of emotions. 
+Below is an example of emotional feedback loops [natureofemotions] represented in 4 layers of Marvin Minsky "model of six".
 
 ![orchestra of emotions](orchestra_of_emotions_agi.png)
 
-This is an example of emotional feedback loops [natureofemotions] represented in 4 layers of Marvin Minsky "model of six", that contains following layers:
+We used 4 of six layers just for purpose of this example. Self-conscious reflections layer could influence emotions, for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
 
-1. Instinctive reactions
-1. Learned reactions
-1. Deliberative
-1. Reflective thinking
-1. Self-reflective thinking
-1. Self-conscious reflections (is not shown on diagram).
-
-We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed firstly non-consciously, this is shown as affective appraisal rectangle. Affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala. 
+We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed firstly non-consciously, this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala. Neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realized that it's too emotional now and thus stopped all appraisal related processes and started new coping oriented deliberation and switched emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation). 
+In parallel to all cognitive and reflective process second affective appraisal initiates non-conscious instinctive coping strategy, that when applied created an effect over environment and this effect is been appraised again as stimulus.
 
 ##Neuromodulatory basis of artificial emotions
 
