@@ -131,7 +131,7 @@ This mapping is exhaustively described in [computational_emotional_thinking]. It
 
 ##Appraisal and coping 
 
-
+![problem focused coping](coping_agi.png)
 
 Picture on base of emotinal feedback(orchestra of emotions).
 
