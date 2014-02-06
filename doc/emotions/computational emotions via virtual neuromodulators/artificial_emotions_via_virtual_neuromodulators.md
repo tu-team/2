@@ -131,7 +131,22 @@ This mapping is exhaustively described in [computational_emotional_thinking]. It
 
 ##Appraisal and coping 
 
-Model described above operates in thinking processes environment.  
+Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: non-conscious (quick, low level) and conscious (slower, high level) appraisals.
+
+###Non-conscious appraisals 
+
+Non-conscious appraisals are associated with instinctive reactions layer of model of six, actually are performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for non-conscious emotional reactions [primer_affect_psychology]. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
+
+1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
+1. Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
+1. "**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
+1. **Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+
+###Conscious appraisal
+
+Conscious appraisal has more complex self-emergent nature and is based on nurture and education of a child.
+
+###Coping
 
 ![problem focused coping](coping_agi.png)
 
