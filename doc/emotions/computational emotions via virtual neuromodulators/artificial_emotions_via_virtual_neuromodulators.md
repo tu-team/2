@@ -131,9 +131,9 @@ This mapping is exhaustively described in [computational_emotional_thinking]. It
 
 ##Appraisal and coping 
 
-![problem focused coping](coping_agi.png)
+Model described above operates in thinking processes environment.  
 
-Picture on base of emotinal feedback(orchestra of emotions).
+![problem focused coping](coping_agi.png)
 
 ##High level and low level emotions
 
