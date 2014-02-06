@@ -156,9 +156,17 @@ This could be understood as algorithm for conscious appraisal done within 5 leve
 
 ###Coping
 
+There are two main types of coping strategies: emotion-focused and problem focused copings. We discovered relation of coping strategy selection with gender [sex_differencies] based on oxytocin stress hormone activity that is amplified by estrogen. This effect could makes woman select more social coping strategies.
+The example of emotion-focused coping is placed in Emotional feedback loops section.
+Example of problem-focused coping is presented below:
+
 ![problem focused coping](coping_agi.png)
 
+Stimulus triggers affective appraisal and neuromodulation that switches emotional state of the system from serenity to fear. Affective appraisal in its turn triggers cognitive appraisal with appraisal deliberation. This cognition and deliberation makes system select problem-focused coping (planning) this selection is done under influence of reflective thinking. After planning is done system implements created plan and applies it over the environment. Effect in environment is appraised as new stimulus and could cause new neuromodulation that switches emotional state of the system back from fear to serenity.
+
 ##High level and low level emotions
+
+Robert Plutchik [natureofemotions] identifies 8 higher emotions, see Emotional feedback loops section. We suppose that this emotions should be represented as mixture of neuromodulators levels of basic emotions. According to Plutchik higher emotions are combinations of basic emotions is the same manner as mixture of colors. Based on Lovheim model of neuromodulators relative levels and Gaussian nature of relation of subjective emotions perception to objective brain response [senticcomputing, neuralcorrelatesofhate] we propose following mapping of high level emotions on neuromodulators levels:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -169,6 +177,11 @@ This could be understood as algorithm for conscious appraisal done within 5 leve
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
+This could be understood as basic mechanism for self-reflective thinking and self-conscious reflections layers influence on neuromodulation.
+
 ##Cognitive architecture analysis
+
+
+
 
 ##Conclusion
