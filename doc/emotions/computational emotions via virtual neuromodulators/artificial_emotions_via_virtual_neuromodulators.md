@@ -182,6 +182,9 @@ This could be understood as basic mechanism for self-reflective thinking and sel
 ##Cognitive architecture analysis
 
 
-
-
 ##Conclusion
+
+
+##Acknowledgment
+
+Tero Keski-Valkama (MSc) for his constant support and review of our work and theories.
