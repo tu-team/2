@@ -181,6 +181,7 @@ This could be understood as basic mechanism for self-reflective thinking and sel
 
 ##Cognitive architecture analysis
 
+https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md
 
 ##Conclusion
 
