@@ -91,7 +91,7 @@ Having neuromodulation mechanisms understanding, mainly the roles of neuromodula
 ![parameter mapping](cube_of_parameters_agi.png)
 
 1. Generic:
-  2. CPU power: noradrenaline
+  2. Computing power: noradrenaline
   2. Memory distribution (attention): noradrenaline
   2. Learning: serotonin, dopamine
   2. Storage: serotonin, dopamine
@@ -231,8 +231,45 @@ H-CogAff is more of philosophical framework to build the cognitive architecture,
 
 We created sythetic theory of emotions based on for starting points: Robert Plutchick "Wheel of emotions" [natureofemotions, senticcomputing] as highlevel subjective model of emoitons, Tomkins theory of affects [primer_affect_psychology] as low level objective model of affects/emotions, Hugo Lovheim "Cube of emotions" [cubeofemotions] as objective neurophysiological mechanism, Marvin Minsky "The emotion machine" [emotionmachine] as cognitive architecture environment for all mechanisms listed above.
 
+Our main assumption is that there could be two models of emotions: innate low level based on affects, and high level self emerged during childhood nurture and education. This two models should correspond and have mechanism to influence each other. This is done in one more model neuromodulatory bases of emotions [cubeofemotions, neuromodulatory].
+Overall the emotional processes have following structure: stimulus non-conscious appraisal, neuromodulation (physiological emotional state switch), conscious appraisal with possible deliberation and possible coping strategy selection, coping strategy application over environment. As coping, or some other behavior is applied over environment its state is appraised again as new stimulus. This processes is called feedback loop [natureofemotions] and creates everlasting spiral process of emotions appraisal -> neuromodulation (physiological impact) -> coping. In the similar way high level thinking processes could influence emotional state: for example reflective thinking could trigger neuromodulation switching emotional state of a system and start/stop cognitive appraisal, deliberation.
+Thus neuromodulators are main actors of objective brain response we mapped their impact over computational system parameters:
 
+1. Generic:
+  2. Computing power: noradrenaline
+  2. Memory distribution (attention): noradrenaline
+  2. Learning: serotonin, dopamine
+  2. Storage: serotonin, dopamine
+1. Decision making/reward processing:
+  2. Confidence: serotonin
+  2. Satisfaction: serotonin
+  2. Motivation, wanting: dopamine
+  2. Risky choices inclination: noradrenaline
+  2. Number of options to process: noradrenaline
 
+This mapping could be used as main low level mechanism that build a bridge from neuro-scientific model to computational system and answers the question: "How emotions could influence computational system parameters?".
+
+We briefly described the appraisal and coping processes closely related to emotional states and reactions. This creates overall closed and looped (spiral) system of emotional collaboration of system with environment and emotional processing of internal psychological states.
+
+To complete the picture of emotional interactions we propose high level emotions to neuromodulators level mapping integrated in "Cube of emotions" [cubeofemotions]. We assume Gaussian nature of mapping of subjective high level emotions to objective low level neuromodulation [senticcomputing, neuralcorrelatesofhate]:
+
+1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
+1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
+1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
+1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+
+Presented mapping completes neuromodulation centric low level emotion model, it could be used in spiking neural network to implement emotional thinking phenomenas in computational systems. We suppose this could be useful framework to be used in several domains:
+
+1. Advertisement
+1. Emotional behavior simulations
+1. Robotics
+1. Intellectual assistants
+1. Estimating human behaviour
+1. Nursing software and robotics.
 
 ##Acknowledgment
 
