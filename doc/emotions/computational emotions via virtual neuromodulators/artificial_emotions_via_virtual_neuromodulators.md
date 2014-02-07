@@ -181,9 +181,57 @@ This could be understood as basic mechanism for self-reflective thinking and sel
 
 ##Cognitive architecture analysis
 
+To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation. We used most traditional way: run the analysis. It worth to mention that we don't want to limit ourself with the emotion oriented architectures rather than get widest view on current situation in the domain. We analyzed 27 cognitive architectures with this set of criteria:
+
+1. Emotional criteria:
+   2. Cognitive Representation
+   2. Cognition -> Emotion
+   2. Emotion Representation
+   2. Emotion -> Cognition
+   2. Compatibility with Plutchick wheel of emotion
+   2. Compatibility with Tomkins affects
+   2. Compatibility with Picard criteria
+1. Thinking levels:
+   2. Instinctive level
+   2. Learned level
+   2. Deliberative level
+   2. Reflection level
+1. AI components:
+   2. Attention
+   2. Planning
+   2. Motivation(implying Emotions)
+   2. Common sense logic
+   2. Reasoning
+   2. Perception/understanding
+   2. Memory:
+	  3. Constructive memory
+	  3. Reconstructive memory
+   2. Consciousness:
+	  3. Awareness
+	  3. Learning
+	  3. Anticipation
+	  3. Subjective experience
+  2. Intuition
+  2. Creativity(imagination)
+  2. Dream/sleep
+1. Parallel processing
+1. Self-emergent/self-organized
+
+Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture, thinking levels: is compatibility with Marvin Minsky "The emotion machine", AI components group: is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seemed to us important and were not in previous groups. Exhaustive analysis is available on line:
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md
 
+We used primitive boolean approach to measure if component or emotional criteria is in specific cognitive architecture. Cumulative table is available on line, it contains simple summary of the boolean criteria:
+
+https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md#cumulative-table
+
+According to our brief overview of the list of architectures most interesting are: ASMO, CLARION, DUAL, **H-CogAff**, LIDA, **Psi-Theory**, Soar, **Society of mind** (*), WASABI, EMA, Hikonen, Shanahan.
+H-CogAff is more of philosophical framework to build the cognitive architecture, or a meta architecture that has most significant potential to be most advanced at the moment and less limited. Homeostatic principle of Psi-Theory seems to be ubiquitous in psychological basis of emotions [natureofemotions]. Society of mind needs further analysis and possible update of our criteria.
+
 ##Conclusion
+
+We created sythetic theory of emotions based on for starting points: Robert Plutchick "Wheel of emotions" [natureofemotions, senticcomputing] as highlevel subjective model of emoitons, Tomkins theory of affects [primer_affect_psychology] as low level objective model of affects/emotions, Hugo Lovheim "Cube of emotions" [cubeofemotions] as objective neurophysiological mechanism, Marvin Minsky "The emotion machine" [emotionmachine] as cognitive architecture environment for all mechanisms listed above.
+
+
 
 
 ##Acknowledgment
