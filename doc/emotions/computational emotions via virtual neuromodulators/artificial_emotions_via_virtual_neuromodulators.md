@@ -2,16 +2,15 @@
 
 ## Introduction
 
-Biggest problem of artificial intelligence is that we don't know what is natural intelligence. The only example of intelligence that we observe today is human intelligence. Unfortunately there are not aliens that would be able to demonstrate the other way (non-human) intelligence could evolve through the years. Rosalind Picard in her article indicated: "There  may  exist  a  kind  of  alien  intelligent  living  system,  something we’ve  never  encountered,  which  achieves  its  intelligence  without  having  anything  like emotion.      Although  humans  are  the  most  marvellous  example  of  intelligence  we  have, and  we  wish  to  build  systems  that  are  natural  for  humans  to  understand,  these  reasons
-for building human-like systems should not limit us to thinking only of human abilities." [affectivecomputingchallanges]
+Biggest problem of artificial intelligence is that we don't know what is natural intelligence. The only example of intelligence that we observe today is human intelligence. Unfortunately there are no aliens so far who would be able to demonstrate non-human intelligence, and examples on earth lack certain substance. Rosalind Picard in her article indicated: "There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its  intelligence without having anything like emotion. Although humans are the most marvellous example of intelligence we have, and we wish to build systems that are natural for humans to understand, these reasons for building human-like systems should not limit us to thinking only of human abilities." [affectivecomputingchallanges]
 
-There are several domains that still remains unclear: creativity, intuition, insight and consciousness that prevents us from answering the question: "How David Lynch could create Mulholland Drive or Picasso could create Guernica?".
-We have started from possibly first emerged during evolution and most low level component of intelligence: the emotions.
+There are several domains that still remain unclear: creativity, intuition, insight and consciousness that prevents us from answering the question: "How David Lynch could create Mulholland Drive or Picasso could create Guernica?".
+We have started from possibly the first intelligent method emerged during evolution and from the most primal component of intelligence: the emotions.
 
 Turing stated in his [intelligent_machinery] that idea of intelligent machines "cannot be wholly ignored, because the idea of 'intelligence' is itself emotional rather than mathematical".
-Marvin Minsky in his book "The emotion machine" proposed that emotions are inseparable from thinking "Emotional thinking: A flash of impatience or anger can cut through what seems like a hopelessly tangled knot. Each such ‘emotional way to think' is a different way to deal with things, and some can increase your persistence or courage, while others can help you simplify things. In any case, after each such change, you may still want to pursue some similar goals, but now you'll see them from new points of view — because each switch to a new Way to Think may initiate a large-scale cascade. Then, depending on how long those changes persist, you (or your friends) might recognize this as a change in your emotional state".
+There is an interconnection between emotions and rational thought. Marvin Minsky in his book "The emotion machine" proposed that emotions are inseparable from thinking: "Emotional thinking: A flash of impatience or anger can cut through what seems like a hopelessly tangled knot. Each such ‘emotional way to think' is a different way to deal with things, and some can increase your persistence or courage, while others can help you simplify things. In any case, after each such change, you may still want to pursue some similar goals, but now you'll see them from new points of view — because each switch to a new Way to Think may initiate a large-scale cascade. Then, depending on how long those changes persist, you (or your friends) might recognize this as a change in your emotional state".
 
-This article is dedicated to emotional aspects of human thinking and influence of emotions on computational processes in Marvin Minsky cognitive architecture [emotionmachine]. It could be considered as base of computational emotional thinking framework. This kind of framework could be used in several domains like:
+This article is dedicated to emotional aspects of human thinking and influence of emotions on computational processes in Marvin Minsky's cognitive architecture [emotionmachine]. It could be considered as base of computational emotional thinking framework. This kind of framework could be used in several domains like:
 
 1. Advertisement
 1. Emotional behavior simulations
@@ -22,25 +21,25 @@ This article is dedicated to emotional aspects of human thinking and influence o
 
 ## Bases
 
-Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neuro-scientific base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. This model was depicted in the picture below: 
+Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neurochemical base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. This model was depicted in the picture below: 
 
 ![3 bases of theory](3_bases.png)
 
-First base is evolutionary psychology theory of Plutchik [natureofemotions]. We used main emotional process (feedback loops) from it and adopted it to Model of six [emotionmachine] 6 thinking levels of Marvin Minsky cognitive architecture. We used "Wheel of emotions" [natureofemotions] as model for subjective conscious emotions and high level emotions.
-Second base is theory of affects by Tomkins [primer_affect_psychology, tomkins1, tomkins2, tomkins3], we used it as the base for low level non-conscious emotions and low level appraisal.
-Neuro-physiological base is Lovheim theory of neuromodulatory base of emotions [cubeofemotions]. We used "Cube of emotions" as main low level ("hardware") mechanism of emotional processes.
+The first base is the evolutionary psychology theory of Plutchik [natureofemotions]. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six [emotionmachine] thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" [natureofemotions] as a model for subjective conscious emotions and high level emotions.
+The second base is the theory of affects by Tomkins [primer_affect_psychology, tomkins1, tomkins2, tomkins3]. We used Tomkins' theory of affects as the base for low level non-conscious emotions and low level appraisal.
+The neuro-physiological base is Lovheim theory of neuromodulatory base of emotions [cubeofemotions]. We used "Cube of emotions" as the main low level ("hardware") mechanism of emotional processes.
 All theories described above were mapped to Marvin Minsky's cognitive architecture described in his book "The emotion machine" [emotionmachine].
 
 ##Emotional feedback loops
 
-Robert Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions", that we used as subjective conscious model of emotions. He used 8 basic emotions grouped in pairs:
+Robert Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions", that we used as subjective conscious model of emotions. He used eight basic emotions grouped in pairs:
 
 1. Joy - sorrow
 1. Anger - fear
 1. Acceptance - disgust
 1. Surprise - expectancy
 
-We suppose that innate non-conscious affects and their appraisals could use different much more quick and simple mechanisms than developed, trained during life time conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
+We suppose that innate non-conscious affects and their appraisals could use different much quicker and simpler mechanisms than the mechanisms trained during lifetime, conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
 
 1. Love = joy + acceptance
 1. Submission = acceptance + fear
@@ -51,13 +50,13 @@ We suppose that innate non-conscious affects and their appraisals could use diff
 1. Aggressiveness = anger + expectancy
 1. Optimism = expectancy + joy
 
-This could be understood as base for subjective picture of emotions.
+This could be understood as the base for the subjective picture of emotions.
 
-Below is an example of emotional feedback loops [natureofemotions] represented in 4 layers of Marvin Minsky "model of six".
+Below is an example of emotional feedback loops [natureofemotions] represented in four layers of Marvin Minsky's "model of six".
 
 ![orchestra of emotions](orchestra_of_emotions_agi.png)
 
-We used 4 of six layers just for purpose of this example. Self-conscious reflections layer could influence emotions, for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
+We used four of the six layers just for the purpose of this example. Self-conscious reflections layer could influence emotions; for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
 
 We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed firstly non-consciously, this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala. Neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realized that it's too emotional now and thus stopped all appraisal related processes and started new coping oriented deliberation and switched emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation). 
 In parallel to all cognitive and reflective process second affective appraisal initiates non-conscious instinctive coping strategy, that when applied created an effect over environment and this effect is been appraised again as stimulus.
