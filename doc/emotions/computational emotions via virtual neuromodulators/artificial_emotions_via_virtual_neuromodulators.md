@@ -58,8 +58,10 @@ Below is an example of emotional feedback loops [natureofemotions] represented i
 
 We used four of the six layers just for the purpose of this example. Self-conscious reflections layer could influence emotions; for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
 
-We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed firstly non-consciously, this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala. Neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realized that it's too emotional now and thus stopped all appraisal related processes and started new coping oriented deliberation and switched emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation). 
-In parallel to all cognitive and reflective process second affective appraisal initiates non-conscious instinctive coping strategy, that when applied created an effect over environment and this effect is been appraised again as stimulus.
+We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed first unconsciously; this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, butn nonconscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala.
+
+Using a concrete example: Neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realizes that it's too emotional now and thus stopped all appraisal related processes and started new coping oriented deliberation and switches emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation). 
+In parallel to all cognitive and reflective process second affective appraisal initiates nonconscious instinctive coping strategy, that when applied created an effect over environment and this effect is been appraised again as stimulus.
 
 ##Neuromodulatory basis of artificial emotions
 
@@ -74,14 +76,14 @@ Hugo Lovheim in 2012 published his article "A new three-dimensional model for em
 1. Fear/Terror
 1. Shame/Humiliation
 
-From our perspective this is the base of objective non-conscious emotional brain reaction to stimulus. On the other hand according to [emotionsbraintorobot] there are four following neuronal systems involved in to emotional processing:
+From our perspective this is the base of objective nonconscious emotional brain reaction to stimulus. On the other hand according to [emotionsbraintorobot] there are four following neuronal systems involved in emotional processing:
 
 1. Spinal cord
 1. Hypothalamus
 1. Amygdala
 1. Frontal cortex, cingulate cortex
 
-We roughly correspond non-conscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction bridge. This is fundamental for representation of emotional processes on computational system parameters.
+We roughly correspond nonconscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction bridge. This is fundamental for representation of emotional processes on computational system parameters.
 
 ##Neuromodulators to computing parameters mapping 
 
@@ -111,7 +113,7 @@ There are two groups of parameters:
 
 *Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
 
-*Storage* management (long term memory) is impacted by both by serotonin and dopamine, higher concentrations of both neuromodulators makes system better remember stimulus.
+*Storage* management (long term memory) is impacted by both by serotonin and dopamine, higher concentrations of both neuromodulators makes system better remember stimulus. In general, strong emotions generate more persistent memories.
 
 ###Decision making
 
@@ -126,20 +128,20 @@ System tends to choose *risky* actions under impact of noradrenaline.
 
 Noradrenaline makes system use less *number of options* in width and depth to be processed during deliberation.
 
-This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level("hard-coded") model of emotional processes implemented in the model of spiking neuron used to build the self-emergent neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
+This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level ("hard-coded") model of emotional processes implemented in a spiking neuron model used to build a neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
 ##Appraisal and coping 
 
-Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: non-conscious (quick, low level) and conscious (slower, high level) appraisals.
+Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: nonconscious (quick, low level) and conscious (slower, high level) appraisals.
 
-###Non-conscious appraisals 
+###Nonconscious appraisals 
 
-Non-conscious appraisals are associated with instinctive reactions layer of model of six, actually are performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for non-conscious emotional reactions [primer_affect_psychology]. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
+Nonconscious appraisals are associated with instinctive reactions layer of model of six, are actually performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for nonconscious emotional reactions [primer_affect_psychology]. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
 
 1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
 1. Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
 1. "**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
-1. **Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information.
+1. **Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information. Here, the social emotions of shame and humiliation are considered from the perspective of applicability outside a social context.
 
 ###Conscious appraisal
 
@@ -151,7 +153,7 @@ Scherer used uses 16 Stimulus Evaluation Checks(SEC) as basic blocks for whole a
 1. Coping potential including: control check, power check, adjustment check.
 1. Normative significance including: internal standards check, external standards check.
 
-This could be understood as algorithm for conscious appraisal done within 5 levels of "Model of six" [emotionmachine]: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections layers. 
+This could be understood as algorithm for conscious appraisal done within five levels of "Model of six" [emotionmachine]: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections layers.
 
 ###Coping
 
@@ -165,7 +167,7 @@ Stimulus triggers affective appraisal and neuromodulation that switches emotiona
 
 ##High level and low level emotions
 
-Robert Plutchik [natureofemotions] identifies 8 higher emotions, see Emotional feedback loops section. We suppose that this emotions should be represented as mixture of neuromodulators levels of basic emotions. According to Plutchik higher emotions are combinations of basic emotions is the same manner as mixture of colors. Based on Lovheim model of neuromodulators relative levels and Gaussian nature of relation of subjective emotions perception to objective brain response [senticcomputing, neuralcorrelatesofhate] we propose following mapping of high level emotions on neuromodulators levels:
+Robert Plutchik [natureofemotions] identifies 8 higher emotions, see Emotional feedback loops section. We suppose that these emotions should be represented as mixtures of neuromodulators levels of basic emotions. According to Plutchik higher emotions are combinations of basic emotions is the same manner as colors are mixed. Based on Lovheim model of neuromodulators relative levels and Gaussian nature of relation of subjective emotions perception to objective brain response [senticcomputing, neuralcorrelatesofhate] we propose following mapping of high level emotions on neuromodulators levels:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -180,7 +182,7 @@ This could be understood as basic mechanism for self-reflective thinking and sel
 
 ##Cognitive architecture analysis
 
-To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation. We used most traditional way: run the analysis. It worth to mention that we don't want to limit ourself with the emotion oriented architectures rather than get widest view on current situation in the domain. We analyzed 27 cognitive architectures with this set of criteria:
+To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation. We used most traditional way: run the analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures, but to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with this set of criteria:
 
 1. Emotional criteria:
    2. Cognitive Representation
@@ -216,15 +218,15 @@ To understand the scientific interest, current picture of implementations in act
 1. Parallel processing
 1. Self-emergent/self-organized
 
-Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture, thinking levels: is compatibility with Marvin Minsky "The emotion machine", AI components group: is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seemed to us important and were not in previous groups. Exhaustive analysis is available on line:
+Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture, thinking levels is the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seemed to us important and were not in previous groups. Exhaustive analysis is available on line:
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md
 
-We used primitive boolean approach to measure if component or emotional criteria is in specific cognitive architecture. Cumulative table is available on line, it contains simple summary of the boolean criteria:
+We used primitive boolean approach to measure if component or emotional criteria is in specific cognitive architecture. Cumulative table is available online, it contains simple summary of the boolean criteria:
 
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md#cumulative-table
 
 According to our brief overview of the list of architectures most interesting are: ASMO, CLARION, DUAL, **H-CogAff**, LIDA, **Psi-Theory**, Soar, **Society of mind** (*), WASABI, EMA, Hikonen, Shanahan.
-H-CogAff is more of philosophical framework to build the cognitive architecture, or a meta architecture that has most significant potential to be most advanced at the moment and less limited. Homeostatic principle of Psi-Theory seems to be ubiquitous in psychological basis of emotions [natureofemotions]. Society of mind needs further analysis and possible update of our criteria.
+H-CogAff is more of philosophical framework to build the cognitive architecture, or a meta-architecture that has the most significant potential to be the most advanced at the moment and the least limited. Homeostatic principle of Psi-Theory seems to be ubiquitous in the psychological basis of emotions [natureofemotions]. Society of mind needs further analysis and possible update of our criteria.
 
 ##Conclusion
 
