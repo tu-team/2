@@ -107,7 +107,7 @@ There are two groups of parameters:
 
 ###Generic
 
-*CPU power*: distribution and priority of parallel process or load balancing, is impacted by noradrenaline: the higher is noradrenaline more computing power must be concentrated on current activity (neuromodulator regulating attention).
+*Computing power*: distribution and priority of parallel process or load balancing, is impacted by noradrenaline: the higher is noradrenaline more computing power must be concentrated on current activity (neuromodulator regulating attention).
 
 *Working memory(short term)* distribution and concentration is impacted by noradrenaline (attention).
 
@@ -178,7 +178,7 @@ Robert Plutchik [natureofemotions] identifies 8 higher emotions, see Emotional f
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
-This could be understood as basic mechanism for self-reflective thinking and self-conscious reflections layers influence on neuromodulation.
+This could be understood as basic mechanism for self-reflective thinking and self-conscious reflections layers influence on neuromodulation. Current model contains two high level emotions that has identical levels of neuromodulators: awe and contempt. We address both of them in geometrical center of "Cube of emotions" [cubeofemotions] as intermediate states between: fear and surprise for awe and disgust and anger for contempt. One of probable explanations is the three dimensional model of Robert Plutchik "Wheel of emotions" contains only basic emotions, all high level, complex emotions are represented in 2 additional dimensions. Demonstrated approach produces 5 dimensional model with axises: pleasantness (joy, sadness), attention (expectation, surprise), sensitivity (anger, fear), aptitude (acceptance, disgust) and strength of emotion [senticcomputing].
 
 ##Cognitive architecture analysis
 
