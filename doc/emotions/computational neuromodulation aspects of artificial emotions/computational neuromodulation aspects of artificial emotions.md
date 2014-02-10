@@ -3,7 +3,7 @@
 Describe details of neuromodulators mapping to parameters of computing system:
 
 1. Generic:
-  2. CPU power: noradrenaline
+  2. Computing power: noradrenaline
   2. Memory distribution (attention): noradrenaline
   2. Learning: serotonin, dopamine
   2. Storage: serotonin, dopamine
@@ -15,7 +15,7 @@ Describe details of neuromodulators mapping to parameters of computing system:
   2. Number of options to process: noradrenaline
 
 Parameters are grouped in two folders: most obvious computing system parameters (generic):
-*CPU power*(computing processes distribution or load balancing) is influenced by noradrenaline the higher is noradrenaline more computing processes should be concentrated on current activity.
+*Computing power*(computing processes distribution or load balancing) is influenced by noradrenaline the higher is noradrenaline more computing processes should be concentrated on current activity.
 *Working memory(short term)* distribution is influenced by noradrenaline as neurotransmitter regulating attention.
 *Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
 *Storage* management (long term memory) is influenced both by serotonin and dopamine, higher concentrations of both neurotransmitters the better action is remembered(less probability to forget).
