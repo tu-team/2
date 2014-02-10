@@ -19,6 +19,8 @@ We interpret affects as instinctive reactions that stands close to objective bra
 
 ## High level emotions to neuromodulators levels mapping:
 
+![Cube of highlevel emotions](cube_of_high_level_emotions.png)
+
 1. **Optimism** = 1.0 serotonin + 1.0 dopamine + 0.5 noradrenaline;
 1. **Love** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
 1. **Submission** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
