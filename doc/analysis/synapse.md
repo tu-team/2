@@ -58,4 +58,9 @@ Under the STDP process, if an input spike to a neuron tends, on average, to occu
 
 https://en.wikipedia.org/wiki/Electrical_synapse
 
+![Electrical synapse](https://en.wikipedia.org/wiki/File:Gap_cell_junction-en.svg)
+
 An electrical synapse is a mechanical and electrically conductive link between two abutting neurons that is formed at a narrow gap between the pre- and postsynaptic neurons known as a gap junction. At gap junctions, such cells approach within about 3.5 nm of each other,[1] a much shorter distance than the 20 to 40 nm distance that separates cells at chemical synapse.[2] In many animals, electrical synapse-based systems co-exist with chemical synapses.
+
+Compared to chemical synapses, electrical synapses conduct nerve impulses faster, but unlike chemical synapses, they lack gain—the signal in the postsynaptic neuron is the same or smaller than that of the originating neuron. Electrical synapses are often found in neural systems that require the fastest possible response, such as defensive reflexes. An important characteristic of electrical synapses is that most of the time, they are bidirectional (allow impulse transmission in either direction).[3] However, some gap junctions do restrict communication to only one direction.
+
