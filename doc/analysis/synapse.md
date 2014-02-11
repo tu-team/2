@@ -64,3 +64,17 @@ An electrical synapse is a mechanical and electrically conductive link between t
 
 Compared to chemical synapses, electrical synapses conduct nerve impulses faster, but unlike chemical synapses, they lack gain—the signal in the postsynaptic neuron is the same or smaller than that of the originating neuron. Electrical synapses are often found in neural systems that require the fastest possible response, such as defensive reflexes. An important characteristic of electrical synapses is that most of the time, they are bidirectional (allow impulse transmission in either direction).[3] However, some gap junctions do restrict communication to only one direction.
 
+
+##Neuron doctrine
+
+https://en.wikipedia.org/wiki/Neuron_doctrine
+
+Electrical synapses are more common in the central nervous system than previously thought. Thus, rather than functioning as individual units, in some parts of the brain large ensembles of neurons may be active simultaneously to process neural information.[4] Electrical synapses are formed by gap junctions that allow molecules to directly pass between neurons, creating a cytoplasm-to-cytoplasm connection.
+
+Furthermore, the phenomenon of cotransmission, in which more than one neurotransmitter is released from a single presynaptic terminal (contrary to Dale's law), contributes to the complexity of information transmission within the nervous system
+
+
+##Chemical synapse
+
+https://en.wikipedia.org/wiki/Chemical_synapse
+
