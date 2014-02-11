@@ -47,3 +47,9 @@ By altering the release of neurotransmitters, plasticity of synapses can be cont
 https://en.wikipedia.org/wiki/Hebbian_theory
 
 
+##Spike time dependent plasticity (STDP)
+
+https://en.wikipedia.org/wiki/Spike-timing-dependent_plasticity
+
+Under the STDP process, if an input spike to a neuron tends, on average, to occur immediately before that neuron's output spike, then that particular input is made somewhat stronger. If an input spike tends, on average, to occur immediately after an output spike, then that particular input is made somewhat weaker hence: "spike-timing-dependent plasticity". Thus, inputs that might be the cause of the post-synaptic neuron's excitation are made even more likely to contribute in the future, whereas inputs that are not the cause of the post-synaptic spike are made less likely to contribute in the future. The process continues until a subset of the initial set of connections remain, while the influence of all others is reduced to 0. Since a neuron produces an output spike when many of its inputs occur within a brief period the subset of inputs that remain are those that tended to be correlated in time. In addition, since the inputs that occur before the output are strengthened, the inputs that provide the earliest indication of correlation will eventually become the final input to the neuron.
+
