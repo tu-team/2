@@ -78,3 +78,52 @@ Furthermore, the phenomenon of cotransmission, in which more than one neurotrans
 
 https://en.wikipedia.org/wiki/Chemical_synapse
 
+![Chemical synapse](https://upload.wikimedia.org/wikipedia/commons/1/1b/Synapse_Illustration_unlabeled.svg)
+
+Chemical synapses are specialized junctions through which neurons signal to each other and to non-neuronal cells such as those in muscles or glands. Chemical synapses allow neurons to form circuits within the central nervous system. They are crucial to the biological computations that underlie perception and thought. They allow the nervous system to connect to and control other systems of the body.
+
+At a chemical synapse, one neuron releases neurotransmitter molecules into a small space (the synaptic cleft) that is adjacent to another neuron. The neurotransmitters are kept within small sacs called vesicles, and are released into the synaptic cleft by exocytosis. These molecules then bind to receptors on the postsynaptic cell's side of the synaptic cleft. Finally, the neurotransmitters must be cleared from the synapse through one of several potential mechanisms including enzymatic degradation or re-uptake by specific transporters either on the presynaptic cell or possibly by neuroglia to terminate the action of the transmitter.
+
+The adult human brain is estimated to contain from 1014 to 5 × 1014 (100–500 trillion) synapses.[1] Every cubic millimeter of cerebral cortex contains roughly a billion (short scale, i.e. 109) of them.[2]
+
+1. The process begins with a wave of electrochemical excitation called an action potential traveling along the membrane of the presynaptic cell, until it reaches the synapse.
+1. The electrical depolarization of the membrane at the synapse causes channels to open that are permeable to calcium ions.
+1. Calcium ions flow through the presynaptic membrane, rapidly increasing the calcium concentration in the interior.
+1. The high calcium concentration activates a set of calcium-sensitive proteins attached to vesicles that contain a neurotransmitter chemical.
+1. These proteins change shape, causing the membranes of some "docked" vesicles to fuse with the membrane of the presynaptic cell, thereby opening the vesicles and dumping their neurotransmitter contents into the synaptic cleft, the narrow space between the membranes of the pre- and postsynaptic cells.
+1. The neurotransmitter diffuses within the cleft. Some of it escapes, but some of it binds to chemical receptor molecules located on the membrane of the postsynaptic cell.
+1. The binding of neurotransmitter causes the receptor molecule to be activated in some way. Several types of activation are possible, as described in more detail below. In any case, this is the key step by which the synaptic process affects the behavior of the postsynaptic cell.
+1. Due to thermal shaking, neurotransmitter molecules eventually break loose from the receptors and drift away.
+1. The neurotransmitter is either reabsorbed by the presynaptic cell, and then repackaged for future release, or else it is broken down metabolically.
+
+###Receptor binding
+
+Receptors on the opposite side of the synaptic gap bind neurotransmitter molecules. Receptors can respond in either of two general ways. First, the receptors may directly open ligand-gated ion channels in the postsynaptic cell membrane, causing ions to enter or exit the cell and changing the local transmembrane potential. The resulting change in voltage is called a postsynaptic potential. In general, the result is excitatory, in the case of depolarizing currents, or inhibitory in the case of hyperpolarizing currents. Whether a synapse is excitatory or inhibitory depends on what type(s) of ion channel conduct the postsynaptic current(s), which in turn is a function of the type of receptors and neurotransmitter employed at the synapse. The second way a receptor can affect membrane potential is by modulating the production of chemical messengers inside the postsynaptic neuron. These second messengers can then amplify the inhibitory or excitatory response to neurotransmitters.
+
+###Termination
+After a neurotransmitter molecule binds to a receptor molecule, it must be removed to allow for the postsynaptic membrane to continue to relay subsequent EPSPs and/or IPSPs. This removal can happen through one or more processes:
+
+The neurotransmitter may diffuse away due to thermally-induced oscillations of both it and the receptor, making it available to be broken down metabolically outside the neuron or to be reabsorbed.[14]
+Enzymes within the subsynaptic membrane may inactivate/metabolize the neurotransmitter.
+Reuptake pumps may actively pump the neurotransmitter back into the presynaptic axon terminal for reprocessing and re-release following a later action potential.[14]
+
+###Strength
+
+The strength of a synapse is defined by the amplitude of the change in membrane potential as a result of a presynaptic action potential. A "synapse" usually refers to a group of connections (or individual synapses) from the presynaptic neuron to the postsynaptic neuron. The strength of a synapse can be accounted for by the number and size of each of the connections from the presynaptic neuron to the postsynaptic neuron. The amplitude of postsynaptic potentials (PSPs) can be as low as 0.4mV to as high as 20mV.[15] The amplitude of a PSP can be modulated by neuromodulators or can change as a result of previous activity. Changes in synaptic strength can be short-term, lasting seconds to minutes, or long-term (long-term potentiation, or LTP), lasting hours. Learning and memory are believed to result from long-term changes in synaptic strength, via a mechanism known as synaptic plasticity.
+
+###Volume transmission
+
+When a neurotransmitter is released at a synapse, it reaches its highest concentration inside the narrow space of the synaptic cleft, but some of it is certain to diffuse away before being reabsorbed or broken down. If it diffuses away, it has the potential to activate receptors that are located either at other synapses or on the membrane away from any synapse. The extrasynaptic activity of a neurotransmitter is known as volume transmission.[18] It is well established that such effects occur to some degree, but their functional importance has long been a matter of controversy.[19]
+
+Recent work indicates that volume transmission may be the predominant mode of interaction for some special types of neurons. In the mammalian cerebral cortex, a class of neurons called neurogliaform cells can inhibit other nearby cortical neurons by releasing the neurotransmitter GABA into the extracellular space. Approximately 78% of neurogliaforms do not form classical synapses. This may be the first definitive example of neurons communicating chemically where synapses are not present.[20]
+
+###Relationship to electrical synapses
+
+An electrical synapse is an electrically conductive link between two abutting neurons that is formed at a narrow gap between the pre- and postsynaptic cells, known as a gap junction. At gap junctions, cells approach within about 3.5 nm of each other, rather than the 20 to 40 nm distance that separates cells at chemical synapses.[21][22] As opposed to chemical synapses, the postsynaptic potential in electrical synapses is not caused by the opening of ion channels by chemical transmitters, but rather by direct electrical coupling between both neurons. Electrical synapses are faster than chemical synapses.[10] Electrical synapses are found throughout the nervous system, including in the retina, the reticular nucleus of the thalamus, the neocortex, and in the hippocampus.[23] While chemical synapses are found between both excitatory and inhibitory neurons, electrical synapses are most commonly found between smaller local inhibitory neurons. Electrical synapses can exist between two axons, two dendrites, or between an axon and a dendrite.[24][25] In some cases electrical synapses can be found within the same terminal of a chemical synapse, as in Mauthner cells.[26]
+
+
+##Synaptic plasticity
+
+https://en.wikipedia.org/wiki/Synaptic_plasticity
+
+In neuroscience, synaptic plasticity is the ability of synapses to strengthen or weaken over time, in response to increases or decreases in their activity.[1] Plastic change also results from the alteration of the number of receptors located on a synapse.[2] There are several underlying mechanisms that cooperate to achieve synaptic plasticity, including changes in the quantity of neurotransmitters released into a synapse and changes in how effectively cells respond to those neurotransmitters.[3] Synaptic plasticity in both excitatory and inhibitory synapses has been found to be dependent upon postsynaptic calcium release.[2] Since memories are postulated to be represented by vastly interconnected networks of synapses in the brain, synaptic plasticity is one of the important neurochemical foundations of learning and memory (see Hebbian theory).
