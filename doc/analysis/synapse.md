@@ -46,6 +46,7 @@ By altering the release of neurotransmitters, plasticity of synapses can be cont
 
 https://en.wikipedia.org/wiki/Hebbian_theory
 
+"Let us assume that the persistence or repetition of a reverberatory activity (or "trace") tends to induce lasting cellular changes that add to its stability.… When an axon of cell A is near enough to excite a cell B and repeatedly or persistently takes part in firing it, some growth process or metabolic change takes place in one or both cells such that A's efficiency, as one of the cells firing B, is increased."[1]
 
 ##Spike time dependent plasticity (STDP)
 
