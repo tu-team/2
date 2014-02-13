@@ -21,7 +21,7 @@ This article is dedicated to emotional aspects of human thinking and influence o
 
 ## Bases
 
-Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neurochemical base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. This model was depicted in the picture below: 
+Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neurochemical base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. This model is represented in the picture below: 
 
 ![3 bases of theory](3_bases.png)
 
