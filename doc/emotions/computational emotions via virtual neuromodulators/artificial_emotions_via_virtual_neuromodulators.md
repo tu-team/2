@@ -32,14 +32,14 @@ All theories described above were mapped to Marvin Minsky's cognitive architectu
 
 ##Emotional feedback loops
 
-Robert Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions", that we used as subjective conscious model of emotions. He used eight basic emotions grouped in pairs:
+Robert Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions", that we used to describe subjective conscious emotions. There are eight basic emotions grouped in pairs:
 
 1. Joy - sorrow
 1. Anger - fear
 1. Acceptance - disgust
 1. Surprise - expectancy
 
-We suppose that innate non-conscious affects and their appraisals could use different much quicker and simpler mechanisms than the mechanisms trained during lifetime, conscious emotions, appraisals and coping. This way we use two models: affect theory for innate quick emotional reactions and "wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
+We suppose that innate non-conscious affects and their appraisals could use different much quicker and simpler mechanisms than the mechanisms trained during lifetime: conscious emotions, appraisals and coping. Thus we use two models: affect theory for innate quick emotional reactions and "Wheel of emotions" for conscious low level and high level emotions. According to Plutchik theory basic emotions could be mixed like colors into high level emotions listed below:
 
 1. Love = joy + acceptance
 1. Submission = acceptance + fear
@@ -50,13 +50,13 @@ We suppose that innate non-conscious affects and their appraisals could use diff
 1. Aggressiveness = anger + expectancy
 1. Optimism = expectancy + joy
 
-This could be understood as the base for the subjective picture of emotions.
+Model presented above could be understood as the base for the subjective picture of emotions.
 
-Below is an example of emotional feedback loops [natureofemotions] represented in four layers of Marvin Minsky's "model of six".
+Below is an example of emotional feedback loops [natureofemotions] represented in four layers of Marvin Minsky's "Model of six".
 
 ![orchestra of emotions](orchestra_of_emotions_agi.png)
 
-We used four of the six layers just for the purpose of this example. Self-conscious reflections layer could influence emotions; for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
+We use four of the six layers just for the purpose of this example. Self-conscious reflections layer could influence emotions; for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
 
 We correspond instinctive reactions layer with non-conscious, innate, affective reactions that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed first unconsciously; this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, butn nonconscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala.
 
