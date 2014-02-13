@@ -76,14 +76,14 @@ Hugo Lovheim in 2012 published his article "A new three-dimensional model for em
 1. Fear/Terror
 1. Shame/Humiliation
 
-From our perspective this is the base of objective nonconscious emotional brain reaction to stimulus. On the other hand according to [emotionsbraintorobot] there are four following neuronal systems involved in emotional processing:
+From our perspective this is the base of objective non-conscious emotional brain reaction to stimulus. On the other hand according to [emotionsbraintorobot] there are four following neuronal systems involved in emotional processing:
 
 1. Spinal cord
 1. Hypothalamus
 1. Amygdala
 1. Frontal cortex, cingulate cortex
 
-We roughly correspond nonconscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction bridge. This is fundamental for representation of emotional processes on computational system parameters.
+We roughly correspond non-conscious instinctive reactions layer of "model of six" [emotionmachine] with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction mapping. This is fundamental for representation of emotional processes on computational system parameters.
 
 ##Neuromodulators to computing parameters mapping 
 
