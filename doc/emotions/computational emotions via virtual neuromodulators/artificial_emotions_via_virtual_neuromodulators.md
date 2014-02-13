@@ -25,8 +25,8 @@ Starting from the top we first reviewed several psychological models of emotions
 
 ![3 bases of theory](3_bases.png)
 
-The first base is the evolutionary psychology theory of Plutchik [natureofemotions]. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six [emotionmachine] thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" [natureofemotions] as a model for subjective conscious emotions and high level emotions.
-The second base is the theory of affects by Tomkins [primer_affect_psychology, tomkins1, tomkins2, tomkins3]. We used Tomkins' theory of affects as the base for low level non-conscious emotions and low level appraisal.
+The first base is the evolutionary psychology theory of Plutchik [natureofemotions]. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six [emotionmachine] thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" [natureofemotions] as a model for subjective conscious and high level emotions.
+The second base is the theory of affects by Tomkins [primer_affect_psychology, tomkins1, tomkins2, tomkins3]. We applied Tomkins' theory of affects as the base for low level non-conscious emotions and low level appraisal.
 The neuro-physiological base is Lovheim theory of neuromodulatory base of emotions [cubeofemotions]. We used "Cube of emotions" as the main low level ("hardware") mechanism of emotional processes.
 All theories described above were mapped to Marvin Minsky's cognitive architecture described in his book "The emotion machine" [emotionmachine].
 
