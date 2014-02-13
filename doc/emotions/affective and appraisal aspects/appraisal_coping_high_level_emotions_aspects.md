@@ -64,8 +64,9 @@ Lovheim uses Tomkins theory of affects that refer to innate emotional reactions 
 
 We use affective appraisal described in ["A primer of affect psychology"][primer_affect_psychology]. The main factor that influences affective appraisal is CNS activity that has three main behaviour trends: increase, decrease or stay stable.
 
-According to ["A primer of affect psychology"][primer_affect_psychology]: quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+According to ["A primer of affect psychology"][primer_affect_psychology]:
 
+1. Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
 1. Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
 1. "**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.

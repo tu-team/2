@@ -25,14 +25,14 @@ Starting from the top we first reviewed several psychological models of emotions
 
 ![3 bases of theory](3_bases.png)
 
-The first base is the evolutionary psychology theory of Plutchik [natureofemotions]. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six [emotionmachine] thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" [natureofemotions] as a model for subjective conscious and high level emotions.
+The first base is the evolutionary psychology theory of Plutchik [natureofemotions]. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six [emotionmachine] thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" [natureofemotions] as a framework for subjective conscious and high level emotions.
 The second base is the theory of affects by Tomkins [primer_affect_psychology, tomkins1, tomkins2, tomkins3]. We applied Tomkins' theory of affects as the base for low level non-conscious emotions and low level appraisal.
 The neuro-physiological base is Lovheim theory of neuromodulatory base of emotions [cubeofemotions]. We used "Cube of emotions" as the main low level ("hardware") mechanism of emotional processes.
 All theories described above were mapped to Marvin Minsky's cognitive architecture described in his book "The emotion machine" [emotionmachine].
 
 ##Emotional feedback loops
 
-Robert Plutchik created the three dimensional model of emotions [natureofemotions] called "Wheel of emotions", that we used to describe subjective conscious emotions. There are eight basic emotions grouped in pairs:
+Robert Plutchik created the three dimensional model [natureofemotions] called "Wheel of emotions", that we used to describe subjective conscious emotions. There are eight basic emotions grouped in pairs:
 
 1. Joy - sorrow
 1. Anger - fear
@@ -138,7 +138,8 @@ Model described above operates in thinking processes environment, surrounded mai
 
 Nonconscious appraisals are associated with instinctive reactions layer of model of six, are actually performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for nonconscious emotional reactions [primer_affect_psychology]. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
 
-1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**, both of them negative. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
+1. Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
+1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
 1. Decrease of CNS activity is considered as relief and triggers **enjoyment/joy**.
 1. "**Disgust** NEGATIVE affect is inherently punishing and provides us some protection against eating poisonous or rotten food." We consider this affect as unconditional rejection of inbound stimulus as something directly damaging the system. This could be understood as low level hard-coded predicate to protect system.
 1. **Shame/humiliation** "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information. Here, the social emotions of shame and humiliation are considered from the perspective of applicability outside a social context.
