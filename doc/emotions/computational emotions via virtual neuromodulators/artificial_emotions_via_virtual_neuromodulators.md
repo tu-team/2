@@ -159,7 +159,7 @@ This could be understood as algorithm for conscious appraisal done within five l
 
 ###Coping
 
-There are two main types of coping strategies: emotion-focused and problem focused copings. We discovered relation of coping strategy selection with gender [sex_differencies] based on oxytocin stress hormone activity that is amplified by estrogen. This effect could makes woman select more social coping strategies.
+Marsella and Gratch identify two main types of coping strategies: emotion-focused and problem focused copings [dont_worry_be_happy]. Tamres et al discovered relation of coping strategy selection with gender [sex_differencies] based on oxytocin stress hormone activity that is amplified by estrogen. This effect could makes woman select more social coping strategies.
 The example of emotion-focused coping is placed in Emotional feedback loops section.
 Example of problem-focused coping is presented below:
 
