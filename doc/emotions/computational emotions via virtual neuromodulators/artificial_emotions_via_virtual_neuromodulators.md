@@ -148,7 +148,7 @@ Nonconscious appraisals are associated with instinctive reactions layer of model
 
 Conscious appraisal has more complex self-emergent nature and is based on nurture and education of a child. We used [appraisal_considered_as_a_process] as base for conscious appraisal process and derive patterns for Plutchik "Wheel of emotion" model of emotions. Please see for complete list of patterns(probabilistic predicates): https://github.com/development-team/2/blob/master/doc/emotions/affective%20and%20appraisal%20aspects/appraisal_coping_high_level_emotions_aspects.md#comprehensive-secs-structure.
 
-Scherer used uses 16 Stimulus Evaluation Checks(SEC) as basic blocks for whole appraisal processes. And overall process looks like following sequence:
+Scherer uses 16 Stimulus Evaluation Checks(SEC) as basic blocks for whole appraisal processes. And overall process looks like following sequence:
 
 1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance check.
 1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
