@@ -184,7 +184,7 @@ This could be understood as a basic mechanism for self-reflective thinking and s
 
 ##Cognitive architecture analysis
 
-To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation. We used most traditional way: run the analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures, but to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with this set of criteria:
+To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation. We used most traditional way: run the analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures, but to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with following set of criteria:
 
 1. Emotional criteria:
    2. Cognitive Representation
@@ -220,10 +220,10 @@ To understand the scientific interest, current picture of implementations in act
 1. Parallel processing
 1. Self-emergent/self-organized
 
-Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture, thinking levels is the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seemed to us important and were not in previous groups. Exhaustive analysis is available on line:
+Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture [computationalmodelsemotionscognition], thinking levels are the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seems to play important role and were not in previous groups. Exhaustive analysis is available on-line:
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md
 
-We used primitive boolean approach to measure if component or emotional criteria is in specific cognitive architecture. Cumulative table is available online, it contains simple summary of the boolean criteria:
+We used primitive boolean approach to measure if component or emotional criteria is in specific cognitive architecture. Cumulative table is available on-line, it contains simple summary of the boolean criteria:
 
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md#cumulative-table
 
