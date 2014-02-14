@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Biggest problem of artificial intelligence is that we don't know what is natural intelligence. The only example of intelligence that we observe today is human intelligence. Unfortunately there are no aliens so far who would be able to demonstrate non-human intelligence, and examples on Earth lack certain substance. Rosalind Picard in her article indicated: "There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its  intelligence without having anything like emotion. Although humans are the most marvellous example of intelligence we have, and we wish to build systems that are natural for humans to understand, these reasons for building human-like systems should not limit us to thinking only of human abilities." [affectivecomputingchallanges]
+Biggest problem of artificial intelligence is that we don't know what natural intelligence is. The only example of intelligence that we observe today is human intelligence. Unfortunately there are no aliens so far who would be able to demonstrate non-human intelligence, and examples on Earth lack certain substance. Rosalind Picard in her article indicated: "There may exist a kind of alien intelligent living system, something we’ve never encountered, which achieves its  intelligence without having anything like emotion. Although humans are the most marvellous example of intelligence we have, and we wish to build systems that are natural for humans to understand, these reasons for building human-like systems should not limit us to thinking only of human abilities." [affectivecomputingchallanges]
 
-There are several domains that still remain unclear: creativity, intuition, insight and consciousness that prevents us from answering the question: "How David Lynch could create Mulholland Drive or Picasso could create Guernica?".
+There are several domains that still remain unclear: creativity, intuition, insight and consciousness that prevent us from answering the question: "How David Lynch could create Mulholland Drive or Picasso could create Guernica?".
 We have started from possibly the first intelligent method emerged during evolution and from the most primal component of intelligence: the emotions.
 
 Turing stated in his [intelligent_machinery] that idea of intelligent machines "cannot be wholly ignored, because the idea of 'intelligence' is itself emotional rather than mathematical".
@@ -60,12 +60,12 @@ We use four of the six layers just for the purpose of this example. Self-conscio
 
 We correspond instinctive reactions layer with non-conscious, innate, affective responses that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed first unconsciously; this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala.
 
-Using a concrete example: Neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realizes that it's too emotional now and then stop all appraisal related processes and starts new coping oriented deliberation and switches emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation). 
+Using a concrete example: neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realizes that it's too emotional now and then stop all appraisal related processes and starts new coping oriented deliberation and switches emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation). 
 In parallel to all cognitive and reflective process second affective appraisal initiates non-conscious instinctive coping strategy and it when applied created an effect over environment and this effect is been appraised again as stimulus.
 
 ##Neuromodulatory basis of artificial emotions
 
-Hugo Lovheim in 2012 published his article "A new three-dimensional model for emotions and monoamine neurotransmitters". He described thee dimensional model of emotions. Axis of the model are neuromodulators(monoamines): serotonin, dopamine, noradrenaline. Vertexes are affects from Tomkins affect theory [primer_affect_psychology]:
+Hugo Lovheim in 2012 published his article "A new three-dimensional model for emotions and monoamine neurotransmitters". He described three dimensional model of emotions. Axes of the model are neuromodulators (monoamines): serotonin, dopamine, noradrenaline. Vertexes are affects from Tomkins affect theory [primer_affect_psychology]:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -146,16 +146,16 @@ Non-conscious appraisals are associated with instinctive reactions layer of mode
 
 ###Conscious appraisal
 
-Conscious appraisal has more complex self-emergent nature and is based on nurture and education of a child. We used [appraisal_considered_as_a_process] as base for conscious appraisal process and derive patterns for Plutchik "Wheel of emotion" model of emotions. Please see for complete list of patterns(probabilistic predicates): https://github.com/development-team/2/blob/master/doc/emotions/affective%20and%20appraisal%20aspects/appraisal_coping_high_level_emotions_aspects.md#comprehensive-secs-structure.
+Conscious appraisal has more complex self-emergent nature and is based on nurture and education of a child. We used [appraisal_considered_as_a_process] as base for conscious appraisal process and derive patterns for Plutchik "Wheel of emotion" model of emotions. Please see for complete list of patterns (probabilistic predicates): https://github.com/development-team/2/blob/master/doc/emotions/affective%20and%20appraisal%20aspects/appraisal_coping_high_level_emotions_aspects.md#comprehensive-secs-structure.
 
-Scherer uses 16 Stimulus Evaluation Checks(SEC) as basic blocks for whole appraisal processes. And overall process looks like following sequence:
+Scherer uses 16 Stimulus Evaluation Checks (SEC) as basic blocks for whole appraisal processes. And overall process looks like following sequence:
 
 1. Relevance check including: novelty check, intrinsic pleasantness check, goal relevance check.
 1. Implication check including: causal attribution check, outcome probability check, discrepancy from expectation check, goal/need conduciveness check, urgency check.
 1. Coping potential including: control check, power check, adjustment check.
 1. Normative significance including: internal standards check, external standards check.
 
-This could be understood as algorithm for conscious appraisal done within five levels of "Model of six" [emotionmachine]: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections layers.
+This could be understood as algorithm for conscious appraisal done within five levels of "Model of six" [emotionmachine]: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking and self-conscious reflections layers.
 
 ###Coping
 
@@ -180,11 +180,11 @@ Robert Plutchik [natureofemotions] identifies 8 higher emotions, see Emotional f
 1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
 1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
 
-This could be understood as a basic mechanism for self-reflective thinking and self-conscious reflection layer influence on neuromodulation. Current model contains two high level emotions that have identical levels of neuromodulators: awe and contempt. We address both of them in the geometrical center of "Cube of emotions" [cubeofemotions] as intermediate states in between: fear and surprise for awe, and disgust and anger for contempt. One explanation is that the three dimensional model of Robert Plutchik "Wheel of emotions" contains only the basic emotions, all the high level, complex emotions are represented in 2 additional dimensions. Demonstrated approach produces a five dimensional model with axises: pleasantness (joy, sadness), attention (expectation, surprise), sensitivity (anger, fear), aptitude (acceptance, disgust) and strength of emotion [senticcomputing] in contrast neuromodulatory model of emotions of Lovheim contains only three dimensions that causes a lack of dimensionality in representing five dimensional emotional model of Robert Plutchik. From neuroscience perspective some researchers mention the important role of opioids in emotions and it was not taken in account by Lovheim [emotionsbraintorobot].
+This could be understood as a basic mechanism for self-reflective thinking and self-conscious reflection layer influence on neuromodulation. Current model contains two high level emotions that have identical levels of neuromodulators: awe and contempt. We address both of them in the geometrical center of "Cube of emotions" [cubeofemotions] as intermediate states in between: fear and surprise for awe, and disgust and anger for contempt. One explanation is that the three dimensional model of Robert Plutchik "Wheel of emotions" contains only the basic emotions, all the high level, complex emotions are represented in 2 additional dimensions. Demonstrated approach produces a five dimensional model with axes: pleasantness (joy, sadness), attention (expectation, surprise), sensitivity (anger, fear), aptitude (acceptance, disgust) and strength of emotion [senticcomputing] in contrast neuromodulatory model of emotions of Lovheim contains only three dimensions that causes a lack of dimensionality in representing five dimensional emotional model of Robert Plutchik. From neuroscience perspective some researchers mention the important role of opioids in emotions and it was not taken in account by Lovheim [emotionsbraintorobot].
 
 ##Cognitive architecture analysis
 
-To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation. We used most traditional way: run the analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures, but to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with following set of criteria:
+To understand the scientific interest, current picture of implementations in actual code and possibly find proper base for our implementation we used most traditional way: run the analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures; we rather want to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with following set of criteria:
 
 1. Emotional criteria:
    2. Cognitive Representation
@@ -220,10 +220,10 @@ To understand the scientific interest, current picture of implementations in act
 1. Parallel processing
 1. Self-emergent/self-organized
 
-Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture [computationalmodelsemotionscognition], thinking levels are the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seems to play important role and were not in previous groups. Exhaustive analysis is available on-line:
+Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture [computationalmodelsemotionscognition], thinking levels are the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seem to play important role and were not in previous groups. Exhaustive analysis is available on-line:
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md
 
-We used primitive boolean approach to measure if component or emotional criteria is in specific cognitive architecture. Cumulative table is available on-line, it contains simple summary of the boolean criteria:
+We used primitive Boolean approach to measure if component or emotional criteria are in specific cognitive architecture. Cumulative table is available on-line, it contains simple summary of the Boolean criteria:
 
 https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md#cumulative-table
 
@@ -232,10 +232,10 @@ H-CogAff is more of philosophical framework to build the cognitive architecture,
 
 ##Conclusion
 
-We created sythetic theory of emotions based on four starting points: Robert Plutchick "Wheel of emotions" [natureofemotions, senticcomputing] as high level subjective model of emotions, Tomkins theory of affects [primer_affect_psychology] as low level objective model of affects/emotions, Hugo Lovheim "Cube of emotions" [cubeofemotions] as objective neurophysiological mechanism, Marvin Minsky "The emotion machine" [emotionmachine] as cognitive architecture environment for all mechanisms listed above.
+We created synthetic theory of emotions based on four starting points: Robert Plutchick "Wheel of emotions" [natureofemotions, senticcomputing] as high level subjective model of emotions, Tomkins theory of affects [primer_affect_psychology] as low level objective model of affects/emotions, Hugo Lovheim "Cube of emotions" [cubeofemotions] as objective neurophysiological mechanism, Marvin Minsky "The emotion machine" [emotionmachine] as cognitive architecture environment for all mechanisms listed above.
 
-Our main assumption is: there could be two models of emotions: innate low level based on affects, and high level self emerged during childhood nurture and education. This two models should correspond and have mechanism to influence each other. This is done in one more model neuromodulatory bases of emotions [cubeofemotions, neuromodulatory].
-Overall the emotional processes have following structure: stimulus non-conscious appraisal, neuromodulation (physiological emotional state switch), conscious appraisal with possible deliberation and possible coping strategy selection, coping strategy application over environment. As coping, or some other behavior is applied over environment its state is appraised again as new stimulus. This processes is called feedback loop [natureofemotions] and creates everlasting spiral process of emotions appraisal -> neuromodulation (physiological impact) -> coping. In the similar way high level thinking processes could influence emotional state: for example reflective thinking could trigger neuromodulation switching emotional state of a system and start/stop cognitive appraisal, deliberation.
+Our main assumption is: there could be two models of emotions: innate low level based on affects, and high level self-emerged during childhood nurture and education. These two models should correspond and have mechanism to influence each other. This is done in one more model neuromodulatory bases of emotions [cubeofemotions, neuromodulatory].
+Overall the emotional processes have following structure: stimulus non-conscious appraisal, neuromodulation (physiological emotional state switch), conscious appraisal with possible deliberation and possible coping strategy selection, coping strategy application over environment. As coping, or some other behavior is applied over environment its state is appraised again as new stimulus. This process is called feedback loop [natureofemotions] and creates everlasting spiral process of emotions appraisal -> neuromodulation (physiological impact) -> coping. In the similar way high level thinking processes could influence emotional state: for example reflective thinking could trigger neuromodulation switching emotional state of a system and start/stop cognitive appraisal, deliberation.
 Thus neuromodulators are main actors of objective brain response we mapped their impact over computational system parameters:
 
 1. Generic:
@@ -250,7 +250,7 @@ Thus neuromodulators are main actors of objective brain response we mapped their
   2. Risky choices inclination: noradrenaline
   2. Number of options to process: noradrenaline
 
-This mapping could be used as main low level mechanism that build a bridge from neuro-scientific model to computational system and answers the question: "How emotions could influence computational system parameters?".
+This mapping could be used as main low level mechanism that build a bridge from neuro-scientific model to computational system and answers the question: "How emotions could influence computational system parameters?"
 
 We briefly describe the appraisal and coping processes closely related to emotional states and reactions. This creates overall closed and looped (spiral) system of emotional collaboration of a system with environment and emotional processing of internal psychological states.
 
@@ -265,7 +265,7 @@ To complete the picture of emotional interactions we propose high level emotions
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
-Presented mapping completes neuromodulation centric low level emotion framework, it could be used in spiking neural network to implement emotional thinking phenomenas in computational systems. We suppose this could be useful framework to be used in several domains:
+Presented mapping completes neuromodulation centric low level emotion framework, it could be used in spiking neural network to implement emotional thinking phenomena in computational systems. We suppose this could be useful framework to be used in several domains:
 
 1. Advertisement
 1. Emotional behavior simulations
