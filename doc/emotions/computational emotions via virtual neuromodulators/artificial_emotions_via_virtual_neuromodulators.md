@@ -132,11 +132,11 @@ This mapping is exhaustively described in [computational_emotional_thinking]. It
 
 ##Appraisal and coping 
 
-Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: nonconscious (quick, low level) and conscious (slower, high level) appraisals.
+Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: non-conscious (quick, low level) and conscious (slower, high level) appraisals.
 
-###Nonconscious appraisals 
+###Non-Conscious appraisals 
 
-Nonconscious appraisals are associated with instinctive reactions layer of model of six, are actually performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for nonconscious emotional reactions [primer_affect_psychology]. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
+Non-Conscious appraisals are associated with instinctive reactions layer of model of six, are actually performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for non-conscious emotional reactions [primer_affect_psychology]. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
 
 1. Quickest increase of brain activity triggers **surprise**, a bit slower increase - **fear/terror**, and most moderate - **interest/excitement**.
 1. Moderate steady CNS activity triggers **distress/anguish**, while high steady activity triggers **anger/rage**. It worth to note that the higher distress CNS activity the easier is switch to anger. We could interpret this as following: the longer the person is in distress state the easier he/she could be switched to anger state.
@@ -232,9 +232,9 @@ H-CogAff is more of philosophical framework to build the cognitive architecture,
 
 ##Conclusion
 
-We created sythetic theory of emotions based on for starting points: Robert Plutchick "Wheel of emotions" [natureofemotions, senticcomputing] as highlevel subjective model of emoitons, Tomkins theory of affects [primer_affect_psychology] as low level objective model of affects/emotions, Hugo Lovheim "Cube of emotions" [cubeofemotions] as objective neurophysiological mechanism, Marvin Minsky "The emotion machine" [emotionmachine] as cognitive architecture environment for all mechanisms listed above.
+We created sythetic theory of emotions based on four starting points: Robert Plutchick "Wheel of emotions" [natureofemotions, senticcomputing] as high level subjective model of emotions, Tomkins theory of affects [primer_affect_psychology] as low level objective model of affects/emotions, Hugo Lovheim "Cube of emotions" [cubeofemotions] as objective neurophysiological mechanism, Marvin Minsky "The emotion machine" [emotionmachine] as cognitive architecture environment for all mechanisms listed above.
 
-Our main assumption is that there could be two models of emotions: innate low level based on affects, and high level self emerged during childhood nurture and education. This two models should correspond and have mechanism to influence each other. This is done in one more model neuromodulatory bases of emotions [cubeofemotions, neuromodulatory].
+Our main assumption is: there could be two models of emotions: innate low level based on affects, and high level self emerged during childhood nurture and education. This two models should correspond and have mechanism to influence each other. This is done in one more model neuromodulatory bases of emotions [cubeofemotions, neuromodulatory].
 Overall the emotional processes have following structure: stimulus non-conscious appraisal, neuromodulation (physiological emotional state switch), conscious appraisal with possible deliberation and possible coping strategy selection, coping strategy application over environment. As coping, or some other behavior is applied over environment its state is appraised again as new stimulus. This processes is called feedback loop [natureofemotions] and creates everlasting spiral process of emotions appraisal -> neuromodulation (physiological impact) -> coping. In the similar way high level thinking processes could influence emotional state: for example reflective thinking could trigger neuromodulation switching emotional state of a system and start/stop cognitive appraisal, deliberation.
 Thus neuromodulators are main actors of objective brain response we mapped their impact over computational system parameters:
 
@@ -252,9 +252,9 @@ Thus neuromodulators are main actors of objective brain response we mapped their
 
 This mapping could be used as main low level mechanism that build a bridge from neuro-scientific model to computational system and answers the question: "How emotions could influence computational system parameters?".
 
-We briefly described the appraisal and coping processes closely related to emotional states and reactions. This creates overall closed and looped (spiral) system of emotional collaboration of system with environment and emotional processing of internal psychological states.
+We briefly describe the appraisal and coping processes closely related to emotional states and reactions. This creates overall closed and looped (spiral) system of emotional collaboration of a system with environment and emotional processing of internal psychological states.
 
-To complete the picture of emotional interactions we propose high level emotions to neuromodulators level mapping integrated in "Cube of emotions" [cubeofemotions]. We assume Gaussian nature of mapping of subjective high level emotions to objective low level neuromodulation [senticcomputing, neuralcorrelatesofhate]:
+To complete the picture of emotional interactions we propose high level emotions to neuromodulator levels mapping integrated in "Cube of emotions" [cubeofemotions]. We assume Gaussian nature of mapping of subjective high level emotions to objective low level neuromodulation [senticcomputing, neuralcorrelatesofhate]:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -265,7 +265,7 @@ To complete the picture of emotional interactions we propose high level emotions
 1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
 1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 
-Presented mapping completes neuromodulation centric low level emotion model, it could be used in spiking neural network to implement emotional thinking phenomenas in computational systems. We suppose this could be useful framework to be used in several domains:
+Presented mapping completes neuromodulation centric low level emotion framework, it could be used in spiking neural network to implement emotional thinking phenomenas in computational systems. We suppose this could be useful framework to be used in several domains:
 
 1. Advertisement
 1. Emotional behavior simulations
