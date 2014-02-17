@@ -23,16 +23,17 @@ This article is dedicated to emotional aspects of human thinking and influence o
 
 Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neurochemical base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. This model is represented in the picture below:
 
-\begin{center}
-Figure 1. ...
-\end{center}
+\begin{figure}
+\vspace{2.5cm}
+\caption{Theoretical bases of current work}
+\end{figure}
 
 The first base is the evolutionary psychology theory of Plutchik \cite{natureofemotions}. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six \cite{emotionmachine} thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" \cite{natureofemotions} as a framework for subjective conscious and high level emotions.
 The second base is the theory of affects by Tomkins \cite{primer_affect_psychology, tomkins1, tomkins2, tomkins3}. We applied Tomkins theory of affects as the base for low level non-conscious emotions and low level appraisal.
 The neuro-physiological base is Lovheim theory of neuromodulatory base of emotions \cite{cubeofemotions}. We used "Cube of emotions" as the main low level ("hardware") mechanism of emotional processes.
 All theories described above were mapped to Marvin Minsky's cognitive architecture described in his book "The emotion machine" \cite{emotionmachine}.
 
-\section{Emotional feedback loops}
+\section{Emotional Feedback Loops}
 
 Robert Plutchik created the three dimensional model \cite{natureofemotions} called "Wheel of emotions", that we used to describe subjective conscious emotions. There are eight basic emotions grouped in pairs:
 
@@ -60,20 +61,18 @@ Model presented above could be understood as the base for the subjective picture
 
 Below is an example of emotional feedback loops \cite{natureofemotions} represented in four layers of Marvin Minsky's "Model of six".
 
-\begin{center}
-Figure 2. ...
-\end{center}
+\begin{figure}
+\vspace{2.5cm}
+\caption{Orchestra of emotions}
+\end{figure}
 
 We use four of the six layers just for the purpose of this example. Self-conscious reflections layer could influence emotions; for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
 
 We correspond instinctive reactions layer with non-conscious, innate, affective responses that mainly takes palace in: spinal cord, hypothalamus and amygdala. This way any stimulus is been processed first unconsciously; this is shown as affective appraisal rectangle. First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation. Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala.
-
 Using a concrete example: neuromodulation triggers emotional state switch from serenity to fear. Affective appraisal triggers cognitive appraisal and reflective thinking. Cognitive appraisal in its turn initiates deliberation process. Meanwhile second stimulus triggers second affective appraisal and its neuromodulation switches emotional state from fear to terror. Second affective appraisal triggers cognitive appraisal that in its turn initiates second appraisal deliberation. Then reflective thinking process estimating all activities in mind realizes that it's too emotional now and then stop all appraisal related processes and starts new coping oriented deliberation and switches emotional state via neuromodulation from terror to fear. Third appraisal deliberation selects cognitive reappraisal as coping strategy and this coping strategy is executed and switches emotional state back to serenity (via neuromodulation).
 In parallel to all cognitive and reflective process second affective appraisal initiates non-conscious instinctive coping strategy and it when applied created an effect over environment and this effect is been appraised again as stimulus.
 
-\section{Neuromodulatory basis of artificial emotions}
-
-
+\section{Neuromodulatory Basis of Artificial Emotions}
 
 \begin{enumerate}
  \item  Enjoyment/Joy
@@ -97,13 +96,14 @@ From our perspective this is the base of objective non-conscious emotional brain
 
 We roughly correspond non-conscious instinctive reactions layer of "model of six" \cite{emotionmachine} with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction mapping. This is fundamental for representation of emotional processes on computational system parameters.
 
-\section{Neuromodulators to computing parameters mapping}
+\section{Neuromodulators to Computing Parameters Mapping}
 
 Having neuromodulation mechanisms understanding, mainly the roles of neuromodulators \cite{cubeofemotions, emotionsbraintorobot} we proposed following mapping of neuromodulators to computing system parameters.
 
-\begin{center}
-Figure 3. ...
-\end{center}
+\begin{figure}
+\vspace{2.5cm}
+\caption{Cube of parameters}
+\end{figure}
 
 \begin{enumerate}
  \item  Generic:
@@ -150,11 +150,11 @@ Noradrenaline makes system use less \emph{number of options} in width and depth 
 
 This mapping is exhaustively described in \cite{computational_emotional_thinking}. It could be used as low level ("hard-coded") model of emotional processes implemented in a spiking neuron model used to build a neural network and could be used as basic framework for the emotion enabled systems \cite{whatdoesitmeanforcomputer}.
 
-\section{Appraisal and coping}
+\section{Appraisal and Coping}
 
 Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: non-conscious (quick, low level) and conscious (slower, high level) appraisals.
 
-\subsection{Non-conscious appraisals}
+\subsection{Non-conscious Appraisals}
 
 Non-conscious appraisals are associated with instinctive reactions layer of model of six, are actually performed in spinal cord, hypothalamus and amygdala and has innate nature formed during evolution. We used Tomkins theory of affects as base for non-conscious emotional reactions \cite{primer_affect_psychology}. Main criteria used for evaluation is activity level of CNS that could be steady, increasing, decreasing. Thus appraisal is described as following:
 
@@ -166,7 +166,7 @@ Non-conscious appraisals are associated with instinctive reactions layer of mode
  \item  \emph{Shame/humiliation} "affect is neither inherently punishing nor rewarding. It is like a computer’s reset button that rapidly clears the system and prepares us for whatever comes next... Without the innate affect shame-humiliation, we would not be motivated to take action when we are deprived of interesting and enjoyable things." This complex affect that appeared to be latest in evolutional process of humans is triggered when system was prevented to get new interesting information. Here, the social emotions of shame and humiliation are considered from the perspective of applicability outside a social context
 \end{enumerate}
 
-\subsection{Conscious appraisal}
+\subsection{Conscious Appraisal}
 
 Conscious appraisal has more complex self-emergent nature and is based on nurture and education of a child. We used \cite{appraisal_considered_as_a_process} as base for conscious appraisal process and derive patterns for Plutchik "Wheel of emotion" model of emotions. Please see for complete list of patterns (probabilistic predicates): https://github.com/development-team/2/blob/master/doc/emotions/affective%20and%20appraisal%20aspects/appraisal_coping_high_level_emotions_aspects.md#comprehensive-secs-structure.
 
@@ -179,21 +179,20 @@ Scherer uses 16 Stimulus Evaluation Checks (SEC) as basic blocks for whole appra
  \item  Normative significance including: internal standards check, external standards check
 \end{enumerate}
 
-
-
 \subsection{Coping}
 
 Marsella and Gratch identify two main types of coping strategies: emotion-focused and problem focused copings \cite{dont_worry_be_happy}. Tamres et al discovered relation of coping strategy selection with gender \cite{sex_differencies} based on oxytocin stress hormone activity that is amplified by estrogen. This effect could makes woman select more social coping strategies.
 The example of emotion-focused coping is placed in Emotional feedback loops section.
 Example of problem-focused coping is presented below:
 
-\begin{center}
-Figure 4. ...
-\end{center}
+\begin{figure}
+\vspace{2.5cm}
+\caption{Coping in Model of Six}
+\end{figure}
 
 Stimulus triggers affective appraisal and neuromodulation that switches emotional state of the system from serenity to fear. Affective appraisal in its turn triggers cognitive appraisal with appraisal deliberation. This cognition and deliberation makes system select problem-focused coping (planning) this selection is done under influence of reflective thinking. After planning is done system implements created plan and applies it over the environment. Effect in environment is appraised as new stimulus and could cause new neuromodulation that switches emotional state of the system back from fear to serenity.
 
-\section{High level and low level emotions}
+\section{High Level and Low Level Emotions}
 
 Robert Plutchik \cite{natureofemotions} identifies 8 higher emotions, see Emotional feedback loops section. We suppose that these emotions should be represented as mixtures of neuromodulator levels of basic emotions. According to Plutchik higher emotions are combinations of basic emotions is the same manner as colors are mixed. Taking in account Lovheim model of neuromodulator relative levels and Gaussian nature of relation of subjective emotion perception to objective brain response \cite{senticcomputing, neuralcorrelatesofhate} we propose following mapping of high level emotions on neuromodulator levels:
 
