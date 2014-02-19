@@ -21,17 +21,7 @@ This article is dedicated to emotional aspects of human thinking and influence o
 
 \section{Bases}
 
-Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neurochemical base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. This model is represented on the figure~\ref{3_bases}.
-
-\begin{figure}
-\begin{center}
- \includegraphics[height=3.5cm]{figure1_3_bases}
-\end{center}
-\caption{Theoretical bases of current work}
-\label{3_bases}
-\end{figure}
-
-The first base is the evolutionary psychology theory of Plutchik \cite{natureofemotions}. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six \cite{emotionmachine} thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" \cite{natureofemotions} as a framework for subjective conscious and high level emotions.
+Starting from the top we first reviewed several psychological models of emotions. Then we tried to understand the low level nature of emotions that brought us to neurochemical base of emotions. As we got the picture of human emotional processes we mapped them to cognitive architecture to gain AI basis. The first base is the evolutionary psychology theory of Plutchik \cite{natureofemotions}. We used Plutchik's main emotional process (feedback loops) and adapted it to Model of six \cite{emotionmachine} thinking levels of Marvin Minsky's cognitive architecture. We used "Wheel of emotions" \cite{natureofemotions} as a framework for subjective conscious and high level emotions.
 The second base is the theory of affects by Tomkins \cite{primer_affect_psychology, tomkins1, tomkins2, tomkins3}. We applied Tomkins theory of affects as the base for low level non-conscious emotions and low level appraisal.
 The neuro-physiological base is L\"{o}vheim theory of neuromodulatory base of emotions \cite{cubeofemotions}. We used "Cube of emotions" as the main low level ("hardware") mechanism of emotional processes.
 All theories described above were mapped to Marvin Minsky's cognitive architecture described in his book "The emotion machine" \cite{emotionmachine}.
@@ -62,14 +52,14 @@ We suppose that innate non-conscious affects and their appraisals could use diff
 
 Model presented above could be understood as the base for the subjective picture of emotions.
 
-An example of emotional feedback loops \cite{natureofemotions} represented in four layers of Marvin Minsky's "Model of six" is presented on the figure~\ref{orchestra_of_emotions}.
+Below is an example of emotional feedback loops \cite{natureofemotions} represented in four layers of Marvin Minsky's "Model of six".
 
 \begin{figure}
 %\vspace{10cm}
 \begin{center}
  \includegraphics[height=10cm, angle=90]{figure2_orchestra_of_emotions}
 \end{center}
-\caption{Orchestra of emotions \label{orchestra_of_emotions}}
+\caption{Orchestra of emotions}
 \end{figure}
 
 We use four of the six layers just for the purpose of this example. Self-conscious reflections layer could influence emotions; for example evaluation of self as not progressing could cause sorrow or even depression, but it was not shown on the diagram.
@@ -93,20 +83,12 @@ Hugo Lovheim in 2012 published his article "A new three-dimensional model for em
  \item  Shame/Humiliation
 \end{enumerate}
 
-From our perspective this is the base of objective non-conscious emotional brain reaction to stimulus. On the other hand according to ``Emotions: from brain to robot'' \cite{emotionsbraintorobot} there are four following neuronal systems involved in emotional processing:
-
-\begin{enumerate}
- \item  Spinal cord
- \item  Hypothalamus
- \item  Amygdala
- \item  Frontal cortex, cingulate cortex
-\end{enumerate}
-
+From our perspective this is the base of objective non-conscious emotional brain reaction to stimulus. On the other hand according to ``Emotions: from brain to robot'' \cite{emotionsbraintorobot} there are four following neuronal systems involved in emotional processing: spinal cord, hypothalamus, amygdala, frontal cortex, cingulate cortex. 
 We roughly correspond non-conscious instinctive reactions layer of "model of six" \cite{emotionmachine} with spinal cord, hypothalamus and amygdala, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal and cingulate cortex. This approach could be understood as subjective emotions to objective brain reaction mapping. This is fundamental for representation of emotional processes on computational system parameters.
 
 \section{Neuromodulators to Computing Parameters Mapping}
 
-Our understanding of the role of neuromodulators \cite{cubeofemotions, emotionsbraintorobot} is represented in following mapping of neuromodulators to computing system parameters, the figure~\ref{cube_of_parameters}.
+Our understanding of the role of neuromodulators \cite{cubeofemotions, emotionsbraintorobot} is represented in following mapping of neuromodulators to computing system parameters.
 
 \begin{figure}
 %\vspace{5cm}
@@ -114,26 +96,7 @@ Our understanding of the role of neuromodulators \cite{cubeofemotions, emotionsb
  \includegraphics[height=5cm]{figure3_cube_of_parameters}
 \end{center}
 \caption{Cube of parameters}
-\label{cube_of_parameters}
 \end{figure}
-
-\begin{enumerate}
- \item  Generic:
- \begin{enumerate}
-  \item  Computing power: noradrenaline
-  \item  Memory distribution (attention): noradrenaline
-  \item  Learning: serotonin, dopamine
-  \item  Storage: serotonin, dopamine
- \end{enumerate}
- \item  Decision making/reward processing:
- \begin{enumerate}
-  \item  Confidence: serotonin
-  \item  Satisfaction: serotonin
-  \item  Motivation, wanting: dopamine
-  \item  Risky choices inclination: noradrenaline
-  \item  Number of options to process: noradrenaline
- \end{enumerate}
-\end{enumerate}
 
 \subsection{Generic}
 
@@ -160,9 +123,9 @@ Noradrenaline makes system consider a smaller \emph{number of options} in width 
 
 This mapping is exhaustively described in ``Computational emotional thinking and virtual neurotransmitters'' \cite{computational_emotional_thinking}. It could be used as a low level ("hard-coded") model of emotional processes implemented in a spiking neuron model used to build a neural network and could be used as a basic framework for the emotion enabled systems \cite{whatdoesitmeanforcomputer}.
 
-\section{Appraisal and Coping}
+\section{Appraisal}
 
-Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes. We classify two types of appraisal processes mentioned above: non-conscious (quick, low level) and conscious (slower, high level) appraisals.
+Model described above operates in thinking processes environment, surrounded mainly by appraisal and coping processes \cite{dont_worry_be_happy}. We classify two types of appraisal processes mentioned above: non-conscious (quick, low level) and conscious (slower, high level) appraisals.
 
 \subsection{Non-conscious Appraisals}
 
@@ -191,22 +154,6 @@ Scherer uses 16 Stimulus Evaluation Checks (SEC) as basic blocks for whole appra
  \item  Normative significance including: internal standards check, external standards check
 \end{enumerate}
 
-\subsection{Coping}
-
-Marsella and Gratch identify two main types of coping strategies: emotion-focused and problem focused copings \cite{dont_worry_be_happy}. Tamres et al. discovered the relation of coping strategy selection with gender \cite{sex_differencies} based on oxytocin stress hormone activity that is amplified by estrogen. This effect could in principle bias woman to select more social coping strategies.
-The example of emotion-focused coping is laid out in Emotional feedback loops section.
-An example of problem-focused coping is presented on the figure~\ref{coping}.
-
-\begin{figure}
-\begin{center}
- \includegraphics[height=7cm, angle=90]{figure4_coping}
-\end{center}
-\caption{Problem-focused coping in Model of Six}
-\label{coping}
-\end{figure}
-
-Stimulus triggers affective appraisal and neuromodulation that switches the emotional state of the system from serenity to fear. Affective appraisal in its turn triggers cognitive appraisal with appraisal deliberation. This cognition and deliberation makes the system select problem-focused coping (planning) this selection is done under the influence of reflective thinking. After planning is done the system implements the created plan and applies it over the environment. The effect in the environment is appraised as a new stimulus and could cause new neuromodulation that switches the emotional state of the system back from fear to serenity.
-
 \section{High Level and Low Level Emotions}
 
 Robert Plutchik \cite{natureofemotions} identifies 8 higher emotions, see Emotional feedback loops section. We suppose that these emotions should be represented as mixtures of neuromodulator levels of basic emotions. According to Plutchik higher emotions are combinations of basic emotions is the same manner as colors are mixed. Taking in account L\"{o}vheim model of neuromodulator relative levels and Gaussian nature of relation of subjective emotion perception to objective brain response \cite{senticcomputing, neuralcorrelatesofhate} we propose the following mapping of high level emotions on neuromodulator levels:
@@ -223,63 +170,6 @@ Robert Plutchik \cite{natureofemotions} identifies 8 higher emotions, see Emotio
 \end{enumerate}
 
 This could be understood as a basic mechanism for self-reflective thinking and self-conscious reflection layer influence on neuromodulation. Current model contains two high level emotions that have identical levels of neuromodulators: awe and contempt. We address both of them in the geometrical center of "Cube of emotions" \cite{cubeofemotions} as intermediate states in between: fear and surprise for awe, and disgust and anger for contempt. One explanation is that the three dimensional model of Robert Plutchik "Wheel of emotions" contains only the basic emotions, all the high level, complex emotions are represented in 2 additional dimensions. Demonstrated approach produces a five dimensional model with axes: pleasantness (joy, sadness), attention (expectation, surprise), sensitivity (anger, fear), aptitude (acceptance, disgust) and strength of emotion \cite{senticcomputing} in contrast the neuromodulatory model of emotions of L\"{o}vheim contains only three dimensions which causes a lack of dimensionality in representing the five dimensional emotional model of Robert Plutchik. From neuroscience perspective some researchers mention the important role of opioids in emotions and it was not taken in account by L\"{o}vheim \cite{emotionsbraintorobot}.
-
-\section{Cognitive Architecture Analysis}
-
-To understand the current scientific state of affairs, existing models and implementations in actual code, and to find proper a base for our implementation we used the most traditional way: run a comparative analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures; we rather want to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with following set of criteria:
-
-\begin{enumerate}
- \item  Emotional criteria:
- \begin{enumerate}
-  \item  Cognitive Representation
-  \item  Cognition $\rightarrow$ Emotion
-  \item  Emotion Representation
-  \item  Emotion $\rightarrow$ Cognition
-  \item  Compatibility with Plutchick wheel of emotion
-  \item  Compatibility with Tomkins affects
-  \item  Compatibility with Picard criteria
- \end{enumerate}
- \item  Thinking levels:
- \begin{enumerate}
-  \item  Instinctive level
-  \item  Learned level
-  \item  Deliberative level
-  \item  Reflection level
- \end{enumerate}
- \item  AI components:
- \begin{enumerate}
-  \item  Attention
-  \item  Planning
-  \item  Motivation(implying Emotions)
-  \item  Common sense logic
-  \item  Reasoning
-  \item  Perception/understanding
-  \item  Memory:
-  \begin{enumerate}
-   \item  Constructive memory
-   \item  Reconstructive memory
-  \end{enumerate}
-  \item  Consciousness:
-  \begin{enumerate}
-   \item  Awareness
-   \item  Learning
-   \item  Anticipation
-   \item  Subjective experience
-  \end{enumerate}
-  \item  Intuition
-  \item  Creativity(imagination)
-  \item  Dream/sleep
- \end{enumerate}
- \item  Parallel processing
- \item  Self-emergent/self-organized
-\end{enumerate}
-
-Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture \cite{computationalmodelsemotionscognition}, thinking levels are the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seem to play important role and were not in previous groups. Exhaustive analysis is available on-line \footnote{Exhaustive analysis address: \url{https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md}}.
-
-We used primitive Boolean approach to measure if component or emotional criteria are in specific cognitive architecture. Cumulative table is available on-line\footnote{Cumulative table address: \url{https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md#cumulative-table}}, it contains simple summary of the Boolean criteria.
-
-According to our brief overview of the list of architectures most interesting are: ASMO, CLARION, DUAL, \emph{H-CogAff}, LIDA, \emph{Psi-Theory}, Soar, \emph{Society of mind} (*), WASABI, EMA, Hikonen, Shanahan.
-H-CogAff is more of philosophical framework to build the cognitive architecture, or a meta-architecture that has the most significant potential to be the most advanced at the moment and the least limited. Homeostatic principle of Psi-Theory seems to be ubiquitous in the psychological basis of emotions \cite{natureofemotions}. Society of mind needs further analysis and possible update of our criteria.
 
 \section{Conclusion}
 
@@ -322,16 +212,7 @@ We briefly describe the appraisal and the coping processes closely related to em
  \item  \emph{G(Aggressiveness Intensity)} = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
 \end{enumerate}
 
-The presented mapping completes neuromodulation centric low level emotion framework, it could be used in a spiking neural network to implement emotional thinking phenomena in computational systems. We suppose it could be useful framework in several domains:
-
-\begin{enumerate}
- \item  Advertisement
- \item  Emotional behavior simulations
- \item  Robotics
- \item  Intellectual assistants
- \item  Estimating human behaviour
- \item  Nursing software and robotics
-\end{enumerate}
+The presented mapping completes neuromodulation centric low level emotion framework, it could be used in a spiking neural network to implement emotional thinking phenomena in computational systems. We suppose it could be useful framework in several domains: from advertisement to nursing software and robotics.
 
 \section{Acknowledgment}
 
