@@ -3,7 +3,9 @@
 <node CREATED="1393485269965" ID="ID_1137201785" MODIFIED="1393485320703" TEXT="neuron">
 <node CREATED="1393485348016" ID="ID_91051987" MODIFIED="1393485377238" POSITION="right" TEXT="axon">
 <node CREATED="1393486446075" ID="ID_1398560650" MODIFIED="1393486449007" TEXT="axon terminal"/>
-<node CREATED="1393486455979" ID="ID_926622359" MODIFIED="1393486471545" TEXT="myelin sheath"/>
+<node CREATED="1393486455979" ID="ID_926622359" MODIFIED="1393572606514" TEXT="Schwann cells">
+<node CREATED="1393572585344" HGAP="22" ID="ID_1225442613" MODIFIED="1393572624419" TEXT="myelin sheath"/>
+</node>
 <node CREATED="1393486472748" ID="ID_444293619" MODIFIED="1393486488897" TEXT="node of Ranvier"/>
 <node CREATED="1393486796839" ID="ID_1661120941" MODIFIED="1393486800628" TEXT="axon hillock">
 <node CREATED="1393497246509" ID="ID_874494767" MODIFIED="1393497252921" TEXT="greatest density of voltage-dependent sodium channels"/>
@@ -33,8 +35,7 @@
       <span style="word-spacing: 0px; display: inline !important; font-style: normal; font-weight: normal; color: rgb(0, 0, 0); float: none; text-align: start; line-height: 19.200000762939453px; font-size: 12.727272033691406px; letter-spacing: normal; background-color: rgb(255, 255, 255); font-variant: normal; font-family: sans-serif; white-space: normal; text-indent: 0px; text-transform: none"><font face="sans-serif" size="12.727272033691406px" color="rgb(0, 0, 0)">However, more recent studies of the age of human neurons suggest that this process occurs only for a minority of cells, and the overwhelming majority of neurons comprising the</font></span><font face="sans-serif" size="12.727272033691406px" color="rgb(0, 0, 0)"><span class="Apple-converted-space">&#160;</span></font><a style="word-spacing: 0px; font-style: normal; background-repeat: repeat; color: rgb(11, 0, 128); font-weight: normal; background-image: none; text-decoration: none; text-align: start; line-height: 19.200000762939453px; font-size: 12.727272033691406px; letter-spacing: normal; background-color: rgb(255, 255, 255); background-position: initial initial; font-variant: normal; font-family: sans-serif; white-space: normal; text-indent: 0px; text-transform: none" href="https://en.wikipedia.org/wiki/Neocortex" title="Neocortex"><font face="sans-serif" size="12.727272033691406px" color="rgb(11, 0, 128)">neocortex</font></a><span class="Apple-converted-space"><font face="sans-serif" size="12.727272033691406px" color="rgb(0, 0, 0)">&#160;</font></span><font face="sans-serif" size="12.727272033691406px" color="rgb(0, 0, 0)"><span style="display: inline !important; word-spacing: 0px; font-style: normal; color: rgb(0, 0, 0); font-weight: normal; float: none; text-align: start; line-height: 19.200000762939453px; font-size: 12.727272033691406px; letter-spacing: normal; background-color: rgb(255, 255, 255); font-variant: normal; font-family: sans-serif; white-space: normal; text-indent: 0px; text-transform: none">were formed before birth and persist without replacement.</span></font><font face="sans-serif" color="rgb(11, 0, 128)"><span><sup style="word-spacing: 0px; font-style: normal; color: rgb(0, 0, 0); font-weight: normal; text-align: start; line-height: 1em; letter-spacing: normal; background-color: rgb(255, 255, 255); font-variant: normal; font-family: sans-serif; white-space: normal; text-indent: 0px; text-transform: none" class="reference" id="cite_ref-r1_2-1"><a style="background-repeat: repeat; color: rgb(11, 0, 128); background-image: none; text-decoration: none; background-position: initial initial; white-space: nowrap" href="https://en.wikipedia.org/wiki/Neuron#cite_note-r1-2">[</a></sup></span><sup style="word-spacing: 0px; font-style: normal; color: rgb(0, 0, 0); font-weight: normal; text-align: start; line-height: 1em; letter-spacing: normal; background-color: rgb(255, 255, 255); font-variant: normal; font-family: sans-serif; white-space: normal; text-indent: 0px; text-transform: none" class="reference" id="cite_ref-r1_2-1"><a style="background-repeat: repeat; color: rgb(11, 0, 128); background-image: none; text-decoration: none; background-position: initial initial; white-space: nowrap" href="https://en.wikipedia.org/wiki/Neuron#cite_note-r1-2">2<span>]</span></a></sup></font>
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node CREATED="1393501129623" ID="ID_1841000527" MODIFIED="1393501133259" POSITION="left" TEXT="classification">
@@ -49,6 +50,12 @@
 </node>
 <node CREATED="1393501304269" ID="ID_195145719" MODIFIED="1393501330547" TEXT="functional"/>
 <node CREATED="1393501345974" ID="ID_550111303" MODIFIED="1393501351676" TEXT="discharge patterns"/>
+</node>
+<node CREATED="1393572735251" ID="ID_1890554238" MODIFIED="1393572742128" POSITION="right" TEXT="synapse">
+<node CREATED="1393572747668" ID="ID_1011554272" MODIFIED="1393582922837" TEXT="inhibitory postsynaptic potential(IPSP)"/>
+<node CREATED="1393573132265" ID="ID_333871938" MODIFIED="1393582935157" TEXT="excitatory postsynaptic potential(IPSP)"/>
+<node CREATED="1393573167610" ID="ID_1375350015" MODIFIED="1393573182907" TEXT="summation of potentials"/>
+<node CREATED="1393593547901" ID="ID_1398635082" MODIFIED="1393593554074" TEXT="action potential"/>
 </node>
 </node>
 </map>
