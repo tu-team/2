@@ -1,5 +1,7 @@
 #Neuron analysis
 
+![Neuron](http://upload.wikimedia.org/wikipedia/commons/a/a9/Complete_neuron_cell_diagram_en.svg)
+
 ![Neuron mind map](neuron.mm.png)
 
 ##Other types of neurons
