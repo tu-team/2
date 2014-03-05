@@ -89,7 +89,9 @@ Amygdala passes the message to the hippocampus, which then routes the message to
 
 [List of animals by number of neurons](https://en.wikipedia.org/wiki/List_of_animals_by_number_of_neurons)
 
-###Cat brain
+###Cat intelligence
+
+[Cat intelligence](https://en.wikipedia.org/wiki/Cat_intelligence)
 
 ![Cat brain](https://upload.wikimedia.org/wikipedia/commons/e/e6/Cat_brain.jpg)
 
