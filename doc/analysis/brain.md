@@ -83,7 +83,72 @@ Amygdala passes the message to the hippocampus, which then routes the message to
 1. Left side - language based
 1. Right side - with no language
 1. Selective attention
+1. Delayed gratification
 
+1. Don't zone out
+1. Transform information
+
+
+###Neocortex
+
+1. Navigate the body
+1. Governs the senses
+1. Spatial awareness
+1. Motor skills
+1. Writing, typing
+1. Learning enhance neocortex
+
+###Preforontal cortex
+
+1. Personality
+1. Social situations behaviour
+1. Organize thoughts
+1. Goal orientedness
+1. 'Conscious' part
+1. Higher cognitive functions
+  2. Perception
+  2. Memory
+  2. Will
+1. Central bottleneck - 2 major things at a time
+1. No multitasking in brain
+1. Executive functions:
+  2. Impulse control
+  2. Good judgment
+  2. Weighting up alternatives
+  2. Deliberative practice
+1. Repetitions makes prefrontal cortex remember repetitive tasks
+
+
+###Broca's area
+
+1. Speech
+1. Language understanding
+1. Gestures
+1. Mirror neurons
+  2. Language generation
+  2. Language comprehension
+  2. Subtle cues - common sense ?
+
+
+###Motor cortex
+
+1. Motor skills
+1. Active all lifetime
+
+###Somatosensory cortex
+
+1. Touch
+1. Pain/pleasure
+1. Temperature
+
+###Auditory cortex
+
+1. Audio information
+1. Pick up most important voice from the crowd
+
+###Sensory cortex
+
+1. ...
 
 ##Evolution
 
