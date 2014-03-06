@@ -148,7 +148,16 @@ Amygdala passes the message to the hippocampus, which then routes the message to
 
 ###Sensory cortex
 
-1. ...
+1. Interprets information from 5 senses
+
+###Visual cortex
+
+1. Image recognition
+1. Distinguish colors
+
+###Occipital lobe
+
+
 
 ##Evolution
 
