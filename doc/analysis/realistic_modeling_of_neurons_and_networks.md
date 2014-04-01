@@ -18,3 +18,4 @@ The cerebellar cortical circuit is organized as a feedforward excitatory chain a
 
 ![cerebellar cortical circuit](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3812748/bin/153-166f11.jpg)
 
+![microzones](http://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=3812748_153-166f12.jpg)
