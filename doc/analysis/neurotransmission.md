@@ -12,7 +12,6 @@ Temporal summation means that the effects of impulses received at the same place
 
 Neurotransmission implies both a convergence and a divergence of information. First one neuron is influenced by many others, resulting in a convergence of input. When the neuron fires, the signal is sent to many other neurons, resulting in a divergence of output. Many other neurons are influenced by this neuron.[5]
 
-
 ##Cotransmission
 
 Cotransmission is the release of several types of neurotransmitters from a single nerve terminal.
