@@ -50,4 +50,4 @@ NMDA receptor (co-agonist), Kainate receptor, AMPA receptor
 
 ###Functions
 
-
+Glutamate is an important neurotransmitter that plays a key role in long-term potentiation and is important for learning and memory.[4]
