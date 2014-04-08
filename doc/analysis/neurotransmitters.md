@@ -51,3 +51,13 @@ NMDA receptor (co-agonist), Kainate receptor, AMPA receptor
 ###Functions
 
 Glutamate is an important neurotransmitter that plays a key role in long-term potentiation and is important for learning and memory.[4]
+
+Nerve impulses trigger release of glutamate from the pre-synaptic cell. In the opposing post-synaptic cell, glutamate receptors, such as the NMDA receptor or the AMPA receptor, bind glutamate and are activated. Because of its role in synaptic plasticity, glutamate is involved in cognitive functions like learning and memory in the brain.[10] The form of plasticity known as long-term potentiation takes place at glutamatergic synapses in the hippocampus, neocortex, and other parts of the brain. Glutamate works not only as a point-to-point transmitter but also through spill-over synaptic crosstalk between synapses in which summation of glutamate released from a neighboring synapse creates extrasynaptic signaling/volume transmission.[11] In addition, glutamate plays important roles in the regulation of growth cones and synaptogenesis during brain development as originally described by Mark Mattson.
+
+####Brain nonsynaptic glutamatergic signaling circuits
+
+Extracellular glutamate in Drosophila brains has been found to regulate postsynaptic glutamate receptor clustering, via a process involving receptor desensitization.[23] A gene expressed in glial cells actively transports glutamate into the extracellular space,[23] while, in the nucleus accumbens-stimulating group II metabotropic glutamate receptors, this gene was found to reduce extracellular glutamate levels.[24] This raises the possibility that this extracellular glutamate plays an "endocrine-like" role as part of a larger homeostatic system.
+
+####GABA precursor
+
+Glutamate also serves as the precursor for the synthesis of the inhibitory gamma-aminobutyric acid (GABA) in GABA-ergic neurons. This reaction is catalyzed by glutamate decarboxylase (GAD), which is most abundant in the cerebellum and pancreas.
