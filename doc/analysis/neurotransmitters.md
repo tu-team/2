@@ -61,3 +61,18 @@ Extracellular glutamate in Drosophila brains has been found to regulate postsyna
 ####GABA precursor
 
 Glutamate also serves as the precursor for the synthesis of the inhibitory gamma-aminobutyric acid (GABA) in GABA-ergic neurons. This reaction is catalyzed by glutamate decarboxylase (GAD), which is most abundant in the cerebellum and pancreas.
+
+
+##[Glycine](https://en.wikipedia.org/wiki/Glycine)
+
+###Category
+
+Small: Amino acids
+
+###Metabotropic
+
+Glycine receptor, NMDA receptor (co-agonist)
+
+###Functions
+
+Glycine is an **inhibitory** neurotransmitter in the central nervous system, especially in the spinal cord, brainstem, and retina. When glycine receptors are activated, chloride enters the neuron via ionotropic receptors, causing an Inhibitory postsynaptic potential (IPSP). Strychnine is a strong antagonist at ionotropic glycine receptors, whereas bicuculline is a weak one. Glycine is a required **co-agonist along with glutamate for NMDA receptors**. In contrast to the inhibitory role of glycine in the spinal cord, this behaviour is facilitated at the (NMDA) glutaminergic receptors which are excitatory.
