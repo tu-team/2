@@ -69,7 +69,7 @@ Glutamate also serves as the precursor for the synthesis of the inhibitory gamma
 
 Small: Amino acids
 
-###Metabotropic
+###Ionotropic
 
 Glycine receptor, NMDA receptor (co-agonist)
 
@@ -79,4 +79,14 @@ Glycine is an **inhibitory** neurotransmitter in the central nervous system, esp
 
 ##[D-serine](https://en.wikipedia.org/wiki/D-serine)
 
+###Category
 
+Small: Amino acids
+
+###Ionotropic
+
+NMDA receptor (co-agonist)
+
+###Functions
+
+D-Serine, synthesized in the brain by serine racemase from L-serine (its enantiomer), serves as both a neurotransmitter and a gliotransmitter by coactivating NMDA receptors, making them able to open if they then also bind glutamate. D-serine is a potent agonist at the glycine site of the NMDA-type glutamate receptor. For the receptor to open, glutamate and either glycine or D-serine must bind to it. In fact, D-serine is a more potent agonist at the glycine site on the NMDAR than glycine itself. D-serine was only thought to exist in bacteria until relatively recently; it was the second D amino acid discovered to naturally exist in humans, present as a signalling molecule in the brain, soon after the discovery of D-aspartate. Had D amino acids been discovered in humans sooner, the glycine site on the NMDA receptor might instead be named the D-serine site.[9]
