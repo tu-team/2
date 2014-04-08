@@ -76,3 +76,7 @@ Glycine receptor, NMDA receptor (co-agonist)
 ###Functions
 
 Glycine is an **inhibitory** neurotransmitter in the central nervous system, especially in the spinal cord, brainstem, and retina. When glycine receptors are activated, chloride enters the neuron via ionotropic receptors, causing an Inhibitory postsynaptic potential (IPSP). Strychnine is a strong antagonist at ionotropic glycine receptors, whereas bicuculline is a weak one. Glycine is a required **co-agonist along with glutamate for NMDA receptors**. In contrast to the inhibitory role of glycine in the spinal cord, this behaviour is facilitated at the (NMDA) glutaminergic receptors which are excitatory.
+
+##[D-serine](https://en.wikipedia.org/wiki/D-serine)
+
+
