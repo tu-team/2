@@ -22,16 +22,91 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Acetylcholine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#K"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#M1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#M4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Na"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#attention"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#durations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#function"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#gliotransmitter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ionotropic"/>
+        <Class IRI="#ions"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#metabotropic"/>
+        <Class IRI="#layers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#medium_spiny_neurons"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#memory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#neurons"/>
     </Declaration>
     <Declaration>
         <Class IRI="#neurotransmitter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#plasticity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pyramidal_cells"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#receptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reward"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tonic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#transient"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#agonist"/>
@@ -40,25 +115,284 @@
         <ObjectProperty IRI="#antogonist"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#blocks"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#co-agonist"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#co-transmitter"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isExcitator"/>
+        <ObjectProperty IRI="#during"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isInhibitor"/>
+        <ObjectProperty IRI="#excitator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#exites"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inhibitor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inhibits"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ionotropic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#metabotropic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#on"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#permeable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#via"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#ionotropic"/>
+        <Class IRI="#2"/>
+        <Class IRI="#layers"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3"/>
+        <Class IRI="#layers"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#4"/>
+        <Class IRI="#layers"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#5"/>
+        <Class IRI="#layers"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
         <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#metabotropic"/>
-        <Class IRI="#neurotransmitter"/>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#during"/>
+                <Class IRI="#transient"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#inhibits"/>
+                <Class IRI="#pyramidal_cells"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#exites"/>
+                <Class IRI="#pyramidal_cells"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#on"/>
+                <Class IRI="#2"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#on"/>
+                <Class IRI="#3"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#on"/>
+                <Class IRI="#5"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#exites"/>
+                <Class IRI="#pyramidal_cells"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#via"/>
+                <Class IRI="#M1"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#inhibits"/>
+                <Class IRI="#medium_spiny_neurons"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#on"/>
+                <Class IRI="#4"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#permeable"/>
+                <Class IRI="#Ca"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#permeable"/>
+                <Class IRI="#K"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#permeable"/>
+                <Class IRI="#Na"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#via"/>
+                <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#blocks"/>
+            <Class IRI="#K"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#attention"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#memory"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#plasticity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#reward"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inhibitor"/>
+            <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ionotropic"/>
+            <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Acetylcholine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#metabotropic"/>
+            <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ca"/>
+        <Class IRI="#ions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cl"/>
+        <Class IRI="#ions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#K"/>
+        <Class IRI="#ions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#M1"/>
+        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#M4"/>
+        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Na"/>
+        <Class IRI="#ions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#attention"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#medium_spiny_neurons"/>
+        <Class IRI="#neurons"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#memory"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#plasticity"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pyramidal_cells"/>
+        <Class IRI="#neurons"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reward"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tonic"/>
+        <Class IRI="#durations"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#transient"/>
+        <Class IRI="#durations"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#blocks"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#inhibits"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#permeable"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#via"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
 </Ontology>
 
 
