@@ -22,6 +22,15 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#ionotropic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#metabotropic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#neurotransmitter"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#co-transmitter"/>
     </Declaration>
     <Declaration>
@@ -30,6 +39,14 @@
     <Declaration>
         <ObjectProperty IRI="#isInhibitor"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#ionotropic"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#metabotropic"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
 </Ontology>
 
 
