@@ -40,7 +40,13 @@
         <Class IRI="#Ca"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Carbon_monoxide"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Cl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Heme_bound_to_potassium_channels"/>
     </Declaration>
     <Declaration>
         <Class IRI="#K"/>
@@ -318,8 +324,29 @@
         <Class IRI="#ions"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Carbon_monoxide"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Carbon_monoxide"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ionotropic"/>
+                <Class IRI="#Heme_bound_to_potassium_channels"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#permeable"/>
+                <Class IRI="#K"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Cl"/>
         <Class IRI="#ions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heme_bound_to_potassium_channels"/>
+        <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#K"/>

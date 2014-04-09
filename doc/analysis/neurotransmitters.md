@@ -6,7 +6,7 @@ https://en.wikipedia.org/wiki/Neurotransmitter
 
 ###Category
 
-Small: Amino acids (Arg)|
+Small: Amino acids (Arg)
 
 ###Metabotropic
 
@@ -137,3 +137,18 @@ One well-supported function of acetylcholine (ACh) in cortex is increased respon
 
 ACh has been implicated in the reporting of expected uncertainty in the environment [28] based both on the suggested functions listed above and results recorded while subjects perform a behavioral cuing task. Reaction time difference between correctly cued trials and incorrectly cued trials, called the cue validity, was found to vary inversely with ACh levels in primates with pharmacologically (e.g. Witte et al., 1997) and surgically (e.g. Voytko et al., 1994) altered levels of ACh.[29][30] The result was also found in Alzheimer's disease patients (Parasuraman et al., 1992) and smokers after nicotine (an ACh agonist) consumption.[31][32] The inverse covariance is consistent with the interpretation of ACh as representing expected uncertainty in the environment, further supporting this claim.
 
+##[Carbon monoxide](https://en.wikipedia.org/wiki/Carbon_monoxide)
+
+###Category
+
+Gas
+
+###Ionotropic
+
+Heme bound to potassium channels
+
+###Functions
+
+ Following the first report that carbon monoxide is a normal neurotransmitter in 1993,[4][5] as well as one of three gases that naturally modulate inflammatory responses in the body (the other two being nitric oxide and hydrogen sulfide), carbon monoxide has received a great deal of clinical attention as a biological regulator.
+
+There is a theory that, in some nerve cell synapses, when long-term memories are being laid down, the receiving cell makes carbon monoxide, which back-transmits to the transmitting cell, telling it to transmit more readily in future. Some such nerve cells have been shown to contain guanylate cyclase, an enzyme that is activated by carbon monoxide.[5]
