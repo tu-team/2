@@ -70,6 +70,12 @@
         <Class IRI="#Nicotinic_acetylcholine_receptor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#P2X"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#P2Y"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#attention"/>
     </Declaration>
     <Declaration>
@@ -327,6 +333,32 @@
         <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Adenosine_triphosphate"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ionotropic"/>
+                <Class IRI="#P2X"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#permeable"/>
+                <Class IRI="#Ca"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Adenosine_triphosphate"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#metabotropic"/>
+                <Class IRI="#P2Y"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#permeable"/>
+                <Class IRI="#Ca"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Ca"/>
         <Class IRI="#ions"/>
     </SubClassOf>
@@ -377,6 +409,14 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P2X"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P2Y"/>
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>

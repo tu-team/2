@@ -155,3 +155,34 @@ There is a theory that, in some nerve cell synapses, when long-term memories are
 
 ##[Adenosine triphosphate](https://en.wikipedia.org/wiki/Adenosine_triphosphate)
 
+###Category
+
+Gas
+
+###Metabotropic
+
+P2Y12
+
+###Ionotropic
+
+P2X receptor
+
+###Functions
+
+####Extracellular signaling
+
+ATP is also a signalling molecule. ATP, ADP, or adenosine are recognised by purinergic receptors. Purinoreceptors might be the most abundant receptors in mammalian tissues.[34]
+
+In humans, this signalling role is important in both the central and peripheral nervous system.[35] Activity-dependent release of ATP from synapses, axons and glia activates purinergic membrane receptors known as P2.[36] The P2Y receptors are metabotropic, i.e. G protein-coupled and modulate mainly intracellular calcium and sometimes cyclic AMP levels. Though named between P2Y1 and P2Y15, only nine members of the P2Y family have been cloned, and some are only related through weak homology and several (P2Y5, P2Y7, P2Y9, P2Y10) do not function as receptors that raise cytosolic calcium. The P2X ionotropic receptor subgroup comprises seven members (P2X1–P2X7), which are ligand-gated Ca2+ -permeable ion channels that open when bound to an extracellular purine nucleotide.
+
+In contrast to P2 receptors (agonist order ATP > ADP > AMP > ADO), purinergic nucleoside triphosphates like ATP are not strong agonists of P1 receptors, which are strongly activated by adenosine and other nucleosides (ADO > AMP > ADP > ATP).
+
+In the CNS, adenosine has multiple functions, such as modulation of neural development, neuron and glial signalling and the control of innate and adaptive immune systems.[34]
+
+####Intracellular signaling
+
+ATP is critical in signal transduction processes. It is used by kinases as the source of phosphate groups in their phosphate transfer reactions. Kinase activity on substrates such as proteins or membrane lipids are a common form of signal transduction. Phosphorylation of a protein by a kinase can activate this cascade such as the mitogen-activated protein kinase cascade.[38]
+
+ATP is also used by adenylate cyclase and is transformed to the second messenger molecule cyclic AMP, which is involved in triggering calcium signals by the release of calcium from intracellular stores.[39] This form of signal transduction is particularly important in brain function, although it is involved in the regulation of a multitude of other cellular processes.[40]
+
+[Adenosine triphosphate on P2X and P2Y](https://upload.wikimedia.org/wikipedia/commons/f/f6/Purinergic_signalling.jpg)
