@@ -152,3 +152,6 @@ Heme bound to potassium channels
  Following the first report that carbon monoxide is a normal neurotransmitter in 1993,[4][5] as well as one of three gases that naturally modulate inflammatory responses in the body (the other two being nitric oxide and hydrogen sulfide), carbon monoxide has received a great deal of clinical attention as a biological regulator.
 
 There is a theory that, in some nerve cell synapses, when long-term memories are being laid down, the receiving cell makes carbon monoxide, which back-transmits to the transmitting cell, telling it to transmit more readily in future. Some such nerve cells have been shown to contain guanylate cyclase, an enzyme that is activated by carbon monoxide.[5]
+
+##[Adenosine triphosphate](https://en.wikipedia.org/wiki/Adenosine_triphosphate)
+

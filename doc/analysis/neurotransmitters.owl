@@ -37,6 +37,9 @@
         <Class IRI="#Acetylcholine"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Adenosine_triphosphate"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Ca"/>
     </Declaration>
     <Declaration>
@@ -318,6 +321,10 @@
             <ObjectProperty IRI="#metabotropic"/>
             <Class IRI="#Muscarinic_acetylcholine_receptor"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Adenosine_triphosphate"/>
+        <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Ca"/>
