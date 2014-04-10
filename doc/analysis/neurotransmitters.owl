@@ -109,6 +109,9 @@
         <Class IRI="#function"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#gas"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#gliotransmitter"/>
     </Declaration>
     <Declaration>
@@ -130,6 +133,9 @@
         <Class IRI="#neurotransmitter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#other"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#plasticity"/>
     </Declaration>
     <Declaration>
@@ -143,6 +149,15 @@
     </Declaration>
     <Declaration>
         <Class IRI="#reward"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#small_acetylcholine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#small_amino_acid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#small_monoamine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#tonic"/>
@@ -216,7 +231,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
-        <Class IRI="#neurotransmitter"/>
+        <Class IRI="#small_acetylcholine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
@@ -357,7 +372,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Adenosine_triphosphate"/>
-        <Class IRI="#neurotransmitter"/>
+        <Class IRI="#other"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Adenosine_triphosphate"/>
@@ -391,7 +406,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Carbon_monoxide"/>
-        <Class IRI="#neurotransmitter"/>
+        <Class IRI="#gas"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Carbon_monoxide"/>
@@ -412,7 +427,14 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
-        <Class IRI="#neurotransmitter"/>
+        <Class IRI="#small_monoamine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#reward"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
@@ -427,7 +449,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABA"/>
-        <Class IRI="#neurotransmitter"/>
+        <Class IRI="#small_amino_acid"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABA"/>
@@ -546,12 +568,20 @@
         <Class IRI="#function"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#gas"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#medium_spiny_cells"/>
         <Class IRI="#neurons"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#memory"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#other"/>
+        <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plasticity"/>
@@ -564,6 +594,18 @@
     <SubClassOf>
         <Class IRI="#reward"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#small_acetylcholine"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#small_amino_acid"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#small_monoamine"/>
+        <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#tonic"/>

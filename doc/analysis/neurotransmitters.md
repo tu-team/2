@@ -109,6 +109,10 @@ D-Serine, synthesized in the brain by serine racemase from L-serine (its enantio
 
 ##[Acetylcholine](https://en.wikipedia.org/wiki/Acetylcholine)
 
+###Category
+
+Small: Acetylcholine
+
 ###Metabotropic
 
 Muscarinic acetylcholine receptor
@@ -202,3 +206,6 @@ ATP is critical in signal transduction processes. It is used by kinases as the s
 ATP is also used by adenylate cyclase and is transformed to the second messenger molecule cyclic AMP, which is involved in triggering calcium signals by the release of calcium from intracellular stores.[39] This form of signal transduction is particularly important in brain function, although it is involved in the regulation of a multitude of other cellular processes.[40]
 
 [Adenosine triphosphate on P2X and P2Y](https://upload.wikimedia.org/wikipedia/commons/f/f6/Purinergic_signalling.jpg)
+
+##[Dopamine](https://en.wikipedia.org/wiki/Dopamine)
+
