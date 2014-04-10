@@ -49,6 +49,12 @@
         <Class IRI="#Cl"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Dopamine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dopamine_receptor"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GABA"/>
     </Declaration>
     <Declaration>
@@ -403,6 +409,21 @@
     <SubClassOf>
         <Class IRI="#Cl"/>
         <Class IRI="#ions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#metabotropic"/>
+            <Class IRI="#Dopamine_receptor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine_receptor"/>
+        <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABA"/>

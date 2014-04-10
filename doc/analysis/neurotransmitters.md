@@ -34,6 +34,22 @@ NMDA receptor
 
 Aspartate (the conjugate base of aspartic acid) stimulates NMDA receptors, though not as strongly as the amino acid neurotransmitter glutamate does.[6]
 
+##[Gamma-aminobutyric acid](https://en.wikipedia.org/wiki/Gamma-aminobutyric_acid )
+
+###Category
+
+Small: Amino acids
+
+###Metabotropic
+
+GABAB receptor
+
+###Ionotropic
+
+GABAA, GABAA-ρ receptor
+
+###[Functions](gaba.md)
+
 ##[Glutamate](https://en.wikipedia.org/wiki/Glutamate)
 
 ###Category
