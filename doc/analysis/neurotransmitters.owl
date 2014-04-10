@@ -97,10 +97,25 @@
         <Class IRI="#P2Y"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Pituitary_gland"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#arcuate_nucleus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#arousal"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#attention"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#basal_ganglia"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#channel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#decision_making"/>
     </Declaration>
     <Declaration>
         <Class IRI="#durations"/>
@@ -115,6 +130,12 @@
         <Class IRI="#gliotransmitter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#globus_pallidus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hypothalamus"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ions"/>
     </Declaration>
     <Declaration>
@@ -127,16 +148,37 @@
         <Class IRI="#memory"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#midbrain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#motivation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#motor_control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#neuromodulator"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#neurons"/>
     </Declaration>
     <Declaration>
         <Class IRI="#neurotransmitter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#nucleus_accumbens"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#other"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#periventricular_nucleus"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#plasticity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#prefrontal_cortex"/>
     </Declaration>
     <Declaration>
         <Class IRI="#proteins"/>
@@ -146,6 +188,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#receptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#regions"/>
     </Declaration>
     <Declaration>
         <Class IRI="#reward"/>
@@ -160,10 +205,25 @@
         <Class IRI="#small_monoamine"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#spinal_cord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#striatum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#substantia_nigra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#subthalamic_nucleus"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#tonic"/>
     </Declaration>
     <Declaration>
         <Class IRI="#transient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ventral_tegmental_area"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#agonist"/>
@@ -190,7 +250,10 @@
         <ObjectProperty IRI="#exites"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasFunction"/>
+        <ObjectProperty IRI="#has_function"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#in"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#inhibitor"/>
@@ -211,7 +274,13 @@
         <ObjectProperty IRI="#permeable"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#projects"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#via"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#number_of_neurons"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#2"/>
@@ -324,28 +393,28 @@
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasFunction"/>
+            <ObjectProperty IRI="#has_function"/>
             <Class IRI="#attention"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasFunction"/>
+            <ObjectProperty IRI="#has_function"/>
             <Class IRI="#memory"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasFunction"/>
+            <ObjectProperty IRI="#has_function"/>
             <Class IRI="#plasticity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasFunction"/>
+            <ObjectProperty IRI="#has_function"/>
             <Class IRI="#reward"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -427,13 +496,87 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
+        <Class IRI="#neuromodulator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
         <Class IRI="#small_monoamine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasFunction"/>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#arousal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#attention"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#decision_making"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#motivation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#motor_control"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
             <Class IRI="#reward"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#in"/>
+            <Class IRI="#arcuate_nucleus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#in"/>
+            <Class IRI="#hypothalamus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#in"/>
+            <Class IRI="#periventricular_nucleus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#in"/>
+            <Class IRI="#substantia_nigra"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#in"/>
+            <Class IRI="#ventral_tegmental_area"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -442,6 +585,13 @@
             <ObjectProperty IRI="#metabotropic"/>
             <Class IRI="#Dopamine_receptor"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <DataExactCardinality cardinality="400000">
+            <DataProperty IRI="#number_of_neurons"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine_receptor"/>
@@ -564,12 +714,47 @@
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Pituitary_gland"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#arcuate_nucleus"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#arousal"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#attention"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#basal_ganglia"/>
+        <Class IRI="#midbrain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#decision_making"/>
         <Class IRI="#function"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gas"/>
         <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#globus_pallidus"/>
+        <Class IRI="#basal_ganglia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hypothalamus"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hypothalamus"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#spinal_cord"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#medium_spiny_cells"/>
@@ -580,12 +765,40 @@
         <Class IRI="#function"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#midbrain"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#motivation"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#motor_control"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#neuromodulator"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nucleus_accumbens"/>
+        <Class IRI="#midbrain"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#other"/>
         <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#periventricular_nucleus"/>
+        <Class IRI="#hypothalamus"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#plasticity"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#prefrontal_cortex"/>
+        <Class IRI="#midbrain"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#pyramidal_cells"/>
@@ -608,12 +821,67 @@
         <Class IRI="#neurotransmitter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#spinal_cord"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#striatum"/>
+        <Class IRI="#basal_ganglia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#substantia_nigra"/>
+        <Class IRI="#basal_ganglia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#substantia_nigra"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#globus_pallidus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#substantia_nigra"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#striatum"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#substantia_nigra"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#subthalamic_nucleus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#subthalamic_nucleus"/>
+        <Class IRI="#basal_ganglia"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#tonic"/>
         <Class IRI="#durations"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#transient"/>
         <Class IRI="#durations"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ventral_tegmental_area"/>
+        <Class IRI="#midbrain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ventral_tegmental_area"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#nucleus_accumbens"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ventral_tegmental_area"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#prefrontal_cortex"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#blocks"/>
@@ -639,10 +907,24 @@
         <ObjectProperty IRI="#permeable"/>
         <Class IRI="#ions"/>
     </ObjectPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#number_of_neurons"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Ca</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">potassium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pituitary_gland</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hypophysis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#in</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">in the region</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -659,6 +941,11 @@ inhibits ions</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#on</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">on ion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#projects</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">projects on to the other region</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

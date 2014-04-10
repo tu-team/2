@@ -209,3 +209,16 @@ ATP is also used by adenylate cyclase and is transformed to the second messenger
 
 ##[Dopamine](https://en.wikipedia.org/wiki/Dopamine)
 
+###Functions
+
+In the brain, dopamine functions as a neurotransmitter—a chemical released by nerve cells to send signals to other nerve cells. The brain includes several distinct dopamine systems, one of which plays a major role in reward-motivated behavior. Most types of reward increase the level of dopamine in the brain, and a variety of addictive drugs increase dopamine neuronal activity. Other brain dopamine systems are involved in motor control and in controlling the release of several other important hormones.
+
+Dopaminergic neurons (i.e., neurons whose primary neurotransmitter is dopamine) are comparatively few in number — a total of around 400,000 in the human brain[1] — and their cell bodies are confined to a few relatively small brain areas, but they send projections to many other brain areas and exert powerful effects on their targets. These dopaminergic cell groups were first mapped in 1964 by Annica Dahlström and Kjell Fuxe, who assigned them labels starting with the letter "A" (for "aminergic").[2] In their scheme, areas A1 through A7 contain the neurotransmitter norepinephrine, whereas A8 through A14 contain dopamine. Here is a list of the dopaminergic areas they identified:
+
+1. substantia nigra
+1. ventral tegmental area
+1. hypothalamus
+1. arcuate nucleus
+1. zona incerta
+
+![Dopamine pathway](https://upload.wikimedia.org/wikipedia/commons/d/de/Dopamine_pathways.svg)
