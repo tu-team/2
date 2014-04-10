@@ -49,7 +49,22 @@
         <Class IRI="#Cl"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Heme_bound_to_potassium_channels"/>
+        <Class IRI="#GABA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GABAA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GABAA-ρ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GABAB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#G_protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Heme_bound_to_potassium"/>
     </Declaration>
     <Declaration>
         <Class IRI="#K"/>
@@ -61,13 +76,13 @@
         <Class IRI="#M4"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        <Class IRI="#Muscarinic_acetylcholine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Na"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+        <Class IRI="#Nicotinic_acetylcholine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#P2X"/>
@@ -77,6 +92,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#attention"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#channel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#durations"/>
@@ -94,7 +112,7 @@
         <Class IRI="#layers"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#medium_spiny_neurons"/>
+        <Class IRI="#medium_spiny_cells"/>
     </Declaration>
     <Declaration>
         <Class IRI="#memory"/>
@@ -107,6 +125,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#plasticity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#proteins"/>
     </Declaration>
     <Declaration>
         <Class IRI="#pyramidal_cells"/>
@@ -243,7 +264,7 @@
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#inhibits"/>
-                <Class IRI="#medium_spiny_neurons"/>
+                <Class IRI="#medium_spiny_cells"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#on"/>
@@ -268,7 +289,7 @@
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#via"/>
-                <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+                <Class IRI="#Nicotinic_acetylcholine"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </SubClassOf>
@@ -311,21 +332,21 @@
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#inhibitor"/>
-            <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+            <Class IRI="#Muscarinic_acetylcholine"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#ionotropic"/>
-            <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+            <Class IRI="#Nicotinic_acetylcholine"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#metabotropic"/>
-            <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+            <Class IRI="#Muscarinic_acetylcholine"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -371,7 +392,7 @@
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#ionotropic"/>
-                <Class IRI="#Heme_bound_to_potassium_channels"/>
+                <Class IRI="#Heme_bound_to_potassium"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#permeable"/>
@@ -384,8 +405,88 @@
         <Class IRI="#ions"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Heme_bound_to_potassium_channels"/>
+        <Class IRI="#GABA"/>
+        <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inhibits"/>
+            <Class IRI="#Cl"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inhibits"/>
+            <Class IRI="#K"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inhibits"/>
+            <Class IRI="#medium_spiny_cells"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ionotropic"/>
+            <Class IRI="#GABAA"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ionotropic"/>
+            <Class IRI="#GABAA-ρ"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#metabotropic"/>
+            <Class IRI="#GABAB"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABAA"/>
         <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABAA-ρ"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABAB"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABAB"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ionotropic"/>
+            <Class IRI="#G_protein"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#G_protein"/>
+        <Class IRI="#proteins"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heme_bound_to_potassium"/>
+        <Class IRI="#channel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heme_bound_to_potassium"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heme_bound_to_potassium"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#permeable"/>
+            <Class IRI="#K"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#K"/>
@@ -393,14 +494,14 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#M1"/>
-        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        <Class IRI="#Muscarinic_acetylcholine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#M4"/>
-        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        <Class IRI="#Muscarinic_acetylcholine"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Muscarinic_acetylcholine_receptor"/>
+        <Class IRI="#Muscarinic_acetylcholine"/>
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
@@ -408,7 +509,7 @@
         <Class IRI="#ions"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Nicotinic_acetylcholine_receptor"/>
+        <Class IRI="#Nicotinic_acetylcholine"/>
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
@@ -424,7 +525,7 @@
         <Class IRI="#function"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#medium_spiny_neurons"/>
+        <Class IRI="#medium_spiny_cells"/>
         <Class IRI="#neurons"/>
     </SubClassOf>
     <SubClassOf>
@@ -467,6 +568,40 @@
         <ObjectProperty IRI="#via"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#inhibitor"/>
+        <Class IRI="#receptor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#permeable"/>
+        <Class IRI="#ions"/>
+    </ObjectPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ca</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">potassium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#inhibitor</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">inhibitor for receptors</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#inhibits</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">inhibits neurons
+inhibits ions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#on</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">on ion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#via</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">via receptor</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
