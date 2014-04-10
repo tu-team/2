@@ -97,9 +97,6 @@
         <Class IRI="#P2Y"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Pituitary_gland"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#arcuate_nucleus"/>
     </Declaration>
     <Declaration>
@@ -175,6 +172,9 @@
         <Class IRI="#periventricular_nucleus"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#pituitary_gland"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#plasticity"/>
     </Declaration>
     <Declaration>
@@ -224,6 +224,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ventral_tegmental_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#zona_incerta"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#agonist"/>
@@ -582,6 +585,13 @@
     <SubClassOf>
         <Class IRI="#Dopamine"/>
         <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#in"/>
+            <Class IRI="#zona_incerta"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#metabotropic"/>
             <Class IRI="#Dopamine_receptor"/>
         </ObjectSomeValuesFrom>
@@ -714,12 +724,15 @@
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Pituitary_gland"/>
+        <Class IRI="#arcuate_nucleus"/>
         <Class IRI="#regions"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#arcuate_nucleus"/>
-        <Class IRI="#regions"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#pituitary_gland"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#arousal"/>
@@ -791,6 +804,10 @@
     <SubClassOf>
         <Class IRI="#periventricular_nucleus"/>
         <Class IRI="#hypothalamus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pituitary_gland"/>
+        <Class IRI="#regions"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plasticity"/>
@@ -883,6 +900,17 @@
             <Class IRI="#prefrontal_cortex"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#zona_incerta"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#zona_incerta"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#projects"/>
+            <Class IRI="#hypothalamus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#blocks"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
@@ -918,11 +946,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Pituitary_gland</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">hypophysis</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#in</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">in the region</Literal>
     </AnnotationAssertion>
@@ -941,6 +964,11 @@ inhibits ions</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#on</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">on ion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pituitary_gland</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hypophysis</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
