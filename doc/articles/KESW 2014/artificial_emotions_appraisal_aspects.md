@@ -1,6 +1,9 @@
 #Artificial emotions and appraisal aspects
 
 ##Introduction
+
+Latest biggest neural network was build by RIKEN and contains 1.7 billion of neurons.
+
 ##Neuromodulators to computing system parameters mapping
 ##Cognitive bases
 ##Emotional processes
