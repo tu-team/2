@@ -15,10 +15,16 @@ We suppose that it could be considered as base of computational emotional thinki
 1. Estimating human behaviour
 1. Nursing software and robotics.
 
-##Neuromodulators to computing system parameters mapping
 ##Cognitive bases
+
+
+
 ##Emotional processes
+
 ##Neuromodulatory bases of emotions
+
+##Neuromodulators to computing system parameters mapping
+
 ##Appraisal aspects
 ###Non-conscious appraisal
 ###Conscious appraisal
