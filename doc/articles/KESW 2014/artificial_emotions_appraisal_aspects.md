@@ -25,6 +25,8 @@ We suppose that it could be considered as base of computational emotional thinki
 
 ##Neuromodulators to computing system parameters mapping
 
+![Computing system parameters mapping](figure3_cube_of_parameters.png)
+
 ##Appraisal aspects
 ###Non-conscious appraisal
 ###Conscious appraisal
