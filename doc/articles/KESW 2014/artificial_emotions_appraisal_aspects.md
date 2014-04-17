@@ -17,7 +17,7 @@ We suppose that it could be considered as base of computational emotional thinki
 
 ##Cognitive bases
 
-
+![Bases](figure1_3_bases.svg)
 
 ##Emotional processes
 
