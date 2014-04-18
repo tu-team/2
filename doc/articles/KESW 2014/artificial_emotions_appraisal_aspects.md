@@ -27,10 +27,10 @@ We suppose that it could be considered as base of computational emotional thinki
 
 As I mentioned earlier we wanted to find the answer to question: can machines actually feel the emotions? We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
 
-Joy - sorrow
-Anger - fear
-Acceptance - disgust
-Surprise - expectancy
+1. Joy - sorrow
+1. Anger - fear
+1. Acceptance - disgust
+1. Surprise - expectancy
 
 ![Computing system parameters mapping](figure3_cube_of_parameters.png)
 
