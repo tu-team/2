@@ -49,6 +49,12 @@
         <Class IRI="#Cl"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#D1_like"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#D2_like"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Dopamine"/>
     </Declaration>
     <Declaration>
@@ -65,6 +71,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#GABAB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GABA_receptor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#G_protein"/>
@@ -97,6 +106,9 @@
         <Class IRI="#P2Y"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#adenylate_cyclase"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#arcuate_nucleus"/>
     </Declaration>
     <Declaration>
@@ -109,6 +121,12 @@
         <Class IRI="#basal_ganglia"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#cAMP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cerebral_cortex"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#channel"/>
     </Declaration>
     <Declaration>
@@ -116,6 +134,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#durations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#enzyme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#frontal_lobe"/>
     </Declaration>
     <Declaration>
         <Class IRI="#function"/>
@@ -133,16 +157,28 @@
         <Class IRI="#hypothalamus"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#inonotropic"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ions"/>
     </Declaration>
     <Declaration>
         <Class IRI="#layers"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#liking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#longterm_memory"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#medium_spiny_cells"/>
     </Declaration>
     <Declaration>
         <Class IRI="#memory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#metabotropic"/>
     </Declaration>
     <Declaration>
         <Class IRI="#midbrain"/>
@@ -166,7 +202,13 @@
         <Class IRI="#nucleus_accumbens"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#occipital_lobe"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#other"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#parietal_lobe"/>
     </Declaration>
     <Declaration>
         <Class IRI="#periventricular_nucleus"/>
@@ -196,6 +238,12 @@
         <Class IRI="#reward"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#second_messenger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#seeking"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#small_acetylcholine"/>
     </Declaration>
     <Declaration>
@@ -217,6 +265,9 @@
         <Class IRI="#subthalamic_nucleus"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#temporal_lobe"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#tonic"/>
     </Declaration>
     <Declaration>
@@ -226,7 +277,13 @@
         <Class IRI="#ventral_tegmental_area"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#working_memory"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#zona_incerta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#activates"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#agonist"/>
@@ -238,16 +295,19 @@
         <ObjectProperty IRI="#blocks"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#by"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#co-agonist"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#co-transmitter"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#during"/>
+        <ObjectProperty IRI="#decreases"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#excitator"/>
+        <ObjectProperty IRI="#during"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#exites"/>
@@ -259,16 +319,16 @@
         <ObjectProperty IRI="#in"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#inhibitor"/>
+        <ObjectProperty IRI="#increases"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#inhibits"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#ionotropic"/>
+        <ObjectProperty IRI="#is_ionotropic"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#metabotropic"/>
+        <ObjectProperty IRI="#is_metabotropic"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#on"/>
@@ -424,21 +484,21 @@
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#inhibitor"/>
+            <ObjectProperty IRI="#inhibits"/>
             <Class IRI="#Muscarinic_acetylcholine"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#ionotropic"/>
+            <ObjectProperty IRI="#is_ionotropic"/>
             <Class IRI="#Nicotinic_acetylcholine"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Acetylcholine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#metabotropic"/>
+            <ObjectProperty IRI="#is_metabotropic"/>
             <Class IRI="#Muscarinic_acetylcholine"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -450,7 +510,7 @@
         <Class IRI="#Adenosine_triphosphate"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#ionotropic"/>
+                <ObjectProperty IRI="#is_ionotropic"/>
                 <Class IRI="#P2X"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -463,7 +523,7 @@
         <Class IRI="#Adenosine_triphosphate"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#metabotropic"/>
+                <ObjectProperty IRI="#is_metabotropic"/>
                 <Class IRI="#P2Y"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -477,6 +537,10 @@
         <Class IRI="#ions"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Ca"/>
+        <Class IRI="#second_messenger"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Carbon_monoxide"/>
         <Class IRI="#gas"/>
     </SubClassOf>
@@ -484,7 +548,7 @@
         <Class IRI="#Carbon_monoxide"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#ionotropic"/>
+                <ObjectProperty IRI="#is_ionotropic"/>
                 <Class IRI="#Heme_bound_to_potassium"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -498,12 +562,94 @@
         <Class IRI="#ions"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#D1_like"/>
+        <Class IRI="#Dopamine_receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D1_like"/>
+        <Class IRI="#metabotropic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D1_like"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#activates"/>
+                <Class IRI="#adenylate_cyclase"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#increases"/>
+                <Class IRI="#cAMP"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D1_like"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#exites"/>
+            <Class IRI="#K"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D1_like"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#inhibits"/>
+            <Class IRI="#Na"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D2_like"/>
+        <Class IRI="#Dopamine_receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D2_like"/>
+        <Class IRI="#metabotropic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#D2_like"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#decreases"/>
+                <Class IRI="#cAMP"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#inhibits"/>
+                <Class IRI="#adenylate_cyclase"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Dopamine"/>
         <Class IRI="#neuromodulator"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
         <Class IRI="#small_monoamine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#exites"/>
+                <Class IRI="#D1_like"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#inhibits"/>
+                <Class IRI="#D1_like"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#in"/>
+                <Class IRI="#prefrontal_cortex"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#via"/>
+                <Class IRI="#D1_like"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
@@ -545,6 +691,20 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_function"/>
             <Class IRI="#reward"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#seeking"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#working_memory"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -592,7 +752,14 @@
     <SubClassOf>
         <Class IRI="#Dopamine"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#metabotropic"/>
+            <ObjectProperty IRI="#inhibits"/>
+            <Class IRI="#D2_like"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_metabotropic"/>
             <Class IRI="#Dopamine_receptor"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -635,42 +802,46 @@
     <SubClassOf>
         <Class IRI="#GABA"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#ionotropic"/>
+            <ObjectProperty IRI="#is_ionotropic"/>
             <Class IRI="#GABAA"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABA"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#ionotropic"/>
+            <ObjectProperty IRI="#is_ionotropic"/>
             <Class IRI="#GABAA-ρ"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABA"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#metabotropic"/>
+            <ObjectProperty IRI="#is_metabotropic"/>
             <Class IRI="#GABAB"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABAA"/>
-        <Class IRI="#receptor"/>
+        <Class IRI="#GABA_receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABAA-ρ"/>
-        <Class IRI="#receptor"/>
+        <Class IRI="#GABA_receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABAB"/>
-        <Class IRI="#receptor"/>
+        <Class IRI="#GABA_receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GABAB"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#ionotropic"/>
+            <ObjectProperty IRI="#is_ionotropic"/>
             <Class IRI="#G_protein"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GABA_receptor"/>
+        <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#G_protein"/>
@@ -724,6 +895,10 @@
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#adenylate_cyclase"/>
+        <Class IRI="#enzyme"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#arcuate_nucleus"/>
         <Class IRI="#regions"/>
     </SubClassOf>
@@ -747,8 +922,20 @@
         <Class IRI="#midbrain"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#cAMP"/>
+        <Class IRI="#second_messenger"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cerebral_cortex"/>
+        <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#decision_making"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#frontal_lobe"/>
+        <Class IRI="#cerebral_cortex"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gas"/>
@@ -770,12 +957,28 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#inonotropic"/>
+        <Class IRI="#receptor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#liking"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#longterm_memory"/>
+        <Class IRI="#memory"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#medium_spiny_cells"/>
         <Class IRI="#neurons"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#memory"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#metabotropic"/>
+        <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#midbrain"/>
@@ -798,8 +1001,16 @@
         <Class IRI="#midbrain"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#occipital_lobe"/>
+        <Class IRI="#cerebral_cortex"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#other"/>
         <Class IRI="#neurotransmitter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#parietal_lobe"/>
+        <Class IRI="#cerebral_cortex"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#periventricular_nucleus"/>
@@ -815,7 +1026,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#prefrontal_cortex"/>
-        <Class IRI="#midbrain"/>
+        <Class IRI="#frontal_lobe"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#pyramidal_cells"/>
@@ -823,6 +1034,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#reward"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#seeking"/>
         <Class IRI="#function"/>
     </SubClassOf>
     <SubClassOf>
@@ -875,6 +1090,10 @@
         <Class IRI="#basal_ganglia"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#temporal_lobe"/>
+        <Class IRI="#cerebral_cortex"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#tonic"/>
         <Class IRI="#durations"/>
     </SubClassOf>
@@ -901,6 +1120,10 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#working_memory"/>
+        <Class IRI="#memory"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#zona_incerta"/>
         <Class IRI="#regions"/>
     </SubClassOf>
@@ -916,6 +1139,10 @@
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#by"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#inhibits"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -927,10 +1154,6 @@
         <ObjectProperty IRI="#via"/>
         <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
     </SubObjectPropertyOf>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#inhibitor"/>
-        <Class IRI="#receptor"/>
-    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#permeable"/>
         <Class IRI="#ions"/>
@@ -946,13 +1169,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#in</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">in the region</Literal>
+        <IRI>#D1_like</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Increase intracellular levels of cAMP by activating adenylate cyclase.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#inhibitor</IRI>
-        <Literal datatypeIRI="&rdf;PlainLiteral">inhibitor for receptors</Literal>
+        <IRI>#D2_like</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Decrease intracellular levels of cAMP by inhibiting adenylate cyclase.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cAMP</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Cyclic adenosine monophosphate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#in</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">in the region</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
