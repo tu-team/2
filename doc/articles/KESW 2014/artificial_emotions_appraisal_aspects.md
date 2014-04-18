@@ -32,6 +32,19 @@ As I mentioned earlier we wanted to find the answer to question: can machines ac
 1. Acceptance - disgust
 1. Surprise - expectancy
 
+High level emotions are the mixture of two or more basic emotions:
+
+1. Love = joy + acceptance
+1. Submission = acceptance + fear
+1. Awe = fear + surprise
+1. Disapproval = surprise + sorrow
+1. Remorse = sorrow + disgust
+1. Contempt = disgust + anger
+1. Aggressiveness = anger + expectancy
+1. Optimism = expectancy + joy
+
+Gaining this complete picture of human emotions, we still lack the mechanism of the emotional influence on thinking processes of man/woman, in different words the low level mechanism that defines the way emotional state alters the computational processes of a system.
+
 ![Computing system parameters mapping](figure3_cube_of_parameters.png)
 
 ##Appraisal aspects
