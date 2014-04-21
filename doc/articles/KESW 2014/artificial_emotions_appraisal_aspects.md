@@ -19,11 +19,7 @@ We suppose that it could be considered as base of computational emotional thinki
 
 ![Bases](figure1_3_bases.png)
 
-##Emotional processes
-
-##Neuromodulatory bases of emotions
-
-##Neuromodulators to computing system parameters mapping
+###Emotional processes
 
 As I mentioned earlier we wanted to find the answer to question: can machines actually feel the emotions? We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
 
@@ -43,7 +39,31 @@ High level emotions are the mixture of two or more basic emotions:
 1. Aggressiveness = anger + expectancy
 1. Optimism = expectancy + joy
 
+###Neuromodulatory bases of emotions
+
 Gaining this complete picture of human emotions, we still lack the mechanism of the emotional influence on thinking processes of man/woman, in different words the low level mechanism that defines the way emotional state alters the computational processes of a system.
+
+The bridge from psychological model to neurophysiological processes is created by Lovheim hypothesis "Cube of emotions" [cubeofemotions]. His hypothesis is based on Tomkins theory of affects [tomkins1, tomkins2, tomkins3, quest]. Affects are inborn emotions that could be classified as basic emotions and in fact are closely correlated to each other:
+
+1. Enjoyment/Joy
+1. Interest/Excitement
+1. Surprise
+1. Anger/Rage
+1. Disgust
+1. Distress/Anguish
+1. Fear/Terror
+1. Shame/Humiliation
+
+We interpret shame/humiliation as remorse high level emotion from Plutchik [natureofemotions]. From neuro-physiological perspective there are several neural systems involved in emotional reactions [emotionsbraintorobot]:
+
+1. Spinal cord
+1. Hypothalamus
+1. Amygdala
+1. Frontal cortex, cingulate cortex
+
+We roughly correspond non-conscious reactions to instinctive layer of "model of six" [emotionmachine] with spinal cord, amygdala and hypothalamus, conscious reaction are addressed into frontal cortex and cingulate cortex and correspond to other five layers of model of six: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious thinking. 
+
+##Neuromodulators to computing system parameters mapping
 
 ![Computing system parameters mapping](figure3_cube_of_parameters.png)
 
