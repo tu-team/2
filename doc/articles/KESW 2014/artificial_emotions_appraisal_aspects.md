@@ -78,9 +78,51 @@ We roughly correspond non-conscious reactions to instinctive layer of "model of 
 
 ##Neuromodulators to computing system parameters mapping
 
-Taking in account role of neuromodulators in human brain [cubeofemotions, emotionsbraintorobot, neuromodulatory] 
+Taking in account role of neuromodulators in human brain [cubeofemotions, emotionsbraintorobot, neuromodulatory] we proposed mapping of the neuromodulators levels to parameters of comping system.
 
 ![Computing system parameters mapping](figure3_cube_of_parameters.png)
+
+Generic 
+1. Generic:
+  2. Computing power: noradrenaline
+  2. Memory distribution (attention): noradrenaline
+  2. Learning: serotonin, dopamine
+  2. Storage: serotonin, dopamine
+1. Decision making/reward processing:
+  2. Confidence: serotonin
+  2. Satisfaction: serotonin
+  2. Motivation, wanting: dopamine
+  2. Risky choices inclination: noradrenaline
+  2. Number of options to process: noradrenaline
+
+There are two groups of parameters: generic and decision making.
+
+###Generic parameters
+
+Determine overall behaviour of computing system of its generic parameters like CPU power, memory distribution, storage capacity distribution.
+
+*Computing power*: distribution and priority of parallel process or load balancing, is impacted by noradrenaline: the higher is noradrenaline more computing power must be concentrated on current activity (neuromodulator regulating attention).
+
+*Working memory(short term)* distribution and concentration is impacted by noradrenaline (attention).
+
+*Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
+
+*Storage* management (long term memory) is impacted by both by serotonin and dopamine, higher concentrations of both neuromodulators makes system better remember stimulus. In general, strong emotions generate more persistent memories.
+
+###Decision making
+
+This decision making is done mainly in deliberation and learned reaction layers of model of six.
+Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered).
+
+*Confidence and satisfaction* of the system is directly influenced by serotonin.
+
+System is more *motivated* under influence of dopamine.
+
+System tends to choose *risky* actions under impact of noradrenaline.
+
+Noradrenaline makes system use less *number of options* in width and depth to be processed during deliberation.
+
+This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level ("hard-coded") model of emotional processes implemented in a spiking neuron model used to build a neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
 ##Appraisal aspects
 
