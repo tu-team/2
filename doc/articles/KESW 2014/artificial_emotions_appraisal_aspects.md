@@ -101,28 +101,21 @@ There are two groups of parameters: generic and decision making.
 
 Determine overall behaviour of computing system of its generic parameters like CPU power, memory distribution, storage capacity distribution.
 
-*Computing power*: distribution and priority of parallel process or load balancing, is impacted by noradrenaline: the higher is noradrenaline more computing power must be concentrated on current activity (neuromodulator regulating attention).
-
-*Working memory(short term)* distribution and concentration is impacted by noradrenaline (attention).
-
-*Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
-
-*Storage* management (long term memory) is impacted by both by serotonin and dopamine, higher concentrations of both neuromodulators makes system better remember stimulus. In general, strong emotions generate more persistent memories.
+1. *Computing power*: distribution and priority of parallel process or load balancing, is impacted by noradrenaline: the higher is noradrenaline more computing power must be concentrated on current activity (neuromodulator regulating attention).
+1. *Working memory(short term)* distribution and concentration is impacted by noradrenaline (attention).
+1. *Learning* is impacted by serotonin and dopamine: dopamine plays major role in activation of previously remembered patterns and serotonin in pattern generation.
+1. *Storage* management (long term memory) is impacted by both by serotonin and dopamine, higher concentrations of both neuromodulators makes system better remember stimulus. In general, strong emotions generate more persistent memories.
 
 ###Decision making
 
-This decision making is done mainly in deliberation and learned reaction layers of model of six.
-Parameters: confidence, satisfaction, risky are used to highlight actions stored(remembered).
+Parameters: confidence, satisfaction, risky are used to highlight memories.
 
-*Confidence and satisfaction* of the system is directly influenced by serotonin.
+1. *Confidence and satisfaction* of the system is directly influenced by serotonin.
+1. System is more *motivated* under influence of dopamine.
+1. System tends to choose *risky* actions under impact of noradrenaline.
+1. Noradrenaline makes system use less *number of options* in width and depth to be processed during deliberation.
 
-System is more *motivated* under influence of dopamine.
-
-System tends to choose *risky* actions under impact of noradrenaline.
-
-Noradrenaline makes system use less *number of options* in width and depth to be processed during deliberation.
-
-This mapping is exhaustively described in [computational_emotional_thinking]. It could be used as low level ("hard-coded") model of emotional processes implemented in a spiking neuron model used to build a neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
+This mapping is exhaustively described in [computational_emotional_thinking]. We suppose that it could be used as low level model of emotional processes implemented in a spiking neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
 ##Appraisal aspects
 
