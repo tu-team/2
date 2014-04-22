@@ -1,4 +1,4 @@
-#Artificial emotions and appraisal aspects
+#Artificial high level and low level emotions
 
 ##Introduction
 
@@ -117,16 +117,40 @@ Parameters: confidence, satisfaction, risky are used to highlight memories.
 
 This mapping is exhaustively described in [computational_emotional_thinking]. We suppose that it could be used as low level model of emotional processes implemented in a spiking neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
 
-##Appraisal aspects
-
-###Non-conscious appraisal
-
-###Conscious appraisal
-
 ##High level emotions mapping to neuromodulators
+
+This picture is not complete, because it contains only basic emotions with no reference to high level emotions. According to Plutchik[natureofemotions,senticcomputing] high level emotions are mixtures of basic emotions like compound colors are mixtures of basic. For example:
+
+1. Love = joy + acceptance
+1. Submission = acceptance + fear
+1. Awe = fear + surprise
+1. Disapproval = surprise + sorrow
+1. Remorse = sorrow + disgust
+1. Contempt = disgust + anger
+1. Aggressiveness = anger + expectancy
+1. Optimism = expectancy + joy
+
+Taking in account neurotransmitters levels of basic emotions and Gaussian nature of relation of subjective emotion perception to objective brain response [senticcomputing, neuralcorrelatesofhate] we propose following mapping of high level emotions on neuromodulator levels:
+
+1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
+1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+1. **G(Aggressiveness Intensity)** = 0.5 serotonin + 1.0 dopamine + 1.0 noradrenaline;
+1. **G(Awe Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+1. **G(Contempt Intensity)** = 0.5 serotonin + 0.5 dopamine + 0.5 noradrenaline;
+1. **G(Disapproval Intensity)** = 0.5 serotonin + 0.0 dopamine + 1.0 noradrenaline;
+1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
+1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
+
+Current model contains two high level emotions that have identical levels of neuromodulators: awe and contempt. We address both of them in the geometrical center of "Neuromodulators to computing system parameters mapping" as intermediate states in between: fear and surprise for awe, and disgust and anger for contempt. One explanation is that the three dimensional model of Robert Plutchik "Wheel of emotions" contains only the basic emotions, all the high level, complex emotions are represented in 2 additional dimensions not represented in the model. Current approach uses a five dimensional model with following axes: pleasantness (joy, sadness), attention (expectation, surprise), sensitivity (anger, fear), aptitude (acceptance, disgust) and strength of emotion [senticcomputing]. Meanwhile neuromodulatory model of emotions of Lovheim contains only three dimensions that causes a lack of dimensionality in representing five dimensional emotional model of Robert Plutchik. From neuroscience perspective some researchers mention the important role of opioids in emotions and they were not taken in account by Lovheim [emotionsbraintorobot].
+
+This mapping of high level emotions to neurotransmitters levels completes our picture of emotional influence on computational processes.
 
 ##Conclusion
 
+...
 
+##Acknowledgment
+
+Tero Keski-Valkama (MSc) for his constant support and review of our work and theories.
 
 
