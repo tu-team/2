@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="orchestra_of_emotions_agi.svg"
+   sodipodi:docname="figure2_orchestra_of_emotions.svg"
    inkscape:export-filename="F:\Projects\2\2\doc\emotions\computational emotions via virtual neuromodulators\orchestra_of_emotions_agi.png"
    inkscape:export-xdpi="180"
    inkscape:export-ydpi="180">
@@ -145,11 +145,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.668627"
-     inkscape:cx="526.18109"
+     inkscape:zoom="1"
+     inkscape:cx="453.96603"
      inkscape:cy="479.03685"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1064"
@@ -166,16 +166,8 @@
        id="guide4043" />
     <sodipodi:guide
        orientation="0,1"
-       position="691.31993,641.802"
-       id="guide4440" />
-    <sodipodi:guide
-       orientation="0,1"
        position="411.04367,719.73582"
        id="guide3945" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="201.01837,701.31255"
-       id="guide3953" />
     <inkscape:grid
        type="xygrid"
        id="grid3976" />
@@ -188,7 +180,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -349,14 +341,13 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="emotions"
-     style="opacity:0.5;display:inline"
-     sodipodi:insensitive="true">
+     style="opacity:0.5;display:inline">
     <g
        id="g3978"
        transform="translate(-38,0)">
       <rect
          ry="25.431112"
-         rx="23.540848"
+         rx="0"
          y="24.8892"
          x="133.4969"
          height="374.4549"
@@ -386,7 +377,7 @@
          height="374.4549"
          x="133.4969"
          y="24.8892"
-         rx="23.540848"
+         rx="0"
          ry="25.431112" />
       <text
          sodipodi:linespacing="125%"
@@ -411,7 +402,7 @@
          height="374.4549"
          x="133.4969"
          y="24.8892"
-         rx="23.540848"
+         rx="0"
          ry="25.431112" />
       <text
          sodipodi:linespacing="125%"
@@ -431,7 +422,7 @@
        id="g4009">
       <rect
          ry="25.431112"
-         rx="23.540848"
+         rx="0"
          y="24.8892"
          x="133.4969"
          height="374.4549"
@@ -461,7 +452,7 @@
          height="374.4549"
          x="133.4969"
          y="24.8892"
-         rx="23.540848"
+         rx="0"
          ry="25.431112" />
       <text
          sodipodi:linespacing="125%"
@@ -481,7 +472,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="actions"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -1009,7 +1001,8 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="arrows"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutL);display:inline"
        d="m 138.87449,445.68398 0,-94.65312"
