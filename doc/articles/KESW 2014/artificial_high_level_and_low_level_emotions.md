@@ -34,7 +34,13 @@ We suppose that all this neurobiological mechanisms could be expressed in terms 
 
 ###Emotional processes
 
-As I mentioned earlier we wanted to find the answer to question: can machines actually feel the emotions? We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
+Plutchik identified emotional processes as feedback loops [natureofemotions] that support homeostasis. We mapped them on Marvin Minsky "Model of six" in the following way:
+
+![Orchestra of emotions](figure2_orchestra_of_emotions.png)
+
+
+
+As I mentioned earlier, the primary goal of this research is to construct program that would be capable of feeling emotions, rather than just simulating them. We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
 
 1. Joy - sorrow
 1. Anger - fear
@@ -147,7 +153,7 @@ This mapping of high level emotions to neurotransmitters levels completes our pi
 
 ##Conclusion
 
-...
+
 
 ##Acknowledgment
 
