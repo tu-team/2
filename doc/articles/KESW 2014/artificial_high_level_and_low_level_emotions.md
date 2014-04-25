@@ -34,11 +34,11 @@ We suppose that all this neurobiological mechanisms could be expressed in terms 
 
 ###Emotional processes
 
-Plutchik identified emotional processes as feedback loops [natureofemotions] that support homeostasis. We mapped them on Marvin Minsky "Model of six" in the following way:
+Plutchik identified emotional processes as feedback loops [natureofemotions] that support homeostasis. We mapped them on Marvin Minsky "Model of six" in the following way.
 
 ![Orchestra of emotions](figure2_orchestra_of_emotions.png)
 
-
+This is picture of emotional switches of state of the system from serenity to fear then to terror, then back to fear and serenity. Colors of emotional states matches colors of "Wheel of emotion" [natureofemotions]. First stimulus triggers affective appraisal which as the part of it invokes neuromodulation and neuromodulation actually switches the emotional state from serenity to fear. First affective appraisal triggers cognitive appraisal and reflective thinking.
 
 As I mentioned earlier, the primary goal of this research is to construct program that would be capable of feeling emotions, rather than just simulating them. We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
 
