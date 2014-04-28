@@ -90,7 +90,6 @@ Taking in account role of neuromodulators in human brain [cubeofemotions, emotio
 
 ![Computing system parameters mapping](figure3_cube_of_parameters.png)
 
-Generic 
 1. Generic:
   2. Computing power: noradrenaline
   2. Memory distribution (attention): noradrenaline
@@ -157,7 +156,6 @@ This mapping of high level emotions to neurotransmitters levels completes our pi
 
 We demonstrated new approach to take in account emotional state of computational system. In other words we proposed the way computational processes could be influenced by emotional state of the system. This approach is based on role of neurotransmitters noradrenaline, dopamine, serotonin in human brain. Emotional model that takes in account levels of neurotransmitters were proposed by Lovheim [cubeofemotions]. We used two groups of parameters of computational system: generic and decision making.
 
-Generic 
 1. Generic:
   2. Computing power: noradrenaline
   2. Memory distribution (attention): noradrenaline
