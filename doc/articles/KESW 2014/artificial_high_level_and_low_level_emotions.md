@@ -38,18 +38,18 @@ Plutchik identified emotional processes as feedback loops [natureofemotions] tha
 
 ![Orchestra of emotions](figure2_orchestra_of_emotions.png)
 
-This is picture depicts switches of the emotional state of the system from serenity to fear then to terror, then back to fear and serenity. Colors of emotional states matches colors of basic emotions from "Wheel of emotion" [natureofemotions]. First stimulus triggers affective appraisal which as the part of it invokes neuromodulation and neuromodulation actually switches the emotional state from serenity to fear. First affective appraisal triggers cognitive appraisal and reflective thinking, cognitive appraisal initiates appraisal deliberation. Second stimulus triggers second affective appraisal and this appraisal in its turn triggers cognitive appraisal and second appraisal deliberation. Second neuromodulation switches the emotional state of the system from fear to terror. Second affective appraisal triggers instinctive coping also.  Later reflective thinking analyzing the appraisal processes going on, decides to stop all of them, including instinctive coping, consider them as irrelative and initiates one new appraisal deliberation and neuromodulation that switches emotional state of the system from terror to fear. System considers situation not that frightening as it seems from second stimulus. Second appraisal deliberation initiates cognitive coping(reappraisal), that in it's turn triggers neuromodulation that returns system to serenity emotional state.
+This is picture depicts switches of the emotional state of the system from serenity to fear then to terror, then back to fear and serenity. Colors of emotional states matches colors of basic emotions from "Wheel of emotion" [natureofemotions]. First stimulus triggers affective appraisal which as the part of it invokes neuromodulation and neuromodulation actually switches the emotional state from serenity to fear. First affective appraisal triggers cognitive appraisal and reflective thinking, cognitive appraisal initiates appraisal deliberation. Second stimulus triggers second affective appraisal and this appraisal in its turn triggers cognitive appraisal and second appraisal deliberation. Second neuromodulation switches the emotional state of the system from fear to terror. Second affective appraisal triggers instinctive coping also.  Later reflective thinking analyzing the appraisal processes going on in the system, decides to stop all of them, including instinctive coping, consider them as irrelative and initiates one new appraisal deliberation process and neuromodulation that switches emotional state of the system from terror to fear. The system considers situation not that frightening as it seems according to second stimulus. Third appraisal deliberation initiates cognitive coping(reappraisal), that in its turn triggers neuromodulation that returns system to serenity.
 
 This is an example of primitive emotional processes that could happen in everyday life during some minutes starting from frightening stimulus to reappraisal that triggers emotional state back to serenity.
 
-As I mentioned earlier, the primary goal of this research is to construct program that would be capable of feeling emotions, rather than just simulating them. We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
+As we mentioned earlier, the primary goal of this research is to construct framework that would be capable of feeling emotions, rather than just simulating them. We have started from classifications of emotions, this actually leads us to the evolutionary psychology theory by Robert Plutchik [natureofemotions]. His theory combines elegance of three dimensional model with completeness. It takes in account the power of emotions and their nature including basic and complex high level emotions (feelings). Plutchik determined eight basic emotions grouped in four pairs:
 
 1. Joy - sorrow
 1. Anger - fear
 1. Acceptance - disgust
 1. Surprise - expectancy
 
-High level emotions are the mixture of two or more basic emotions:
+High level emotions are mixtures of two or more basic emotions:
 
 1. Love = joy + acceptance
 1. Submission = acceptance + fear
@@ -62,9 +62,9 @@ High level emotions are the mixture of two or more basic emotions:
 
 ###Neuromodulatory bases of emotions
 
-Gaining this complete picture of human emotions, we still lack the mechanism of the emotional influence on thinking processes of man/woman, in different words the low level mechanism that defines the way emotional state alters the computational processes of a system.
+Gaining this complete picture of human emotions, we still lack the mechanism of the emotional influence on thinking processes of human, in different words, the low level mechanism that defines the way emotional state alters the computational processes of a system.
 
-The bridge from psychological model to neurophysiological processes is created by Lovheim hypothesis "Cube of emotions" [cubeofemotions]. His hypothesis is based on Tomkins theory of affects [tomkins1, tomkins2, tomkins3, quest]. Affects are inborn emotions that could be classified as basic emotions and in fact are closely correlated to each other:
+The bridge from psychological model to neurophysiological processes is created by Lovheim hypothesis "Cube of emotions" [cubeofemotions]. His hypothesis is based on Tomkins theory of affects [tomkins1, tomkins2, tomkins3, quest, primer_affect_psychology]. Affects are inborn emotions that could be classified as basic emotions and in fact are closely correlated:
 
 1. Enjoyment/Joy
 1. Interest/Excitement
@@ -75,14 +75,14 @@ The bridge from psychological model to neurophysiological processes is created b
 1. Fear/Terror
 1. Shame/Humiliation
 
-We interpret shame/humiliation as remorse high level emotion from Plutchik [natureofemotions]. From neuro-physiological perspective there are several neural systems involved in emotional reactions [emotionsbraintorobot]:
+We interpret shame/humiliation as remorse the high level emotion of  Plutchik "Wheel of emotions" [natureofemotions]. From neuro-physiological perspective there are several neural systems involved in emotional reactions [emotionsbraintorobot, neuromodulatory]:
 
 1. Spinal cord
 1. Hypothalamus
 1. Amygdala
 1. Frontal cortex, cingulate cortex
 
-We roughly correspond non-conscious reactions to instinctive layer of "model of six" [emotionmachine] with spinal cord, amygdala and hypothalamus, conscious reaction are addressed into frontal cortex and cingulate cortex and correspond to other five layers of model of six: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious thinking. 
+We roughly correspond non-conscious reactions to instinctive layer of "model of six" [emotionmachine] with spinal cord, amygdala and hypothalamus, conscious reaction are addressed into a frontal cortex and cingulate cortex and correspond to other five layers of model of six: learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious thinking. 
 
 ##Neuromodulators to computing system parameters mapping
 
