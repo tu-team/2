@@ -102,8 +102,6 @@ Taking in account role of neuromodulators in human brain [cubeofemotions, emotio
   2. Risky choices inclination: noradrenaline
   2. Number of options to process: noradrenaline
 
-There are two groups of parameters: generic and decision making.
-
 ###Generic parameters
 
 Determine overall behaviour of computing system of its generic parameters like CPU power, memory distribution, storage capacity distribution.
@@ -122,7 +120,7 @@ Parameters: confidence, satisfaction, risky are used to highlight memories.
 1. System tends to choose *risky* actions under impact of noradrenaline.
 1. Noradrenaline makes system use less *number of options* in width and depth to be processed during deliberation.
 
-This mapping is exhaustively described in [computational_emotional_thinking]. We suppose that it could be used as low level model of emotional processes implemented in a spiking neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer].
+This mapping is exhaustively described in [computational_emotional_thinking]. We suppose that it could be used as low level model of emotional processes implemented in a realistic spiking neural network and could be used as basic framework for the emotion enabled systems [whatdoesitmeanforcomputer, affectivecomputingchallanges].
 
 ##High level emotions mapping to neuromodulators
 
