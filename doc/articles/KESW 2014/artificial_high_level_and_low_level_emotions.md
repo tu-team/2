@@ -17,7 +17,7 @@ We suppose that it could be considered as base of computational emotional thinki
 
 ##Cognitive bases
 
-We use three main bases for our hypothesis: evolution psychology: Plutchik [natureofemotions] as psychological overall picture of emotions, neuro-physiological model of emotions based on monoamines levels (neuromodulators): Lovheim [cubeofemotions] and we encapsulate all this in cognitive architecture by Marvin Minsky described in his book [emotionmachine].
+We use three main bases for our hypothesis: evolution psychology: Plutchik [natureofemotions] as psychological overall picture of emotions, neuroscience: Lovheim [cubeofemotions] model of emotions based on monoamines levels (neuromodulators), we encapsulate all this in cognitive architecture created by Marvin Minsky and described in his book [emotionmachine].
 
 ![Bases](figure1_3_bases.png)
 
@@ -30,15 +30,15 @@ Minsky indicates 6 levels of metal activities that collaborate and intersect one
 1. Self-reflective thinking
 1. Self-conscious thinking
 
-We suppose that all this neurobiological mechanisms could be expressed in terms of mental activities and implemented over realistic neural network.
+We suppose that all this neuro-physiological mechanisms could be expressed in terms of mental activities and implemented over realistic neural network.
 
 ###Emotional processes
 
-Plutchik identified emotional processes as feedback loops [natureofemotions] that support homeostasis. We mapped them on Marvin Minsky "Model of six" in the following way.
+Plutchik identified emotional processes as feedback loops [natureofemotions] that support homeostasis of the system. We mapped them on Marvin Minsky "Model of six" in the following way:
 
 ![Orchestra of emotions](figure2_orchestra_of_emotions.png)
 
-This is picture of emotional switches of state of the system from serenity to fear then to terror, then back to fear and serenity. Colors of emotional states matches colors of "Wheel of emotion" [natureofemotions]. First stimulus triggers affective appraisal which as the part of it invokes neuromodulation and neuromodulation actually switches the emotional state from serenity to fear. First affective appraisal triggers cognitive appraisal and reflective thinking, cognitive appraisal initiates appraisal deliberation. Second stimulus triggers second affective appraisal and this appraisal in its turn triggers cognitive appraisal and second appraisal deliberation. Second neuromodulation switches the emotional state of the system from fear to terror. Second affective appraisal triggers instinctive coping too.  Later reflective thinking analyzing the appraisal processes going on, decides to stop all of them, including instinctive coping, consider them as irrelative and initiates one new appraisal deliberation and neuromodulation that switches emotional state of the system from terror to fear. System considers situation not that frightening as it seems from second stimulus. Second appraisal deliberation initiates cognitive coping(reappraisal), that in it's turn triggers neuromodulation that returns system to serenity emotional state.
+This is picture depicts switches of the emotional state of the system from serenity to fear then to terror, then back to fear and serenity. Colors of emotional states matches colors of basic emotions from "Wheel of emotion" [natureofemotions]. First stimulus triggers affective appraisal which as the part of it invokes neuromodulation and neuromodulation actually switches the emotional state from serenity to fear. First affective appraisal triggers cognitive appraisal and reflective thinking, cognitive appraisal initiates appraisal deliberation. Second stimulus triggers second affective appraisal and this appraisal in its turn triggers cognitive appraisal and second appraisal deliberation. Second neuromodulation switches the emotional state of the system from fear to terror. Second affective appraisal triggers instinctive coping also.  Later reflective thinking analyzing the appraisal processes going on, decides to stop all of them, including instinctive coping, consider them as irrelative and initiates one new appraisal deliberation and neuromodulation that switches emotional state of the system from terror to fear. System considers situation not that frightening as it seems from second stimulus. Second appraisal deliberation initiates cognitive coping(reappraisal), that in it's turn triggers neuromodulation that returns system to serenity emotional state.
 
 This is an example of primitive emotional processes that could happen in everyday life during some minutes starting from frightening stimulus to reappraisal that triggers emotional state back to serenity.
 
