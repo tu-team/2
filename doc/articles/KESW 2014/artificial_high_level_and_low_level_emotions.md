@@ -124,7 +124,7 @@ This mapping is exhaustively described in [computational_emotional_thinking]. We
 
 ##High level emotions mapping to neuromodulators
 
-This picture is not complete, because it contains only basic emotions with no reference to high level emotions. According to Plutchik[natureofemotions,senticcomputing] high level emotions are mixtures of basic emotions like compound colors are mixtures of basic. For example:
+The picture described above is not complete: it contains only basic emotions with no reference to high level emotions. According to Plutchik[natureofemotions,senticcomputing] high level emotions are mixtures of basic emotions like compound colors are mixtures of basic. For example:
 
 1. Love = joy + acceptance
 1. Submission = acceptance + fear
