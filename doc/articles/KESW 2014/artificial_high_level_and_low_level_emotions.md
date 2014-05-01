@@ -152,7 +152,7 @@ This mapping of high level emotions to neurotransmitters levels completes our pi
 
 ##Conclusion
 
-We demonstrated new approach to take in account emotional state of computational system. In other words we proposed the way computational processes could be influenced by emotional state of the system. This approach is based on role of neurotransmitters noradrenaline, dopamine, serotonin in human brain. Emotional model that takes in account levels of neurotransmitters were proposed by Lovheim [cubeofemotions]. We used two groups of parameters of computational system: generic and decision making.
+We demonstrated new approach that implements the emotional state of the computational system. In other words we proposed the way computational processes could be influenced by emotional state of the system, actually implementing feeling of emotions. This approach is based on functions of neurotransmitters: noradrenaline, dopamine, serotonin in human brain. Emotional model that takes in account levels of neurotransmitters were proposed by Lovheim [cubeofemotions]. We used two groups of parameters of computational system: generic and decision making to map the influence:
 
 1. Generic:
   2. Computing power: noradrenaline
@@ -166,7 +166,7 @@ We demonstrated new approach to take in account emotional state of computational
   2. Risky choices inclination: noradrenaline
   2. Number of options to process: noradrenaline
 
-We proposed the connection between Tomkins theory of affects, that Lovheim used as affective states base for his three dimensional model and Plutchik model of emotions [natureofemotions]. To complete the model of computational emotions we proposed the mapping of high level emotions to neurotransmitters levels:
+We proposed the link between Tomkins theory of affects[tomkins1, tomkins2, tomkins3, quest], that Lovheim used as affective states base for his three dimensional model and psychological model of Robert Plutchik  [natureofemotions]. To complete the model of computational emotions we proposed the mapping of high level emotions to neurotransmitters levels:
 
 1. **G(Optimism Intensity)** = 1.0 serotonin  + 1.0 dopamine + 0.5 noradrenaline;
 1. **G(Love Intensity)** = 0.75 serotonin + 1.0 dopamine + 0.0 noradrenaline;
@@ -177,11 +177,11 @@ We proposed the connection between Tomkins theory of affects, that Lovheim used 
 1. **G(Submission Intensity)** = 0.25 serotonin + 1.0 dopamine + 0.0 noradrenaline;
 1. **G(Remorse Intensity)** = 0.0 serotonin + 0.0 dopamine + 0.0 noradrenaline;
 
-This level are mapped to computational processes in same way affects do.
-This approach could be used to model the emotional effects in realistic neural networks, to create realistic emotional behavior profiles of animals including humans.
+This levels are mapped to computational processes in same way affects do.
+This approach could be used to model the emotional effects in realistic spiking neural networks, to create realistic emotional behavior profiles of animals including humans.
 We demonstrated the framework that is capable of making the computing system feel the emotions via influence of virtual neurotransmitters on computational processes of the system where this framework is installed.
 
-Testing of this kind of system is separate complex task, starting from adoption of current realistic neural networks to neuromodulation via: dopamine, noradrenaline, serotonin, modeling different structures of a brain that takes part in emotional processing: hypothalamus, amygdala, frontal cortex, cingulate cortex.
+Testing of this kind of system is complex task, starting from adoption of current realistic neural networks to neuromodulation via: dopamine, noradrenaline, serotonin, modeling different structures of a brain that takes part in emotional processing: hypothalamus, amygdala, frontal cortex, cingulate cortex.
 We suppose results of our work should be useful in following domains:
 
 1. Realistic modeling human behavior
