@@ -40,18 +40,18 @@ def main(argv):
             if lineStripped.startswith('####'):
                 sectionName = lineStripped.strip('####').strip()
                 lineOut = '\subsubsection{' + sectionName + '}'
-            # print 'lists'
+            #print 'lists'
             if (lineStripped.startswith('1.') or lineStripped.startswith('2.') or lineStripped.startswith('3.')):
                 currentListLevel = lineStripped[0]
                 lineOut = ''
                 spaces = ''
-                # print str(listLevel) + ' ' + str(currentListLevel) + ' ' + str(currentListLevel > listLevel)
+                #print str(listLevel) + ' ' + str(currentListLevel) + ' ' + str(currentListLevel > listLevel)
                 if currentListLevel > listLevel:
                     # print 'begin enumerate'
                     for i in range(int(listLevel)):
                         spaces += ' '
                     lineOut = spaces + '\\begin{enumerate}\n'
-                    # print "lineout 0 " + lineOut
+                    #print "lineout 0 " + lineOut
                 elif currentListLevel < listLevel:
                     for i in range(int(currentListLevel)):
                         spaces += ' '
@@ -64,7 +64,7 @@ def main(argv):
                 lineOut = lineOut + spaces + '\item ' + item
             else:
                 if listLevel > 0:
-                    #print str(listLevel)
+                    #print "list level =" + str(listLevel)
                     for i in range(int(listLevel)):
                         #print str(int(listLevel) - i - 1)
                         spaces = ''
@@ -75,7 +75,7 @@ def main(argv):
                 # references
             #print "lineout 1 " + lineOut
             if (not (lineOut.startswith('![')) and not (lineOut.startswith('Figure'))):
-                #print 'we are in !fugure'
+                #print 'we are in !figure'
                 if (lineOut.find('[') > -1 and lineOut.find(']') > 0):
                     #print 'we are in link'
                     #reference link case
@@ -85,9 +85,10 @@ def main(argv):
                         lineOut = lineOut.replace('[', '\cite{')
                         lineOut = lineOut.replace(']', '}')
                         #replace links
-                    if (lineOut.find(']:') > -1):
+                    #if (lineOut.find(']:') > -1):
                         #print 'we are here', lineOut
-                        lineOut = ''
+                        #no link label processing now
+                        #lineOut = ''
                     else:
                         #simple case
                         lineOut = lineOut.replace('[', '\cite{')
@@ -101,6 +102,7 @@ def main(argv):
                 lineOut = lineOut.replace('*', '}', 1)
             # title and pictures
             if (lineOut.startswith('![')):
+                #print "we are in figure"
                 caption = '...'
                 label = '...'
                 pic_filename = '...'
@@ -110,6 +112,7 @@ def main(argv):
                 lineOut = '\\begin{figure}\n\\begin{center}\n \\includegraphics[height=10cm]{' + pic_filename + '}\n\\end{center}\n\\caption{' + caption + '}\n\\label{' + label + '}\n\\end{figure}'
                 figureNumber = figureNumber + 1
             if (lineOut.startswith('#')):
+                #print "we are in title"
                 lineOut = '\\title{' + lineStripped.replace('#', '') + '}'
 
             print lineOut
