@@ -99,10 +99,15 @@ def main(argv):
             while (lineOut.find('*') > -1):
                 lineOut = lineOut.replace('*', '\emph{', 1)
                 lineOut = lineOut.replace('*', '}', 1)
-                # ignore title and pictures
-            # print "lineout 2 " + lineOut
+            # title and pictures
             if (lineOut.startswith('![')):
-                lineOut = '\\begin{center}\nFigure ' + str(figureNumber) + '. ...\n\\end{center}'
+                caption = '...'
+                label = '...'
+                pic_filename = '...'
+                pic_filename = lineOut[lineOut.find('(') + 1: lineOut.rfind('.')]
+                caption = lineOut[lineOut.find('[') + 1: lineOut.rfind(']')]
+                label = pic_filename
+                lineOut = '\\begin{figure}\n\\begin{center}\n \\includegraphics[height=10cm]{' + pic_filename + '}\n\\end{center}\n\\caption{' + caption + '}\n\\label{' + label + '}\n\\end{figure}'
                 figureNumber = figureNumber + 1
             if (lineOut.startswith('#')):
                 lineOut = '\\title{' + lineStripped.replace('#', '') + '}'
