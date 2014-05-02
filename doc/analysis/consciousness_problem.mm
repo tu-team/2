@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1398842334835" ID="ID_80933786" MODIFIED="1398842395331" TEXT="consciousness">
+<node CREATED="1398842334835" ID="ID_80933786" MODIFIED="1399014840437" TEXT="consciousness">
 <node CREATED="1398842406830" ID="ID_1304641657" MODIFIED="1398842415471" POSITION="right" TEXT="neuron">
 <node CREATED="1398842426979" ID="ID_1536178380" MODIFIED="1398842434098" TEXT="glial cells">
 <node CREATED="1398842437298" ID="ID_289653969" MODIFIED="1398842462143" TEXT="gliatransmitters"/>
@@ -24,5 +24,11 @@
 </node>
 <node CREATED="1398843035835" ID="ID_783010099" MODIFIED="1398843067252" POSITION="right" TEXT="non-conscious activities"/>
 <node CREATED="1398843099364" ID="ID_603466651" MODIFIED="1398843119244" POSITION="left" TEXT="conscious to non-consious loops"/>
+<node CREATED="1399014840948" ID="ID_1556269579" MODIFIED="1399018535412" POSITION="right" TEXT="consciousness axioms (Igor Alexander)">
+<attribute NAME="url" VALUE="https://www.researchgate.net/publication/233613244_Axioms_and_Tests_for_the_Presence_of_Minimal_Consciousness_in_Agents_I_Preamble"/>
+</node>
+<node CREATED="1399014865648" ID="ID_1480176710" MODIFIED="1399017874910" POSITION="left" TEXT="consciousness chapter by Marvin Minsky">
+<attribute NAME="url" VALUE="http://web.media.mit.edu/~minsky/E4/eb4.html"/>
+</node>
 </node>
 </map>
