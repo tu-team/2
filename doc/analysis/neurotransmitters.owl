@@ -100,6 +100,9 @@
         <Class IRI="#Nicotinic_acetylcholine"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Norepinephrine"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#P2X"/>
     </Declaration>
     <Declaration>
@@ -152,6 +155,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#globus_pallidus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hormone"/>
     </Declaration>
     <Declaration>
         <Class IRI="#hypothalamus"/>
@@ -265,6 +271,9 @@
         <Class IRI="#subthalamic_nucleus"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#sympathetic_neurons"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#temporal_lobe"/>
     </Declaration>
     <Declaration>
@@ -338,6 +347,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#projects"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#realised_from"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#via"/>
@@ -887,6 +899,21 @@
         <Class IRI="#receptor"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <Class IRI="#hormone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <Class IRI="#small_monoamine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#realised_from"/>
+            <Class IRI="#sympathetic_neurons"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#P2X"/>
         <Class IRI="#receptor"/>
     </SubClassOf>
@@ -1090,6 +1117,10 @@
         <Class IRI="#basal_ganglia"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#sympathetic_neurons"/>
+        <Class IRI="#neurons"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#temporal_lobe"/>
         <Class IRI="#cerebral_cortex"/>
     </SubClassOf>
@@ -1176,6 +1207,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#D2_like</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Decrease intracellular levels of cAMP by inhibiting adenylate cyclase.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Norepinephrine</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">It is the hormone and neurotransmitter most responsible for vigilant concentration in contrast to its most chemically similar hormone, dopamine, which is most responsible for cognitive alertness.[2]</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
