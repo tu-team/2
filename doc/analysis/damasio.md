@@ -10,3 +10,12 @@ The term feeling should be used to describe the complex **mental state** that re
 
 Both emotions and feelings are amenable to investigation, all the more so if their sequential and concurrent functional components can be relatively individualized for analysis along the model suggested by the above distinction. Emotion is somewhat more accessible than feeling because the triggering stimuli and sites are easier to identify, and because so many of the responses are externalized and thus easier to measure. But once the neural systems which can support feelings are identified, feelings are also accessible, especially in humans, using modern neuroimaging tools.
 
+##3. Neural systems underlying emotion
+
+Prominent among those structures are the cingulate cortex (usually used as shorthand for the anterior cingulate cortex), the amygdaloid nuclei (known collectively as the amygdalae), and the hypothalamus for those (authors who include the hypothalamus in the limbic system, which is not always the case). Although the term limbic system is often criticized I have no particular problem with retaining it. The notion of limbic system is helpful provided the term is seen as a convenience for communication and not as a suggestion that this odd collection of structures has a single function. But I do have a problem with the notion that only limbic system structures are seen as relevant for emotion; or that emotion and feeling are seen as happening within the limbic system; or that the results of emotion and feeling are thus relevant only within the limbic system.
+
+Numerous structures outside of limbic system are involved in processing emotion and feeling. The list includes: (a) the prefrontal cortices, especially those in the ventral and medial sectors and, more broadly, in the orbital sector; (b) it also includes the somatosensory cortices, by which I refer not just to SI in the rolandic region but also to SII and to insular cortices; (c) monoamine nuclei in the brain stem; (d) periacqueductal gray; and (e) other nuclei both in the brain stem and spinal cord involved in both afferent and efferent signaling relative to viscera and internal milieu.
+
+
+
+![Emotional flow](damasio_emotions_flow.png)
