@@ -9,3 +9,4 @@ The term feeling should be used to describe the complex **mental state** that re
 1. a number of alterations in cognitive processing that are caused by signals secondary to brain- to-brain responses, for instance, signals from neurotransmitter nuclei towards varied sites in telencephalon.
 
 Both emotions and feelings are amenable to investigation, all the more so if their sequential and concurrent functional components can be relatively individualized for analysis along the model suggested by the above distinction. Emotion is somewhat more accessible than feeling because the triggering stimuli and sites are easier to identify, and because so many of the responses are externalized and thus easier to measure. But once the neural systems which can support feelings are identified, feelings are also accessible, especially in humans, using modern neuroimaging tools.
+
