@@ -16,6 +16,6 @@ Prominent among those structures are the cingulate cortex (usually used as short
 
 Numerous structures outside of limbic system are involved in processing emotion and feeling. The list includes: (a) the prefrontal cortices, especially those in the ventral and medial sectors and, more broadly, in the orbital sector; (b) it also includes the somatosensory cortices, by which I refer not just to SI in the rolandic region but also to SII and to insular cortices; (c) monoamine nuclei in the brain stem; (d) periacqueductal gray; and (e) other nuclei both in the brain stem and spinal cord involved in both afferent and efferent signaling relative to viscera and internal milieu.
 
-
-
 ![Emotional flow](damasio_emotions_flow.png)
+
+The ultimate results of emotion are of two kinds. First there are behaviors — the expressing of joy, or anger, or disgust — which affect interactions with other living creatures. Second, there are experiences of emotional states, that is feelings, which affect the ongoing thinking of the subject and by so doing can alter future thinking, future planning and future behavior. The limbic system is very much in the loop of this entire process but it serves neither as its beginning nor as its end. Equally problematic is the widespread view that the limbic system is the neural basis for all emotions. A rich body of evidence tells us that this is just not the case.
