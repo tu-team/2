@@ -112,6 +112,12 @@
         <Class IRI="#adenylate_cyclase"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#alertness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#amygdala"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#arcuate_nucleus"/>
     </Declaration>
     <Declaration>
@@ -133,6 +139,9 @@
         <Class IRI="#channel"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#concentration"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#decision_making"/>
     </Declaration>
     <Declaration>
@@ -140,6 +149,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#enzyme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fight-or-flight"/>
     </Declaration>
     <Declaration>
         <Class IRI="#frontal_lobe"/>
@@ -173,6 +185,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#liking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#limbic_system"/>
     </Declaration>
     <Declaration>
         <Class IRI="#longterm_memory"/>
@@ -241,6 +256,9 @@
         <Class IRI="#regions"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#response"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#reward"/>
     </Declaration>
     <Declaration>
@@ -260,6 +278,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#spinal_cord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stress_hormone"/>
     </Declaration>
     <Declaration>
         <Class IRI="#striatum"/>
@@ -293,6 +314,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#activates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#affects"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#agonist"/>
@@ -631,6 +655,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
+        <Class IRI="#hormone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
         <Class IRI="#neuromodulator"/>
     </SubClassOf>
     <SubClassOf>
@@ -662,6 +690,13 @@
                 <Class IRI="#D1_like"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dopamine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#alertness"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Dopamine"/>
@@ -904,7 +939,29 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Norepinephrine"/>
+        <Class IRI="#neuromodulator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
         <Class IRI="#small_monoamine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <Class IRI="#stress_hormone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#affects"/>
+            <Class IRI="#amygdala"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_function"/>
+            <Class IRI="#concentration"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Norepinephrine"/>
@@ -924,6 +981,14 @@
     <SubClassOf>
         <Class IRI="#adenylate_cyclase"/>
         <Class IRI="#enzyme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#alertness"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#amygdala"/>
+        <Class IRI="#limbic_system"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#arcuate_nucleus"/>
@@ -957,8 +1022,16 @@
         <Class IRI="#regions"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#concentration"/>
+        <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#decision_making"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fight-or-flight"/>
+        <Class IRI="#response"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#frontal_lobe"/>
@@ -990,6 +1063,10 @@
     <SubClassOf>
         <Class IRI="#liking"/>
         <Class IRI="#function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#limbic_system"/>
+        <Class IRI="#regions"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#longterm_memory"/>
@@ -1082,6 +1159,10 @@
     <SubClassOf>
         <Class IRI="#spinal_cord"/>
         <Class IRI="#regions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stress_hormone"/>
+        <Class IRI="#hormone"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#striatum"/>
