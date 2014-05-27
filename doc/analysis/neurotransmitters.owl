@@ -959,6 +959,13 @@
     <SubClassOf>
         <Class IRI="#Norepinephrine"/>
         <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#affects"/>
+            <Class IRI="#fight-or-flight"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Norepinephrine"/>
+        <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_function"/>
             <Class IRI="#concentration"/>
         </ObjectSomeValuesFrom>
