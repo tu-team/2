@@ -3,13 +3,13 @@
 
 ##Overall
 
-1. Add Gratch and  Marsella papers.
-1. Get rid of complex emotions notions borrowed from Plutchik.
+1. + Add Gratch and  Marsella papers.
+1. ... Get rid of complex emotions notions borrowed from Plutchik.
 1. Add neuro-chemical roles of neuromodulators.
-1. Add examples and implementation.
-1. Add evaluation to model.
+1. ... Add examples and implementation.
+1. ... Add evaluation to model.
 1. Add useful application.
-1. Add implementation.
+1. ... Add implementation.
 
 ##Specific
 
@@ -17,10 +17,10 @@
 1. Add justification to the ad hoc (and unjustified) mapping of the psychological parameters onto the neurotransmitters.
 1. Add cites to justify parameters.
 1. Add cites to justify mapping of psychological parameters to neurotransmitters.
-1.“This article is dedicated to emotional aspects of human thinking and influence of emotions on computational processes” – the authors should explicitly list which computational processes.
-1. This issue is particularly evident in Section 2,  where the authors list a number of theories, and reference Minsky’s ‘emotion machine’, but (a) don’t explain any of the theories adequately, and (b) don’t explain why they chose the particular theories, and what benefits each has for their specific modeling objectives.
-1. In general, there is a lot of unclear terminology; e.g., the authors state “Thus we use two models: affect theory for innate quick emotional reactions and "Wheel of emotions" for conscious low level and high level emotions.
-1. The authors should also try to justify the reason for introducing the various categories of emotions they aim to model (e.g., innate, low level vs. high level conscious), and explain the implications of conscious vs. “unconscious” emotions for a cognitive-affective architecture, and for their approach to implementing ‘emotional thinking’.   (The issue of unconscious emotions is problematic in itself!).
+1. + “This article is dedicated to emotional aspects of human thinking and influence of emotions on computational processes” – the authors should explicitly list which computational processes.
+1. ... This issue is particularly evident in Section 2,  where the authors list a number of theories, and reference Minsky’s ‘emotion machine’, but (a) don’t explain any of the theories adequately, and (b) don’t explain why they chose the particular theories, and what benefits each has for their specific modeling objectives.
+1. + In general, there is a lot of unclear terminology; e.g., the authors state “Thus we use two models: affect theory for innate quick emotional reactions and "Wheel of emotions" for conscious low level and high level emotions.
+1. ... The authors should also try to justify the reason for introducing the various categories of emotions they aim to model (e.g., innate, low level vs. high level conscious), and explain the implications of conscious vs. “unconscious” emotions for a cognitive-affective architecture, and for their approach to implementing ‘emotional thinking’.   (The issue of unconscious emotions is problematic in itself!).
 1. First, the spinal cord is not involved in affective processing (beyond mediation of expressive behavior and proprioceptive stimuli, but even this (the latter) potential impact on emotions has recently come into question) – did the authors mean the brain stem? - **add cite here**.
 1. Second,  statements such as “First stimulus triggers affective appraisal and affective appraisal triggers neuromodulation.”  and “neuromodulation triggers an emotional state switch from serenity to fear” need first, an explanation, and second, references.  Ditto for: “Actually neuromodulation is not the result of appraisal, but non-conscious appraisal is accompanied by neuromodulation on the way from spinal cord to hypothalamus and amygdala.”   What does this mean? What do the authors mean by appraisal and non-conscious appraisal in this context?
 1. The discussion on p. 3 regarding the sequence of various types of appraisals and coping strategies needs references to existing theories and additional details.
