@@ -4,19 +4,19 @@
 ##Overall
 
 1. + Add Gratch and  Marsella papers.
-1. ... Get rid of complex emotions notions borrowed from Plutchik.
+1. + Get rid of complex emotions notions borrowed from Plutchik.
 1. Add neuro-chemical roles of neuromodulators.
 1. ... Add examples and implementation.
-1. ... Add evaluation to model.
+1. + Add evaluation to model.
 1. Add useful application.
-1. ... Add implementation.
+1. + Add implementation.
 
 ##Specific
 
 1. Add justification of parameters and
-1. Add justification to the ad hoc (and unjustified) mapping of the psychological parameters onto the neurotransmitters.
+1. + Add justification to the ad hoc (and unjustified) mapping of the psychological parameters onto the neurotransmitters.
 1. Add cites to justify parameters.
-1. Add cites to justify mapping of psychological parameters to neurotransmitters.
+1. + Add cites to justify mapping of psychological parameters to neurotransmitters.
 1. + “This article is dedicated to emotional aspects of human thinking and influence of emotions on computational processes” – the authors should explicitly list which computational processes.
 1. + This issue is particularly evident in Section 2,  where the authors list a number of theories, and reference Minsky’s ‘emotion machine’, but (a) don’t explain any of the theories adequately, and (b) don’t explain why they chose the particular theories, and what benefits each has for their specific modeling objectives.
 1. + In general, there is a lot of unclear terminology; e.g., the authors state “Thus we use two models: affect theory for innate quick emotional reactions and "Wheel of emotions" for conscious low level and high level emotions.
