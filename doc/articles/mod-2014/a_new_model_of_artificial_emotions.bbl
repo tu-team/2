@@ -1,0 +1,288 @@
+\begin{thebibliography}{10}
+\providecommand{\bibitemdeclare}[2]{}
+\providecommand{\surnamestart}{}
+\providecommand{\surnameend}{}
+\providecommand{\urlprefix}{Available at }
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{\texttt{#2}}
+\providecommand{\urlalt}[2]{\href{#1}{#2}}
+\providecommand{\doi}[1]{doi:\urlalt{http://dx.doi.org/#1}{#1}}
+\providecommand{\bibinfo}[2]{#2}
+
+\bibitemdeclare{article}{anatomic}
+\bibitem{anatomic}
+\bibinfo{author}{J.K. \surnamestart Abrams\surnameend}, \bibinfo{author}{P.L.
+  \surnamestart Johnson\surnameend}, \bibinfo{author}{J.H. \surnamestart
+  Hollis\surnameend} \& \bibinfo{author}{C.A. \surnamestart Lowry\surnameend}
+  (\bibinfo{year}{2004}): \emph{\bibinfo{title}{Anatomic and functional
+  topography of the dorsal raphe nucleus}}.
+\newblock {\sl \bibinfo{journal}{Ann. N. Y. Acad. Sci}} \bibinfo{volume}{1018},
+  p. \bibinfo{pages}{46–57}.
+
+\bibitemdeclare{conference}{motivationalrewardframework}
+\bibitem{motivationalrewardframework}
+\bibinfo{author}{Hyungil \surnamestart Ahn\surnameend} \&
+  \bibinfo{author}{Rosalind~W. \surnamestart Picard\surnameend}
+  (\bibinfo{year}{2005}): \emph{\bibinfo{title}{Affective Cognitive Learning
+  and Decision Making: A Motivational Reward Framework For Affective Agents}}.
+\newblock In: {\sl \bibinfo{booktitle}{The 1st International Conference on
+  Affective Computing and Intelligent Interaction, October 22-24, 2005,
+  Beijing,}}.
+
+\bibitemdeclare{conference}{roleofemotions}
+\bibitem{roleofemotions}
+\bibinfo{author}{Hyungil \surnamestart Ahn\surnameend} \&
+  \bibinfo{author}{Rosalind~W. \surnamestart Picard\surnameend}
+  (\bibinfo{year}{2006}): \emph{\bibinfo{title}{Affective Cognitive Learning
+  and Decision Making: The Role of Emotions}}.
+\newblock In: {\sl \bibinfo{booktitle}{The 18th European Meeting on Cybernetics
+  and Systems Research (EMCSR 2006)}}.
+
+\bibitemdeclare{article}{emotionsbraintorobot}
+\bibitem{emotionsbraintorobot}
+\bibinfo{author}{Michael \surnamestart Arbib\surnameend} \&
+  \bibinfo{author}{Jean-Marc \surnamestart Fellous\surnameend}
+  (\bibinfo{year}{2004}): \emph{\bibinfo{title}{Emotions: from brain to
+  robot}}.
+\newblock {\sl \bibinfo{journal}{Trends in Cognitive Sciences}}
+  \bibinfo{volume}{8(12)}, pp. \bibinfo{pages}{554--559}.
+
+\bibitemdeclare{article}{parsingreward}
+\bibitem{parsingreward}
+\bibinfo{author}{Kent~C. \surnamestart Berridge\surnameend} \&
+  \bibinfo{author}{Terry~E. \surnamestart Robinson\surnameend}
+  (\bibinfo{year}{2003}): \emph{\bibinfo{title}{Parsing Reward.}}
+\newblock {\sl \bibinfo{journal}{Trends in Neurosciences}}
+  \bibinfo{volume}{26(9)}.
+
+\bibitemdeclare{book}{emotionandsociable}
+\bibitem{emotionandsociable}
+\bibinfo{author}{Cynthia \surnamestart Breazeal\surnameend}
+  (\bibinfo{year}{2002}): \emph{\bibinfo{title}{Emotion and sociable humanoid
+  robots}}.
+
+\bibitemdeclare{book}{senticcomputing}
+\bibitem{senticcomputing}
+\bibinfo{author}{Erik \surnamestart Cambria\surnameend} \&
+  \bibinfo{author}{Amir \surnamestart Hussain\surnameend}
+  (\bibinfo{year}{2012}): \emph{\bibinfo{title}{Sentic Computing. Techniques,
+  Tools, and Applications}}.
+\newblock \bibinfo{publisher}{Springer}.
+
+\bibitemdeclare{inbook}{hourglass}
+\bibitem{hourglass}
+\bibinfo{author}{Erik \surnamestart Cambria\surnameend},
+  \bibinfo{author}{Andrew \surnamestart Livingstone\surnameend} \&
+  \bibinfo{author}{Amir \surnamestart Hussain\surnameend}
+  (\bibinfo{year}{2012}): \emph{\bibinfo{title}{Cognitive Behavioural
+  Systems}}, chapter \bibinfo{chapter}{The Hourglass of Emotions}, pp.
+  \bibinfo{pages}{144--157}.
+\newblock \bibinfo{publisher}{Springer}.
+
+\bibitemdeclare{article}{neuromodulatory}
+\bibitem{neuromodulatory}
+\bibinfo{author}{Jean-Marc \surnamestart Fellous\surnameend}
+  (\bibinfo{year}{1999}): \emph{\bibinfo{title}{The neuromodulatory basis of
+  emotion}}.
+\newblock {\sl \bibinfo{journal}{The Neuro-scientist}} \bibinfo{volume}{5}, pp.
+  \bibinfo{pages}{283--294}.
+
+\bibitemdeclare{article}{evaluatingcomutationalmodel}
+\bibitem{evaluatingcomutationalmodel}
+\bibinfo{author}{Jonathan \surnamestart Gratch\surnameend} \&
+  \bibinfo{author}{Stacy \surnamestart Marsella\surnameend}
+  (\bibinfo{year}{2005}): \emph{\bibinfo{title}{Evaluating a Computational
+  Model of Emotion}}.
+\newblock {\sl \bibinfo{journal}{Autonomous Agents and Multi-Agent Systems}}
+  \bibinfo{volume}{11}, pp. \bibinfo{pages}{23--43}.
+
+\bibitemdeclare{article}{primer_affect_psychology}
+\bibitem{primer_affect_psychology}
+\bibinfo{author}{Vernon~C. \surnamestart Kelly\surnameend}
+  (\bibinfo{year}{2009}): \emph{\bibinfo{title}{A primer of affect
+  psychology}}.
+\newblock
+  \urlprefix\url{http://www.tomkins.org/uploads/Primer_of_Affect_Psychology.pdf}.
+
+\bibitemdeclare{inproceedings}{affectivemodelofinterplay}
+\bibitem{affectivemodelofinterplay}
+\bibinfo{author}{Barry \surnamestart Kort\surnameend}, \bibinfo{author}{Rob
+  \surnamestart Reilly\surnameend} \& \bibinfo{author}{Rosalind~W.
+  \surnamestart Picard\surnameend} (\bibinfo{year}{2001}):
+  \emph{\bibinfo{title}{An Affective Model of Interplay Between Emotions and
+  Learning: Reengineering Educational Pedagogy-Building a Learning Companion}}.
+\newblock In: {\sl \bibinfo{booktitle}{In Proceedings of International
+  Conference on Advanced Learning Technologies (ICALT 2001)}}.
+
+\bibitemdeclare{incollection}{threelevel}
+\bibitem{threelevel}
+\bibinfo{author}{Othalia \surnamestart Larue\surnameend},
+  \bibinfo{author}{Pierre \surnamestart Poirier\surnameend} \&
+  \bibinfo{author}{Roger \surnamestart Nkambou\surnameend}
+  (\bibinfo{year}{2012}): \emph{\bibinfo{title}{A Three-Level Cognitive
+  Architecture for the Simulation of HumanBehaviour}}.
+\newblock In: {\sl \bibinfo{booktitle}{Advances in Artificial Intelligence}},
+  \bibinfo{publisher}{Springer Berlin Heidelberg}, pp.
+  \bibinfo{pages}{337--342}.
+
+\bibitemdeclare{article}{computationalmodelsemotionscognition}
+\bibitem{computationalmodelsemotionscognition}
+\bibinfo{author}{Jerry \surnamestart Lin\surnameend}, \bibinfo{author}{Marc
+  \surnamestart Spraragen\surnameend} \& \bibinfo{author}{Michael \surnamestart
+  Zyda\surnameend} (\bibinfo{year}{2012}): \emph{\bibinfo{title}{Computational
+  Models of Emotion and Cognition}}.
+\newblock {\sl \bibinfo{journal}{Advances in Cognitive Systems}}
+  \bibinfo{volume}{2}, pp. \bibinfo{pages}{59--76}.
+
+\bibitemdeclare{article}{cubeofemotions}
+\bibitem{cubeofemotions}
+\bibinfo{author}{Hugo \surnamestart Lovheim\surnameend} (\bibinfo{year}{2012}):
+  \emph{\bibinfo{title}{A new three-dimensional model for emotions and
+  monoamine neurotransmitters}}.
+\newblock {\sl \bibinfo{journal}{Medical Hypotheses 78}} \bibinfo{volume}{78},
+  pp. \bibinfo{pages}{341--348}.
+
+\bibitemdeclare{inproceedings}{dont_worry_be_happy}
+\bibitem{dont_worry_be_happy}
+\bibinfo{author}{Stacy \surnamestart Marsella\surnameend} \&
+  \bibinfo{author}{Jonathan \surnamestart Gratch\surnameend}
+  (\bibinfo{year}{2003}): \emph{\bibinfo{title}{Modeling Coping Behavior in
+  Virtual Humans: Don’t Worry, Be Happy}}.
+\newblock In: {\sl \bibinfo{booktitle}{Appears in the 2nd International Joint
+  Conference on Autonomous Agents and Multiagent Systems}}.
+
+\bibitemdeclare{incollection}{computationalmodelsemotion}
+\bibitem{computationalmodelsemotion}
+\bibinfo{author}{Stacy \surnamestart Marsella\surnameend},
+  \bibinfo{author}{Jonathan \surnamestart Gratch\surnameend} \&
+  \bibinfo{author}{Paolo \surnamestart Petta\surnameend}
+  (\bibinfo{year}{2010}): \emph{\bibinfo{title}{Computational Models of
+  Emotion}}.
+\newblock In \bibinfo{editor}{K.R. \surnamestart Scherer\surnameend},
+  \bibinfo{editor}{T.~\surnamestart Bänziger\surnameend} \&
+  \bibinfo{editor}{E.~\surnamestart Roesch\surnameend}, editors: {\sl
+  \bibinfo{booktitle}{A blueprint for a affective computing: A sourcebook and
+  manual.}}, \bibinfo{publisher}{Oxford: Oxford University Press}.
+
+\bibitemdeclare{book}{emotionmachine}
+\bibitem{emotionmachine}
+\bibinfo{author}{Marvin \surnamestart Minsky\surnameend}
+  (\bibinfo{year}{2007}): \emph{\bibinfo{title}{The Emotion Machine:
+  Commonsense Thinking, Artificial Intelligence, and the Future of the Human
+  Mind}}.
+\newblock \bibinfo{publisher}{Simon \& Schuster}.
+
+\bibitemdeclare{techreport}{affectivecomputing}
+\bibitem{affectivecomputing}
+\bibinfo{author}{Rosalind~W. \surnamestart Picard\surnameend}
+  (\bibinfo{year}{1995}): \emph{\bibinfo{title}{Affective Computing}}.
+\newblock \bibinfo{type}{Technical Report}, \bibinfo{institution}{M.I.T Media
+  Laboratory Perceptual Computing Section}.
+
+\bibitemdeclare{incollection}{whatdoesitmeanforcomputer}
+\bibitem{whatdoesitmeanforcomputer}
+\bibinfo{author}{Rosalind~W. \surnamestart Picard\surnameend}
+  (\bibinfo{year}{2001}): \emph{\bibinfo{title}{What Does it Mean for a
+  Computer to "have" Emotions?}}
+\newblock In \bibinfo{editor}{R.~\surnamestart Trappl\surnameend},
+  \bibinfo{editor}{P.~\surnamestart Petta\surnameend} \& \bibinfo{editor}{Payr
+  \surnamestart S.\surnameend}, editors: {\sl \bibinfo{booktitle}{Emotions in
+  Humans and Artifacts}}.
+
+\bibitemdeclare{article}{affectivecomputingchallanges}
+\bibitem{affectivecomputingchallanges}
+\bibinfo{author}{Rosalind~W. \surnamestart Picard\surnameend}
+  (\bibinfo{year}{2003}): \emph{\bibinfo{title}{Affective Computing:
+  Challenges}}.
+\newblock {\sl \bibinfo{journal}{International Journal of Human-Computer
+  Studies}} \bibinfo{volume}{59}, pp. \bibinfo{pages}{55--64}.
+
+\bibitemdeclare{article}{natureofemotions}
+\bibitem{natureofemotions}
+\bibinfo{author}{Robert \surnamestart Plutchik\surnameend}
+  (\bibinfo{year}{2001}): \emph{\bibinfo{title}{The Nature of Emotions}}.
+\newblock {\sl \bibinfo{journal}{American Scientist}} \bibinfo{volume}{89(4)},
+  pp. \bibinfo{pages}{344--350}.
+
+\bibitemdeclare{article}{appraisal_determinants_of_emotions}
+\bibitem{appraisal_determinants_of_emotions}
+\bibinfo{author}{Ira \surnamestart Roseman\surnameend} (\bibinfo{year}{1996}):
+  \emph{\bibinfo{title}{Appraisal Determinants of Emotions: Constructing a More
+  Accurate and Comprehensive Theory.}}
+\newblock {\sl \bibinfo{journal}{Cognition \& Emotion}} \bibinfo{volume}{10:
+  3}, pp. \bibinfo{pages}{241 --278}.
+
+\bibitemdeclare{article}{appraisal_considered_as_a_process}
+\bibitem{appraisal_considered_as_a_process}
+\bibinfo{author}{K.~R. \surnamestart Scherer\surnameend}
+  (\bibinfo{year}{2001}): \emph{\bibinfo{title}{Appraisal Considered as a
+  Process of Multilevel Sequential Checking.}}
+\newblock {\sl \bibinfo{journal}{Appraisal Processes in Emotion: Theory,
+  Methods, Research}}, pp. \bibinfo{pages}{pp. 92--120}.
+
+\bibitemdeclare{article}{putting_appraisal_in_context}
+\bibitem{putting_appraisal_in_context}
+\bibinfo{author}{Craig~A. \surnamestart Smith\surnameend} \&
+  \bibinfo{author}{Leslie~D. \surnamestart Kirby\surnameend}
+  (\bibinfo{year}{2009}): \emph{\bibinfo{title}{Putting appraisal in context:
+  Toward a relational model of appraisal and emotion}}.
+\newblock {\sl \bibinfo{journal}{Cognition \& Emotion}} \bibinfo{volume}{23:7},
+  pp. \bibinfo{pages}{1352--1372}.
+
+\bibitemdeclare{article}{computational_emotional_thinking}
+\bibitem{computational_emotional_thinking}
+\bibinfo{author}{Max \surnamestart Talanov\surnameend} \&
+  \bibinfo{author}{Alexander \surnamestart Toschev\surnameend}
+  (\bibinfo{year}{2014}): \emph{\bibinfo{title}{Computational emotional
+  thinking and virtual neurotransmitters}}.
+\newblock {\sl \bibinfo{journal}{International Journal of Synthetic Emotions
+  (IJSE)}} \bibinfo{volume}{5(1)}.
+
+\bibitemdeclare{article}{sex_differencies}
+\bibitem{sex_differencies}
+\bibinfo{author}{Lisa~K. \surnamestart Tamres\surnameend},
+  \bibinfo{author}{Denise \surnamestart Janicki\surnameend} \&
+  \bibinfo{author}{Vicki~S. \surnamestart Helgeson\surnameend}
+  (\bibinfo{year}{2002}): \emph{\bibinfo{title}{Sex Differences in Coping
+  Behavior: A Meta-Analytic Review and an Examination of Relative Coping}}.
+\newblock {\sl \bibinfo{journal}{Personality and Social Psychology Review}}
+  \bibinfo{volume}{6: 2}.
+
+\bibitemdeclare{book}{tomkins1}
+\bibitem{tomkins1}
+\bibinfo{author}{S.~\surnamestart Tomkins\surnameend} (\bibinfo{year}{1962}):
+  \emph{\bibinfo{title}{Affect imagery consciousness volume I the positive
+  affects}}.
+\newblock \bibinfo{publisher}{New York: Springer Publishing Company}.
+
+\bibitemdeclare{book}{tomkins2}
+\bibitem{tomkins2}
+\bibinfo{author}{S.~\surnamestart Tomkins\surnameend} (\bibinfo{year}{1963}):
+  \emph{\bibinfo{title}{Affect imagery consciousness volume II the negative
+  affects.}}
+\newblock \bibinfo{publisher}{New York: Springer Publishing Company}.
+
+\bibitemdeclare{book}{tomkins3}
+\bibitem{tomkins3}
+\bibinfo{author}{S.~\surnamestart Tomkins\surnameend} (\bibinfo{year}{1991}):
+  \emph{\bibinfo{title}{Affect imagery consciousness volume III the negative
+  affects anger and fear.}}
+
+\bibitemdeclare{incollection}{intelligent_machinery}
+\bibitem{intelligent_machinery}
+\bibinfo{author}{A.M. \surnamestart Turing\surnameend} (\bibinfo{year}{1948}):
+  \emph{\bibinfo{title}{Intelligent Machinery}}.
+\newblock In \bibinfo{editor}{B.J. \surnamestart Copeland\surnameend}, editor:
+  {\sl \bibinfo{booktitle}{The Essential Turing: the ideas that gave birth to
+  the Computer Age.}}, \bibinfo{publisher}{Oxford: Clarendon, 2004}, p.
+  \bibinfo{pages}{411}.
+
+\bibitemdeclare{article}{on_role_of_emotion}
+\bibitem{on_role_of_emotion}
+\bibinfo{author}{Tom \surnamestart Ziemke\surnameend} \&
+  \bibinfo{author}{Robert \surnamestart Lowe\surnameend}
+  (\bibinfo{year}{2009}): \emph{\bibinfo{title}{On the Role of Emotion in
+  Embodied Cognitive Architectures: From Organisms to Robots}}.
+\newblock {\sl \bibinfo{journal}{Cogn Comput}}, pp. \bibinfo{pages}{104--117}.
+
+\end{thebibliography}

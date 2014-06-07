@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: a_new_model_of_artificial_emotions.aux
+The style file: eptcs.bst
+Database file #1: ref.bib
+Warning--empty pages in motivationalrewardframework
+Warning--empty pages in roleofemotions
+Warning--can't use both author and editor fields in emotionandsociable
+Warning--missing publisher in emotionandsociable
+Warning--empty journal in primer_affect_psychology
+Warning--empty pages in affectivemodelofinterplay
+Warning--empty pages in dont_worry_be_happy
+Warning--empty pages in computationalmodelsemotion
+Warning--missing publisher in whatdoesitmeanforcomputer
+Warning--empty pages in whatdoesitmeanforcomputer
+Warning--can't use both author and editor fields in tomkins3
+Warning--missing publisher in tomkins3
+You've used 32 entries,
+            2701 wiz_defined-function locations,
+            756 strings with 10048 characters,
+and the built_in function-call counts, 15359 in all, are:
+= -- 1053
+> -- 373
+< -- 16
++ -- 160
+- -- 121
+* -- 1747
+:= -- 1831
+add.period$ -- 62
+call.type$ -- 32
+change.case$ -- 138
+chr.to.int$ -- 0
+cite$ -- 76
+duplicate$ -- 1331
+empty$ -- 1340
+format.name$ -- 140
+if$ -- 3079
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 299
+newline$ -- 170
+num.names$ -- 70
+pop$ -- 310
+preamble$ -- 1
+purify$ -- 121
+quote$ -- 0
+skip$ -- 474
+stack$ -- 0
+substring$ -- 576
+swap$ -- 1168
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 146
+warning$ -- 12
+while$ -- 96
+width$ -- 34
+write$ -- 335
+(There were 12 warnings)
