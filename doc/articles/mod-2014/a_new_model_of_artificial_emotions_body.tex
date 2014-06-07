@@ -142,16 +142,7 @@ related to repulsion and withdrawal; we usually stop eating when we feel disgust
 
 ``Surprise has been placed in the high-serotonergic, low-dopaminergic, high-noradrenergic corner, and might thus be regarded as the non-reinforced analogue to excitement, which seems logical considering that surprise has been described as a neutral basic emotion. At the same time surprise is a highly focused, attentive state, and therefore logically high-noradrenergic. Also, according to the model, the individual experiencing surprise as compared to distress/anguish has a basic feeling of confidence and inner strength.''
 
-From our perspective this is the base of objective non-conscious emotional brain reaction to stimulus. On the other hand according to ``Emotions: from brain to robot'' \cite{emotionsbraintorobot} there are four following neuronal systems involved in emotional processing:
-
-\begin{enumerate}
- \item Hypothalamus
- \item Amygdala
- \item Frontal cortex, 
- \item Cingulate cortex
-\end{enumerate}
-
-We roughly correspond non-conscious instinctive reactions layer of "model of six" \cite{emotionmachine} with hypothalamus amygdala and cingulate cortex, while conscious processes and learned reactions, deliberative thinking, reflective thinking, self-reflective thinking, self-conscious reflections with frontal. This approach could be understood as subjective emotions to objective brain reaction mapping. This is fundamental for representation of emotional processes on computational system parameters.
+L\"{o}vheim proposed monomaines based emotion regulation system: ``The monoamine-releasing upper brain stem areas – raphe nuclei, ventral tegmental area and locus ceruleus – do not, however, ultimately control our emotions. There is a growing body of evidence suggesting a crucial role for the amygdala and other limbic structures in the synthesis of information and control of behaviors and emotions [34–44]. These structures handle the processing of emotion-eliciting information and trigger certain emotions in certain situations, and are projecting towards the monoaminergic nuclei which serve to deliver the message – the emotion – to the whole brain [5,41,43]. In other words, the monoamine transmitter systems might form one final pathway for the simultaneous delivery of emotional information to large and dispersed areas of the brain.''
 
 \section{Neuromodulators to Computing Parameters Mapping}
 
@@ -183,7 +174,7 @@ Noradrenaline or it is better to call virtual adrenaline could influence modern 
 
 \subsection{Computational system parameters}
 
-We introduced several computing system parameters in previous three sections. According to their nature we split them in two groups: most obvious generic parameters of computing system that includes: computing power, memory distribution, learning and storage; decision making is massively impacted by affects(emotions) that made us use second special group including: confidence, satisfaction, motivation, number of options to process, tendency to use risky choices. Computing power and memory distribution are closely related parameters that heavily influence resources of a system used for current activity (cognitive process). Storage is influenced by learning forming the information to store during the training. Decision making group represents parameters and coloring (tagging, flagging) of the trained information exploited during making the decision processes. Confidence impact over decision making is one of the most obvious and important, even the selection of the information is done taking in account how system is confident in this information. Satisfaction is one of most important flags involved in reward system \footnote{Reward system wikipedia page: \url{http://en.wikipedia.org/wiki/Reward_system}} usually making system to select most satisfactory/pleasureful actions (approaches). Motivation \footnote{\url{http://en.wikipedia.org/wiki/Motivation}} drives system to make most desirable selections and heavily influences selections of further activities. Number of options to process and inclination to risky actions are liked to noradrenaline stressful situation alertness, both of them makes system do quick decisions with tendency to risk.
+We introduced several computing system parameters in previous three sections. According to their nature we split them in two groups: most obvious generic parameters of computing system that includes: computing power, memory distribution, learning and storage; decision making is massively impacted by affects(emotions) that made us use second special group including: confidence, satisfaction, motivation, number of options to process, tendency to use risky choices. Computing power and memory distribution are closely related parameters that heavily influence resources of a system used for current activity (cognitive process). Storage is influenced by learning forming the information to store during the training. Decision making group represents parameters and coloring (tagging, flagging) of the trained information exploited during making the decision processes. Confidence impact over decision making is one of the most obvious and important, even the selection of the information is done taking in account how system is confident in this information. Satisfaction is one of most important flags involved in reward system \footnote{Reward system Wikipedia page: \url{http://en.wikipedia.org/wiki/Reward_system}} usually making system to select most satisfactory/pleasureful actions (approaches). Motivation \footnote{Motivation Wikipedia page: \url{http://en.wikipedia.org/wiki/Motivation}} drives system to make most desirable selections and heavily influences selections of further activities. Number of options to process and inclination to risky actions are liked to noradrenaline stressful situation alertness, both of them makes system do quick decisions with tendency to risk.
 
 Our understanding of the role of neuromodulators  is represented in following mapping of neuromodulators to computing system parameters, the figure~\ref{cube_of_parameters}.
 
@@ -239,59 +230,13 @@ System tends to choose \emph{risky} actions under the influence of noradrenaline
 
 Noradrenaline makes system consider a smaller \emph{number of options} in width and depth to be processed during deliberation.
 
-This mapping is exhaustively described in ``Computational emotional thinking and virtual neurotransmitters'' \cite{computational_emotional_thinking}. It could be used as a low level ("hard-coded") model of emotional processes implemented in a spiking neuron model used to build a neural network and could be used as a basic framework for the emotion enabled systems \cite{whatdoesitmeanforcomputer}.
+This mapping is exhaustively described in ``Computational emotional thinking and virtual neurotransmitters'' \cite{computational_emotional_thinking}. It could be used as a low level model of emotional processes and could be used as a basic framework for the emotion enabled systems \cite{whatdoesitmeanforcomputer}.
 
 \section{Cognitive Architecture Analysis}
 
-... Expand
+... Rework
 
 To understand the current scientific state of affairs, existing models and implementations in actual code, and to find proper a base for our implementation we used the most traditional way: run a comparative analysis. It worth to mention that we don't want to limit ourselves with the emotion-oriented architectures; we rather want to get a wide view on the current situation in the domain. We analyzed 27 cognitive architectures with following set of criteria:
-
-\begin{enumerate}
- \item  Emotional criteria:
- \begin{enumerate}
-  \item  Cognitive Representation
-  \item  Cognition $\rightarrow$ Emotion
-  \item  Emotion Representation
-  \item  Emotion $\rightarrow$ Cognition
-  \item  Compatibility with Plutchick wheel of emotion
-  \item  Compatibility with Tomkins affects
-  \item  Compatibility with Picard criteria
- \end{enumerate}
- \item  Thinking levels:
- \begin{enumerate}
-  \item  Instinctive level
-  \item  Learned level
-  \item  Deliberative level
-  \item  Reflection level
- \end{enumerate}
- \item  AI components:
- \begin{enumerate}
-  \item  Attention
-  \item  Planning
-  \item  Motivation(implying Emotions)
-  \item  Common sense logic
-  \item  Reasoning
-  \item  Perception/understanding
-  \item  Memory:
-  \begin{enumerate}
-   \item  Constructive memory
-   \item  Reconstructive memory
-  \end{enumerate}
-  \item  Consciousness:
-  \begin{enumerate}
-   \item  Awareness
-   \item  Learning
-   \item  Anticipation
-   \item  Subjective experience
-  \end{enumerate}
-  \item  Intuition
-  \item  Creativity(imagination)
-  \item  Dream/sleep
- \end{enumerate}
- \item  Parallel processing
- \item  Self-emergent/self-organized
-\end{enumerate}
 
 Criteria are organized in three groups: emotional group depicts our interest in emotions implementation in cognitive architecture \cite{computationalmodelsemotionscognition}, thinking levels are the compatibility with Marvin Minsky's "The emotion machine", AI components group is used to gain understanding of width of coverage of AI domains by cognitive architecture. We used two additional criteria that seem to play important role and were not in previous groups. Exhaustive analysis is available on-line \footnote{Exhaustive analysis address: \url{https://github.com/development-team/2/blob/master/doc/analysis/cognitive_architecture.md}}.
 
@@ -302,7 +247,7 @@ H-CogAff is more of philosophical framework to build the cognitive architecture,
 
 \section{Possible implementation and validation}
 
-As emotional neuromodulation is connected to reward system \cite{neuromodulatory, emotionsbraintorobot, primer_affect_psychology, appraisal_considered_as_a_process, computationalmodelsemotion, dont_worry_be_happy} first of all we supposed that most appropriate would be the implementation of this affective computation model as realistic neural network (like NEST \footnote{NEST project wikipedia page: \url{https://en.wikipedia.org/wiki/NEST_(software)}}), put in life threatening situation. Classical example is zapping rat (brain) \footnote{\url{http://www.nature.com/news/flashes-of-light-show-how-memories-are-made-1.15330}}. Potential disadvantage of this reward oriented implementation and thus validation is that reinforcement learning could be used in the same life threatening situation with similar effect. The attention is one more important phenomena that is heavily influenced by emotions \cite{neuromodulatory, on_role_of_emotion, emotionsbraintorobot}, neuromodulation of noradrenaline. Taking in account both effects on reward system and attention we plan to implement neuromodulation mechanism of three monoamines over realistic neural network \footnote{The list of realistic NNs: \url{http://home.earthlink.net/~perlewitz/sftwr.html}}. In life threatening situation behavioral difference between emotional and non-emotional neural network should be obvious enough to indicate the advantages/disadvantages of emotional reactions. Other way to validate the emotional framework could be comparative test of non-emotional reinforcement learning with emotional reinforcement learning. The reinforcement learning its self was inspired by behaviorist psychology \footnote{Reinforcement learning wikipedia page: \url{http://en.wikipedia.org/wiki/Reinforcement_learning}}. Neuromodulation based affective computation model could contribute to it at least distribution resources (attention) and communicating to other agents (is not discussed in this paper) \cite{on_role_of_emotion}. Thus implementing described above model we should be able to notice behavioral and resources delta impacted by neuromodulation and thus emotions.
+As emotional neuromodulation is connected to reward system \cite{neuromodulatory, emotionsbraintorobot, primer_affect_psychology, appraisal_considered_as_a_process, computationalmodelsemotion, dont_worry_be_happy} first of all we supposed that most appropriate would be the implementation of this affective computation model as realistic neural network (like NEST \footnote{NEST project Wikipedia page: \url{https://en.wikipedia.org/wiki/NEST_(software)}}), put in life threatening situation. Classical example is zapping rat (brain) \footnote{\url{http://www.nature.com/news/flashes-of-light-show-how-memories-are-made-1.15330}}. Potential disadvantage of this reward oriented implementation and thus validation is that reinforcement learning could be used in the same life threatening situation with similar effect. The attention is one more important phenomena that is heavily influenced by emotions \cite{neuromodulatory, on_role_of_emotion, emotionsbraintorobot}, neuromodulation of noradrenaline. Taking in account both effects on reward system and attention we plan to implement neuromodulation mechanism of three monoamines over realistic neural network \footnote{The list of realistic NNs: \url{http://home.earthlink.net/~perlewitz/sftwr.html}}. In life threatening situation behavioral difference between emotional and non-emotional neural network should be obvious enough to indicate the advantages/disadvantages of emotional reactions. Other way to validate the emotional framework could be comparative test of non-emotional reinforcement learning with emotional reinforcement learning. The reinforcement learning its self was inspired by behaviorist psychology \footnote{Reinforcement learning Wikipedia page: \url{http://en.wikipedia.org/wiki/Reinforcement_learning}}. Neuromodulation based affective computation model could contribute to it at least distribution resources (attention) and communicating to other agents (is not discussed in this paper) \cite{on_role_of_emotion}. Thus implementing described above model we should be able to notice behavioral and resources delta impacted by neuromodulation and thus emotions.
 
 
 \section{Conclusion}
