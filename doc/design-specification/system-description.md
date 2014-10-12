@@ -30,6 +30,7 @@ Companies would require support for their hardware and equipment in order to man
 Identified below are several technology areas TU was designed to support.
 
  1. RIM(Remote Infrastructure Management)
+ 1. RIS(Remote Infrastructure support)
  1. NOC(Network operations center)
  1. SE(Software engineering) maintenance
    2. Telecom maintenance
