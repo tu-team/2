@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>tu</groupId>
     <artifactId>cognition</artifactId>
-    <version>1.0</version>
+    <version>1.2</version>
     <name>Thinking understanding main component.</name>
     <packaging>pom</packaging>
     <inceptionYear>2012</inceptionYear>
@@ -19,17 +19,23 @@
 
     <properties>
         <!-- dependency versions -->
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <encoding>UTF-8</encoding>
-        <scala.version>2.9.1</scala.version>
-        <scala.plugin.version>2.9.1</scala.plugin.version>
-        <junit.version>4.8.1</junit.version>
-        <specs.version>1.6.9</specs.version>
-        <scalatest.version>1.7.2</scalatest.version>
+        <scala.version>2.11.6</scala.version>
+        <scala.plugin.version>2.11.6</scala.plugin.version>
+        <junit.version>4.12</junit.version>
+        <specs.scala.version>2.11</specs.scala.version>
+        <akka.scala.version>2.11</akka.scala.version>
+        <akka.version>2.3.10</akka.version>
+        <specs.version>3.3.1</specs.version>
+        <scalatest.version>2.2.4</scalatest.version>
+        <scalatest.scala.version>2.11</scalatest.scala.version>
         <slf4j.version>1.6.4</slf4j.version>
         <!-- version -->
-        <tu.version>1.0</tu.version>
+        <tu.version>1.2</tu.version>
+        <scala.maven.plugin.version>2.15.0</scala.maven.plugin.version>
+        <maven.surefire.plugin.version>2.6</maven.surefire.plugin.version>
     </properties>
 
     <repositories>
@@ -43,6 +49,11 @@
             <name>OpenNLP Maven Repository</name>
             <url>http://opennlp.sourceforge.net/maven2/</url>
         </repository>
+        <repository>
+            <id>Bintray</id>
+            <name>Bintray for specs</name>
+            <url>http://dl.bintray.com/scalaz/releases</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -53,17 +64,25 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <dependencies><!--
-        <dependency>
-            <groupId>com.jteigen.scalatest</groupId>
-            <artifactId>test</artifactId>
-            <version>1.0</version>
-        </dependency> -->
+    <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2_${specs.scala.version}</artifactId>
+            <version>${specs.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_${akka.scala.version}</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+
     </dependencies>
 
     <modules>

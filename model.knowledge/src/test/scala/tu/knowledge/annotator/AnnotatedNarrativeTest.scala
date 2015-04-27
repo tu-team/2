@@ -19,9 +19,7 @@ import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase, Annotat
 @RunWith(classOf[JUnitRunner])
 class AnnotatedNarrativeTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   val namespace = "testNamespace"
   val name = "name"

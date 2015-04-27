@@ -31,9 +31,7 @@ package tu.knowledge
   val f2 = new TypedFrame(Map[KnowledgeURI, Resource](source.uri -> source, destination.uri -> destination, test.uri -> test), new KnowledgeURI(namespace, "f2", revision))
   val klName = new KnowledgeString("name", uri)
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("KLine should contain several resources") {
     val kl = new KLine(Map(f1.uri -> f1), uri)

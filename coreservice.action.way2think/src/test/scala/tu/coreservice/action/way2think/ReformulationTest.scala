@@ -18,9 +18,7 @@ import tu.model.knowledge.KnowledgeURI
 @RunWith(classOf[JUnitRunner])
 class ReformulationTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
 
   test("Reformulation exact match should work") {
@@ -43,7 +41,7 @@ class ReformulationTest extends FunSuite {
         )
         assert(checkedNodes.size > 0)
       }
-      case None => assert(condition = false)
+      case None => assert(false)
     }
 
   }

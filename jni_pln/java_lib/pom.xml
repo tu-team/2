@@ -43,8 +43,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.scala-tools.testing</groupId>
-			<artifactId>specs_${scala.version}</artifactId>
+			<groupId>org.specs2</groupId>
+			<artifactId>specs2_${specs.scala.version}</artifactId>
 			<version>1.6.5</version>
 			<scope>test</scope>
 		</dependency>
@@ -72,7 +72,7 @@
 						</goals>
 						<configuration>
 							<args>
-								<arg>-make:transitive</arg>
+								<!--<arg>-make:transitive</arg>-->
 								<arg>-dependencyfile</arg>
 								<arg>${project.build.directory}/.scala_dependencies</arg>
 							</args>

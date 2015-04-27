@@ -9,7 +9,7 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         time: 11:37 PM
  */
 
-case class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Probability)
+class KnowledgeString(_value: String, _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_value: String, _uri: KnowledgeURI) = {

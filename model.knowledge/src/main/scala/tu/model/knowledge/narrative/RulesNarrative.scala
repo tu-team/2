@@ -10,7 +10,7 @@ import tu.model.knowledge.{Probability, KnowledgeURI, Resource}
  *         Time: 12:22
  */
 
-case class RulesNarrative[Type <: Resource](_rules: List[Rule[Type]],override val _uri: KnowledgeURI,override val _probability: Probability)
+case class RulesNarrative[Type <: Resource](_rules: List[Rule[Type]],val _uri: KnowledgeURI,val _probability: Probability)
   extends Narrative[Rule[Type]](_rules, _uri, _probability) {
   // use constructor to declare local vars, everything is Resource
 

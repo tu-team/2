@@ -17,9 +17,7 @@ import tu.model.knowledge.{TypedKLine, Resource, Probability, KnowledgeURI}
 @RunWith(classOf[JUnitRunner])
 class TypedKLineTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   val namespace = "testNamespace"
   val name = "name"

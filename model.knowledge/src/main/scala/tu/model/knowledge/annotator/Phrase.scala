@@ -9,7 +9,7 @@ import tu.model.knowledge.primitive.KnowledgeString
  *         Time stamp: 6/29/12 11:28 AM
  */
 
-case class Phrase( override val _value: String, override val _uri: KnowledgeURI, override val _probability: Probability)
+case class Phrase(  val _value: String,  val _uri: KnowledgeURI, val _probability: Probability)
   extends KnowledgeString(_value, _uri, _probability) {
 
   def this( _value: String, _uri: KnowledgeURI) {

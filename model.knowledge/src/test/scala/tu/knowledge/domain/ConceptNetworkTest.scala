@@ -31,27 +31,41 @@ class ConceptNetworkTest extends FunSuite {
   val objectConcept = Concept.createSubConcept(concept, "object")
   val has = ConceptLink(subjectConcept, objectConcept, "has")
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("ConceptNetwork should contain concepts and their contents") {
     val sn0 = new ConceptNetwork(List[Concept](concept), List(has), uri)
-    expect(content.toString)(sn0.nodes(0).content.toString)
+    assertResult(content.toString)(sn0.nodes(0).content.toString)
   }
 
   test("ConceptNetwork should be exported via toText") {
     val sn0 = new ConceptNetwork(List[Concept](concept, subjectConcept), List(), uri)
     val res0 = sn0.toText
-    expect("subject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]")(res0)
+    val res0E="subject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subject@"+Constant.defaultRevision+ "#,tu-project.com/object@"+
+    Constant.defaultRevision+ "#);links=;phrase=(tu-project.com/userEmptyPhrase@"+Constant.defaultRevision+ "#)]"
+    assertResult(res0E)(res0)
 
     val sn1 = new ConceptNetwork(List[Concept](concept, subjectConcept, objectConcept), List(), uri)
     val res1 = sn1.toText
-    expect("subject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]\nobject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]")(res1)
+    val res1E="subject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subject@"+Constant.defaultRevision+
+      "#,tu-project.com/object@"+Constant.defaultRevision+
+      "#);links=;phrase=(tu-project.com/userEmptyPhrase@"+Constant.defaultRevision+
+      "#)]\nobject <- CONCEPT[generalisations=();specialisations=(tu-project.com/subject@"+Constant.defaultRevision+
+      "#,tu-project.com/object@"+Constant.defaultRevision+
+      "#);links=;phrase=(tu-project.com/userEmptyPhrase@"+Constant.defaultRevision+"#)]"
+    assertResult(res1E)(res1)
 
     val sn2 = new ConceptNetwork(List[Concept](concept, subjectConcept, objectConcept), List(has), uri)
     val res2 = sn2.toText
-    expect("subject[<has> objectConcept[generalisations=(testNamespace/CONCEPT@rev#);specialisations=();links=;phrase=()]] <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]\nobject[subjectConcept[generalisations=(testNamespace/CONCEPT@rev#);specialisations=();links=;phrase=()] <has>] <- CONCEPT[generalisations=();specialisations=(tu-project.com/subjectConcept@0.3#,tu-project.com/objectConcept@0.3#);links=;phrase=(tu-project.com/userEmptyPhrase@0.3#)]")(res2)
+    val res2E ="subject[<has> object[generalisations=(testNamespace/CONCEPT@rev#);specialisations=();links=;phrase=()]] <- CONCEPT[generalisations=();specialisations=(tu-project.com/subject@"+
+      Constant.defaultRevision+
+      "#,tu-project.com/object@"+Constant.defaultRevision+
+      "#);links=;phrase=(tu-project.com/userEmptyPhrase@"+Constant.defaultRevision+
+      "#)]\nobject[subject[generalisations=(testNamespace/CONCEPT@rev#);specialisations=();links=;phrase=()] <has>] <- CONCEPT[generalisations=();specialisations=(tu-project.com/subject@"+
+      Constant.defaultRevision+
+      "#,tu-project.com/object@"+Constant.defaultRevision+
+      "#);links=;phrase=(tu-project.com/userEmptyPhrase@"+Constant.defaultRevision+"#)]"
+    assertResult(res2E)(res2)
   }
 
 }

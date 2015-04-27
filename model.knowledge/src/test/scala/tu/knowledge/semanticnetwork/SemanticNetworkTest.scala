@@ -27,9 +27,7 @@ class SemanticNetworkTest extends FunSuite {
   val destination: SemanticNetworkNode[Resource] = new SemanticNetworkNode(new KnowledgeString(destinationContent, uri), List[SemanticNetworkLink](), uri)
   val isolated: SemanticNetworkNode[Resource] = new SemanticNetworkNode(new KnowledgeString("isolated", uri), List[SemanticNetworkLink](), uri)
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("SemanticNetwork should store several root nodes") {
     val sn0 = new SemanticNetwork(List[SemanticNetworkNode[Resource]](source), uri)

@@ -28,6 +28,7 @@ clear and concise. Here's an example:
 import scala.collection.mutable.Stack
 import org.scalatest.Assertions
 import org.junit.Test
+import org.scalatest.FunSpec
 
 class StackSuite extends Assertions {
 
@@ -58,10 +59,12 @@ A Map
 - should only contain keys and values that were added to it
 - should report its size as the number of key/value pairs it contains
 */
-import org.scalatest.Spec
-import org.scalatest.matchers.MustMatchers
+import org.scalatest.FunSuite
+import org.scalatest.MustMatchers
 
-class MapSpec extends Spec with MustMatchers {
+class MapSpec extends FunSpec with MustMatchers {
+
+
 
   describe("A Map") {
 
@@ -71,7 +74,6 @@ class MapSpec extends Spec with MustMatchers {
     }
 
     it("should report its size as the number of key/value pairs it contains") {
-      Map() must have size (0)
       Map("ho" -> 12) must have size (1)
       Map("hi" -> 13, "ho" -> 12) must have size (2)
     }

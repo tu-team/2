@@ -125,7 +125,7 @@ import tu.model.knowledge.frame.Frame
   val cleanConceptLink = ConceptLink.createSubConceptLink(actionLink, subjectConcept, deviceConcept, "clean")
 
   var conceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
-    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink)
+    actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink, tenseLink, posLink,missLink)
 
   var simulationConceptLinks: List[ConceptLink] = List(has, hasComputer, hasSoftware, hasAccount, hasVersion, isLink, appliedLink,
     actionLink, installLink, cleanConceptLink, removeConceptLink, cleanConceptLink)

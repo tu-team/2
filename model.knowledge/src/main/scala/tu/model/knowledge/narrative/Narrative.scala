@@ -10,7 +10,7 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
  *         Time: 12:22
  */
 
-case class Narrative[Type <: Resource](_resources: List[Type], _uri: KnowledgeURI, _probability: Probability = new Probability())
+class Narrative[Type <: Resource](_resources: List[Type], _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
   def this(_resources: List[Type], _uri: KnowledgeURI) {

@@ -11,7 +11,7 @@ import scala.{None, Some}
  *         time: 10:53 PM
  */
 
-case class SemanticNetworkNode[Type<:Resource](_content: Type, var _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability)
+class SemanticNetworkNode[Type<:Resource](_content: Type, var _links: List[SemanticNetworkLink], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_content: Type, _links: List[SemanticNetworkLink], _uri: KnowledgeURI) = {

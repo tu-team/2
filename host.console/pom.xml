@@ -3,7 +3,7 @@
     <parent>
         <artifactId>cognition</artifactId>
         <groupId>tu</groupId>
-        <version>1.0</version>
+        <version>1.2</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -50,14 +50,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.scala-tools.testing</groupId>
-            <artifactId>specs_${scala.version}</artifactId>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2_${specs.scala.version}</artifactId>
             <version>${specs.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_${scala.version}</artifactId>
+            <artifactId>scalatest_${scalatest.scala.version}</artifactId>
             <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>

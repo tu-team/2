@@ -6,6 +6,6 @@ package tu.coreservice.action.event
  *         time: 6:58 PM
  */
 
-case class Stop {
+case object Stop {
 
 }

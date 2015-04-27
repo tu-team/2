@@ -11,7 +11,7 @@ import tu.model.knowledge.domain.Concept
  *         time: 11:32 PM
  */
 
-case class AnnotatedWord(var _concepts: List[Concept], override val _value: String, override val _uri: KnowledgeURI, override val _probability: Probability = new Probability(), position: Int = 0)
+case class AnnotatedWord(var _concepts: List[Concept], val _value: String, val _uri: KnowledgeURI,val _probability: Probability = new Probability(), position: Int = 0)
   extends KnowledgeString(_value, _uri, _probability) {
 
   def this(_concepts: List[Concept], _value: String, _uri: KnowledgeURI) {

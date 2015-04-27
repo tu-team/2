@@ -106,7 +106,8 @@ class MasterSuite extends Suite with BeforeAndAfterAll {
   }
 
   override def nestedSuites =
-    List(new KbTest, new N4JTest, new N4JStressTest)
+
+    List(new KbTest(), new N4JTest, new N4JStressTest).toIndexedSeq
 
   override def afterAll() {
     //     maybe remove all test data?

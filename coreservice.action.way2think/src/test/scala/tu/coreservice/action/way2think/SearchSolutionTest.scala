@@ -39,13 +39,14 @@ class SearchSolutionTest  extends FunSuite
 
     //searcher.solutions = Nil
 
-    //searcher.add(getTestSolvedIssue1)
+    searcher.add(getTestSolvedIssue1)
 
     val si1 = searcher.solutions.head
 
     val net1 = si1.issue
 
     val inputContext = ContextHelper(List[Resource](), this.getClass.getName + " request")
+    inputContext.solutions=searcher.solutions
     inputContext.lastResult = Some(net1)
 
     val instance = new SearchSolution
@@ -55,11 +56,11 @@ class SearchSolutionTest  extends FunSuite
 
     outputContext.lastResult match {
       case Some(si: SolvedIssue) => {
-        expect(si.issue.uri.name)(si1.issue.uri.name)
+        assertResult(si.issue.uri.name)(si1.issue.uri.name)
       }
       case _ => {
         //Unexpected type or None instead Some
-        expect(0)(1)
+        assertResult(0)(1)
       }
     }
 

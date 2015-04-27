@@ -27,10 +27,9 @@ class N4JKBTest extends FunSuite {
 
     val y = new KnowledgeString(N4JKB.loadChild("key" + random))
 
-    expect(x.value)(y.value)
-    expect(x.uri.toString)(y.uri.toString)
-
-    expect(x.uri.toString)(y.uri.toString)
+   assertResult(x.value)(y.value)
+   assertResult(x.uri.toString)(y.uri.toString)
+   assertResult(x.uri.toString)(y.uri.toString)
 
     KBMap.get(y)
   }

@@ -24,9 +24,7 @@ class SemanticNetworkNodeTest extends FunSuite {
   val sourceContent = "Source"
   val destinationContent = "Dest"
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("SemanticNetworkNode should store KnowledgeString") {
     val s: SemanticNetworkNode[KnowledgeString] = new SemanticNetworkNode[KnowledgeString](new KnowledgeString(sourceContent, uri), List[SemanticNetworkLink](), uri)

@@ -21,13 +21,13 @@ case class Concept(var _generalisations: TypedKLine[Concept],
                    var _phrases: TypedKLine[AnnotatedPhrase],
                    @deprecated __content: Resource,
                    var _conceptLinks: List[ConceptLink],
-                   override val _uri: KnowledgeURI,
-                   override val _probability: Probability = new Probability()
+                  val _uri: KnowledgeURI,
+                   val _probability: Probability = new Probability()
                     )
   extends SemanticNetworkNode[Resource](__content, _conceptLinks, _uri, _probability) {
 
-  def this(_generalisations: TypedKLine[Concept],
-           _specialisations: TypedKLine[Concept],
+  def this( _generalisations: TypedKLine[Concept],
+            _specialisations: TypedKLine[Concept],
            _phrases: TypedKLine[AnnotatedPhrase],
            _content: Resource,
            _links: List[ConceptLink],
@@ -169,7 +169,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
       log debug  "null generalizations"
     this.uri.name +
       "[phrase=" + _phrases +
-      "]"
+      "]";
   }
 
   def toStringComplete: String = {
@@ -251,7 +251,7 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   override def export: Map[String, String] = {
-    super.export + Pair("content", this._content.uri.name)
+   super.export + Pair("content", this.content.uri.name)
   }
 }
 

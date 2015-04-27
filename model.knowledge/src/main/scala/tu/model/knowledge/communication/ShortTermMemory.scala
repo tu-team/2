@@ -16,8 +16,8 @@ import tu.model.knowledge.narrative.Narrative
  *         time: 11:27 PM
  */
 
-case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], override val _uri: KnowledgeURI,
-                           override val _probability: Probability = new Probability())
+case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource],val _uri: KnowledgeURI,
+                           val _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
   var bestClassificationResult: Option[SelectorRequest] = None

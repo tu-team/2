@@ -11,8 +11,8 @@ import tu.model.knowledge.domain.Concept
  */
 
 case class Frame(var __resources: Map[KnowledgeURI, Resource],
-                 override val _uri: KnowledgeURI,
-                 override val _probability: Probability = new Probability())
+                 val _uri: KnowledgeURI,
+                 val _probability: Probability = new Probability())
   extends TypedFrame[Resource](__resources, _uri, _probability) {
 }
 
@@ -37,7 +37,7 @@ object Frame{
 
 }
 
-case class TypedFrame[Type <: Resource](var _resources: Map[KnowledgeURI, Type],
+class TypedFrame[Type <: Resource](var _resources: Map[KnowledgeURI, Type],
                                         _uri: KnowledgeURI,
                                         _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {

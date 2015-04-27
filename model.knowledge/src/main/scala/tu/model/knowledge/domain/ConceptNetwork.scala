@@ -16,8 +16,8 @@ import tu.model.knowledge.helper.ModelHelper
 //TODO refactor nodes and links to Set and make it val
 case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
                           var _links: List[ConceptLink] = List[ConceptLink](),
-                          override val _uri: KnowledgeURI,
-                          override val _probability: Probability = new Probability())
+                          val _uri: KnowledgeURI,
+                          val _probability: Probability = new Probability())
   extends SemanticNetwork(_nodes, _uri, _probability) {
 
   val log = LoggerFactory.getLogger(this.getClass)
@@ -191,9 +191,9 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
       if (l.source.toString == l.destination.toString)
         "<" + lString + ">"
       else if (x.toString == l.destination.toString)
-        "[" + l.source.toString + " <" + lString + ">]"
+        "[" + l.source.toStringComplete + " <" + lString + ">]"
       else if (l.source.toString == x.toString)
-        "[<" + lString + "> " + l.destination.toString + "]"
+        "[<" + lString + "> " + l.destination.toStringComplete + "]"
       else
         ""
     }
@@ -211,7 +211,7 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
     def oneLeaf(x: Concept): String = {
       val up = x.generalisationsList
       if (up.size == 0)
-        return x.toString
+        return x.toStringComplete
       oneConcept(x) + " <- " + oneLeaf(up.head)
     }
 
@@ -231,8 +231,8 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
       }
     }
 
-    if (_rootNodes != null) {
-      for (x: Resource <- _rootNodes) {
+    if (rootNodes != null) {
+      for (x: Resource <- rootNodes) {
         res &= x.save(kb, KBNodeId(this), x.uri.toString, Constant.ROOT_NODES_LINK_NAME, saved)
       }
     }

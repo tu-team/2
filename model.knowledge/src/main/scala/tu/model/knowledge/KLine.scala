@@ -8,7 +8,7 @@ package tu.model.knowledge
  * @see http://web.media.mit.edu/~minsky/E8/eb8.html#_Toc518305126
  */
 
-case class KLine(var _frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probability: Probability)
+class KLine(var _frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI, _probability: Probability)
   extends Resource(_uri, _probability) {
 
   def this(_frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI) = {

@@ -76,7 +76,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String, var
   def uri(): Option[URI] = {
     _uRI match {
       case None => {
-        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s", namespace, Constant.DELIMITER, name.replace(" ", "-"), Constant.REVISION_DELIMITER, revision, Constant.UID_DELIMITER, _uID)))
+        this._uRI = Some(new URI(String.format("%1$s%2$s%3$s%4$s%5$s%6$s", namespace, Constant.DELIMITER, name.replace(" ", "-"), Constant.REVISION_DELIMITER, revision, Constant.UID_DELIMITER, _uID)))
         this._uRI
       }
       case Some(_) => {
@@ -146,8 +146,8 @@ object KnowledgeURI {
 
   private def checkIfThisIsRawString(input: String): Boolean = {
     input.contains(Constant.DELIMITER) &&
-      input.contains(Constant.REVISION_DELIMITER) &&
-      input.contains(Constant.UID_DELIMITER)
+      input.contains(Constant.REVISION_DELIMITER)  &&
+     input.contains(Constant.UID_DELIMITER)
   }
 
   def apply(raw: String, uri: Boolean): KnowledgeURI = {

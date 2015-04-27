@@ -6,7 +6,7 @@
     <parent>
         <artifactId>cognition</artifactId>
         <groupId>tu</groupId>
-        <version>1.0</version>
+        <version>1.2</version>
     </parent>
     <groupId>tu</groupId>
     <artifactId>lib</artifactId>
@@ -204,7 +204,7 @@
                             <file>${lib.dir}/nlgen.jar</file>
                             <groupId>org.opencog</groupId>
                             <artifactId>nlgen</artifactId>
-                            <version>1.0</version>
+                            <version>1.2</version>
                             <packaging>jar</packaging>
                         </configuration>
                     </execution>

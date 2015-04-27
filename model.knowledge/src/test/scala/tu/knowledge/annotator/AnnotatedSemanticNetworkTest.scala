@@ -18,9 +18,7 @@ import tu.model.knowledge.annotator.{AnnotatedSemanticNetwork, AnnotatedWord}
 @RunWith(classOf[JUnitRunner])
 class AnnotatedSemanticNetworkTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   val namespace = "testNamespace"
   val name = "name"

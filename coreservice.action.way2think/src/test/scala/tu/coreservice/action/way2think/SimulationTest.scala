@@ -18,9 +18,7 @@ import tu.coreservice.utilities.TestDataGenerator
 @RunWith(classOf[JUnitRunner])
 class SimulationTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("Simulation exact match should work") {
     val sim = new Simulation()
