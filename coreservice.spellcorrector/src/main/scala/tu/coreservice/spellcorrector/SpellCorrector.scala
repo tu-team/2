@@ -46,7 +46,7 @@ object SpellCorrector {
     else if (Configurator.spellCheckerEngine() == "ATD")
           return new SpellCorrectorAfterTheDeadline()
     //google is a default spellchecker engine
-    return new SpellCorrectorGoogle()
+    return new SpellCorrectorAfterTheDeadline()
   }
 }
 

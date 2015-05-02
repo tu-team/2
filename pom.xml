@@ -32,10 +32,12 @@
         <scalatest.version>2.2.4</scalatest.version>
         <scalatest.scala.version>2.11</scalatest.scala.version>
         <slf4j.version>1.6.4</slf4j.version>
+        <scalaz.version>7.1.1</scalaz.version>
         <!-- version -->
         <tu.version>1.2</tu.version>
         <scala.maven.plugin.version>2.15.0</scala.maven.plugin.version>
         <maven.surefire.plugin.version>2.6</maven.surefire.plugin.version>
+        <typesafe.config>1.2.1</typesafe.config>
     </properties>
 
     <repositories>
@@ -53,6 +55,11 @@
             <id>Bintray</id>
             <name>Bintray for specs</name>
             <url>http://dl.bintray.com/scalaz/releases</url>
+        </repository>
+
+        <repository>
+            <id>local-repo</id>
+            <url>file://${project.basedir}/../../local-repo</url>
         </repository>
     </repositories>
 
@@ -81,6 +88,18 @@
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_${akka.scala.version}</artifactId>
             <version>${akka.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.typesafe</groupId>
+                    <artifactId>config</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${typesafe.config}</version>
         </dependency>
 
     </dependencies>

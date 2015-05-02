@@ -6,9 +6,7 @@ import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{Constant, Resource, KnowledgeURI}
 import tu.coreservice.spellcorrector.SpellCorrector
-import relex.entity.EntityMaintainer
-import relex.RelationExtractor
-import relex.output.OpenCogScheme
+
 import scala.collection.JavaConversions._
 import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import org.slf4j.LoggerFactory
@@ -167,6 +165,10 @@ class PreliminarySplitter extends Way2Think {
           if (notCompound) {
             phrases ::= currentPhrase
           }
+        }
+        else
+        {
+          phrases ::= currentPhrase
         }
       } else {
         phrases ::= currentPhrase

@@ -29,13 +29,13 @@ class SpellCorrectorCompound extends SpellCorrector {
     // correct dots in sentence
     precorrectedSentence=precorrectedSentence.replaceAll("""(\.|\?|\!(?=\w))""",". ")
 
-    val spellingCorrected = googleCorrector.correctSentence(precorrectedSentence)
+    //val spellingCorrected = googleCorrector.correctSentence(precorrectedSentence)
 
     //apply additional correction
-    spellingCorrected.replaceAll("",". ")
+    //spellingCorrected.replaceAll("",". ")
 
     //correct grammar
-    atdCorrector.sendRequest(spellingCorrected,true)
+    atdCorrector.sendRequest(precorrectedSentence,true)
 
   }
 

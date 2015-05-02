@@ -40,11 +40,6 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.skife.com.typesafe.config</groupId>
-            <artifactId>typesafe-config</artifactId>
-            <version>0.3.0</version>
-        </dependency>
 
         <dependency>
             <groupId>tu</groupId>

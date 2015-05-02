@@ -11,7 +11,7 @@ object Constant {
   val tuIniAddress = "tu.properties"
   val IssueMissingFactor: Double = 0.1
   val DomainMissingFactor: Double = 1.0
-  val DistanceThreadHold: Double = 1.0
+  val DistanceThreadHold: Double = 2.0
 
   val RelexFeatures: List[String] = List("_subj", "_obj", "_iobj", "_advmod", "of")
   val RelexFeaturesPhrases: List[String] = List("of")
@@ -45,10 +45,10 @@ object Constant {
   val SELECTOR_REQUEST_REFORMULATION_URI_NAME = "Reformulation"
   val SELECTOR_REQUEST_REFORMULATION_URI = "tu.coreservice.action.way2think.reformulation.ReformulationWay2Think"
   val ACTION_NAME = "actionConcept"
-  val SYSTEM_NAME = "systemConcept"
+  val SYSTEM_NAME = "system"
   val SUBJECT_NAME = "subjectConcept"
-  val PROBLEM_NAME = "problemConcept"
-  val DESIRE_NAME = "desireConcept"
+  val PROBLEM_NAME = "problem"
+  val DESIRE_NAME = "desire"
   val LAST_RESULT_NAME = "LastResult"
   val CLASSIFICATION_RESULT_NAME = "ClassificationResult"
   val LINK_PARSER_RESULT_NAME = "LinkedNarrative"

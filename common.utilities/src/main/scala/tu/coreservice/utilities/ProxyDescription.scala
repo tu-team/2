@@ -14,5 +14,5 @@ class ProxyDescription {
 
   var proxyType = "HTTP"
 
-  var useProxy = true
+  var useProxy = false
 }

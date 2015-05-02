@@ -49,21 +49,21 @@ class SolutionsTest extends FunSuite{
 
     ssi1 match {
       case Some(si: SolvedIssue) => {
-        expect(si.issue.uri)(si1.issue.uri)
+        assertResult(si.issue.uri)(si1.issue.uri)
       }
       case _ => {
         //Unexpected type or None instead Some
-        expect(0)(1)
+        assertResult(0)(1)
       }
     }
 
     ssi2 match {
       case Some(si: SolvedIssue) => {
-        expect(si.issue.uri)(si2.issue.uri)
+        assertResult(si.issue.uri)(si2.issue.uri)
       }
       case _ => {
         //Unexpected type or None instead Some
-        expect(0)(1)
+        assertResult(0)(1)
       }
     }
   }
@@ -78,21 +78,21 @@ class SolutionsTest extends FunSuite{
 
     ssi1 match {
       case Some(si: SolvedIssue) => {
-        expect(si.issue.uri)(si1.issue.uri)
+        assertResult(si.issue.uri)(si1.issue.uri)
       }
       case _ => {
         //Unexpected type or None instead Some
-        expect(0)(1)
+        assertResult(0)(1)
       }
     }
 
     ssi3 match {
       case Some(si: SolvedIssue) => {
-        expect(si.issue.uri)(si3.issue.uri)
+        assertResult(si.issue.uri)(si3.issue.uri)
       }
       case _ => {
         //Unexpected type or None instead Some
-        expect(0)(1)
+        assertResult(0)(1)
       }
     }
   }

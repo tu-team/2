@@ -17,9 +17,7 @@ class SelectorTest extends FunSuite {
 
   val selector = new Selector()
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("Selector Request processing should be ok") {
     val res = selector.apply(Goal("ProcessIncident"))

@@ -124,7 +124,7 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
   def getLinkByName(name: String): List[ConceptLink] = {
     _links.filter {
       link: ConceptLink => {
-        link.uri.name == name
+        link.uri.name.toLowerCase == name.toLowerCase
       }
     }
   }
@@ -153,10 +153,19 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
    * @return List[Concepts] that has generalisations uri-s with specified name.
    */
   def getNodeByPhrase(aPhrase: AnnotatedPhrase): List[Concept] = {
+    var targetLst:List[Concept]=List();
+    var res=List[Concept]();
     if (this.nodes != null) {
-      val res = this.nodes.filter {
+      targetLst = targetLst++this.nodes;
+    }
+    if (aPhrase.concepts!=null){
+      res=res++aPhrase.concepts;
+    }
+    if (targetLst.size>0) {
+      res =res++this.nodes.filter {
         concept: Concept => {
-          concept.content.toString.toLowerCase==aPhrase.text.toLowerCase
+          concept.content.toString.toLowerCase == aPhrase.text.toLowerCase &&
+          !res.contains(concept)
           /*val phrases: Map[KnowledgeURI, AnnotatedPhrase] = concept.phrases.frames.filter {
             uriPhrase: Pair[KnowledgeURI, AnnotatedPhrase] => {
               uriPhrase._2.text.trim == aPhrase.text.trim
@@ -165,10 +174,8 @@ case class ConceptNetwork(var _nodes: List[Concept] = List[Concept](),
           phrases.size > 0 */
         }
       }
-      res
-    } else {
-      List[Concept]()
     }
+    res
   }
 
   override def toString = {

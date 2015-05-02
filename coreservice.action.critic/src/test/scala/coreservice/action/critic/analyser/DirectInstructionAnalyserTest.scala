@@ -16,20 +16,17 @@ import tu.model.knowledge.selector.SelectorRequest
 @RunWith(classOf[JUnitRunner])
 class DirectInstructionAnalyserTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
 
   test("DirectInstruction analyser should return 1") {
     val dIA = new DirectInstructionAnalyser()
     val res: SelectorRequest = dIA(TestDataGenerator.generateDirectInstructionAnnotatedNarrative)
-    expect(1.0)(res.probability.frequency)
+    assertResult(1.0)(res.probability.frequency)
   }
 
   test("DirectInstruction analyser should return 0") {
     val dIA = new DirectInstructionAnalyser()
     val res: SelectorRequest = dIA(TestDataGenerator.generateProblemDescriptionAnnotatedNarrative)
-    expect(0.0)(res.probability.frequency)
+    assertResult(0.0)(res.probability.frequency)
   }
 
 }

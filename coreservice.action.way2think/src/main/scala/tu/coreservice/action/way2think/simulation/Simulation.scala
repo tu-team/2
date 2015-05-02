@@ -1,6 +1,6 @@
 package tu.coreservice.action.way2think.simulation
 
-import tu.model.knowledge.domain.{Concept, ConceptNetwork}
+import tu.model.knowledge.domain.{ConceptLink, Concept, ConceptNetwork}
 import tu.model.knowledge.annotator.{AnnotatedSentence, AnnotatedPhrase, AnnotatedNarrative}
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.Resource
@@ -68,6 +68,7 @@ class Simulation extends SimulationReformulationAbstract {
       sentence: AnnotatedSentence => {
         val filteredPhrases: List[AnnotatedPhrase] = sentence.phrases.filter {
           phrase: AnnotatedPhrase => {
+            simulationModel.getLinkByName(phrase.phrase).size< 1 &&
             this.filterPhrase(phrase, simulationModel).size < 1
           }
         }

@@ -7,6 +7,7 @@ import tu.coreservice.spellcorrector.{SpellCorrectorGoogle, SpellCorrector}
 class CorrectorTest {
 
   @Test
+  @Ignore
   def testCompoundCorrector() = {
     //Hello world test
     var corrector = SpellCorrector.apply()
@@ -16,6 +17,7 @@ class CorrectorTest {
   }
 
   @Test
+  @Ignore
   def testGoogle()={
     var corrector = new SpellCorrectorGoogle()
     var test = corrector.correctSentence("The wrld are red")

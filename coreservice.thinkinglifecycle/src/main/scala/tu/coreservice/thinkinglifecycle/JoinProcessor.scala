@@ -1,9 +1,14 @@
 package tu.coreservice.thinkinglifecycle
 
+import akka.actor.{ActorRef, ActorDSL, ActorSystem}
+import akka.util.Timeout
 import tu.model.knowledge.communication.{ShortTermMemory, ContextHelper}
 import tu.coreservice.action.{Action, ActionActor}
 import tu.coreservice.action.event.{Stop, Start}
 import org.slf4j.LoggerFactory
+import akka.pattern._
+
+import scala.concurrent.Await
 
 /**
  * Class to process parallel Actions and join results.
@@ -15,23 +20,24 @@ import org.slf4j.LoggerFactory
 object JoinProcessor {
 
   val log = LoggerFactory.getLogger(this.getClass)
-
+  implicit val system = ActorSystem("test-actor");
+  implicit val timeout = Timeout.longToTimeout(120*60*1000);
   def apply(actions: List[Action], context: ShortTermMemory): ShortTermMemory = {
     // initialisation and asynchronous call
-    val actionActors: List[ActionActor] = for (a <- actions) yield {
-      val aA: ActionActor = new ActionActor
-      aA.start()
+    val actionActors: List[ActorRef] = for (a <- actions) yield {
+      val aA =ActorDSL.actor(new ActionActor)
       aA ! Start(a, context)
       aA
     }
     // join
-    val contexts: List[ShortTermMemory] = for (a <- actionActors) yield {
-      a !? Stop match {
-        case res: ShortTermMemory => {
-          log debug res.toString
-          log info ("received last result={}", res.lastResult)
+    val contexts = for (a <- actionActors) yield {
+      val vl = a ? Stop;
+      val vl2= Await.result(vl,timeout.duration).asInstanceOf[ShortTermMemory]
+      vl2  match {
+        case res: ShortTermMemory =>
+          log info res.toString
           res
-        }
+
       }
     }
     ContextHelper.merge(contexts)

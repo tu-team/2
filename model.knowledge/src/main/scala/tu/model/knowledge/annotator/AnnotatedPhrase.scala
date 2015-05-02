@@ -184,7 +184,9 @@ object AnnotatedPhrase {
   def apply(words: List[AnnotatedPhrase], index: Double): AnnotatedPhrase = {
     val wordsValues: String = words.foldLeft[String]("")(
       (a: String, i: AnnotatedPhrase) => {
-        a + " " + i.text
+        if (a ==null || a.isEmpty)
+          i.text
+        else  a + " " + i.text
       }
     )
     new AnnotatedPhrase(words, List[Concept](), List[ConceptLink](),

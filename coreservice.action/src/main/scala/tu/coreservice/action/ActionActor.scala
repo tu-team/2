@@ -18,6 +18,8 @@ import tu.model.knowledge.Resource
 class ActionActor extends  akka.actor.Actor {
 
   val log = LoggerFactory.getLogger(this.getClass)
+
+  def actorRefFactory = context
   /**
    * Starts inbound Action with inputContext.
    */
@@ -37,6 +39,6 @@ class ActionActor extends  akka.actor.Actor {
       // start inbound Action with inputContext
       outputContext = action(inputContext)
     }
-    case Stop => sender()!outputContext; context.stop(self);
+    case Stop => sender()!outputContext;  context.stop(self);
   }
 }

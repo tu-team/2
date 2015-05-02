@@ -57,12 +57,14 @@ class SpellCorrectorAfterTheDeadline extends SpellCorrector {
       //replace ? with nothing, but only if ? not at the end of line TODO
       correctedSentence = correctedSentence.replace("?", "")
       correctionList.foreach(n => {
-        //apply corrections only if suggestions available
-        val suggestions = n \ "suggestions" \ "option"
-        val correctionType = n \ "type"
-        if (suggestions.length > 0) {
-          //apply
-          correctedSentence = correctedSentence.replace((n \ "string").text, suggestions.head.text)
+        if (!ifWordIsReserved((n \ "string").text)) {
+          //apply corrections only if suggestions available
+          val suggestions = n \ "suggestions" \ "option"
+          val correctionType = n \ "type"
+          if (suggestions.length > 0) {
+            //apply
+            correctedSentence = correctedSentence.replace((n \ "string").text, suggestions.head.text)
+          }
         }
       })
     } catch {

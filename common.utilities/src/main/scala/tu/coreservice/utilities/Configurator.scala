@@ -34,8 +34,7 @@ object Configurator {
     catch {
       case ex: Exception => log.debug(ex.getMessage)
     }
-    res.useProxy = true
-    res
+   res
   }
 
   def spellingAtDServer = "http://service.afterthedeadline.com/"
@@ -45,6 +44,6 @@ object Configurator {
    * ATD - after the deadline
    * COMPOUND - spell checker from GOOGLE and grammar checker from After The Deadline
    */
-  def spellCheckerEngine(): String = "GOOGLE"
+  def spellCheckerEngine(): String = "ATD"
 
 }

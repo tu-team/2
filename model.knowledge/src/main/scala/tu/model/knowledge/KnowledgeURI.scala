@@ -117,7 +117,7 @@ class KnowledgeURI(_namespace: String, var _name: String, _revision: String, var
    * @return true if name equals specified name and namespace equals specified uri namespace and revision equals specified revision.
    */
   def exactEquals(aUri: KnowledgeURI): Boolean = {
-    name.equals(aUri.name) && namespace.eq(aUri.namespace) && revision().equals(aUri.revision()) && uid.equals(aUri.uid)
+    name.equals(aUri.name) && namespace.eq(aUri.namespace) && revision().equals(aUri.revision()) //&& uid.equals(aUri.uid)
   }
 
   /**

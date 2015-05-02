@@ -49,12 +49,15 @@ class Solutions {
    * @return List[SolvedIssue] of found solutions.
    */
   private def searchNotEffective(issue: ConceptNetwork, badSolutions: List[ConceptNetwork], errors: Int): List[SolvedIssue] = {
-    var found_solutions: List[SolvedIssue] = Nil
+    var found_solutions_map: Map[Double,SolvedIssue] = Map()
+    var found_solutions: List[SolvedIssue] = List()
     for (s <- solutions) {
-      if (relevance(issue, s.issue) < Constant.DistanceThreadHold) {
+      found_solutions_map+=((relevance(issue, s.issue),s));
+      /*if (relevance(issue, s.issue) <= Constant.DistanceThreadHold) {
         found_solutions = s :: found_solutions
-      }
+      }*/
     }
+    found_solutions=List(found_solutions_map.minBy(_._1)._2);
     //If not found, then return None else - return SolvedIssue with minimal size
     val res: List[SolvedIssue] = if (errors == 0 || !found_solutions.isEmpty) {
       found_solutions
@@ -128,7 +131,7 @@ class Solutions {
           mC: Concept => {
             iC.hasExactGeneralisationRec(mC)
           }
-        }.size > 0
+        }.size <= 0
       }
     }
     val masterMissing = masterNodes.filter {
@@ -137,7 +140,7 @@ class Solutions {
           iC: Concept => {
             iC.hasExactGeneralisationRec(mC)
           }
-        }.size > 0
+        }.size <= 0
       }
     }
     (issueMissing, masterMissing)

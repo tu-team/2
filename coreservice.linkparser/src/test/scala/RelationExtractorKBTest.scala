@@ -28,11 +28,10 @@ class RelationExtractorKBTest extends FunSuite {
 
   val sentence = "Please install Firefox"
 
-  test("test Ok") {
-    assert(condition = true)
-  }
+
 
   test("RelationExtractorKB run must be ok") {
+    Thread sleep 5000
     //run relex and extract sentences
     val em: EntityMaintainer = new EntityMaintainer()
     val relExt = setup(createSentences)

@@ -21,9 +21,6 @@ class MorphyKBTest extends FunSuite {
 
   val log = LoggerFactory.getLogger(this.getClass)
 
-  test("Ok") {
-    assert(true)
-  }
 
   test("Run MorphyKB") {
     val testString = KnowledgeString("Please", "Please")

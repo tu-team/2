@@ -46,7 +46,7 @@ class ProblemDescriptionAnalyser {
 
     // current situation must have at least one subject and it must not be System name.
     val subjects = ConceptNetwork.getNodeByGeneralisationName(currentSituation, Constant.SUBJECT_NAME)
-    frequencyConfidence = if (subjects.size > 1) {
+    frequencyConfidence = if (subjects.size >= 1) {
       (frequencyConfidence._1 - 0.0, 1.0)
     } else if (subjects.size == 1 && subjects(0).uri.name != Constant.SYSTEM_NAME) {
       (frequencyConfidence._1 - 0.0, 1.0)

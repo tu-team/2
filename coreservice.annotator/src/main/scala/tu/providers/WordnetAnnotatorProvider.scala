@@ -18,7 +18,7 @@ class WordnetAnnotatorProvider extends AnnotatorProvider {
 
   def annotate(word: String): List[String] = {
 
-    val url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8") + "&sub=Search+WordNet&o2=&o0=&o8=1&o1=&o7=&o5=&o9=&o6=&o3=&o4=&h=00000000000000000000")
+    val url: URL = new URL("http://wordnetweb.princeton.edu/perl/webwn?s=" + URLEncoder.encode(word, "UTF8"))
 
     var res: List[String] = List[String]()
 

@@ -78,7 +78,7 @@ class KBAnnotatorImpl extends Way2Think {
               appendAnnotation(ph, annotationFound.get)
               log trace ("appended annotation={} to phrase={}", annotationFound, ph)
               result = true
-              scala.util.control.Breaks.break()
+              return result
             }
           })
         })

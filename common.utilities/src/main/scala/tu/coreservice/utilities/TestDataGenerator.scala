@@ -47,6 +47,7 @@ import tu.model.knowledge.frame.Frame
 
   // axillary
   val formOfPoliteness = Concept("formOfPoliteness")
+  val pls=Concept.createSubConcept(formOfPoliteness,"please")
 
   // actions
   val actionConcept = Concept("action")

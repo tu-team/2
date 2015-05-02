@@ -16,20 +16,17 @@ import tu.coreservice.utilities.TestDataGenerator
 @RunWith(classOf[JUnitRunner])
 class ProblemWithDesiredStateAnalyserTest extends FunSuite {
 
-  test("test Ok") {
-    assert(condition = true)
-  }
 
   test("ProblemDescriptionAnalyser analyser should return 0") {
     val analyser = new ProblemDescriptionWithDesiredStateAnalyser()
     val res: SelectorRequest = analyser(TestDataGenerator.generateDirectInstructionAnnotatedNarrative)
-    expect(0.0)(res.probability.frequency)
+    assertResult(0.0)(res.probability.frequency)
   }
 
   test("ProblemDescriptionAnalyser analyser should return 1") {
     val analyser = new ProblemDescriptionWithDesiredStateAnalyser()
     val res: SelectorRequest = analyser(TestDataGenerator.generateProblemDescriptionWithDesiredStateAnnotatedNarrative)
-    expect(1.0)(res.probability.frequency)
+    assertResult(1.0)(res.probability.frequency)
   }
 
 }
