@@ -13,7 +13,7 @@ import narrative.Rule
 
 /**
  * Created by IntelliJ IDEA.
- * User: adel
+ * User: alex toschev
  * Date: 11.07.12
  * Time: 2:30
  * To change this template use File | Settings | File Templates.

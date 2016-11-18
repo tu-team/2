@@ -17,7 +17,7 @@ object Extensions {
    */
   def load[T <: BaseExtension]()(implicit m: scala.reflect.Manifest[T]): T = {
 
-    currentExtensions.get(m.erasure.getName()) match {
+    currentExtensions.get(m.runtimeClass.getName()) match {
       case Some(clsMap) => {
         clsMap.head._2 match {
           case Some(obj)=> obj.asInstanceOf[T]
@@ -31,7 +31,7 @@ object Extensions {
         }
 
       }
-      case None => throw new Exception("Extensions of " + m.erasure + " is not supported")
+      case None => throw new Exception("Extensions of " + m.runtimeClass + " is not supported")
     }
   }
 

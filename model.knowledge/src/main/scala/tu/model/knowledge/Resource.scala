@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory
 import collection.mutable.ListBuffer
 
 /**
- * @author max talanov
+ * @author max talanov, alex toschev
  *         Time: 11:19 PM
  */
 
@@ -14,7 +14,7 @@ import collection.mutable.ListBuffer
 
 abstract class Resource( _uri: KnowledgeURI, _probability: Probability = new Probability())   {
 
-  KBMap.register(this)
+  //KBMap.register(this)
 
   def this(uri: KnowledgeURI) = {
     this(uri, new Probability())

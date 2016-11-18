@@ -12,6 +12,7 @@ import org.neo4j.graphdb.index.Index
 import org.neo4j.cypher.commands.Return
 import java.io.File
 import tools.nsc.io.Directory
+import scala.collection.JavaConversions._
 
 /**
  *
@@ -127,11 +128,15 @@ object N4JKB extends KB {
     ok
   }
 
+
   private def loadChild(parent: Node, key: String, linkType: String): Map[String, String] = {
 
     val relationType = new RelationType(linkType)
 
-    //TODO use кошерный синтаксис
+
+   // for ( x:Relationship <-parent.getRelationships().toList)
+    //    log debug x.toString
+
     val i = parent.getRelationships(relationType).iterator()
     while (i.hasNext) //(x:Relationship <- parent.getRelationships.iterator())
      {

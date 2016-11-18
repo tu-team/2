@@ -9,7 +9,7 @@ import tu.model.knowledge._
 
 /**
  * Stores Solution that is container for List of HowTo-s.
- * @author max talanov
+ * @author alex toschev
  *         date 2012-05-09
  *         time: 7:08 PM
  */
@@ -44,8 +44,8 @@ object Solution {
     //todo: move this method to parent class
     val selfMap = kb.loadChild(parent, key, linkType)
     if (selfMap.isEmpty) {
-      //log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))
-      throw new UnexpectedException("LoadError for " + parent.ID.toString)
+      log.error("Concept not loaded for link {}/{} for {}", List(key, linkType, parent.ID.toString))
+      ///throw new UnexpectedException("LoadError for " + parent.ID.toString)
     }
 
     load(kb, selfMap)

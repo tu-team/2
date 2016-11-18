@@ -57,13 +57,7 @@ object KBMap {
   }
 
 
-  @deprecated
-  def register(r: Resource) {
 
-    val uri = r.uri.toString
-    //if (uri2id.get(uri) == None)
-    //  uri2id(uri) = Constant.NO_KB_NODE
-  }
 
   def get(r: Resource): Long = {
     if (r.uri.uid=="") return Constant.NO_KB_NODE
