@@ -10,7 +10,7 @@ import tu.model.knowledge.domain.Concept
 
 /**
  * Simple KBAnnotator implementation.
- * @author toschev alex, talanov max
+ * @author toschev alex
  *         Date: 15.06.12
  *         Time: 18:26
  */

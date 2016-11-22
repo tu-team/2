@@ -11,7 +11,7 @@ import tu.exception.UnexpectedStateException
 
 
 /**
- * @author max talanov
+ * @author alex toschev
  *         date 2012-07-05
  *         time: 6:50 PM
  */

@@ -7,7 +7,7 @@ import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.narrative.Narrative
 
 /**
- * @author max talanov
+ * @author alex toschev
  *         date 2012-09-08
  *         time: 10:10 PM
  */

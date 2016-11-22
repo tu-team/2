@@ -10,8 +10,8 @@ import tu.model.knowledge.Resource
 
 /**
  * Actor to start inbound Action as Actor.
- * @author max talanov
- *         date 2012-07-10
+ * @author alex toschev
+ *         date 2014-07-10
  *         time: 10:15 AM
  */
 

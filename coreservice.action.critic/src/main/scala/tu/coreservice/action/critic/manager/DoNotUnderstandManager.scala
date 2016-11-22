@@ -6,8 +6,8 @@ import tu.model.knowledge.helper.URIGenerator
 import tu.coreservice.action.critic.{CriticLink, Critic}
 
 /**
- * @author max talanov
- *         date 2012-09-08
+ * @author alex toschev
+ *         date 2014-09-08
  *         time: 10:09 PM
  */
 class DoNotUnderstandManager(_exclude: List[CriticLink], _include: List[CriticLink], _uri: KnowledgeURI, _probability: Probability = new Probability())

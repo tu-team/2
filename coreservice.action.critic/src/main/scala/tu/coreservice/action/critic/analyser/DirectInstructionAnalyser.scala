@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory
 
 /**
  * Direct Instruction Analyser, detects direct instruction and return Selector request with proper Probability.
- * @author max talanov
- *         date 2012-06-28
+ * @author alex toschev
+ *         date 2014-06-28
  *         time: 4:01 PM
  */
 

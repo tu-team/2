@@ -6,7 +6,7 @@ import tu.model.knowledge.communication.ShortTermMemory
 
 /**
  * Abstract class of an actions.
- * @author max talanov
+ * @author alex toschev
  *         date 2012-07-01
  *         time: 3:31 PM
  */
