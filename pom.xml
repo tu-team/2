@@ -41,11 +41,7 @@
     </properties>
 
     <repositories>
-        <repository>
-            <id>scala-tools.org</id>
-            <name>Scala-Tools Maven2 Repository</name>
-            <url>http://scala-tools.org/repo-releases</url>
-        </repository>
+
         <repository>
             <id>opennlp</id>
             <name>OpenNLP Maven Repository</name>
@@ -59,6 +55,7 @@
 
         <repository>
             <id>local-repo</id>
+            <!--file://${project.basedir}/../../local-repo-->
             <url>file://${project.basedir}/../../local-repo</url>
         </repository>
     </repositories>

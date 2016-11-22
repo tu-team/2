@@ -35,7 +35,7 @@ class SpellCorrectorGoogle extends SpellCorrector {
 
     val request = new SpellRequest()
     request.setText(inputSentence)
-    request.setIgnoreDuplicates(true) // Ignore duplicates
+    request.setIgnoreDuplicates(1)// Ignore duplicates
 
     try {
 

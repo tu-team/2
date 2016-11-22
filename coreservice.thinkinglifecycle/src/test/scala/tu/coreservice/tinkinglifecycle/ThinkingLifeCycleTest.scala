@@ -55,18 +55,37 @@ class ThinkingLifeCycleTest extends FunSuite {
   }*/
 
   test("Please install Firefox case.") {
+
     // training
+    var t1 = System.currentTimeMillis
     BrowserTraining
+    var t2 = System.currentTimeMillis
+    println((t2 - t1) + " msecs");
+    t1 = System.currentTimeMillis
     InstallTraining
+    t2 = System.currentTimeMillis
+    println((t2 - t1) + " msecs");
+    t1 = System.currentTimeMillis
     PleaseTraining
+    t2 = System.currentTimeMillis
+    println((t2 - t1) + " msecs");
+    t1 = System.currentTimeMillis
     FirefoxTraining
+    t2 = System.currentTimeMillis
+    println((t2 - t1) + " msecs");
+
 
     log info ("Training is over")
 
+    t1 = System.currentTimeMillis
     val requestText = "Please install Firefox."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
+    t2 = System.currentTimeMillis
+   println((t2 - t1) + " msecs");
+    assert(res != null)
+    log debug res.toString
     assert(res != null)
     log debug res.toString
   }
@@ -104,10 +123,15 @@ class ThinkingLifeCycleTest extends FunSuite {
   }
 
   test("User miss Internet Explorer 8.") {
+    val t1 = System.currentTimeMillis
+
+
     val requestText = "User miss Internet Explorer 8."
     val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.domainName))
     val t = new ThinkingLifeCycleMinimal()
     val res = t(r)
+    val t2 = System.currentTimeMillis
+    println((t2 - t1) + " msecs");
     assert(res != null)
     log debug res.toString
   }
@@ -216,9 +240,9 @@ class ThinkingLifeCycleTest extends FunSuite {
   }*/
 
   //TODO
-  /*test("Add new alias") {
+  test("Add new alias") {
     testCycle("Add new alias Host name on host that alias is wanted to: hrportal.lalala.biz IP adress on host that alias is wanted to: 322.223.333.22 Wanted Alias:    webadviser.lalala.net")
-  }*/
+  }
 
   //TODO
   /* test("Outlook Web Access '") {

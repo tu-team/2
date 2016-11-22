@@ -21,7 +21,7 @@ object AppMain {
   def main(args: Array[String]) {
 
     var exitConsole = false
-
+/*
     if (args.size > 0 && args(0) == "trainfile") {
       val file = args(1)
       log.info("Loading train data from file " + file)
@@ -84,7 +84,9 @@ object AppMain {
           }
 
         }
+
       }
+     */
     }
 
     def train(st: String) {
@@ -96,5 +98,5 @@ object AppMain {
       val res = t(r)
       log.info("End")
     }
-  }
+
 }
