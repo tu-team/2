@@ -129,6 +129,7 @@ class Solutions {
       iC: Concept => {
         masterNodes.filter {
           mC: Concept => {
+            //pass here genralization of the concept.
             iC.hasExactGeneralisationRec(mC)
           }
         }.size <= 0

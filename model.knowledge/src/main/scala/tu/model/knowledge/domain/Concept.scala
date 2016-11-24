@@ -184,12 +184,15 @@ case class Concept(var _generalisations: TypedKLine[Concept],
   }
 
   def getGeneralisationsRec: List[Concept] = {
-    val res: List[Concept] = this.generalisations.frames.values.map {
+   getGeneralisations(this)
+  }
+
+  def getGeneralisations(c:Concept): List[Concept] = {
+    val res: List[Concept] = c.generalisations.frames.values.map {
       g: Concept => g.getGeneralisationsRec
     }.toList.flatten
     res ::: this.generalisations.frames.values.toList
   }
-
   /**
    * Checks if current concept could be generalised to specified parent Concept, according to: name, namespace, revision.
    * @param parent Concept to check generalisation.
@@ -210,9 +213,12 @@ case class Concept(var _generalisations: TypedKLine[Concept],
    * @return true if current Concept could be generalised to specified.
    */
   def hasExactGeneralisationRec(parent: Concept): Boolean = {
+    //extract generatization for the parent Concept
+    var gen = getGeneralisations(parent)
+
     val res: List[Concept] = getGeneralisationsRec.filter {
       c: Concept => {
-        c.uri.exactEquals(parent.uri)
+        gen.filter (g=> c.uri.exactEquals(g.uri) ).size>0
       }
     }
     res.size > 0
