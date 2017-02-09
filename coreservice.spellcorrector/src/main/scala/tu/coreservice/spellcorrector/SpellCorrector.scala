@@ -39,9 +39,7 @@ object SpellCorrector {
    * Construct suitable configurator
    */
   def apply(): SpellCorrector = {
-    if (Configurator.spellCheckerEngine() == "GOOGLE")
-      return new SpellCorrectorGoogle()
-    else if (Configurator.spellCheckerEngine() == "COMPOUND")
+    if (Configurator.spellCheckerEngine() == "COMPOUND")
       return new SpellCorrectorCompound()
     else if (Configurator.spellCheckerEngine() == "ATD")
           return new SpellCorrectorAfterTheDeadline()
