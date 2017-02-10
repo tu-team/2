@@ -18,7 +18,6 @@ class SpellCorrectorCompound extends SpellCorrector {
   def correctSentence(inputSentence: String): String = {
 
     //instantiate Google corrector
-    val googleCorrector = new SpellCorrectorGoogle
     val atdCorrector = new SpellCorrectorAfterTheDeadline
 
     //preliminary corrector

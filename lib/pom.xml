@@ -52,21 +52,6 @@
                 <artifactId>maven-install-plugin</artifactId>
                 <version>2.2</version>
                 <executions>
-
-                    <execution>
-                        <id>install google spelling api</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${lib.dir}/google-api-spelling-java-1.1.jar</file>
-                            <groupId>org.xeustechnologies.google-api</groupId>
-                            <artifactId>google-api-spelling-java</artifactId>
-                            <packaging>jar</packaging>
-                            <version>1.1</version>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>install glassfish appserv</id>
                         <phase>generate-resources</phase>
