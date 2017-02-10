@@ -1,6 +1,6 @@
 import org.junit._
 import Assert._
-import tu.coreservice.spellcorrector.{SpellCorrectorGoogle, SpellCorrector}
+import tu.coreservice.spellcorrector.SpellCorrector
 
 
 @Test
@@ -16,13 +16,7 @@ class CorrectorTest {
 
   }
 
-  @Test
-  @Ignore
-  def testGoogle()={
-    var corrector = new SpellCorrectorGoogle()
-    var test = corrector.correctSentence("The wrld are red")
-    assertTrue(test == "The world is red")
-  }
+
   /*@Test
   def testWorkingSentence() = {
     //Seems to CatiaV5 aren?t installed correcly
