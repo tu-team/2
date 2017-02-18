@@ -21,9 +21,10 @@ Thinking life-cycle should support new Goal - Resolve request, with new Critic -
 
 ## New critics
 New critics to classify inbound signal will be introduced:
-1. [HandClassifier](SpikeCritics);
-1. [DistanceClassifier](SpikeCritics);
-1. [PainDetectorCritics](CheckMyState).
+
+1. [HandClassifier](SpikeCritics.md);
+1. [DistanceClassifier](SpikeCritics.md);
+1. [PainDetectorCritics](CheckMyState.md).
 
 ## New Goals
 1. [CheckMyState](CheckMyState);
