@@ -14,10 +14,10 @@ The source data for this system is array of int with channel. Data will represen
 {channel: 0,
 data: [2313,3223,123,12331]}
 ```
-Output will be spike generation. Spike represents by family name and continious call. See [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink).
+Output will be spike generation. Spike represents by family name and continious call. See [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink.md).
 
 ## Thinking life-cycle modification
-Thinking life-cycle should support new Goal - Resolve request, with new Critic - [UnderstandRequestCritic](UnderstandRequestCritic).
+Thinking life-cycle should support new Goal - Resolve request, with new Critic - [UnderstandRequestCritic](UnderstandRequestCritic.md).
 
 ## New critics
 New critics to classify inbound signal will be introduced:
@@ -27,13 +27,13 @@ New critics to classify inbound signal will be introduced:
 1. [PainDetectorCritics](CheckMyState.md).
 
 ## New Goals
-1. [CheckMyState](CheckMyState);
-1. [UnderstandSpike](SpikeCritics).
+1. [CheckMyState](CheckMyState.md);
+1. [UnderstandSpike](SpikeCritics.md).
 
 ## New Way2Think
-1. [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink);
-1. [ContextChangedWayToThink](ContextChangedWayToThink);
-1. [PainWay2Think](PainWay2Think).
+1. [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink.md);
+1. [ContextChangedWayToThink](ContextChangedWayToThink.md);
+1. [PainWay2Think](PainWay2Think.md).
 
 ## General Workflow
 1. TLC activated with apply of request;

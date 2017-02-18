@@ -2,7 +2,7 @@
 
 ## Entry criteria
 
-Activated by [SpikeCritics](SpikeCritics).
+Activated by [SpikeCritics](SpikeCritics.md).
 
 ## Exit criteria
 
@@ -19,7 +19,7 @@ period: in second
 
 ## Output
 
-Store data in database. Set goal to [CheckMyState](CheckMyState).
+Store data in database. Set goal to [CheckMyState](CheckMyState.md).
 
 ## Workflow
 1. Request with spike data received;

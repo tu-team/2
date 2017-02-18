@@ -15,7 +15,7 @@ Selector request contains raw data in JSON for the request.
 {channel: 0,
 data: [2313,3223,123,12331]}
 ```
-Activate [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink) Way2Think with params for family according to Critic type.
+Activate [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink.md) Way2Think with params for family according to Critic type.
 
 ## Input
 
