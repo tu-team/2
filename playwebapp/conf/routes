@@ -1,0 +1,7 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+POST     /train                           controllers.TUController.trainAction
+POST     /request                         controllers.TUController.requestAction
+POST     /clean                           controllers.TUController.cleanKnowledgeBaseAction

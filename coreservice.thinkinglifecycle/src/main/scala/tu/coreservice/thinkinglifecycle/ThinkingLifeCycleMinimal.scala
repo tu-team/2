@@ -1,22 +1,20 @@
 package tu.coreservice.thinkinglifecycle
 
-import tu.model.knowledge.communication._
-import tu.coreservice.action.selector.Selector
-import tu.coreservice.action.Action
-import tu.model.knowledge.Resource
-import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
-import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
-import tu.model.knowledge.critic.CriticModel
-import tu.model.knowledge.action.ActionModel
-import tu.model.knowledge.training.Goal
-import tu.model.knowledge.selector.SelectorRequest
 import org.slf4j.LoggerFactory
-import tu.exception.UnexpectedException
+import tu.coreservice.action.Action
+import tu.coreservice.action.selector.Selector
+import tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think
 import tu.dataservice.knowledgebaseserver.KBAdapter
 import tu.dataservice.memory.LongTermMemory
-import tu.model.knowledge.communication.ShortTermMemory
-import scala.Some
+import tu.exception.UnexpectedException
+import tu.model.knowledge.Resource
+import tu.model.knowledge.action.ActionModel
+import tu.model.knowledge.communication.{ShortTermMemory, _}
+import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.selector.SelectorRequest
+import tu.model.knowledge.training.Goal
+import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
 
 
 /**
