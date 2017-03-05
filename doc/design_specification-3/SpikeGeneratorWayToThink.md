@@ -2,15 +2,15 @@
 
 ## Entry criteria
 
-Activated by [SpikeCritics](SpikeCritics.md)
+Activated by [SpikeCritics](SpikeCritics.md).
 
 ## Exit criteria
 
-End of period or stop received.
+All spikes processed.
 
 ## Input
 
-Input context with parameters.
+Input context with parameters. Extracted from [ShortTermMemory](UniversalMemory.md)
 ```
 family: hand, foot, e.t.c.
 period: in second
