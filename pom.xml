@@ -125,5 +125,6 @@
         <module>coreservice.linkparser</module>
         <module>nlp.server</module>
         <module>extensions</module>
+        <module>coreservice.spikegeneratorway2think</module>
     </modules>
 </project>
