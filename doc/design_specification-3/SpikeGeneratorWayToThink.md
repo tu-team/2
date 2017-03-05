@@ -2,7 +2,7 @@
 
 ## Entry criteria
 
-Several critics activate generator.
+Several critics activate generator. Extend
 
 ## Exit criteria
 
@@ -10,21 +10,25 @@ End of period or stop received.
 
 ## Input
 
-Input context with parameters
+Input context with parameters.
 ```
 family: hand, foot, e.t.c.
 period: in second
 ```
+TODO: Create class diagramm
+
 Family represents part of activity and should be translated by Family detection critics like
 HandFamily, FootFamily according to input channel.
 
 ## Output
 
-Generate series of spikes into file, so NEUCOGAR can process it.
-
+Generate series of spikes into pipeline, so NEUCOGAR can process it.
+TODO: make class diagram.
+TODO: integration with NEST.
+TODO: use time as data parameter.
 ```
 family: hand
-data: 1,1,1,1,1,1
+data: 10:21,10:22,..
 ```
 ## Workflow
 

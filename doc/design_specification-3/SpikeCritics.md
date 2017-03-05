@@ -19,7 +19,7 @@ Activate [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink.md) Way2Think with 
 
 ## Input
 
-[Context](../design-specification/knowledge.md#Context) Plain text of issue.
+[Context](../design-specification/knowledge.md#Context) TODO: add data.
 
 ## Output
 
