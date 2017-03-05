@@ -6,7 +6,7 @@ The purpose of this design to make TU as a Universal framework.
 ## Application
 Will be used for translation from the robotics system to NEUCOGAR (b) system for direct and indirect translation [Robot Dream project] (https://github.com/research-team/robot-dream/blob/master/doc/architecture.md).
 
-![High level overview](rd_Life_cycle.png)
+![High level overview](RD_Life_cycle.png)
 Overall robotic system life-cycle is divided into two phases: *wake* (day) and *dream* (night).
 
 - [**a**] In this position a robotic system transfers the accumulated during *wake* phase experience into spiking neural network of the *dreaming brain*.
