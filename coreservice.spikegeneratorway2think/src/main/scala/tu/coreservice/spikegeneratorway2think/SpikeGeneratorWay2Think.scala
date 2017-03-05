@@ -8,6 +8,7 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.dataservice.knowledgebaseserver.providers.N4JKB
 import tu.model.knowledge.KBNodeId
 import tu.model.knowledge.communication.ShortTermMemory
+import tu.model.knowledge.Constant.SPIKE_RESOURCE
 
 /**
  * @author Artur Enikeev
@@ -38,7 +39,7 @@ class SpikeGeneratorWay2Think() extends Way2Think {
     */
 
   override def apply(inputContext: ShortTermMemory): ShortTermMemory = {
-    inputContext.findByName("spike-resource") match {
+    inputContext.findByName(SPIKE_RESOURCE) match {
       case Some(resource) =>
         val content = N4JKB.loadChildrenList(KBNodeId.apply(resource))
         for (spike <- content){
