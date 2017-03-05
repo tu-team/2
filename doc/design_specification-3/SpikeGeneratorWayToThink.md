@@ -2,7 +2,7 @@
 
 ## Entry criteria
 
-Several critics activate generator. Extend
+Activated by [SpikeCritics](SpikeCritics.md)
 
 ## Exit criteria
 
