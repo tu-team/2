@@ -1,10 +1,10 @@
 # Design specification 3.0
 
-The purpose of this design to make TU as a Universal framework.
+The purpose of this design to make TU as a Universal framework and use it in [Robot Dream](https://github.com/research-team/robot-dream/blob/master/doc/architecture.md)) direct and indirect translation.
 
 
 ## Application
-Will be used for translation from the robotics system to NEUCOGAR (b) system for direct and indirect translation [Robot Dream project] (https://github.com/research-team/robot-dream/blob/master/doc/architecture.md).
+Will be used for translation from the robotics system to NEUCOGAR (b) system for direct and indirect translation [Robot Dream project](https://github.com/research-team/robot-dream/blob/master/doc/architecture.md).
 
 ![High level overview](RD_Life_cycle.png)
 Overall robotic system life-cycle is divided into two phases: *wake* (day) and *dream* (night).
@@ -28,6 +28,9 @@ data: [ {2313, 2017-02-02 13:33:21:122121},
 {12331,2017-02-02 13:33:21:122121}]}
 ```
 ![Input data class digram](RoboticData.png)
+
+The **direct translation** is done in the playback mode similar to a mammalian brain processing of the wake experience. This way whole wake experience should be translated to the sequence of dreaming brain neurons activations based on the semantics of an inbound signals, for example the activations of tactile sensors should be translated into activations of sensory cortex, audio signals should be translated into auditory cortex neurons activations.
+
 
 Output will be spike generation. Spike represents by family name and and spikes time. See [SpikeGeneratorWayToThink](SpikeGeneratorWayToThink.md).
 
