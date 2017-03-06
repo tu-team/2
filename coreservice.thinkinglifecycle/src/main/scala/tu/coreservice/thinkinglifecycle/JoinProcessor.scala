@@ -1,10 +1,12 @@
 package tu.coreservice.thinkinglifecycle
 
-import akka.actor.{ActorRef, ActorDSL, ActorSystem}
+import java.util.concurrent.TimeUnit
+
+import akka.actor.{ActorDSL, ActorRef, ActorSystem}
 import akka.util.Timeout
-import tu.model.knowledge.communication.{ShortTermMemory, ContextHelper}
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.coreservice.action.{Action, ActionActor}
-import tu.coreservice.action.event.{Stop, Start}
+import tu.coreservice.action.event.{Start, Stop}
 import org.slf4j.LoggerFactory
 import akka.pattern._
 
@@ -21,7 +23,7 @@ object JoinProcessor {
 
   val log = LoggerFactory.getLogger(this.getClass)
   implicit val system = ActorSystem("test-actor");
-  implicit val timeout = Timeout.longToTimeout(120*60*1000);
+  implicit val timeout = Timeout(120*60*1000, TimeUnit.MILLISECONDS);
   def apply(actions: List[Action], context: ShortTermMemory): ShortTermMemory = {
     // initialisation and asynchronous call
     val actionActors: List[ActorRef] = for (a <- actions) yield {

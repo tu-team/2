@@ -1,0 +1,62 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+    <id>distribution</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/src/assembly/resources</directory>
+            <outputDirectory>${dist.root.dir}</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+            <excludes>
+                <exclude>bin/*</exclude>
+                <exclude>conf/fontsConfig_dev.xml</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/assembly/resources</directory>
+            <outputDirectory>${dist.root.dir}</outputDirectory>
+            <includes>
+                <include>bin/*</include>
+            </includes>
+            <fileMode>755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/conf</directory>
+            <outputDirectory>${dist.root.dir}/conf</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>${dist.root.dir}/lib</outputDirectory>
+            <includes>
+                <include>*-sans-externalized.jar</include>
+                <include>*-assets.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>${dist.root.dir}/lib</outputDirectory>
+            <scope>compile</scope>
+            <outputFileNameMapping>
+                ${artifact.groupId}.${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}
+            </outputFileNameMapping>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+            <useProjectArtifact>false</useProjectArtifact>
+        </dependencySet>
+    </dependencySets>
+</assembly>

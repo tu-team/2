@@ -14,7 +14,7 @@ Activate ClassifySpike Way2Think.
 
 ## Input
 
-[Context](knowledge.md#Context) Plain text of issue.
+[Context](knowledge.md#Context) Plain text of issue. Context should contain.
 
 ## Output
 
@@ -33,3 +33,4 @@ Set new goal ClassifySpike by ClassifySpike.Way2Think  and stop processing other
  START ClassifySpike.Way2Think
 }
 ```
+TODO: Leave way2think - which just set goal.
