@@ -105,4 +105,6 @@ object Constant {
   val FOUND_SOLUTIONS = "$FoundSolution"
   val RESULT_TO_REPORT = "$resultToReport"
 
+  val SPIKE_RESOURCE = "spike-resource"
+
 }
