@@ -86,6 +86,10 @@
             <artifactId>coreservice.action.way2think</artifactId>
             <version>${tu.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-jackson_2.11</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
