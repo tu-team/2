@@ -89,7 +89,6 @@
             <artifactId>dataservice.knowledgebaseserver</artifactId>
             <version>${tu.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
