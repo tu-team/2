@@ -1,5 +1,9 @@
 package tu.model.knowledge
 
+import java.util.concurrent.TimeUnit
+
+import akka.util.Timeout
+
 /**
  * @author max talanov
  *         date 2012-06-04
@@ -104,5 +108,7 @@ object Constant {
   val NOT_UNDERSTOOD_CONCEPTS = "$NotUnderstoodConcepts"
   val FOUND_SOLUTIONS = "$FoundSolution"
   val RESULT_TO_REPORT = "$resultToReport"
+
+  val DEFAULT_TIMEOUT = Timeout(60*120, TimeUnit.SECONDS)
 
 }

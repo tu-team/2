@@ -1,7 +1,7 @@
 package tu.coreservice.action.critic
 
-import tu.coreservice.action.Action
-import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.coreservice.action.{Action, AkkaAction}
+import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.communication.ShortTermMemory
 
 
@@ -13,7 +13,7 @@ import tu.model.knowledge.communication.ShortTermMemory
  */
 
 abstract class Critic(_excluded: List[CriticLink], _included: List[CriticLink], _uri: KnowledgeURI, _probability: Probability)
-  extends Action(_uri, _probability) {
+  extends AkkaAction(_uri, _probability) {
 
   /**
    * Returns excluded by current CriticLink-s, if(current) => (!excluded)

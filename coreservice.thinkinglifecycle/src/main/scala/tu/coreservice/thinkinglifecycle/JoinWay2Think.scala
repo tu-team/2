@@ -1,8 +1,8 @@
 package tu.coreservice.thinkinglifecycle
 
+import tu.coreservice.action.Action
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.ShortTermMemory
-import tu.coreservice.action.Action
 
 /**
  * @author max talanov
@@ -14,9 +14,9 @@ case class JoinWay2Think(actions: List[Action]) extends Way2Think{
   def start() = false
 
   def stop() = false
-
   /**
    * Way2Think interface.
+ *
    * @param inputContext ShortTermMemory of all inbound parameters.
    * @return outputContext
    */

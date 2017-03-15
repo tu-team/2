@@ -12,11 +12,12 @@ import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.Constant
 
 /**
- * KBSever stub only for prototype purposes.
- * @author max talanov
- *         date 2012-07-06
- *         time: 1:58 PM
- */
+  * KBSever stub only for prototype purposes.
+  *
+  * @author max talanov
+  *         date 2012-07-06
+  *         time: 1:58 PM
+  */
 
 object KBAdapter {
 
@@ -25,7 +26,8 @@ object KBAdapter {
   private def goalResourceMap =
     Map[Goal, List[ActionModel]](
       Goal("ProcessIncident") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
           Way2ThinkModel("tu.coreservice.linkparser.LinkParser")
         ),
@@ -37,39 +39,49 @@ object KBAdapter {
           ), "tu.model.knowledge.way2think.JoinWay2ThinkModel")
         ),
       Goal("FormalizeDirectInstruction") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think")),
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think")
+        ),
       Goal("FormalizeProblemDescription") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think"),
-          Way2ThinkModel("tu.coreservice.action.way2think.reformulation.ReformulationWay2Think")),
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.simulation.SimulationWay2Think"),
+          Way2ThinkModel("tu.coreservice.action.way2think.reformulation.ReformulationWay2Think")
+        ),
       Goal("GetMostProbableAction") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableAction")
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.FindMostProbableAction")
         ),
       Goal("SearchSolution") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.SearchSolution")
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.SearchSolution")
         ),
       Goal("ProcessResponse") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
           Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
           Way2ThinkModel("tu.coreservice.action.way2think.simulation.CorrelationWay2Think")
         ),
       Goal("Train") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
           Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
           Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
           Way2ThinkModel("tu.coreservice.action.way2think.correlation.CorrelationWay2Think")
         ),
       Goal("Cry4Help") ->
-        List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think")
+        List[Way2ThinkModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think")
         )
     )
 
   private def resources = goalResourceMap.values
 
   /**
-   * Gets Map of URI -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
-   * @return Map[KnowledgeURI, Resource]
-   */
+    * Gets Map of URI -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
+    *
+    * @return Map[KnowledgeURI, Resource]
+    */
   private def uriResourcesMap: Map[KnowledgeURI, Resource] = {
     val res: Map[KnowledgeURI, Resource] = goalResourceMap.values.flatten.map {
       r: Resource => {
@@ -80,9 +92,10 @@ object KBAdapter {
   }
 
   /**
-   * Gets Map of String -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
-   * @return Map[String, Resource]
-   */
+    * Gets Map of String -> Resource of all registered Way2ThinkModel, CriticModel, JoinWay2ThinkModel
+    *
+    * @return Map[String, Resource]
+    */
   def stringResourcesMap: Map[String, Resource] = {
     val res: Map[String, Resource] = goalResourceMap.values.flatten.map {
       r: Resource => {
@@ -119,10 +132,9 @@ object KBAdapter {
 
 
   /**
-   * Clean the whole database and reinit
-   */
-  def cleanDatabase()
-  {
+    * Clean the whole database and reinit
+    */
+  def cleanDatabase() {
     kb.clean()
   }
 
@@ -210,6 +222,7 @@ object KBAdapter {
 
   /** *
     * Gets annotations according to specified word
+    *
     * @param word to find annotations
     * @return annotated phrase by word (for example get rid off)
     */

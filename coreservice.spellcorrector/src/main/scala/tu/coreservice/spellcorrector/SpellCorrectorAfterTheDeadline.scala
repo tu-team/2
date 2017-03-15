@@ -76,14 +76,4 @@ class SpellCorrectorAfterTheDeadline extends SpellCorrector {
 
   def correctSentence(inputSentence: String): String = return sendRequest(inputSentence, false)
 
-  def start() = false
-
-  def stop() = false
-
-  /**
-   * Way2Think interface.
-   * @param inputContext ShortTermMemory of all inbound parameters.
-   * @return outputContext
-   */
-  def apply(inputContext: ShortTermMemory) = null
 }
