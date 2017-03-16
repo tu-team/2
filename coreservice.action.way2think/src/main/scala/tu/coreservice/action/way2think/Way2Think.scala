@@ -1,9 +1,8 @@
 package tu.coreservice.action.way2think
 
 import tu.model.knowledge.communication.ShortTermMemory
-import tu.model.knowledge.{Constant, Probability, KnowledgeURI}
-import tu.coreservice.action.{Action}
-
+import tu.model.knowledge.{Constant, KnowledgeURI, Probability}
+import tu.coreservice.action.{Action, AkkaAction}
 import tu.model.knowledge.helper.URIGenerator
 import tu.model.knowledge.domain.Concept
 import tu.model.knowledge.narrative.Narrative
@@ -17,7 +16,7 @@ import tu.model.knowledge.narrative.Narrative
  */
 
 abstract class Way2Think(_uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Action(_uri, _probability) {
+  extends AkkaAction(_uri, _probability) {
 
   /**
    * Way2Think interface.

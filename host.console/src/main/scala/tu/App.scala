@@ -15,8 +15,10 @@ import org.slf4j.LoggerFactory
  */
 object AppMain {
 
-  val annotator = new KBAnnotatorImpl()
+  //val annotator = new KBAnnotatorImpl()
   val log = LoggerFactory.getLogger(this.getClass)
+
+  val lifeCycleMinimal = new ThinkingLifeCycleMinimal
 
   def main(args: Array[String]) {
 
@@ -77,8 +79,7 @@ object AppMain {
               val requestText = cmd
               log.debug("Running thinking lifecycle:" + command)
               val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
-              val t = new ThinkingLifeCycleMinimal()
-              val res = t(r)
+              val res = lifeCycleMinimal(r)
               log.info("End")
             }
           }
@@ -95,8 +96,7 @@ object AppMain {
       val requestText = st
       log.debug("Running thinking lifecycle:" + command)
       val r = new TrainingRequest(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
-      val t = new ThinkingLifeCycleMinimal()
-      val res = t(r)
+      val res = lifeCycleMinimal(r)
       log.info("End")
     }
 

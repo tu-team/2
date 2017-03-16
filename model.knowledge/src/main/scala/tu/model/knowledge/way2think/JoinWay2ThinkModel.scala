@@ -1,6 +1,6 @@
 package tu.model.knowledge.way2think
 
-import tu.model.knowledge.{Probability, KnowledgeURI}
+import tu.model.knowledge.{KnowledgeURI, Probability}
 import tu.model.knowledge.action.ActionModel
 
 /**

@@ -13,7 +13,7 @@ import tu.coreservice.action.way2think.Way2Think
 /**
  * interface that provide spell corrector functionality
  */
-trait SpellCorrector extends Way2Think{
+trait SpellCorrector {
 
   /**
    * correct sentence
