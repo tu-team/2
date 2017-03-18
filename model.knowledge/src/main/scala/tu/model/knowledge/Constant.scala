@@ -49,7 +49,7 @@ object Constant {
   val SELECTOR_REQUEST_REFORMULATION_URI_NAME = "Reformulation"
   val SELECTOR_REQUEST_REFORMULATION_URI = "tu.coreservice.action.way2think.reformulation.ReformulationWay2Think"
   val SELECTOR_REQUEST_SPIKE_GENERATOR_URI_NAME = "SpikeGenerator"
-  val SELECTOR_REQUEST_SPIKE_GENERATOR_URI = "tu.coreservice.spikegeneratorway2think.SpikeGeneratorWay2Think"
+  val SELECTOR_REQUEST_SPIKE_GENERATOR_URI = "tu.coreservice.action.way2think.spike.SpikeGeneratorWay2Think"
   val ACTION_NAME = "actionConcept"
   val SYSTEM_NAME = "system"
   val SUBJECT_NAME = "subjectConcept"

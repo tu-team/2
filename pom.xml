@@ -154,7 +154,6 @@
         <module>host.console</module>
         <module>coreservice.linkparser</module>
         <module>nlp.server</module>
-        <module>coreservice.spikegeneratorway2think</module>
         <module>extensions</module>
         <module>playwebapp</module>
     </modules>

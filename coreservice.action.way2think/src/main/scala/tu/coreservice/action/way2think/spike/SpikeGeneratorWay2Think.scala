@@ -1,14 +1,14 @@
-package tu.coreservice.spikegeneratorway2think
+package tu.coreservice.action.way2think.spike
 
 import java.io.{File, PrintWriter}
 
-import org.json4s.jackson.JsonMethods._
 import org.json4s.JsonDSL._
+import org.json4s.jackson.JsonMethods._
 import tu.coreservice.action.way2think.Way2Think
 import tu.dataservice.knowledgebaseserver.providers.N4JKB
+import tu.model.knowledge.Constant.SPIKE_RESOURCE
 import tu.model.knowledge.KBNodeId
 import tu.model.knowledge.communication.ShortTermMemory
-import tu.model.knowledge.Constant.SPIKE_RESOURCE
 
 /**
  * @author Artur Enikeev
@@ -43,6 +43,7 @@ class SpikeGeneratorWay2Think() extends Way2Think {
       case Some(resource) =>
         val content = N4JKB.loadChildrenList(KBNodeId.apply(resource))
         for (spike <- content){
+
           val jspike = ("family" -> spike.get("family")) ~
                        ("period" -> spike.get("period"))
           val fileName = "spike:"+spike.get("family")+"-"+spike.get("period")

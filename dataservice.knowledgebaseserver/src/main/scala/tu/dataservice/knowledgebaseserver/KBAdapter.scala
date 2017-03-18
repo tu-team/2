@@ -1,15 +1,14 @@
 package tu.dataservice.knowledgebaseserver
 
-import providers.N4JKB
+import tu.dataservice.knowledgebaseserver.providers.N4JKB
+import tu.model.knowledge.{Constant, _}
+import tu.model.knowledge.action.ActionModel
+import tu.model.knowledge.annotator.AnnotatedPhrase
+import tu.model.knowledge.critic.CriticModel
+import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
-import tu.model.knowledge.action.ActionModel
-import tu.model.knowledge.critic.CriticModel
-import tu.model.knowledge._
-import tu.model.knowledge.domain.{ConceptNetwork, Concept}
-import tu.model.knowledge.annotator.AnnotatedPhrase
-import tu.model.knowledge.howto.Solution
-import tu.model.knowledge.Constant
 
 /**
   * KBSever stub only for prototype purposes.
@@ -72,7 +71,19 @@ object KBAdapter {
       Goal("Cry4Help") ->
         List[Way2ThinkModel](
           Way2ThinkModel("tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think")
+        ),
+
+        Goal("ProcessNeugogarRequest") ->
+        List[ActionModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.json.ParseRoboticDataWay2Think"),
+          CriticModel("tu.coreservice.action.critic.classifier.HandSpikeClassifierCritic"),
+          CriticModel("tu.coreservice.action.critic.classifier.DistanceSpikeClassifierCritic")
+
         )
+      , Goal("RoboticData") ->
+      List[ActionModel](
+        Way2ThinkModel("tu.coreservice.action.way2think.spike.SpikeGeneratorWay2Think")
+      )
     )
 
   private def resources = goalResourceMap.values

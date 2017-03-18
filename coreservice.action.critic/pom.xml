@@ -87,6 +87,11 @@
             <version>${tu.version}</version>
         </dependency>
         <dependency>
+            <groupId>tu</groupId>
+            <artifactId>spike-generator-way2think</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
             <groupId>org.json4s</groupId>
             <artifactId>json4s-jackson_2.11</artifactId>
         </dependency>
