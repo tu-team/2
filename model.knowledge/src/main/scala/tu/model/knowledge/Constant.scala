@@ -112,6 +112,7 @@ object Constant {
   val RESULT_TO_REPORT = "$resultToReport"
 
   val SPIKE_RESOURCE = "spike-resource"
+  val GENERATED_SPIKE_FILES_MAX_NUMBER = 1000
 
   val DEFAULT_TIMEOUT = Timeout(60*120, TimeUnit.SECONDS)
 
