@@ -1,12 +1,13 @@
 package tu.model.knowledge.communication
 
-import tu.model.knowledge._
-import annotator.AnnotatedPhrase
-import domain.{Concept, ConceptNetwork}
-import selector.SelectorRequest
-import training.Goal
 import java.util.Date
+
+import tu.model.knowledge._
+import tu.model.knowledge.annotator.AnnotatedPhrase
+import tu.model.knowledge.domain.{Concept, ConceptNetwork}
 import tu.model.knowledge.narrative.Narrative
+import tu.model.knowledge.selector.SelectorRequest
+import tu.model.knowledge.training.Goal
 
 /**
  * Stores contexts parameters.
@@ -400,6 +401,14 @@ object ContextHelper {
         }
         case None => {
           res.lastResult = baseContext.lastResult
+        }
+      }
+      contexts.last.nextGoal match {
+        case Some(goal: Goal) => {
+          res.nextGoal = goal
+        }
+        case None => {
+          res.nextGoal = baseContext.nextGoal
         }
       }
       contexts.last.lastReflectiveResult match {

@@ -7,6 +7,7 @@ import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.neugogar.{RoboticData, RoboticDataContainer}
 import tu.model.knowledge.primitive.KnowledgeString
+import tu.model.knowledge.training.Goal
 import tu.model.knowledge.{KnowledgeURI, Probability, Resource}
 
 import scala.collection.JavaConversions._
@@ -15,13 +16,12 @@ import scala.collection.JavaConversions._
 /**
   * Created by bublik on 04.03.17.
   */
-class ParseRoboticDataWay2Think(_uri: KnowledgeURI, _probability: Probability = new Probability()
+class UnderstandRequestCritic(_uri: KnowledgeURI, _probability: Probability = new Probability()
 
-                              ) extends Way2Think( _uri, _probability) {
+                             ) extends Way2Think(_uri, _probability) {
 
 
-
-  def this() = this( KnowledgeURI("ParseJsonWay2Think"))
+  def this() = this(KnowledgeURI("ParseJsonWay2Think"))
 
   /**
     * Generic method of the action to be applied over input ShortTermMemory and put all results in output ShortTermMemory.
@@ -35,34 +35,32 @@ class ParseRoboticDataWay2Think(_uri: KnowledgeURI, _probability: Probability = 
         JsonMethods.parseOpt(data.value) match {
           case Some(jsonValue: JValue) => {
             val parsedJson = JsonMethods.asJsonNode(jsonValue)
-            var channel = parsedJson.get("channel").asInt()
-            val data = parsedJson.get("data")
-
-            val roboticDataContainer: RoboticDataContainer = Option.apply(data) match {
-              case Some(data: JsonNode) => {
-                var roboticData = for (jsonNode: JsonNode <- data.elements().toList) yield {
-                  var data = jsonNode.get("data").asText()
-                  var time = jsonNode.get("time").asLong()
-                  RoboticData(data, time)
-                }
-                new RoboticDataContainer(channel, roboticData)
+            var channelValid = parsedJson.get("channel") != null && parsedJson.get("channel").isIntegralNumber
+            val dataValid = parsedJson.get("data") != null && parsedJson.get("data").isArray
+            var result = ContextHelper(List[Resource](), this.getClass.getName)
+            if (channelValid && dataValid) {
+              var channel = parsedJson.get("channel").asInt()
+              var data = parsedJson.get("data")
+              var roboticData = for (jsonNode: JsonNode <- data.elements().toList) yield {
+                var data = jsonNode.get("data").asText()
+                var time = jsonNode.get("time").asLong()
+                RoboticData(data, time)
               }
-              case None => {
-                new RoboticDataContainer(channel, List[RoboticData]())
-              }
+              val roboticDataContainer: RoboticDataContainer = new RoboticDataContainer(channel, roboticData)
+              result = ContextHelper(List[Resource](roboticDataContainer), roboticDataContainer, this.getClass.getName)
+              result.nextGoal = Goal("ClassifySpike")
             }
-            ContextHelper(List[Resource](roboticDataContainer), roboticDataContainer, this.getClass.getName)
-          }
-          case None => {
-            ContextHelper(List[Resource](), this.getClass.getName)
+            result
           }
         }
+
       }
       case None => {
         ContextHelper(List[Resource](), this.getClass.getName)
       }
     }
   }
+
 
   override def start(): Boolean = false
 

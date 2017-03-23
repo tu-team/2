@@ -197,7 +197,7 @@ class ThinkingLifeCycleMinimal
   }
 
   def copyGlobalContext(resContext: ShortTermMemory): ShortTermMemory = {
-    this.globalContext = ContextHelper.mergeWithBaseContext(globalContext, List(this.globalContext, resContext))
+    this.globalContext = ContextHelper.mergeWithBaseContext(globalContext, List(resContext))
     this.globalContext
   }
 }

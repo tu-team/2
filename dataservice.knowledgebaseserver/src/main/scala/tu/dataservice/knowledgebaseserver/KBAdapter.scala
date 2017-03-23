@@ -1,7 +1,6 @@
 package tu.dataservice.knowledgebaseserver
 
 import tu.dataservice.knowledgebaseserver.providers.N4JKB
-import tu.model.knowledge.{Constant, _}
 import tu.model.knowledge.action.ActionModel
 import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.critic.CriticModel
@@ -9,6 +8,7 @@ import tu.model.knowledge.domain.ConceptNetwork
 import tu.model.knowledge.howto.Solution
 import tu.model.knowledge.training.Goal
 import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
+import tu.model.knowledge.{Constant, _}
 
 /**
   * KBSever stub only for prototype purposes.
@@ -73,17 +73,17 @@ object KBAdapter {
           Way2ThinkModel("tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think")
         ),
 
-        Goal("ProcessNeugogarRequest") ->
+        Goal("UnderstandRequest") ->
         List[ActionModel](
-          Way2ThinkModel("tu.coreservice.action.way2think.json.ParseRoboticDataWay2Think"),
-          CriticModel("tu.coreservice.action.critic.classifier.HandSpikeClassifierCritic"),
-          CriticModel("tu.coreservice.action.critic.classifier.DistanceSpikeClassifierCritic")
-
+          Way2ThinkModel("tu.coreservice.action.way2think.json.UnderstandRequestCritic")
         )
-      , Goal("RoboticData") ->
+
+      , Goal("ClassifySpike") ->
       List[ActionModel](
-        Way2ThinkModel("tu.coreservice.action.way2think.spike.SpikeGeneratorWay2Think")
+        CriticModel("tu.coreservice.action.critic.classifier.HandSpikeClassifierCritic"),
+        CriticModel("tu.coreservice.action.critic.classifier.DistanceSpikeClassifierCritic")
       )
+
     )
 
   private def resources = goalResourceMap.values
@@ -116,7 +116,7 @@ object KBAdapter {
     res
   }
 
-  def workflow = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
+  def workflow = List(Goal("UnderstandRequest"))
 
   def trainingGoal = Map[Goal, List[ActionModel]](
     Goal("Train") ->
