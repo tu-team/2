@@ -18,21 +18,20 @@ import tu.model.knowledge.neugogar.RoboticDataContainer
 class SpikeGeneratorWay2Think(_storageDirectory: String, _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Way2Think(_uri, _probability) {
 
+  private var generatedSpikeFiles = 0
+
   // Checks number of files in directory.
   // If it greater than max number, then deletes oldest file in directory
-  private def checkDir(): Unit = {
-    val directory = new File(_storageDirectory)
-    val content = directory.listFiles()
-    if (content.length > GENERATED_SPIKE_FILES_MAX_NUMBER){
-      val compareCreationDate = (file1: File, file2: File) => {
-        val path1 = Paths.get(file1.getAbsolutePath)
-        val path2 = Paths.get(file2.getAbsolutePath)
-        val time1 = Files.getFileAttributeView(path1, classOf[BasicFileAttributeView]).readAttributes().creationTime()
-        val time2 = Files.getFileAttributeView(path2, classOf[BasicFileAttributeView]).readAttributes().creationTime()
-        if (time1.compareTo(time2) <= 0) file1 else file2
-      }
-      content.toStream.filter(f => f.isFile).reduce(compareCreationDate).delete
+  private def refreshDir(): Unit = {
+    val content = new File(_storageDirectory).listFiles()
+    val compareCreationDate = (file1: File, file2: File) => {
+      val path1 = Paths.get(file1.getAbsolutePath)
+      val path2 = Paths.get(file2.getAbsolutePath)
+      val time1 = Files.getFileAttributeView(path1, classOf[BasicFileAttributeView]).readAttributes().creationTime()
+      val time2 = Files.getFileAttributeView(path2, classOf[BasicFileAttributeView]).readAttributes().creationTime()
+      if (time1.compareTo(time2) <= 0) file1 else file2
     }
+    content.toStream.filter(f => f.isFile).reduce(compareCreationDate).delete()
   }
 
   // WARNING: This is a temporary solution.
@@ -44,9 +43,9 @@ class SpikeGeneratorWay2Think(_storageDirectory: String, _uri: KnowledgeURI, _pr
     * Spike Generator Way2Think.
     *
     * Activation of this way2think produces a series of spikes stored in file in JSON format.
-    * Expected format of input information:
+    * Generated files are stored in storage directory provided by constructor.
     *
-    * TODO: think about how represent it
+    * Input information: [[List]] bounded by [[RoboticDataContainer]]
     *
     * Format of output information is illustrated below:
     * {
@@ -62,9 +61,10 @@ class SpikeGeneratorWay2Think(_storageDirectory: String, _uri: KnowledgeURI, _pr
     inputContext.findByName(SPIKE_RESOURCE) match {
       case Some(roboticDataContainer: RoboticDataContainer) =>
         for (spike <- roboticDataContainer._data){
-          checkDir()
           val spikeFile = new File(_storageDirectory+"/spike-"+spike._data+"-"+spike._time+".txt")
           if (!spikeFile.exists()) spikeFile.createNewFile()
+          generatedSpikeFiles += 1
+          if (generatedSpikeFiles > GENERATED_SPIKE_FILES_MAX_NUMBER) refreshDir()
           Some(new PrintWriter(spikeFile)).foreach{p =>
             p.write(pretty(render(("family" -> spike._data) ~ ("activationTime" -> spike._time))))
             p.close()
