@@ -1,4 +1,4 @@
-package tu.coreservice.action.critic.classifier
+package tu.coreservice.action.critic.robotic.classifier
 
 import tu.coreservice.action.critic.CriticLink
 import tu.model.knowledge.communication.ShortTermMemory

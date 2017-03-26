@@ -73,17 +73,17 @@ object KBAdapter {
           Way2ThinkModel("tu.coreservice.action.way2think.cry4help.Cry4HelpWay2Think")
         ),
 
-        Goal("ProcessNeugogarRequest") ->
+      Goal("ProcessRoboticDataRequest") ->
         List[ActionModel](
           Way2ThinkModel("tu.coreservice.action.way2think.json.ParseRoboticDataWay2Think"),
-          CriticModel("tu.coreservice.action.critic.classifier.HandSpikeClassifierCritic"),
-          CriticModel("tu.coreservice.action.critic.classifier.DistanceSpikeClassifierCritic")
-
+          CriticModel("tu.coreservice.action.critic.robotic.classifier.HandSpikeClassifierCritic"),
+          CriticModel("tu.coreservice.action.critic.robotic.classifier.DistanceSpikeClassifierCritic")
         )
-      , Goal("RoboticData") ->
-      List[ActionModel](
-        Way2ThinkModel("tu.coreservice.action.way2think.spike.SpikeGeneratorWay2Think")
-      )
+      ,
+      Goal("RoboticData") ->
+        List[ActionModel](
+          Way2ThinkModel("tu.coreservice.action.way2think.spike.SpikeGeneratorWay2Think")
+        )
     )
 
   private def resources = goalResourceMap.values
