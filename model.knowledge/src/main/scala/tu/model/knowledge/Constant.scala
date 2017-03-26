@@ -114,10 +114,8 @@ object Constant {
   val SPIKE_RESOURCE = "spike-resource"
 
   val CURRENT_GOAL_RESOURCE = "currentGoal"
-  val CHANNEL_OVERFLOW_DATA_RESOURCE = "activeChannels"
-  val DISTANCE_CLOSER_DATA_RESOURCE = "timeFromLastUpdate"
-  val ACTIVE_CHANNELS_MAX_NUMBER = 50
-  val MIN_UPDATE_INTERVAL = 1000
+
+
 
   val DEFAULT_TIMEOUT = Timeout(60*120, TimeUnit.SECONDS)
 
