@@ -13,7 +13,7 @@ class ChannelOverflow(_way2Think: Way2Think, _excluded: List[CriticLink], _inclu
 
   private var goal: Option[Goal] = None
 
-  def this() = this(List[CriticLink](), List[CriticLink](), KnowledgeURI("ChannelOverflow"))
+//  def this() = this(List[CriticLink](), List[CriticLink](), KnowledgeURI("ChannelOverflow"))
 
   override def setGoal(newGoal: Option[Goal]): Unit = goal = newGoal
   override def getGoal: Option[Goal] = goal
