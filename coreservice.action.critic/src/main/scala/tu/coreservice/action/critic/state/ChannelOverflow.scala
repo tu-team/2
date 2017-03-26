@@ -14,7 +14,7 @@ class ChannelOverflow(_way2thinkURI: String, _way2thinkURIName: String, _exclude
 
   val CHANNEL_OVERFLOW_DATA_RESOURCE = "activeChannels"
   val ACTIVE_CHANNELS_MAX_NUMBER = 50
-
+    
   override def resourceName: String = CHANNEL_OVERFLOW_DATA_RESOURCE
   override def check(input: Integer): Boolean = ACTIVE_CHANNELS_MAX_NUMBER >= input
 
