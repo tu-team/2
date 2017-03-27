@@ -7,26 +7,20 @@ import java.nio.file.{Files, Paths}
 import org.json4s.JsonDSL._
 import org.json4s.jackson.JsonMethods._
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.Constant.{SPIKE_RESOURCE, SPIKE_FILES_STORAGE_DIRECTORY}
-import tu.model.knowledge.{KnowledgeURI, Probability}
+import tu.model.knowledge.Constant.{SPIKE_FILES_STORAGE_DIRECTORY, SPIKE_RESOURCE}
 import tu.model.knowledge.communication.ShortTermMemory
-import tu.model.knowledge.neugogar.RoboticDataContainer
+import tu.model.knowledge.neugogar.{RoboticDataContainer, SpikeDataContainer}
 
 /**
  * @author Artur Enikeev
  */
-class SpikeGeneratorWay2Think(_storageDirectory: String, _uri: KnowledgeURI, _probability: Probability = new Probability())
-  extends Way2Think(_uri, _probability) {
+class SpikeGeneratorWay2Think(_storageDirectory: String)
+  extends Way2Think {
 
   val GENERATED_SPIKE_FILES_MAX_NUMBER = 1000
   private var generatedSpikeFiles = 0
-  private var _family: String = ""
 
-  def this(_storageDirectory: String) = this(_storageDirectory, KnowledgeURI("SpikeGeneratorWay2Think"))
   def this() = this(SPIKE_FILES_STORAGE_DIRECTORY)
-
-  def family = _family
-  def family_= (newFamily: String): Unit = _family = newFamily
 
   // Checks number of files in directory.
   // If it greater than max number, then deletes oldest file in directory
@@ -67,34 +61,19 @@ class SpikeGeneratorWay2Think(_storageDirectory: String, _uri: KnowledgeURI, _pr
 
   override def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     inputContext.findByName(SPIKE_RESOURCE) match {
-      case Some(roboticDataContainer: RoboticDataContainer) =>
-        for (spike <- roboticDataContainer._data){
-          val spikeFile = new File(_storageDirectory+"/spike-"+_family+"-"+spike._data+"-"+spike._time+".txt")
+      case Some(spikeDataContainer: SpikeDataContainer) =>
+        for (spikeTime <- spikeDataContainer._time){
+          val spikeFile = new File(_storageDirectory+"/spike-"+spikeDataContainer._family+"-"+spikeTime+".txt")
           if (!spikeFile.exists()) spikeFile.createNewFile()
           generatedSpikeFiles += 1
           if (generatedSpikeFiles > GENERATED_SPIKE_FILES_MAX_NUMBER) refreshDir()
           Some(new PrintWriter(spikeFile)).foreach{p =>
-            p.write(pretty(render(("family" -> _family) ~ ("activationTime" -> spike._time))))
+            p.write(pretty(render(("family" -> spikeDataContainer._family) ~ ("activationTime" -> spikeTime))))
             p.close()
           }
         }
-      case None => throw new NoDataException()
+        inputContext
+      case None => inputContext //throw new NoDataException()
     }
-    inputContext
   }
-}
-
-object SpikeGeneratorWay2Think {
-  def apply(_storageDirectory: String, _uri: KnowledgeURI, _probability: Probability = new Probability()): SpikeGeneratorWay2Think =
-    new SpikeGeneratorWay2Think(_storageDirectory, _uri, _probability)
-
-  def apply(_storageDirectory: String, _family: String): SpikeGeneratorWay2Think = {
-    val res = new SpikeGeneratorWay2Think(_storageDirectory)
-    res._family = _family
-    res
-  }
-
-  def apply(_storageDirectory: String): SpikeGeneratorWay2Think = new SpikeGeneratorWay2Think(_storageDirectory)
-
-  def apply: SpikeGeneratorWay2Think = new SpikeGeneratorWay2Think()
 }
