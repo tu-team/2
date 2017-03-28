@@ -112,6 +112,7 @@ object Constant {
   val RESULT_TO_REPORT = "$resultToReport"
 
   val SPIKE_RESOURCE = "spike-resource"
+  val SPIKE_FILES_STORAGE_DIRECTORY = "/tmp/neugogar/spikes" //TODO: specify proper directory
 
   val DEFAULT_TIMEOUT = Timeout(60*120, TimeUnit.SECONDS)
 
