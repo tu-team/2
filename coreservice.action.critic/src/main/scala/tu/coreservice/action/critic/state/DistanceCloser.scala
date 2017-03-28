@@ -1,21 +1,28 @@
 package tu.coreservice.action.critic.state
 
 import tu.coreservice.action.critic.CriticLink
-import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.training.Goal
+import tu.model.knowledge.communication.ShortTermMemory
 import tu.model.knowledge.{KnowledgeURI, Probability}
 
-class DistanceCloser(_way2Think: Way2Think, _excluded: List[CriticLink], _included: List[CriticLink], _uri: KnowledgeURI, _probability: Probability)
+class DistanceCloser(_way2thinkURI: String, _way2thinkURIName: String, _excluded: List[CriticLink],
+                     _included: List[CriticLink], _uri: KnowledgeURI, _probability: Probability)
   extends CheckMyState(_excluded, _included, _uri, _probability) {
 
+  def this(_way2thinkURI: String, _way2thinkURIName: String) =
+    this(_way2thinkURI, _way2thinkURIName, List[CriticLink](), List[CriticLink](),
+      KnowledgeURI.apply("DistanceCloser"), new Probability())
+
+  val DISTANCE_CLOSER_DATA_RESOURCE = "timeFromLastUpdate"
   val MIN_UPDATE_INTERVAL = 1000
-  val UPDATED_DISTANCE_CHANNEL = "updated_distance_channel"
 
-  private var goal: Option[Goal] = None
-
-  override def setGoal(newGoal: Option[Goal]): Unit = goal = newGoal
-  override def getGoal: Option[Goal] = goal
-  override def getWay2Think: Way2Think = _way2Think
   override def check(input: Integer): Boolean = MIN_UPDATE_INTERVAL <= input
-  override def resourceName: String = UPDATED_DISTANCE_CHANNEL
+  override def resourceName: String = DISTANCE_CLOSER_DATA_RESOURCE
+
+  /**
+    * Generic method of the action to be applied over input ShortTermMemory and put all results in output ShortTermMemory.
+    *
+    * @param inputContext ShortTermMemory of all inbound parameters
+    * @return output ShortTermMemory.
+    */
+  override def apply(inputContext: ShortTermMemory): ShortTermMemory = apply(inputContext,_way2thinkURI,_way2thinkURIName)
 }

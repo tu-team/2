@@ -114,6 +114,10 @@ object Constant {
   val SPIKE_RESOURCE = "spike-resource"
   val SPIKE_FILES_STORAGE_DIRECTORY = "/tmp/neugogar/spikes" //TODO: specify proper directory
 
+  val CURRENT_GOAL_RESOURCE = "currentGoal"
+
+
+
   val DEFAULT_TIMEOUT = Timeout(60*120, TimeUnit.SECONDS)
 
 }
