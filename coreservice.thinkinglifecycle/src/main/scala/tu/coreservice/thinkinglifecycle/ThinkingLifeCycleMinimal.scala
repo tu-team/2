@@ -33,7 +33,7 @@ class ThinkingLifeCycleMinimal
   var globalContext = ContextHelper(List[Resource](), "globalContext")
 
   private def initializeGlobalContext(request: Request) = {
-    globalContext = ContextHelper(List[Resource](request.inputText), request.inputText, "globalContext")
+    globalContext = ContextHelper(List[Resource](request.inputResource), request.inputResource, "globalContext")
     globalContext.domainModel = LongTermMemory.domainModel(request.domainName)
     globalContext.simulationModel = LongTermMemory.simulationModel(request.domainName)
     globalContext.reformulationModel = LongTermMemory.reformulationModel(request.domainName)
@@ -48,24 +48,7 @@ class ThinkingLifeCycleMinimal
   def apply(request: TrainingRequest): ShortTermMemory = {
     log debug "apply(" + request + ": TrainingRequest))"
     initializeGlobalContext(request)
-    val goalManager = new GoalManager
-    var resGoals: List[Goal] = List[Goal]()
-    // process resources
-    while (goalManager.currentTrainingGoal.isDefined) {
-      // get next goal
-      // process next goal
-      val goal = goalManager.currentTrainingGoal.get
-      log debug "Goal:" + goal
-      resGoals = resGoals ::: List(goal)
-      val resources: List[Resource] = selector.apply(goal)
-      val contexts = processResources(resources)
-      this.globalContext = mergeContexts(contexts)
-      val refContexts = processReflectiveCritics(globalContext)
-      this.globalContext = mergeContexts(refContexts)
-      log debug "out Contexts: " + contexts.toString()
-      goalManager.nextGoal(globalContext)
-    }
-    log debug "apply()"
+    runGoals(KBAdapter.trainingWorkflow)
     globalContext.lastResult match {
       case Some(r: ConceptNetwork) => {
         globalContext.domainModel match {
@@ -94,10 +77,17 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request): ShortTermMemory = {
     log debug "apply(" + request + ": Request))"
     initializeGlobalContext(request)
-    val goalManager = new GoalManager
+    runGoals(KBAdapter.roboticDataWorkflow)
+  }
 
-    var resGoals: List[Goal] = List[Goal]()
+  def apply(request: RoboticDataRequest): ShortTermMemory = {
+    initializeGlobalContext(request)
+    runGoals(KBAdapter.roboticDataWorkflow)
+  }
 
+
+  def runGoals(targetGoals: List[Goal]): ShortTermMemory = {
+    val goalManager = new GoalManager(targetGoals)
     // get selector resources for request this is first goal = Goal("ProcessIncident")
     // val resources: List[Resource] = selector.apply(request)
     // currently all goals are in goals list in KBPrimitive
@@ -108,7 +98,6 @@ class ThinkingLifeCycleMinimal
       // process next goal
       val goal = goalManager.currentGoal.get
       log debug "Goal:" + goal
-      resGoals = resGoals ::: List(goal)
       val resources: List[Resource] = selector.apply(goal)
       val contexts = processResources(resources)
       this.globalContext = mergeContexts(contexts)

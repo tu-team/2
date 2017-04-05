@@ -7,25 +7,37 @@ import java.nio.file.{Files, Paths}
 import org.json4s.JsonDSL._
 import org.json4s.jackson.JsonMethods._
 import tu.coreservice.action.way2think.Way2Think
-import tu.model.knowledge.Constant.{SPIKE_FILES_STORAGE_DIRECTORY, SPIKE_RESOURCE}
+import tu.model.knowledge.Constant.SPIKE_RESOURCE
 import tu.model.knowledge.communication.ShortTermMemory
-import tu.model.knowledge.neugogar.{RoboticDataContainer, SpikeDataContainer}
+import tu.model.knowledge.neugogar.RoboticDataContainer
 
 /**
- * @author Artur Enikeev
- */
-class SpikeGeneratorWay2Think(_storageDirectory: String)
+  * @author Artur Enikeev
+  */
+class SpikeGeneratorWay2Think
   extends Way2Think {
 
+  val CHANNEL_MAPPING: Map[Int, String] = Map.newBuilder.+=(0 -> "hand")
+    .+=(1 -> "distance")
+  .result()
+
+
   val GENERATED_SPIKE_FILES_MAX_NUMBER = 1000
+  val SPIKE_FILES_STORAGE_DIRECTORY_PROPERTY = "spikeDirectory"
   private var generatedSpikeFiles = 0
 
-  def this() = this(SPIKE_FILES_STORAGE_DIRECTORY)
+  def spikeDirectory(): String = {
+    val directory = System.getProperty(SPIKE_FILES_STORAGE_DIRECTORY_PROPERTY)
+    if (directory == null) {
+      throw new RuntimeException("Spike Directory not specified. Use -DspikeDirectory=/path/to/directory")
+    }
+    directory
+  }
 
   // Checks number of files in directory.
   // If it greater than max number, then deletes oldest file in directory
   private def refreshDir(): Unit = {
-    val content = new File(_storageDirectory).listFiles()
+    val content = new File(spikeDirectory()).listFiles()
     val compareCreationDate = (file1: File, file2: File) => {
       val path1 = Paths.get(file1.getAbsolutePath)
       val path2 = Paths.get(file2.getAbsolutePath)
@@ -39,6 +51,7 @@ class SpikeGeneratorWay2Think(_storageDirectory: String)
   // WARNING: This is a temporary solution.
   // TODO: Understand meaning and purposes of those two methods below and rewrite.
   override def start(): Boolean = false
+
   override def stop(): Boolean = false
 
   /**
@@ -51,8 +64,8 @@ class SpikeGeneratorWay2Think(_storageDirectory: String)
     *
     * Format of output information is illustrated below:
     * {
-    *   "family": "hand"
-    *   "activationTime": "dd-mm-yyyy:hh-mm-ss-mls" or "mls"
+    * "family": "hand"
+    * "activationTime": "dd-mm-yyyy:hh-mm-ss-mls" or "mls"
     * }
     *
     * @param inputContext ShortTermMemory of all inbound parameters.
@@ -61,19 +74,25 @@ class SpikeGeneratorWay2Think(_storageDirectory: String)
 
   override def apply(inputContext: ShortTermMemory): ShortTermMemory = {
     inputContext.findByName(SPIKE_RESOURCE) match {
-      case Some(spikeDataContainer: SpikeDataContainer) =>
-        for (spikeTime <- spikeDataContainer._time){
-          val spikeFile = new File(_storageDirectory+"/spike-"+spikeDataContainer._family+"-"+spikeTime+".txt")
-          if (!spikeFile.exists()) spikeFile.createNewFile()
-          generatedSpikeFiles += 1
-          if (generatedSpikeFiles > GENERATED_SPIKE_FILES_MAX_NUMBER) refreshDir()
-          Some(new PrintWriter(spikeFile)).foreach{p =>
-            p.write(pretty(render(("family" -> spikeDataContainer._family) ~ ("activationTime" -> spikeTime))))
-            p.close()
+      case Some(roboticDataContainer: RoboticDataContainer) =>
+        CHANNEL_MAPPING get roboticDataContainer.channel match  {
+          case Some(family: String) => {
+            for (spikeData <- roboticDataContainer.values) {
+              val spikeFile = new File(spikeDirectory() + "/spike-" + family + "-" + spikeData.time + ".txt")
+              if (!spikeFile.exists()) spikeFile.createNewFile()
+              generatedSpikeFiles += 1
+              if (generatedSpikeFiles > GENERATED_SPIKE_FILES_MAX_NUMBER) refreshDir()
+              val printWriter = new PrintWriter(spikeFile)
+              printWriter.write(pretty(render(("family" -> family) ~ ("activationTime" -> spikeData.time))))
+              printWriter.close()
+            }
+          }
+          case None => {
+            //do nothing
           }
         }
-        inputContext
-      case None => inputContext //throw new NoDataException()
+        emptyContext()
+      case _: Any => emptyContext()
     }
   }
 }

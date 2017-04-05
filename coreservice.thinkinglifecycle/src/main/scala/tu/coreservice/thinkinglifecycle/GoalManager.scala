@@ -10,10 +10,8 @@ import tu.model.knowledge.communication.ShortTermMemory
  *         time: 8:35 PM
  */
 
-class GoalManager {
+class GoalManager(targetGoals: List[Goal]) {
 
-  private val goals = KBAdapter.workflow
-  private val trainingGoals = KBAdapter.trainingGoal.keys.toList
   private var currentIndex = 0
 
   /**
@@ -22,14 +20,14 @@ class GoalManager {
    * @return next Goal.
    */
   def nextGoal(currentGoal: Goal): Option[Goal] = {
-    if (!goals.contains(currentGoal)) {
+    if (!targetGoals.contains(currentGoal)) {
       None
     } else {
-      val index = goals.indexOf(currentGoal) + 1
-      if (index > goals.size) {
+      val index = targetGoals.indexOf(currentGoal) + 1
+      if (index > targetGoals.size) {
         None
       } else {
-        Some(goals(index))
+        Some(targetGoals(index))
       }
     }
   }
@@ -42,31 +40,13 @@ class GoalManager {
       }
     }
   }
-
-  def nextTrainingGoal(inputContext: ShortTermMemory): Option[Goal] = {
-    inputContext.nextGoal match {
-      case Some(g: Goal) => Some(g)
-      case None => {
-        nextTrainingGoal
-      }
-    }
-  }
-
-  def nextTrainingGoal: Option[Goal] = {
-    this.currentIndex += 1
-    if (this.currentIndex >= goals.size) {
-      None
-    } else {
-      Some(trainingGoals(currentIndex))
-    }
-  }
-
+  
   def nextGoal: Option[Goal] = {
     this.currentIndex += 1
-    if (this.currentIndex >= goals.size) {
+    if (this.currentIndex >= targetGoals.size) {
       None
     } else {
-      Some(goals(currentIndex))
+      Some(targetGoals(currentIndex))
     }
   }
 
@@ -76,19 +56,11 @@ class GoalManager {
   }
 
   def currentGoal: Option[Goal] = {
-    if (currentIndex >= goals.size || currentIndex < 0) {
+    if (currentIndex >= targetGoals.size || currentIndex < 0) {
       None
     } else {
-      Some(goals(this.currentIndex))
+      Some(targetGoals(this.currentIndex))
     }
   }
-
-  def currentTrainingGoal: Option[Goal] = {
-    if (currentIndex >= trainingGoals.size || currentIndex < 0) {
-      None
-    } else {
-      Some(trainingGoals(this.currentIndex))
-    }
-  }
-
+  
 }

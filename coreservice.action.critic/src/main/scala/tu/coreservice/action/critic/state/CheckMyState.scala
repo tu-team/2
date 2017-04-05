@@ -14,9 +14,6 @@ abstract class CheckMyState(_excluded: List[CriticLink], _included: List[CriticL
 
   var _goal: Option[Goal] = None
 
-  // maybe move to ShortTermMemory
-  private val emptyContext: ShortTermMemory = ShortTermMemory(Map[KnowledgeURI, Resource](),KnowledgeURI.apply("Empty"))
-
   def check(input: Integer): Boolean
   def resourceName: String
 
@@ -25,24 +22,24 @@ abstract class CheckMyState(_excluded: List[CriticLink], _included: List[CriticL
 
   protected def apply(inputContext: ShortTermMemory, way2thinkURI: String, way2thinkName: String): ShortTermMemory = {
     _goal match {
-      case None => emptyContext
+      case None => emptyContext()
       case Some(goal) =>
         inputContext.findByName(CURRENT_GOAL_RESOURCE) match {
-          case None => emptyContext
+          case None => emptyContext()
           case Some(goalResource) =>
             KBAdapter.kb.loadChild(KBNodeId.apply(goalResource),"goal").get("name") match {
-              case None => emptyContext
+              case None => emptyContext()
               case Some(contextGoal) =>
-                if (!goal.equals(Goal(contextGoal))) emptyContext
+                if (!goal.equals(Goal(contextGoal))) emptyContext()
                 else {
                   inputContext.findByName(resourceName) match {
                     case Some(resource: RoboticStateDataContainer) =>
-                      if (!check(resource._data)) emptyContext
+                      if (!check(resource._data)) emptyContext()
                       else {
                         inputContext.lastResult = Some(SelectorRequest(List(KnowledgeURI(way2thinkURI)), KnowledgeURI(way2thinkName)))
                         inputContext
                       }
-                    case _: Any => emptyContext
+                    case _: Any => emptyContext()
                   }
                 }
             }

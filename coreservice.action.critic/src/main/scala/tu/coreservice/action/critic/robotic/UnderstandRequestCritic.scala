@@ -48,10 +48,11 @@ class UnderstandRequestCritic(_uri: KnowledgeURI, _probability: Probability = ne
             }
             result
           }
+          case _=> emptyContext()
         }
 
       }
-      case None => ContextHelper(List[Resource](), this.getClass.getName)
+      case None => emptyContext()
     }
   }
 

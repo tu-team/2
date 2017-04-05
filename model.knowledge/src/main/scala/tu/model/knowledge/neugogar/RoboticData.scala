@@ -5,8 +5,12 @@ package tu.model.knowledge.neugogar
   */
 case class RoboticData (_data:String, _time: Long) {
 
-  def apply (data: String, time: Long) : RoboticData = {
-    new RoboticData(data, time)
+  def apply (_data: String, _time: Long) : RoboticData = {
+    new RoboticData(_data, _time)
   }
+
+  def data = _data
+
+  def time = _time
 
 }

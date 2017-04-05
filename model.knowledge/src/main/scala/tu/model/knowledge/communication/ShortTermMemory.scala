@@ -16,8 +16,8 @@ import tu.model.knowledge.narrative.Narrative
  *         time: 11:27 PM
  */
 
-case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource],val _uri: KnowledgeURI,
-                           val _probability: Probability = new Probability())
+case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource], _uri: KnowledgeURI,
+                           _probability: Probability = new Probability())
   extends KLine(__frames, _uri, _probability) {
 
   var bestClassificationResult: Option[SelectorRequest] = None
@@ -136,7 +136,7 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource],val _uri: Knowl
     _lastResult = in
     in match {
       case Some(sr: SelectorRequest) => {
-        if (!classificationResults.exists(p => p == sr)) {
+        if (!classificationResults.contains(sr)) {
           classificationResultsAdd(sr)
           _frames += (sr.uri -> sr)
         }
@@ -202,7 +202,7 @@ case class ShortTermMemory(__frames: Map[KnowledgeURI, Resource],val _uri: Knowl
     val filteredFrames: List[KnowledgeURI] = _frames.keys.filter(
       (uri: KnowledgeURI) => uri.name == name
     ).toList
-    if (filteredFrames.size > 0) {
+    if (filteredFrames.nonEmpty) {
       _frames.get(filteredFrames.head)
     } else {
       None
@@ -228,7 +228,7 @@ object ContextHelper {
    */
   def initializeContext(ctx: ShortTermMemory): ShortTermMemory = {
     var returnContext = ctx
-    if (returnContext == null) returnContext = new ShortTermMemory(Map.empty[KnowledgeURI, Resource], new KnowledgeURI("empty", "empty", "1.0"), new Probability())
+    if (returnContext == null) returnContext = ShortTermMemory(Map.empty[KnowledgeURI, Resource], new KnowledgeURI("empty", "empty", "1.0"), new Probability())
     returnContext
   }
 
@@ -243,7 +243,7 @@ object ContextHelper {
     val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
       t => (t.uri, t)
     }.toMap
-    new ShortTermMemory(resourcesMap, uri)
+    ShortTermMemory(resourcesMap, uri)
   }
 
   /**
@@ -258,7 +258,7 @@ object ContextHelper {
     val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
       t => (t.uri, t)
     }.toMap
-    val res = new ShortTermMemory(resourcesMap, uri)
+    val res = ShortTermMemory(resourcesMap, uri)
     res.classificationResults = classificationResults
     res
   }
@@ -275,7 +275,7 @@ object ContextHelper {
     val resourcesMap: Map[KnowledgeURI, Resource] = resources.map {
       t => (t.uri, t)
     }.toMap
-    val res = new ShortTermMemory(resourcesMap, uri)
+    val res = ShortTermMemory(resourcesMap, uri)
     res.lastResult = Some(lastResult)
     res
   }
@@ -289,14 +289,14 @@ object ContextHelper {
   def createReflectiveContext(lastResult: Resource, name: String): ShortTermMemory = {
     val uri = KnowledgeURI(name)
     val resourcesMap = Map[KnowledgeURI, Resource](lastResult.uri -> lastResult)
-    val res = new ShortTermMemory(resourcesMap, uri)
+    val res = ShortTermMemory(resourcesMap, uri)
     res.lastReflectiveResult = Some(lastResult)
     res
   }
 
   def createContext(resourcesMap: Map[KnowledgeURI, Resource], classificationResults: List[SelectorRequest], name: String): ShortTermMemory = {
     val uri = KnowledgeURI(name)
-    val res = new ShortTermMemory(resourcesMap, uri)
+    val res = ShortTermMemory(resourcesMap, uri)
     res.classificationResults = classificationResults
     res
   }
@@ -320,7 +320,7 @@ object ContextHelper {
    * @return merged ShortTermMemory
    */
   def merge(contexts: List[ShortTermMemory]): ShortTermMemory = {
-    if (contexts.size > 0) {
+    if (contexts.nonEmpty) {
       val res: ShortTermMemory = contexts.reduceLeft((i: ShortTermMemory, s: ShortTermMemory) => ContextHelper.merge(i, s))
       res
     } else {
@@ -329,11 +329,11 @@ object ContextHelper {
   }
 
   def mergeList(x: List[SelectorRequest], y: List[SelectorRequest]): List[SelectorRequest] = {
-    x.filter(p => !y.exists(q => p == q)) ::: y
+    x.filter(p => !y.contains(p)) ::: y
   }
 
   def mergeLast(contexts: List[ShortTermMemory]): ShortTermMemory = {
-    if (contexts.size > 0) {
+    if (contexts.nonEmpty) {
       val res = merge(contexts)
       res.lastResult = contexts.last.lastResult
       res.simulationResult = contexts.find {
@@ -354,7 +354,7 @@ object ContextHelper {
   }
 
   def mergeFirstAndLastResult(contexts: List[ShortTermMemory]): ShortTermMemory = {
-    if (contexts.size > 0) {
+    if (contexts.nonEmpty) {
       val res = merge(contexts)
       contexts.last.lastResult match {
         case Some(r: Resource) => {
@@ -392,7 +392,7 @@ object ContextHelper {
 
   def mergeWithBaseContext(baseContext: ShortTermMemory, supplementalContexts: List[ShortTermMemory]): ShortTermMemory = {
     val contexts = List(baseContext) ::: supplementalContexts
-    if (baseContext != null && contexts.size > 0) {
+    if (baseContext != null && contexts.nonEmpty) {
       val res = merge(contexts)
       contexts.last.lastResult match {
         case Some(r: Resource) => {
@@ -426,8 +426,8 @@ object ContextHelper {
       res.solutions = contexts.head.solutions
 
       //collect all not understood stuff and filter repeating
-      res.notUnderstoodPhrases = contexts.map(c => c.notUnderstoodPhrases).flatten.toSet.toList
-      res.notUnderstoodConcepts = contexts.map(c => c.notUnderstoodConcepts).flatten.toSet.toList
+      res.notUnderstoodPhrases = contexts.flatMap(c => c.notUnderstoodPhrases).distinct
+      res.notUnderstoodConcepts = contexts.flatMap(c => c.notUnderstoodConcepts).distinct
       res.resultToReport = contexts.foldLeft(TypedKLine[Narrative[Concept]](Constant.UNDERSTOOD_CONCEPTS))((accum: TypedKLine[Narrative[Concept]], c: ShortTermMemory) => accum.merge(c.resultToReport))
       res.solutionsToReport = contexts.foldLeft(TypedKLine[Narrative[SolvedIssue]](Constant.FOUND_SOLUTIONS))((accum: TypedKLine[Narrative[SolvedIssue]], c: ShortTermMemory) => accum.merge(c.solutionsToReport))
       res

@@ -75,7 +75,7 @@ object KBAdapter {
 
       Goal("ProcessRoboticDataRequest") ->
         List[ActionModel](
-          Way2ThinkModel("tu.coreservice.action.way2think.json.ParseRoboticDataWay2Think"),
+          CriticModel("tu.coreservice.action.critic.robotic.UnderstandRequestCritic"),
           CriticModel("tu.coreservice.action.critic.robotic.classifier.HandSpikeClassifierCritic"),
           CriticModel("tu.coreservice.action.critic.robotic.classifier.DistanceSpikeClassifierCritic")
         )
@@ -118,14 +118,10 @@ object KBAdapter {
 
   def workflow = List(Goal("ProcessIncident"), Goal("ClassifyIncident"), Goal("GetMostProbableAction"), Goal("SearchSolution"))
 
-  def trainingGoal = Map[Goal, List[ActionModel]](
-    Goal("Train") ->
-      List[Way2ThinkModel](Way2ThinkModel("tu.coreservice.splitter.PreliminarySplitter"),
-        Way2ThinkModel("tu.coreservice.annotator.KBAnnotatorImpl"),
-        Way2ThinkModel("tu.coreservice.linkparser.LinkParser"),
-        Way2ThinkModel("tu.coreservice.action.way2think.correlation.CorrelationWay2Think")
-      )
-  )
+  def trainingWorkflow = List(Goal("Train"))
+
+  def roboticDataWorkflow = List(Goal("ProcessRoboticDataRequest"))
+
 
   def getByGoalName(name: String): Option[List[ActionModel]] = {
     val resources = this.goalResourceMap
@@ -134,7 +130,7 @@ object KBAdapter {
         g.uri.name.equals(name)
       }
     }
-    if (keys.size > 0) {
+    if (keys.nonEmpty) {
       resources.get(keys.head)
     } else {
       None

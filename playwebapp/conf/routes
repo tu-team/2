@@ -4,4 +4,5 @@
 
 POST     /train                           controllers.TUController.trainAction
 POST     /request                         controllers.TUController.requestAction
+POST     /robotic                         controllers.TUController.roboticDataAction
 POST     /clean                           controllers.TUController.cleanKnowledgeBaseAction

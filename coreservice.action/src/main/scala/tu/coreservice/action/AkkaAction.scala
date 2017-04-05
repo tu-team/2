@@ -1,7 +1,7 @@
 package tu.coreservice.action
 
 
-import tu.model.knowledge.communication.ShortTermMemory
+import tu.model.knowledge.communication.{ContextHelper, ShortTermMemory}
 import tu.model.knowledge.{KnowledgeURI, Probability}
 
 
@@ -16,11 +16,13 @@ abstract class AkkaAction(_uri: KnowledgeURI, _probability: Probability) extends
 
   override def receive = {
     case executionContext: ShortTermMemory => sender() ! apply(executionContext)
-    case otherwise: Any => unhandled(otherwise)
+    case _: Any => sender() ! emptyContext()
   }
 
   override def preStart(): Unit = start()
 
   override def postStop(): Unit = stop()
+
+  final def emptyContext(): ShortTermMemory = ContextHelper(List(), this.getClass.getName)
 
 }
