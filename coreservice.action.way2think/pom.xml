@@ -30,7 +30,6 @@
           <url>http://scala-tools.org/repo-releases</url>
         </repository>
       </repositories>
-
       <pluginRepositories>
         <pluginRepository>
           <id>scala-tools.org</id>
