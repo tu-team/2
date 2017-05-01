@@ -18,8 +18,8 @@ public class RoboticDataTest {
 
     @Test
     public void sendRoboticData() throws IOException {
-        HttpClient httpClient = HttpClientBuilder.create().build();
         while (true) {
+            HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPost httpPost = new HttpPost(HOST + "/robotic");
             httpPost.setEntity(new StringEntity(generateSpikeData(), ContentType.APPLICATION_JSON));
             HttpResponse response = httpClient.execute(httpPost);

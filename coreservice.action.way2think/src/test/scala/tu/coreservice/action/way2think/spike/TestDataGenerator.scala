@@ -33,7 +33,7 @@ object TestDataGenerator {
   }
 
   def putToSTM(shortTermMemory: ShortTermMemory, data: RoboticDataContainer): ShortTermMemory = {
-    shortTermMemory.__frames += data.uri -> data
+    //shortTermMemory.__frames += data.uri -> data
     shortTermMemory
   }
   // ======================
