@@ -72,7 +72,7 @@
                 <plugin>
                     <groupId>com.google.code.play2-maven-plugin</groupId>
                     <artifactId>play2-maven-plugin</artifactId>
-                    <version>1.0.0-beta5</version>
+                    <version>1.0.0-beta7</version>
                     <configuration>
                         <playVersion>${play2.version}</playVersion>
                         <mainLang>java</mainLang>
@@ -94,79 +94,9 @@
 
         <plugins>
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <inherited>true</inherited>
-                        <id>default-compile</id>
-                        <phase>none</phase>
-                    </execution>
-                    <execution>
-                        <inherited>true</inherited>
-                        <id>default-testCompile</id>
-                        <phase>none</phase>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <inherited>true</inherited>
-                <configuration>
-                    <excludes>
-                        <exclude>logs/</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <configuration>
-                    <recompileMode>incremental</recompileMode>
-                    <analysisCacheFile>${project.build.directory}/cache/compile</analysisCacheFile>
-                    <source>${java.lang}</source>
-                    <target>${java.lang}</target>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>scala-compile</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <inherited>true</inherited>
-                        <configuration>
-                            <sourceDir>${project.build.directory}/routes/main</sourceDir>
-                        </configuration>
-                    </execution>
-
-                    <execution>
-                        <id>scala-testCompile</id>
-                        <phase>process-test-resources</phase>
-                        <goals>
-                            <goal>testCompile</goal>
-                        </goals>
-                        <inherited>true</inherited>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.build.directory}/src_generated/swagger</source>
-                                <source>${project.build.directory}/routes/main</source>
-                                <source>${project.build.directory}/twirl/main</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <artifactId>sbt-compiler-maven-plugin</artifactId>
+                <version>1.0.0-rc1</version>
             </plugin>
             <plugin>
                 <groupId>com.google.code.play2-maven-plugin</groupId>
@@ -217,70 +147,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>dist</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>package-sans-externalized</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>sans-externalized</classifier>
-                                    <includes>
-                                        <include>**/*.class</include>
-                                    </includes>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>package-assets</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>assets</classifier>
-                                    <classesDirectory>${project.basedir}</classesDirectory>
-                                    <includes>
-                                        <include>public/**</include>
-                                    </includes>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <configuration>
-                            <descriptors>
-                                <descriptor>src/assembly/play2-dist.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>assembly-play2-dist</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                                <configuration>
-                                    <attach>false</attach>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
-
     <dependencies>
         <dependency>
             <groupId>com.google.code.play2-maven-plugin</groupId>
