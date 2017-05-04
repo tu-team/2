@@ -78,23 +78,24 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <inherited>true</inherited>
-                        <id>default-compile</id>
-                        <phase>none</phase>
-                    </execution>
-                    <execution>
-                        <inherited>true</inherited>
-                        <id>default-testCompile</id>
-                        <phase>none</phase>
-                    </execution>
-                </executions>
+                <configuration>
+                    <skipMain>true</skipMain>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>1.0.0-rc1</version>
+                <executions>
+                    <execution>
+                        <id>default-sbt-compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>com.google.code.play2-maven-plugin</groupId>
@@ -150,6 +151,16 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <excludes>
+                        <exclude>logs/</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
