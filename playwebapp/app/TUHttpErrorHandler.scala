@@ -20,8 +20,11 @@ class TUHttpErrorHandler extends HttpErrorHandler {
 
   override def onServerError(request: RequestHeader, exception: Throwable): Future[Result] = {
     logger.error(exception.getMessage, exception)
-    Future.successful(
-      Results.InternalServerError(exception.getMessage)
-    )
+    val message = exception.getMessage
+    if (message == null) {
+      Future.successful(Results.InternalServerError("Something wrong happened"))
+    } else {
+      Future.successful(Results.InternalServerError(message))
+    }
   }
 }

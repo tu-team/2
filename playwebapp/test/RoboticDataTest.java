@@ -1,3 +1,4 @@
+import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -7,7 +8,9 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.hamcrest.core.Is;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 
 import static org.junit.Assert.assertThat;
@@ -23,7 +26,17 @@ public class RoboticDataTest {
             HttpPost httpPost = new HttpPost(HOST + "/robotic");
             httpPost.setEntity(new StringEntity(generateSpikeData(), ContentType.APPLICATION_JSON));
             HttpResponse response = httpClient.execute(httpPost);
-            assertThat(response.getStatusLine().getStatusCode(), Is.is(200));
+            String content = readIS(response.getEntity().getContent());
+            System.out.println(content);
+            assertThat(content, response.getStatusLine().getStatusCode(), Is.is(200));
+        }
+    }
+
+    private String readIS(InputStream inputStream) {
+        try {
+            return IOUtils.toString(inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

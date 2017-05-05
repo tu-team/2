@@ -1,7 +1,7 @@
 package tu.host.console
 
 import tu.coreservice.annotator.KBAnnotatorImpl
-import tu.model.knowledge.communication.{TrainingRequest, Request}
+import tu.model.knowledge.communication.{Request, RoboticDataRequest, TrainingRequest}
 import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.{Constant, KnowledgeURI}
 import tu.coreservice.thinkinglifecycle.ThinkingLifeCycleMinimal
@@ -78,7 +78,7 @@ object AppMain {
             else {
               val requestText = cmd
               log.debug("Running thinking lifecycle:" + command)
-              val r = new Request(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
+              val r = new RoboticDataRequest(KnowledgeString(requestText, "inputtext"), KnowledgeURI("testRequest"), KnowledgeURI(Constant.defaultDomainName))
               val res = lifeCycleMinimal(r)
               log.info("End")
             }

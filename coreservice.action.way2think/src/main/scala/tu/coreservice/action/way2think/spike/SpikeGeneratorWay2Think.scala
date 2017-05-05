@@ -3,6 +3,7 @@ package tu.coreservice.action.way2think.spike
 import java.io.File
 
 import com.fasterxml.jackson.core.{JsonEncoding, JsonFactory, JsonGenerator}
+import org.slf4j.LoggerFactory
 import tu.coreservice.action.way2think.Way2Think
 import tu.model.knowledge.Constant.SPIKE_RESOURCE
 import tu.model.knowledge.communication.ShortTermMemory
@@ -27,6 +28,8 @@ class SpikeGeneratorWay2Think
 
   var jsonGenerator: JsonGenerator = _
   var creationDate: Long = Long.MinValue
+
+  val log = LoggerFactory.getLogger("application")
 
   override def start(): Boolean = true
 
@@ -55,6 +58,8 @@ class SpikeGeneratorWay2Think
       case Some(roboticDataContainer: RoboticDataContainer) =>
         CHANNEL_MAPPING get roboticDataContainer.channel match  {
           case Some(family: String) => {
+
+            log.debug(family)
             validateFile()
             for (spikeData <- roboticDataContainer.values) {
               jsonGenerator.writeStartObject()

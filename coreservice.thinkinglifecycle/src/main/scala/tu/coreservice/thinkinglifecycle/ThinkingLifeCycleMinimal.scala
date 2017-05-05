@@ -1,6 +1,9 @@
 package tu.coreservice.thinkinglifecycle
 
+import java.util.concurrent.TimeUnit
+
 import akka.pattern.ask
+import akka.util.Timeout
 import org.slf4j.LoggerFactory
 import tu.coreservice.action.selector.Selector
 import tu.dataservice.knowledgebaseserver.KBAdapter
@@ -15,6 +18,7 @@ import tu.model.knowledge.way2think.JoinWay2ThinkModel
 import tu.model.knowledge.{Constant, Resource}
 
 import scala.concurrent.Await
+import scala.util.{Failure, Success}
 
 
 /**
@@ -178,9 +182,18 @@ class ThinkingLifeCycleMinimal
           ContextHelper.merge(contexts)
       }
       case actionModel: ActionModel => {
-        implicit val timeout = Constant.DEFAULT_TIMEOUT
+        implicit val timeout = Timeout(20, TimeUnit.SECONDS)
         val actionActor = AkkaProvider.find(actionModel.uri.name)
-        Await.result(actionActor ? globalContext, Constant.DEFAULT_TIMEOUT.duration).asInstanceOf[ShortTermMemory]
+        val future = actionActor ? globalContext
+        val akkaResult = Await.result(future, timeout.duration)
+        akkaResult match {
+          case Success(stm: ShortTermMemory) => {
+            stm
+          }
+          case Failure(e: Throwable) => {
+            throw new RuntimeException(e.getMessage, e)
+          }
+        }
       }
     }
   }
