@@ -7,7 +7,10 @@
     using Windows.UI.Core;
 
     using Caliburn.Micro;
-
+    using Library.Providers;
+    using Library.Providers.Interfaces;
+    using Providers;
+    using Providers.Interfaces;
     using ViewModels;
 
     /// <summary>
@@ -44,8 +47,14 @@
             _container.RegisterWinRTServices();
 
             _container
+                .Singleton<IMenuProvider, ShellPageMenuProvider>()
+                .Singleton<ITuServiceProvider, TuServiceProvider>()
                 .Singleton<ShellPageViewModel>();
 
+            _container
+                .PerRequest<HomePageViewModel>()
+                .PerRequest<SettingsPageViewModel>();
+                
             ConfigureNavigation();
         }
 
@@ -56,15 +65,6 @@
         {
             var navigation = SystemNavigationManager.GetForCurrentView();
             navigation.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-           
-            navigation.BackRequested += (o, e) =>
-            {
-                e.Handled = true;
-
-                var navigationService = IoC.Get<INavigationService>();
-                if (navigationService.CanGoBack)
-                    navigationService.GoBack();
-            };
         }
 
         #endregion
