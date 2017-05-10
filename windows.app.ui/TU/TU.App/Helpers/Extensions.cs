@@ -1,6 +1,7 @@
 ﻿namespace TU.App.Helpers
 {
     using System.Collections.Generic;
+
     using Caliburn.Micro;
 
     public static class Extensions

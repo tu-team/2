@@ -49,7 +49,8 @@
             _container
                 .Singleton<IMenuProvider, ShellPageMenuProvider>()
                 .Singleton<ITuServiceProvider, TuServiceProvider>()
-                .Singleton<ShellPageViewModel>();
+                .Singleton<ShellPageViewModel>()
+                .Singleton<ChatPageViewModel>();
 
             _container
                 .PerRequest<HomePageViewModel>()

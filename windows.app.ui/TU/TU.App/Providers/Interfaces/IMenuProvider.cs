@@ -6,7 +6,16 @@
 
     public interface IMenuProvider
     {
-        IEnumerable<MenuItem> GetMainItems();
-        IEnumerable<MenuItem> GetOptionItems();
+        /// <summary>
+        /// Gets the main items.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<MenuItemModel> GetMainItems();
+
+        /// <summary>
+        /// Gets the option items.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<MenuItemModel> GetOptionItems();
     }
 }

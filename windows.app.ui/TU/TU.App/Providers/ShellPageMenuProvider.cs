@@ -15,14 +15,15 @@
 
         #region Implementation of IMenuProvider
 
-        public IEnumerable<MenuItem> GetMainItems()
+        public IEnumerable<MenuItemModel> GetMainItems()
         {
-            yield return new MenuItem { Name = _resourceLoader.GetString("Home"), Icon = Symbol.Home, Page = typeof(HomePageViewModel) };
+            yield return new MenuItemModel { Name = _resourceLoader.GetString("Home"), Icon = Symbol.Home, Page = typeof(HomePageViewModel) };
+            yield return new MenuItemModel { Name = _resourceLoader.GetString("Chat"), Icon = Symbol.Message, Page = typeof(ChatPageViewModel) };
         }
 
-        public IEnumerable<MenuItem> GetOptionItems()
+        public IEnumerable<MenuItemModel> GetOptionItems()
         {
-            yield return new MenuItem { Name = _resourceLoader.GetString("Settings"), Icon = Symbol.Setting, Page = typeof(SettingsPageViewModel) };
+            yield return new MenuItemModel { Name = _resourceLoader.GetString("Settings"), Icon = Symbol.Setting, Page = typeof(SettingsPageViewModel) };
         }
 
         #endregion

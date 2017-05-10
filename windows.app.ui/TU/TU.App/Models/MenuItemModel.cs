@@ -3,7 +3,7 @@
     using System;
     using Windows.UI.Xaml.Controls;
 
-    public class MenuItem
+    public class MenuItemModel
     {
         /// <summary>
         /// Gets or sets the name.

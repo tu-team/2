@@ -7,9 +7,9 @@ namespace TU.App.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ShellPageView : Page
+    public sealed partial class ChatPageView : Page
     {
-        public ShellPageView()
+        public ChatPageView()
         {
             this.InitializeComponent();
         }

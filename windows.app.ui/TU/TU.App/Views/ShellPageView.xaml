@@ -9,7 +9,7 @@
       mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Name="MenuItemTemplate" x:DataType="models:MenuItem">
+        <DataTemplate x:Name="MenuItemTemplate" x:DataType="models:MenuItemModel">
             <Grid Width="240" Height="47">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="47" />
@@ -31,7 +31,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <toolkit:HamburgerMenu micro:Message.Attach="[Event ItemClick] = [MainMenuItemClick($source, $eventArgs)]; [Event OptionsItemClick] = [OptionMenuItemClick($source, $eventArgs)]"
                                CompactPaneLength="47"
-                               DisplayMode="CompactInline"
+                               DisplayMode="CompactOverlay"
                                Foreground="White"
                                HamburgerHeight="47"
                                IsPaneOpen="{Binding Path=PaneOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -46,6 +46,10 @@
                     <RowDefinition />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
+
+                <Image Grid.RowSpan="2"
+                       Source="../Assets/HomePageBackground.png"
+                       Stretch="UniformToFill" />
 
                 <Frame Grid.Row="0"
                        micro:Message.Attach="[Event Loaded] = [SetupNavigation($source)]"

@@ -30,7 +30,7 @@
         /// <value>
         /// The main menu items.
         /// </value>
-        public BindableCollection<MenuItem> MainMenu => _menuProvider.GetMainItems().ToBindableCollection();
+        public BindableCollection<MenuItemModel> MainMenu => _menuProvider.GetMainItems().ToBindableCollection();
         
         /// <summary>
         /// Gets the options menu items.
@@ -38,7 +38,7 @@
         /// <value>
         /// The options menu items.
         /// </value>
-        public BindableCollection<MenuItem> OptionsMenu => _menuProvider.GetOptionItems().ToBindableCollection();
+        public BindableCollection<MenuItemModel> OptionsMenu => _menuProvider.GetOptionItems().ToBindableCollection();
 
         /// <summary>
         /// Gets or sets a value indicating whether pane is open.
@@ -71,10 +71,12 @@
         /// <param name="eventArgs">The <see cref="ItemClickEventArgs"/> instance containing the event data.</param>
         private void MainMenuItemClick(object sender, ItemClickEventArgs eventArgs)
         {
-            var menuItem = eventArgs.ClickedItem as MenuItem;
+            var menuItem = eventArgs.ClickedItem as MenuItemModel;
 
             if (menuItem.Page == typeof(HomePageViewModel))
                 _navigation.For<HomePageViewModel>().Navigate();
+            else if(menuItem.Page == typeof(ChatPageViewModel))
+                _navigation.For<ChatPageViewModel>().Navigate();
 
             UpdatePane();
         }
@@ -86,7 +88,7 @@
         /// <param name="eventArgs">The <see cref="ItemClickEventArgs"/> instance containing the event data.</param>
         private void OptionMenuItemClick(object sender, ItemClickEventArgs eventArgs)
         {
-            var menuItem = eventArgs.ClickedItem as MenuItem;
+            var menuItem = eventArgs.ClickedItem as MenuItemModel;
 
             if (menuItem.Page == typeof(SettingsPageViewModel))
                 _navigation.For<SettingsPageViewModel>().Navigate();
@@ -114,6 +116,8 @@
                 else
                     TryClose();
             };
+            
+            _navigation.For<HomePageViewModel>().Navigate();
         }
 
         #endregion
