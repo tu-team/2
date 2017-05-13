@@ -155,42 +155,59 @@
     </Page.Resources>
 
     <Grid>
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-            <interactivity:Interaction.Behaviors>
-                <behavior:AutoScrollBehavior />
-            </interactivity:Interaction.Behaviors>
-            
-            <ItemsControl Margin="10"
+        <Grid Grid.Row="0"
+              Padding="15,0,0,0"
+              Background="#E8E8E8">
+
+            <TextBlock x:Uid="ChatHeader"
+                       VerticalAlignment="Center"
+                       Foreground="Black" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <interactivity:Interaction.Behaviors>
+                    <behavior:AutoScrollBehavior />
+                </interactivity:Interaction.Behaviors>
+
+                <ItemsControl Margin="10"
                           ItemTemplateSelector="{StaticResource ChatMessageTemplateSelector}"
                           ItemsSource="{Binding Path=Messages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </ScrollViewer>
+            </ScrollViewer>
 
-        <Grid Grid.Row="1" Margin="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-            <TextBox Grid.Column="0"
+                <TextBox Grid.Column="0"
                      Padding="5"
                      IsEnabled="{Binding Path=CanSendRequest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      Text="{Binding Path=RequestMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Button Grid.Column="1"
+                <Button Grid.Column="1"
                     Margin="5,0,0,0"
                     micro:Message.Attach="[Event Click] = [SendRequest()]"
                     Background="Transparent"
                     IsEnabled="{Binding Path=CanSendRequest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                <SymbolIcon Width="25"
+                    <SymbolIcon Width="25"
                             Height="25"
                             Foreground="White"
                             Symbol="Send" />
-            </Button>
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

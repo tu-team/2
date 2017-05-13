@@ -121,6 +121,12 @@
     <value>Chat</value>
     <comment>Chat menu item description</comment>
   </data>
+  <data name="ChatHeader.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ChatHeader.Text" xml:space="preserve">
+    <value>Conversation</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
     <comment>Home menu item description</comment>
@@ -140,5 +146,20 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
     <comment>Settings menu item description</comment>
+  </data>
+  <data name="SettingsGeneral.Header" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="SettingsHeader.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsServiceAddress.FontSize" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="SettingsServiceAddress.Text" xml:space="preserve">
+    <value>Service address:</value>
   </data>
 </root>

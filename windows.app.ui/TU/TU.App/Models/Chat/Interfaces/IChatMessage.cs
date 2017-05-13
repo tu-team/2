@@ -5,7 +5,7 @@
     public enum UserType
     {
         User,
-        Tu
+        TU
     }
 
     public interface IChatMessage

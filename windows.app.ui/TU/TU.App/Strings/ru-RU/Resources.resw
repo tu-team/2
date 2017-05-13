@@ -117,6 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Chat" xml:space="preserve">
+    <value>Чат</value>
+    <comment>Chat menu item description</comment>
+  </data>
+  <data name="ChatHeader.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ChatHeader.Text" xml:space="preserve">
+    <value>Истории сообщений</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Главная</value>
     <comment>Home menu item description</comment>
@@ -136,5 +146,20 @@
   <data name="Settings" xml:space="preserve">
     <value>Настройки</value>
     <comment>Settings menu item description</comment>
+  </data>
+  <data name="SettingsGeneral.Header" xml:space="preserve">
+    <value>Основные</value>
+  </data>
+  <data name="SettingsHeader.FontSize" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="SettingsServiceAddress.FontSize" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="SettingsServiceAddress.Text" xml:space="preserve">
+    <value>Адрес сервиса:</value>
   </data>
 </root>

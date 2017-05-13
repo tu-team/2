@@ -7,6 +7,7 @@
     using Windows.UI.Core;
 
     using Caliburn.Micro;
+    using Library.Models;
     using Library.Providers;
     using Library.Providers.Interfaces;
     using Providers;
@@ -47,6 +48,7 @@
             _container.RegisterWinRTServices();
 
             _container
+                .Instance(new SettingsModel())
 #if DEBUG
                 .Singleton<ITuServiceProvider, TestTuServiceProvider>();
 #else

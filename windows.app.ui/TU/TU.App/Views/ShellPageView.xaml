@@ -10,9 +10,9 @@
 
     <Page.Resources>
         <DataTemplate x:Name="MenuItemTemplate" x:DataType="models:MenuItemModel">
-            <Grid Width="240" Height="47">
+            <Grid Width="240" Height="48">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="47" />
+                    <ColumnDefinition Width="48" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
@@ -30,10 +30,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <toolkit:HamburgerMenu micro:Message.Attach="[Event ItemClick] = [MainMenuItemClick($source, $eventArgs)]; [Event OptionsItemClick] = [OptionMenuItemClick($source, $eventArgs)]"
-                               CompactPaneLength="47"
+                               CompactPaneLength="48"
                                DisplayMode="CompactOverlay"
                                Foreground="White"
-                               HamburgerHeight="47"
+                               HamburgerHeight="48"
                                IsPaneOpen="{Binding Path=PaneOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                ItemTemplate="{StaticResource MenuItemTemplate}"
                                ItemsSource="{Binding Path=MainMenu, UpdateSourceTrigger=PropertyChanged}"

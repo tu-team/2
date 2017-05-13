@@ -125,7 +125,7 @@
         private void UpdateResponseMessage(ResponseModel response, ResponseChatMessageModel responseChatMessage)
         {
             responseChatMessage.Message = response.Data;
-            responseChatMessage.User = UserType.Tu;
+            responseChatMessage.User = UserType.TU;
             responseChatMessage.IsResponseReceived = true;
             responseChatMessage.Time = DateTime.Now;
         }

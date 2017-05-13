@@ -110,6 +110,7 @@
     <Compile Include="Models\RequestDataModel.cs" />
     <Compile Include="Models\RequestModel.cs" />
     <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\TestTuServiceProvider.cs" />
     <Compile Include="Providers\Interfaces\ITuServiceProvider.cs" />
@@ -122,6 +123,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.3.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp">
+      <Version>1.4.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>10.0.2</Version>
