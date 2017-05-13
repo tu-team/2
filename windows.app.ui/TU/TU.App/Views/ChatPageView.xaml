@@ -3,11 +3,22 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:chat="using:TU.App.Models.Chat"
       xmlns:controls="using:TU.App.Helpers.Controls"
+      xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:micro="using:Caliburn.Micro"
+      xmlns:behavior="using:TU.App.Helpers.Behavior"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       mc:Ignorable="d">
 
     <Page.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"
+                                              FalseValue="Collapsed"
+                                              TrueValue="Visible" />
+        <converters:BoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"
+                                              FalseValue="Visible"
+                                              TrueValue="Collapsed" />
+
         <DataTemplate x:Key="RequestChatMessageTemplate" x:DataType="chat:RequestChatMessageModel">
             <UserControl HorizontalAlignment="Right">
                 <Grid x:Name="ChatMessageGrid" Margin="30,20,5,0">
@@ -66,7 +77,6 @@
                 </Grid>
             </UserControl>
         </DataTemplate>
-
         <DataTemplate x:Key="ResponseChatMessageTemplate" x:DataType="chat:ResponseChatMessageModel">
             <UserControl HorizontalAlignment="Left">
                 <Grid x:Name="ChatMessageGrid" Margin="5,20,30,0">
@@ -83,18 +93,28 @@
                     <Rectangle Grid.Row="1"
                                Grid.RowSpan="2"
                                Fill="LightGray" />
+
+                    <ProgressRing Grid.Row="1"
+                                  Height="30"
+                                  Margin="5"
+                                  IsActive="True"
+                                  Visibility="{x:Bind Path=IsResponseReceived, Mode=TwoWay, Converter={StaticResource InverseBoolToVisibilityConverter}}" />
+
                     <TextBlock Grid.Row="1"
                                Margin="5,5,5,1"
                                FontWeight="SemiLight"
                                Foreground="Black"
-                               Text="{x:Bind Path=Message}"
-                               TextWrapping="WrapWholeWords" />
+                               Text="{x:Bind Path=Message, Mode=TwoWay}"
+                               TextWrapping="WrapWholeWords"
+                               Visibility="{x:Bind Path=IsResponseReceived, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}" />
 
                     <TextBlock Grid.Row="2"
                                Margin="5,1,5,5"
                                FontSize="10"
                                FontWeight="SemiLight"
-                               Text="{x:Bind Path=Status}" />
+                               Foreground="Black"
+                               Text="{x:Bind Path=Status, Mode=OneWay}"
+                               Visibility="{x:Bind Path=IsResponseReceived, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}" />
 
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroup x:Name="WindowStates">
@@ -141,6 +161,10 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <interactivity:Interaction.Behaviors>
+                <behavior:AutoScrollBehavior />
+            </interactivity:Interaction.Behaviors>
+            
             <ItemsControl Margin="10"
                           ItemTemplateSelector="{StaticResource ChatMessageTemplateSelector}"
                           ItemsSource="{Binding Path=Messages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
@@ -152,10 +176,16 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBox Grid.Column="0" Padding="5" />
+            <TextBox Grid.Column="0"
+                     Padding="5"
+                     IsEnabled="{Binding Path=CanSendRequest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding Path=RequestMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
             <Button Grid.Column="1"
                     Margin="5,0,0,0"
-                    Background="Transparent">
+                    micro:Message.Attach="[Event Click] = [SendRequest()]"
+                    Background="Transparent"
+                    IsEnabled="{Binding Path=CanSendRequest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <SymbolIcon Width="25"
                             Height="25"
                             Foreground="White"

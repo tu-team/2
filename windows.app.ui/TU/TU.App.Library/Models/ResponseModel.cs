@@ -2,6 +2,6 @@
 {
     public class ResponseModel
     {
-        
+        public string Data { get; set; }
     }
 }

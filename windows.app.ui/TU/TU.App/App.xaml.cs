@@ -47,15 +47,21 @@
             _container.RegisterWinRTServices();
 
             _container
+#if DEBUG
+                .Singleton<ITuServiceProvider, TestTuServiceProvider>();
+#else
+                .Singleton<ITuServiceProvider, TuServiceProvider>();
+#endif
+
+            _container
                 .Singleton<IMenuProvider, ShellPageMenuProvider>()
-                .Singleton<ITuServiceProvider, TuServiceProvider>()
                 .Singleton<ShellPageViewModel>()
                 .Singleton<ChatPageViewModel>();
 
             _container
                 .PerRequest<HomePageViewModel>()
                 .PerRequest<SettingsPageViewModel>();
-                
+
             ConfigureNavigation();
         }
 

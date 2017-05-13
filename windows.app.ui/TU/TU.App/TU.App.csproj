@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Behavior\AutoScrollBehavior.cs" />
     <Compile Include="Helpers\Controls\ChatMessageTemplateSelector.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Models\Chat\ChatMessageModel.cs" />
