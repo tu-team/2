@@ -36,16 +36,13 @@
 
                     using (var response = await HttpHelper.Instance.SendRequestAsync(httpRequest))
                     {
-                        //TODO 
-                        //return JsonConvert.DeserializeObject<ResponseModel>(await response.GetTextResultAsync());
-
-                        return null;
+                        return new ResponseModel {Data = await response.GetTextResultAsync()};
                     }
                 }
             }
             catch (Exception exception)
             {
-                return new ResponseModel() {Data = exception.Message};
+                return new ResponseModel { Data = exception.Message };
             }
         }
 

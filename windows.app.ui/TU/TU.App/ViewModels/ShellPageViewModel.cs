@@ -56,13 +56,6 @@
             }
         }
         
-        /// <summary>
-        /// Updates the pane.
-        /// </summary>
-        private void UpdatePane()
-        {
-            PaneOpen = PaneOpen && !PaneOpen;
-        }
 
         /// <summary>
         /// Mains the menu item click.
@@ -77,8 +70,6 @@
                 _navigation.For<HomePageViewModel>().Navigate();
             else if(menuItem.Page == typeof(ChatPageViewModel))
                 _navigation.For<ChatPageViewModel>().Navigate();
-
-            UpdatePane();
         }
 
         /// <summary>
@@ -92,8 +83,6 @@
 
             if (menuItem.Page == typeof(SettingsPageViewModel))
                 _navigation.For<SettingsPageViewModel>().Navigate();
-
-            UpdatePane();
         }
 
         #endregion
