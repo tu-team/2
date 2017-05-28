@@ -5,6 +5,7 @@
       xmlns:chat="using:TU.App.Models.Chat"
       xmlns:controls="using:TU.App.Helpers.Controls"
       xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
+      xmlns:convertersLocal="using:TU.App.Helpers.Converters"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -19,6 +20,8 @@
                                               FalseValue="Visible"
                                               TrueValue="Collapsed" />
 
+        <convertersLocal:MessageTypeToColorConverter x:Key="MessageTypeToColorConverter" />
+
         <DataTemplate x:Key="RequestChatMessageTemplate" x:DataType="chat:RequestChatMessageModel">
             <UserControl HorizontalAlignment="Right">
                 <Grid x:Name="ChatMessageGrid" Margin="30,20,5,0">
@@ -28,7 +31,7 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <Rectangle Grid.RowSpan="2" Fill="CornflowerBlue" />
+                    <Rectangle Grid.RowSpan="2" Fill="{x:Bind Converter={StaticResource MessageTypeToColorConverter}}" />
                     <TextBlock Grid.Row="0"
                                Margin="5,5,5,1"
                                FontWeight="SemiLight"
@@ -44,7 +47,7 @@
                           Margin="0,0,5,0"
                           HorizontalAlignment="Right"
                           Data="m 0,0 l 16,0 l 0,16 l -16,-16"
-                          Fill="CornflowerBlue" />
+                          Fill="{x:Bind Converter={StaticResource MessageTypeToColorConverter}}" />
 
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroup x:Name="WindowStates">
@@ -89,10 +92,10 @@
                     <Path Margin="5,0,0,0"
                           HorizontalAlignment="Left"
                           Data="m 0,0 l 0,16 l 16,0 l -16,-16"
-                          Fill="LightGray" />
+                          Fill="{x:Bind Converter={StaticResource MessageTypeToColorConverter}}" />
                     <Rectangle Grid.Row="1"
                                Grid.RowSpan="2"
-                               Fill="LightGray" />
+                               Fill="{x:Bind Converter={StaticResource MessageTypeToColorConverter}}" />
 
                     <ProgressRing Grid.Row="1"
                                   Height="30"
@@ -188,16 +191,22 @@
 
             <Grid Grid.Row="1" Margin="5">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <TextBox Grid.Column="0"
+                <ComboBox Height="37"
+                          ItemsSource="{Binding Path=MessagesTypes, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding Path=SelectedRequestType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBox Grid.Column="1"
+                         Margin="5,0,0,0"
                          Padding="5"
                          IsEnabled="{Binding Path=CanSendRequest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Text="{Binding Path=RequestMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                <Button Grid.Column="1"
+                <Button Grid.Column="2"
                         Margin="5,0,0,0"
                         micro:Message.Attach="[Event Click] = [SendRequest()]"
                         Background="Transparent"

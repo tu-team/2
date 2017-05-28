@@ -168,8 +168,13 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Vertical">
-                        <TextBlock x:Uid="SettingsServiceAddress" Margin="0,0,0,5" />
-                        <TextBox Text="{Binding Path=ServiceAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock x:Uid="SettingsTrainServiceAddress" Margin="0,0,0,5" />
+                        <TextBox Text="{Binding Path=TrainServiceAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+
+                    <StackPanel Margin="0,5,0,0" Grid.Row="1" Orientation="Vertical">
+                        <TextBlock x:Uid="SettingsRequestServiceAddress" Margin="0,0,0,5" />
+                        <TextBox Text="{Binding Path=RequestServiceAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </StackPanel>
                 </Grid>
             </PivotItem>

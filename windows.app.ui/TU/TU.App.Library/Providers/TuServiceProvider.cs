@@ -28,9 +28,21 @@
 
         public async Task<ResponseModel> SendRequest(RequestModel request)
         {
+            var address = string.Empty;
+
+            switch (request.Type)
+            {
+                case RequestType.Train:
+                    address = _settings.TrainServiceAddress;
+                    break;
+                case RequestType.Request:
+                    address = _settings.RequestServiceAddress;
+                    break;
+            }
+
             try
             {
-                using (var httpRequest = new HttpHelperRequest(new Uri(_settings.ServiceAddress), HttpMethod.Post))
+                using (var httpRequest = new HttpHelperRequest(new Uri(address), HttpMethod.Post))
                 {
                     httpRequest.Content = new HttpStringContent(JsonConvert.SerializeObject(request), UnicodeEncoding.Utf8, "application/json");
 

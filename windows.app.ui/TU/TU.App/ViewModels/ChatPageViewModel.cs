@@ -1,9 +1,9 @@
 ﻿namespace TU.App.ViewModels
 {
     using System;
-
+    using System.Linq;
     using Caliburn.Micro;
-
+    using Helpers;
     using Library.Models;
     using Library.Providers.Interfaces;
 
@@ -20,6 +20,7 @@
         
         private bool _canSendRequest = true;
         private string _requestMessage;
+        private RequestType _selectedRequestType = RequestType.Request;
 
         #endregion
 
@@ -56,6 +57,22 @@
         }
 
         /// <summary>
+        /// Gets or sets the type of the selected message.
+        /// </summary>
+        /// <value>
+        /// The type of the selected message.
+        /// </value>
+        public RequestType SelectedRequestType
+        {
+            get { return _selectedRequestType; }
+            set
+            {
+                _selectedRequestType = value;
+                NotifyOfPropertyChange();
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the messages.
         /// </summary>
         /// <value>
@@ -72,12 +89,31 @@
         }
 
         /// <summary>
+        /// Gets the messages types.
+        /// </summary>
+        /// <value>
+        /// The messages types.
+        /// </value>
+        public BindableCollection<RequestType> MessagesTypes => Enum.GetValues(typeof(RequestType)).Cast<RequestType>().ToBindableCollection();
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ChatPageViewModel"/> class.
         /// </summary>
         /// <param name="tuServiceProvider">The tu service provider.</param>
         public ChatPageViewModel(ITuServiceProvider tuServiceProvider)
         {
             _tuServiceProvider = tuServiceProvider;
+
+            NotifyProperties();
+        }
+
+        /// <summary>
+        /// Notifies the properties.
+        /// </summary>
+        private void NotifyProperties()
+        {
+            NotifyOfPropertyChange(nameof(MessagesTypes));
+            NotifyOfPropertyChange(nameof(SelectedRequestType));
         }
 
         /// <summary>
@@ -91,7 +127,8 @@
             {
                 Message = RequestMessage,
                 User = UserType.User,
-                Time = DateTime.Now
+                Time = DateTime.Now,
+                Type = SelectedRequestType
             };
 
             var request = new RequestModel()
@@ -101,14 +138,15 @@
                 {
                     Data = RequestMessage,
                     Timestamp = DateTime.Now
-                }
+                },
+                Type = SelectedRequestType
             };
 
             RequestMessage = string.Empty;
 
             _messages.Add(requestChatMessage);
 
-            var responseChatMessage = new ResponseChatMessageModel();
+            var responseChatMessage = new ResponseChatMessageModel() {User = UserType.TU, Type = SelectedRequestType};
             Messages.Add(responseChatMessage);
 
             var response = await _tuServiceProvider.SendRequest(request);

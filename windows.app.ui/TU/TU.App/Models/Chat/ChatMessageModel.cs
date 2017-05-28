@@ -4,6 +4,7 @@
     using System.Globalization;
     using Caliburn.Micro;
     using Interfaces;
+    using Library.Models;
 
     public class ChatMessageModel : PropertyChangedBase, IChatMessage
     {
@@ -12,6 +13,7 @@
         private string _message;
         private DateTime _time;
         private UserType _user;
+        private RequestType _type;
 
         #endregion
 
@@ -25,6 +27,16 @@
                 _user = value; 
                 NotifyOfPropertyChange();
                 NotifyOfPropertyChange(nameof(Status));
+            }
+        }
+
+        public virtual RequestType Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
+                NotifyOfPropertyChange();
             }
         }
 
@@ -49,7 +61,7 @@
             }
         }
 
-        public string Status => $"{User}, {Time.ToString("F", CultureInfo.InvariantCulture)}";
+        public string Status => $"{User}, {Time.ToString("F", CultureInfo.InvariantCulture)}, {Type}";
 
         #endregion
     }

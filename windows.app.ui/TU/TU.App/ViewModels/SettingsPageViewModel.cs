@@ -13,17 +13,36 @@
         #endregion
 
         /// <summary>
-        /// Gets or sets the service address.
+        /// Gets or sets the train service address.
         /// </summary>
         /// <value>
-        /// The service address.
+        /// The train service address.
         /// </value>
-        public string ServiceAddress
+        public string TrainServiceAddress
         {
-            get { return _settings.ServiceAddress; }
+            get { return _settings.TrainServiceAddress; }
             set
             {
-                _settings.ServiceAddress = value;
+                _settings.TrainServiceAddress = value;
+                NotifyOfPropertyChange();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the request service address.
+        /// </summary>
+        /// <value>
+        /// The request service address.
+        /// </value>
+        public string RequestServiceAddress
+        {
+            get
+            {
+                return _settings.RequestServiceAddress;
+            }
+            set
+            {
+                _settings.RequestServiceAddress = value;
                 NotifyOfPropertyChange();
             }
         }

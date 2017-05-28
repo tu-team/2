@@ -2,6 +2,8 @@
 {
     using System;
 
+    using Library.Models;
+
     public enum UserType
     {
         User,
@@ -18,6 +20,14 @@
         /// The user.
         /// </value>
         UserType User { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        RequestType Type { get; set; }
         
         /// <summary>
         /// Gets or sets the message.

@@ -156,10 +156,13 @@
   <data name="SettingsHeader.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
+  <data name="SettingsRequestServiceAddress.Text" xml:space="preserve">
+    <value>Адрес сервиса запросов:</value>
+  </data>
   <data name="SettingsServiceAddress.FontSize" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="SettingsServiceAddress.Text" xml:space="preserve">
-    <value>Адрес сервиса:</value>
+  <data name="SettingsTrainServiceAddress.Text" xml:space="preserve">
+    <value>Адрес сервиса обучения:</value>
   </data>
 </root>

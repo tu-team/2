@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Helpers\Behavior\AutoScrollBehavior.cs" />
     <Compile Include="Helpers\Controls\ChatMessageTemplateSelector.cs" />
+    <Compile Include="Helpers\Converters\MessageTypeToColorConverter.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Models\Chat\ChatMessageModel.cs" />
     <Compile Include="Models\Chat\Interfaces\IChatMessage.cs" />
