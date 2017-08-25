@@ -1,11 +1,11 @@
-#Pandora product and prototype description.
+# Pandora product and prototype description.
 
 
-##Introduction
+## Introduction
 
 Pandora product is problem processing system. It represents new approach to service oriented business model. It also provides remote infrastructure managment like RIM, IaaS model, e.t.c. However, in different way: Pandora inroduces Technology as a Services. 
 
-##Product Description
+## Product Description
 
 Pandora - system that leverage Machine Understanding theory into the main application of such a theory in order to develop solutions with IT infrastructure capabilities. Main goal is to create machine understanding mechanism for explaining what is to comprehend, to understand and to mean, in a IT domain with delivered solution for  a wide variety of core Infrastructure utility Services, such as hosted cloud, storage, server, collaboration and more, governed by an advanced Pandora  IT Knowledge Base. 
 
@@ -32,7 +32,7 @@ Pandora collaborates with several human specialists:
  1. Domain trainer - domain expert capable of training the virtual personality domain concepts and their links.
  1. How-to trainer - human technical support specialist capable to train virtual personality methods and resources to solve domain user problems.
 
-###Key Product Features and Capabilities
+### Key Product Features and Capabilities
 
 Pandora is capable of three main activities:
  1. Communicate and collaborate with human specialist in dialog mode.
@@ -46,7 +46,7 @@ Pandora can be compatible with modern RIM systems like:
  1. System Center Configuration Manager 
  1. others
  
-###Major Components (Hardware/Software)
+### Major Components (Hardware/Software)
 
 ![Main component diagram](https://github.com/development-team/2/raw/master/doc/design-specification/uml/images/MainComponent.png)
 
@@ -57,13 +57,13 @@ Pandora can be compatible with modern RIM systems like:
 
 ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resources(Critic, Way to think) using Critic request. Critic is main analytical module of short term memory. Way to think actually changes contents of short term memory.
 
-###Target Market/Customer Base
+### Target Market/Customer Base
 
  1. Remote Infrastructure Managment
  1. Remote Infrastructure Support
  1. Companies that do not want to support they infrastuctures by they employies
 
-##Pandora Product Prototype Description
+## Pandora Product Prototype Description
 
 TU prototype is feasibility study for simple incident processing workflow:
 
@@ -97,7 +97,7 @@ To process [KMOT]() following ways to think and critics to be designed and devel
 Current prototype could be used as the base for end product but requires architectural refactoring as well as technical extensions of components.
 
 
-###Prototype Functional Goals and Objectives
+### Prototype Functional Goals and Objectives
 
 Specific functional objectives the prototype will demonstrate and why these are significant Environment- show customer how we can do it, easy to use, intuitive, etc.  Input, Output.  Table of comparison between Current systems and TU Prototype either in here or next section.
 
@@ -172,7 +172,7 @@ Machine learning is implemented in long term memory via [deductive](http://en.wi
  1. [NEO4J](http://neo4j.org/) - No SQL data base.
  1. [GlassFish](http://glassfish.java.net/) server
 
-###Prototype Development Challenges solved
+### Prototype Development Challenges solved
 
 New approach for the machine understanding based on thinking model and new type of software architecture was tested. Main architectural challenge was old-fashioned approaches to design and build application. This is new type of the application that could not be solved in traditional way and requires rethinking of architectural approaches.
 
