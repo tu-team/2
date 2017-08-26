@@ -1,3 +1,4 @@
+
 # Pandora product and prototype description.
 
 
@@ -15,16 +16,16 @@ Current prototype is feasibility study of the human thinking model approach. It 
 Pandora virtual personality is new type of product. It is not peace of software it is human mind build in stored and distributed in cloud with following functions:
 
  1. Dialog support
-   2. English request understanding.
-   2. Clarification requests.
-   2. Confirmation requests.
-   2. Escalations of to hard to solve problems.
+   1. English request understanding.
+   1. Clarification requests.
+   1. Confirmation requests.
+   1. Escalations of to hard to solve problems.
  1. Training:
-   2. Training domain(s) concepts.
-   2. Training problem solving how-to-s.
+   1. Training domain(s) concepts.
+   1. Training problem solving how-to-s.
  1. Operation:
-   2. Find solution.
-   2. Apply found solution.
+   1. Find solution.
+   1. Apply found solution.
 
 Virtual personality was created to perform repetitive and primitive operations over IT systems. Virtual personality is capable of human like thinking thus understanding and collaboration with human operators in dialog mode. Virtual personality behaviour is based on one goal to help user solve his/her problem as much effective as possible.
 
@@ -37,6 +38,7 @@ Virtual personality collaborate with several human experts:
 ### Key Product Features and Capabilities
 
 Pandora virtual personality is capable of three main activities:
+
  1. Communicate and collaborate with human specialist in dialog mode.
  1. Be trained and train domain knowledge and problem solution how-to-s.
  1. Find most probable solution.
@@ -59,7 +61,7 @@ ThinkingLifeCycle starts and stops internal processes. Selector retrieves Resour
 
 Who/what is if for – i.e. individuals, industry, environment – and why. Live for A.K input
 
-##Pandora Product Prototype Description
+## Pandora Product Prototype Description
 
 Pandora prototype is feasibility study for simple incident processing workflow:
 
