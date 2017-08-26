@@ -21,11 +21,11 @@ Pandora virtual personality is new type of product. It is not peace of software 
      1. Confirmation requests.
      1. Escalations of to hard to solve problems.
  1. Training:
-   1. Training domain(s) concepts.
-   1. Training problem solving how-to-s.
+     1. Training domain(s) concepts.
+     1. Training problem solving how-to-s.
  1. Operation:
-   1. Find solution.
-   1. Apply found solution.
+     1. Find solution.
+     1. Apply found solution.
 
 Virtual personality was created to perform repetitive and primitive operations over IT systems. Virtual personality is capable of human like thinking thus understanding and collaboration with human operators in dialog mode. Virtual personality behaviour is based on one goal to help user solve his/her problem as much effective as possible.
 
