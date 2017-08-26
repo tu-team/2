@@ -16,10 +16,10 @@ Current prototype is feasibility study of the human thinking model approach. It 
 Pandora virtual personality is new type of product. It is not peace of software it is human mind build in stored and distributed in cloud with following functions:
 
  1. Dialog support
-   1. English request understanding.
-   1. Clarification requests.
-   1. Confirmation requests.
-   1. Escalations of to hard to solve problems.
+     1. English request understanding.
+     1. Clarification requests.
+     1. Confirmation requests.
+     1. Escalations of to hard to solve problems.
  1. Training:
    1. Training domain(s) concepts.
    1. Training problem solving how-to-s.
