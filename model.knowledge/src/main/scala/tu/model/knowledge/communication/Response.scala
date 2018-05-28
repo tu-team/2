@@ -11,4 +11,11 @@ import tu.model.knowledge.{Resource, Probability, KnowledgeURI}
 class Response(_inputText: KnowledgeString, _uri: KnowledgeURI, _probability: Probability = new Probability())
   extends Resource(_uri, _probability) {
 
+  def this(_inputText: KnowledgeString, _uri: KnowledgeURI) = {
+    this(_inputText, _uri, new Probability())
+  }
+
+  def inputText = _inputText
+
+  override def toString = inputText.toString
 }
