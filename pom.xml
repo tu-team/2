@@ -27,7 +27,7 @@
         <junit.version>4.12</junit.version>
         <specs.scala.version>2.11</specs.scala.version>
         <akka.scala.version>2.11</akka.scala.version>
-        <akka.version>2.4.14</akka.version>
+        <akka.version>2.4.17</akka.version>
         <specs.version>3.3.1</specs.version>
         <scalatest.version>2.2.4</scalatest.version>
         <scalatest.scala.version>2.11</scalatest.scala.version>
