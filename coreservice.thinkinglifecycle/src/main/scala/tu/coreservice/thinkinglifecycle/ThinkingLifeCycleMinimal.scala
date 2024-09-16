@@ -1,5 +1,6 @@
 package tu.coreservice.thinkinglifecycle
 
+import java.net.InetAddress
 import java.util.concurrent.TimeUnit
 
 import akka.pattern.ask
@@ -9,16 +10,19 @@ import tu.coreservice.action.selector.Selector
 import tu.dataservice.knowledgebaseserver.KBAdapter
 import tu.dataservice.memory.LongTermMemory
 import tu.model.knowledge.action.ActionModel
+import tu.model.knowledge.annotator.AnnotatedPhrase
 import tu.model.knowledge.communication.{ShortTermMemory, _}
 import tu.model.knowledge.critic.CriticModel
 import tu.model.knowledge.domain.ConceptNetwork
+import tu.model.knowledge.primitive.KnowledgeString
 import tu.model.knowledge.selector.SelectorRequest
 import tu.model.knowledge.training.Goal
-import tu.model.knowledge.way2think.JoinWay2ThinkModel
-import tu.model.knowledge.{Constant, Resource}
+import tu.model.knowledge.way2think.{JoinWay2ThinkModel, Way2ThinkModel}
+import tu.model.knowledge.{Constant, KnowledgeURI, Resource}
 
 import scala.concurrent.Await
 import scala.util.{Failure, Success}
+import scalaj.http.{Http, HttpOptions, HttpResponse}
 
 
 /**
@@ -81,6 +85,15 @@ class ThinkingLifeCycleMinimal
   def apply(request: Request): ShortTermMemory = {
     log debug "apply(" + request + ": Request))"
     initializeGlobalContext(request)
+    if(globalContext.solutions == Nil) {
+      val annotatedPhrase = new AnnotatedPhrase(
+        List(
+          AnnotatedPhrase(request.inputResource.toString)
+        ), request.inputResource.uri
+      )
+      val re: List[AnnotatedPhrase] = List(annotatedPhrase)
+      globalContext._notUnderstoodPhrases = re
+    }
     runGoals(KBAdapter.roboticDataWorkflow)
   }
 
@@ -110,7 +123,35 @@ class ThinkingLifeCycleMinimal
       goalManager.nextGoal(globalContext)
     }
     log debug "apply()"
+    val checkCry4Help = KnowledgeURI("Cry4Help")
+    if(globalContext._lastReflectiveResult.last.uri.equals(checkCry4Help)) {
+      val error = new Error("Error occurred. Cry4Help scenario initialization.")
+      globalContext._lastError = Option[Error](error)
+      return initializeCry4Help(globalContext)
+    }
     globalContext
+  }
+
+  private def initializeCry4Help(context: ShortTermMemory): ShortTermMemory = {
+    val cry4Help = KnowledgeURI("Cry4Help")
+    val address = InetAddress.getLocalHost.toString
+    val hostname = InetAddress.getLocalHost.getHostName
+    val priority = 1
+    val request = context.notUnderstoodPhrases
+
+    /*val response = Http("http://tu-communication-server.com/url")
+        .param("address", address)
+        .param("hostname", hostname)
+        .param("priority", priority.toString)
+        .param("request", request.toString())
+      .header("Content-Type", "application/json")
+      .header("Charset", "UTF-8")
+      .option(HttpOptions.readTimeout(10000)).asString*/
+
+    //mocked response for unit tests
+    val mockedResponse = new HttpResponse[String]("OK", 200, Map[String, IndexedSeq[String]]()).toString
+    context.userResponse = new Response(new KnowledgeString(mockedResponse, cry4Help), cry4Help)
+    context
   }
 
   def mergeContexts(contexts: List[ShortTermMemory]): ShortTermMemory = {
